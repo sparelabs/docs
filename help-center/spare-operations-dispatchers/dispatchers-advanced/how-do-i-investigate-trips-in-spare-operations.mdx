@@ -1,35 +1,37 @@
 ---
 title: "How do I investigate trips in Spare Operations?"
-description: ""
+description: "Step-by-step framework for investigating Engine decisions and understanding trip logic"
 ---
 
-Spare Engine is a complex mechanism that works tirelessly on duty optimization. The Engine takes into account multiple factors, such as rider's location, vehicle availability, service zoning, service settings, and many more.**​
-| However, there are times when we really need to know why X happened**. So how do we do this? In this article, we'll walk you through the **investigation framework** to get a thorough understanding of what was the logic behind the Engine's decision. | See also: |
+Spare Engine is a complex mechanism that works tirelessly on duty optimization. The Engine takes into account multiple factors, such as rider's location, vehicle availability, service zoning, service settings, and many more.
 
-**​[​Driver Activity**](https://help.sparelabs.com/en/articles/8967297-investigating-a-driver-s-activity)
+However, there are times when you really need to know why something happened. So how do you investigate this? In this article, we'll walk you through the **investigation framework** to get a thorough understanding of what was the logic behind the Engine's decision.
 
-**[Why Can't I Book a Trip?](https://help.sparelabs.com/en/articles/8979141-why-can-t-i-book-a-trip)**
+**See also:**
 
-**Step 1. Locate the Request Information Page**
+- [Driver Activity](/help-center/spare-operations-dispatchers/dispatchers-advanced/investigating-a-drivers-activity)
+- [Why Can't I Book a Trip?](https://help.sparelabs.com/en/articles/8979141-why-can-t-i-book-a-trip)
 
-- Locate the request via the rider's profile. For that, type in the rider's name in the main search bar, open their profile and scroll down to view the requests history. 
+## Step 1: Locate the Request Information Page
 
-| Open the request you'd like to investigate. Scroll down to view the **status changes** and the **activity log**. | From the Request Information Page, locate and write down the following details: |
+1. Locate the request via the rider's profile. For that, type in the rider's name in the main search bar, open their profile and scroll down to view the requests history
+2. Open the request you'd like to investigate. Scroll down to view the **status changes** and the **activity log**
 
-**The date & tim**e the trip was supposed to happen (look for the "Intent time" and 'Request pickup time")
+From the Request Information Page, locate and write down the following details:
 
-**Flexibility**, in minutes (to consider the time range)
-
-**Pickup & Dropoff **locations.
+- **The date & time** the trip was supposed to happen (look for the "Intent time" and "Request pickup time")
+- **Flexibility**, in minutes (to consider the time range)
+- **Pickup & Dropoff** locations
 
 ![](https://spare-74fa64f80617.intercom-attachments-1.com/i/o/967291194/0bb6e682f099cafa5e294144/6KDcKhGvhYK29pqQi9PZhbL1dew8HHxngw.png?expires=1753820100&signature=761194c9481a0532c68d9898968ef8a5ecef9b2e4cd28ec06818ed6af9ebc4ba&req=fSYgFMB%2FnIhbFb4f3HP0gB2TrcWEFmZJWRnsjP6%2FTLy37woHrXq8Y8fg9vh5%0AQpg%3D%0A)
 
-**About Request Statuses**
-​
+### About Request Statuses
 
 ![](https://spare-74fa64f80617.intercom-attachments-1.com/i/o/967291199/f4742cc57a98b6853e720978/cGqZ7nQxUarsf_ENd_0kjEeTscBckYMMcA.png?expires=1753820100&signature=1f217f06390d3718344aab1a948e267964f697037c3536c4c060a72587947846&req=fSYgFMB%2FnIhWFb4f3HP0gPe9X%2B8v%2FElkeLL78%2B12rcQ4h6JzLeW9BwqmHXsB%0Ab%2Fk%3D%0A)
 
-| Take a look at the table below to learn what each status means: | | **Status**  || **Explanation** |
+Take a look at the table below to learn what each status means:
+
+| **Status** | **Explanation** |
 |------------|-----------------|
 
 - Processing
@@ -64,7 +66,7 @@ The matching process is updating the request based on the latest information reg
 
 ![](https://spare-74fa64f80617.intercom-attachments-1.com/i/o/967291215/f36e3adc7e2f7291865c02a3/Mx0ihCbgoMMe7F6stGIGu_VZCV19ORMdTg.png?expires=1753820100&signature=d459f6f927568bff55ffb864a9f76e732f4e0674cd0152e1d7e8673febb30cb9&req=fSYgFMB%2Fn4BaFb4f3HP0gBm%2BWMQkBM8PPqRlepyugDiFXkInjmqpAx%2BVq6dc%0AHi4%3D%0A)
 
-**Step 2. Identify Related Duties**
+## Step 2: Identify Related Duties
 
 - Go to the Duties page (Shift scheduling ➡️ Duties). 
 
@@ -72,7 +74,7 @@ The matching process is updating the request based on the latest information reg
 
 ![](https://spare-74fa64f80617.intercom-attachments-1.com/i/o/967291239/30c9c77602251825a746dca8/kr17Pr7N-FY_D0Z4falEmZEcYw_4amRHwA.png?expires=1753820100&signature=3163dedd2fc77023ea786162ffb97ea38516b16056475ace278b20c3c0d911e5&req=fSYgFMB%2Fn4JWFb4f3HP0gG4av3vouHYWV2nGRzLXt5MVveP4%2FDSyIMGuieLA%0Aths%3D%0A)
 
-**Step 3. Investigate Duty Itineraries**
+## Step 3: Investigate Duty Itineraries
 
 - From the Duty information page, adjust the **time travel map** by moving the toggle to the very **beginning of the shift**. This way, you will be able to see the original trip fitting logic, without additional optimization.
 

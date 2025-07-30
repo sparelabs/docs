@@ -1,112 +1,218 @@
 ---
 title: "Frequently Asked Questions (FAQ)"
-description: ""
+description: "Find answers to common questions about Spare's platform, including language support, payment processing, driver operations, analytics, and accessibility compliance."
 ---
 
-**Question:** What languages does Spare Support
+## Overview
 
-**Answer:** The Spare Rider App and Rider Web are supported in the following languages;
+This FAQ section addresses the most commonly asked questions about Spare's platform features and functionality. Topics are organized by category to help you quickly find the information you need.
 
-English,
+<Tip>
+Can't find what you're looking for? Contact your Spare representative or visit our [support resources](https://help.sparelabs.com/en/articles/8985329-how-to-contact-spare-support) for additional assistance.
+</Tip>
 
-French,
+---
 
-German,
+## Language Support & Localization
 
-Japanese,
+<AccordionGroup>
+  <Accordion title="What languages does Spare Support?">
+    The Spare Rider App and Rider Web are supported in the following languages:
 
-Norwegian,
+    - **English**
+    - **French** 
+    - **German**
+    - **Japanese**
+    - **Norwegian**
+    - **Spanish**
+    - **Swedish**
+    - **Catalan**
+    - **Icelandic**
+    - **Portuguese**
+    - **Chinese Simplified**
+    - **Somali**
+    - **Hmong**
+    - **Vietnamese**
+    - **Korean**
+    - **Amharic**
+    - **Hindi**
+    - **Armenian**
+    - **Russian**
 
-Spanish,
+    <Info>
+    The language displayed is automatically selected based on:
+    - Your phone's language settings for the Rider App
+    - Your web browser's language settings for Rider Web
+    </Info>
+  </Accordion>
+</AccordionGroup>
 
-Swedish,
+---
 
-Catalan,
+## Payment Processing & Billing
 
-Icelandic,
+<AccordionGroup>
+  <Accordion title="How is a rider charged for their trip?">
+    When a rider books a trip using a Stripe Card, here's how the payment process works:
 
-Portuguese
+    **During Booking:**
+    - Stripe places a **hold** on the rider's credit card for the corresponding fare amount
 
-Chinese Simplified
+    **After Trip Completion:**
+    - Spare instructs Stripe to convert the hold into a **charge**, debiting the amount from the rider's card
 
-Somali
+    **If Trip is Canceled:**
+    - Spare instructs Stripe to cancel the hold **one hour** after cancellation
+    - This delay allows users in Spare Operations to reverse the cancellation if it was made by mistake
+    - Once Stripe cancels the hold, it may take several days for this to be reflected on the rider's card
 
-Hmong
+    <Warning>
+    Stripe cannot place holds on cards for more than **7 days**. Therefore, by default, riders cannot use Stripe Cards to book rides on Spare more than 7 days in advance.
+    </Warning>
 
-Vietnamese
+    <Note>
+    If you wish to allow riders to book rides using Stripe Cards more than 7 days in advance, Stripe can immediately debit the funds from the rider's account when the trip is booked and refund them in the event of a cancellation. Please contact your Spare representative to enable this functionality.
+    </Note>
+  </Accordion>
 
-Korean
+  <Accordion title="If a payment is fully processed through Stripe and the trip is subsequently cancelled, does Spare automatically issue a refund?">
+    **Yes**, even for fully processed payments, Spare can issue a refund when the trip is cancelled. 
 
-Amharic
+    This means that regardless of whether the payment was:
+    - Just a hold on the card, or
+    - Fully captured/processed
 
-Hindi
+    Spare ensures that the charge is refunded upon trip cancellation. This process is handled **automatically** to ensure a seamless experience for users.
+  </Accordion>
 
-Armenian
+  <Accordion title="How would a trip cancellation refund be handled if your wallet is already at its maximum balance?">
+    <Check>
+    In this situation, we will **permit your wallet balance to exceed the maximum limit**.
+    </Check>
 
-Russian
+    This means that if you cancel a trip and the refund is credited to your wallet, your balance can go above the usual cap. This ensures you receive your full refund without any issues.
+  </Accordion>
+</AccordionGroup>
 
-The language displayed is automatically selected based on;
+---
 
-• Your phone’s language settings for the Rider App,
+## Driver Operations & Communication
 
-• Your web browser’s language settings for Rider web
+<AccordionGroup>
+  <Accordion title="For Driver to Rider calling, what number do riders see when receiving a call?">
+    When a driver calls a rider:
 
-**Question: **How is a rider charged for their trip?
+    **Privacy Protection:**
+    - The rider's phone number remains **hidden** to protect their privacy
 
-**Answer:** When a rider books a trip using a Stripe Card, Stripe places a hold on the rider’s credit card for the corresponding fare amount. After the trip is completed, Spare instructs Stripe to convert the hold into a charge, debiting the amount from the rider’s card. If the trip is canceled, Spare instructs Stripe to cancel the hold one hour after the cancellation, allowing users in Spare Operations to reverse the cancellation if it was made by mistake. Once Stripe cancels the hold, it may take several days for this to be reflected on the rider’s card., Stripe cannot place holds on cards for more than 7 days. Therefore, by default, riders cannot use Stripe Cards to book rides on Spare more than 7 days in advance., If you wish to allow riders to book rides using Stripe Cards more than 7 days in advance, Stripe can immediately debit the funds from the rider’s account when the trip is booked and refund them in the event of a cancellation. Please contact your Spare representative to enable this functionality.
+    **Caller ID Display:**
+    - The rider will see the call coming from the **same number used for SMS and voice notifications**
 
-**Question: **For Driver to Rider calling, what number do riders see when receiving a call
+    <Info>
+    This ensures consistent communication channels while maintaining rider privacy and security.
+    </Info>
+  </Accordion>
 
-**Answer:** When a driver calls a rider, the rider’s phone number remains hidden to protect their privacy. The rider will see the call coming from the same number used for SMS and voice notifications.
+  <Accordion title="What is the required proximity to the scheduled start location for a driver to begin their duty?">
+    Currently, there are **no specific limitations** regarding the proximity to the scheduled start location for a driver to begin their duty. 
 
-**Question: **How would a trip cancellation refund be handled if your wallet is already at its maximum balance? Would it allow your balance to exceed the limit?
+    This means that drivers can start their duty **regardless of their distance** from the start location.
+  </Accordion>
 
-**Answer: **In this situation, we will permit your wallet balance to exceed the maximum limit. This means that if you cancel a trip and the refund is credited to your wallet, your balance can go above the usual cap. This ensures you receive your full refund without any issues.
+  <Accordion title="Is there a specific amount of time a driver can be late for pullout before Spare stops assigning trips to them?">
+    **Yes**, there is a threshold for lateness:
 
-**Question: **What is the required proximity to the scheduled start location for a driver to begin their duty?
+    **When Driver is Late:**
+    - Spare will begin **unassigning trips** from that driver shortly after the trips become sufficiently late
 
-**Answer: **Currently, there are no specific limitations regarding the proximity to the scheduled start location for a driver to begin their duty. This means that drivers can start their duty regardless of their distance from the start location.
+    **Purpose:**
+    - Ensures that trips are reassigned to other drivers
+    - Maintains timely service 
+    - Minimizes delays for passengers
 
-**Question: **If a payment is fully processed through Stripe (not just a hold on the card) and the trip is subsequently cancelled, does Spare automatically issue a refund?
+    <Warning>
+    Late pullouts can significantly impact service quality and passenger experience.
+    </Warning>
+  </Accordion>
+</AccordionGroup>
 
-**Answer: **Yes, even for fully processed payments, we can issue a refund when the trip is cancelled. This means that regardless of whether the payment was just a hold or fully captured, Spare ensures that the charge is refunded upon trip cancellation. This process is handled automatically to ensure a seamless experience for our users.
+---
 
-**Question: **Is there a specific amount of time a driver can be late for pullout before Spare stops assigning trips to them?
+## Analytics & Reporting
 
-**Answer: **Yes, there is a threshold for lateness. If a driver is late for pullout, Spare will begin unassigning trips from that driver shortly after the trips become sufficiently late. This ensures that trips are reassigned to other drivers to maintain timely service and minimize delays for passengers.
+<AccordionGroup>
+  <Accordion title="Do the heatmaps in Analytics reflect completed stops or requested pickups and dropoffs?">
+    The heat maps in Analytics reflect **requested** pickups and dropoffs, **not** completed stops.
 
-**Question: **Do the heatmaps in Analytics reflect completed stops or requested pickups and dropoffs?
+    **Purpose:**
+    - Show where **demand is concentrated** based on customer requests
+    - Reflect data from your selected time period
+    - Help identify high-demand areas for service planning
 
-**Answer:** The heat maps in Analytics reflect **requested** pickups and dropoffs, but not completed stops. These maps are designed to show where demand is concentrated based on customer requests during your selected time period.
+    <Note>
+    These maps are designed to show demand patterns rather than actual service delivery locations.
+    </Note>
+  </Accordion>
 
-**Question: **Is there a character limit for OpenFleets location notes?
+  <Accordion title="What is the definition of an 'active' request?">
+    A request is classified as **"active"** if it meets **both** of the following conditions:
 
-**Answer: **Yes, there are character limits for some platforms. Here are the details:
+    **Status Requirements:**
+    - Has a status of: `Accepted`, `Arriving`, `In Progress`, `Processing`, or `Service Disruption`
 
-Uzurv: 255 characters
+    **Timing Requirements:**
+    - The scheduled pickup time (`requestedPickupTs`) falls within **30 minutes** of the current time
 
-MTI: No character limit
+    <Info>
+    If both criteria are satisfied, the request is labeled "active." Otherwise, it may still be considered "ongoing" or "scheduled," but will not be flagged as "active" in the app.
+    </Info>
+  </Accordion>
+</AccordionGroup>
 
-Jagwire: No character limit
+---
 
-Uber: 599 characters
+## Open Fleets & Integration
 
-Lyft: 99 characters
+<AccordionGroup>
+  <Accordion title="Is there a character limit for Open Fleets location notes?">
+    **Yes**, there are character limits for some platforms:
 
-Icabbi: No character limit
+    | Platform | Character Limit |
+    |----------|----------------|
+    | **Uzurv** | `255` characters |
+    | **MTI** | No character limit |
+    | **Jagwire** | No character limit |
+    | **Uber** | `599` characters |
+    | **Lyft** | `99` characters |
+    | **Icabbi** | No character limit |
 
-If a note exceeds the character limit, it will end with “…” to indicate truncation. 
+    <Warning>
+    If a note exceeds the character limit, it will end with "**…**" to indicate truncation.
+    </Warning>
+  </Accordion>
+</AccordionGroup>
 
-**Question: **When is a request considered "active"?
+---
 
-**Answer: **A request is classified as "active" if it meets the following conditions:
+## Accessibility & Compliance
 
-It has a status of either **Accepted, Arriving, In Progress, Processing, or Service Disruption.**
+<AccordionGroup>
+  <Accordion title="Is Spare WCAG 2.1 Level AA Compliant for accessibility standards?">
+    **Spare's Accessibility Commitment:**
+    - Spare completes **VPATs** (Voluntary Product Accessibility Templates) on an **annual basis**
+    - The latest VPAT can be requested from your **Spare Partner Success Manager**
+    - Spare strives to meet **WCAG guidelines** in all releases
 
-- The scheduled pickup time (requestedPickupTs) falls within **30 minutes** of the current time.
+    <Tip>
+    Contact your Partner Success Manager to request the most current accessibility compliance documentation for your organization's needs.
+    </Tip>
+  </Accordion>
+</AccordionGroup>
 
-If both criteria are satisfied, the request is labeled "active." Otherwise, it may still be considered "ongoing" or "scheduled," but it will not be flagged as "active" in the app.
+---
 
-**Question: **Is Spare WCAG 2.1 Level AA Compliant for accessibility standards? 
+## Additional Resources
 
-**Answer: **Spare completes VPATs on an annual basis, the latest can be requested from your Spare Partner Success Manager. Spare strives to meet WCAG guidelines in all releases.
+<Info>
+For detailed product questions or technical support not covered in this FAQ, please refer to our [comprehensive support documentation](https://help.sparelabs.com/en/articles/8985329-how-to-contact-spare-support) or contact your dedicated Spare representative.
+</Info>

@@ -3,77 +3,85 @@ title: "Creating a Fare Rule"
 description: "What are fare rules, and how to create/configure fare rules?"
 ---
 
-# **What is a Fare Rule? **Fare rules establish the system used to determine the amount passengers must pay for different types of fares. 
+## What is a Fare Rule?
 
-# # What are the types of Fare Rules? There are 4 different types available in Spare: 
+Fare rules establish the system used to determine the amount passengers must pay for different types of fares.
 
-**Fixed **- a fare for the entire trip booking, regardless of how many riders
+## What are the Types of Fare Rules?
 
-**Per Rider** - a fare per rider type
+There are 4 different types available in Spare: 
 
-**Variable** - a fare based on distance or time traveled, this can be set per trip or per rider
+- **Fixed** - a fare for the entire trip booking, regardless of how many riders
+- **Per Rider** - a fare per rider type
+- **Variable** - a fare based on distance or time traveled, this can be set per trip or per rider
+- **Per Payment Method** - Allows agencies to implement variable pricing strategies that encourage the use of preferred payment methods, potentially reducing operational costs associated with cash transactions and boosting digital payment adoption.
 
-**Per Payment Method **- Allows agencies to implement variable pricing strategies that encourage the use of preferred payment methods, potentially reducing operational costs associated with cash transactions and boosting digital payment adoption. 
-​
+## Creating a Fare Rule
 
-# Creating a Fare RuleTo create a fare rule, start by navigating to "Spare Pay" in the left-hand menu and selecting "Fare Rules." 
-​
+To create a fare rule, start by navigating to **Spare Pay** in the left-hand menu and selecting **Fare Rules**.
 
 ![](https://downloads.intercomcdn.com/i/o/1036553288/81de9015a5702fe988296684/image.png?expires=1753820100&signature=804ec459f1ede150b2821b36dd2d085cd045408d4eb963722225c97ea927023c&req=dSAkEMx7noNXUfMW1HO4zfzG%2F4Hd66moXR89BPfpcvZ72Ny%2FFjJpDOxKja2r%0Aq3cN%0A)
 
-Click "Add Fare Rule," give it a name corresponding to the service it will be linked to, and click "Create New Fare Rule." An empty template will appear. To edit, select "Edit Fare Rule" from the top right-hand corner.
-​
+Click **Add Fare Rule**, give it a name corresponding to the service it will be linked to, and click **Create New Fare Rule**. An empty template will appear. To edit, select **Edit Fare Rule** from the top right-hand corner.
 
-![](https://downloads.intercomcdn.com/i/o/1036554531/eab08de9c5abf8d8cf3a27d1/image.png?expires=1753820100&signature=e19f81d9da7963e9cd1e0129d5de6d8464dd8fe02f99575690254e15007b4e5d&req=dSAkEMx7mYRcWPMW1HO4zRgFJAkTdynErkQqD3YvqvRaog0UyAfXnvA5vid1%0AHFBs%0A)Create a block and select the type of fare rule: click " Create Block" beneath the fare name on the right side.
+![Fare rule creation interface](https://downloads.intercomcdn.com/i/o/1036554531/eab08de9c5abf8d8cf3a27d1/image.png?expires=1753820100&signature=e19f81d9da7963e9cd1e0129d5de6d8464dd8fe02f99575690254e15007b4e5d&req=dSAkEMx7mYRcWPMW1HO4zRgFJAkTdynErkQqD3YvqvRaog0UyAfXnvA5vid1%0AHFBs%0A)
+
+Create a block and select the type of fare rule: click **Create Block** beneath the fare name on the right side.
 
 ![](https://downloads.intercomcdn.com/i/o/1036545607/c333080bcf03553d4d657365/image.png?expires=1753820100&signature=98324318efda20a2a1182992236e80cca18f51ea858cc69f1b4a60fee2c192cc&req=dSAkEMx6mIdfXvMW1HO4zZgF%2F5O0QJs5Y9sC0buD1FT0QTGCGRSHOIha%2BskN%0AQ7LR%0A)
 
-## How to Set Up a Fixed FareTo establish a Fixed Fare, start by creating a fare block: click "Create Block" under the fare's name on the right-hand side of the screen. Enter the exact cent value in the fare block and then select "Save." 
+## How to Set Up a Fixed Fare
+
+To establish a Fixed Fare, start by creating a fare block: click **Create Block** under the fare's name on the right-hand side of the screen. Enter the exact cent value in the fare block and then select **Save**.
 
 This block sets a standard fare that applies uniformly, regardless of the number of riders. 
 
 ![](https://downloads.intercomcdn.com/i/o/1036544099/f5954e77e14934dd22cdb492/image.png?expires=1753820100&signature=f8c966cf0694838a97ed2a812dc1899f52ae009cd9ee3f47e01350ca6849c5cf&req=dSAkEMx6mYFWUPMW1HO4zXXTTQZXO2cm7O4d7YyXagoF8mp%2Fu8YWS0%2FX%2FQ8E%0AVjYO%0A)
 
-## **How to Set Up Per Rider Fare   **For a Per Rider Fare, you must first create a Fixed Fare block to determine the fare per rider. Then create the Per 
+## How to Set Up Per Rider Fare
 
-Rider block nested underneath it. 
-​
+For a Per Rider Fare, you must first create a Fixed Fare block to determine the fare per rider. Then create the Per Rider block nested underneath it.
 
-Set the first rider's fare as default, allowing additional riders to either ride for free or have a different fixed fare set by adding more Fixed Fare blocks. Once configured, connect the blocks as necessary and save the changes. 
-​
+Set the first rider's fare as default, allowing additional riders to either ride for free or have a different fixed fare set by adding more Fixed Fare blocks. Once configured, connect the blocks as necessary and save the changes.
 
-![](https://downloads.intercomcdn.com/i/o/1036566803/9a0966f598f8565e41724117/image.png?expires=1753820100&signature=78020ef2bf810183fdc47a60afb7be15c646bac1469bfe95937c975a7b5b3e14&req=dSAkEMx4m4lfWvMW1HO4zXq5SQ%2BEq%2FefYxYDr6W95m6QEZRArVgZspypbWla%0ACVBh%0A)The final step is to connect the blocks. Select the "Start" block at the top, clear the text in the "Add a block" box, type in, and select the required block, such as 'A. Per Rider'. If only a "Fixed" fare is needed, skip the "Per Rider" block and connect directly to the "Fixed" fare block. Click "Save" when finished. Your fare rule is now ready to be linked to your service.
-​
+![Per rider fare configuration](https://downloads.intercomcdn.com/i/o/1036566803/9a0966f598f8565e41724117/image.png?expires=1753820100&signature=78020ef2bf810183fdc47a60afb7be15c646bac1469bfe95937c975a7b5b3e14&req=dSAkEMx4m4lfWvMW1HO4zXq5SQ%2BEq%2FefYxYDr6W95m6QEZRArVgZspypbWla%0ACVBh%0A)
+
+The final step is to connect the blocks. Select the **Start** block at the top, clear the text in the **Add a block** box, type in, and select the required block, such as "A. Per Rider". If only a **Fixed** fare is needed, skip the **Per Rider** block and connect directly to the **Fixed** fare block. Click **Save** when finished. Your fare rule is now ready to be linked to your service.
 
 ![](https://downloads.intercomcdn.com/i/o/1036567828/e2a4287c661c2f8affa9a9e5/image.png?expires=1753820100&signature=d3cea329f8ac665b309e6f1550407cd615f060e0e30c21a152d7efa5f1e273b6&req=dSAkEMx4moldUfMW1HO4zfe9e6GJmesHz8zgQiU8V2L0v7uJt2flcw%2BbVkFs%0A5UkH%0A)
 
-# Creating a Variable Fare RuleA fare based on distance or time traveled, this can be set per trip or per rider
+## Creating a Variable Fare Rule
 
-For a variable fare rule, click "Edit Fare Rule," then "Create Block" and choose "Variable." Specify the base and minimum fare, and whether additional charges apply per time spent or distance traveled. If applying per rider, nest the 'Variable' block inside a 'Per Rider' block. 
-​
+A fare based on distance or time traveled, this can be set per trip or per rider.
 
-Connect the blocks by selecting the "Start" block, clearing and typing in the "Add a block" box, and selecting 'B. Per Rider'. Your variable fare rule can now be added to the service.
+For a variable fare rule, click **Edit Fare Rule**, then **Create Block** and choose **Variable**. Specify the base and minimum fare, and whether additional charges apply per time spent or distance traveled. If applying per rider, nest the **Variable** block inside a **Per Rider** block.
+
+Connect the blocks by selecting the **Start** block, clearing and typing in the **Add a block** box, and selecting "B. Per Rider". Your variable fare rule can now be added to the service.
 
 ![](https://downloads.intercomcdn.com/i/o/1036569037/4a6e026077ba53bcb4bb7d5c/image.png?expires=1753820100&signature=cd8524832742a23d536e52df87dd11dfe5896a023ea52e9e28dc0d9b7d8fa945&req=dSAkEMx4lIFcXvMW1HO4zc7TE2CqcQ9WHalkKBYBTmZMW6R9WNZcMhdgUsGk%0AvCi8%0A)
 
-# Creating a Payment Method Fare RuleA fare based on the payment method used on the trip. For example, if paying by cash or fare pass, the fare could be $2.00, but by credit card the fare could be $1.50. 
-​
-This feature provides significant value by enabling transit agencies to customize fare structures in a way that can drive more efficient payment processes. For instance, offering lower fares for digital payments could accelerate the adoption of app-based transactions, which are typically faster and more secure than cash. 
+## Creating a Payment Method Fare Rule
 
-Ensure Payment Methods have been specified in Space Pay  >  Payment Methods before starting this step 
+A fare based on the payment method used on the trip. For example, if paying by cash or fare pass, the fare could be $2.00, but by credit card the fare could be $1.50.
 
-For a payment method type fare rules, click "Edit Fare Rule," then "Create Block" and add two Fixed Fares for $2.00 and $1.50
+This feature provides significant value by enabling transit agencies to customize fare structures in a way that can drive more efficient payment processes. For instance, offering lower fares for digital payments could accelerate the adoption of app-based transactions, which are typically faster and more secure than cash.
 
-Then create another block and choose "Per Payment Method Type", to reference the Fixed Fares
-​
+> Ensure Payment Methods have been specified in **Spare Pay > Payment Methods** before starting this step.
+
+For a payment method type fare rules, click **Edit Fare Rule**, then **Create Block** and add two Fixed Fares for $2.00 and $1.50.
+
+Then create another block and choose **Per Payment Method Type**, to reference the Fixed Fares.
 
 ![](https://downloads.intercomcdn.com/i/o/1038688303/59c4d178d87fbd1fefebf083/image.png?expires=1753820100&signature=2f214dbde992c0982f0a53cff0ad490260845c8a7cdf8b620708cd75413c413d&req=dSAkHs92lYJfWvMW1HO4zcVaBWZWUiOYh5bfio7OuG5qnC9J4YiypSiwUaCK%0AAyzS%0A)
 
-**Dynamic Fare Adjustment**: During the booking process, fares automatically adjust based on the selected payment method. For example, if a rider selects Stripe as their payment method, they might see a reduced fare compared to the standard rate for cash.**​
-​Real-Time Feedback**: Changes in payment method during booking instantly update the fare displayed, ensuring riders are always aware of the fare they will be charged.
-​
+**Dynamic Fare Adjustment**: During the booking process, fares automatically adjust based on the selected payment method. For example, if a rider selects Stripe as their payment method, they might see a reduced fare compared to the standard rate for cash.
 
-![](https://downloads.intercomcdn.com/i/o/1038698351/2187843760f8b78b74c924b1/image.png?expires=1753820100&signature=d90b8e5b6fa4a8f073b8cc1e8838729999611c97f511efc190d0663612110588&req=dSAkHs93lYJaWPMW1HO4zWeV5%2FzV70LKEcILtVxJSe2wMO4IDQEO2cObJVcS%0AvAeV%0A)# 
-# FAQ**Can Payment Method Fare Rules be applied to all service types?** 
+**Real-Time Feedback**: Changes in payment method during booking instantly update the fare displayed, ensuring riders are always aware of the fare they will be charged.
+
+![Payment method fare adjustment example](https://downloads.intercomcdn.com/i/o/1038698351/2187843760f8b78b74c924b1/image.png?expires=1753820100&signature=d90b8e5b6fa4a8f073b8cc1e8838729999611c97f511efc190d0663612110588&req=dSAkHs93lYJaWPMW1HO4zWeV5%2FzV70LKEcILtVxJSe2wMO4IDQEO2cObJVcS%0AvAeV%0A)
+
+## FAQ
+
+**Can Payment Method Fare Rules be applied to all service types?**
 
 Yes, this feature is versatile and can be configured for various service types, each potentially having different payment method options and associated fares.
