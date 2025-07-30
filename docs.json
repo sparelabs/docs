@@ -532,6 +532,19 @@
             ]
           }
         ]
+      },
+      {
+        "tab": "Internal Enablement",
+        "groups": [
+          {
+            "group": "Product Guides",
+            "pages": [
+              "internal-enablement/product-guides/spare-resolve",
+              "internal-enablement/product-guides/spare-one-multimodal",
+              "internal-enablement/product-guides/spare-engine-live-traffic"
+            ]
+          }
+        ]
       }
     ],
     "global": {
