@@ -1,0 +1,148 @@
+---
+title: "Issues Overview"
+description: "Comprehensive guide to tracking and resolving asset-related problems in Spare EAM using the Issues system for efficient maintenance management"
+---
+
+Welcome to the **Issues Overview** guide, your resource for tracking and resolving problems related to your assets in Spare EAM.
+
+![Issues Overview Dashboard showing the interface for tracking and managing asset-related problems](/images/spare-eam/issues-overview-dashboard.png)
+
+## What are Issues in Spare EAM?
+
+<Info>
+**Issues** are records of problems or concerns related to your assets that require attention. They help you document, prioritize, and resolve operational or maintenance challenges efficiently.
+</Info>
+
+Issues can be created in two ways:
+- **Automatically**: Generated from failed inspection items during pre-/post-trip inspections
+- **Manually**: Created by users when problems are identified outside of inspections
+
+## Key Features
+
+<CardGroup cols={2}>
+  <Card title="Automatic Creation" icon="magic-wand">
+    Issues are automatically created from failed inspection items
+  </Card>
+  <Card title="Issue Tracking" icon="list-check">
+    Log issues for specific assets and track status from creation to resolution
+  </Card>
+  <Card title="Prioritization" icon="exclamation">
+    Assign priority levels (High, Medium, Low) to ensure critical problems are addressed first
+  </Card>
+  <Card title="Due Date Management" icon="calendar">
+    Set due dates or due meters; issues become overdue when these thresholds are exceeded
+  </Card>
+  <Card title="File Attachments" icon="paperclip">
+    Attach photos and documents to provide helpful context for the issue
+  </Card>
+  <Card title="Team Collaboration" icon="users">
+    Assign issues to specific team members for accountability
+  </Card>
+  <Card title="Work Order Integration" icon="link">
+    Link issues to work orders for seamless resolution as part of scheduled maintenance
+  </Card>
+  <Card title="Status Tracking" icon="chart-line">
+    Monitor issue progress through various status states
+  </Card>
+</CardGroup>
+
+## How to Use Issues Management
+
+<Tabs>
+  <Tab title="Creating an Issue">
+    <Steps>
+      <Step title="Navigate to Issues">
+        Navigate to the **Issues** section in Spare EAM
+      </Step>
+      <Step title="Start New Issue">
+        Click on **"New Issue"**
+      </Step>
+      <Step title="Fill Required Details">
+        Complete the following required fields:
+        - **Asset**: Link the issue to a specific asset
+        - **Summary**: Provide a brief summary of the problem
+        - **Description**: Add detailed information about the issue
+      </Step>
+      <Step title="Save and Activate">
+        Save the issue to make it active in the system
+      </Step>
+    </Steps>
+  </Tab>
+  
+  <Tab title="Updating Issues">
+    <Steps>
+      <Step title="Open Issue">
+        Open the issue you want to update from the Issues list
+      </Step>
+      <Step title="Modify Details">
+        Update details such as priority, status, or assignment
+      </Step>
+      <Step title="Save Changes">
+        Save your changes to keep the record up to date
+      </Step>
+    </Steps>
+  </Tab>
+  
+  <Tab title="Resolving Issues">
+    <AccordionGroup>
+      <Accordion title="Through Work Orders or Service Entries">
+        When a work order or service entry that is linked to an issue is completed, the issue will be automatically closed.
+      </Accordion>
+      
+      <Accordion title="Manual Resolution">
+        <Steps>
+          <Step title="Update Status">
+            Change the issue's status to **Resolved**
+          </Step>
+          <Step title="Add Resolution Notes">
+            Add a closing comment summarizing the resolution
+          </Step>
+          <Step title="Finalize">
+            Save the issue to finalize the resolution
+          </Step>
+        </Steps>
+      </Accordion>
+    </AccordionGroup>
+  </Tab>
+</Tabs>
+
+## Closing an Issue
+
+<Callout type="info">
+If an issue is no longer a problem or is a duplicate of another issue, you can mark it as closed using one of these methods:
+</Callout>
+
+<Tabs>
+  <Tab title="Bulk Actions">
+    1. Select one or more issues on the Issues page
+    2. Select **Bulk Actions**
+    3. Select **Close**
+  </Tab>
+  
+  <Tab title="Individual Issue">
+    1. Click directly on the issue
+    2. Press **Close**
+  </Tab>
+</Tabs>
+
+<Warning>
+An issue will only ever get closed manually and never automatically by a work order.
+</Warning>
+
+## Linking Issues to Work Orders
+
+<Steps>
+  <Step title="Access Related Items">
+    Open the related work order or issue
+  </Step>
+  <Step title="Create Link">
+    Link the issue to the work order for combined tracking
+  </Step>
+  <Step title="Automatic Resolution">
+    Once the work order is completed, linked issues will be automatically resolved
+  </Step>
+</Steps>
+
+<Tip>
+Use the file attachment feature to provide visual context for issues, making it easier for maintenance teams to understand and resolve problems quickly.
+</Tip>

@@ -1,0 +1,100 @@
+---
+title: "Single Sign-On (SSO) Setup: Admin & Rider"
+description: "Complete guide to configuring SSO authentication for admin and rider access using WorkOS integration"
+---
+
+## Understanding SSO Setup
+
+<Note>
+**Important:** SSO setup is organization-independent. Once configured for an email domain (e.g., `sparelabs.com`), it will be automatically enforced on the Spare Admin login page regardless of which organization users are accessing. Admin accounts with different domains (e.g., consultants with `@gmail.com` addresses) will not be SSO-enforced but can still log in normally.
+</Note>
+
+## Prerequisites
+
+Before starting, ensure you have:
+- Access to WorkOS dashboard credentials
+- Administrative permissions for your identity provider
+- The email domain that will be used for SSO authentication
+
+## Configuration Steps
+
+<Steps>
+  <Step title="Access WorkOS Dashboard">
+    Navigate to [WorkOS Dashboard](https://dashboard.workos.com/get-started) and log in with your credentials.
+    
+    <Warning>
+    If you don't have WorkOS credentials, contact the WorkOS tool owner before proceeding.
+    </Warning>
+  </Step>
+
+  <Step title="Select Production Environment">
+    Ensure you are working in the **Production** workspace, not a development or staging environment.
+    
+    ![WorkOS Production Workspace selection interface](/images/general-support/sso-workos-production-workspace.png)
+  </Step>
+
+  <Step title="Create New Organization">
+    Click the option to create a new organization in WorkOS.
+    
+    ![Create New Organization button in WorkOS interface](/images/general-support/sso-create-new-organization.png)
+  </Step>
+
+  <Step title="Configure Organization Details">
+    Fill out the organization information:
+    - **Name**: Your organization's display name
+    - **Domain**: The email domain users will use to log in (e.g., `company.com`)
+    
+    ![Organization configuration form showing name and domain fields](/images/general-support/sso-organization-configuration-form.png)
+  </Step>
+
+  <Step title="Generate Setup Link">
+    Navigate to your newly created organization in WorkOS and:
+    1. Go to the **Identity Provider** section
+    2. Click **Generate and Copy Link**
+    
+    ![Identity Provider section with Generate and Copy Link button](/images/general-support/sso-identity-provider-generate-link.png)
+  </Step>
+</Steps>
+
+## IT Administrator Tasks
+
+The following steps must be completed by your IT administrator:
+
+<Accordion title="IT Admin Setup Process">
+<Steps>
+  <Step title="Open Setup Link">
+    The IT admin will open the generated link and follow the provider-specific instructions. The interface varies depending on your identity provider.
+    
+    ![IT Admin setup screen showing identity provider configuration options](/images/general-support/sso-it-admin-setup-screen.png)
+  </Step>
+
+  <Step title="Test SSO Login">
+    Perform a test SSO login through the WorkOS setup link to verify the configuration is working correctly.
+  </Step>
+
+  <Step title="Configure Attribute Mapping">
+    Verify that attribute mapping is configured correctly for the required fields:
+    - `id`
+    - `firstName` 
+    - `lastName`
+    - `email`
+    
+    <Info>
+    In most cases, these attributes are automatically mapped correctly. WorkOS provides UI hints for proper configuration.
+    </Info>
+    
+    ![Attribute mapping configuration showing custom attribute assignments](/images/general-support/sso-attribute-mapping-configuration.png)
+  </Step>
+</Steps>
+</Accordion>
+
+## Verification & Testing
+
+<Tip>
+**Critical Success Factors:**
+- All required attributes (`id`, `firstName`, `lastName`, `email`) must be properly mapped
+- Test SSO login should complete successfully
+- Both admin and rider authentication should work seamlessly
+</Tip>
+
+Once the setup is complete, users with email addresses matching the configured domain will be automatically redirected to your SSO provider when logging into the Spare platform. Users with different email domains can still log in using their regular Spare credentials.

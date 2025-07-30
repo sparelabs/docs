@@ -1,0 +1,57 @@
+---
+title: "Setting up Disaster Recovery Backups"
+description: "All about the email and driver backups that allow you to maintain operations during a disaster."
+---
+
+# About this FeatureSpare backups provide layers of redundancy to enable uninterrupted transit operations during system outages. 
+
+# How Does it Work?The Disaster Response backup system has two parts: backup files for dispatchers that maintain a record of every in-progress and upcoming trip and a driver view that can be accessed while on the road.
+
+Backups are created on a frequency determined by each agency, and stored in a separate data environment. If the primary data environment is temporarily unavailable, the backups can be used to continue operating. This backup source can be accessed by either dispatcher-facing email links or a driver-facing web interface.
+
+## Dispatcher BackupsAn authorized access link will be sent to the specified recovery email address every 12 hours. This link will connect to the most recently generated backup for as long as the link is active. 
+
+Note that links expire 24 hours after they are generated to reduce the risk of misuse.
+
+Access links are sent every 12 hours regardless of the backup frequency. The same access link can be used at any time to download the most recent backup. Eg: If the Backup Frequency is set to 15 minutes, accessing the same link 15 minutes apart will download different backup files.
+
+Once a backup has been downloaded, dispatchers can use it to review in-progress and upcoming trips.
+
+Read this [guide to using dispatcher backup files](https://help.sparelabs.com/en/articles/10263338-using-dispatch-backup-files) to learn more. 
+
+## Driver BackupsDriver-specific backups can also be accessed by logging in to a web app. 
+
+Drivers will need to enter their driver username, as well as your organization key and driver backup password, at which point they will be able to view a backup of their manifests. 
+
+Note: your organization will either use [driver.us.sparedr.com](https://driver.us.sparedr.com) or [driver.sparedr.com](https://driver.sparedr.com) depending on your location. Ask your Partner Success Manager to confirm.
+
+For more information, refer to the following guide by clicking on the image below.
+
+[![](https://downloads.intercomcdn.com/i/o/wyxobwoi/1370719700/1197a4f7878e78aad1d11dbe044c/Screenshot%2B2025-02-07%2Bat%2B7_42_07-E2-80-AFPM.png?expires=1753820100&signature=b980c0029c672e091374626e898e1227f2bb0630ee58d3800dc41c042ad185e5&req=dSMgFs5%2FlIZfWfMW1HO4zbfYJyPovx%2Be9ZXxaIKGFXuVwIIqZAMaSpvVlBgn%0AptBk%0A)](https://drive.google.com/file/d/1KXtfZy70AGhM48QElJGMvxnwqMAV3Shx/view?usp=drive_link)
+
+Read this [guide to using the driver backup interface](https://help.sparelabs.com/en/articles/10263309-using-the-driver-backup-interface) to learn even more!
+
+# How Do I Set It Up?Only users with Administrator permissions can update Backup Settings.
+
+Navigate to Settings > Organization, and scroll to the bottom of the page. 
+
+![](https://downloads.intercomcdn.com/i/o/wyxobwoi/1253597936/a9015793acecb95a84987cd1f2dd/Screenshot+2024-11-15+at+10_32_26%E2%80%AFAM.png?expires=1753820100&signature=67ea8404e0f56f1bda98e4111041145856af7131796ea82364333357d97f9c6a&req=dSIiFcx3mohcX%2FMW1HO4zSAKnOuxCDueu8i1fJ5MZqQwPmbsdDCKQsU%2BXlxy%0AS9FB%0A)
+
+2. Under Edit Backup Settings Detail, fill in the necessary information. 
+
+Note: all fields must be filled out for backups to be successfully generated.
+
+![](https://downloads.intercomcdn.com/i/o/wyxobwoi/1292056010/39a507bf64aae85599b565b6594b/Screenshot+2024-12-10+at+3_04_33%E2%80%AFPM.png?expires=1753820100&signature=8b02c0e661afced136174d3a93a82a2b0ce330a347f09013360617b076794684&req=dSIuFMl7m4FeWfMW1HO4zX4Qo0Ldt8F4%2FBqsel3hu1Gdd5OAkPejd7lsiHBZ%0Altxe%0A)
+
+For more information, refer to the following guide by clicking on the image below.
+
+[![](https://downloads.intercomcdn.com/i/o/wyxobwoi/1370715814/601b657b69bd69e0ee0f88a34eeb/Screenshot+2025-02-07+at+7_41_39%E2%80%AFPM.png?expires=1753820100&signature=bf2b5e5d3296519038221f0a0f956829c8b906c15226f48f5af6f0137d358148&req=dSMgFs5%2FmIleXfMW1HO4zRyM3IAx%2BtMrumQ42MVhfrqiKZjV78k609OP3C01%0AmD4q%0A)](https://drive.google.com/file/d/1Un1Sb4aJ3c4haystzqXeVa_i71-fMT5h/view?usp=drive_link)
+​
+
+​
+
+# Frequently Asked Questions**When changing the Backup Setting, how long does it take for a new backup to be created?**
+New backups take an average of 5 minutes to be created. The Last Backed Up field may update before your changes take effect. 
+
+**Are the backups hosted in the same data region as my main organization?**
+No. Your Spare organization and backups are hosted in different data regions–eg: US East and US West–so that if your primary region is disrupted, the backup will still be available.

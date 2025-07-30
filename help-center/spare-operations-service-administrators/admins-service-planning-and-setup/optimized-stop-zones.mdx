@@ -1,0 +1,32 @@
+---
+title: "Optimized Stop Zones"
+description: "How Spare's Engine Selects Pickup and Drop-off Locations in Optimized Stop Zones"
+---
+
+Optimized Stop Zones benefit both the transit service and its riders by making the system more efficient. Instead of sending vehicles to every rider’s exact location, the system selects nearby, walkable stops that are easy for riders to reach and smart for the service to group together. This allows vehicles to avoid unnecessary detours, pick up more riders in less time, and keep trips on schedule — all while reducing operational costs.
+
+For riders, optimized stops mean shorter wait times, faster trips, and more consistent service. The system ensures that stops are within a reasonable walking distance and takes accessibility needs into account.
+
+# 🚏 How Spare's Engine Selects Pickup and Drop-off Locations in Optimized Stop Zones
+
+# Step 1: Selecting Optimized Stop CandidatesWhen a rider is in an **Optimized Stop Zone**, the system runs a smart selection process to find a set of nearby stops that balance rider convenience with operational efficiency.
+
+The system finds the **closest available stop** to the rider’s location.
+
+Based on the distance to that stop, the system **rounds up **to the nearest 75 meters for pickups, and 50 meters for dropoffs, and selects all stops within that radius.
+
+The system then looks for **any other stops** that are within 75 meters "crow-fies" distance of the selected ones.
+
+If the rider requires **wheelchair or oversized wheelchair access**, any stops that don’t meet accessibility requirements are excluded.
+
+Walking distances are calculated using the Walking Directions Service Setting, either "Realistic Route" (using sidewalks and pedestrian routing) or "Straight Line" (aka "crow-flies") distance. 
+
+# Step 2: Choosing the Optimized StopsOnce a list of optimized stop candidates has been created:
+
+The system generates **every possible combination of pickup and dropoff stop** from those candidates.
+
+The system then generates estimates for up to **5 pairs of optimized stops**
+
+- For each pair, the system calculates how much it would "cost" to insert the new trip — factoring in detours, delays to other riders, and service quality.
+
+Finally, the stop pair with the **lowest insertion cost** is selected. This pair offers the best balance of rider convenience and operational efficiency.

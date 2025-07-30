@@ -1,0 +1,121 @@
+---
+title: "Service Programs & Service Reminders"
+description: "Comprehensive guide to managing preventive maintenance through Service Programs and automated Service Reminders in Spare EAM"
+---
+
+![Service Programs and Reminders Dashboard showing preventive maintenance scheduling interface](/images/spare-eam/service-programs-dashboard.png)
+
+Welcome to the **Service Programs, Schedules and Reminders** guide, your resource for managing preventive maintenance and ensuring optimal performance of your assets in Spare EAM.
+
+## What are Service Programs and Reminders?
+
+<CardGroup cols={2}>
+  <Card title="Service Programs" icon="calendar">
+    Preventive maintenance programs that group related tasks and schedules for specific assets or asset groups, providing a structured way to manage recurring maintenance activities.
+  </Card>
+  <Card title="Service Reminders" icon="bell">
+    Notifications that help you track when maintenance tasks are due, based on time intervals, meter readings, or both. Calculated individually for each service task for accurate tracking.
+  </Card>
+</CardGroup>
+
+## Key Features
+
+<Tabs>
+  <Tab title="Service Programs">
+    <CardGroup cols={2}>
+      <Card title="Comprehensive Maintenance Plans" icon="clipboard-list">
+        - Organize multiple service tasks into a single program
+        - Assign programs to individual assets
+      </Card>
+      <Card title="Flexible Scheduling" icon="clock">
+        - Set reminders based on time intervals (e.g., every 6 months)
+        - Set reminders based on meter readings (e.g., every 10,000 miles)
+        - Combine time and meter thresholds for comprehensive scheduling
+      </Card>
+      <Card title="Task Management" icon="tasks">
+        - Define specific service tasks (e.g., "Oil Change", "Tire Rotation")
+        - Link tasks to schedules and reminders for automated tracking
+      </Card>
+      <Card title="Asset Integration" icon="link">
+        - Apply programs to specific assets or asset groups for targeted maintenance
+      </Card>
+    </CardGroup>
+  </Tab>
+  
+  <Tab title="Service Reminders">
+    <CardGroup cols={2}>
+      <Card title="Automated Notifications" icon="bell-ringing">
+        Get notified when tasks are approaching or overdue with status tracking:
+        - **Upcoming**: Tasks scheduled for the future
+        - **Due Soon**: Tasks approaching their due date
+        - **Overdue**: Tasks past their due date
+      </Card>
+      <Card title="Audit and History" icon="history">
+        - Maintain detailed records of completed tasks
+        - Track upcoming maintenance schedules
+        - Historical performance analysis
+      </Card>
+    </CardGroup>
+  </Tab>
+</Tabs>
+
+## How to Use Service Programs and Reminders
+
+### Creating a Service Program
+
+<Steps>
+  <Step title="Navigate to Service Programs">
+    Navigate to the **Service Programs** section in Spare EAM
+  </Step>
+  <Step title="Create New Program">
+    Click on **"New Service Program"**
+  </Step>
+  <Step title="Add Program Details">
+    Complete the following information:
+    - **Program Name**: A recognizable name for the program
+    - **Description**: Details about the maintenance plan
+    - **Service Tasks**: Add tasks (e.g., "Oil Change", "Brake Check")
+  </Step>
+  <Step title="Assign to Assets">
+    Assign the program to specific assets
+  </Step>
+  <Step title="Save and Activate">
+    Save the program to activate it
+  </Step>
+</Steps>
+
+### Setting Initial State When Linking Assets
+
+When linking an asset to a service program, you can set initial values that serve as fallbacks for service reminder calculations:
+
+<AccordionGroup>
+  <Accordion title="Fallback Last Service Date">
+    - Used as a fallback when no history of service entries are found for the relevant service task
+    - Service reminders use this date to calculate due dates if no actual service history exists
+    - Defaults to the current date when linking the asset
+  </Accordion>
+  
+  <Accordion title="Fallback Last Service Meter Value">
+    - Used as a fallback when no history of service entries are found for the relevant service task
+    - Service reminders use this value for meter-based calculations if no actual service history exists
+    - Defaults to 0 when linking the asset
+  </Accordion>
+</AccordionGroup>
+
+<Warning>
+These fallback values are task-specific. If you complete a service entry for "Oil Change" but not "Brake Check", reminders for "Oil Change" will use the actual service date, while "Brake Check" reminders will continue using the fallback values until that task is completed.
+</Warning>
+
+### Tracking Maintenance
+
+Track reminder statuses (Upcoming, Due Soon, Overdue) from the Service Reminder page.
+
+#### Understanding Reminder Calculations
+
+<Info>
+Each service reminder is tied to a specific service task and tracks that task independently. This ensures accurate, task-specific maintenance tracking rather than generic asset-level reminders.
+</Info>
+
+Key points about reminder calculations:
+- When you complete a service entry, only reminders for the service tasks included in that entry are updated
+- If no service history exists for a specific task, the system uses the fallback dates and meter values you set when linking the asset to the program

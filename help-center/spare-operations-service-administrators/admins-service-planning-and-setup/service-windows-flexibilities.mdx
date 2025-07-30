@@ -1,0 +1,135 @@
+---
+title: "Service Windows & Flexibilities"
+description: ""
+---
+
+In this article, you will find answers to the following questions:
+
+What are the service flexibilities, and why might I want to set them up?
+
+What are the types of flexibilities, and what do they do?
+
+#### Related articles[General Service 
+
+Setup](https://help.sparelabs.com/en/articles/8988085-service-general-setup)
+
+[Overriding Flexibilities ](https://help.sparelabs.com/en/articles/8959245-override-flexibilities)
+
+# **What are Service Flexibilities?**Service Flexibilities define the On-Time Performance Windows of services.
+
+# **How do they work?**There are many types of Service Flexibility. Each flexibility is set in minutes and determines how much the pickup time, dropoff time and time onboard can be modified to accommodate other requests or improve vehicle efficiency before becoming 'late'. 
+
+The flexibilities can be set up in the Service settings, and, once enabled, they're taken into consideration by Spare Engine, impacting how trips are booked and grouped within a duty.
+
+# **What is the value?**Setting up your service flexibilities correctly can:
+
+Improve your customers' experience (e.g., if you want them to spend less time in the vehicle while pooling);
+
+Increase your service reliability (e.g., if you want to prioritize that your vehicles are always on time for a pickup/dropoff);
+
+Optimize vehicle driving time (e.g., if you want to focus on reducing idle time)
+
+# Where do you set Service Flexibilities?To set up Service Flexibilities:
+
+In** Spare Operations [1]**, go to **Service Planning** [2] and switch to the **Services** tab [3]. Click on the service name to access Service Settings.
+
+![](https://spare-74fa64f80617.intercom-attachments-1.com/i/o/972941902/e48b78a879ccbc67ff8dcba0/T0v7GbO_AIN-FXapYuY8i0vmH6NE9uvo4w.png?expires=1753820100&signature=158fe616595dd11772a42f82e640fec49b5225bb3adff8b6348e343b76621580&req=fSclH81%2FlIFdFb4f3HP0gEAugRjOIdAEY95KDIMmLi9E3%2FjSDB5%2B%2FVuwCGDb%0A07M%3D%0A)
+
+Click **Edit Service** and scroll down to Windows & Flexibilities. Set the flex amounts for each flexibility and save the changes.
+
+![](https://spare-74fa64f80617.intercom-attachments-1.com/i/o/972941908/7fc8ecf3a363750737288b5f/g6W0WvxyfxzU8mHzbZvwCngpL_V4RDR7WA.jpeg?expires=1753820100&signature=1968e5a6e33a52e7cf72113389eaf6a956ece97dbac1358b2f48c2e5396610be&req=fSclH81%2FlIFXFb4f3HP0gPDw8zY0oD%2BLah9spRQbaBqhZyZVQ1uTgWBECHgj%0AodY%3D%0A)
+
+# Detailed Guide to Service FlexibilitiesSpare has 15 flexibility settings, defined below:
+
+## **Scheduled Pickup/Dropoff Window Type**This setting configures how windows are used by the Engine. Spare recommends using the 'consistent' window type. [
+
+More information.](https://help.sparelabs.com/en/articles/8958837-pickup-dropoff-window-types-consistent-variable)
+
+## **Scheduled Search Flexibilities**** **If you're using the 'variable pickup/dropoff windows' setting, you can specify three 'scheduled search flexibilities. These flexibilities do not apply to services using Consistent Pick-up and Drop-off windows. These flexibilities impact the pickup and dropoff times when the request has yet to be accepted and is in the processing/estimation phase. 
+
+Flexibilities under this group include:
+
+**Scheduled Search Leave-At Forwards Flexibility (minutes): **Defines how many minutes after the rider's requested leave-at/pick-up time the on-time window can be set. 
+
+**Scheduled Search Leave-At Backwards Flexibility (minutes): **Defines how many minutes after the rider's requested leave-at/pick-up time the on-time window can be set. 
+
+**Scheduled Search Arrive-By Backwards Flexibility (minutes): **Defines how many minutes before the requested arrive-by/drop-off time the on-time window can be set.
+
+For example, if a service has a 30-minute on-time window and the scheduled search leave-at forwards flex is 1 hour. A rider can request an 8 am pickup, and be given a 9 am-9:30 am pickup window.
+
+Large Scheduled Search Flexibilities result in more efficient fleet usage and it's easier to find an available vehicle. However, they can result in large gaps between what the rider requested and what they are offered.
+
+## **Matched Flexibilities**These flexibilities impact the pickup and dropoff times when the request has been created. These flexibilities define the On-Time performance window of scheduled requests. 
+
+Flexibilities under this group include:
+
+**Leave-At Forwards Flexibility (minutes):** After a rider's trip request has been confirmed, their pick-up time may be moved later by this many minutes. For example, a 5-minute leave-at-ward flexibility means if a rider books a trip pick-up for 12:00 pm, there is a chance they can be picked up at 12:05 pm.
+
+**Leave-At Backwards Flexibility (minutes):** After a rider's trip request has been confirmed, their pick-up time may be moved earlier by this many minutes. For example, 5-minute leave-at-backward flexibility means if a rider books a trip pick-up for 12:00 pm, there is a chance they can be picked up at 11:55 am.
+
+**Arrive-By Backwards Flexibility (minutes): **After a rider's trip request has been confirmed, their arrive-by drop-off time may be moved earlier by this many minutes. For example, a 5-minute arrive-by backward flexibility means if a rider is scheduled to arrive at their destination at 12 pm, there is a chance they can be dropped off at 11:55 am.
+
+Large Matched Flexibilities will result in more pooling, as it's easier to group them onto a single vehicle and drop them off on time. Smaller Flexibilities create precise pickup and dropoff times for riders. 
+
+## Detour Flexibilities
+
+This type of flexibility impacts the amount of time a rider can spend in the vehicle"
+
+**Arrive-By Pickup Time Flexibility Type:** This setting controls how pickup windows are created for Arrive-By trips. [More information](https://help.sparelabs.com/en/articles/8994570-what-is-the-arrive-by-pickup-time-flexibility-type). 
+
+**Detour Flexibility Level: **Detour flexibility settings allow you to control how much extra time a rider can spend in a vehicle to accommodate pickups and drop-offs for other passengers.
+
+There are four key parameters you can configure:
+
+**Minimum Allowed Detour**
+The minimum detour time that can be added to any trip, regardless of its original length. This ensures every request has some tolerance for deviation.
+
+**Maximum Time in Vehicle**
+The system will attempt to keep each rider’s total time onboard below this limit.
+
+**Detour Basis**
+You can define how the system calculates allowable detours using one of the following methods:
+
+**Direct Drive & Multiplier**
+The detour allowance is based on the direct drive time between the rider’s pickup and drop-off, multiplied by a set percentage.
+​*Example:*
+If a direct trip takes 30 minutes and the multiplier is 50%, the rider can be detoured up to 15 additional minutes (30 x 0.5) to accommodate other passengers.
+
+**Fixed Route Equivalent & Multiplier**
+The allowable time in vehicle is based on the duration of the fastest equivalent fixed-route journey, multiplied by a set percentage.
+​*Example:*
+
+Direct drive: 30 minutes
+
+Fastest fixed-route equivalent: 60 minutes
+
+Multiplier: 120%
+
+Maximum time in vehicle: 120 minutes
+
+The rider may be kept onboard for up to 72 minutes (60 x 1.2), as long as it’s within the max vehicle time.
+
+**Note:**
+Higher flexibility settings generally lead to longer trip durations but also increase the likelihood of pooled rides.
+
+The higher the number the more riders can be pooled. The lower the number, the faster a rider will travel from point A to point B. 
+
+## Recurring Trip Flexibilities These flexibilities apply to recurring trips only and can impact their pickup and dropoff times. 
+
+Flexibilities under this group include:
+
+**Recurring Trip Leave-At Forwards Flexibility (minutes):** After a rider's trip request has been confirmed, their pick-up time may be moved later by this many minutes. For example, a 5-minute leave-at-ward flexibility means if a rider books a trip pick-up for 12:00 pm, there is a chance they can be picked up at 12:05 pm.
+
+**Recurring Trip Leave-At Backwards Flexibility (minutes):** After a rider's trip request has been confirmed, their pick-up time may be moved earlier by this many minutes. For example, 5-minute leave-at-backward flexibility means if a rider books a trip pick-up for 12:00 pm, there is a chance they can be picked up at 11:55 am.
+
+**Recurring Trip Arrive-By Backwards Flexibility (minutes): **After a rider's trip request has been confirmed, their arrive-by drop-off time may be moved earlier by this many minutes. For example, a 5-minute arrive-by backward flexibility means if a rider is scheduled to arrive at their destination at 12 pm, there is a chance they can be dropped off at 11:55 am.
+
+## Leave ASAP FlexibilityThe Leave "as soon as possible" flexibility defines the number of minutes a "leave as soon as possible" request can be booked in the future. This setting defaults to 360 minutes. Once created, we use the [
+
+Matched flexibilities](#h_a622d61730) to define the on-time window for the request.
+
+If the Leave ASAP Flexibility is 3 hours and the service is busy, a rider booking a Leave as soon as possible trip at 9am may be given a ride at 12pm. If the Leave-At matched flexibility window is 30 minutes, then the rider would be given a window from 12pm-12:30pm.  
+
+## Override Flexibilities Limit If a trip **can not be found **within flexibility windows, a dispatcher/admin can **manually apply the Override Flexibility** feature to expand the search window. Read more about Override 
+
+Flexibility [here](https://help.sparelabs.com/en/articles/8959245-override-flexibilities).

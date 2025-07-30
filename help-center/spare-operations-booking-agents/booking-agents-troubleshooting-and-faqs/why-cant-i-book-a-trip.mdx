@@ -1,0 +1,118 @@
+---
+title: "Why can't I book a trip?"
+description: "Troubleshooting guide for common booking errors and their solutions"
+---
+
+There are several reasons why trips can't be booked. Below are the error messages and troubleshooting steps for each of them.
+
+## Walking Distance
+
+**"Walking distance to and from the ride is further than the distance from origin to destination. We recommend walking instead of riding"**
+- Check the pickup and dropoff locations for accuracy
+- Consider changing one of the locations to increase vehicle travel distance
+
+**"Trip distance must be over X meters. Check the pickup and dropoff locations for accuracy"**
+- Consider changing one of the locations to increase vehicle travel distance
+
+## Dates & Time
+
+**"The selected service does not support advanced booking, please book an on-demand trip instead"**
+- Select another service OR reach out to the Administrator to check service settings
+
+**"Request is being created too many days into the future"**
+- Schedule the request for a sooner date OR try using another service to book the trip
+
+**"The selected time is too soon for an advanced booking, please try a later time or book an on-demand trip instead"**
+- Schedule the request for a later date OR try using another service
+
+**"Request starts after the end date"**
+- Please check the request date, consider using another service OR reach out to the Administrator to check the service settings
+
+**"Request starts before the start date"**
+- Please check the request date, consider using another service OR reach out to the Administrator to check the service settings
+
+**"Request is not within the service hours"**
+- Please check the request time, consider using another service, OR reach out to the Administrator to check the service settings
+
+**"Unfortunately service is not available on this day"**
+- Please check the request date OR consider using another service
+
+**"Book X Minutes/Hours in advance"**
+- Please check the request time or consider using another service
+
+**"Book by #{{time}} the day before trip"**
+- Please check the request time or consider using another service
+
+## Services & Zones
+
+**"Service is not available at the requested time"**
+- Please use a different service
+
+**"No zone pair matches the requested combination of locations and time. Please check the pickup/dropoff location AND the request time"**
+- View the Service settings for more information
+
+**"Service configuration incomplete: service has no zones"**
+- Usually, this error occurs when the service is not set up correctly. Reach out to the Service Administrator to flag the error
+
+**"Service configuration incomplete: zones in this service lack time rules"**
+- Usually, this error occurs when the service is not set up correctly. Reach out to the Service Administrator to flag the error
+
+**"The specified pickup/dropoff location is not inside of the service area"**
+- Please check the pickup/dropoff location and consider moving either of them. View the Service settings for more information
+
+**"Specified service is not enabled"**
+- Usually, this error occurs when the service is not set up correctly. Reach out to the Service Administrator to flag the error
+
+**"Number of riders exceeds the maximum allowed for specified service"**
+- Please consider reducing the number of riders OR reach out to the Administrator to check the service settings
+
+**"Specified service does not support requested accessibility features"**
+- Consider selecting a different service OR reach out to the Administrator to check the service settings
+
+**"All zones in specified service are restricted to group that rider is not a part of"**
+- Check the rider membership (including its expiry date)
+- Consider selecting a different service
+
+**"There are no stops with wheelchair access"**
+- Consider selecting a different service OR reach out to the Administrator to check the service settings
+
+**"This trip has one or more locations that fall outside the service area"**
+- Please check the pickup/dropoff location and consider moving either of them. View the Service settings for more information
+
+## Rematching
+
+**"Retrieving estimates for rematching requestIds is disabled"**
+- Consider cancelling and creating an identical request
+
+**"Cannot rematch a request when its status is #{{currentStatus}}"**
+- Consider canceling and creating an identical request
+
+**"Rematching with estimates requires estimateId, requestedPickupAddress and requestedDropoffAddress"**
+- Please review the requested information
+
+## Trip Details
+
+**"Unable to find a trip at this time"**
+- Please try a different pickup time or lower the number of riders
+
+**"Not enough room on board the vehicle"**
+- Try reducing the number of riders
+
+**"The provided estimate does not exist"**
+- Check the date and time of the trip
+
+**"Rider is not set for the request"**
+- Add rider information
+
+## Duplicates
+
+**"There is a trip already booked during this time (at #{{conflictingRequestTime}})"**
+- Please cancel the existing trip to book another one
+
+**"There is a trip already booked near this time (at #{{conflictingRequestTime}}) for the same pickup and dropoff locations"**
+- Check for duplicates, otherwise consider changing time/locations
+
+## Unexpected
+
+**"Something unexpected went wrong on our end, we're looking into it"**
+- Refresh the page. If it doesn't help, reach out to Spare's Tech Support team

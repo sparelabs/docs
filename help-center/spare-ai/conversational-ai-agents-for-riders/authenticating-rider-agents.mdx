@@ -1,0 +1,89 @@
+---
+title: "Authenticating Rider Agents"
+description: "Learn how AI voice agents identify riders to ensure secure access to booking, cancellation, and other account-specific services."
+---
+
+Authentication (set with `Authentication Type`) is required for every phone call and relates to the method by which the agent identifies the rider successfully.
+
+<Info>
+Authentication for AI Chat (SMS) is always done based on the rider's phone number only.
+</Info>
+
+## What happens without successful authentication?
+
+Without successful authentication, the AI agent will not be able to perform any actions, and will either:
+
+<CardGroup cols={2}>
+  <Card title="Registration Request" icon="user-plus">
+    Ask the rider to register (if rider registration is enabled)
+  </Card>
+  <Card title="Forward to Support" icon="phone-arrow-up-right">
+    Forward the rider to the forwarding number
+  </Card>
+</CardGroup>
+
+## Available Authentication Methods
+
+### Phone Number Authentication
+
+<Card title="Primary Authentication Method" icon="phone">
+  The primary method of authenticating riders with our agents is via their phone number. The rider must be calling from a number which is attached to a rider profile.
+</Card>
+
+<Note>
+If they are not calling from a number attached to a rider profile, they will either be forwarded to support or asked to register a profile (if the agent has rider registration capability enabled).
+</Note>
+
+### Phone Number with Rider ID + PIN as Backup
+
+#### Prerequisites
+
+<Warning>
+In order to use Rider ID and PIN Authentication, your organization must have Rider IDs enabled and populated for your riders.
+</Warning>
+
+<Info>
+Rider ID and PIN is currently supported by AI Voice but is not supported by AI Chat.
+</Info>
+
+#### How it works
+
+This authentication type involves the same steps as phone authentication. However, if no phone number is present, then there is a backup authentication method, which involves their rider ID + a PIN number. The PIN number is set up on their first AI voice call.
+
+<Tip>
+We suggest this option comes with communication to riders about the process.
+</Tip>
+
+This option also works well for rider representatives, as the rider is asked if they are calling on behalf of themselves, or someone else.
+
+The conversation flow for this is shown below:
+
+![Conversation flow diagram showing how PIN authentication works](/images/spare-ai/conversational-ai-agents/spare-ai-auth-pin-flow.png)
+
+To view the workflow for setting a rider phone PIN on behalf of a rider, click the image below:
+
+[![Click to view the PIN setup workflow walkthrough](/images/spare-ai/conversational-ai-agents/spare-ai-auth-pin-setup.png)](https://app.supademo.com/demo/clxwfdtpl0wk112o23yaboysb)
+
+### Phone Number with Rider ID + Custom Field (Date of Birth) as Backup
+
+#### Prerequisites
+
+<Warning>
+In order to use Rider ID and Custom Field Authentication, your organization must have Rider IDs enabled and populated for your riders.
+</Warning>
+
+<Info>
+Rider ID and Custom Field authentication is currently supported by AI Voice but is not supported by AI Chat.
+</Info>
+
+#### How it works
+
+This authentication type involves the same steps as phone authentication. However, if no phone number is present, then there is a backup authentication method, which involves their rider ID + the rider's Date of Birth, or any other date custom field on a rider profile.
+
+<Tip>
+This option also works well for rider representatives, as the rider is asked if they are calling on behalf of themselves, or someone else.
+</Tip>
+
+The conversation flow for this is shown below:
+
+![Conversation flow diagram showing how Date of Birth authentication works](/images/spare-ai/conversational-ai-agents/spare-ai-auth-dob-flow.png)

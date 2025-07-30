@@ -1,0 +1,192 @@
+---
+title: "Spare Roles & Permissions"
+description: "Comprehensive overview of Spare's default roles and associated permissions for managing user access across your organization"
+---
+
+Spare provides a comprehensive set of default roles that serve as the foundation for managing user permissions across your organization. These predefined roles are designed to streamline access control by grouping common permissions together, making it easier to assign appropriate access levels to different users.
+
+## Role Implementation
+
+To implement these roles effectively, you'll apply them to user groups as access grants. This approach allows you to control what users can see and do within the system based on their responsibilities and requirements. 
+
+Additionally, Spare supports role layering, which means you can apply multiple roles to a single user group simultaneously. This flexibility enables you to create custom permission combinations that precisely match your organizational needs without having to create entirely new roles from scratch.
+
+## Permission Types
+
+### Consolidated Permissions
+
+- **Full Access/Full Management**: Complete CRUD (Create, Read, Update, Delete) permissions
+- **View**: Read-only access
+- **Create**: Can create new records
+- **Edit**: Can modify existing records
+- **Delete**: Can remove records
+- **Import/Export**: Can import/export data
+- **-**: No access to this feature
+
+## Default Roles Overview
+
+### Administrative Roles
+
+- **Administrator**: Full system access and management capabilities
+- **Operations Manager**: Complete operational control and oversight
+- **Operations Assistant**: Operational support with limited administrative functions
+
+### Operational Roles
+
+- **Booking Agent**: Trip booking and customer service functions
+- **Booking Agent Assistant**: Limited booking capabilities and support functions
+- **Scheduler**: Schedule management and coordination
+- **Scheduler Contractor**: Contract-based scheduling functions
+
+### Specialized Access Roles
+
+- **Access To Eligibility**: Dedicated access to Spare Eligibility features
+- **Access To Realize**: Dedicated access to Spare Realize planning tools
+- **Access To Analytics**: Dedicated access to Spare Analytics reporting
+- **Service Planner**: Service configuration and planning capabilities
+
+### Technical Roles
+
+- **Platform User**: Standard user access with basic functionality
+- **App Developer**: Development and integration capabilities
+- **Operations Contractor**: Contract-based operational functions
+
+## Key Permission Areas
+
+### Core Platform Access
+
+All roles have different levels of access to:
+
+- **Admin Portal**: Administrative interface and configuration
+- **Spare Analytics**: Reporting and data analysis tools
+- **Spare Realize**: Transit planning and simulation tools
+
+### User Management
+
+Permission levels vary for:
+
+- **Authorization Groups**: User group management
+- **Roles**: Role creation and assignment
+- **Platform Users**: User account management
+- **Drivers**: Driver profile and information management
+- **Riders**: Rider profile and service management
+
+### Operational Functions
+
+Different access levels for:
+
+- **Requests**: Trip request management and processing
+- **Trips**: Trip monitoring and management
+- **Services**: Service configuration and management
+- **Vehicles**: Fleet management and tracking
+- **Duties**: Driver assignment and scheduling
+
+### Financial and Payment Functions
+
+Varying permissions for:
+
+- **Payment Methods**: Payment processing and management
+- **Charges**: Fee processing and refunds
+- **Fare Passes**: Pass management and allocation
+- **Promos**: Promotional campaign management
+
+### Maintenance and Assets (EAM)
+
+Different access levels for:
+
+- **Assets**: Equipment and vehicle management
+- **Work Orders**: Maintenance job management
+- **Service Tasks**: Preventive maintenance scheduling
+- **Issues**: Problem tracking and resolution
+
+## Role Assignment Best Practices
+
+### 1. Principle of Least Privilege
+
+Assign users the minimum permissions necessary to perform their job functions effectively.
+
+### 2. Role Layering Strategy
+
+- Start with a base role that provides core functionality
+- Add specialized roles for specific features or modules
+- Review and adjust permissions regularly based on actual usage
+
+### 3. Regular Permission Audits
+
+- Conduct periodic reviews of user permissions
+- Remove unnecessary access when roles change
+- Document permission changes for compliance
+
+## Implementation Guide
+
+### Step 1: Identify User Requirements
+
+- Map out job functions and responsibilities
+- Determine which systems and features each role needs
+- Consider workflow dependencies and collaboration needs
+
+### Step 2: Select Base Roles
+
+Choose appropriate default roles that closely match user requirements:
+
+- **Operations staff**: Start with Operations Manager or Operations Assistant
+- **Customer service**: Use Booking Agent or Booking Agent Assistant
+- **Planning teams**: Consider Service Planner or Scheduler roles
+- **Technical users**: Platform User or App Developer roles
+
+### Step 3: Apply Role Layering
+
+Add specialized access roles as needed:
+
+- Add Analytics access for reporting needs
+- Include Eligibility access for paratransit operations
+- Apply Realize access for planning functions
+
+### Step 4: Test and Validate
+
+- Create test user accounts with assigned roles
+- Verify access to required functions
+- Ensure restricted access works as expected
+- Gather feedback from actual users
+
+## Security Considerations
+
+### Access Control
+
+<Warning>
+- Never assign more permissions than necessary
+- Regularly review and update role assignments
+- Monitor for unusual access patterns or usage
+</Warning>
+
+### Compliance
+
+<Note>
+- Document all role assignments and changes
+- Maintain audit trails for permission modifications
+- Ensure role assignments comply with organizational policies
+</Note>
+
+## Detailed Permissions Reference
+
+For a complete breakdown of specific permissions for each role, including detailed CRUD operations for every feature and module, please refer to the comprehensive permissions matrix in your Spare administrative interface.
+
+The permissions matrix provides granular details for:
+
+- Every feature and module in the system
+- Specific CRUD operations (Create, Read, Update, Delete)
+- Special permissions like Import/Export capabilities
+- Integration and API access rights
+- Reporting and data access permissions
+
+<Tip>
+Use the role preview feature in the admin interface to see exactly what permissions a role combination will provide before assigning it to users.
+</Tip>
+
+## Support and Additional Resources
+
+For assistance with role configuration or custom permission requirements:
+
+- Contact your Spare representative for guidance
+- Review the admin interface documentation for detailed setup instructions
+- Consider professional services for complex organizational requirements

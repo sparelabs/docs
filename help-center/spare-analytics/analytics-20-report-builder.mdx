@@ -1,0 +1,407 @@
+---
+title: "Analytics 2.0: Report Builder"
+description: "A comprehensive guide to building custom reports using the Analytics 2.0 Report Builder, including metrics selection, data grouping, filtering, and visualization options."
+---
+
+# Report Builder Introduction
+
+The Report Builder allows you to build a report from scratch, modify an existing report, or filter specific data before you export it.
+
+## What You Can Do
+
+From the Report Builder, you can:
+
+<CardGroup cols={2}>
+  <Card title="Select Metrics" icon="hashtag">
+    Pick what numbers you want to see (like number of boardings, riders, wait time, or revenue hours)
+  </Card>
+  
+  <Card title="Organize Data" icon="layer-group">
+    Choose how to group, slice and organize the data (like by month, service, or fleet)
+  </Card>
+  
+  <Card title="Apply Filters" icon="filter">
+    Filter out what you don't need (like focusing only on a specific time period, or only cancelled trips)
+  </Card>
+  
+  <Card title="Choose Display" icon="chart-bar">
+    Choose how you want to display the information (as a metric, in a bar chart, etc.)
+  </Card>
+</CardGroup>
+
+<Note>
+You can access the Report Builder by clicking "+ Add Report" in the Reports list view, or by clicking "Edit Metrics & Visualization" under "actions" on a report page.
+</Note>
+
+<Frame>
+  <img src="https://downloads.intercomcdn.com/i/o/wyxobwoi/1554568131/a65dfe8865b9acea4706ffc45421/Screenshot+2025-06-02+at+3_24_30%E2%80%AFPM.png?expires=1753820100&signature=ff70ac035242881528a0aa7bdecd2b0e2806190d4654e21a33cc3c4bcecede9c&req=dSUiEsx4lYBcWPMW1HO4zQm90%2BnqaboPqW40aWDE7MdngGsw4THWxGA%2BcHHm%0AzPFD%0A" alt="Screenshot showing the Reports list view interface" />
+</Frame>
+
+<Frame>
+  <img src="https://downloads.intercomcdn.com/i/o/wyxobwoi/1554568248/3116f8e951dd5192348f0aae1b33/Screenshot+2025-06-02+at+3_24_50%E2%80%AFPM.png?expires=1753820100&signature=ddc70adc801b291a0a026ca576ef6fe3ddb9570391eda287f7493491df1a6436&req=dSUiEsx4lYNbUfMW1HO4zSSNNNKsTZh0NoJvq%2Fe7YcAqmzkxDyq7JZDkWQNc%0A1JrJ%0A" alt="Screenshot of the reports page showing three action buttons on the right side" />
+</Frame>
+
+# Report Builder Interface Overview
+
+## The Data Panel
+
+This shows the available data that you can use to create reports. You can expand any data set (aka data table) to see what metrics are available, or use the search field.
+
+### Metric Types
+
+<AccordionGroup>
+  <Accordion title="Numeric Values" icon="hashtag">
+    Numbers you can add up, average, or calculate (e.g., count, totals)
+  </Accordion>
+  
+  <Accordion title="Time" icon="clock">
+    Dates and times for organizing your data (e.g., minute, hour, day, or month)
+  </Accordion>
+  
+  <Accordion title="Text" icon="type">
+    Words or labels for grouping information or giving more context (e.g., status, name, or address)
+  </Accordion>
+  
+  <Accordion title="Boolean" icon="toggle-on">
+    Yes/no or on/off type information (true or false values)
+  </Accordion>
+</AccordionGroup>
+
+## Report Actions
+
+<CardGroup cols={3}>
+  <Card title="Run/Stop Report" icon="play">
+    The report builder automatically generates a preview each time you make changes. You can pause generation by clicking "stop" or restart by clicking "run report".
+  </Card>
+  
+  <Card title="Save Report" icon="floppy-disk">
+    Save your custom report for future use and editing.
+  </Card>
+  
+  <Card title="Download" icon="download">
+    Export your report as CSV or PDF format.
+  </Card>
+</CardGroup>
+
+<Tip>
+You can modify and download a report without saving it, meaning you can filter for a specific vehicle or rider, for example, then exit without altering the original report.
+</Tip>
+
+## Interface Components
+
+<Tabs>
+  <Tab title="Filtering">
+    Apply filters to narrow down your data to show only what you're interested in. You can add AND/OR logic and create nested filters for more complex filtering needs.
+  </Tab>
+  
+  <Tab title="Report Preview">
+    A live view of what your summarized report will look like as you build it. Choose how the report will be displayed (bar chart, table, metric), format the colors, and rotate the x and y axis.
+  </Tab>
+  
+  <Tab title="Detailed Table">
+    Shows your data in rows and columns, like a spreadsheet for detailed analysis.
+  </Tab>
+</Tabs>
+
+<Frame>
+  <img src="https://downloads.intercomcdn.com/i/o/wyxobwoi/1554570325/d1ac68944aa03c1936cc2c08adb7/Screenshot+2025-06-02+at+3_15_41%E2%80%AFPM.png?expires=1753820100&signature=ee3292ce865c72694c708d7730539a3f1ec6c40e216db594768a1e1263d7bb47&req=dSUiEsx5nYJdXPMW1HO4zU%2B4AaguA6%2BPVELYgHLwed%2FeMWNE3RFclISTeAfD%0AbIPd%0A" alt="Screenshot of the Report Builder interface showing data panel, preview, and table components" />
+</Frame>
+
+## Step 1: Choose Your Metrics
+
+Start by deciding what you want to measure or count. Think of metrics as the main numbers that answer your question.
+
+<CardGroup cols={2}>
+  <Card title="Define Your Question" icon="question">
+    What am I trying to find out?
+    
+    *Example: "How many trips happened last month?"*
+  </Card>
+  
+  <Card title="Identify Key Numbers" icon="calculator">
+    What numbers matter most?
+    
+    *Example: Total trips, average wait time, total revenue*
+  </Card>
+</CardGroup>
+
+### Adding Metrics
+
+<Steps>
+  <Step title="Locate Data Panel">
+    Look in the data panel on the left side of the interface.
+  </Step>
+  
+  <Step title="Expand Data Table">
+    Expand the relevant data table by clicking the arrow.
+  </Step>
+  
+  <Step title="Select Metrics">
+    Click on the metric (measure) you want to include, or click on it again to remove it. Metrics are indicated with a # symbol next to them.
+  </Step>
+</Steps>
+
+<Frame>
+  <img src="https://downloads.intercomcdn.com/i/o/wyxobwoi/1554573758/206b3f73357e420baf7bcad84b35/Screenshot+2025-06-02+at+3_54_52%E2%80%AFPM.png?expires=1753820100&signature=7bc3a78793c28f32a91c488c38af25678d3303916182185ef7701ed05b17828e&req=dSUiEsx5noZaUfMW1HO4zX52xs1DTAdJ%2F47BR2ww0%2FDRlpzGUvzlAV%2B9D0Lg%0A2hjq%0A" alt="Data panel showing expandable categories with different metric types indicated by icons: # for numeric, Aa for text, and eye icon for boolean values" />
+</Frame>
+
+### Common Metric Types
+
+<AccordionGroup>
+  <Accordion title="Counts" icon="hashtag">
+    Total number of something (trips, riders, cases). If the metric just says `count`, it will give you the total number of whichever category you're looking at. For example, `count` under the request heading will give you total number of requests.
+  </Accordion>
+  
+  <Accordion title="Averages" icon="chart-line">
+    Pre-calculated averages (average distance miles, average revenue hours)
+  </Accordion>
+  
+  <Accordion title="Sums" icon="plus">
+    Adding up values (total revenue, total hours, no show percentage)
+  </Accordion>
+</AccordionGroup>
+
+<Tip>
+Click on the "All metrics" button to toggle between viewing all metrics and only selected metrics.
+</Tip>
+
+<Frame>
+  <img src="https://downloads.intercomcdn.com/i/o/wyxobwoi/1555923373/8799ed031ad28d581d5160565d04/Screenshot%2B2025-06-02%2Bat%2B3_45_39-E2-80-AFPM.png?expires=1753820100&signature=9a94eb3ca01efc8de7d51223f57694f1f9ae9cd081ef2bbcec2629b3d3eec51e&req=dSUiE8B8noJYWvMW1HO4zT4ZBFEN6l1aEcNtwVjTYuq%2FWQG3HkIYqjXyjUud%0AGyLL%0A" alt="Close-up of the All metrics toggle button in the interface" />
+</Frame>
+
+## Step 2: Organize Your Data (Grouping)
+
+Next, decide how you want to break down or organize your numbers. This is called "grouping" - it's like sorting your data into different buckets.
+
+<Note>
+Use grouping to organize your data (service, payment type, or case status) or to provide additional context to your export (requested pickup location, vehicle ID, rider name).
+</Note>
+
+### Adding Grouping
+
+<Steps>
+  <Step title="Find Dimensions">
+    Find dimensions (grouping options) in the data panel.
+  </Step>
+  
+  <Step title="Select Grouping">
+    Click on the ones that make sense for your analysis.
+  </Step>
+  
+  <Step title="View Results">
+    Your report will automatically reorganize to show data in these groups.
+  </Step>
+</Steps>
+
+### Grouping Examples
+
+<CardGroup cols={2}>
+  <Card title="By Time" icon="calendar">
+    Show results by day, week, or month to see trends
+  </Card>
+  
+  <Card title="By Category" icon="tags">
+    Group by service type, location, or status
+  </Card>
+</CardGroup>
+
+## Step 3: Filter Your Data
+
+Filters help you focus on exactly what you need by removing irrelevant information.
+
+<Info>
+Think of filters like asking "only show me..."
+</Info>
+
+### Common Filter Examples
+
+<AccordionGroup>
+  <Accordion title="Time Filters" icon="clock">
+    "Only show me data from last month"
+  </Accordion>
+  
+  <Accordion title="Status Filters" icon="check-circle">
+    "Only show me completed trips"
+  </Accordion>
+  
+  <Accordion title="Location Filters" icon="map-pin">
+    "Only show me routes in downtown"
+  </Accordion>
+</AccordionGroup>
+
+### Adding Filters
+
+<Steps>
+  <Step title="Access Filter Menu">
+    Click the "+ Add" filter button.
+  </Step>
+</Steps>
+
+<Frame>
+  <img src="https://downloads.intercomcdn.com/i/o/wyxobwoi/1554593617/c4a6eb74f0ee464179c0be1a86eb/Screenshot+2025-06-02+at+3_52_23%E2%80%AFPM.png?expires=1753820100&signature=c031ce7ef620472af70cb07a973e6116f516da27e51e0231b385d6b1785e3979&req=dSUiEsx3nodeXvMW1HO4zT4TOUecWC1q3sblSZhWACUwj2YoZTDz7%2FJJW5tD%0At%2Fqv%0A" alt="Screenshot showing the Add filter button interface" />
+</Frame>
+
+<Steps>
+  <Step title="Choose Filter Type">
+    Choose whether you want to filter by a dimension (a grouping - such as a specific service) or a metric (a number - such as trips longer than 2 hours).
+  </Step>
+  
+  <Step title="Select Filter Method">
+    Pick how you want to filter.
+  </Step>
+</Steps>
+
+<Frame>
+  <img src="https://downloads.intercomcdn.com/i/o/wyxobwoi/1554593943/c373d99fc6e3d156ab7da8680493/Screenshot+2025-06-02+at+3_53_41%E2%80%AFPM.png?expires=1753820100&signature=936469ae9e631a24a4a8976ea3db1396a9b22906578705ba6fa1e2cb34a49caa&req=dSUiEsx3nohbWvMW1HO4zYqAphsoh9ZW2oO8RcUIw3ybyuW5NcbHnspftUFo%0ABDjS%0A" alt="Screenshot showing filter type selection options" />
+</Frame>
+
+<Steps>
+  <Step title="Enter Filter Value">
+    Enter the specific value you're looking for.
+  </Step>
+</Steps>
+
+<Frame>
+  <img src="https://downloads.intercomcdn.com/i/o/wyxobwoi/1554594077/592e00f65b6e08918fdacb8475bc/Screenshot+2025-06-02+at+3_53_30%E2%80%AFPM.png?expires=1753820100&signature=0d7d6e9c3d86b21f793d962b22f708753e4f9c5e49e29912a64df951d3b79aa3&req=dSUiEsx3mYFYXvMW1HO4zcjh377i7KNV2m%2BGdgquT7Qe0r7dl%2F0taoY5bW1N%0AJnl4%0A" alt="Screenshot showing filter value input interface" />
+</Frame>
+
+<Tip>
+Click on the filter icon next to a metric to quickly add it as a filter.
+</Tip>
+
+<Frame>
+  <img src="https://downloads.intercomcdn.com/i/o/wyxobwoi/1555925701/5c2e8209c829bce9e593b04693b4/Screenshot%2B2025-06-02%2Bat%2B3_48_53-E2-80-AFPM.png?expires=1753820100&signature=05648806f1a69214d008f50a935ee77cab1e0d3b0d2a514288d7e2ef03f4d8ac&req=dSUiE8B8mIZfWPMW1HO4zZzRBjff8KY087wuiH5xWEm5ev%2FBBN6pYI0QaifN%0AcEH%2F%0A" alt="Data fields list showing the created_at field highlighted with its filter icon circled in red" />
+</Frame>
+
+<Tip>
+Click on the '+' button for quickly adding an "AND" filter.
+</Tip>
+
+<Frame>
+  <img src="https://downloads.intercomcdn.com/i/o/wyxobwoi/1555925700/ee529970f49fd066768f2e040fba/Screenshot%2B2025-06-02%2Bat%2B2_50_09-E2-80-AFPM.png?expires=1753820100&signature=a3cfe837ff0666613ccf84b79c72b36d3e2b3ab1536ede6e141f309b8e9d194f&req=dSUiE8B8mIZfWfMW1HO4zUfaL4szPU7Ws7P7cfMrMKMoBkhO19FA2eTXQmHY%0Aj5Wu%0A" alt="Screenshot showing the + button for adding AND filters" />
+</Frame>
+
+## Using AND/OR Logic in Filters
+
+Sometimes you need more flexible filtering options. This is where AND/OR logic becomes useful:
+
+<AccordionGroup>
+  <Accordion title="AND Logic" icon="intersection">
+    All conditions must be true - makes your results more specific and narrow. 
+    
+    **Example:** "Show trips that are completed AND happened in January" will only show trips that meet both conditions.
+  </Accordion>
+  
+  <Accordion title="OR Logic" icon="union">
+    Any of the conditions can be true - makes your results broader and more inclusive. 
+    
+    **Example:** "Show trips that are cancelled OR delayed" will show trips that are either cancelled or delayed (or both).
+  </Accordion>
+</AccordionGroup>
+
+<Frame>
+  <img src="https://downloads.intercomcdn.com/i/o/wyxobwoi/1555925699/59adadfa8c0dc031b1a05d339094/Screenshot%2B2025-06-02%2Bat%2B4_03_08-E2-80-AFPM.png?expires=1753820100&signature=bad3ce4b760b620ade8bf7737aa86881a1c310cfa905d75effeb0274327759a1&req=dSUiE8B8mIdWUPMW1HO4zdn6ImHflZivQ0d1lLMrupxeIQRuisfAdmF5mLR3%0ADgDb%0A" alt="Screenshot showing two filter conditions separated by AND/OR logic operators" />
+</Frame>
+
+### How to Use AND/OR Logic
+
+<Steps>
+  <Step title="Access Filter Menu">
+    Click the "+ Add" filter button.
+  </Step>
+  
+  <Step title="Select Logic Type">
+    Select "Add AND" or "Add OR" based on your filtering needs.
+  </Step>
+</Steps>
+
+<Frame>
+  <img src="https://downloads.intercomcdn.com/i/o/wyxobwoi/1554595627/3c619f058b7830b102f23a086b4b/Screenshot+2025-06-02+at+3_56_32%E2%80%AFPM.png?expires=1753820100&signature=3e36800b419690052f34caea04f19fb8eb7b81b320f715002854fd267054a240&req=dSUiEsx3mIddXvMW1HO4zeMyxoCHNJ9eLF4PvInfzZgzn4x%2BxIcYRj%2FMShE0%0A26rM%0A" alt="Dropdown menu showing Add AND and Add OR filter options" />
+</Frame>
+
+### Adding Wrapped Filters (Nested Filtering)
+
+For more complex filtering needs, you can create wrapped or nested filters - think of these as filters within filters. These allow you to group filters together for complex combinations like "Show me trips that are (completed AND in January) OR (cancelled AND in February)".
+
+<Steps>
+  <Step title="Create First Filter">
+    Create your first filter by clicking the "+ Add" filter button.
+  </Step>
+  
+  <Step title="Access Wrap Options">
+    Once the filter is created, click on the "..." menu.
+  </Step>
+  
+  <Step title="Wrap Filter">
+    Click "Wrap with OR" or "Wrap with AND" and add your next filter.
+  </Step>
+</Steps>
+
+<Frame>
+  <img src="https://downloads.intercomcdn.com/i/o/wyxobwoi/1555925702/c617ff7ec514914ab4462d70ed4a/Screenshot%2B2025-06-02%2Bat%2B4_03_25-E2-80-AFPM.png?expires=1753820100&signature=46790b367ddaec902f0d6eab82217fcab094206554e972fb19ad461b85ffdc5a&req=dSUiE8B8mIZfW%2FMW1HO4zSJRjkSTqrXH7O%2FVQbNSVLo4%2F9R9TPVrBST8kaM8%0ASbOS%0A" alt="Screenshot showing the wrap filter options menu" />
+</Frame>
+
+## Step 4: Choose Your Display Format
+
+Decide how you want to see your information presented:
+
+<AccordionGroup>
+  <Accordion title="Chart Views" icon="chart-bar">
+    Visual representations that make trends easier to spot:
+    
+    - **Bar charts**: Great for comparing different categories
+    - **Line charts**: Perfect for showing trends over time
+    - **Area charts**: Similar to line charts but with filled areas below the line, great for showing volume or cumulative data over time
+    - **Pie charts**: Good for showing parts of a whole
+  </Accordion>
+  
+  <Accordion title="Table View" icon="table">
+    Like a spreadsheet - good for detailed data and exact numbers
+  </Accordion>
+  
+  <Accordion title="Metrics View" icon="square">
+    Shows your key numbers as large, easy-to-read cards or tiles
+  </Accordion>
+</AccordionGroup>
+
+<Frame>
+  <img src="https://downloads.intercomcdn.com/i/o/wyxobwoi/1555926789/75fb90c67407d5a8a5657af08e25/Screenshot%2B2025-06-02%2Bat%2B4_15_18-E2-80-AFPM.png?expires=1753820100&signature=1a0c0fb59ee15335bf321052d495d3fa534c4af4165e1adf4f42b844b1779fc9&req=dSUiE8B8m4ZXUPMW1HO4zRDJPASCOSF7z8e%2BmF%2BS1A7RhFXEMulvu73YfKFY%0APHsf%0A" alt="Screenshot showing various display format options for reports" />
+</Frame>
+
+### Rotate X and Y Axis (Pivoting Your Data)
+
+<Info>
+Sometimes you might want to flip how your data is organized in charts and tables. This is called "pivoting".
+</Info>
+
+This swaps what shows across the top (columns) with what shows down the side (rows) and changes how your data is grouped and displayed. This can also make patterns easier to see from a different angle.
+
+<Note>
+Simply click on the "Rotate X & Y" button and drag and drop your metrics.
+</Note>
+
+<Frame>
+  <img src="https://downloads.intercomcdn.com/i/o/wyxobwoi/1555926793/5167a018339b9edf6fc6622d9dd7/Screenshot%2B2025-06-02%2Bat%2B4_12_27-E2-80-AFPM.png?expires=1753820100&signature=8068f2876312bf5c13d1899d13ec9f4fa2f01023f8b36dcfa64212606d3f3610&req=dSUiE8B8m4ZWWvMW1HO4zce3cPb944w3KJFa0YAYp0VNrkixeHYjY4lncAQ0%0AX2Zf%0A" alt="User interface showing tabs for different chart types and the Rotate X & Y functionality" />
+</Frame>
+
+## Getting Started
+
+Now that you understand the Report Builder components and steps, you're ready to create your first custom report. Remember to:
+
+<CardGroup cols={2}>
+  <Card title="Start Simple" icon="play">
+    Begin with basic metrics and gradually add complexity as needed.
+  </Card>
+  
+  <Card title="Preview Often" icon="eye">
+    Use the live preview to see how your changes affect the report in real-time.
+  </Card>
+  
+  <Card title="Save Your Work" icon="floppy-disk">
+    Don't forget to save important reports for future use and sharing.
+  </Card>
+  
+  <Card title="Experiment" icon="flask">
+    Try different combinations of metrics, groupings, and filters to discover insights.
+  </Card>
+</CardGroup>

@@ -1,0 +1,54 @@
+---
+title: "What is the Arrive-By Pickup Time Flexibility Type?"
+description: ""
+---
+
+The Arrive-By Pickup Time Flexibility Type is a service setting that only affects arrive-by trips, replacing the Detour Flexibility for these trips.
+
+Arrive-by trips are a helpful tool when booking trips for riders who need to get somewhere by a fixed drop-off time, eg: going to work, a medical appointment, or event. When this trip type is selected Spare Engine works to ensure that rider shows up prior to their desired drop-off time.
+
+## **Why use Arrive-By Pickup Flexibility instead of Detour Flexibility?**Arrive-By Pickup 
+
+Flexibility addresses both of the following issues:
+
+**For riders:**
+
+- With Detour Flexibility, Riders can be given extremely large pick-up windows and expected to be ready for the entirety of the window
+
+If a rider is picked up early and a subsequent rider no-shows the rider would be dropped off at their appointment extremely early.
+
+**Paratransit Agencies:**
+
+- The FTA guidelines state that agencies need to provide ‘equitable’ experiences for arrive-by and leave-at trips. Having long pick-up windows for arrive-by trips and short pick-up windows for leave-at trips creates inequity and may cause the agency to be penalized by the FTA. 
+
+## **
+
+What does it look like?**## When configuring a service:
+
+In service setup, you'll see a dropdown with the two flexibility types.
+
+![Screenshot of the Service Setup Page, showing the flexibility options](https://spare-74fa64f80617.intercom-attachments-1.com/i/o/972924972/441ecf0d7c632fbcef71cfe4/C0z0FbcjlAaYfytyPibYllZD6XryhugIfw.png?expires=1753820100&signature=acdb7f51239da2340b7dfc2e15c3a4e4a1cbaf5255f61e370190693384ac8158&req=fSclH8t6lIZdFb4f3HP0gMppNuxeqcSSyrfp7KzMzKmsC4V%2BYfC42qbeFaXO%0Abco%3D%0A)
+
+Choosing Pickup Flexibility Only reveals a new field called “Arrive-By Pickup Backwards Flexibility”. This allows agencies to define how big they want their pick-up windows for arrive-by trips to be. If an agency chooses this setting, Spare will no longer consider Detour Flexibility when creating arrive-by trips. 
+
+In this situation the agency has set a 30 minute pick-up window for arrive by trips:
+
+![](https://spare-74fa64f80617.intercom-attachments-1.com/i/o/972924976/4c1f2229fd309a5f38d0000d/oSubLLzg3ilEa3t2PuAUI8bWmc-xK3yLWg.png)
+
+Note that Detour Flexibility will continue to apply to Leave At trips.
+
+## **When booking a trip**With Arrive-By Pickup Backwards Flexibility, Spare displays Pickup and Drop-off On-Time 
+
+Performance windows on the estimate and request:
+
+![Screenshot of the trip booking page with On-Time Performance windows highlighted](https://spare-74fa64f80617.intercom-attachments-1.com/i/o/972924983/b15e77d0f2934f3a97a4d22f/nOf-bC0MLf0OfCaPzC-_NuJyjzT38JZ6XQ.png?expires=1753820100&signature=251df5108f1da471b14695f3d4cd0a375f9f41b2697559f37d728b2a5bc2be1c&req=fSclH8t6lIlcFb4f3HP0gH2CmV8v3h3DWJLZrXWEtbnkxRTVPJ%2FRJpMKKT5W%0AwmI%3D%0A)
+
+## **Impact on Live Requests and reporting**For both settings, the Drop-off OTP window is still the ‘relevant’ OTP window for arrive-by trips. The Drop-off window is used for all OTP reporting in Live Requests and Spare Analytics. The Pickup OTP window is not used in any OTP calculations. If “Pickup Flexibility 
+
+Only” is enabled, it is possible to see the pickup window for a trip in the ridership report.
+
+## **Impact on Pooling****Detour Flexibility 
+
+Only** will result in higher pooling as the system has more flexibility and control over when it can pickup riders.
+
+**Pickup Flexibility Only** will result in lower amounts of pooling as the system has less control over when it can pickup riders.

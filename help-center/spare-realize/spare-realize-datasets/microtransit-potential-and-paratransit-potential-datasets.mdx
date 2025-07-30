@@ -1,0 +1,84 @@
+---
+title: "Microtransit Potential and Paratransit Potential Datasets"
+description: "Learn about Spare's machine learning models that predict microtransit and paratransit demand using Census Block Group data and sociodemographic variables."
+---
+
+Alongside sourcing and visualizing standard sociodemographic datasets such as Population, Jobs and POI datasets, Spare has built sophisticated machine-learning models to predict the popularity of microtransit and paratransit:
+
+- **Paratransit Potential (PP):** the total number of daily paratransit trips that are expected to originate from a given area, on a typical weekday.
+- **Microtransit Potential (MP):** the total number of daily microtransit trips that are expected to originate from a given area, on a typical weekday.
+
+Both metrics are presented at the Census Block Group (CBG) level, the highest resolution subdivision available from the US Census Bureau. Each data point is linked to the latitude and longitude of the population-weighted centroid of its relevant CBG (referred to by the US Census Bureau as 'Population Centres').
+
+<Info>
+Both PP and MP are estimated in a similar way: we use ridership data from Spare's existing services to 'train' a machine learning model to predict ridership in places that Spare does not operate in (see Figure 1).
+</Info>
+
+From these, CP can be estimated by comparing the (mis)match between the supply of paratransit vehicles and the demand for microtransit trips in each neighbourhood of a city.
+
+*Figure 1. The broad framework for predicting Paratransit Potential (PP) and Microtransit Potential (MP) using a machine learning approach.*
+
+## Paratransit Potential (PP)
+
+Paratransit Potential (PP) is the total number of daily paratransit trips that are expected to originate from each CBG in a given city, on a typical weekday.
+
+The expected volume of paratransit trips is calculated as follows:
+
+### 1. Origin-Destination Data Collection
+
+**Origin-destination data** from a selection of Spare's current paratransit services are mapped onto CBG boundaries, such that each CBG in which Spare operates is attributed a daily average trip count. Paratransit services are selected based on their similarity (in terms of population, use case, transit network, etc.) to the region that PP is being modelled for.
+
+### 2. Census Data Analysis
+
+**Census data** are then acquired for each relevant CBG to calculate a 'paratransit dependency' metric. This metric combines five different socio-demographic datasets available through the US Census Bureau, which were chosen based on a literature review of data commonly used to forecast paratransit demand in the US. These metrics are:
+
+- **Total population**
+- The proportion of the population classed as senior (i.e. aged 65+)
+- The proportion of the population classed as below the local poverty level
+- The proportion of the population classed as both low-income and with a disability
+- The proportion of households owning zero vehicles
+
+### 3. Machine Learning Model Training
+
+**A random forest (RF) regressor model** is then 'trained' to predict paratransit ridership in CBGs that Spare does not currently operate in, based solely on the five socio-demographic data points described above. The model is rigorously tested to make sure it replicates the patterns observed in Spare's existing ridership data.
+
+### 4. Trip Prediction
+
+**The predicted number of daily trips** (i.e. PP) is calculated for every desired CBG.
+
+## Microtransit Potential (MP)
+
+Microtransit Potential (MP) is the total number of daily microtransit trips that are expected to originate from each CBG in a given city, on a typical weekday. The methodology framework for calculating MP is essentially the same as PP, save for the census input variables:
+
+### 1. Origin-Destination Data Collection
+
+**Origin-destination data** from a selection of Spare's current microtransit services are mapped onto CBG boundaries, such that each CBG in which Spare operates is attributed a daily average trip count. Microtransit services are selected based on their similarity (in terms of population, use case, transit network, etc.) to the region that MP is being modelled for.
+
+### 2. Census Data Analysis
+
+**Census data** are then acquired for each relevant CBG to calculate a 'microtransit dependency' metric. This metric combines five different socio-demographic variables available through the US Census Bureau, and one available from the US LODES dataset, which were chosen based on a literature review of data commonly used to forecast general transit demand in the US. These metrics are:
+
+- **Total population**
+- The proportion of the population classed as non-White
+- The proportion of the population classed as educated to high-school level or less
+- The proportion of the population classed as below the local poverty level
+- The proportion of households owning zero vehicles
+- **Total number of jobs** (from LODES)
+
+### 3. Machine Learning Model Training
+
+**A random forest (RF) regressor model** is then 'trained' to predict microtransit ridership in CBGs that Spare does not currently operate in, based solely on the six data points described above. The model is rigorously tested to make sure it replicates the patterns observed in Spare's existing ridership data.
+
+### 4. Trip Prediction
+
+**The predicted number of daily trips** (i.e. MP) is calculated for every desired CBG.
+
+![Microtransit and Paratransit Potential visualization showing Census Block Group data](/images/spare-realize/datasets/microtransit-paratransit-potential-visualization.png)
+
+## Using Datasets in Demand Models
+
+<Note>
+Datasets are also used to underpin Demand Models when you are building a Service. When you select a certain Dataset in your Demand Model, it effectively represents the home/origin locations of one-half of the trips that are automatically generated in Realize for your Zone.
+</Note>
+
+![Dataset selection interface in Demand Model configuration](/images/spare-realize/datasets/dataset-selection-demand-model.png)

@@ -1,0 +1,80 @@
+---
+title: "Dispatching Visibility for Open Fleets"
+description: "Provides insight into how Spare’s AI Engine makes matching decisions when assigning trips to available Open Fleets`"
+---
+
+💡 This feature is included in the Open Fleets package. Please reach out to your Spare Representative for more details.
+
+# 
+About this featureDispatching Visibility for Open Fleets provides insight into how Spare’s AI Engine makes matching decisions when assigning trips to available Open Fleets such as Uber, Lyft and Uzurv or Taxi companies that use MTI or iCabbi. This tool helps operations teams understand why specific fleets were selected (or not selected) to each ride request, making it easier to troubleshoot, review, and optimize service delivery.
+
+# 
+How does it work?We've now added more information throughout the trip management lifecycle which provides visibility during different stages of the trip.
+​
+
+## Understanding the Fleet Selection ProcessThe Dispatching 
+
+Visibility tool shows several key stages in the matching process:
+
+**Trip Estimate Creation:** The system checks available fleets to create an estimate for the trip before booking the trip.
+
+**Fleet Offers:** Requests are offered to potential matching fleets based on your service setup and different [open fleet configurations.](https://help.sparelabs.com/en/articles/9492017-open-fleet-matching-configurations)
+
+**Matching Attempts:** Open Fleets and Dedicated Fleets respond, either accepting the trip, rejecting it, or returning errors.
+
+**Final Result:** The request is either successfully matched to a fleet or marked as No Drivers Available if no Open Fleet or a Dedicated Duty can accept it.
+
+## Booking a TripWhen booking a trip, if there's no viable Fleets that can complete the trip you will now see an option to click '**
+
+- Why'.**
+​
+
+![](https://downloads.intercomcdn.com/i/o/wyxobwoi/1404102085/335d2ebcca4b8a064fbb73c5cf9c/Screenshot+2025-03-02+at+11_45_25%E2%80%AFPM.png?expires=1753820100&signature=a01fe6e16928ee82eb917a692ff482acf37c5bee465c45e9e2c38b049b290613&req=dSQnEsh%2Bn4FXXPMW1HO4zeFLEXnoSdcgmkIa0qx19vm5V1O0u1xpcKFU6xng%0A%2FPss%0A)Clicking on Why, shows you the reason one or all fleets in the service cannot accept the trip.
+​
+
+![](https://downloads.intercomcdn.com/i/o/wyxobwoi/1404102320/29b37ef9468e1860bbfd9f06626a/Screenshot+2025-03-02+at+11_45_46%E2%80%AFPM.png?expires=1753820100&signature=aa6a5e2dd2c8c4ed80eda88058beb396bb528b0457b89989f73742b4180e4536&req=dSQnEsh%2Bn4JdWfMW1HO4zVvp7ND1lCJMFHX2qRVe7HpaxCsZxBn5hQahJwgm%0A2rRT%0A)
+
+## Viewing the Trip EstimateOpen the **Trip Details** page for the request you want to investigate and navigate to the Activity Tab to see the lifecycle of the Trip. Starting with the 'Estimate Created' activity you can see the estimate in minutes that we got back from each Open Fleet and the Fleet Priority set based on the service setup. 
+
+This section of the trip record shows every key event in the matching process — from estimate creation to fleet offers, matching attempts, and final fleet selection (or failure).
+
+To view Dispatching Visibility for a request:
+
+​
+
+![](https://downloads.intercomcdn.com/i/o/wyxobwoi/1404112355/6e6cb62b74e4d8a992b4997d3bb9/Group+1+%281%29.png?expires=1753820100&signature=484053482089345a279b7626f629a48b91a639993b63fc64b82ca32170f924c3&req=dSQnEsh%2Fn4JaXPMW1HO4zavt0xc6n7Hu2RWAzo7NSka7ktP7zbzq%2BW93QJ16%0AxL3e%0A)## Matching Attempt DetailsAfter, the request is created, you can now see a Pending Matching Attempt record which shows which Fleet was selected as the selection can change between the time the estimate was created and the trip request was created. In the specific example below, you can see the even though Uber was the the Low priority fleet, Spare's Engine attempted to match the trip with Uber and the reason in this case is the [Wait Time Threshold](https://help.sparelabs.com/en/articles/8981554-creating-and-managing-external-fleets) set on the service is 10 minutes which is less than 
+
+Lyft's estimated pickup time i.e 13 minutes in this example.
+​
+
+![](https://downloads.intercomcdn.com/i/o/wyxobwoi/1404118165/7ecde5ea07440c5f1ed363616eb3/Group+2+%282%29.png?expires=1753820100&signature=4167e03604c67c2f3d30f3d5fd6801a125472aaa8559108647a04a3091ec623a&req=dSQnEsh%2FlYBZXPMW1HO4zQnOhjJL39PyC4j%2FLoIR0X6eVAedm9oxcukOdLfG%0A9qc0%0A)In the event of a Failed Matching Attempt, it's also shown after the Request Created record. In the example below it's just an API error which indicates that the Open Fleet has been misconfigured or there is an issue establishing the connection between Spare and the respective Fleet.
+​
+​
+
+![](https://downloads.intercomcdn.com/i/o/wyxobwoi/1404131554/a67b1434a596900d58a6e27bfa0c/Group+3+%281%29.png?expires=1753820100&signature=75c0ff7fd807997c80bff2224c31d4a3ed8080493b99b4abd81082ba2ab654ee&req=dSQnEsh9nIRaXfMW1HO4zZhSuS6nDpWL7bk5bdheyhsShy7Gpy1tD4a8gMo%2B%0AR6x%2F%0A)
+
+## Representation of Dedicated Auto-Accept FleetsFor 
+
+Dedicated fleets that automatically accept requests, the system may consider multiple fleets at the same time tha are in the same priority grouping.
+
+If two auto-accept fleets have the same priority level, both are considered simultaneously.
+
+The system chooses the fleet with the best estimated performance (such as shortest pickup time).
+
+# **FAQWhat does "Failed Matching" mean?**
+This means the trip could not be successfully matched to any available fleet. The Activity Log will show error messages and reasons why each fleet was rejected or why the request failed.
+
+**Where do these error messages come from?**
+Many error messages shown in Dispatching Visibility come directly from the fleet provider’s system (e.g., Lyft, MTI). Spare displays them to help you understand what went wrong, but Spare does not generate these messages.
+​
+
+**How do auto-accept fleets (Dedicated Fleets) work in matching?**
+When multiple auto-accept fleets are available at the same priority level, the system considers all of them at once and chooses the one that offers the best fit — typically the fastest pickup time.
+​
+
+**Can I use this tool to review past requests?**
+Yes, Dispatching Visibility is available for all trip requests, even those that were cancelled or failed.
+​
+
+**What should I do if I see "API key error"?**
+This error means the fleet provider rejected the request due to an invalid API key. This is usually a configuration issue between Spare and the Open Fleet provider. Contact Spare support to resolve.

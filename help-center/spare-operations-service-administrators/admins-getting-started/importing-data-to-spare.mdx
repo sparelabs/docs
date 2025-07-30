@@ -1,0 +1,144 @@
+---
+title: "Importing Data to Spare"
+description: ""
+---
+
+In the realm of transit management, data import plays a pivotal role in facilitating seamless transitions between software platforms and ensuring the continuity of operations. For transit providers, data import refers to the process of transferring various types of essential data from one system to another. This process is crucial for maintaining data integrity, complying with regulatory requirements, and optimizing operational efficiency.
+
+## **Importance of Data Import**
+
+- Data import is essential for transit providers for several reasons:
+
+**Regulatory Compliance:** Transit providers are often subject to strict regulatory requirements regarding data management. Proper data import ensures compliance with these regulations by securely transferring essential information without loss or corruption.
+
+**Operational Continuity:** Smooth data import guarantees the uninterrupted flow of operations during transitions between software platforms. It allows transit providers to maintain essential services without disruptions or downtime.
+
+**Efficiency and Accuracy:** By automating the transfer of data, import processes minimize the risk of human error and ensure the accuracy of information. This enhances operational efficiency and reduces the need for manual data entry.
+
+# **Types of Data Importable**Riders
+
+Drivers
+
+Vehicles
+
+Requests
+
+Recurring Requests
+
+Duties
+
+Group Memberships
+
+Favorite Locations
+
+Admins
+
+Fare Pass
+
+Custom Fields
+
+It is not currently possible to import fleet agreements.
+
+# **Data Update Capabilities**The import flow can also be used to update existing records in the following objects. 
+
+Riders
+
+Drivers
+
+Vehicles
+
+Recurring Requests
+
+Duties
+
+Group Memberships
+
+Admins
+
+To Update, users must include the `riderId` or `externalNumericId` in the `riderId` column of the import. Users can export the records to get these IDs.
+
+Request, FavoriteLocation, and Farepass cannot be updated with import.
+
+## # **Navigating Data Import**## 1. Accessing the Import Feature:Users can easily access the import feature within Spare's platform. On various pages related to riders, drivers, vehicles, requests, and more, a prominent "
+
+Import" button is located at the top right corner.
+
+![](https://downloads.intercomcdn.com/i/o/994246736/9c2e62947d359a88e909a68a/Screenshot+2023-03-16+at+12_45_01+AM.png?expires=1753820100&signature=b9a7b749ce12df3ce1679058ca8cfc4461d982c2da84864efd763d71e20f8b70&req=fSkjFM14moJZFb4f3HP0gFZI%2Ftvi3zp5hrihlaISu8RPqBG4DdaXOJl8j20P%0ApbY%3D%0A)
+
+## 2. Initiating the Import Process:Upon clicking the "**Import**" button, users are greeted with a modal window that guides them through the import process. This modal provides clear instructions on how to format their CSV files for successful data upload. To assist users further, a sample CS
+
+V with preset headers is available for download, ensuring that data is formatted correctly.
+
+![](https://downloads.intercomcdn.com/i/o/994247012/8f255880f2bec9d2aadbe0ca/Screenshot+2024-03-06+at+1_30_31%E2%80%AFPM.png?expires=1753820100&signature=9a5ad718bbc6ff12722e9e59cbf006b6be393743c379de07ec8ebba999c7563a&req=fSkjFM15nYBdFb4f3HP0gKdkIstEKVN1AGmwDx6A8SFFoGZRI6r6VNDyCKyG%0A%2Bos%3D%0A)
+
+## 3. Understanding Data Requirements:Spare's import guide outlines all the necessary columns and data types for each type of importable data, including custom fields, rider types, and accessibility features. 
+
+For fields with single or multiple selection options, the guide lists all possible keys, simplifying the data preparation process for users.
+
+## 4. Executing the Import:Once users have prepared their CSV files according to the provided guidelines, they can proceed with the import process. Spare's system efficiently transfers the data from the CS
+
+V files into the platform, updating existing records or creating new ones as needed.
+
+## 5. Handling Errors:In the event of errors during the import process, Spare provides users with comprehensive error reporting to facilitate resolution. Unlike previous versions where the import would halt on the first error, 
+
+Spare now imports all valid rows and generates an error report for any invalid data.
+
+If fatal errors are encountered, such as missing or incorrect columns, the import process is halted, and an error message is displayed in the modal window.
+
+For invalid rows, Spare generates an "**error CSV**" with an additional "**Error Reason**" column, detailing the specific errors encountered. Users can download this error CSV and correct the errors before re-importing the data.
+
+![](https://downloads.intercomcdn.com/i/o/994247531/dc64a56dd73227a66b1d7f36/Screenshot+2023-12-18+at+9_55_25%E2%80%AFAM.png?expires=1753820100&signature=4e37e12658f40ab145d620676ddc291a107d32b98d5ac26eef2924d8d927f448&req=fSkjFM15mIJeFb4f3HP0gCTnd6rE4WE83%2BT2LriVttPmKzxnKQuIT7hmEkrw%0Al4o%3D%0A)
+
+## 6. Setting Notification Preferences:To ensure timely error resolution, users can set up email or alert notifications to receive the error report after import. This feature is particularly useful in scenarios where users may lose connection or cannot immediately return to the import page. The error report UR
+
+L remains valid for seven days, providing users with ample time to address any issues.
+
+![](https://downloads.intercomcdn.com/i/o/994248001/9333b0bace708dcb6c0d990d/Screenshot+2024-03-06+at+3_12_00%E2%80%AFPM.png?expires=1753820100&signature=113aef465df07502e926af341197875d60bf2d541581c1bbb3149d06b56c0d96&req=fSkjFM12nYFeFb4f3HP0gNpIEn59BBaVk7wzU5N5DjMDO4oATz8P%2FXG3xF2k%0Ai%2Fk%3D%0A)
+
+# **Importing Custom Field Types**## How to import different custom field types?Custom fields allow organizations to collect and manage additional, specific information related to their operations, riders, and services beyond the core data model provided, facilitating more customized and efficient management of mobility solutions. To import custom fields, it is necessary to incorporate the designated value ***"metadata.fieldKey"*** as an additional line within the 
+
+Excel or sheet document being utilized.
+
+![](https://spare-74fa64f80617.intercom-attachments-1.com/i/o/971585567/c91f3c3b7bb1308e05ecf19c/0dcgXNjZNARAbQGFkSVtSt9Ycrv-CC0sbg.png?expires=1753820100&signature=06d78a6f8dd1709fa4bf2f0afcb3c6a38e87c831face2559bf2a484641f941f7&req=fScmE8F7mIdYFb4f3HP0gGlEp5MZi7iU%2ByP8ZUzW44f5%2BHhdf6f0%2Bxr2CW5p%0AzyQ%3D%0A)
+
+![](https://spare-74fa64f80617.intercom-attachments-1.com/i/o/971585572/645c9fc5ac749ea8e484281f/_XIj9NlFj88hQyWlkTTTOYo1ZZ019dRKLg.png?expires=1753820100&signature=484738d354a82cde766f7e700c8d446de1f895b268b0cbd353bfb85b4f0de88a&req=fScmE8F7mIZdFb4f3HP0gJRRmH%2F6e%2FPAlRorNf%2B5Jrt%2FqhFUO54uOKpCcfTb%0ApyE%3D%0A)
+
+## Values for importing Custom FieldsFor each custom field type during rider import, the title remains consistent as ***"metadata.fieldKey"***. However, when dealing with date and time values, it's necessary to append either "(date)" or "(time)" to the end of the value. Provided examples are outlined below based on this [exported template](https://docs.google.com/spreadsheets/d/14G-Wnj-lp3XHFaySMDP6OLXCL27a-M
+
+Rq/edit?usp=sharing&ouid=112827620902756849956&rtpof=true&sd=true):
+
+![](https://spare-74fa64f80617.intercom-attachments-1.com/i/o/971585578/2fd6620b226a73cbd1c17ea1/bWSp7Egu5S0b87fek_kR3Zw2QI7I3mBWQg.png?expires=1753820100&signature=6723808281aca4d4f8b6a5c4a1a6bb858c100653ef4a0c6a5ea2a6e2cc5f387b&req=fScmE8F7mIZXFb4f3HP0gB1hy%2FFUJ4levUBYmo0KgTBCZ83DrDkk1f5mtg0E%0AY1A%3D%0A)**Text=** Custom field that allows you to add text descriptions (Including numbers) such as "Names, codes with numbers and letters, etc". Example: metadata.middleName - Content added on the Sheet "Testing".
+
+![](https://spare-74fa64f80617.intercom-attachments-1.com/i/o/971585581/745dcb5f9cdff580844b5b20/ePpkeg2LGebek5Cvdb_z1x0s8qV9oebl1w.png?expires=1753820100&signature=0abc63b93bd8f175f0b2a2577ceea8fa0a6960610197527535fd23d110e2ab18&req=fScmE8F7mIleFb4f3HP0gF4rGD%2BYAvuuXYKoCGXl0Sf9n1yTeCcT7vrc2XwU%0AWII%3D%0A)**Number**= Only numbers are allowed for this custom field. Typically used only for age. Example**: **metadata.age - Content added on the Sheet "30".
+
+![](https://spare-74fa64f80617.intercom-attachments-1.com/i/o/971585589/fb145107bf9ba1cd8a7b4a81/gDG_BPPlvljOB8qRlQ95hbgKCdXH1DFd_Q.png?expires=1753820100&signature=318b6693fc055a1206f54b3957427f35e4515f877161c2ba56ca19f0b8fbaf45&req=fScmE8F7mIlWFb4f3HP0gNX%2BQBNzb6inw1UC2F2AL5AtAguFmI0sY7iyF2%2BE%0A%2BL4%3D%0A)**Toggle**= Allows users to select the option between enabled=True or disabled=False. Example: metadata.paratransit - Content added on the Sheet "True".
+
+![](https://spare-74fa64f80617.intercom-attachments-1.com/i/o/971585594/88b1aa1dff7f32bf050c7aad/ogaOj02xKVqKXLJLfT5SJNOnLX9MmOCk8Q.png?expires=1753820100&signature=458c5abf630dae813394c18b0a90031f4184ca74647b62e80c821bebbd8836db&req=fScmE8F7mIhbFb4f3HP0gLOd48sGAfEQ0unf7bz6fJDj784kuXt8xea64uT8%0ARdw%3D%0A)**Single Choice**=** **Only used for marking one single option depending on what you had configured during the custom field creation. Example: metadata.adult - Content added on the Sheet "No".
+
+![](https://spare-74fa64f80617.intercom-attachments-1.com/i/o/971585598/a8bfbf94c79eadb810d24650/nr2peFA9uUBffI0_6JaoH25HAmjSzZLufw.png?expires=1753820100&signature=945d34cd82760ba2b604025f1fd010a3ae25e5934aa05179ef4094f067f0a3ed&req=fScmE8F7mIhXFb4f3HP0gLmOpSgAmGMtN2OnCDyVtYzQF5%2BL9zYi%2B1D2YhAN%0AwFM%3D%0A)**Multi-select**= Instead of a single choice, you can create a menu where users can select different options. These values will be separated by commas. Example: metadata.paymentmethod - Content added on the Sheet "cash".
+
+![](https://spare-74fa64f80617.intercom-attachments-1.com/i/o/971585603/af6488268228a26c16586017/TZRKqBVzceqhAPbzUwVvX49GgpPBt-TCSg.png?expires=1753820100&signature=532a58851ba15f5ad7f61a1d2b7497d3b7b298a41d8a287bd9ffd01f5bf8e739&req=fScmE8F7m4FcFb4f3HP0gJgNH6sAihd5X9K2oH7BRlKuw%2FEkU8yrXMwJw6fx%0AGOM%3D%0A)
+
+![](https://spare-74fa64f80617.intercom-attachments-1.com/i/o/971585607/53c05aa9ddb13e17cd44c1b3/kk2LRc_F2EaxCGINFcgOs6ifmkDmA-8uMw.png?expires=1753820100&signature=165248090e2c2628ccd80ac37df7c610d03590c0fbc73ef695ddd4a2aad5ad46&req=fScmE8F7m4FYFb4f3HP0gNkLAhRbHbT7rxgEKa2wG%2BN5qpCPJboBdh1mOnIF%0A9rc%3D%0A)**  Date**= Format used to select dates based on format "YYYY-MM-DD", other formats won't be uploaded and they can cause errors importing. Example: metadata.dateOfBirth - Content added on Sheet "1998-02-17".
+
+![](https://spare-74fa64f80617.intercom-attachments-1.com/i/o/971585611/15521a255f9af7f727bbed2d/e-DXVfVOuz7-cHpZC9izgYs7D6wUc11vGQ.png?expires=1753820100&signature=332b2f757dfa4732c67ae5cc80bb42c3aa5023c45ca3c16cacaca1015ac69ef4&req=fScmE8F7m4BeFb4f3HP0gOdaUwLbZus9b14LQTo1njxfJusnnjq6%2FXq%2Fk91t%0AHP8%3D%0A)**Date & Time**= Values "time date and hour" are separated into 2 different cells, so the values added were metadata.bestContactHour(date) and metadata.bestContactHour(time), and the content "2024-02-07" and "14:16". Similar to date of birth, you need to use as format "YYYY-MM-DD" for dates and military hours.
+
+**Address, One File, Multiple Files, and Signature **= These values can't be incorporated in the importing file, so they need to be set up directly from the profile in Spare.
+
+# Common Errors and Best PracticesIn the process of generating and importing custom fields, various upload complications may arise. Consequently, we aim to furnish prompt resolutions for common errors encountered during these file creation. Moreover, the system is equipped to pinpoint and disclose any file discrepancies, facilitating the identification and correction of elusive characters. This approach ensures a more streamlined and efficient user experience.
+
+✔️ Each Custom Field must use its specific format when you're filling out the importing file, one good example for this is: Date = "YYYY-MM-DD". If you try to enter different values such as "YYYY/MM/DD", "MM/DD/YYYY" or "DD,MM,YYYY" the file won't be uploaded. 
+
+✔️ Avoid using special characters as emoticons, dots, commas, or text within an image. Only text is allowed. 
+
+✔️ Additional spaces can cause issues, so be aware of deleting every blank space for each cell. 
+
+✔️ Images are not supported. Including signatures, single files, and multiple files, you need to address them under each Custom field in the platform. 
+
+✔️ CSV is the only allowed format for importing. Different types of files like XLS, XLSX, TVS, ODS, PDF, or HTML can be uploaded.
+
+✔️ Be sure to add the correct phone number format which starts with +1 and do not use any other format such as (,)(.)(-). Phone numbers cannot be duplicated per account. 
+
+✔️ Content for multi-select cell needs to be the same one added as a response during the custom field creation, example: if you created this to only allow answers for "Yes" or "No". You won't be able to use "yes", "no", "YeS", "nO".
+
+*Note: Please, contact [support@sparelabs.com](mailto:support@sparelabs.com) if you encounter any issues importing or adding the values described above*

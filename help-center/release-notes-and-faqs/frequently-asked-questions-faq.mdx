@@ -1,0 +1,112 @@
+---
+title: "Frequently Asked Questions (FAQ)"
+description: ""
+---
+
+**Question:** What languages does Spare Support
+
+**Answer:** The Spare Rider App and Rider Web are supported in the following languages;
+
+English,
+
+French,
+
+German,
+
+Japanese,
+
+Norwegian,
+
+Spanish,
+
+Swedish,
+
+Catalan,
+
+Icelandic,
+
+Portuguese
+
+Chinese Simplified
+
+Somali
+
+Hmong
+
+Vietnamese
+
+Korean
+
+Amharic
+
+Hindi
+
+Armenian
+
+Russian
+
+The language displayed is automatically selected based on;
+
+• Your phone’s language settings for the Rider App,
+
+• Your web browser’s language settings for Rider web
+
+**Question: **How is a rider charged for their trip?
+
+**Answer:** When a rider books a trip using a Stripe Card, Stripe places a hold on the rider’s credit card for the corresponding fare amount. After the trip is completed, Spare instructs Stripe to convert the hold into a charge, debiting the amount from the rider’s card. If the trip is canceled, Spare instructs Stripe to cancel the hold one hour after the cancellation, allowing users in Spare Operations to reverse the cancellation if it was made by mistake. Once Stripe cancels the hold, it may take several days for this to be reflected on the rider’s card., Stripe cannot place holds on cards for more than 7 days. Therefore, by default, riders cannot use Stripe Cards to book rides on Spare more than 7 days in advance., If you wish to allow riders to book rides using Stripe Cards more than 7 days in advance, Stripe can immediately debit the funds from the rider’s account when the trip is booked and refund them in the event of a cancellation. Please contact your Spare representative to enable this functionality.
+
+**Question: **For Driver to Rider calling, what number do riders see when receiving a call
+
+**Answer:** When a driver calls a rider, the rider’s phone number remains hidden to protect their privacy. The rider will see the call coming from the same number used for SMS and voice notifications.
+
+**Question: **How would a trip cancellation refund be handled if your wallet is already at its maximum balance? Would it allow your balance to exceed the limit?
+
+**Answer: **In this situation, we will permit your wallet balance to exceed the maximum limit. This means that if you cancel a trip and the refund is credited to your wallet, your balance can go above the usual cap. This ensures you receive your full refund without any issues.
+
+**Question: **What is the required proximity to the scheduled start location for a driver to begin their duty?
+
+**Answer: **Currently, there are no specific limitations regarding the proximity to the scheduled start location for a driver to begin their duty. This means that drivers can start their duty regardless of their distance from the start location.
+
+**Question: **If a payment is fully processed through Stripe (not just a hold on the card) and the trip is subsequently cancelled, does Spare automatically issue a refund?
+
+**Answer: **Yes, even for fully processed payments, we can issue a refund when the trip is cancelled. This means that regardless of whether the payment was just a hold or fully captured, Spare ensures that the charge is refunded upon trip cancellation. This process is handled automatically to ensure a seamless experience for our users.
+
+**Question: **Is there a specific amount of time a driver can be late for pullout before Spare stops assigning trips to them?
+
+**Answer: **Yes, there is a threshold for lateness. If a driver is late for pullout, Spare will begin unassigning trips from that driver shortly after the trips become sufficiently late. This ensures that trips are reassigned to other drivers to maintain timely service and minimize delays for passengers.
+
+**Question: **Do the heatmaps in Analytics reflect completed stops or requested pickups and dropoffs?
+
+**Answer:** The heat maps in Analytics reflect **requested** pickups and dropoffs, but not completed stops. These maps are designed to show where demand is concentrated based on customer requests during your selected time period.
+
+**Question: **Is there a character limit for OpenFleets location notes?
+
+**Answer: **Yes, there are character limits for some platforms. Here are the details:
+
+Uzurv: 255 characters
+
+MTI: No character limit
+
+Jagwire: No character limit
+
+Uber: 599 characters
+
+Lyft: 99 characters
+
+Icabbi: No character limit
+
+If a note exceeds the character limit, it will end with “…” to indicate truncation. 
+
+**Question: **When is a request considered "active"?
+
+**Answer: **A request is classified as "active" if it meets the following conditions:
+
+It has a status of either **Accepted, Arriving, In Progress, Processing, or Service Disruption.**
+
+- The scheduled pickup time (requestedPickupTs) falls within **30 minutes** of the current time.
+
+If both criteria are satisfied, the request is labeled "active." Otherwise, it may still be considered "ongoing" or "scheduled," but it will not be flagged as "active" in the app.
+
+**Question: **Is Spare WCAG 2.1 Level AA Compliant for accessibility standards? 
+
+**Answer: **Spare completes VPATs on an annual basis, the latest can be requested from your Spare Partner Success Manager. Spare strives to meet WCAG guidelines in all releases.

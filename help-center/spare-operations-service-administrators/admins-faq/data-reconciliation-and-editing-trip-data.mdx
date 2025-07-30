@@ -1,0 +1,101 @@
+---
+title: "Data Reconciliation and Editing Trip Data"
+description: "Ensuring data accuracy for agency reporting"
+---
+
+> This feature is included in the **Data and Access** package. Please reach out to your Spare Representative for more details.
+
+## What is Data Reconciliation?
+
+Data reconciliation is the process of comparing and aligning data from different sources to ensure accuracy and consistency, identifying and resolving discrepancies for reliable and unified datasets.
+
+## How does it work?
+
+Ensuring data accuracy is crucial for agencies relying on our platform to bill operators and secure funding from the FTA. Although Spare effectively automates data tracking, occasional inaccuracies arise, particularly in areas with limited cellular coverage and when drivers forget to mark pickup and drop-off in the app. Data Reconciliation enables agencies to rectify such inaccuracies, ensuring precise operator billing and regulatory reporting.
+
+To edit metrics, ensure that this feature is turned on by asking your Spare Representative. Once enabled, you'll see **"Edit Metrics"** under **"Actions"** on any completed trips. There is no limit to how long you can edit metrics.
+
+![Edit Metrics option in trip actions](https://spare-74fa64f80617.intercom-attachments-1.com/i/o/971514198/8ce7119a6b47347101b94285/r_ur6HRTYGWAqu5l0_yg_8TQiLpGEzmczg.png?expires=1753820100&signature=5c876d677d7e712a26ba7d5fdfef24f7adb3552d35e6492a03b9e45947a85c9a&req=fScmE8h6nIhXFb4f3HP0gLzM7PK%2BqCt4l7gc7wi4HTB2RpMfeJ%2FuRavHABzz%0AJNk%3D%0A)
+
+## What happens after you make edits?
+
+### Metrics updated
+
+### Metrics not updated
+
+#### Service Metrics
+
+**Metrics that update:**
+- **Completed Boardings:** Passenger count
+- **Avg # of requests per Rider:** Passenger count
+- **Average Travel Distance:** Pickup/dropoff location
+- **Median wait time:** Completed time
+
+**Metrics that don't update:**
+- **Avg boardings per Service hour:** Passenger count
+- **Average Travel Duration:** Pickup/dropoff time
+- **Mean wait time:** Completed time
+- **Avg # riders per request:** Passenger count
+
+#### Fleet Metrics
+
+**Metrics that update:**
+- **Pooled trips ratio:** Passenger count
+- **Travel Distance with Riders on Board:** We use the new slot completed times and the vehicle location track to update this. Note that if the slot completion time remains the same, but the address changes, this metric will not update
+- **Total Revenue Distance:** We use the new slot completed times and the vehicle location track to update this. Note that if the slot completion time remains the same, but the address changes, this metric will not update
+
+**Metrics that don't update:**
+- **Total Vehicle Travel Distance:** Uses vehicle location as calculation - we only update completed location
+- **Avg boardings per vehicle Hour:** Passenger count, pickup/dropoff time
+- **Revenue Hours:** Pickup/dropoff time
+
+| Rider Reports:  | Pickup Completed At - Uses vehicle location as calculation - we only update completed location,  |
+
+| Drop off Completed At  | Trip duration |
+
+In Progress & Completed Times in the Status changes are updated:
+
+***Stripe Charges***
+
+If a trip was paid for by Stripe/Nimoca/Go Pass, it’s not possible to change the payment method, but it is possible to change the number of riders. Changing the number of riders does not result in additional charges or refunds to the rider.
+
+***Ridership Reports***
+
+| Request:  | Trip wait - Completed Pickup Time |
+
+| In-vehicle trip distance - pickup/dropoff location | Distance to pickup without passengers - pickup/dropoff time and pickup/dropoff location. |
+
+| Rider: Passenger count | Slot:  |
+
+| Pickup completed distance deviation | Dropoff completed distance deviation. |
+
+Payment Method: Payment method type.
+
+***On-time Performance and Lateness***
+​
+
+| On-Time Performance and Trip Lateness are calculated based on the time a driver arrives at a stop, not when the pick-up or drop-off was completed. Data Reconciliation only allows users to edit the completed times and locations of the slots, so the following metrics **are not updated **by Data Reconciliation:  | Service Metrics - OTP. |
+
+| Fleet Metrics - OTP. | Ridership Report - Pickup Lateness. |
+
+| Ridership Report - Drop-off Lateness. | Ridership Report - Relevant Lateness. |
+
+***Duty and Driver Reports***
+
+| Duty Report:  | Total boardings - Passenger count,  |
+
+| Total Travel Distance - uses vehicle location as calculation - we only update completed location | Distance without Passengers - We use the new slot completed times and the vehicle location tracking to update this. Note that if the slot completion time remains the same, but the address changes, this metric will not update. |
+
+## Other FAQ
+
+### Does data reconciliation update On-time performance or Lateness Metrics?
+
+**No** - On-Time Performance and Lateness is calculated based on when the driver arrived at a stop, not when they completed the pick-up or drop-off. Data Reconciliation only allows users to edit the completed pick-up or drop-off time and locations.
+
+### Can I edit the payment method if a rider pre-paid with Stripe/Nimoca/Go Pass?
+
+**No** - You can only edit the payment method if a rider paid with an in-vehicle payment method (cash/tickets/etc).
+
+### If a rider paid with Stripe/Nimoca/Go Pass and I edit the number of passengers, will it refund or charge the rider?
+
+**No** - changing the number of passengers does not result in refunds or charges in Stripe/Nimoca/Go Pass.

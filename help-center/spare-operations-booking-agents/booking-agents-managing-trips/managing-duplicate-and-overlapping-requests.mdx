@@ -1,0 +1,24 @@
+---
+title: "Managing Duplicate and Overlapping Requests"
+description: ""
+---
+
+At Spare, we strive to ensure a smooth and efficient experience for riders. To maintain the quality of our service and prevent any confusion or inconvenience, we have implemented **checks** to **manage duplicate and overlapping requests.**
+
+- Before a request is created, we run the following checks in order to prevent overlapping requests: 
+
+#### Overlapping Request CheckTo avoid overlapping requests for a user, we employ a simple yet effective check. 
+
+When a new trip request is made, we examine if there is an existing request for the same user that overlaps with the requested time slot.
+
+For example, if there is already a request from 10:30 AM to 11:00 AM, we cannot book another request for the same user between 10:40 AM and 11:10 AM. This ensures that users do not have conflicting trips that could lead to scheduling issues.
+
+#### Duplicate Request Check:To prevent duplicate requests, we have implemented specific logic centred around the proximity of pickup and drop-off locations. 
+
+Here's how it works:
+
+**Distance Check: **First, the Spare's Engine checks to see if the pick-up and drop-off locations of the new request are within 150 meters of an existing request. If the Engine finds an existing trip with pick-up and drop-off locations within 150 meters of the new trip, we proceed to the next check:
+
+**Time Window Check: **In cases where the pickup and drop-off locations are within 150 meters, the Engine checks to see if the earliest possible pick-up times, and latest possible drop-off times overlap with a 30-minute buffer.
+
+**For example: **If an existing trip has pick-up and drop-off locations within 150 meters of the trip you're creating, and the existing trip has the earliest pickup time of 9:00 AM and the latest drop-off time of 10:00 AM, then we will prevent the new trip being created between 8:30 AM and 10:30 AM. This ensures that there is sufficient time for the completion of the initial trip and minimizes potential conflicts arising from closely located trips.

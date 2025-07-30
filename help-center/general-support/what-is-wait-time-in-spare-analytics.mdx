@@ -1,0 +1,70 @@
+---
+title: "What is Wait Time in Spare Analytics?"
+description: "Learn how wait time is calculated and displayed in Spare Analytics for rider experience metrics"
+---
+
+<Info>
+The Wait Time is visible in the Rider Experience section of Spare Analytics. Spare calculates the wait time for all 'Leave Now' and 'Leave As Soon As Possible' trips with a completed pickup.
+</Info>
+
+The wait time is defined as the time difference between the **completed pick-up time** and the **time when the rider is considered to be actively waiting** for their ride.
+
+## How is this calculated?
+
+The wait time calculation involves two key components:
+
+<CardGroup cols={2}>
+  <Card title="Completed Pick-up Time" icon="clock">
+    The time that the pickup was completed. Pickups can be completed by drivers in Spare's Driver Application or dispatchers in Spare Operations.
+  </Card>
+  
+  <Card title="Active Waiting Time" icon="hourglass">
+    The time when the rider is considered to be actively waiting for their ride (depends on several factors).
+  </Card>
+</CardGroup>
+
+### Determining Active Waiting Time
+
+The **time when the rider is considered to be actively waiting** depends on these factors:
+
+<Accordion title="Service Operating & No Walking Required">
+  If the service is currently operating, and the rider does not need to walk to the pickup location, then the **active waiting time** is when the rider requested the trip.
+</Accordion>
+
+<Accordion title="Service Operating & Walking Required">
+  If the service is currently operating, and the rider does need to walk to the pickup location, then the **active waiting time** is when they will reach the pickup location.
+</Accordion>
+
+<Accordion title="Service Not Operating">
+  If the service is not operating, then the **active waiting time** is when the service starts operating.
+</Accordion>
+
+<Warning>
+Spare only calculates the Wait Time for **Leave Now** and **Leave As Soon As Possible** trips. Wait time is not calculated for **recurring trips**, **scheduled leave-at**, and **scheduled arrive-by** trips.
+</Warning>
+
+## How to locate the information
+
+If you're looking to access data regarding rider experience wait time, Spare Analytics offers a convenient solution.
+
+<Steps>
+  <Step title="Access Spare Analytics">
+    Access Spare Analytics through Spare's login portal
+  </Step>
+  
+  <Step title="Navigate to Analytics">
+    Once logged in, find the Analytics section
+  </Step>
+  
+  <Step title="Select Service Analytics">
+    Choose Service Analytics within the Analytics menu
+  </Step>
+  
+  <Step title="Explore Rider Experience Metrics">
+    Within the Service Analytics section, you can find detailed metrics related to rider experience, including wait time. Utilize the available tools and filters to tailor your analysis according to your specific needs.
+  </Step>
+</Steps>
+
+## What does it look like?
+
+![Screenshot of Spare Analytics rider experience metrics showing wait time data in a dashboard format](/images/general-support/spare-analytics-rider-experience-wait-time.png)

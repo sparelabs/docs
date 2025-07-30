@@ -1,0 +1,69 @@
+---
+title: "Creating Conditional Sections in Forms"
+description: ""
+---
+
+# About This FeatureConditional forms create a more dynamic and streamlined forms experience. Instead of displaying every possible field, forms can be designed so that specific sections only appear based on previous answers keeping forms shorter, focused, and relevant to each user's specific situation.
+
+# How it WorksThis system uses a structure based on "Conditionals" and "Dividers" to manage which parts of the form are displayed:
+
+**Trigger Field:** This is the field whose answer initiates the conditional logic (e.g. a Yes/No toggle). It must be placed *before* the conditional logic point in the form.
+
+**Conditional Logic Point (Section End Point):** This element acts as a **decision point** in your form.
+
+When the user reaches this point after answering the Trigger Field, the condition set is checked.
+
+Adding a "Conditional" item **marks the end of the current form page**.
+
+**Divider (Section Start Point):** This element marks the **beginning of a new page** that the form can jump to *after* the Conditional Logic Point makes its decision.
+
+**Branching:** The Conditional Logic Point indicates which **page** to go for each possible outcome
+
+e.g. where to jump if the condition is met (Success). You do this by linking the Conditional Logic Point to specific **Dividers**.
+
+If it fails, it will continue to the next page in the list. 
+
+**Extra clarity on setting up conditional forms:**
+
+[Alternative Path Example](https://platform.sparelabs.com/d7365/engage/forms/64c8621b-51d6-4b26-994a-8f8512a91e5b)
+[Additional Questions Example](https://platform.sparelabs.com/d7365/engage/forms/b92a8649-da11-486f-8448-c34b77dd32e8)
+
+# Steps to add Conditional logic to your forms**Set up your trigger**.
+
+This can be either a Toggle or Single Choice Form Field Type
+
+**Add your destinations (which are dividers):**
+
+- For each possible outcome (one for Success and one for Failure), add a Divider page for both the success and failure of the conditional. These sections must include breaks (and do by default).
+
+**Add content to these outcomes:**
+
+- Immediately *after* each Divider, add the form fields or content sections that should be displayed if the user is sent down that specific path.
+
+**Add your conditional logic point:**
+
+- Add a conditional to specify the path the user should follow.
+
+Place this at the end of the page with your trigger on.
+
+Configure the conditional for the success criteria.
+
+If it fails, the conditional will simply continue down the page list to the next available page.
+
+This should create the following pattern:
+
+**Trigger:** Page with Toggle and / or Single Choice
+
+**Conditional** to indicate end of page
+
+**Divider 1** to indicate start of page if the conditional is false
+
+**Content** for divider 1 & it's page
+
+**Divider 2** to indicate the start of page if the conditional is true
+
+**Content **for divider 2 & it's page
+
+# FAQs Can I use multiple conditions? i.e. If Field A and B = X, go to a specific section. No
+
+Are Dividers and Page Break function the same? Yes

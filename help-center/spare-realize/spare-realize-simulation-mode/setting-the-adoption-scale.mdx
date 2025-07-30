@@ -1,0 +1,34 @@
+---
+title: "Setting the Adoption Scale"
+description: "Configure the adoption rate to model different demand scenarios and determine the proportion of trips that will use your on-demand service"
+---
+
+## Overview
+
+When setting up your Demand Model, you can choose to create a model based on **'Manual Input'** or **'Predicted by Realize'**. If you select **'Predicted by Realize'**, an Adoption Rate Slider will appear.
+
+![Adoption Rate Slider in Demand Model allowing adjustment between 0% and 100% to control trip adoption rates](/images/spare-realize/simulation-mode/adoption-scale-slider.png)
+
+## Understanding Adoption Rate
+
+The Adoption Rate describes the proportion of all trips in this Demand Segment that are taken using on-demand, once a service is introduced. The Adoption Rate directly controls how many trips are assigned to different 'Trip Types' in the table below the slider.
+
+### Factors Affecting Adoption Rate
+
+The Adoption Rate is **affected by the availability of other transportation options, local attitudes to public transportation, and the marketing of the service**. Evidence from Spare's existing services suggests that it sits between 0.1% and 1% of the total population in a given neighborhood, but it is often difficult to know where exactly to set the rate.
+
+## Testing Multiple Scenarios
+
+Rather than aiming for a single answer, the reality is that you may want to consider a variety of demand scenarios for your Service. The Adoption Rate slider is a powerful way to test those scenarios: you could set up a Service assuming that only 0.1% of your Demand Segment's trips were taken using the Service. Then, you could duplicate that Service and evaluate what resources you would need if 10% of the trips were taken this way.
+
+<Info>
+The 'Microtransit Potential' and 'Paratransit Potential' layers provided by Spare represent our best guess at the total ridership potential in a neighborhood. These layers are generated using a machine learning model trained on Spare's past data in other parts of the world. If you are relying on the Microtransit Potential or Paratransit Potential layers for your Demand Segments, we recommend setting the Adoption Rate slider close to 100%.
+</Info>
+
+## Using the Adoption Rate Slider
+
+You can click and drag the Adoption Rate slider between 0% and 100%.
+
+<Note>
+As you change the Adoption Rate slider, Realize will recalculate the total number of daily trips in each row of the Trip Types table.
+</Note>

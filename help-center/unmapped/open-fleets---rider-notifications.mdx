@@ -1,0 +1,39 @@
+---
+title: "Open Fleets - Rider Notifications"
+description: ""
+---
+
+When a rider takes an Open Fleet trip booked through Spare, two sets of text notifications are typically set up: 
+
+Notifications** from Spare** indicating that a **trip is booked** and a **vehicle arriving** notification.
+
+Notifications **directly from the Open Fleet provider **(e.g., Lyft) with **driver information, vehicle information, and driver phone number**
+
+## How does it work?Rider notifications through Spare should be set up for both **Processing** and **Accepted **states. This is because trips scheduled on Open Fleets, including Lyft, will be in a **Processing State **in 
+
+Spare until **shortly** **before the requested pickup time of the trip**. 
+
+To set up Rider Notifications from Spare, follow the instructions from the article below:
+
+[Set Up Rider Notifications](https://help.sparelabs.com/en/articles/8984355-rider-notifications)
+
+We recommend creating the following notifications with the "Push with fall back to SMS" option selected:
+
+Scheduled pickup in ~24 hours (Processing requests)
+
+Scheduled pickup ~1 hour (Processing requests)
+
+Scheduled pickup ~1 hour (Accepted requests)
+
+## Rider Notification ExamplesHere's an example of text for a** trip in the 
+
+Processing status**:
+​
+
+~24 hours before the trip pickup time:
+
+Reminder that you have a ride **#{{rideInitialScheduledPickupTime}}** from **#{{rideScheduledPickupAddress}}** to **#{{rideScheduledDropoffAddress}} **with [Organization Name] Transit.
+
+~1 hour before the trip pickup time:
+
+You have a ride **#{{rideCurrentScheduledPickupTime}}** with [Organization Name] Transit. Please be ready 15 minutes before your pick as the exact timing can change. We will text again when the vehicle is 2 minutes away.

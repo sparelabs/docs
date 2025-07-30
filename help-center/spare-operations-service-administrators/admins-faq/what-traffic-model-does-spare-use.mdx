@@ -1,0 +1,26 @@
+---
+title: "What traffic model does Spare use?"
+description: "Learn how Spare calculates traffic and travel time using custom traffic profiles for accurate trip planning"
+---
+
+## How does Spare calculate traffic?
+
+Spare creates traffic profiles for each customer that are used to calculate the driving time between an origin and destination. A traffic profile is a matrix of hundreds of Origin and Destination pairs within a specific area (e.g., Boston). The origin and destination pairs in the matrix are based on trips regularly taken in your organization. Traffic profiles are **automatically retrained using recent trip data** to ensure they're accurate.
+
+For each Origin and Destination pair, we use a third-party vendor to calculate the traffic between the locations at every hour of the day. We also calculate how long it would take to travel between these locations if there was no traffic, and then store the traffic at different times of the day as **'multiples'**.
+
+> For example, if a trip would take 30 minutes without traffic but take 2 hours at peak traffic, then the traffic multiple at that time of day is 4x.
+
+We then use this dataset when riders book trips in our system to ensure accurate travel time between locations. 
+
+## How is the traffic and travel time calculated for a trip?
+
+When a trip is booked, we identify points in the traffic profile's matrix that are as close as possible (as the crow flies) to the origin and destination of the trip. 
+
+We then find the traffic multiple between those locations at the time and multiply our estimate of how long it would take to travel between these two points without traffic by the traffic multiple.
+
+### Customizing traffic calculations
+
+Spare's customers can adjust their traffic model even further by **changing the relative vehicle speed** on the Organization Settings page.
+
+Learn more: [Using the Driving Speed Multiplier](/help-center/spare-operations-service-administrators/settings/using-the-driving-speed-multiplier)

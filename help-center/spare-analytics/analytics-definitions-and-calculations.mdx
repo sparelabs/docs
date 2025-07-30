@@ -1,0 +1,134 @@
+---
+title: "Analytics Definitions and Calculations"
+description: "Detailed explanation of how Average Boardings Per Service Hour is calculated in Spare Analytics, including time rules analysis and service zone calculations."
+---
+
+# Analytics Definitions and Calculations
+
+This guide explains how key metrics in Spare Analytics are calculated to help you better understand your data and reports.
+
+## Average Boardings Per Service Hour
+
+**Average Boardings Per Service Hour** is a crucial efficiency metric that measures the average number of completed boardings per hour of service provided.
+
+<Info>
+This metric helps you evaluate how effectively your transportation service is being utilized during active service periods.
+</Info>
+
+### Formula
+
+<Note>
+**Average Boardings Per Service Hour = Total Completed Boardings ÷ Total Service Hours**
+</Note>
+
+The calculation process involves several key components:
+
+## Time Rules Analysis
+
+The calculation of Average Boardings Per Service Hour is based on analyzing time rules for each service zone within a specified time period.
+
+<AccordionGroup>
+  <Accordion title="Individual Service Zone Analysis" icon="clock">
+    The calculation does not rely on the longest time rule but considers each service zone's time rules individually. This ensures accurate measurement across different service areas.
+  </Accordion>
+  
+  <Accordion title="Active Service Periods" icon="calendar">
+    For each selected date and service zone, the time rules specify the periods during which the service is active. These time rules are typically defined as start and end times for service operations.
+  </Accordion>
+</AccordionGroup>
+
+### Example Calculation
+
+<CardGroup cols={2}>
+  <Card title="Zone A" icon="map-pin">
+    **Time Rule:** 2 PM - 5 PM
+    
+    **Service Hours:** 3 hours
+  </Card>
+  
+  <Card title="Zone B" icon="map-pin">
+    **Time Rule:** 4 PM - 10 PM
+    
+    **Service Hours:** 6 hours
+  </Card>
+</CardGroup>
+
+<Note>
+In this example, the total service hours for that day would be **9 hours** (3 hours for Zone A + 6 hours for Zone B).
+</Note>
+
+## Total Service Hours Calculation
+
+The total service hours for each service zone are calculated by summing the durations of active service periods for the selected dates.
+
+<Steps>
+  <Step title="Identify Service Zones">
+    Determine all service zones included in your analysis period.
+  </Step>
+  
+  <Step title="Calculate Individual Zone Hours">
+    For each zone, sum the duration of all active service periods based on the configured time rules.
+  </Step>
+  
+  <Step title="Aggregate Multiple Services">
+    If multiple services are selected, the total service hours are aggregated by summing the service hours for each individual service zone.
+  </Step>
+</Steps>
+
+## Final Calculation Process
+
+<Tabs>
+  <Tab title="Step 1: Service Hours">
+    Calculate the total service hours by analyzing time rules for each service zone during the selected time period.
+  </Tab>
+  
+  <Tab title="Step 2: Completed Boardings">
+    Count the total number of completed boardings during the same time period across all selected service zones.
+  </Tab>
+  
+  <Tab title="Step 3: Calculate Average">
+    Divide the total completed boardings by the total service hours to get the Average Boardings Per Service Hour.
+  </Tab>
+</Tabs>
+
+<Warning>
+Only **completed boardings** are included in this calculation. Cancelled trips, no-shows, and incomplete trips are excluded from the boarding count.
+</Warning>
+
+## Key Considerations
+
+<AccordionGroup>
+  <Accordion title="Service Zone Independence" icon="layer-group">
+    Each service zone's time rules are calculated independently, ensuring accurate representation of different operational areas and schedules.
+  </Accordion>
+  
+  <Accordion title="Date Range Flexibility" icon="calendar-days">
+    The calculation can be performed for any date range, from single days to monthly or yearly periods, providing flexibility for different reporting needs.
+  </Accordion>
+  
+  <Accordion title="Multiple Service Aggregation" icon="plus">
+    When analyzing multiple services, the system aggregates service hours and boardings across all selected services for comprehensive reporting.
+  </Accordion>
+</AccordionGroup>
+
+## Understanding Your Results
+
+The Average Boardings Per Service Hour metric helps you:
+
+<CardGroup cols={3}>
+  <Card title="Measure Efficiency" icon="chart-line">
+    Understand how many passengers you're serving per hour of active service.
+  </Card>
+  
+  <Card title="Compare Performance" icon="balance-scale">
+    Compare efficiency across different service zones, time periods, or service types.
+  </Card>
+  
+  <Card title="Optimize Operations" icon="gear">
+    Identify opportunities to improve service utilization and operational efficiency.
+  </Card>
+</CardGroup>
+
+<Tip>
+Higher values indicate more efficient use of service hours, while lower values may suggest opportunities for schedule optimization or route adjustments.
+</Tip>

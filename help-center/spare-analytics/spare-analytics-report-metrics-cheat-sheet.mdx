@@ -1,0 +1,451 @@
+---
+title: "Spare Analytics: Report Metrics Cheat Sheet"
+description: "Comprehensive reference guide for all Spare Analytics report metrics with detailed definitions and explanations"
+---
+
+# Spare Analytics: Report Metrics Cheat Sheet
+
+This comprehensive guide provides definitions for all metrics available in Spare Analytics reports. Use this reference to understand what each metric means and how to interpret your data.
+
+<Info>
+**Quick tip:** Use `Ctrl+F` (or `Cmd+F` on Mac) to search for specific metric definitions on this page.
+</Info>
+
+## Report Metric Types
+
+There are two main categories of metrics in Spare Analytics reports:
+
+<CardGroup cols={2}>
+  <Card title="1️⃣ Ridership & Request Metrics" icon="users">
+    Metrics related to passenger trips, requests, and rider behavior
+  </Card>
+  <Card title="2️⃣ Duty & Driver Metrics" icon="car">
+    Metrics related to vehicle operations, driver duties, and fleet performance
+  </Card>
+</CardGroup>
+
+## Related Resources
+
+<CardGroup cols={2}>
+  <Card title="Spare Analytics: Dashboards and KPIs" href="/help-center/spare-analytics/spare-analytics-dashboards-and-kpis">
+    Learn about viewing analytics in the Spare Platform
+  </Card>
+  <Card title="Downloading Reports" href="/help-center/spare-analytics/downloading-reports">
+    Instructions for accessing and downloading analytics reports
+  </Card>
+</CardGroup>
+
+<Tip>
+To create a custom report, select **+Create New Report** in the **Custom Reports Section** and choose only the metrics you need.
+</Tip>
+
+<img 
+  src="https://downloads.intercomcdn.com/i/o/668644763/1959ad3438de3279637f8373/Screen+Shot+2023-02-06+at+11.21.37+AM.png?expires=1753820100&signature=4583cb46a975a04111eed5b7cf7e653999757c4a63f6ed9df3d6c255d59e8034&req=ciYvEM16modcFb4f3HP0gFAPT1KiVj3O7d69prYayk5o%2BQSexB2POL4Lg04%2F%0AIx0%3D%0A" 
+  alt="Screenshot of Spare Analytics custom report creation interface"
+/>
+
+# 📊 **Ridership Metrics****Metric Name**
+
+**Metric Definition**
+
+**➡️ Request **
+
+-//-
+
+| Request ID | The unique system-generated alpha-numeric code used to identify the trip request. |
+
+| Requested Pickup Time | The requested pickup date and time from the rider. |
+
+| Requested Pickup Address | The requested pickup address from the rider. |
+
+| Requested Pickup Longitude | The longitudinal coordinate of the requested pickup location. |
+
+| Requested Pickup Latitude | The latitudinal coordinate of the requested pickup location. |
+
+| Requested Dropoff Time | The requested date and time of the dropoff from the rider. |
+
+| Requested Dropoff Address | The requested dropoff address from the rider |
+
+| Requested Dropoff Longitude | The longitudinal coordinate of the requested dropoff location. |
+
+| Requested Dropoff Latitude | The latitudinal coordinate of the requested dropoff location. |
+
+| Original Scheduled Pickup Time | The original pickup date and time that was communicated to the rider when the trip request was created. |
+
+| Scheduled Pickup Time | The scheduled date and time of the trip request’s pickup. Gets updated in real time by Spare Engine. |
+
+| Scheduled Pickup Address | The address where the vehicle will pick up the rider. This location can differ from the rider’s requested pickup address if the location falls within a stop zone. Spare Engine will determine a stop near the rider’s requested pickup address that they will be directed to walk to. |
+
+| Scheduled Pickup Longitude | The longitudinal coordinate of the scheduled pickup location. |
+
+| Scheduled Pickup Latitude | The latitudinal coordinate of the scheduled pickup location. |
+
+| Scheduled Dropoff Time | The scheduled date and time of the dropoff at the scheduled dropoff address. Gets updated in real time by Spare Engine. |
+
+| Scheduled Dropoff Address | The address where the vehicle will drop off the rider. This location can differ from the rider’s original trip request dropoff address if the location falls within a stop zone. Spare Engine will determine a stop near the rider’s requested destination and direct them to walk from the dropoff point to their final destination. |
+
+| Scheduled Dropoff Longitude | The longitudinal coordinate of the scheduled dropoff location. |
+
+| Scheduled Dropoff Latitude | The latitude coordinate of the scheduled dropoff location. |
+
+| Pickup Walking Duration (seconds) | The estimated time required for the rider to walk from their requested pickup location to their scheduled pickup location. |
+
+| Dropoff Walking Duration (seconds) | The estimated time required for the rider to walk from their scheduled dropoff location to their requested final destination. |
+
+| Notes | Comments made within the “notes” section of a trip request booked from the Spare Admin Panel. |
+
+| Status | The status of the trip request at report export. Statuses include:  |
+
+• Accepted: The trip request is scheduled to a driver’s manifest. 
+
+• inProgress: The rider is on board and the trip is in progress” 
+
+• Canceled: The trip request was canceled. 
+
+• Completed: The driver has completed the trip. 
+
+• driverArriving: The driver is pulling up to the pickup location. 
+
+• noDriversAvailable: The system is unable to match a driver to the trip request.
+
+| Pickup Arriving At Time | The date and time when the rider receives a notification that their driver is about to arrive. Trip request changes to *Arriving* status. The vehicle should be approximately two minutes from the scheduled pickup location. Notification is triggered up to 4 minutes before the scheduled pickup time. |
+
+| Pickup Completed At | The date and time when the driver confirms via the Spare Driver app that the pickup is completed. Trip request changes to *In Progress* status. |
+
+| Request Cancelled At | The date and time when the trip request was canceled. |
+
+| Dropoff Completed At | The date and time when the driver confirms via the Spare Driver app that the dropoff is completed. Trip request changes to Completed status. |
+
+| In Vehicle Trip Distance | The actual distance traveled by the rider during the trip.  |
+
+| Trip Duration (minutes) | The actual duration traveled by the rider during the trip. |
+
+| Trip Wait (minutes) | The time between the requested pickup time and the pickup completed time. This is only calculated for “leave soon as possible” trip requests. |
+
+| Estimated Trip Distance (meters) | The estimated distance to be traveled by the vehicle between the specified pickup and dropoff location at the time of booking. Does not account for any potential detours due to pooling. Units are configured based on organization settings. |
+
+| Estimated Trip Duration (minutes) | The estimated trip duration determined at the time of booking. Does not account for any potential detours due to pooling or any other factors on the day of the trip. |
+
+| Request Accepted Time | The time and date when the trip request was added to the driver’s manifest - currently in unix time.  |
+
+| Note that if a request has been rematched to multiple duties, this will be the time at which it was added to the most recent duty. | Deadhead to Pickup |
+
+| The total distance traveled from the driver’s last stop to the pickup location of the next trip when no other riders were on board. | Created By |
+
+| The name of the user who originally created the trip request, whether a booking agent, a driver (via “flag down”), or the rider themselves. If the creator has left this organization or has deleted their account, this will be blank. | Created At Time |
+
+The date and time that the trip request was created.
+
+**➡️ Rider**
+
+- Rider ID
+
+| The unique system-generated alpha-numeric code used to identify the profile of the rider for whom this request was booked. | Rider Name |
+
+| The name of the rider. | Number of Riders (Adult) |
+
+| The number of adults indicated on the trip request. | Number of Riders (Infant) |
+
+| The number of infants aged 0-3yr indicated on the trip request. | Number of Riders (Child) |
+
+| The number of children aged 4-10yr indicated on the trip request. | Number of Riders (Youth) |
+
+| The number of children aged 11-16yr indicated on the trip request. | Number of Riders (Senior) |
+
+| The number of seniors indicated on the trip request. | Number of Riders (Student) |
+
+| The number of students indicated on the trip request. | Number of Riders (Disabled) |
+
+| The number of riders with a disability indicated on the trip request. | Number of Riders (Veteran) |
+
+| The number of veterans indicated on the trip request. | Number of Riders (Reduced) |
+
+| The number of riders indicated as the reduced rider type on the trip request. | Number of Riders (Personal Care Attendant) |
+
+| The number of personal care attendants that join the rider and are added to the total number of boardings recorded for each vehicle/duty. | Number of Riders (Other) |
+
+The number of riders indicated as ‘other’ on the trip request.
+
+**➡️ Accessibility Features**
+
+- Accessibility Stroller Count
+
+| The number of strollers indicated on the trip request. | Accessibility Wheelchair Count |
+
+| The number of wheelchairs indicated on the trip request. | Accessibility Child Seat Baby Count |
+
+| The number of child seats needed on the trip request for children aged 0-3yrs. | Accessibility Child Seat Young Count |
+
+| The number of child seats needed on the trip request for children aged 4-10yrs. | Accessibility Service Animal Count |
+
+| The number of service animals indicated on the trip request. | Number of Bikes |
+
+| The number of bikes indicated on the trip request. | Number of Oversized Wheelchairs |
+
+| The number of oversized wheelchairs indicated on the trip request. | Number of Lifts |
+
+| The number of wheelchair lifts or ramps needed on the trip request. | Number of Walkers |
+
+| The number of walkers indicated on the trip request. | Number of White Cane Seats |
+
+| The number of white cane seats indicated on the trip request. | Number of Door to Door Stops |
+
+| The number of actual door-to-door pickups and dropoffs the driver made. | Number of Stretchers |
+
+| The number of emergency and transport stretchers needed on the trip request. | Number of Folding Wheelchairs |
+
+The number of folding wheelchairs indicated on the trip request.
+
+**➡️ Duty**
+
+- Duty ID
+
+The unique system-generated alpha-numeric code used to identify the duty to which the trip request was matched (if it was matched).
+
+**➡️ Driver**
+
+- Driver Name
+
+| The name of the driver the trip request is assigned to. | Driver Location On Match Longitude |
+
+| Longitude of the driver’s location when the trip request was matched to the driver, or empty if the trip request was matched before the duty started. Considers the trip request’s most recent match. | Driver Location On Match Latitude |
+
+Latitude of the driver’s location when the trip request was matched to the driver, or empty if the trip request was matched before the duty started. Considers the trip request’s most recent match.
+
+**➡️ Vehicle**
+
+- Vehicle License Plate
+
+| The license plate of the vehicle that the trip request is assigned to. | Vehicle Identifier |
+
+The identifier of the vehicle the trip request is assigned to.
+
+**➡️ Service**
+
+- Service Name
+
+The name of the service the trip request is assigned to.
+
+**➡️ Fleet**
+
+- Fleet Name
+
+| The name of the fleet that the duty and trip request are assigned to. | Fleet Type |
+
+A fleet can be one of three types: Auto Accept, Accept / Reject, External.
+
+**➡️ Estimate**
+
+- Created Interface
+
+| The channel the trip request was created from: Admin Interface, Rider Web Interface, Rider Mobile app, Driver App. | Estimate Created At Time |
+
+| Time of the most recent estimate obtained by the rider before booking a trip request. | Estimate Endpoint |
+
+Whether the trip request was booked as a “next available” “scheduled” (i.e. advanced booking) or flagdown
+
+**➡️ Zone**
+
+- Pickup Zone Name
+
+| The name of the selected zone where a rider’s pickup will occur. | Dropoff Zone Name |
+
+The name of the selected zone where a rider’s dropoff will occur.
+
+**➡️ Slot**
+
+- Pickup Completed Distance Deviation
+
+| Straight line distance between the scheduled pickup location and completed location. | Dropoff Completed Distance Deviation |
+
+| Straight line distance between the scheduled dropoff location and completed location. | ➡️** Request Cancellation** |
+
+- Cancellation Cancelled By
+
+| If the trip request is canceled, the system will log (admin, rider, driver) who made the cancellation. | Cancellation Fault |
+
+| The cancellation fault, this can be ‘riderFault’, ‘noFault’, or ‘driverFault’. The fault is logged when a cancellation is made. | Cancellation Reason |
+
+| The cancellation reasoning indicated on the trip request (e.g. no show). | Cancellation Notes |
+
+Notes added to the cancellation by the reservationist or rider, depending on who cancelled the trip.
+
+**➡️ Fare**
+
+- Fare Cost
+
+| The total fare cost of the trip. Calculated before the trip request is matched, so does not take into account detour due to pooling. Currency configured on a per organization basis. | Fare Discount |
+
+The total discount applied to the rider’s fare, based on any promos or fare passes applied to this trip request.
+
+**➡️ Tip**
+
+- Tip
+
+| The tip amount provided by the rider (for services where tipping is enabled). | Tip Created Time |
+
+| If the rider leaves a tip, the date and time that the tip was created. | Payment Method |
+
+| Payment Method ID | The unique system-generated alpha-numeric code given to the payment method attached to the trip request. |
+
+| Payment Method Connected Account Type | The payment method chosen by the rider to pay for their trip. |
+
+| Promotion | Promo Names |
+
+| If a promotion is applied to the rider’s trip request, the name of the promotion will be shown here. | Promo Discounts |
+
+If a promotion is applied to the trip request, the discounted amount given by the promotion will be shown here.
+
+**➡️ Review**
+
+- Rider Rating
+
+| The rating provided by the rider on the trip request. Standard is thumbs up equals 100% and thumbs done equals 0%. | Rider Review Tags |
+
+| The tags selected by the rider when completing a review for their trip. | Rider Comment |
+
+The comment that the rider left for the trip request in the rider application.
+
+**➡️ Fare Pass**
+
+- Fare Pass Names
+
+| If a fare pass is applied to the rider’s trip request, the name of the fare pass will be shown here. | Fare Pass Discounts |
+
+| If a fare pass is applied to the rider’s trip request, the discounted amount given by the fare pass will be shown here. | Request Recurrence |
+
+| Recurrence ID | The related recurring trip ID if the trip request was automatically generated by a recurring trip request. |
+
+# 📊 **National Transit Database (NTD) Metrics****Metric Name**
+
+**Metric Definition**
+
+**➡️ Request**
+
+- Number of Completed Boardings
+
+| Total number of riders who successfully completed their trip | Number of Completed Requests |
+
+| Total number of requests successfully completed | Number of Cancelled Requests  |
+
+| Total number of requests cancelled | Number of No Show Requests  |
+
+Total number of requests whose rider was a ‘No Show’
+
+**➡️ Duty**
+
+- Vehicle Hours
+
+| Total number of hours scheduled for all vehicles in the fleet. | Total Scheduled Vehicle Hours |
+
+| Total number of hours scheduled for all vehicles in the fleet. | Total Actual Vehicle Hours |
+
+| Total time recorded for all vehicles in the fleets. This takes into account when the duty was actually started, completed and cancelled. | Total Actual Vehicle Distance (km) |
+
+| Total distances travelled as recorded by the Driver App for each vehicle in the fleets selected. | Revenue Hours |
+
+| Total hours in revenue service based on the time of the first completed pickup to last completed dropoff.  | Revenue Distance (km) |
+
+| Total distance from the first completed pickup to the last completed dropoff. Same “vehicle locations between times polyline” approach as “Vehicle Distance” | Total Break Hours |
+
+| The total hours of all breaks taken by all duties on this date | Total Break Distance (Meters) |
+
+The total distance driven during breaks taken by all duties on this date
+
+**➡️ Additional**
+
+- Date 
+
+| The Date that this row corresponds to. Requests/duteis are included in the aggregate metrics for this row if their request.requestedPickupTs was on this date. Only Completed and Cancelled requests are included | # 📊 **Duty Metrics****Metric Name** |
+
+**Metric Definition**
+
+**➡️ Driver**
+
+- Driver Name
+
+The name of the driver assigned to the duty.
+
+**➡️ Duty**
+
+- Duty ID
+
+| A unique system-generated alphanumeric code used to identify the driver profile. | Duty Created Time |
+
+| The date and time when a driver’s duty was created. | Duty Scheduled Start Time |
+
+| The date and time that the duty is scheduled to begin. | Duty Scheduled End Time |
+
+| The date and time that the driver duty is scheduled to end. | Duty Cancelled Time |
+
+| The date and time the duty was cancelled.  | Total Duration (hours) |
+
+| The total duty duration, from duty actual start time to duty actual end time. If the duty was cancelled, the cancellation time is used as the actual end time. | Total Travel Distance (meters) |
+
+| The total distance the vehicle traveled during the duty period. | First Seen in Service Area Time |
+
+| The date and time the duty first entered the service area, as determined by the geographical zone boundaries of the service. | Last Seen in Service Area Time |
+
+| The date and time a given duty is last in the service area, as determined by the geographical zone boundaries of the service. | Deadhead Travel Distance (meters) |
+
+| The total distance traveled during the duty when there were no riders on board the vehicle. | Pause Duration While in Progress (minutes) |
+
+The total duration of the vehicle being paused while the duty is In-Progress.
+
+**➡️ Breaks**
+
+- Total Break Hours
+
+| Total time of all the actual breaks taken by the driver during this duty.  | Total Number of Breaks |
+
+| Total number of breaks taken during this duty. | Total Scheduled Break Hours |
+
+| Total time of all breaks scheduled for the driver during the duty. | Total Break Distance (unit) |
+
+| Distance travelled by the driver during their break. | Breaks |
+
+| A list of the breaks that were assigned to this duty. For each break, includes scheduled time, actual start time, actual completion time and/or cancellation time if the break was cancelled. | Duty Status |
+
+| The status of the duty at time of report download. The potential statuses are: Scheduled, Completed, Cancelled. | ➡️ **Vehicle** |
+
+- Vehicle Identifier
+
+| A custom value used to internally identify each vehicle within an organization. | Vehicle License Plate |
+
+| The license plate of the vehicle. | ➡️ **Fleet** |
+
+- Fleet Name
+
+| The fleet the duty is assigned to. | Fleet Type |
+
+The type of fleet the duty is assigned to. A fleet can fall under three categories: Auto Accept, Accept Reject, and External Fleet.
+
+**➡️ Slot**
+
+- Duty Actual Start Time
+
+| The date and time when the driver began their duty in the driver app. | Duty Actual Completed Time |
+
+The date and time the driver ended their duty in the driver app.
+
+**➡️ Boarding**
+
+- Total Boardings
+
+| The total number of riders who completed trips on the duty. A single request with 2 riders counts as 2 bookings. | Rider Mobile App Boardings |
+
+| The total number of riders who completed trips on the duty after booking through the Spare Rider mobile app. | Rider Web Boardings |
+
+| The total number of riders who completed trips on the duty after booking through the Spare Rider Web interface. | Driver App Boardings |
+
+| The total number of riders who completed trips on the duty after booking through the Spare Driver mobile app (walk-ons). | Admin Panel Boardings |
+
+| The total number of riders who completed trips on the duty after booking through the Spare Platform admin interface. | IVR Boardings |
+
+| The total number of riders who completed trips on the duty after booking through the Spare IVR phone interface. | AI Voice Boardings |
+
+| The total number of riders who completed trips on the duty after booking through the Spare AI Voice phone interface. | AI Chat Boardings |
+
+| The total number of riders who completed trips on the duty after booking through the Spare AI Chat interface. | Open Bookings Boardings |
+
+The total number of riders who completed trips on the duty after booking through the Spare Open Bookings interface.

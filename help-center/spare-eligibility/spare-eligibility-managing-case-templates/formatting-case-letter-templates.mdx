@@ -1,0 +1,173 @@
+---
+title: "Formatting Case Letter Templates"
+description: "Learn how to format case letter templates using Markdown syntax and the built-in formatting toolbar in Spare Eligibility."
+---
+
+Spare Eligibility allows you to create document templates with custom content and formatting called Template Letters. 
+
+When creating a Template Letter, you have several options for formatting letters using the toolbar. 
+
+<Info>
+When adding formatting with the toolbar, you'll notice that it often adds extra symbols like `**` and `[]` to the page. Those symbols are part of Markdown, a way of defining document formatting with regular text. Template Letters fully support Markdown, and you can also add formatting just by typing those characters yourself if you prefer.
+</Info>
+
+## Paragraphs and Line Breaks
+
+<CardGroup cols={2}>
+<Card title="Creating Paragraphs">
+  To create paragraphs, use a blank line to separate one or more lines of text.
+</Card>
+<Card title="Creating Line Breaks">
+  To create a line break or new line, end a line with two or more spaces and then type return.
+</Card>
+</CardGroup>
+
+| Type this | Result |
+|-----------|--------|
+| This is a paragraph.<br><br>This is a second paragraph. | This is a paragraph.<br><br>This is a second paragraph. |
+| This is the first line.  <br>And this is the second line. | This is the first line.<br>And this is the second line. |
+
+## Text Emphasis
+
+Use these Markdown symbols to emphasize text in your templates:
+
+<CardGroup cols={2}>
+<Card title="Bold Text" icon="bold">
+  Add two asterisks `**` before and after text
+</Card>
+<Card title="Italic Text" icon="italic">
+  Add one asterisk `*` before and after text
+</Card>
+<Card title="Bold and Italic" icon="text">
+  Add three asterisks `***` before and after text
+</Card>
+<Card title="Strikethrough" icon="strikethrough">
+  Add two tildes `~~` before and after text
+</Card>
+</CardGroup>
+
+| Type this | Result |
+|-----------|--------|
+| `I love **bold** text` | I love **bold** text |
+| `I love *italic* text` | I love *italic* text |
+| `I love ***bold and italic*** text` | I love ***bold and italic*** text |
+| `I love ~~strikethrough~~ text` | I love ~~strikethrough~~ text |
+
+## Headings
+
+To create a title or heading, add number signs (#) in front of a word or phrase. The more number signs you use, the smaller the heading.
+
+| Type this | Result |
+|-----------|--------|
+| `# Big title` | # Big title |
+| `## Medium title` | ## Medium title |
+| `### Small title` | ### Small title |
+| `#### Tiny title` | #### Tiny title |
+
+## Quotes and Callouts
+
+To add a quotation or call extra attention to a section of text, add a `>` in front of a paragraph.
+
+<Tip>
+Quotes can contain multiple paragraphs. Add a `>` on the blank lines between the paragraphs.
+</Tip>
+
+| Type this | Result |
+|-----------|--------|
+| `> This is a quote`<br>`> It can span multiple lines!` | > This is a quote<br>> It can span multiple lines! |
+
+## Lists
+
+<CardGroup cols={2}>
+<Card title="Numbered Lists">
+  Add line items with numbers followed by periods.
+</Card>
+<Card title="Bullet Lists">
+  Add dashes (-), asterisks (*), or plus signs (+) in front of line items.
+</Card>
+</CardGroup>
+
+| Type this | Result |
+|-----------|--------|
+| `1. List item one`<br>`2. List item two`<br>`3. List item three` | 1. List item one<br>2. List item two<br>3. List item three |
+| `- One thing`<br>`- Another thing`<br>`- And another thing` | • One thing<br>• Another thing<br>• And another thing |
+
+## Links
+
+To create a link, enclose the link text in brackets (e.g., `[Spare]`) and then follow it immediately with the URL in parentheses (e.g., `(https://sparelabs.com)`).
+
+You can also add links without additional text by using angle brackets before and after the link URL.
+
+| Type this | Result |
+|-----------|--------|
+| `[Spare](https://sparelabs.com)` | [Spare](https://sparelabs.com) |
+| `<https://sparelabs.com>` | <https://sparelabs.com> |
+
+## Images
+
+To add an image, add an exclamation mark (!), followed by alt text in brackets, and the URL of the image in parentheses.
+
+<Warning>
+The image must have a URL on the internet - it cannot be uploaded from your computer. If you need to post an image on the internet so you can link to it, we recommend using [Imgur](https://imgur.com/upload).
+</Warning>
+
+<CardGroup cols={2}>
+<Card title="Standard Image">
+  `![Alt text](https://example.com/image.png)`<br>
+  Images automatically fill the full width of the page.
+</Card>
+<Card title="Custom Width Image">
+  `<img src="https://example.com/image.png" style="width: 200px;">`<br>
+  Use HTML with inline styles for custom sizing.
+</Card>
+</CardGroup>
+
+## Dividers and Horizontal Rules
+
+To create a divider, use three or more dashes (`---`), underscores (`___`), or asterisks (`***`) on a line by themselves.
+
+<Note>
+The visual appearance of all three options looks identical.
+</Note>
+
+## Letter Headers
+
+You can use any combination of the formatting options above to create a header at the top of your letter.
+
+<Tip>
+For more control over things like image sizing, layout, font size, or font color, you can use [HTML with inline styles](https://www.codecademy.com/article/html-inline-styles).
+</Tip>
+
+Here are some premade headers you can paste into your letters. Just replace the text and URLs with your own content.
+
+<Accordion>
+<AccordionItem title="Logo with Company Info and Divider">
+**Description**: Logo in top left, with company name and contact info in small font, and a divider line
+
+**Code to copy**:
+```html
+<img src="https://i.imgur.com/0BFwAum.png" style="width: 240px;">
+
+<p style="font-size: 12px; margin-bottom: 0px;"><strong>Spare Labs Inc.</strong></p>
+
+<p style="font-size: 12px; margin-top: 0px;">Suite 810, 815 West Hastings St, Vancouver, BC, V6C 1B4 | www.sparelabs.com</p>
+
+-----
+```
+</AccordionItem>
+
+<AccordionItem title="Date and Address with Logo">
+**Description**: Date, rider name, and rider address in top left, next to small logo in top right
+
+**Code to copy**:
+```html
+<div style="display: flex; flex-direction: row; justify-content: space-between; align-items: flex-start;">
+
+<p>{{{date.current}}}<br><br>Dear {{{rider.firstname}}} {{{rider.lastname}}}<br><br>{{{rider.address}}}</p>
+
+<img style="width: 25%; padding-top: 20px" src="https://i.imgur.com/0BFwAum.png">
+
+</div>
+```
+</AccordionItem>
+</Accordion>

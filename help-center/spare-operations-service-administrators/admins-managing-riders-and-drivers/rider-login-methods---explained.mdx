@@ -1,0 +1,140 @@
+---
+title: "Rider Login Methods - Explained"
+description: "Explainer on how riders can login to various Spare services"
+---
+
+All about how riders access the Rider App, Web App & Rider Hub, and how admins can change this.
+
+## Available Login Method Options & Accessible Services
+
+Spare offers four primary login methods for riders:
+
+**Phone Number**
+
+**Email**
+
+**Rider ID + PIN**
+
+**Shared Login (by a representative):** Allows a representative to log in and book trips on riders' behalf by looking them up via any of the other login methods.
+
+All login methods on a rider's profile can be used for that rider across all of our rider interfaces:
+
+**Rider Mobile App**
+
+**Rider Web App**
+
+**Rider Hub**
+
+**Phone Systems (for call-in booking via AI Voice agents)**
+
+- For example, if I've signed up with the Rider Hub via phone number only, I can only access my account in the Rider App via phone number as well.
+
+## Managing Login 
+
+Methods### Enabling for an Organization**For Phone & Email:** 
+
+Available by default
+
+**For Rider ID:**
+
+- The organization must have the **Enable External Numeric Rider ID** setting turned on in organization settings.
+
+The feature flag **RiderPhonePin** must be enabled.
+
+**Shared Login (Representatives):** The **RiderRepresentatives** feature flag must be enabled.
+
+### Visibility in Spare Admin
+
+Navigate to any rider profile to see their login configuration:
+
+**For Phone & Email:** The **Login Methods** field shows which authentication methods are enabled for each rider. Displays as a comma-separated list (e.g., "Phone, Email") or "None" if no methods are configured.
+
+![](https://downloads.intercomcdn.com/i/o/wyxobwoi/1621583865/618f2efa0e2f297538c1a527cbbc/image.png?expires=1753820100&signature=72d8334567727458640f100cd0eeffe9ed56063f8c3a73c0301ee7253dcfa1b4&req=dSYlF8x2nolZXPMW1HO4zd6zlGDMdJSHrF4%2BYBSqGmX8v2VKJwcNKiRkOO9f%0ArMbb%0A)
+
+**For Rider ID & PIN:** Assuming Rider ID is enabled for the organization (displays the rider's numeric ID on the Rider Profile), the field **PIN Configured** shows "Configured" or "Not Configured."
+
+![](https://downloads.intercomcdn.com/i/o/wyxobwoi/1621584742/8bb1079d16f0dc8dc1551907b667/image.png?expires=1753820100&signature=da22e9fa4b118bb1d2cf6fee0bccddd2f6c5af01092094ecaeb9c20a9d930811&req=dSYlF8x2mYZbW%2FMW1HO4zQ0TgoRnSZn8cQFpT19D5hkLgGsJvptFFf%2BUWPrk%0AVjxg%0A)**Note: **The **Login Methods field does not display Rider ID + PIN capability**. Check the **Rider ID Number** and **Phone PIN** fields separately to determine if Rider ID authentication is available.
+
+**For Shared Logins:**
+
+- In Spare Operations, navigate to the rider's **Profile Overview** tab to see **Authorized Representatives** and **Riders Represented** sections showing active representative relationships.
+
+In Eligibility, this window is not currently available on the rider profile, but a representative would be seen as the case author in the rider activity log.
+
+![](https://downloads.intercomcdn.com/i/o/wyxobwoi/1621586486/5af089c7b513bd4342ea9bf7d14a/image.png?expires=1753820100&signature=d460f55730fa115d1003f532d5fc1a356dc92310cfbd1bd13da9b097fe08d11b&req=dSYlF8x2m4VXX%2FMW1HO4zdi1RqikQ5hJUjwxONn4s3GcxXqvGsO3HWF4SdHB%0As%2FKr%0A)
+
+### Enabling for a Rider**For Phone & Email:** Edit the core "phone number" and "email" fields in Spare Admin. Once a phone number or email is added, this will be reflected in the **Login 
+
+Methods** field.
+
+![](https://downloads.intercomcdn.com/i/o/wyxobwoi/1621589345/c2dee802f0939415a719c8f8a16c/image.png?expires=1753820100&signature=8aa2e61f981c8d01f98ba3327d56e7dbb48ac7c4ed638860dc01e8cb67220695&req=dSYlF8x2lIJbXPMW1HO4zZeAtVhzvSSskPGrk6fgISGjDCMbrtArta4QaEG3%0AqR5S%0A)**Note: **Changing a verified phone number/email will log the rider out of all apps.
+
+**For Rider ID & PIN:** Click the **Actions** menu (⋯) → Select "**Update Phone PIN**."
+
+![](https://downloads.intercomcdn.com/i/o/wyxobwoi/1621591556/7ad91c2740d7526d91a46c408601/image.png?expires=1753820100&signature=125a298381469804e2b3a16c1e205c8083413cfcef4598b7a8026d677e186994&req=dSYlF8x3nIRaX%2FMW1HO4zdVphC89KCZHRBjyGQIaO%2F1qsgVRqS0soMxHXfA%2F%0AHWvf%0A)**For Shared Logins:**
+
+**In Operations:** Representative relationships can be managed directly in the rider's **Overview** tab using "Add Representative" buttons in the **Authorized Representatives** and **Riders Represented** sections.
+
+**In Eligibility:** This must be completed by the representative in the Rider Hub.
+
+The system then creates the relationship after verification.
+
+## Detailed Authentication 
+
+Behaviour### PIN Authentication**Current Standard:** 6-digit PI
+
+Ns for new organizations.
+
+**Legacy Support:** Some older organizations still use 4-digit PINs.
+
+**Security Rules:** PINs cannot be simple patterns (1234, 1111, etc.) or common sequences (123456).
+
+**Setup Process:** If a rider doesn't have a PIN when first authenticating by Rider ID, they'll be prompted to create one.
+
+**Reset Limitations:** For security, PINs cannot be reset through self-service – riders must contact support.
+
+### Contact Method Uniqueness
+
+Only one rider per organization can use a specific email or phone number for authentication.
+
+Multiple riders can share the same contact information if it's not used for login.
+
+When creating riders, the system automatically enables authentication for the first rider with unique contact info.
+
+If you try to enable authentication for a contact method already in use, the system will prevent it.
+
+### Verification Requirements
+
+When riders change their authentication email or phone number, they must re-verify on next login.
+
+Verification is removed whenever contact information is updated.
+
+Successfully logging in re-verifies the user.
+
+## Frequently Asked Questions**Why does a rider profile show an email address or phone number but "Login Methods" says "
+
+None"?**
+
+- This happens when multiple riders share the same email address, which can occur during bulk uploads. The system allows duplicate contact information but only permits one rider per organization to log in with each email/phone number.
+
+**What this means:**
+
+- The rider has the email in their contact information.
+
+But another rider profile has authentication rights for that email.
+
+The current rider cannot use that email to log in.
+
+**If there are duplicates, and I see a rider profile with an email address or phone number, but no login method – how do I change which profile can log in with that method?**
+
+- Identify the rider with the login method.
+
+Remove their login method (delete the phone/email from their account).
+
+Go to the new rider for whom you would like to add the login method.
+
+Add it to their profile.
+
+**Note:** The rider who loses authentication access will need an alternative login method (phone, Rider ID, or different email) to avoid being locked out.
+
+For questions about configuring authentication methods or troubleshooting login issues, contact your Spare representative.

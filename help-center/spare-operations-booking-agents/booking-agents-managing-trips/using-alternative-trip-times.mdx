@@ -1,0 +1,56 @@
+---
+title: "Using Alternative Trip Times"
+description: ""
+---
+
+When booking rides in Spare Operations, it’s common for the rider’s requested time to be unavailable. When this happens, **Alternative Trip Times display available pick-up and drop-off times close to the rider's desired time.**
+
+## How do I turn this feature on?
+
+This feature is automatically enabled for all services that use [consistent windows](https://help.sparelabs.com/en/articles/8958837-pickup-dropoff-window-types-consistent-variable). 
+
+## How does it work?If the rider's requested pick-up or drop-off time is not available, 
+
+Spare will try to find alternative trip times close to the rider's requested time. 
+
+For Leave-At trips, Spare will display an alternative time on either side of the rider's requested pickup time, if there is one. 
+
+For Arrive-By trips, Spare will display an alternative drop-off time before the rider's requested drop-off time. 
+
+![](https://spare-74fa64f80617.intercom-attachments-1.com/i/o/969263020/3befe26ed2596e7290d2fefb/T-I_NWiuyjmnOCzCbjylxAU-6Keti6SFfQ.gif?expires=1753820100&signature=6204115c1054bf451e664ac68e2aa75cbf349dcefa1b97d349a3dca6641fa71f&req=fSYuFM99nYNfFb4f3HP0gNRT6Uyd%2FYv8PcwKee7u%2Bf1fexAZMRRaI3VrlTAd%0Am9s%3D%0A)
+
+In service settings you can configure the number of alternative on-time performance windows Spare will search through in order to display these options. These settings can be configured to modify the earliest and latest alternative times displayed to booking agents.
+
+![](https://downloads.intercomcdn.com/i/o/wyxobwoi/1203268507/7ceb38f7a7997ad07f0cfbe3b0ca/Screenshot+2024-10-03+at+12_44_08%E2%80%AFPM.png?expires=1753820100&signature=40de5c8430dbb5143458351a302413d43872fb25599374a3bd57a9800862a992&req=dSInFct4lYRfXvMW1HO4zYxNRehoOQHuDgO9130mDcv6eROldH23AUwWy9V2%0A%2BI%2Fq%0A)
+
+The maximum number of alternative times we can search for is 12. This means that if your on-time performance window is 30 minutes, the maximum time range for alternative trip times is 6 hours and 30 minutes. 
+
+## When will Spare *not* search for Multiple Options?
+
+There will be no multiple options shown if: 
+
+The rider's desired time is available.
+
+The rider requests a "leave as soon as possible" trip.
+
+The service settings specify that 0 alternative trip times can be displayed.
+
+The alternative trip options violate the time-rules of the service. 
+
+The service you're booking to is using "Variable Pickup/Dropoff Windows". You can see this in your service settings under "Scheduled Pickup/Dropoff Window Type".
+
+## How does Alternative Booking Options impact the Rider App?In the rider app, you don't choose between different trip times yourself. Instead, if the time you want isn't available, the app will automatically pick and show you the next best time. 
+
+Here's how it works:
+
+A service has an on-time window of 15 minutes and 4 "Arrive-by Backwards Alternative Trip Options". If you ask for a trip that arrives by 4pm (3:45-4pm window) and it's not available, the rider app looks for trips at these times:
+
+3:30-3:45pm
+
+3:15-3:30pm
+
+3:00-3:15pm
+
+2:45-3:00pm
+
+If there are two available times, like 3:30-3:45pm and 2:45-3:00pm, the app will show you the time closest to 4pm. In this case, you'd see 3:30-3:45pm.

@@ -1,0 +1,368 @@
+---
+title: "Parts Overview"
+description: "Comprehensive guide to parts and inventory management in Spare EAM, covering procurement, multi-location tracking, and integration with maintenance workflows"
+---
+
+![Parts Overview Dashboard showing inventory management interface in Spare EAM](/images/spare-eam/parts-overview-dashboard.png)
+
+Welcome to the Parts and Inventory Management guide, your comprehensive resource for managing spare parts, inventory, and procurement in Spare EAM.
+
+## What is Parts and Inventory Management?
+
+<CardGroup cols={3}>
+  <Card title="Parts Management" icon="gear">
+    Individual components, spare parts, and materials used in maintaining your assets with comprehensive tracking from procurement through consumption
+  </Card>
+  <Card title="Inventory Management" icon="warehouse">
+    Track quantity and location of parts across multiple storage locations, ensuring availability when needed for maintenance
+  </Card>
+  <Card title="Purchase Orders" icon="shopping-cart">
+    Facilitate procurement process, allowing you to order parts from vendors and track deliveries to maintain optimal inventory levels
+  </Card>
+</CardGroup>
+
+<Info>
+Together, these features ensure efficient parts management, reduce downtime, and optimize maintenance costs through proper inventory control.
+</Info>
+
+## Key Features
+
+<Tabs>
+  <Tab title="Parts Management">
+    <AccordionGroup>
+      <Accordion title="Comprehensive Part Information">
+        - Unique part numbers and descriptive names
+        - Manufacturer details and part numbers
+        - UPC codes and detailed descriptions
+        - Categorization for better organization
+      </Accordion>
+      
+      <Accordion title="Flexible Measurement Units">
+        - Support for various units of measure (Each, Box, Set, Gallon, Liter, Quart, etc.)
+        - Decimal quantity tracking for precise inventory management
+        - Unit cost tracking for financial reporting
+      </Accordion>
+      
+      <Accordion title="Status Management">
+        - Active/inactive status for parts lifecycle management
+        - Archive functionality for discontinued parts
+        - Minimum stock level configuration
+      </Accordion>
+    </AccordionGroup>
+  </Tab>
+  
+  <Tab title="Multi-Location Inventory">
+    <AccordionGroup>
+      <Accordion title="Location-Based Tracking">
+        - Support for multiple storage locations (warehouses, service bays, mobile toolboxes)
+        - Hierarchical location structure
+        - Location-specific inventory levels and settings
+      </Accordion>
+      
+      <Accordion title="Stock Level Management">
+        - Real-time current stock quantities per location
+        - Configurable minimum and maximum stock levels
+        - Automatic reorder recommendations
+        - Low inventory alerts and notifications
+      </Accordion>
+      
+      <Accordion title="Inventory Settings per Location">
+        - Custom minimum/maximum stock levels for each location
+        - Reorder points and quantities
+        - Bin location tracking for precise part placement
+        - Active/inactive status per location
+      </Accordion>
+    </AccordionGroup>
+  </Tab>
+  
+  <Tab title="Purchase Order Management">
+    <AccordionGroup>
+      <Accordion title="Complete Procurement Workflow">
+        - Create purchase orders with multiple line items
+        - Vendor management and selection
+        - Order approval and tracking workflow
+        - Expected delivery date management
+      </Accordion>
+      
+      <Accordion title="Purchase Order Statuses">
+        - Pending → Approved → Ordered → Received workflow
+        - Partial receiving capability
+        - Automatic status updates based on receipt progress
+      </Accordion>
+      
+      <Accordion title="Cost Management">
+        - Line item pricing and totals
+        - Shipping fees, discounts, and taxes
+        - Automatic total calculations
+        - Currency support for international purchases
+      </Accordion>
+    </AccordionGroup>
+  </Tab>
+  
+  <Tab title="Vendor Management">
+    <AccordionGroup>
+      <Accordion title="Supplier Database">
+        - Comprehensive vendor contact information
+        - Vendor status tracking (active/inactive)
+        - Purchase order history per vendor
+        - Performance tracking capabilities
+      </Accordion>
+    </AccordionGroup>
+  </Tab>
+</Tabs>
+
+## How to Use Parts and Inventory Management
+
+![Parts Management Interface showing detailed part information and inventory tracking capabilities](/images/spare-eam/parts-management-interface.png)
+
+### Creating and Managing Parts
+
+<Steps>
+  <Step title="Navigate to Parts">
+    Navigate to the **Parts section** in Spare EAM
+  </Step>
+  <Step title="Create New Part">
+    Click **"New Part"** to create a new part
+  </Step>
+  <Step title="Add Part Details">
+    Complete the following information:
+    - **Part Number**: A unique identifier for the part
+    - **Name**: Descriptive name for the part
+    - **Category**: Group similar parts together
+    - **Unit of Measure**: Select appropriate measurement unit
+    - **Description**: Detailed information about the part
+    - **Manufacturer**: Part manufacturer information
+    - **Manufacturer Part Number**: Original manufacturer's part number
+    - **UPC**: Universal Product Code if available
+    - **Unit Cost**: Cost per unit for financial tracking
+    - **Minimum Stock**: Global minimum stock level
+  </Step>
+  <Step title="Save Part">
+    Save the part to add it to your parts database
+  </Step>
+</Steps>
+
+### Setting Up Inventory Locations
+
+<Steps>
+  <Step title="Navigate to Locations">
+    Navigate to **Locations** in the inventory section
+  </Step>
+  <Step title="Create Storage Locations">
+    Create storage locations such as:
+    - Main warehouse
+    - Service bay storage
+    - Mobile toolboxes
+    - Emergency stock locations
+  </Step>
+  <Step title="Configure Location Details">
+    Set up:
+    - Location code and name
+    - Location type and purpose
+    - Physical address if applicable
+  </Step>
+</Steps>
+
+### Managing Inventory Levels
+
+<Tabs>
+  <Tab title="Viewing Current Inventory">
+    - Access the **Parts Inventory by Location** view
+    - See current stock levels across all locations
+    - Identify parts requiring reorder (marked with reorder alerts)
+  </Tab>
+  
+  <Tab title="Setting Location-Specific Levels">
+    <Steps>
+      <Step title="Select Part">
+        Select a part from the inventory view
+      </Step>
+      <Step title="Choose Location">
+        Choose the location to configure
+      </Step>
+      <Step title="Configure Settings">
+        Set the following parameters:
+        - Minimum stock level for this location
+        - Maximum stock level
+        - Reorder point
+        - Reorder quantity
+        - Bin location for physical storage
+      </Step>
+    </Steps>
+  </Tab>
+  
+  <Tab title="Making Inventory Adjustments">
+    <Steps>
+      <Step title="Navigate to Adjustments">
+        Navigate to **Inventory Adjustments**
+      </Step>
+      <Step title="Create Adjustment">
+        Create a new adjustment with a reason (cycle count, damage, loss, etc.)
+      </Step>
+      <Step title="Enter Quantities">
+        Enter the actual quantities found
+      </Step>
+      <Step title="Auto-Calculate">
+        The system automatically calculates adjustment quantities
+      </Step>
+      <Step title="Finalize">
+        Finalize the adjustment to update inventory levels
+      </Step>
+    </Steps>
+  </Tab>
+</Tabs>
+
+### Purchase Order Workflow
+
+**Creating Purchase Orders**
+
+1. **Navigate to Purchase Orders** and click "New Purchase Order"
+2. **Select a vendor** from your vendor database
+3. **Add order details:**
+   - PO number (auto-generated or manual)
+   - Order date and expected delivery date
+   - Destination location for received items
+   - Notes and special instructions
+4. **Add line items:**
+   - Select parts from your parts database
+   - Specify quantities needed
+   - Set unit prices (can differ from standard part costs)
+   - Choose destination location for each line item
+5. **Review totals** including shipping, discounts, and taxes
+6. **Save and submit** the purchase order
+
+**Receiving Orders**
+
+1. **Open the purchase order** when items arrive
+2. **Record received quantities** for each line item
+3. **The system automatically:**
+   - Updates inventory levels at the destination location
+   - Creates inventory transactions for audit trail
+   - Updates PO status (partial, received, etc.)
+   - Marks line items as fully received when complete
+
+### Using Parts in Work Orders
+
+**Adding Parts to Work Orders**
+
+1. When creating or editing a work order
+2. Add **Parts Line Items** to service tasks
+3. Specify:
+   - Which part is being used
+   - Quantity consumed
+   - Source location (where part is taken from)
+   - Unit cost for this specific usage
+
+**Automatic Inventory Updates**
+
+- Parts consumption is tracked when work orders are completed
+- Inventory levels are automatically reduced
+- Inventory transactions record the usage for audit purposes
+
+### Monitoring and Alerts
+
+**Low Inventory Notifications**
+
+- Automatic alerts when parts fall below minimum stock levels
+- Organization-wide low inventory reports
+- Email notifications to maintenance managers
+
+**Reorder Recommendations**
+
+- System-generated suggestions based on minimum stock levels
+- Location-specific reorder alerts
+- Historical consumption analysis
+
+**Inventory Reporting**
+
+- Current stock levels across all locations
+- Inventory valuation reports
+- Parts usage history and trends
+- Purchase order status and history
+
+## Best Practices
+
+### Part Setup
+
+- Use consistent naming conventions for parts
+- Include manufacturer part numbers for easy reference
+- Set realistic minimum stock levels based on usage patterns
+- Categorize parts logically for easy searching
+
+### Inventory Management
+
+- Conduct regular cycle counts to maintain accuracy
+- Set location-specific min/max levels based on actual usage
+- Use bin locations for efficient physical organization
+- Monitor reorder alerts regularly
+
+### Purchase Orders
+
+- Establish relationships with reliable vendors
+- Include expected delivery dates for better planning
+- Use partial receiving for large shipments
+- Attach documentation (invoices, receipts) to purchase orders
+
+### Integration with Maintenance
+
+- Link parts to specific service tasks in work orders
+- Track parts usage for accurate cost accounting
+- Plan maintenance based on parts availability
+- Use parts consumption data for better inventory planning
+
+## Understanding the Business Logic
+
+### Inventory Transactions
+
+Every inventory movement is recorded as a transaction with:
+
+- Clear audit trail (who, when, why)
+- Source and destination tracking
+- Direct links to purchase orders or work orders
+- Transaction types (purchase, adjustment, consumption, transfer)
+
+### Stock Level Calculations
+
+- Current stock = Sum of all positive transactions - Sum of all negative transactions
+- Reorder needed = Current stock ≤ Minimum stock level
+- Available for use = Current stock - Reserved stock (if applicable)
+
+### Multi-Location Benefits
+
+- Optimize inventory distribution across facilities
+- Reduce carrying costs while maintaining availability
+- Support mobile maintenance teams with portable inventory
+- Enable location-specific reorder strategies
+
+## Best Practices
+
+<CardGroup cols={2}>
+  <Card title="Part Setup" icon="settings">
+    - Use consistent naming conventions for parts
+    - Include manufacturer part numbers for easy reference
+    - Set realistic minimum stock levels based on usage patterns
+    - Categorize parts logically for easy searching
+  </Card>
+  <Card title="Inventory Management" icon="warehouse">
+    - Conduct regular cycle counts to maintain accuracy
+    - Set location-specific min/max levels based on actual usage
+    - Use bin locations for efficient physical organization
+    - Monitor reorder alerts regularly
+  </Card>
+  <Card title="Purchase Orders" icon="shopping-cart">
+    - Establish relationships with reliable vendors
+    - Include expected delivery dates for better planning
+    - Use partial receiving for large shipments
+    - Attach documentation (invoices, receipts) to purchase orders
+  </Card>
+  <Card title="Maintenance Integration" icon="wrench">
+    - Link parts to specific service tasks in work orders
+    - Track parts usage for accurate cost accounting
+    - Plan maintenance based on parts availability
+    - Use parts consumption data for better inventory planning
+  </Card>
+</CardGroup>
+
+<Info>
+This comprehensive parts and inventory management system ensures you have the right parts, in the right quantities, at the right locations, when your maintenance teams need them most.
+</Info>

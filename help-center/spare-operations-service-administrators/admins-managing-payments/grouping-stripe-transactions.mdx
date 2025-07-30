@@ -1,0 +1,99 @@
+---
+title: "Grouping Stripe Transactions"
+description: "Reduce cost by bundling transactions for individual riders into one charge"
+---
+
+## IntroductionSpare is in the process of rolling out new and exciting features regarding Spare Pay. These features require that your agency’s Stripe configuration in Spare is set to “Connect” and not “Manual”. Below are some FA
+
+Qs on this change:**
+​⬇️ Download the full FAQ as a PDF [here](#h_721f3408e9)**
+​
+
+### Why should I change Connection Type to Connect?By choosing “Manual”, Spare’s role is that of a technical integrator accessing a strictly limited set of capabilities. This can mean more administrative overhead for the agency if anything goes wrong or if new features are rolled out. Changing to “Connect” streamlines setup, provides direct support, easies feature deployment, and improves troubleshooting capabilities for Spare. While Spare gains increased visibility and some configuration capabilities, it does not gain unrestricted control. The agency remains the merchant of record and retains fundamental rights to their payout preferences, account details, and transactional data. Connect offers additional features (explained below) that include financial benefits for your agency, such as Grouped 
+
+Transactions.
+
+### What specifically does Spare gain access to?When an agency opts to be a connected account under Spare’s Stripe Connect setup, Spare gains improved visibility and certain administrative capabilities as allowed by Stripe’s role-based and permission-based system. However, this access is not unlimited. 
+
+Specifically:
+
+**Transaction-Level Data:** Spare can see transactional information related to rides booked and paid for through the platform. This includes details such as the date and amount of each charge, the status of those charges (successful, failed, or refunded), and associated fees. This enables Spare to help troubleshoot payment issues quickly, identify anomalies, and provide better support.
+
+**Basic Account Configuration: **Spare can configure certain account settings relevant to how payments are processed, such as enabling or disabling certain payment methods (ex. Apple Pay). Spare will not adjust any account configuration without the express written consent of the agency. Access to this configuration aids Spare in investigating any suspicious activity more efficiently.
+
+**Dispute Resolution Tools:** Spare can also access dispute resolution tools to aid in any investigations. These tools will not be used without the express written consent of the agency.
+
+What Spare does not control is: 
+
+**Changing the Agency’s Payout Bank Details:** While Spare can guide in setup or troubleshooting, it is the agency that controls where its payouts are sent and how frequently they occur. The agency maintains the right to update its bank account information and payout schedules.
+
+**Agency’s Fundamental Business Information: **The agency retains control over its business details, legal entity information, and tax settings in Stripe. Spare’s additional visibility does not grant the right to make such fundamental changes.
+
+**Unrestricted Financial Maneuvers: **Spare cannot unilaterally withdraw funds, redirect payouts to unauthorized accounts, or alter the agency’s merchant of record designation. The agency is not handing over its fundamental financial autonomy. 
+
+### How does Spare monitor access to Stripe accounts?At Spare, we take access to customer data very seriously. Only required personnel are provided access to Stripe accounts with the “Connect” Configuration Type. This includes senior members of 
+
+Spare’s software development department.
+
+### What features does Stripe Connect allow?In December 2024, Spare is rolling out a key feature to all customers using the Connect Configuration Type. This feature automatically groups transactions and charges them in batches, significantly reducing the cost of Stripe fees to the agency. 
+
+Here’s how it works:
+
+Typically, each transaction charged to your agency’s Stripe account has two fees associated:
+
+A percentage of the total charge (around 2.7%)
+
+A flat transaction fee (around $0.30 USD)
+
+Without this feature, your agency pays the flat transaction fee on every charge.
+
+With this feature, Spare automatically groups each rider’s charge over a six-day period and then processes them at once. This means you only pay the flat transaction fee once. 
+
+### What does the rider see?When the rider books their trip, the charge is scheduled. Once the trip is completed, the charge will show as “pending” in their credit card statement and as “deferred” in Spare. Once the six-day period is up, Spare captures all of these charges and processes them as one. 
+
+The rider will see this grouped charge on their statement.
+
+### What does the agency see?When a request is completed, instead of capturing the individual charge immediately, the charge is set to “deferred”, and is waiting to be grouped. The grouped charge is a single one – once it’s captured, individual charges are cancelled. The transaction details that you have today remain the same, and agency can view a group charge and it’s individual charges associated with it. To reconcile Stripe with Spare data, you can use the External Charge ID found in the Ridership 
+
+Report.
+
+### How is the six day period set?This period can be different for each rider. Charges are grouped when a rider has at least one “deferred” charge that is more than six days old. 
+
+For example:
+
+The rider books trips on Monday for travel on Wednesday and Thursday
+
+Then on Friday, the rider books a trip for Saturday
+
+Once these trips are completed, their associated charges receive the “deferred” status
+
+The following Monday, the rider has a deferred charge that is more than six days old, so all charges are grouped and processed as one 
+
+### Why can’t this six day period be consistent across the organization?Stripe only allows a charge to be authorized for seven days, after which it expires. This is also why riders are only able to book up to seven days in advance using credit card payments. 
+
+For example:
+
+The “grouping day” could be set to Friday
+
+On a Wednesday, a rider books a trip for the following Tuesday
+
+After that Tuesday trip, Friday comes and the charge is attempted to be grouped
+
+However, it has been more than seven days since the initial charge, and it has expired in Stripe. This would prevent it from being charged at all. 
+
+### Are all transactions grouped?Currently we only group charges for trip requests. So if the charge is for Wallet top up, purchasing a Fare Pass or 
+
+Ticket, it is captured immediately.
+
+### How do I turn this on?Ensure that “Enable Group Transactions” is set to “Yes” when configuring your Stripe Payment Method in Spare. If you don’t see this option, speak to a 
+
+Spare representative to have it turned on.
+
+### How can I communicate this to riders?
+
+Here’s an example of a paragraph to share with your riders:
+
+#### *Starting in early 2025, we’re improving how we process your payments to help keep costs down for everyone. Instead of charging your card separately for each trip, we’ll group together the costs of multiple trips over a short, week long window and then process them all at once. You’ll see fewer individual charges, which helps reduce transaction fees. 
+
+This change won’t affect how you schedule or take trips—you’ll still book and ride as normal.***
+​Download the full FAQ as a PDF here👇**

@@ -1,0 +1,169 @@
+---
+title: "Spare Rider Changelog"
+description: "Improvements and changes to Spare Rider App"
+rss: true
+---
+
+<Update label="July 30, 2025" description="Rider App v4.1">
+  ## Nearby Transit Options
+  
+  ![Nearby Transit](/images/changelogs/rider-nearby-transit.png)
+  
+  If your agency uses Spare's multimodal trip planning functionality (also known as Spare ONE), riders can now easily see nearby transit options straight from the home screen. Riders can simply move the map around and the nearby transit lines below will update in real time, showing:
+  
+  - Route name (Metro A Line)
+  - Direction (APU / Citrus College Station vs Downtown Long Beach Station)
+  - The next two upcoming departures (7, 20 min)
+  - Whether there is a service alert for this route (the yield icon)
+  - Whether there is real time information about this route
+  
+  Once a rider selects a particular option from the list, they'll see the closest stop, live vehicle locations, and the next several upcoming departures along with their respective arrival times at each past and upcoming station.
+  
+  *This feature has to be enabled by your Spare Representative.*
+
+  ## Support for GTFS Real Time Service Alerts
+  
+  ![Service Alerts](/images/changelogs/rider-service-alerts.png)
+  
+  We've added support for GTFS Realtime Service Alerts. These allow transit agencies to communicate service disruptions, such as delays, detours, or cancellations, directly to riders in real-time. These text-based messages are displayed within the rider app to inform passengers about issues affecting a particular route, stop, or the entire network.
+  
+  *This feature needs to be enabled by your Spare Representative.*
+
+  ## Schedule Announcements and Include a Photo
+  
+  ![Scheduled Announcements](/images/changelogs/rider-scheduled-announcements.png)
+  
+  Now, you can easily schedule announcements for the future and add photos to them! Navigate to Spare Operations → Rider Communication → App Announcements to upload a photo and set start and end times. Announcements will be displayed for riders between those times and the photo will be displayed as shown above.
+
+  ## Support for More Languages
+  
+  The following languages are now supported in the Spare Rider App:
+  - Chinese (Simplified)
+  - Somali
+  - Hmong
+  - Vietnamese
+  - Korean
+  - Amharic
+  - Hindi
+  - Armenian
+  - Russian
+
+  ## Easily Schedule Recurring Trips
+  
+  Riders can easily make a trip recurring now from the past trips or scheduled trips page. *This feature can be enabled by your Spare Representative.*
+
+  ## Bug Fixes
+  
+  - **Web font fix:** The web version of our rider application previously displayed the wrong font on some Microsoft computers. This has been resolved.
+  - **Animation compatibility:** For some devices (where animations were turned off in their device setting) the "Additional Ride Details" screen wouldn't work. This has been resolved.
+  - **Trip limit removed:** All riders were only able to see up to 10 past and scheduled trips. This has been resolved and the limit is removed.
+</Update>
+
+<Update label="June 2, 2025" description="Rider App v4.0">
+  ## Your Rider App is getting an upgrade!
+  
+  ![Rider App 4.0](/images/changelogs/rider-app-4-0.png)
+  
+  We're rolling out Rider App 4.0—a new version of the app with updates to make your ride experience even better. Starting **June 2nd**, this release includes an updated design to a number of pages throughout the app.
+
+  ## Changes to Design
+  
+  These changes were made with two principles in mind:
+  - **Accessibility**, especially as it relates to screen readers and text resizing
+  - **Simplification of common workflows**, especially in the settings menu
+
+  ### The Home Screen
+  ![Home Screen](/images/changelogs/rider-home-screen.png)
+  
+  Home screen changes are mostly to simplify the UI and add a clock icon as the schedule button.
+
+  ### The Settings Menu
+  ![Settings Menu](/images/changelogs/rider-settings-menu.png)
+  
+  Settings menu changes help organize settings into clear groups like my trips, payments, and general settings.
+
+  ### The Profile Screen
+  ![Profile Screen](/images/changelogs/rider-profile-screen.png)
+  
+  Profile screen has been updated to a more modern UI and responsive forms.
+
+  ### Single Trip Page
+  ![Single Trip Page](/images/changelogs/rider-single-trip-page.png)
+  
+  We've added a map to the single trip page and cleaned up the timeline to make it more consistent.
+
+  ### Favorite Locations Page
+  ![Favorite Locations](/images/changelogs/rider-favorite-locations.png)
+  
+  The favourite locations page and others have a more modern UI now.
+
+  ### Payments Page
+  ![Payments Page](/images/changelogs/rider-payments-page.png)
+  
+  All payment methods can now be accessed in one place.
+
+  ## New Features
+  
+  **What's new in this release:**
+  - **Interactive Stops** – Drop pins or select nearby stops as pickup or dropoff
+  - **Live Vehicle Locations** – View real-time bus locations on fixed routes
+  - **Save Favourites from Search** – Just tap the heart to save a location
+  - **Smarter Timelines** – New visuals and timing logic show exactly what to expect
+  - **Custom Links in Account Menu** – Add direct access to support resources
+  - **Improved Driver Arriving Notifications** – Alerts are now more accurate and timely
+
+  ### Interactive Map & Stops
+  
+  Riders can easily set a pickup and dropoff location from the home screen by just tapping on it. From Spare Operations, set the stop as "Visible to Rider App" and if you'd like to add an icon to the stop and make it more prominent to riders, mark it as "Important".
+
+  ### Customize the Account Menu
+  
+  ![Custom Links](/images/changelogs/rider-custom-links.png)
+  
+  Agencies can now add URLs, phone numbers, and email addresses to the account menu. Navigate to Settings → General → Rider Interfaces → Custom Links.
+
+  ### Changes to the Trip Options Page
+  
+  ![Trip Options](/images/changelogs/rider-trip-options.png)
+  
+  We're bringing changes to the trip options that riders see. The intention is to make it easier to glance through multiple options and choose the best one. Some of the core benefits include:
+  
+  - Riders can see trip duration now, a key part of a rider's choice for which service to ride
+  - Riders can also easily see walking distance at a glance and compare options
+  - Riders can know the times they might be travelling between - the earliest possible leave time to the latest possible arrival time
+
+  ## Email Login
+  
+  Now, your riders can login with their email address in addition to their phone number. Simply tap "Continue with email" and follow the prompts. For email login to be available for a rider, they must have that email address saved on their profile.
+
+  ## Auto Verification Code for Android
+  
+  Users on Android can now benefit from a feature that has been available on iOS - auto verification code input. When a user goes to log in and receives a code via SMS, the Spare app now automatically detects that code and prefills it in the app.
+
+  ## Changes to "Driver Arriving" and Trip page
+  
+  ![Driver Arriving](/images/changelogs/rider-driver-arriving.png)
+  
+  There are some functional changes to note:
+  - The blue banner for the driver arriving now shows up 45 minutes before the scheduled trip time (previously 30 minutes)
+  - If it's less than 15 minutes before the scheduled trip time, the app will automatically open up to the trip page
+  - We've removed the "see vehicle on map in X min" as we received feedback that this was confusing to users
+  - We increased the time where the vehicle will show on the map from 8 minutes before the trip to 20 minutes before
+  - We've hidden the vehicle's location to users when the vehicle is on a break
+
+  ## Add Favourites from the Search Screen
+  
+  Easily add new favourite locations from the new search screen by simply tapping on the heart next to the address.
+</Update>
+
+<Update label="March 4, 2025" description="Recurring Trips in Rider App">
+  ## Recurring trips just got easier—now available in the Rider App
+  
+  ![Recurring Trips](/images/changelogs/rider-recurring-trips.png)
+  
+  Riders can now book recurring trips directly from the Rider App! Whether it's a weekly grocery run, regular medical appointments, or a daily commute, riders can easily schedule trips that repeat on their terms—no need to call in every time.
+  
+  By bringing this capability to the Rider App, we're giving riders more flexibility while ensuring agencies maintain full control over recurring bookings.
+  
+  *To enable this feature, please contact your Spare representative.*
+</Update>

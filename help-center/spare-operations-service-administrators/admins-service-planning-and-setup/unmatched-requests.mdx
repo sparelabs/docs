@@ -1,0 +1,104 @@
+---
+title: "Unmatched Requests"
+description: ""
+---
+
+# What are Unmatched Requests?Unmatched Requests are Requests that are not currently assigned to a manifest. You can configure how Spare's Engine handles these trips in your [Service Settings](https://help.sparelabs.com/en/articles/8988085-service-general-setup). Unmatched Requests can be used to:
+
+Accept a trip and then find room for it later. Ensuring that every request is accepted. For Paratransit services in North America, this is required to be ADA-compliant. 
+
+Prioritize matching requests on one service over another. For example:
+
+If you want to ensure all your wheelchair trips match to vehicles before ambulatory trips, you can use Unmatched Requests to keep your ambulatory trips in 'Processing' until a specified time before the requested pickup time. 
+
+You can also use Unmatched Requests to prioritize matching subscription trips over scheduled paratransit trips and on-demand trips. You can configure unmatched requests so that it does not matter when someone has called in to pre-book their trip, the system will still prioritize trips based on your desired priority structure.
+
+# Where is it configured?Unmatched Requests can either be enabled or disabled in the service settings:
+
+![](https://downloads.intercomcdn.com/i/o/1045287412/10cc2df64f63510cda219bf8/Screenshot+2024-02-16+at+10_59_39.png?expires=1753820100&signature=73bf4eca59ee786d6b7180b46df99b610d60bdf7a587ddd764254151856a99e4&req=dSAjE8t2moVeW%2FMW1HO4zQ0Umm03NHDe4JoSraemKJnFVgtSqcB8jJsonyFU%0AF2rp%0A)
+
+# Disabling Unmatched Requests Setting "Allow Unmatched Requests" to "No" disables the functionality. At any point during the request's lifecycle, if the request is in Processing or Service Disruption and Spare's Engine cannot [find a match](https://help.sparelabs.com/en/articles/8946518-spare-s-ai-engine-matching-optimizing-requests#h_3e4190242c), the request will go to "No Drivers Available". 
+
+It is possible to create [Platform User Notifications](https://help.sparelabs.com/en/articles/8989058-platform-user-notifications-internal) and [Rider Notifications](https://help.sparelabs.com/en/articles/8984355-rider-notifications) to notify users and riders of this event. 
+
+![](https://downloads.intercomcdn.com/i/o/1045444101/075f4fa6af76c3da024d7d4a/image.png?expires=1753820100&signature=995bc8c32aa63a77a2a464f1a27d5b675baa1cb7b2a69bbc884e199dc8028c7b&req=dSAjE816mYBfWPMW1HO4zUnXV32oxieCiEouBb4yHU3q7jXzM7BfQGzlnpkq%0A2SeN%0A)
+
+# Enabling Unmatched Requests Setting "Allow Unmatched Requests" to "Yes" enables the functionality. If any point during the request's lifecycle, if the request is in Processing or Service Disruption and Spare's Engine cannot [find a match](https://help.sparelabs.com/en/articles/8946518-spare-s-ai-engine-matching-optimizing-requests#h_3e4190242c), the request will remain in Processing or Service disruption with a dispatch status of 'Unmatched'.
+
+If you have Optimization Pro, Spare's Engine will continue to try to match the trip using [GO, GOLD and Targeted Optimization](https://help.sparelabs.com/en/articles/8946518-spare-s-ai-engine-matching-optimizing-requests#h_59df52c970) in the background. These algorithms automatically utilize space in manifests created by cancellations and no-shows. 
+
+Enabling Unmatched Requests reveals additional service settings:
+
+![](https://downloads.intercomcdn.com/i/o/1089218624/711b6e1ca85a96fd5bd65a0e/image.png?expires=1753820100&signature=860ec43720be954a3a6499bfa81755b03daf621c46390302f2733293bc9aee54&req=dSAvH8t%2FlYddXfMW1HO4zdYde8OxAJN4VvRpqS24nwT87bDrS1chLjqAwhdK%0AIxR4%0A)
+
+## Stop Trying To Match TimeCustomers can configure when an unmatched request will transition to "No Drivers Available". If this setting is disabled, a request will transition to "No Drivers 
+
+Available" 6 hours after the requested pickup time. 
+
+Stop Matching Times will not work with services that have Accept/Reject fleets associated with them.
+
+## Hold Requests Until TimeWhen enabled, Spare will 'Hold' requests until this amount of time remains before the requested pickup time. When this happens the request's dispatch status will change from 'On Hold' to 'Unmatched'. This applies to requests created from any interface, including the rider app. When a request is 'On Hold' Spare's Engine is not trying to match it, and it's excluded from optimization. If this setting is disabled, 
+
+Spare will start trying to match requests as soon as they're created. 
+
+This setting can be used across multiple services to prioritize matching one service over another. For example, if you create one service for ambulatory riders, and another for wheelchair riders, you can prioritize matching wheelchair riders by:
+
+Disabling 'Hold Requests Until Time' on the wheelchair service
+
+Enabling 'Hold Requests Until Time' on the ambulatory service and setting the time limit to 1 hour before the requested pickup time.
+
+This configuration will match wheelchair trips to a vehicle immediately, and hold all ambulatory trips until 1 hour before the requested pickup time, ensuring the wheelchair trips are matched.
+
+Hold Requests Until Time will not work with services that have Accept/Reject fleets associated with them.
+
+## Allow Creating New Unmatched Requests **Admin Panel**: Enables booking agents and dispatchers to create requests as unmatched in the request creation flow. See '[Creating Requests as 
+
+Unmatched](#h_fab17a9a30)' for more information.
+
+**Rider App:** Enables riders to create unmatched requests from the Rider App, Rider Web, AI Voice and Spare IVR. See 
+
+# Creating Unmatched RequestsIf there's no room for a new trip, and "[Allow Creating Requests as Unmatched](#h_717e653285)" is enabled, you can create requests as unmatched on the request creation page. 
+
+On the right-hand side, you will see an option to "Create Unmatched Request". Clicking this opens a confirmation menu that displays the number of unmatched trips already created at this time. If the number of unmatched trips is high, try negotiating an alternative pick-up or drop-off time with the rider.
+
+If the number of unmatched trips is low, create the request as unmatched.
+
+![](https://downloads.intercomcdn.com/i/o/1045482195/9d1c1c04ecc7e1fa30151293/image.png?expires=1753820100&signature=696e2881cf5aa38e08844eb5436e2dcddbf7f21e205a0eef30d279350598d2a2&req=dSAjE812n4BWXPMW1HO4zatvkLHjIFcWQ%2FKWzItHkSxKLvL%2B%2BRmGE1DwNsSq%0ALSkq%0A)
+
+![](https://spare-74fa64f80617.intercom-attachments-1.com/i/o/972923056/c9d3cc4841f073b64d82b8a1/46rDpN4hBhDVOYayumi3-0TaIWFTcKFE5A.png?expires=1753820100&signature=a872ae5aacb2cc532f29470e46dd912ba9d6eb4cfe56748b9d92e5b5402b5250&req=fSclH8t9nYRZFb4f3HP0gLq%2F%2Bn5A11gSQCm%2FhbbwcgF16XTIVxTnok7yIKvs%0AemA%3D%0A)
+
+# Creating Unmatched Requests in Spare RiderThe request creation process is the same, but  the rider is given a window instead of a specific pickup time. The rider is informed that they'll receive a more precise estimated time of arrival closer to the pickup time of the trip. 
+
+![](https://downloads.intercomcdn.com/i/o/1201621723/a9a9e6c267d9b039b7b7195f/Screenshot_20241002_165113_Spare.jpg?expires=1753820100&signature=d67aefe4ba0a28f8fd3cfcb3efe7427483c0faf8650651b289c0b91a57f6fa29&req=dSInF898nIZdWvMW1HO4zeoPl9RUX7vF7l7i4ueHL1stm8JprRbeePehEB%2F3%0AYK7t%0A)
+
+# Viewing Unmatched Requests Unmatched Requests can be seen on the Request Detail Page:
+
+![](https://downloads.intercomcdn.com/i/o/1045445527/38feb2a513452030e6efebbe/image.png?expires=1753820100&signature=50913e67d713661493dc18050247163205181583657d5f3e835aaaf0777898a0&req=dSAjE816mIRdXvMW1HO4zc1QFuR31moxaKt3JlBz4QBicF0GRBW98taVniFF%0ArxxT%0A)
+
+On the Duty Schedule:
+
+![](https://spare-74fa64f80617.intercom-attachments-1.com/i/o/972923072/a3f11e1540992940e5059d4c/XQZf7XuW1IjDt_Td2GrJjBIvDLkogCl3dQ.png?expires=1753820100&signature=453218743696eb3ffe64098a8659a12ababc90b1fb46084088de7ffbd65f4bcf&req=fSclH8t9nYZdFb4f3HP0gHRrPc4qxFr%2BGTVUMle5yH5LQ7na2fhasd37l5J%2B%0A55o%3D%0A)
+
+And In Live Requests:
+
+![](https://spare-74fa64f80617.intercom-attachments-1.com/i/o/972923083/d4b25081c6820302be41d613/1YFD8y0nndVVHHOVGj1wZDs0-LLrbjrDwA.png?expires=1753820100&signature=6dc8d67368a4bbe00b2619356ed8eaedf945bc984a1e157ad674cf710a697ce0&req=fSclH8t9nYlcFb4f3HP0gHT2Gis9lCa8dQPcsJ5NvdX3gwtdz0%2FsU6WXvbig%0AL58%3D%0A)
+
+## Viewing On Hold Requests On Hold Requests can be seen on the Request Detail 
+
+Page:
+
+![](https://downloads.intercomcdn.com/i/o/1045466607/23f3fdc3d7102e578cf2f1f3/image.png?expires=1753820100&signature=cd9d34cfd550a40f03f5cdc9157e7982003013aad3a070f3a7a14762a3b33f0f&req=dSAjE814m4dfXvMW1HO4zVmW7jc7YoPejmZQ7Cecoaq8uiGyMFzuBeuozdBZ%0AqVhn%0A)
+
+And In Live Requests: 
+
+![](https://downloads.intercomcdn.com/i/o/1045469137/888246e0fb702b713d8c9c38/image.png?expires=1753820100&signature=9490857bec06aafd92114ebd9b45eceaee7c1d9b7b973a5adabce4a5f80dfabf&req=dSAjE814lIBcXvMW1HO4zXPjIygLqjdh5VCkDflfm0hGmLyIRMqFxaEv87Zu%0ApW2q%0A)
+
+# Unmatching RequestsIt is also possible to ‘unmatch’ a request from a duty using the ‘actions’ on a request. Unmatching a request moves it from 'Accepted' to 'Processing' and places it 'On Hold' for 5 minutes. After 5 minutes, the dispatch status changes form 'On Hold' to 'Unmatched'. 
+
+![](https://spare-74fa64f80617.intercom-attachments-1.com/i/o/972923090/98ba28ea08179d9e563a04a5/AzNF8Wisj7NehWE9V5wJCwoS4hcEHvuRiw.png?expires=1753820100&signature=2bbb0087b4a60c81f72a787808145ede1404a3a185ade1a25bb47d3b8dddd3b3&req=fSclH8t9nYhfFb4f3HP0gIl%2Fcs7kpUUpHgJUNRZlyGVP%2B3R%2BVQRTv9%2BnqmVb%0A0P8%3D%0A)
+
+# Notifications for Unmatched and On Hold Requests If Unmatched Requests is enabled you should ensure that you are sending trip reminder notifications to riders for Requests that are 'Processing'. This can be done in the [Rider Communication](https://help.sparelabs.com/en/articles/8984355-rider-notifications) section. There are two notification triggers available for Processing Requests: 
+
+**Scheduled pickup in around an hour (processing requests only): **This notification is sent out 1-hour before the requested pickup time for all trips that are in processing.
+
+**Scheduled pickup in 24 hours (processing requests only): **When rides are scheduled in advance, a ride reminder notification will be sent out 24 hours before the pickup/leave time for trips that are in processing.

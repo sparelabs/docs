@@ -1,0 +1,75 @@
+---
+title: "Understanding Our Status Page"
+description: "Learn how to read the status page and understand updates during service disruptions"
+---
+
+<Info>
+We want to keep you informed about the health of our platform at all times. Our [Status Page](https://sparestatus.com) is the best place to check for real-time updates on any service interruptions, planned maintenance, or resolved incidents.
+</Info>
+
+## What is a Component?
+
+A **component** refers to a specific part of our platform or system that performs a key function. Each component is monitored independently, so we can provide accurate and timely updates if something goes wrong.
+
+### Our Key Components
+
+<CardGroup cols={3}>
+  <Card title="Administrator Portal" icon="desktop">
+    Web-based management interface for transit administrators
+  </Card>
+  
+  <Card title="Rider App" icon="mobile">
+    Mobile application for passengers to book and manage trips
+  </Card>
+  
+  <Card title="Driver App" icon="car">
+    Mobile application for drivers to manage routes and trips
+  </Card>
+</CardGroup>
+
+## What About Regions?
+
+Each component is also listed **by region**. That means you may see multiple entries like:
+
+<Accordion title="Example Regional Components">
+- Administrator Portal – United States 1
+- Administrator Portal – United States 2  
+- Administrator Portal – Canada
+- Administrator Portal – Japan
+</Accordion>
+
+<Warning>
+This helps us narrow down which geographic infrastructure might be affected. So, if you receive a notification or see an update for a component, it doesn't necessarily mean your organization is impacted — it depends on which **region** your services are hosted in.
+</Warning>
+
+<Tip>
+If you're unsure which region your organization belongs to, feel free to reach out to our Support team or your Partner Success Manager.
+</Tip>
+
+If one of these components is experiencing issues, we'll mark it on the status page and include a short description of what's affected.
+
+## What Do the Status Levels Mean?
+
+Each component on the status page is assigned a **status level** to indicate its current health. Here's how to interpret each one:
+
+<CardGroup cols={2}>
+  <Card title="Operational" icon="check-circle" color="#22c55e">
+    Everything is working normally. The component is fully functional, and there are no known issues.
+  </Card>
+  
+  <Card title="Degraded Performance" icon="exclamation-triangle" color="#f59e0b">
+    The component is online, but not performing optimally. You may notice slowness, delayed responses, or intermittent glitches.
+  </Card>
+  
+  <Card title="Partial Outage" icon="exclamation-circle" color="#f97316">
+    Only part of the component is affected. This may impact a subset of users or specific features, while other parts continue to function as expected.
+  </Card>
+  
+  <Card title="Major Outage" icon="x-circle" color="#ef4444">
+    The component is currently down or unusable. This means users may not be able to access it at all, or they may be able to open the platform but unable to complete critical actions (like booking trips, managing schedules, processing updates, etc.). Even if the interface appears to be working, if the core functionality is broken, the component is considered to be in a major outage.
+  </Card>
+  
+  <Card title="Under Maintenance" icon="wrench" color="#6366f1">
+    Scheduled maintenance is in progress. This may involve temporary downtime or reduced availability, and we'll provide advance notice whenever possible.
+  </Card>
+</CardGroup>

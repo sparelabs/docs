@@ -1,0 +1,84 @@
+---
+title: "Using Variables in Case Letter Templates"
+description: "Learn how to use variables in case letter templates to automatically populate personalized content from rider profiles and case forms."
+---
+
+## What are Variables?
+
+Spare Eligibility allows you to create customized documents for any case by using Template Letters. 
+
+If you add variables into your templates, the variables will be automatically filled in with real content whenever a letter is generated.
+
+<Info>
+Variables in Eligibility work similar to the variables in Rider Notifications that you might be familiar with in Spare Operations. Variables are always enclosed by triple curly brackets, like this: `{{{exampleVariable}}}`.
+</Info>
+
+### Key Differences from Notifications
+
+<CardGroup cols={2}>
+<Card title="Custom Field Names">
+  Variable names can come from the keys you've manually set on your own Form Fields and Custom Fields.
+</Card>
+<Card title="Multiple Data Sources">
+  You can reference fields from multiple places within Spare, like rider profiles and case forms.
+</Card>
+</CardGroup>
+
+### How Variable Structure Works
+
+You can access the contents of a field by writing the key of the object and the key of the field separated by a period.
+
+<Tip>
+You can find the key of a **Custom Field** or **Form Field** by clicking **Edit** and looking at the **Key field**.
+</Tip>
+
+#### Examples of Variable Structure
+
+<Accordion>
+<AccordionItem title="Rider Profile Fields">
+To include the rider's first name in a Template Letter, you'll need to write the key of the rider object (`rider`) and the key of the field (`firstName`):
+
+`{{{rider.firstName}}}`
+</AccordionItem>
+
+<AccordionItem title="Custom Fields">
+To include the value of a rider custom field, write the key of the rider object (`rider`) and the key of your custom field:
+
+`{{{rider.yourCustomField}}}`
+</AccordionItem>
+
+<AccordionItem title="Form Fields">
+To use a field from an intake form (like "Name of your service animal"), include the key of the case's forms list (`forms`), then the specific form key (`intakeForm`), and then the field key:
+
+`{{{forms.intakeForm.nameOfYourServiceAnimal}}}`
+</AccordionItem>
+</Accordion>
+
+## Commonly Used Variables
+
+Here are some examples of commonly used variables:
+
+| Variable | Description | Example Value |
+|----------|-------------|---------------|
+| `{{{rider.firstName}}}` | The first name of the rider the case belongs to | Alex |
+| `{{{rider.lastName}}}` | The last name of the rider the case belongs to | Caldwell |
+| `{{{rider.phoneNumber}}}` | The phone number of the rider the case belongs to | 123-456-7890 |
+| `{{{rider.email}}}` | The email address of the rider the case belongs to | alexcaldwell@sparelabs.com |
+| `{{{date.current}}}` | The date the letter was generated on | June 15, 2023 |
+| `{{{rider.yourCustomField}}}` | An example of a rider custom field. Replace "yourCustomField" with the key of the rider custom field you want to use | Depends on what the custom field is |
+| `{{{forms.yourForm.yourFormField}}}` | An example of a form field. Replace "yourFormField" with the key of the form field you want to use, and replace "yourForm" with the key of the form that field belongs to | Depends on what the form field is |
+
+<Warning>
+Remember to replace placeholder text like `yourCustomField`, `yourForm`, and `yourFormField` with the actual keys from your Spare Eligibility setup.
+</Warning>
+
+## Related Resources
+
+<CardGroup cols={2}>
+<Card title="Formatting Templates" href="/help-center/spare-eligibility/spare-eligibility-managing-case-templates/formatting-case-letter-templates">
+  Learn how to format your case letter templates with Markdown and HTML
+</Card>
+<Card title="Generating Templates" href="/help-center/spare-eligibility/spare-eligibility-managing-case-templates/generating-and-editing-case-letter-templates">
+  Step-by-step guide to creating and editing case letter templates
+</Card>
+</CardGroup>

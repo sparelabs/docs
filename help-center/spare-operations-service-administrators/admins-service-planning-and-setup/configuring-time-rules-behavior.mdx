@@ -1,0 +1,290 @@
+---
+title: "Configuring Time Rules Behavior"
+description: "An organization configuration affecting how time rules and request windows can interact"
+---
+
+## What is Time Rules Behavior?The **Time Rules Behavior** setting determines how ride scheduling interacts with the time rules set for a service. Time rules specify when bookings can be scheduled (e.g., between 8:00 AM and 6:00 PM). 
+
+Depending on the selected behavior, the system interprets these time rules differently, particularly in how it schedules pickup and dropoff windows around requested times that are close to the beginning or end of the time rules.
+
+Time Rules Behavior is an organization-wide setting that affects all services in the organization. It is located in Settings → General → Edit Organization Details.
+
+![](https://downloads.intercomcdn.com/i/o/wyxobwoi/1355686796/b05919ba318d12e0173708035ebe/Time+Rules+Behavior+Config+Mockup.png?expires=1753820100&signature=0be8246f0b5a28a3acd779d6fc740dc7fb836a28f58628ec023940aae8f7e318&req=dSMiE892m4ZWX%2FMW1HO4zQdZ2QfvwKYgRLyklfGG89v0CjwE42KO5YM51MVR%0Ao4u3%0A)
+
+## A recap of key concepts**Time Rules**: These define when bookings are allowed to be scheduled (e.g., 8:00 AM to 6:00 PM). Requests outside this time will not be accepted. 
+
+Another word for this is "service hours".
+
+**Window**: A period (e.g. a 30-minute pickup or dropoff window) in which the pickup or dropoff must occur to be considered "on time". A service's windows are configured based on the forwards and backwards flexibility options in the Windows and Flexibilities section of the service configuration.
+
+**Relevant Window**: The most important window based on the request type. For "Leave At" or "Leave ASAP" requests, the pickup window is considered the relevant window. For "Arrive By" requests, the dropoff window is the relevant window.
+
+**Duties: **These are times when a vehicle is scheduled to be available for service. Riders' trip requests get matched to duties. It's important to note that if no duties are scheduled, no requests can be matched - no matter what the time rules settings are.
+
+## Time Rules Behavior options:Time Rules 
+
+Behavior includes three configurations, each offering a different approach to handling the windows of requests that fall close to the beginning and end of time rules.
+
+## **1. Windows can fall completely outside time rules****
+
+How it works**
+
+- The only restriction is that the requested time must fall within the time rules. The system does not enforce any restrictions on when the pickup or dropoff windows occur, meaning that they may fall outside of the time rules.
+
+**Examples**
+
+**A Leave At request near the beginning of time rules**
+
+- As long as the service has no Leave-At Backwards Flexibility, the pickup will never be scheduled earlier than the beginning of time rules.
+
+If the service has any Leave-At Backwards Flexibility set, it's possible for the pickup window to begin before time rules. In this example there is 10 minutes of backwards flexibility, so if pickup is requested for 7:00 am, the window begins at 6:50 am.
+
+The requested pickup time can never be outside of time rules.
+
+![](https://downloads.intercomcdn.com/i/o/wyxobwoi/1354131048/eb3bc2c77094fd7d99477859394f/Only%2Brequested%2Btime%2Bmust%2Bfall%2Bwithin%2Btime%2Brules%2B_%2BLeave%2BAt%2BBeginning.png?expires=1753820100&signature=a98dc93d98134c8e3a1b22aea79731c76149e0ad072d9da5661746a4b09d7c8f&req=dSMiEsh9nIFbUfMW1HO4zRgtpMpJkovhj%2B33jU8YC9D7hYQEAPCddccOLDkO%0A%2FyDi%0A)
+
+**An Arrive By request near the beginning of time rules**
+
+- Arrive By requests can be requested with a dropoff time as early as the beginning of time rules. In that situation, it's possible for the dropoff window to be almost entirely outside time rules, and the pickup can be scheduled even earlier than that.
+
+The requested dropoff time can never be outside of time rules.
+
+![](https://downloads.intercomcdn.com/i/o/wyxobwoi/1354132636/02196ed4255e33fcf31d2b8a4b14/Only+requested+time+must+fall+within+time+rules+_+Arrive+By+Beginning.png?expires=1753820100&signature=ac24f5944a84de9d35aa57f6878f421c1647429408c3a660dbe7be6b43d7257d&req=dSMiEsh9n4dcX%2FMW1HO4ze5f9C1gnBXs9JC1zZYNj%2BTIaUbJC2cxun%2F7JEqB%0AQTYF%0A)
+
+**A Leave At request near the end of time rules**
+
+- Leave At requests can be requested with a pickup time as late as the end of time rules. In that situation, it's possible for the pickup window to be almost entirely outside time rules, and the dropoff can be scheduled even later than that.
+
+The requested dropoff time can never be outside of time rules.
+
+![](https://downloads.intercomcdn.com/i/o/wyxobwoi/1354135778/5c3d14041b553373ba65eab2be3e/Only+requested+time+must+fall+within+time+rules+_+Leave+At+End.png?expires=1753820100&signature=26adfe193c2a6abd032e361b2264ce58eaab23bfeadc7a2314311434aaec124d&req=dSMiEsh9mIZYUfMW1HO4zRXm60xUJ69F5UWIxSH2tLeBgfIlX37DAZHwYmsP%0A4nzG%0A)
+
+**An Arrive By request near the end of time rules**
+
+- The dropoff will never be scheduled later than the end of time rules.
+
+The requested dropoff time can never be outside of time rules.
+
+![](https://downloads.intercomcdn.com/i/o/wyxobwoi/1354137253/3529382dfae8eda9d309f5f36f13/Only+requested+time+must+fall+within+time+rules+_+Arrive+By+End.png?expires=1753820100&signature=efe875cb64baff056646d41881913fe2412b6c6c929c53e77932d2adcc86cd8c&req=dSMiEsh9moNaWvMW1HO4zajldEIwMSo3SFu05DBre3OzjtOYnLa48MAGyX%2B%2B%0A1iZE%0A)
+
+**What this means in practice**
+
+- If "Only requested time must fall within time rules" is selected, time rules are the least restrictive. The pickup and dropoff windows can extend beyond the defined time rules, giving riders the most scheduling flexibility. This is particularly beneficial when maximizing service coverage is a priority. However, it may create situations where drivers are being scheduled to pick up or drop off riders significantly outside a service's time rules.
+
+## **2. Windows will be trimmed to fit inside time rules (Default Configuration)****
+
+How it works**
+
+- If the relevant window (the pickup window for Leave At and Leave ASAP requests, the dropoff for Arrive By requests) would normally extend outside the time rules, it is instead shortened to fit within the time rules. 
+
+The non-relevant end of the trip (the dropoff for Leave At and Leave ASAP requests, the pickup for Arrive By requests) can still fall outside of time rules.
+
+Requests with requested times that are outside the time rules or would result in the relevant window being scheduled fully outside time rules will be denied.
+
+**Examples**
+
+**A Leave At request near the beginning of time rules**
+
+- As long as the service has no Leave-At Backwards Flexibility, the pickup will never be scheduled earlier than the requested pickup time, and so it can never be scheduled earlier than the beginning of time rules.
+
+If the service has any Leave-At Backwards Flexibility set, it's possible for the pickup window to begin before time rules. In this example there is 10 minutes of backwards flexibility, so if pickup is requested for 7:00 am:
+
+The pickup window would normally stretch from 6:50 to 7:50 am
+
+Because the window isn't allowed to extend outside time rules, the portion from 6:50 to 7:00 am is trimmed
+
+The result is a pickup window stretching from 7:00 to 7:50 am
+
+The requested pickup time can never be outside of time rules.
+
+![](https://downloads.intercomcdn.com/i/o/wyxobwoi/1354139760/d64f8561b66fdac0e44941df1d00/Windows+will+be+trimmed+to+fit+inside+time+rules+_+Leave+At+Beginning.png?expires=1753820100&signature=379762ba971733cb3678526dd5df5975aa0df717d718e15fd941d958b7d19f79&req=dSMiEsh9lIZZWfMW1HO4zYzjuIFl7qcRRAps4u9hyIHTSNuLBPMKllCBq4t%2F%0Ar%2FjW%0A)
+
+**An Arrive By request near the beginning of time rules**
+
+- In this case, windows will be handled differently depending on how the setting Arrive-By Pickup Time Flexibility Type is configured on each service.
+
+*If the Arrive-By Pickup Time Flexibility Type of the service is set to **Detour** Flexibility Only:*
+
+Arrive By requests can be requested with a dropoff time as early as the beginning of time rules. In that situation, it's possible for the dropoff window to be almost entirely outside time rules, and the pickup can be scheduled even earlier than that.
+
+In this example, the requested dropoff time is 7:30 am, so:
+
+The dropoff window would normally stretch from 6:30 to 7:30 am
+
+Because the window isn't allowed to extend outside time rules, the portion from 6:30 to 7:00 am is trimmed
+
+The result is a dropoff window stretching from 7:00 to 7:30 am
+
+The requested dropoff time can never be outside of time rules.
+
+![](https://downloads.intercomcdn.com/i/o/wyxobwoi/1354141680/adb109cb3f0a68714ee3fc589f91/Windows+will+be+trimmed+to+fit+inside+time+rules+_+Arrive+By+Beginning+A.png?expires=1753820100&signature=ff498f5f4f32735377c4443c0cddeabc3bd25ca0563ec90d2c506578c714260f&req=dSMiEsh6nIdXWfMW1HO4zfl%2F7x14fKo%2FzqTVhApgwr7z9Cwjm%2BB7gw8qkSGT%0A2Sk2%0A)
+
+*If the Arrive-By Pickup Time Flexibility Type of the service is set to **Pickup** Flexibility Only:*
+
+This is an situation where Arrive By requests have *both* a dropoff window and a pickup window. Both windows are considered part of on-time performance calculations.
+
+Arrive By requests must have requested dropoff times late enough that the pickup window can fit at least partially inside time rules. If the pickup window would fall completely outside of time rules, the request will be denied.
+
+This means the dropoff window and the rider's time in the vehicle will all occur inside of time rules.
+
+In this example, the requested dropoff time is 9:30 am, leaving time for the pickup window to sit partially inside time rules. If the pickup window falls partially outside time rules, it is trimmed using the normal process:
+
+The pickup window would normally stretch from 6:30 to 7:30 am
+
+Because the window isn't allowed to extend outside time rules, the portion from 6:30 to 7:00 am is trimmed
+
+The result is a pickup window stretching from 7:00 to 7:30 am
+
+The requested dropoff time can never be outside of time rules.
+
+![](https://downloads.intercomcdn.com/i/o/wyxobwoi/1357210306/d3028bfbe46f8a9428a7da23ec88/Windows+will+be+trimmed+to+fit+inside+time+rules+_+Arrive+By+Beginning+B.png?expires=1753820100&signature=dfa6d94f383456807c25248da5db746b48d6bad282113c30027413853acf9133&req=dSMiEct%2FnYJfX%2FMW1HO4zSpIX5xzFFw5bCQU0hPyROiflctavmyUg%2F3UZEep%0Asb5s%0A)
+
+**A Leave At request near the end of time rules**
+
+- Leave At requests can be requested with a pickup time as late as the end of time rules. In that situation, especially if the service has no Leave-At Backwards Flexibility, it's possible for the pickup window to be almost entirely outside time rules, and the dropoff can be scheduled even later than that.
+
+If the service does have some Leave-At Backwards Flexibility, it's possible for the pickup window to begin earlier than the requested pickup time. In this example there is 10 minutes of backwards flexibility, so if pickup is requested for 9:00 pm:
+
+The pickup window would normally stretch from 8:50 to 9:50 pm
+
+Because the window isn't allowed to extend outside time rules, the portion from 9:00 to 9:50 pm is trimmed
+
+The result is a pickup window stretching from 8:50 to 9:00 pm
+
+The requested pickup time can never be outside of time rules.
+
+![](https://downloads.intercomcdn.com/i/o/wyxobwoi/1357211779/8cb56789df22b20aed924f1e23bb/Windows+will+be+trimmed+to+fit+inside+time+rules+_+Leave+At+End.png?expires=1753820100&signature=20f6ff8bc59d0c81214d8c1d6898bcb1048eafc8fec7717daa6b38ffc5e5b633&req=dSMiEct%2FnIZYUPMW1HO4zcwqvZ2I6QzXB1vJDjQ9iyZKExPwkGmeleRvNfUh%0Aj9CC%0A)
+
+**An Arrive By request near the end of time rules**
+
+- The requested dropoff time can never be outside of time rules.
+
+The dropoff will never be scheduled later than the requested dropoff time, and so it can never be scheduled later than the end of time rules.
+
+![](https://downloads.intercomcdn.com/i/o/wyxobwoi/1357210739/35cbcabe823c4ccec26e97378563/Windows+will+be+trimmed+to+fit+inside+time+rules+_+Arrive+By+End.png?expires=1753820100&signature=fd2f55a8648eb317c65866ba55e144926ba0dfda6e1d09822850f1f7ac5e8b8d&req=dSMiEct%2FnYZcUPMW1HO4zRXtxHMvDAcrKSCCQJf%2Bu2Hq6Ycm5jkKFswjiJ4a%0A8nD8%0A)
+
+**What this means in practice**:
+
+The "Windows will be trimmed to fit inside time rules" option balances flexibility and adherence to time rules. While the most important window is guaranteed to fall within the operating period, that window may be shorter than usual, which can make it harder to fit trips into busy schedules. It also means that some requests will have different lengths of windows, creating differences in the rider experience based on what time the rider requested.
+
+This can be a good option for services looking to enforce tighter time rule compliance while still allowing Arrive By requests to be booked near the beginning of service and Leave At requests to be booked near the end of service.
+
+## 3. Trips with windows falling outside time rules will be denied**
+
+- How it works**
+
+Requests where the relevant window (the pickup window for Leave At and Leave ASAP requests, the dropoff for Arrive By requests) would fall even partially outside the time rules will be denied. This ensures all trips on the same service have the same window duration. 
+
+Like the other options, requested times that are outside the time rules will also be denied.
+
+If the *Arrive-By Pickup Time Flexibility Type* is set to Detour Flexibility Only, the non-relevant end of the trip (the dropoff for Leave At and Leave ASAP requests, the pickup for Arrive By requests) can still fall outside of time rules. 
+
+However, if the *Arrive-By Pickup Time Flexibility Type* is set to Pickup Flexibility Only, the pickup window must also fall entirely within time rules, or else the request will be denied.
+
+** Examples**
+
+**A Leave At request near the beginning of time rules**
+
+- As long as the service has no Leave-At Backwards Flexibility, the pickup will never be scheduled earlier than the beginning of time rules and can always be booked.
+
+If the service has any Leave-At Backwards Flexibility, it's possible for the pickup window to begin before time rules. If that happens, the request will be denied. However, requests with a requested pickup time late enough to keep the pickup window fully inside of time rules will not be denied.
+
+The requested pickup time can never be outside of time rules.
+
+![](https://downloads.intercomcdn.com/i/o/wyxobwoi/1355183076/d594a211ff65cf34dcb85e906cea/Trips+with+windows+falling+outside+time+rules+will+be+denied+_+Leave+At+Beginning.png?expires=1753820100&signature=72c7417117b1245a918ddbb82384d20127c055b732d6f60804c446157c69423d&req=dSMiE8h2noFYX%2FMW1HO4zZJlHsepDDSsZlSpc3Db2NHQl%2Fq1qYy0tyxqrbyk%0A9sL2%0A)
+
+**An Arrive By request near the beginning of time rules**
+
+- In this case, windows will be handled differently depending on how the setting Arrive-By Pickup Time Flexibility Type is configured on each service.
+
+*If the Arrive-By Pickup Time Flexibility Type of the service is set to **Detour** Flexibility Only:*
+
+Arrive By requests can be requested with a dropoff time as early as the beginning of time rules, so it's possible for the dropoff window to begin before time rules. If that happens, the request will be denied. However, requests with a requested dropoff time late enough to keep the dropoff window fully inside of time rules will not be denied.
+
+The requested dropoff time can never be outside of time rules.
+
+![](https://downloads.intercomcdn.com/i/o/wyxobwoi/1355190972/ec0bbabef3551f41d73007b231ac/Trips+with+windows+falling+outside+time+rules+will+be+denied+_+Arrive+By+Beginning+A.png?expires=1753820100&signature=fc9a0694e557412ce441841b4515723becbbca7abc0623eef4a684aecec1dddf&req=dSMiE8h3nYhYW%2FMW1HO4zY2giJi%2F5EPlKiWm%2BWJfXFW4TrSTyM8qfjzUc7GG%0AwdoT%0A)
+
+*If the Arrive-By Pickup Time Flexibility Type of the service is set to **Pickup** Flexibility Only:*
+
+This is an situation where Arrive By requests have *both* a dropoff window and a pickup window. Both windows are considered part of on-time performance calculations.
+
+Arrive By requests must have requested dropoff times late enough that the pickup window can fit completely inside time rules. If the pickup window would fall even partially outside of time rules, the request will be denied. However, requests with a requested dropoff time late enough to keep the pickup window fully inside of time rules will not be denied.
+
+This means the dropoff window and the rider's time in the vehicle will all occur inside of time rules.
+
+The requested dropoff time can never be outside of time rules.
+
+![](https://downloads.intercomcdn.com/i/o/wyxobwoi/1355208497/08a4b68d75ed1301b0a24ed3b91e/Trips+with+windows+falling+outside+time+rules+will+be+denied+_+Arrive+By+Beginning+B.png?expires=1753820100&signature=d6f5faa5bb9b9e3009f795dcfd4c93dffa370a02d215866f7e61dcc7b726e350&req=dSMiE8t%2BlYVWXvMW1HO4zYZOGV%2FoLe1tPsqjO9%2B4GCNqqWzQ32OXNotJecxR%0AI5XU%0A)
+
+**A Leave At request near the end of time rules**
+
+- Leave At requests can be requested with a pickup time as late as the end of time rules, so it's possible for the pickup window to fall almost entirely outside time rules. If that happens, the request will be denied. However, requests with a requested pickup time early enough to keep the pickup window fully inside of time rules will not be denied.
+
+The requested pickup time can never be outside of time rules.
+
+![](https://downloads.intercomcdn.com/i/o/wyxobwoi/1355255805/d6cf9e851f36d1b337adfb76c219/Trips%2Bwith%2Bwindows%2Bfalling%2Boutside%2Btime%2Brules%2Bwill%2Bbe%2Bdenied%2B_%2BLeave%2BAt%2BEnd.png?expires=1753820100&signature=83b28d4bd8eb08b0248fc6e3e6d55016887e40deaa37cb5f817d17ea34dc83fb&req=dSMiE8t7mIlfXPMW1HO4zeNof3K4OQEiroDUBA9uweULbfRDGs86Gneg3V2S%0A%2BhSq%0A)
+
+**An Arrive By request near the end of time rules**
+
+- The requested dropoff time can never be outside of time rules.
+
+The dropoff will never be scheduled later than the requested dropoff time, and so it can never be scheduled later than the end of time rules.
+
+![](https://downloads.intercomcdn.com/i/o/wyxobwoi/1355255804/6f67896f5156bba01a20d956d7f9/Trips%2Bwith%2Bwindows%2Bfalling%2Boutside%2Btime%2Brules%2Bwill%2Bbe%2Bdenied%2B_%2BArrive%2BBy%2BEnd.png?expires=1753820100&signature=635940f339da15da08ce6f1c259a1c9c57b21c89435ac77ce1ce133e1439deb7&req=dSMiE8t7mIlfXfMW1HO4zXGWvfWHVaJm%2BHwwki5Kgo7K%2Fo8M5L5AJA8r%2BW%2Bd%0Aq4S5%0A)
+
+**What this means in practice**
+
+- The "Trips with windows falling outside time rules will be denied" option is the strictest option currently available, creating a high level of compliance with time rules. It guarantees fairness by providing all riders with consistent window lengths and preventing the most important windows from extending outside of the service’s defined operating hours. However, this strictness may reduce flexibility and make it harder to schedule trips near the boundaries of the time rules.
+
+## Comparison of the options:**
+
+Option**
+
+**Request is denied if...**
+
+**Every request has the same window length?**
+
+**What can extend outside time rules?**
+
+*1. Only requested time must fall within time rules*
+
+The requested time is outside time rules
+
+Yes
+
+Any window
+
+*2. Windows will be trimmed to fit inside time rules*
+
+The requested time is outside time rules OR the relevant window is fully outside time rules
+
+No
+
+Only Leave-At dropoffs and Arrive-By pickups
+
+*3. Trips with windows falling outside time rules will be denied*
+
+The requested time is outside time rules OR the relevant window is partially outside time rules
+
+Yes
+
+Only Leave-At dropoffs and Arrive-By pickups
+
+## Other FAQs**
+
+What happens if a request falls completely outside the time rules?**
+
+- Requests made entirely outside of the time rules are rejected by the system, regardless of the selected behavior.
+
+**How do “Leave At” and “Arrive By” requests differ in terms of the relevant window?**
+
+- For "Leave At" and "Leave ASAP" requests, the **pickup window** is the relevant window. For "Arrive By" requests, the **dropoff window** is the relevant window.
+
+**Can different Time Rules Behaviors be set for different services?**
+
+- No, one setting applies across the entire organization.
+
+**Does trimming the relevant window affect travel time?**
+
+- No, trimming the relevant window does not impact the calculated travel time. The system will still compute the most efficient route between the pickup and dropoff points.

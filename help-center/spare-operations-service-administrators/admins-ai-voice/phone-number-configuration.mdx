@@ -1,0 +1,38 @@
+---
+title: "Phone Number Configuration"
+description: "Handle multiple incoming phone numbers"
+---
+
+Spare’s Phone Number objects allow an organization to have multiple AI Voice agents, each with a different phone number.
+
+An organization's phone numbers can be viewed in the **Phone Numbers** section of Spare Admin settings.
+
+![Phone Numbers section in Spare Admin settings](https://downloads.intercomcdn.com/i/o/wyxobwoi/1498550832/d9cbeac80c5321babe2baac21ee9/image.png?expires=1753820100&signature=d095f5da34c3b69c6bdc0c57793d6b557315f2db1a0e4653a6abaf98735bff65&req=dSQuHsx7nYlcW%2FMW1HO4zYa0ts4v9kYulnfO8XvEtC8OrGpABzh%2FSrymto3j%0AlaZs%0A)
+
+## Phone Number Creation
+
+Create a Phone Number in Spare Platform by appending `/new` to the URL on the Phone Numbers page. 
+
+Configure the following properties and then click the **Create** button:
+
+### Phone Number Configuration Options
+
+**Phone Number**: The phone number to be configured
+
+**Name**: A name to describe the number
+
+**Incoming Call Action**: Select from the following options:
+- **Spare AI Voice**: Select the [AI Voice agent](https://help.sparelabs.com/en/articles/9529094-ai-voice-chat-automating-the-contact-center-with-ai-agents) that calls to this number should use
+- **Forward to a different phone number**: Enter a phone number to forward to
+- **Automated Response**: Enter text that will be read to the caller
+
+**Incoming Message Action**: Select from the following options:
+- **Spare AI Chat**: Select the [AI Chat agent](https://help.sparelabs.com/en/articles/9529094-ai-voice-chat-automating-the-contact-center-with-ai-agents) that messages to this number should use
+- **Spare [Responsive SMS](https://help.sparelabs.com/en/articles/8984355-rider-notifications)**
+- **Automated Response**: Enter text that will be sent to the caller
+- **[Rider Representative SMS](https://help.sparelabs.com/en/articles/11072545-rider-representatives)**
+- **Do nothing**
+
+![Phone number configuration form](https://downloads.intercomcdn.com/i/o/wyxobwoi/1498589901/3e0568ac8797bd60daae8f9a30ff/image.png?expires=1753820100&signature=d0001102452dd49952e53baf764597e3afd9f61f69e99c0e10d37eb7f5b45687&req=dSQuHsx2lIhfWPMW1HO4zYa6di9BCajHdwXT3p%2FpXKc3bktgWBaBbTh%2BZ7V2%0ABvZW%0A)
+
+> **Note**: The `/new` URL manipulation will be improved in an upcoming release.

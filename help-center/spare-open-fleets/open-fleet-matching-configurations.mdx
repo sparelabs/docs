@@ -1,0 +1,42 @@
+---
+title: "Open Fleet Matching Configurations"
+description: "Open Fleet configurations that can help fine tune the type of requests that should be matched to them"
+---
+
+## What are Open Fleet Configurations?Open Fleet configurations have been introduced to manage and restrict usage of Open Fleets. These optional configurations are crucial for bridging the operational differences between dedicated and open fleets. 
+
+They ensure that only suitable requests are sent to external providers, enhancing both efficiency and user satisfaction.
+
+## Types of Open Fleet ConfigurationsThere are now five types of matching configurations for Open 
+
+Fleets:
+
+![](https://downloads.intercomcdn.com/i/o/1085689647/75f7a6b01a23fb29bd1a2522/Screenshot+2024-06-18+at+11_28_59%E2%80%AFAM.png?expires=1753820100&signature=7a4de31f051e49dedca48e2564028443909120c2871b7fb8e5ee21001d2e9ae1&req=dSAvE892lIdbXvMW1HO4zc%2B96bL3jtc0%2ByKVBdLUKOd0wvqM5ziwPhhV1hPe%0Aa%2BRO%0A)**Accessibility Features**: This limit pertains to the availability of accessibility options within the fleet. For most open fleets, any trip request requiring specific accessibility features is generally blocked, unless the fleet provider has the necessary accommodations. For example, Lyft may offer wheelchair-accessible rides but does not explicitly display all available accessibility features unless a particular product is selected.
+​
+
+**Payment Method Types**: Open Fleet Limits allow specific payment methods to be configured at the fleet level, distinct from broader service-level payment settings. This configuration helps cater to unique payment agreements or capabilities of fleet providers like Lyft, who may accept different forms of payment based on agreements with agencies.
+​
+
+**Trip Distance**: This configuration sets minimum and maximum trip distances for an open fleet. Requests that do not fall within these limits are automatically declined. This helps manage expectations and operational capacities of the fleet.
+​
+
+**Phone Number limit: **Some providers such as Lyft and Uber require a Phone number to successfully book a trip request, others might not. Depending on the provider you now have the ability to configure whether a Phone number should be required or not.
+​
+
+**Deadline Limit: **You can set a deadline limit for an Open Fleet to find a match for the request X minutes before the scheduled pickup time. If a match is not found it can then be matched to another fleet with the highest Fleet priority within the service.
+
+## Configuring an Open Fleet with these PropertiesTo configure Open 
+
+Fleets, follow these steps:
+
+**Navigate to Service Planning > Fleets**: Start by **selecting a Fleet or create a new Fleet**. 
+
+**Configure Fleet Limits**: Below are the specifics for configuring each type of fleet limit:
+
+**Accessibility Features**: By default, these are unchecked. To enable, check the appropriate box and specify which accessibility features are supported. You can add multiple features as long as they align with the dedicated vehicle features and the rider profile, avoiding duplicates.
+
+**Payment Methods**: Specify which payment methods are supported by this fleet. It’s important to note that the system will first verify payment methods at the service level before referring to the fleet-specific settings.
+
+**Trip Distance**: Enter the minimum and maximum allowable distances for trips in this fleet. Ensure that the minimum is less than the maximum to avoid input errors.
+
+**Save and Review**: After setting up the configurations, save your changes and review them to ensure they meet the desired operational guidelines.

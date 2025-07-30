@@ -1,0 +1,54 @@
+---
+title: "Bumping Constraints"
+description: ""
+---
+
+At Spare, we want to provide our riders with a reliable and convenient transportation experience. However, we understand that unexpected changes to scheduled trip times, known as "bumping," can be frustrating for riders. 
+
+In this article, we will explain what bumping entails, its different types, and how our bumping constraints work to mitigate these situations.
+
+## What is "Bumping"?​"
+
+Bumping" refers to the situation when a rider's scheduled trip time is changed in a drastic and unexpected manner.
+
+The impact of bumping depends on how far in advance the change occurs.
+
+If a scheduled pickup time changes by a few minutes but is communicated well in advance, it may not be a significant issue as long as it falls within the rider's flexibility window. 
+
+If the change occurs just minutes before the expected pickup time, it can disrupt plans more substantially.
+
+## Types of Bumping
+
+There are two distinct types of bumping that riders may encounter:
+
+**Bumping into the past: **This occurs when a rider's scheduled pickup time is moved earlier.
+
+For example, if Ann was initially scheduled to be picked up at 10:07 AM but her trip is rescheduled for 10:01 AM, she may be unpleasantly surprised because she needed those extra minutes to walk to her pickup location.
+
+**Bumping into the future:** This happens when a rider's scheduled pickup time is pushed back later.
+​
+For instance, if Joe is waiting at a bus stop, expecting to be picked up at 10:02 AM, but his trip is rescheduled for 10:12 AM, it can be an unpleasant surprise for him, as he could have spent those extra 10 minutes in a warm and dry coffee shop.
+
+## Understanding Bumping ConstraintsTo minimize the occurrence of bumping situations, we have implemented "bumping constraints." 
+
+These constraints restrict the time ranges within which the matching algorithm can reschedule trips. 
+
+Here's how these constraints work:
+
+**Bumping Into Past Constraints:**
+
+- If a rider is scheduled to be picked up in less than 7 minutes, we "lock" that scheduled time into the past. This means that the pickup time cannot be rescheduled earlier.
+
+If a rider is scheduled to be picked up in less than 2 hours, we "restrict" the length of time it can be rescheduled into the past to 1/6th of the remaining time until the scheduled pickup. In other words, if a pickup is scheduled in 60 minutes, it can be moved up to a maximum of 10 minutes earlier.
+
+**Bumping Into the Future Constraints:**
+
+- If a rider is scheduled to be picked up in less than 2 minutes, we "lock" that scheduled time into the future. This prevents the pickup time from being rescheduled later.
+
+## Which slots and requests are affected?
+
+Bumping constraints apply only to pickup slots.
+
+By definition, in a given run of matching, it applies only to slots belonging to pre-existing requests.
+
+The Bumping Constraints feature is, by default, enabled across all organizations. However, bumping constraints can be selectively disabled. We encourage you to contact your Partner Success Manager for more information.

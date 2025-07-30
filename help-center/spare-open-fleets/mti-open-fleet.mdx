@@ -1,0 +1,53 @@
+---
+title: "MTI Open Fleet"
+description: ""
+---
+
+MTI is a mobility technology provider that builds dispatch software for the taxi industry. 
+
+When trip requests go to the MTI fleet, they are displayed the same way as Spare trip requests and available on the live map, and in the requests screen. Additionally, the vehicle location and details are shown just like dedicated vehicles.
+
+## MTI Open Fleet Key Facts**North America Only****Currently **MTI Open Fleet geography is limited to the North 
+
+American region.
+
+**Rider profiles must have a primary phone number**
+
+- If a rider’s profile does not have a primary phone number on file, the trip will fail to retrieve an estimate because MTI requires a rider phone number to create a booking. If this is the case, you will see the “Unable to find trip…” error code when booking a trip in Spare Operations.
+
+**No accessibility feature support****MTI does not** support any accessibility features but booking agents can send accessibility information in the notes.
+
+**No limit on maximum riders per trip**
+
+**Information displayed about the MTI Open Fleet vehicle**
+Driver's full name, vehicle make and model.
+
+## FA
+
+Qs## **How will MTI interact with other fleets?**As with other Open Fleets, the MTI Open 
+
+Fleet can be configured to be of a higher or lower priority:
+
+**MTI-first approach:** any rider that has opted into using MTI will get MTI as a priority, so long as booking limitations are not an issue. In this scenario at the **Service level**, the** MTI Fleet is set to High Priority** while **Dedicated Fleets are set to low priority**, thus sending every MTI opted-in rider an MTI trip first, with the potential to get a dedicated vehicle if no MTI driver accepts the trip offer.
+
+**MTI as an overflow service:** MTI is being used only when a Dedicated Fleet trip is not available and/or is at capacity (i.e., waits are too long). For any rider that has opted into using MTI, their trips will first attempt to book to a Dedicated Fleet vehicle, and if no options are available and/or the wait is too long, then the trip will flow to MTI. The **MTI Fleet priority is then set to low**.
+
+## **What are the booking options?**When booking a trip, the rider is able to book either an on-demand **“Leave as soon as possible”** or scheduled **“Leave at” **trip to MT
+
+I. 
+
+All trips sent to the MTI fleet are sent over to MTI’s software right away. While Spare waits for the trip to be scheduled, the request status is* **Processing***. 
+
+Spare will wait for X number of minutes (depending on the organization's configurable buffer) before the trip is sent back to Spare Engine. Spare's Engine will then attempt to schedule the trip. If it cannot be done without violating any service parameters, the trip will then enter a **No Drivers Available** state. At this stage, a booking agent will need to cancel and rebook the trip within the Spare Platform.
+
+## **What will riders experience?**Trip requests with the MTI Open Fleet can be booked from either Admin Panel in Spare Operations (by a booking agent) or via the Spare Rider 
+
+App (by a rider).
+
+After a trip has been booked, riders will receive SMS messages that say **TO DO**. Riders will continue to receive Spare Platform notifications as they would normally as well.
+
+Please note that it’s likely the taxi company using MTI is a curb-to-curb service. Taxi drivers will have the ability to call the rider once they arrive at the pickup location. We recommend letting their riders know to look out for a particular taxi vehicle.
+
+## **Who should I reach out to for support?**The local taxi company that uses MT
+
+I for their software will provide a help line for lost goods or other issues.
