@@ -16,13 +16,14 @@
           {
             "group": "Getting Started",
             "pages": [
-              "index"
+              "index",
+              "help-center/getting-started/accessing-the-spare-platform-admin-portal",
+              "help-center/getting-started/setting-up-driver-tablets"
             ]
           },
           {
             "group": "General Support",
             "pages": [
-              "help-center/general-support/accessing-the-spare-platform-admin-portal",
               "help-center/general-support/device-selection-and-procurement",
               "help-center/general-support/faq-stripe-accounting",
               "help-center/general-support/how-to-contact-spare-support",
@@ -30,7 +31,6 @@
               "help-center/general-support/pickup-and-dropoff-location-notes",
               "help-center/general-support/product-name-updates-spare-operations-analytics-eligibility---january-2025",
               "help-center/general-support/resetting-your-password",
-              "help-center/general-support/setting-up-driver-tablets",
               "help-center/general-support/single-sign-on-sso-setup-admin-rider",
               "help-center/general-support/spare-open-api-terms-of-service",
               "help-center/general-support/spare-urgent-escalation-procedures",
@@ -97,7 +97,6 @@
           },
           {
             "group": "Spare Eligibility",
-            "icon": "clipboard-check",
             "pages": [
               {
                 "group": "Getting Started",
@@ -146,7 +145,6 @@
           },
           {
             "group": "Spare Operations",
-            "icon": "cog",
             "pages": [
               {
                 "group": "Service Administrators - Getting Started",
@@ -373,7 +371,6 @@
           },
           {
             "group": "Spare Realize",
-            "icon": "chart-line",
             "pages": [
               {
                 "group": "Getting Started",
@@ -415,7 +412,6 @@
           },
           {
             "group": "Spare Rider",
-            "icon": "mobile",
             "pages": [
               {
                 "group": "Getting Started",
@@ -520,20 +516,15 @@
       },
       {
         "tab": "FAQ",
-        "groups": [
-          {
-            "group": "Frequently Asked Questions",
-            "pages": [
-              "help-center/release-notes-and-faqs/frequently-asked-questions-faq"
-            ]
-          }
+        "pages": [
+          "help-center/release-notes-and-faqs/frequently-asked-questions-faq"
         ]
       },
       {
         "tab": "Changelog",
         "groups": [
           {
-            "group": "Release Notes",
+            "group": "Changelog",
             "pages": [
               "changelog-platform",
               "changelog-rider",
