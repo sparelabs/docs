@@ -1,0 +1,314 @@
+---
+title: "Rider Notifications"
+description: ""
+---
+
+## In this article, you will find answers to the following questions:What are Rider 
+
+Notifications?
+
+How do I set them up in my organization?
+
+When are the notifications triggered?
+
+What are the notification templates and how do I use them?
+
+How are the notifications delivered?
+
+## About Rider NotificationsSpare Platform allows you to enable customized SMS-text, app-based push, email, and automated phone call notifications for your service's riders. Automated phone call notifications carry additional carry-through costs and must be enabled by 
+
+Spare (unless otherwise agreed upon).
+
+# Setting Up Rider Notifications## **Access Rider Notifications**To enable or edit your organization's rider notifications, click on **Rider Communication** and then** Event Notifications **in the bottom of the lefthand menu in Spare 
+
+Operations.
+
+![](https://downloads.intercomcdn.com/i/o/1045597268/71c4c91877a1eadb36e22fa3/image.png?expires=1753820100&signature=a7a89c6e88ff80dc9905c28b0dee7833ea7f4a02d2e7536f5283db8fa089e639&req=dSAjE8x3moNZUfMW1HO4ze%2FmHK6sgZlBkoc%2BCsOlmFyNxv4sEiUBtF%2BoHSS1%0Ax7qd%0A)
+
+This will take you to the **Rider Notifications page** which provides an overview of your existing notifications.
+
+![](https://downloads.intercomcdn.com/i/o/1045597835/cd4d1888db48853fb5c131cd/image.png?expires=1753820100&signature=86d21a4be265bb8c785553227026e1b27081f3fdf988c5a32381a588f08a8409&req=dSAjE8x3molcXPMW1HO4zQcELzrVrmPI%2Fzd0EfxAozAQfyV8FTmNEfFDElAh%0A5dhL%0A)
+
+To create a rider notification, click + **Add Rider Notification** in the top right.
+
+![](https://downloads.intercomcdn.com/i/o/wyxobwoi/1242417618/ecb9d84e836fe1fb9994c00f3184/Screenshot+2024-11-06+at+1_39_00%E2%80%AFPM.png?expires=1753820100&signature=1e23feb7ceccf340fdd45d638597f4234a807bdfe8b5834d33538dcd78e9963e&req=dSIjFM1%2FmodeUfMW1HO4zVPIOEc7y%2F89YHog3RZjKKggAa%2Biljq0B5CBm9eO%0Abarc%0A)
+
+## **Select Your Notification Trigger**Triggers are what will cause a notification to be sent to Riders. 
+
+There are 9 types of notification-triggering events you can enable:
+
+**Scheduled pickup in around an hour (accepted requests only): **This notification is sent out 1-hour before the requested pickup time for all accepted trips.
+
+**Scheduled pickup in 24 hours (accepted requests only): **When rides are scheduled in advance, a ride reminder notification for accepted requests will be sent out 24 hours before the pickup/leave time.
+
+**Scheduled pickup in around an hour (processing requests only): **This notification is sent out 1-hour before the requested pickup time for all trips that are in processing.
+
+**Scheduled pickup in 24 hours (processing requests only): **When rides are scheduled in advance, a ride reminder notification will be sent out 24 hours before the pickup/leave time for trips that are in processing.
+
+**Processing Requests:** Trip requests will be in processing when the request has not yet been matched to a Driver Duty at the time the notification is sent. This can be the case when using external fleets and requests are not immediately matched to Duties. You can learn more in Fleet Sharing.
+
+**Ride request accepted:** This notification is sent to riders every time their trip is accepted and scheduled to a specific time slot by the system.
+
+**No drivers are available for ride requests: **This notification is sent to a rider when no drivers are available to accept the trip request. Normally, this should rarely happen. However, in busy systems, there are sometimes a limited number of trip slots available due to higher demand than supply.
+
+**A vehicle arriving at pickup location: **This notification is sent when both of these conditions are met: 
+
+The current time is less than 4 minutes away from the scheduled pickup time
+
+The driver is less than 2 minutes drive away from the scheduled pickup location 
+
+**Ride request completed: **This notification is sent upon completion of the trip dropoff by the driver in the Spare Driver app.
+
+**Ride request cancelled: **This notification is sent to the rider’s phone when a ride has been cancelled by a driver or administrator (not by the rider themselves).
+
+**Driver over 5 minutes early for a pickup**: [Learn More](https://help.sparelabs.com/en/articles/8994010-setting-up-early-delayed-notifications-for-riders-sms-push-email).
+
+**Driver over 5 minutes late for a pickup**: [Learn More](https://help.sparelabs.com/en/articles/8994010-setting-up-early-delayed-notifications-for-riders-sms-push-email).
+
+## **Choose Request Creation Channels**Next, choose which request creation channels will trigger the notification. 
+
+You can choose multiple:
+
+**Admin Panel: **trip bookings made through the admin panel (most likely call-in bookings) will trigger this notification.
+
+**Rider Mobile App:** trip bookings made through the rider mobile app will trigger this notification.
+
+**Rider Web App:** trip bookings made through the rider web app will trigger this notification.
+
+**Driver App:** walk-on trip bookings made through the driver app (if not disabled), will trigger this notification.
+
+**IVR Booking **and** AI Voice: **only applicable if using Spare's [call-in AI Agent](https://help.sparelabs.com/en/articles/9529094-ai-voice-automating-the-contact-center-with-ai-agents)
+
+By default, Spare will use the default Spare notification messages in English (see below). **To create your rider notification message**, **un-click the Use Default checkbox** and click on the text field to enter the message you would like riders to receive. Please note, that rider notifications have a limit of 255 characters.
+
+## **Choose Applicable Services**Next, choose which of your services this notification applies to. 
+
+This allows you to tailor your automated messaging across as many different programs as your agency supports.
+
+![](https://downloads.intercomcdn.com/i/o/wyxobwoi/1242421232/6709ea3ba642b64746d347509dca/Screenshot+2024-11-06+at+1_43_45%E2%80%AFPM.png?expires=1753820100&signature=ff2206d39ec235d3921ae801900c04886158987322797cebf529be951954e866&req=dSIjFM18nINcW%2FMW1HO4zaNYqn6i1JUXAj51SBG91yFXUkBDx20Qn6r0NG9s%0AL4lv%0A)
+
+## **Write your notification and add Message Variables**You can choose to use Spare's Templated Notification Text or write your own. 
+
+If you choose to write your own, you can use the following variables in your message:
+
+### Trip 
+
+Variables
+
+`{{{rideInitialScheduledPickupTime}}}` `
+
+The original scheduled pickup time of the trip. This may change based on the individual trip flexibility.
+
+`{{{rideCurrentScheduledPickupTime}}}` 
+
+Current scheduled pickup time
+
+`{{{rideEarliestScheduledPickupTime}}}` 
+
+Earliest expected pickup time
+
+`{{{rideLatestScheduledPickupTime}}}` 
+
+Latest expected pickup time
+
+`{{{rideInitialScheduledDropoffTime}}}` 
+
+The original scheduled dropoff time of the trip. This may change based on the individual trip flexibility.
+
+`{{{rideCurrentScheduledDropoffTime}}}` 
+
+Current scheduled dropoff time
+
+`{{{rideEarliestScheduledDropoffTime}}}` 
+
+Earliest expected dropoff Time
+
+`{{{rideLatestScheduledDropoffTime}}}` 
+
+Latest expected dropoff time
+
+`{{{rideScheduledPickupAddress}}}` 
+
+Scheduled pickup address
+
+`{{{rideScheduledDropoffAddress}}}` 
+
+Scheduled dropoff address
+
+`{{{rideRequestedPickupAddress}}}` 
+
+Requested pickup address (most useful for requests in processing)
+
+`{{{rideRequestedDropoffAddress}}}` 
+
+Requested pickup address (most useful for requests in processing)
+
+`{{{pickupOtpWindow}}}` 
+
+Shows the rider the window they can be picked up in
+
+`{{{rideRequestId}}}` 
+
+The ride request ID number
+
+### Driver 
+
+Variables
+
+`{{{driverFirstName}}}`
+
+Driver's first name (Not available for the *No Drivers Available* trigger)
+
+`{{{driverLastName}}}` 
+
+Driver's last name (Not available for the *No Drivers Available* trigger)
+
+`{{{driverPhoneNumber}}}` 
+
+The phone number contained in the assigned driver's profile. (Not available for the *No Drivers Available* trigger)
+
+`{{{driverEmail}}}` 
+
+The applicable driver’s email address (Not available for the *No Drivers Available* trigger)
+
+### Vehicle 
+
+Variables
+
+`{{{vehicleLicensePlate}}}`
+
+The license plate code contained in the assigned vehicle's profile (Not available for the *No Drivers Available* trigger)
+
+`{{{vehicleMake}}}` 
+
+Make of vehicle (Not available for the *No Drivers Available* trigger)
+
+`{{{vehicleModel}}}` 
+
+Model of vehicle (Not available for the *No Drivers Available* trigger)
+
+`{{{vehicleColor}}}` 
+
+Vehicle color (Not available for the *No Drivers Available* trigger)
+
+### Payment Variables
+
+`{{{farePrepaid}}}` 
+
+Indicates whether the fare has been prepaid
+
+`{{{fareRequiresPayment}}}` 
+
+Indicates whether a fare requires payment (the opposite of `{{{farePrepaid}}}` )
+
+`{{{fareTotal}}}` 
+
+The total fare attached to the trip request
+
+`{{{fareTotalNumeric}}}` 
+
+The total fare attached to the trip request, without the currency symbol
+
+### **Check Out Spare's Default Notification  Spare Notifications****Scheduled pickup in around an hour: **“Reminder that you have a ride [today at 10:00 A
+
+M]”
+
+**Scheduled pickup in 24 hours:** “Reminder that you have a ride [today at 10:00 AM]”
+
+**Ride request accepted: **“Your ride [today at 10:00 AM] has been accepted”
+
+**No drivers available for ride request: **“We were not able to find a driver for your ride [today at 10:00 AM]”
+
+**Ride request canceled: **“Your ride [today at 10:00 AM] has been canceled”
+
+**Vehicle arriving at pickup location:** “Your driver is arriving!”
+
+**Ride request completed: **“You successfully completed your [rideScheduledTime] trip!”
+
+## **Select Notification Delivery Options**
+
+- To select how the notifications are received by the rider, select one of the options from the dropdown menu:
+
+**Rider's Preferred Channel**: Available in Notifications Pro. [Learn More](https://help.sparelabs.com/en/articles/8988973-selecting-notification-languages-and-setting-channel-preferences).
+
+**SMS**: Available in Spare SMS and Notifications Pro. Only text messages will be sent
+
+**Email**: only email notifications will be sent
+
+**Push**: only app push notifications will be sent
+
+**Push with fallback to SMS**: App push notifications will try to send first. If the rider doesn't have the app installed, or is signed out, then text messages will be sent as a backup.
+
+**Phone Call**: Available in Spare Voice and Notifications Pro. An automated phone call notification will be sent
+
+Once complete, click Save in the bottom right. This will save your notification as a a draft.
+
+![](https://spare-74fa64f80617.intercom-attachments-1.com/i/o/970438482/c762b97030d36155a95fb6e6/80DWutjypl9W3zIx_boeZBSMnCPm-5jfxA.png?expires=1753820100&signature=10538984cb5b7699daf6b0a222892e1f0dc911895119b4a7c9f1b211512aaf66&req=fScnEsp2mYldFb4f3HP0gGstBDGfjeWt6HHiK0ImrbTxwf2k4dxzgD%2BxXsoD%0AYf8%3D%0A)
+
+## **Choose Your Organization's Do-Not-Disturb Window**To find this, go to Settings -> Organization -> Edit Rider 
+
+Notifications
+
+Select Enable and input the start and end time of your window
+
+Now, the following notification triggers will not be sent during this window:
+
+Scheduled pickup in 24 hours (accepted requests only)
+
+Scheduled pickup in 24 hours (proccessing requests only)
+
+Ride request accepted
+
+No drivers are available for ride requests
+
+Instead, notifications will be sent either slightly before or after your designated window
+
+![](https://spare-74fa64f80617.intercom-attachments-1.com/i/o/970438486/f8b2437148f4f7373bec5951/OIbEPwqxsXFLFdOzHe16jrcNqcOP-1qT8A.gif?expires=1753820100&signature=51eb49376f403d6e420f8654c13a4a2b30b47679f2e95ef6eaa8b404dc5eed19&req=fScnEsp2mYlZFb4f3HP0gOcmVfgB8%2BG0VVb5LVlj0PpBh7GwiEiUoFy93YJc%0ALg8%3D%0A)
+
+Once all the steps are complete, click **Save** in the bottom right. This will save your notification **as a draft.**
+
+- You can test the notification using the **test tool at the bottom**. You can either search for a user to send the test to or you can send the test to a specific phone number.
+
+Once you have verified and tested your notification, click **Publish Rider Notification** at the top to enable it for your organization.
+
+# Best Practices for Text MessagesIncorporating special characters or extending SMS notification messages may result in a higher number of text messages being delivered, consequently leading to increased costs. For a cost-effective approach, consider optimizing the length and content of your messages.
+
+Avoid using emojis or non-standard characters.
+
+Refrain from copying and pasting into notifications from text editors to avoid the potential use of the more expensive space character.
+
+Ensure the use of standard apostrophes in your messages.
+
+Exercise caution with special characters in other languages to optimize costs.
+
+# Responsive SMS💡 Responsive SMS is included in the** Notifications Pro** package. Please reach out to your Spare Representative for more details.
+
+Responsive SMS enables riders to respond to SMS notifications. Riders can reply to the notifications to get updated estimated times of arrival, and cancel rides. This helps agencies reduce call volumes, reduces no-shows and improves the rider experience.
+
+At the end of a SMS message we append the available Responsive SMS commands. The commands are appended to the following triggers:
+
+Scheduled pickup in around an hour (accepted requests only)
+
+Scheduled pickup in 24 hours (accepted requests only)
+
+Scheduled pickup in around an hour (processing requests only)
+
+Scheduled pickup in 24 hours (processing requests only)
+
+If we receive an unclear message, we return with a list of available (ie: enabled) commands for the rider.
+
+## Responsive SMS - Where's my ride?This feature looks up the user’s next upcoming ride and provides the estimated arrival time. If a user has multiple rides, the ET
+
+A will be for the next ride they will next be taking.
+
+![](https://downloads.intercomcdn.com/i/o/wyxobwoi/1243309070/8f51cebbb5d806822ffa053224fa/Screenshot_20241107_090310_Messages.jpg?expires=1753820100&signature=da89cc5538216d637cbe881ea18d1d25e3e46cbdd946924d32f6b755959e8f22&req=dSIjFcp%2BlIFYWfMW1HO4zcfFcXuhRwkZ%2B4gCMyYQmPf1x9p3KGEWXbSuFlN1%0AIE13%0A)
+
+## Responsive SMS - Cancel my rideThis feature allows users to cancel their next upcoming trip. The user has to confirm before cancelling. Responsive SM
+
+S can only cancel the next trip the rider would be taking.
+
+![](https://downloads.intercomcdn.com/i/o/wyxobwoi/1243308774/2c040cc44d9910c404d8dacf7c7b/Screenshot_20241107_090328_Messages.jpg?expires=1753820100&signature=83d21942af468cffe95a723338d25d9ecca0dc14fda61a65376030353704a54e&req=dSIjFcp%2BlYZYXfMW1HO4zdDBBKOTL7sz6ip2kscgBrshfbqwFZbfsv4Hj5Bi%0AZHPF%0A)
+
+Currently, Responsive SMS is only available in English.
+
+​

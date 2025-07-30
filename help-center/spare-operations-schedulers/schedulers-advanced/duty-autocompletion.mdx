@@ -1,0 +1,38 @@
+---
+title: "Duty Autocompletion"
+description: "Learn how Spare automatically completes duties when certain conditions are met"
+---
+
+If a duty is left in progress, Spare will automatically end the duty if certain conditions are met.
+
+## Autocompletion Logic for Duties with a Scheduled End Time
+
+When a duty has a scheduled end time and no trips are remaining, the auto-completion logic works as follows:
+
+**Only End Location Slot Remaining:**
+
+If only the end location slot is left, the duty will be marked as complete 1 minute after the requested end time.
+
+Optionally, Spare can be configured so that the duty must be within 300 meters of the scheduled end location for auto-completion to occur. Please speak to your Spare Representative if you are interested in this configuration. 
+
+**Dropoff Slots Remaining:**
+
+If dropoff slots are also remaining and the duty is within 300 meters of the end location, the duty will be marked as complete 1 hour after the requested end time.
+
+If the duty is not within 300 meters of the end location, the duty will be marked as complete 4 hours after the requested end time.
+
+**Other Slots Remaining:**
+
+If there are still slots remaining in the duty, such as pickups, the duty will not be auto-completed.
+
+## Autocompletion Logic for Duties without a Scheduled End Time
+
+For duties without a scheduled end time (excluding duties created in the last minute), the auto-completion logic is as follows:
+
+**Driver Vehicle Location:**
+
+If the driver has not posted a vehicle location, the duty will be marked as complete.
+
+**Driver Offline Duration:**
+
+If the driver has been offline for 10 minutes, the duty will be marked as complete.

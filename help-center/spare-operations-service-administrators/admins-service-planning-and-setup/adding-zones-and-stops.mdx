@@ -1,0 +1,109 @@
+---
+title: "Adding Zones and Stops"
+description: ""
+---
+
+In this article, you will find answers to the following questions:
+
+How do I create zones for my service?
+
+How do I add/import stops?
+
+How do I edit/move a stop?
+
+Other related articles:
+
+[Creating Time Rules](https://help.sparelabs.com/en/articles/8994601-time-rules)
+
+![](https://spare-74fa64f80617.intercom-attachments-1.com/i/o/973144693/bff7c74e46941ab88ca2b1b3/AVIkYM91SCxnpYpiZQaMe1P7KSPm7pxNEw.png?expires=1753820100&signature=5c6c81a7c341f29ab3cf240b4158937ac5cedc699c3885bd4301bc669cfa212d&req=fSckF816m4hcFb4f3HP0gPUKQ6jonqwD2tCAd1hvhIEAHX6hAgqrLu1zfVlO%0AuvE%3D%0A)
+
+## Creating a New ZoneEvery service needs to have an operational zone created.  There is no limit to the number of Zones you can create in a 
+
+Service!
+
+From the Operations menu on the left-hand side, choose "Service Planning." All services will appear on the right-hand side above the map.
+
+![](https://spare-74fa64f80617.intercom-attachments-1.com/i/o/973144696/7237583c6907003ea9fffe3b/1kGANl4fFxTl18qfEh5OyTERVGVXqgfl4Q.png?expires=1753820100&signature=3e8863a4c41a22ca6ff44f8c2e03c9030b404adec86716cc1f9446fab640e58e&req=fSckF816m4hZFb4f3HP0gChdc8ae5zv8JaGPzrMsD0JVg%2BOjXsil99YV31A9%0AQl4%3D%0A)
+
+Click on the service that needs a new zone and select **"+ Add Zone"** at the top.
+
+Fill out specific details for the zone:
+
+**Zone Name: **This is for internal use only, it won't be visible to the rider or driver.
+
+**Zone Direction:** this needs to be designated as one of the below options:
+
+Pickup & Dropoff: Riders can be picked up and dropped off within this zone.
+
+Pickup Only: Riders can only be picked up in this zone and must be dropped off in either a Pickup & Dropoff zone or in a Dropoff Only zone.
+
+Dropoff Only: Riders can only be dropped off in this zone and must be picked up in either a Pickup & Dropoff zone or in a Pickup Only zone.
+
+**Zone Type:**
+
+- Door to Door: Service in this zone will allow the pickup and dropoff of riders from non-predetermined locations within the zone.
+
+Closest Stops: Service in this zone will select the closest pickup and dropoff stops, from the list of designated stops, to a passenger’s pickup and dropoff locations.
+
+Optimized Stops: Service in this zone will select the optimal pickup or dropoff stops, from your list of designated stops, based on the duty’s trip itinerary. The optimal pickup and/or dropoff stops may not be the closest stops to a passenger’s pickup or dropoff locations. For instance, Spare Engine may select a pickup stop slightly farther away from the passenger’s pickup location if it will improve overall efficiency for a duty’s passengers.
+
+![](https://spare-74fa64f80617.intercom-attachments-1.com/i/o/973144700/ffd0784990d08e56f39f7cb9/UktweMWqWjkEOEfgulq89PTzrX8THtxh0g.png?expires=1753820100&signature=5cec1a0bf6d8d9ce2ca5633e075b1a24317563c0b2f59997fa877da95ac3f76b&req=fSckF816moFfFb4f3HP0gOU3PtODHTyYITDLQe%2FPAEmkxZ8meP%2Bw8wYRjoke%0AVUY%3D%0A)
+
+Define the zone area for your service.
+
+**This can be done in two ways:**
+
+**Click on the map and draw the Zone.** This can be done in a series of straight lines by clicking to a point, then drawing a line, and then adding another point. You can adjust your zone parameters by clicking on a point and dragging it to a different position. If you make a mistake, you can use the undo and redo buttons in the blue bubble bar at the bottom of the screen.
+
+**Import** **a shapefile (*.shp) or geojson (*.geojson) file. **Click on the import button (next to the delete button) in the blue bubble bar. If you're duplicating a zone, it's recommended to export and re-import the zone to make sure they're the same.
+
+![](https://spare-74fa64f80617.intercom-attachments-1.com/i/o/973144701/24ea7ff0650eab93e7e0dda6/qyYHfKv-B0C9xlqcVC6ZV5K4JkY2pCGggQ.png?expires=1753820100&signature=c59e47b338e3f21c365c2fa25c0ca8f18572fc00c06d246a52691bc4fb823b5c&req=fSckF816moFeFb4f3HP0gNgmdcDI%2B4nBJXtnHExQSfxR%2BNqw%2BYYLaW09CDqo%0ATYk%3D%0A)
+
+Once complete, click the** "Add Zone"** button.
+
+![](https://spare-74fa64f80617.intercom-attachments-1.com/i/o/973144703/b087279b3b0988a7c8d8ceba/HVUl0oRrFd8uI_wx3EI7Mjiqdb4ca2ecgw.png?expires=1753820100&signature=7d0926df1e5a34a91f53795d5fd1eda1f02a404b08179ba1c27e9f6622cf49a1&req=fSckF816moFcFb4f3HP0gO5sWkUTisvVr%2FSGJLBzciT1V92K6IuLYAV1SN%2FF%0AFn8%3D%0A)
+
+## Adding StopsIf your service zone type is “Stop to 
+
+Stop”, you will now need to create the stops for your service.
+
+![](https://spare-74fa64f80617.intercom-attachments-1.com/i/o/973144705/c93d7a3862d1c4a81904fd33/v_7-8raV8kXgcBl38EAtAyupXY0HhWqwjg.png?expires=1753820100&signature=e8ba6588570fff25838e6e728a02890b6a0ce0a1da4fd75dec4375aa33027662&req=fSckF816moFaFb4f3HP0gP%2FWMtv5o%2Fr7R2O%2F2TS9IIHg7siP2NOBR8L1ZsuK%0AZBA%3D%0A)
+
+Add a new stop in one of the two ways:
+
+Click on **"+ Add Stop"**. Then enter the location either directly by adding the longitude and latitude coordinates of the stop into the respective fields or by placing the stop directly on the map and the longitude and latitude coordinates will automatically generate.
+
+Click on **"Import Stops"**. Upload the stops from a **CSV file**. Please note that you can download a sample file to avoid formatting errors.
+
+![](https://spare-74fa64f80617.intercom-attachments-1.com/i/o/976758036/3d51b62cfbf9d82d44d3ed3b/B_CxYLjoUX0esbVrRvtzJxGPXQEd0Oa9yw.png?expires=1753820100&signature=5ec47a3b9dd9ec145deb4b2c142de5fb9d115d2fadb48203218b7af7c48d491a&req=fSchEcx2nYJZFb4f3HP0gN%2Bz%2B2dK9cQJofYo%2Bjd8qwaf910Fe0hsuYaeYpKo%0A44I%3D%0A)
+Once you have the latitude and longitude of your stop, enter the following information:
+
+**Stop Code:** a code that you choose to keep track of the different stops within your service area (numbers work well).
+
+**Stop Name:** the name of the stop that the user will see - putting a specific address is often the most helpful.
+
+**Stop Description:** a description of the stop that the user will see - putting a description of the location is often the most helpful.
+
+**Stop Wheelchair Boarding:** whether this stop will be serviced by wheelchair-accessible vehicles for riders.
+
+![](https://spare-74fa64f80617.intercom-attachments-1.com/i/o/973144708/d8eb6d60d0cfee010fbb0c4e/X8rdpCE3Pi6FC97REidMn8Mzf26nUjScaw.png?expires=1753820100&signature=07e707355662dd24ff7923accfe4f60ebe11b49a87bbe3cb6db318674695570b&req=fSckF816moFXFb4f3HP0gJKRGNksYETvIOVrecGKER18NFUOMObMFEYb8C3O%0A0II%3D%0A)
+
+Once complete, click the** "+ Add Stops"** button."
+
+Note: the **minimum distance between 2 stops is 25 meters**.
+
+## Editing Stops
+
+If you want to edit a stop, you can do so by** editing the service.** 
+
+![](https://spare-74fa64f80617.intercom-attachments-1.com/i/o/973144710/672fc33c87f116139cb32c26/S2BweiqhHGz43mUNuGxx6u87eQ0IFecULg.png?expires=1753820100&signature=670f4cfd31842a3593f10072555f30c3d68a9725568a66062cfc7dde851719d2&req=fSckF816moBfFb4f3HP0gNOn6BMQwo2LS0o1P08kJR9L7OZKFOgodpkmbtCR%0AJ4A%3D%0A)
+
+Once you are in the service settings, **click on the stop on the map to enter its settings**. 
+
+To **move a stop,** you can either change its longitude & latitude in the settings or simply drag it to a new place on the map.
+
+![](https://spare-74fa64f80617.intercom-attachments-1.com/i/o/973144713/a1105627ecb60813e730bfef/dwkqQCISlQP1kZOYT-NT36TY2JigwZkcPA.png?expires=1753820100&signature=10127531b04c24a7aca4c90df15ef1b71b5df2dc64b4373f8693a3210f41775a&req=fSckF816moBcFb4f3HP0gIvoYKgnTFKqr8k%2B%2BZRaud6ydTNEN%2FsRhi1QvBDN%0AuI8%3D%0A)
+
+![](https://spare-74fa64f80617.intercom-attachments-1.com/i/o/973144717/a517a23c307f3b50dc405115/5MR_aEIGjX6Si1O9mUm0-D0-k1yFKssiVQ.png?expires=1753820100&signature=1519889ed922f1dd3a1699da394abc1f46d56bddb608f436efdcfd6f30d4790b&req=fSckF816moBYFb4f3HP0gP7kLlGQWCvy5kZDuMoGPeGZawl0d68%2BmhNJ8acP%0AhhQ%3D%0A)
+
+The final stage is to then add any zone restrictions, [time rules](https://help.sparelabs.com/en/articles/8994601-time-rules) for the zone and confirm if it should be visible in the rider app. When complete, either hit save or add another zone.

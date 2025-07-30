@@ -1,0 +1,231 @@
+---
+title: "How is OTP Measured in Spare?"
+description: "Comprehensive guide to On-Time Performance measurement in Spare, including calculation methods, configuration options, and where to find OTP data across the platform."
+---
+
+# How is OTP Measured in Spare?
+
+On-Time Performance (OTP) is a critical metric that measures how often drivers arrive at pickup and dropoff locations within the specified time windows. This guide explains how OTP is calculated, where to find it, and how to configure it for your organization.
+
+## What is OTP?
+
+<Info>
+**On-Time Performance (OTP)** measures how often drivers arrive at pickup and/or dropoff locations within the request's on-time performance windows.
+</Info>
+
+### How OTP is Determined
+
+Spare uses the location of the driver's tablet to determine when the driver has arrived. The system considers a driver "on time" when they meet both location and time criteria:
+
+<CardGroup cols={2}>
+  <Card title="Location Criteria" icon="map-pin">
+    **Within 300 meters** of the pickup or dropoff location
+  </Card>
+  
+  <Card title="Time Criteria" icon="clock">
+    **Within 15 minutes** of the trip's scheduled pickup or dropoff time
+  </Card>
+</CardGroup>
+
+<Note>
+If the vehicle doesn't get within the 300-meter radius but still picks up the rider, Spare uses the completed pickup time as the reference point.
+</Note>
+
+## Where to Find OTP in Spare
+
+OTP information is displayed across the Spare platform to provide insights about requests in the past, present, and future.
+
+### Live Map
+
+<Frame>
+  <img src="https://downloads.intercomcdn.com/i/o/1079793469/6761a5496d814178ff9e3441/Screenshot+2024-06-12+at+11_27_40%E2%80%AFAM.png?expires=1753820100&signature=18f691b2df934a19b475c47b7618f65c7a2777a785a25cf9b38d56e8487fc1d6&req=dSAgH853noVZUPMW1HO4zaAIH9Yy7K%2BD7K2R9YBHHYLC8A%2BRwIedXSYAiY2L%0A3qjo%0A" alt="Live Map showing vehicles with different colors indicating on-time performance status" />
+</Frame>
+
+On the Live Map, vehicles display different colors depending on whether their current or upcoming trips are running on time or late.
+
+<Tip>
+For more information about interpreting Live Map colors and insights, visit our [Getting Insights from Live Maps](https://help.sparelabs.com/en/articles/8967392-getting-insights-from-live-maps) guide.
+</Tip>
+
+### Live Requests
+
+<Frame>
+  <img src="https://downloads.intercomcdn.com/i/o/1079795270/349db9c58c6dc22621df0bc2/Screenshot+2024-06-12+at+11_29_02%E2%80%AFAM.png?expires=1753820100&signature=c1f38776e4754bee287ad74be7e79ce1fdc112977a4b686f2cc077749f2b3ae3&req=dSAgH853mINYWfMW1HO4zTy2%2BiIaqRlGFOGdTxmW60XhBjJzMUwVpqTPS8HB%0AXnRs%0A" alt="Live Requests interface showing individual trip status and timing information" />
+</Frame>
+
+On Live Requests, you can see if individual trips are on time, late, and exactly how late they are running.
+
+### Spare Analytics
+
+<Tabs>
+  <Tab title="Service Analytics">
+    Navigate to **Service Analytics → Rider Experience** to find OTP metrics for your services.
+  </Tab>
+  
+  <Tab title="Fleet Analytics">
+    Go to **Fleet Analytics → On-Time Performance** to view OTP data for your fleets.
+  </Tab>
+</Tabs>
+
+<Frame>
+  <img src="https://downloads.intercomcdn.com/i/o/1079796264/56355cbb18d68c510b9d2b18/Screenshot+2024-06-12+at+11_29_51%E2%80%AFAM.png?expires=1753820100&signature=515f75de4e53e7b4189e555b3204a77d1845a3f61f3a27e5d41844f57c9c0319&req=dSAgH853m4NZXfMW1HO4zcFEtp6e3hnDRYplBI43RPfQiehVGJKuzZ9%2FAT1%2F%0AgnRz%0A" alt="Spare Analytics interface showing Service Analytics navigation" />
+</Frame>
+
+<Frame>
+  <img src="https://downloads.intercomcdn.com/i/o/1079796387/daa15bd2574183607734ff41/Screenshot+2024-06-12+at+11_29_57%E2%80%AFAM.png?expires=1753820100&signature=fc733802afdd2c294e28e981cea33b9208e787885c18cf1e9a436757cb6cbd57&req=dSAgH853m4JXXvMW1HO4zcFxO83KRlxr8eJujR3eRkb0TXT8AA24IFYa2yBs%0A8KGb%0A" alt="Fleet Analytics interface showing On-Time Performance section" />
+</Frame>
+
+In Spare Analytics, you can find aggregate information about OTP for your services and fleets, with filtering options by service, fleet, and date ranges.
+
+## OTP Measurements in Spare Analytics
+
+### Core OTP Measurement
+
+<Info>
+On-Time Performance in Spare Analytics measures how often drivers arrive at pickup and/or dropoff locations within the request's on-time performance windows, using the driver's tablet location to determine arrival.
+</Info>
+
+The system considers a driver arrived when they are:
+- **Within 300 meters** of the pickup or dropoff location
+- **Within 15 minutes** of the trip's scheduled pickup or dropoff time
+
+### Available OTP Metrics
+
+Using the service, fleet, and date filters, you can access several OTP measurements:
+
+<AccordionGroup>
+  <Accordion title="OTP (Overall)" icon="chart-line">
+    The overall On-Time Performance for all your trips. This can be configured using the "On-Time Performance Configuration" organization setting to display either:
+    
+    - **Pickup Windows Only**: OTP for pickup windows of all trips (including "Arrive By" trips)
+    - **Relevant Windows**: OTP for pickup windows of "Leave At" trips AND dropoff windows of "Arrive By" trips
+  </Accordion>
+  
+  <Accordion title="OTP (Leave At)" icon="clock-three">
+    The On-Time Performance specifically for the **pickup windows** of "Leave At" trips (where a rider has specified a departure time).
+  </Accordion>
+  
+  <Accordion title="OTP (Arrive By Dropoff)" icon="map-pin">
+    The On-Time Performance for the **dropoff windows** of "Arrive By" trips (where the rider has specified an arrival time).
+  </Accordion>
+  
+  <Accordion title="OTP (Arrive By Pickup)" icon="clock">
+    The On-Time Performance for the **pickup windows** of "Arrive By" trips (where the rider has specified an arrival time).
+  </Accordion>
+</AccordionGroup>
+
+## Configuring OTP Windows
+
+### Service Configuration
+
+<Frame>
+  <img src="https://downloads.intercomcdn.com/i/o/1079805418/dc28eebed62ab20518468a30/Screenshot+2024-06-12+at+11_37_10%E2%80%AFAM.png?expires=1753820100&signature=f6ec902414018d88ee7e81203b3d640b9fc16b07e2b19e2388763fce0bb9726c&req=dSAgH8F%2BmIVeUfMW1HO4zcpTpdrK5v%2FQ6NaDOgD1q0BMRA%2FlzCVgKPRnVa9i%0A6rKS%0" alt="Service configuration interface showing pickup and dropoff window settings" />
+</Frame>
+
+OTP windows are based on your service configurations, which you can find in **Service Planning → Services**.
+
+### Configuration by Service Type
+
+#### Consistent Pickup Windows and Pickup Flexibility Only
+
+<div style="overflow-x: auto;">
+
+| **Trip Type** | **Pickup Window Start** | **Pickup Window End** | **Dropoff Window Start** | **Dropoff Window End** |
+|---------------|-------------------------|----------------------|---------------------------|------------------------|
+| **Leave At Trips** | Leave-At Backwards Flexibility | Leave-At Forwards Flexibility | *Not set* | *Not set* |
+| **Arrive By Trips** | Arrive-By Pickup Backwards Flexibility | Set by start of rider's Dropoff OTP Window minus estimated travel time | Arrive-By Backwards Flexibility | Set by rider's negotiated arrival time |
+| **Recurring Trips** | Recurring Trip Leave-At Backwards Flexibility | Recurring Trip Leave-At Forwards Flexibility | Recurring Trip Arrive-By Backwards Flexibility | Set by rider's negotiated arrival time |
+
+</div>
+
+#### Variable Pickup Windows and Detour Flexibility Only
+
+<div style="overflow-x: auto;">
+
+| **Trip Type** | **Pickup Window Start** | **Pickup Window End** | **Dropoff Window Start** | **Dropoff Window End** |
+|---------------|-------------------------|----------------------|---------------------------|------------------------|
+| **Leave At Trips** | Leave-At Backwards Flexibility | Leave-At Forwards Flexibility | *Not set* | *Not set* |
+| **Arrive By Trips** | Set using combination of estimated travel time and allowable detour time | Set using combination of estimated travel time and allowable detour time | Arrive-By Backwards Flexibility | Set by rider's negotiated arrival time |
+| **Recurring Trips** | Recurring Trip Leave-At Backwards Flexibility | Recurring Trip Leave-At Forwards Flexibility | Recurring Trip Arrive-By Backwards Flexibility | Set by rider's negotiated arrival time |
+
+</div>
+
+## Leave Now and Leave ASAP Trips
+
+### Special OTP Calculation
+
+<Info>
+For Leave Now and Leave ASAP trips, OTP windows are determined by service availability at booking time and your service settings.
+</Info>
+
+The OTP for these trip types is set when the request reaches the 'accepted' state, based on:
+
+<CardGroup cols={3}>
+  <Card title="Initially Scheduled Pickup Time" icon="clock">
+    The time when the system initially schedules the pickup
+  </Card>
+  
+  <Card title="Leave At Forwards Flexibility" icon="arrow-right">
+    Forward flexibility setting for Leave At trips
+  </Card>
+  
+  <Card title="Leave At Backwards Flexibility" icon="arrow-left">
+    Backward flexibility setting (may be ignored based on ASAP settings)
+  </Card>
+</CardGroup>
+
+<Note>
+If "Move Leave ASAP Trips as early as possible" is set to 'Yes', the "Leave At Backwards Flexibility" is ignored and the OTP window start becomes the Requested Pickup Time.
+</Note>
+
+## Frequently Asked Questions
+
+<AccordionGroup>
+  <Accordion title="When does Spare consider the vehicle to be 'on time'?" icon="question">
+    Spare checks when the vehicle arrives within 300m of the pickup location AND within 15 minutes of the start of the Pickup OTP Window. If the vehicle doesn't get within that distance but still picks up the rider, Spare uses the completed pickup time as the reference point.
+  </Accordion>
+  
+  <Accordion title="How do I configure if pickup windows or dropoff windows are used to measure OTP?" icon="gear">
+    You can configure this in organization settings under "On-Time Performance Configuration":
+    
+    - **"Pickup"**: Uses OTP of pickup window for both Leave At and Arrive By requests
+    - **"Relevant"**: Uses OTP of pickup window for Leave At requests and dropoff window for Arrive By requests
+  </Accordion>
+  
+  <Accordion title="Which trips are included in the OTP calculation?" icon="list">
+    Any trips with the status Accepted, Arriving, In Progress, and Completed are included. Cancellations and no-shows are **not included** in the calculation.
+  </Accordion>
+  
+  <Accordion title="What happens if the driver arrives before the window?" icon="clock">
+    For both pickup and dropoff windows, arriving and completing the pickup/dropoff prior to the window starting does **not** count against your On-Time Performance.
+  </Accordion>
+  
+  <Accordion title="How is the OTP window set and how is completed time related?" icon="calendar">
+    OTP window calculation depends on service configuration:
+    
+    - **Consistent pickup/dropoff windows**: OTP window is centered around the requested time, not initially scheduled time
+    - **Variable pickup/dropoff windows**: OTP window is based on the initially estimated pickup time
+    
+    *Example for consistent windows*: If a rider requests 11 AM pickup with -0 mins/+30 mins flexibility, the OTP window is 11:00 AM to 11:30 AM regardless of initial system scheduling.
+  </Accordion>
+</AccordionGroup>
+
+## Understanding Your OTP Data
+
+<CardGroup cols={3}>
+  <Card title="Monitor Performance" icon="chart-line">
+    Use OTP metrics to track how well your service is meeting scheduled times.
+  </Card>
+  
+  <Card title="Identify Patterns" icon="magnifying-glass">
+    Analyze OTP data by time of day, route, or service type to identify improvement opportunities.
+  </Card>
+  
+  <Card title="Optimize Operations" icon="gear">
+    Use OTP insights to adjust schedules, routes, or resource allocation for better performance.
+  </Card>
+</CardGroup>
+
+<Warning>
+Remember that OTP calculations are based on your specific service configurations. Changes to flexibility settings, service types, or OTP configuration will affect how performance is measured and reported.
+</Warning>

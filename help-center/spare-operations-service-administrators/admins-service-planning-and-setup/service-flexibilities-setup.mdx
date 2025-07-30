@@ -1,0 +1,147 @@
+---
+title: "Service Flexibilities Setup"
+description: "Comprehensive guide to understanding and configuring service flexibilities to optimize your Spare transit operations"
+---
+
+In this article, you will find answers to the following questions:
+
+- What are the service flexibilities, and why might I want to set them up?
+- What are the types of flexibilities, and what each of the types does?
+- How are the flexibilities correlated?
+- How do I set up the flexibilities for my service?
+
+## Related Articles
+
+- [Services General Setup](https://intercom.help/spare/en/articles/8994602-service-flexibilities-setup)
+- [Service Flexibilities Explainer](https://intercom.help/spare/en/articles/8994600-service-flexibilities-explainer)  
+- [Override Flexibilities](https://intercom.help/spare/en/articles/8959245-override-request)
+
+![Service Flexibilities Overview](https://spare-74fa64f80617.intercom-attachments-1.com/i/o/972944814/59eabc5cf68efa8262d478ea/ylnSEWZJNRPfwScynvn_m5vGja-O2aG0vA.png?expires=1753820100&signature=b375834d44888da5b245a5b424a25ca7f3fa773965df621517f1c95998786cdb&req=fSclH816lYBbFb4f3HP0gCMp%2FECgmjJae9Rwe6r8boW1dSgrmx533zZtJJ%2Bq%0AFHo%3D%0A)
+
+## Spare Service Flexibilities Definitions and Values
+
+### What are Flexibilities?
+
+Spare Service Flexibilities is a set of features that can be applied to a specific service to increase efficiency.
+
+### How do they work?
+
+There are currently 11 flexibilities that Spare Engine can offer. Each flexibility is set in minutes and determines how much more time can be allocated to a specific request item, such as pickup time, dropoff time, or time onboard, to accommodate other requests or improve vehicle efficiency.
+
+The flexibilities can be set up in the Service settings, and, once enabled, they're taken into consideration by Spare Engine, impacting how trips are booked and grouped within a duty.
+
+### What is the value?
+
+Setting up your service flexibilities correctly and establishing proper interconnections will help you:
+
+- **Improve your customers' experience** (e.g., if you want them to spend less time in the vehicle while pooling)
+- **Increase your service reliability** (e.g., if you want to prioritize that your vehicles are always on time for a pickup/dropoff)
+- **Optimize vehicle driving time** (e.g., if you want to focus on reducing idle time)
+
+![Service Flexibilities Benefits](https://spare-74fa64f80617.intercom-attachments-1.com/i/o/972944819/18ee61620226888561a66aca/3c9uu9kNgCwj32X7YDK9XKqL61Pd__BQag.png?expires=1753820100&signature=54500399053f95f540cfdf5cf62bd0665e02f89147d43bd52446fef334bac2b4&req=fSclH816lYBWFb4f3HP0gD3DsWphVWsouilgK%2BkU7rDZx4%2Fa%2F8NBRoc48%2F9o%0AJAw%3D%0A)
+
+## Spare Service Flexibilities Types
+
+<Note>
+This article will only have a high-profile overview of each flexibility. For more details and examples, click on the link below: [Service Flexibilities Explainer](https://intercom.help/spare/en/articles/8994600-service-flexibilities-explainer)
+</Note>
+
+There are 4 main types of Service flexibilities:
+
+### Type 1: Detour Flexibilities
+
+This type of flexibility impacts the amount of time a rider can spend in the vehicle.
+
+#### Detour Flexibility
+
+What is the maximum time a rider can spend in the vehicle.
+
+**Impact:**
+- The higher the number, the more riders can be pooled
+- The lower the number, the faster a rider is to travel from point A to Point B
+
+![Detour Flexibility Impact](https://spare-74fa64f80617.intercom-attachments-1.com/i/o/972944819/18ee61620226888561a66aca/3c9uu9kNgCwj32X7YDK9XKqL61Pd__BQag.png?expires=1753820100&signature=54500399053f95f540cfdf5cf62bd0665e02f89147d43bd52446fef334bac2b4&req=fSclH816lYBWFb4f3HP0gD3DsWphVWsouilgK%2BkU7rDZx4%2Fa%2F8NBRoc48%2F9o%0AJAw%3D%0A)
+
+### Type 2: Post-Matched Flexibilities
+
+These flexibilities impact the pickup and dropoff times when the request has already been accepted.
+
+Flexibilities under this group include:
+
+- **Leave-At Forwards Flexibility (minutes)**: How much later a rider can be picked up
+- **Leave-At Backwards Flexibility (minutes)**: How much earlier a rider can be picked up  
+- **Arrive-By Backwards Flexibility (minutes)**: How much earlier a rider can be dropped off
+
+**Impact:**
+- The higher the numbers, the more riders can be pooled, and the easier it is to (re)group them
+- The lower the numbers, the more precise the pickup and dropoff time is
+
+### Type 3: Scheduled Search Flexibilities
+
+These flexibilities impact the pickup and dropoff times when the request has yet to be accepted and is in the processing/estimation phase.
+
+Flexibilities under this group include:
+
+- **Scheduled Search Leave-At Forwards Flexibility (minutes)**: How much later a trip pickup time can be booked for than in the rider's original request
+- **Scheduled Search Leave-At Backwards Flexibility (minutes)**: How much earlier a trip pickup time can be booked for than in the rider's original request
+- **Scheduled Search Arrive-By Backwards Flexibility (minutes)**: How much earlier a trip dropoff time can be booked for than in the rider's original request
+
+**Impact:**
+- The higher the numbers, the more efficient a fleet usage is and the easier it is to accommodate a rider's request by finding them an available vehicle
+- The lower the numbers, the harder it is to find available vehicles for a rider
+- Low flex times for the search/estimate phase can narrow the gap between what the rider requests and what they are eventually offered, which is ideal for taxi-like services
+
+### Type 4: Recurring Flexibilities
+
+These flexibilities apply to recurring trips only and can impact their pickup and dropoff times.
+
+Flexibilities under this group include:
+
+- **Recurring Trip Leave-At Forwards Flexibility (minutes)**: How much later than the rider's requested time they can be picked up in one of their recurring trips
+- **Recurring Trip Leave-At Backwards Flexibility (minutes)**: How much earlier than requested a rider can be picked up in one of their recurring trips
+- **Recurring Trip Arrive-By Backwards Flexibility (minutes)**: How much earlier than requested a rider can be dropped off in one of their recurring trips
+
+**Impact:**
+- The higher the numbers, the more likely the rider's trip can be accommodated, and the more riders can be potentially pooled
+- The lower the numbers are, the closer the pickup/dropoff time of the recurring trip is to the rider's requested time. However, pooling efficiency may drop as a result
+
+## Flexibility Application by Trip Type
+
+The table below shows which flexibilities apply to which types of trip requests:
+
+![Flexibility Application Matrix](https://spare-74fa64f80617.intercom-attachments-1.com/i/o/972944824/a4239eba442a3ee553d796f5/NLQlP2JI_8ONDp1kdtWRUjfVizmMWUdUgQ.png?expires=1753820100&signature=388eb60608691cb14f4d3a29d45e0b4eba40adfe3a928887cab7d9ffb7a10a81&req=fSclH816lYNbFb4f3HP0gCz%2FyELGeDEIBJj4qHQsSmfJymH8cp%2Fd9RF2Wo%2BY%0AA%2Fs%3D%0A)
+
+<Tip>
+If a trip **cannot be found** within flexibility windows, a dispatcher/admin can **manually apply the Override Flexibility Limit** feature to expand the search window. Read more about Override Flexibility [here](https://intercom.help/spare/en/articles/8959245-override-request).
+</Tip>
+
+![Override Flexibility Feature](https://spare-74fa64f80617.intercom-attachments-1.com/i/o/972944828/708f849d9b1b84759586be30/XhIUqT-4n9ryBhhWhJSg7MVTQW8jKtfzig.png?expires=1753820100&signature=a825db18d43478467a647a23c6c0b74aafa4ab240e996e0252d7fdcf441dc8b7&req=fSclH816lYNXFb4f3HP0gEWVgnART6GFj8q9T0B375AiJJlm4igOPavzPamC%0A4mU%3D%0A)
+
+## Spare Service Flexibilities Setup
+
+To set up Service Flexibilities:
+
+### Step 1: Define Your Focus
+
+Decide what your focus should be on service efficiency, rider experience, etc.
+
+### Step 2: Access Service Settings
+
+1. In your **Spare Operations** account, go to **Service Planning**
+2. Navigate to the **Services tab**
+3. Click on the Service name to access Service Settings
+
+![Service Settings Access](https://spare-74fa64f80617.intercom-attachments-1.com/i/o/972944835/4b7a55930a827874368084e4/T0v7GbO_AIN-FXapYuY8i0vmH6NE9uvo4w.png?expires=1753820100&signature=5ad510c0b146ac925859353dd38247f45deb0601f1433c0aecb7fef191fdf352&req=fSclH816lYJaFb4f3HP0gEF9p6vmLupLSbOWjNaixCwMXxFkhSLB4F4dTOcc%0Apcs%3D%0A)
+
+### Step 3: Configure Flexibilities
+
+1. Click "Edit Service" 
+2. Scroll down to Flexibilities
+3. Set the flex amounts for each flexibility
+4. Save the changes
+
+![Flexibility Configuration Interface](https://spare-74fa64f80617.intercom-attachments-1.com/i/o/972944843/c6e80cef5ecc7f7e76634db5/g6W0WvxyfxzU8mHzbZvwCngpL_V4RDR7WA.jpeg?expires=1753820100&signature=98b39c75b30a5bfe8a20b8d4ee821f277231f2b9f451f1f542cd2b7b6855a255&req=fSclH816lYVcFb4f3HP0gGai6AnSomu3CfkGH3554jDnWeFCcIPRRvSiUCMb%0APog%3D%0A)
+
+<Warning>
+Carefully consider the balance between flexibility and service reliability when setting up your flexibilities. Higher flexibility values increase pooling efficiency but may impact rider experience with longer travel times or less predictable pickup/dropoff windows.
+</Warning>

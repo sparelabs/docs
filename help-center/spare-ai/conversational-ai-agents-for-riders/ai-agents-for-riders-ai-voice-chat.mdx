@@ -1,0 +1,131 @@
+---
+title: "AI Agents for Riders: AI Voice & Chat"
+description: "Handle rider support over the phone or SMS with automated AI agents, including bookings, cancellations, ETAs and more."
+---
+
+Every rider has their own favorite way to book or check on a ride. In many services, riders would prefer to call into a contact center. It can be difficult to always provide a high-quality experience in the call center due to capacity constraints and high peak call volumes.
+
+<Info>
+AI agents for riders are conversational agents that use the latest advancements in artificial intelligence to bring contact center hold times to zero — reducing the barrier to access transit.
+</Info>
+
+These agents are available via SMS (AI Chat) and phone (AI Voice).
+
+## What can rider AI agents do?
+
+### Eligibility Services
+
+<Card title="Application Status" icon="clipboard-check">
+  Check the status of rider applications
+</Card>
+
+### Call Center Services
+
+AI agents can handle a wide range of call center functions:
+
+<CardGroup cols={2}>
+  <Card title="Trip Booking" icon="calendar-plus" href="https://help.sparelabs.com/en/articles/11564848-rider-ai-agents-and-how-they-book-trips">
+    Book new trip requests for riders
+  </Card>
+  <Card title="Trip Cancellation" icon="calendar-minus">
+    Cancel existing trip requests
+  </Card>
+  <Card title="ETA Updates" icon="clock">
+    Check on the ETA of trip requests
+  </Card>
+  <Card title="Payment Management" icon="credit-card">
+    Add new payment methods to rider accounts
+  </Card>
+  <Card title="Trip Reviews" icon="star">
+    Leave reviews for completed trips
+  </Card>
+  <Card title="Fixed Route ETAs" icon="bus">
+    Check up on fixed route ETAs
+  </Card>
+  <Card title="Rider Registration" icon="user-plus" href="https://help.sparelabs.com/en/articles/10083115-rider-registration-through-ai-voice">
+    Register new riders in the system
+  </Card>
+  <Card title="Additional Outcomes" icon="ellipsis">
+    More capabilities available based on configuration
+  </Card>
+</CardGroup>
+
+<Note>
+For AI Voice agents available over the phone, these serve as the entry point for all incoming calls. Riders will first be provided with an AI Voice Agent. If AI Voice is unable to handle the request, or the rider asks for a customer service representative, they will be transferred.
+</Note>
+
+## How to set up rider AI agents
+
+Setting up rider AI agents can be done easily within the Spare organization settings.
+
+<Steps>
+  <Step title="Access Organization Settings">
+    Select the profile photo or your initials on the left side of the screen
+  </Step>
+  <Step title="Navigate to Agents">
+    Select **Advanced**, then **Agents**
+  </Step>
+  <Step title="Configure AI Agent">
+    Follow the configuration steps outlined below
+  </Step>
+</Steps>
+
+<Warning>
+Some fields can only be edited by Admins. Contact your Spare representative if you'd like support configuring your AI Agent.
+</Warning>
+
+In the walkthrough below, you can follow along for how to set up a new Agent for a rider. Select the image to view the walkthrough.
+
+[![Click to view the AI Agent setup walkthrough](/images/spare-ai/conversational-ai-agents/spare-ai-setup-walkthrough.png "Click to view the AI Agent setup walkthrough")](https://app.supademo.com/demo/clxw6kyf50usw12o20vy5r7dz)
+
+### Required Configuration Fields
+
+To create a new AI Agent you will need to include:
+
+<Accordion title="Basic Information">
+  - **Name**: The name of the agent for internal purposes. The agent name will not be provided to people calling the agent.
+  - **Description**: The description of the agent for internal purposes. The agent description will not be provided to people calling the agent.
+  - **Introduction Message**: A short message that the AI Voice Agent will read in advance of explaining what it can do.
+</Accordion>
+
+<Accordion title="Agent Capabilities">
+  **Agent Capabilities**: What would you like this agent to do? Currently the agent can do either:
+  - `Trip Booking, ETA, and Cancellation`
+  - `Only Trip ETA and Cancellation`
+  
+  Additionally, the agent can manage Eligibility cases if `Eligibility` is selected.
+</Accordion>
+
+<Accordion title="FAQ Content">
+  **FAQ Content**: Basic questions and information that the AI Voice Agent can communicate to the riders. If you have a standard FAQ about how your services work, place it here. 
+  
+  Read about common FAQ content [here](https://help.sparelabs.com/en/articles/11565177-faq-for-rider-ai-agents).
+</Accordion>
+
+<Accordion title="Voice-Specific Configuration">
+  - **Voice Selection**: AI Voice can leverage one of many different voices. Select the voice that meets your needs.
+  - **Voice Speed**: Determines how fast AI Voice speaks. The default is `1.0`. To make AI Voice speak slower, use a number less than 1.0.
+  - **Authentication Type**: There are two ways to authenticate users, either by the phone number calling in, or by a rider ID and pin. [Read more about authentication](https://help.sparelabs.com/en/articles/11564614-authenticating-rider-agents).
+  - **Language**: AI Voice agents can converse in a wide variety of languages. [See supporting documentation](https://help.sparelabs.com/en/articles/11564587-languages-for-rider-ai-agents).
+  - **Forwarding Number**: If AI Voice identifies challenges with communication on the call, it may ask the user calling in whether they would like to talk to a live agent. AI Voice will automatically transfer the call to the forwarding number when the rider confirms or asks for a live agent.
+  - **Default**: While there can be multiple agents for an organization, only one agent can answer the call when a user calls in. When Default is set to true, the agent will always be the one that answers the call. Organizations can only have one default agent.
+</Accordion>
+
+## What is AI Chat?
+
+![AI Chat interface showing text conversation with AI agent](/images/spare-ai/conversational-ai-agents/spare-ai-chat-interface.png)
+
+AI Chat enables you to provide the same AI Agent that is used in AI Voice, but over SMS text on your existing phone number used for SMS notifications. The functionality and capabilities of AI Chat are the same as AI Voice.
+
+## How to enable AI Chat
+
+<Steps>
+  <Step title="Contact Your PSM">
+    AI Chat can be easily turned on by your PSM. Reach out to get this enabled.
+  </Step>
+  <Step title="Update SMS Notifications">
+    Update your SMS notifications to explain that riders can respond to messages.
+    
+    **Example**: Instead of "Your trip is confirmed.", update to say "Your trip is confirmed. You can chat with me here to get any updates on your trip or book and cancel upcoming trips."
+  </Step>
+</Steps>

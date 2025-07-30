@@ -1,0 +1,95 @@
+---
+title: "Moving a Trip Request to a New Duty"
+description: ""
+---
+
+Sometimes you know something about the real world that Spare doesn't. Dispatchers often need to manually modify the daily schedule to address unplanned situations. There are several ways to do this in Spare. The best method for moving a request depends on the specific circumstances and needs at the time:
+
+## Override💡 This feature is included in the Dispatch package. Please reach out to your Spare 
+
+Representative for more details.
+
+The "Override" request action can be used to move a request from one duty to another. This action is shown for requests in the 'Accepted' or 'Arriving Soon' status. Clicking Override opens the [override flexibilities](https://help.sparelabs.com/en/articles/8959245-override-flexibilities) feature. This feature allows you to [lock a request ](https://help.sparelabs.com/en/articles/8967347-locking-requests-to-duties)to a new duty. 
+
+This is the fastest way to move a request to a new duty, but it doesn't let you edit other properties of the request, like the pickup time or address. 
+
+![](https://downloads.intercomcdn.com/i/o/wyxobwoi/1566326988/a8e555e003ef5c77a853c3978006/Screenshot+2025-06-11+at+10_53_59%E2%80%AFAM.png?expires=1753820100&signature=129818b8f600aea6d373ff2a69a5d493a4c0893d503439368e2460117bfbdf0c&req=dSUhEMp8m4hXUfMW1HO4za%2BQZ4fZX9y%2BPsR5J8l4QucjMYwEJxjdX3BuGQgf%0AyFKp%0A)
+
+## Find Match💡 This feature is included in the Dispatch package. Please reach out to your Spare 
+
+Representative for more details.
+
+The "Find Match" request action can be used to move a request onto a duty. This action is shown for requests in the 'Processing' status and 'Unmatched' or 'On Hold' sub status. Clicking Find Match also opens the [override flexibilities](https://help.sparelabs.com/en/articles/8959245-override-flexibilities) feature. This feature allows you to [lock a request ](https://help.sparelabs.com/en/articles/8967347-locking-requests-to-duties)to a new duty and use overrides to ensure it gets matched. 
+
+This is the fastest way to assign an unmatched request to a duty, but it doesn't let you edit other properties of the request, like the pickup time or address. 
+
+![](https://downloads.intercomcdn.com/i/o/1043242712/6985e7f58ee816e358011178/Processing+-+Service+Disruption.png?expires=1753820100&signature=47297776572f2a8baedfc0fdbdb3e4a4d30d6a7439601d0cd47623e16602fab9&req=dSAjFct6n4ZeW%2FMW1HO4zY2zfI%2FeT37M9Ib8LnELVn3%2BvN%2Byhvz8EUS6QFcM%0AZRrW%0A)
+
+## Edit Request and Rematch The 'Edit Request and Rematch' request action can also be used to move a request from the current duty. Pressing 'Edit Request and Rematch' will take you to the edit request screen. 
+
+Here you have the option to edit properties of the request, like the pickup location and number of passengers. 
+
+If you press **Save Request & Rematch**, Spare will **automatically remove the request from it's duty, evaluate all possible matching options **(based on the service’s set parameters, such as trip flexibility) and** move the request to the best possible duty. **
+
+- The system may match the request to its original duty. If you want to ensure that the request is moved to a new duty, you can [pause the current duty](https://help.sparelabs.com/en/articles/8959723-pausing-duties) before pressing 'Edit and Rematch' and[ resume the duty](https://help.sparelabs.com/en/articles/8959723-pausing-duties) after the rematch is complete. 
+
+![](https://spare-74fa64f80617.intercom-attachments-1.com/i/o/967318410/a44d55599326306e6f2864d4/rQDU2hUwDsJ-cI5E2Ig2kwbZFFhrc-PZVw.png?expires=1753820100&signature=986a14385f8c7555af0d87cd1a2b459bd11ef4f86f05b35b6c80fcd89004a34a&req=fSYgFch2mYBfFb4f3HP0gFhQFn6U1%2BoVT7Cju%2F3oQiQlEl1JBhXDYQtW2snA%0AMK4%3D%0A)
+
+If you have [unmatched requests disabled](https://help.sparelabs.com/en/articles/8994566-unmatched-requests), and there are no available duties to match the request to, the request may go to No Drivers Available. 
+​
+
+If you have access to the Dispatch Package, the 'Edit Request and Rematch' screen also allows you to [Lock a Request](https://help.sparelabs.com/en/articles/8967347-locking-requests-to-duties) to a duty. This is the best way to move a request from one duty to another if you also need to edit the request (e.g. change the pickup location or number of passengers). 
+
+## Rematch from Open Fleets If you have dispatched a trip request to an Open fleet provider, such as Lyft, Uber, Uzurv, or Taxi providers, and the trip is in Processing, Accepted, or Arriving status, you can now rematch the request to a different or the same service. 
+
+This functionality provides you with the convenience and efficiency that you are accustomed to with rematching trips dispatched to dedicated vehicles.
+
+Please note:
+
+Requests dispatched to an Open Fleet currently cannot be rematched to the same fleet, and can only rematch to vehicles in other fleets. If no vehicles belonging to another fleet are available to rematch to, the request may need to be cancelled and re-created before it will match.
+
+A cancellation fee may be incurred if one is levied by the Open Fleet Provider, such as Lyft, Uber, or Uzurv.
+
+## # Force MatchForce Match allows dispatchers to force a trip onto a duty, even if it violates the constraints of the duty or other trips. It’s a dispatcher's last resort to get a trip on a vehicle.
+
+### How does Force Match Work?When using Force 
+
+Match:
+
+**If you've selected a specific duty:**
+
+- The system attempts to insert the trip into your selected duty.
+
+**If no duty is selected:**
+
+- The system automatically chooses the duty closest to the trip’s pickup location.
+
+In either scenario, the system tries to insert the trip by temporarily overriding existing trips and extending the duty end-time as much as required to insert the request into the manifest. The maximum override size is 6 hours.
+
+**If the override is successful:** The trip is scheduled accordingly.
+
+**If the override fails,** The system forcibly inserts the trip as the immediate next pickup or dropoff on the selected duty. This insertion happens regardless of any negative impacts it may have on other scheduled trips or the duty’s end time.
+
+### Accessing Force MatchForce Match can be accessed in the [Override 
+
+Flexibilities ](https://help.sparelabs.com/en/articles/8959245-override-flexibilities#h_549f695a9f)feature. Force Match is available if all of these criteria are met:
+
+You a rematching an existing request (you are not creating a new request)
+
+The request you are attempting to rematch is either in the 'accepted' or 'arriving' status, or it is in the 'service disruption' or 'processing' status with a dispatch status of 'on hold' or 'unmatched'.
+
+You selected one of the override options in the override flexibilities feature - "This Request", "Other Requests" or "Extend Duties" 
+
+No override estimate was found ("No Match" is displayed next to the current request in the override flexibilities feature)
+
+The Requested Pickup Time is in the next 1 hour
+
+![](https://downloads.intercomcdn.com/i/o/992937620/661d9a962920889ca6f99ac9/Unified+Overrides.png?expires=1753820100&signature=ccb0258fe7e7482d1c6482abeb240dcadafb078efbaaef30eb292ddeab1a18c8&req=fSklH8p5m4NfFb4f3HP0gFmvADET8MyTJTGDMRZykLm0flsU%2BOq4m%2BgAEa%2By%0Aedg%3D%0A)
+
+### Additional informationFrequently, riders book a trip through the app or Rider Web, but sometimes they need to make changes to their booking. If they are unable to make changes through the app, they have to call a reservationist for assistance. In the past, reservationists were restricted to matching the rider's trip to services available on the app. 
+
+This limited their ability to help riders who needed a specific change. 
+
+However, with the latest update, reservationists can now choose any service, regardless of whether it is available on the Rider App or not. This allows them to provide better assistance to riders and accommodate their specific needs.
+
+​

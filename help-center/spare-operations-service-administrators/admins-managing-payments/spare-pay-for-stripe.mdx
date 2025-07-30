@@ -1,0 +1,70 @@
+---
+title: "Spare Pay for Stripe"
+description: ""
+---
+
+## SetupIf you do not already have a 
+
+Stripe account, you can create an account here: [https://dashboard.stripe.com/register](https://dashboard.stripe.com/register)
+
+Once the account has been fully created and you are logged in to your Stripe dashboard, click API in the lefthand menu.
+
+Your secret and publishable keys should be on this page. 
+
+**Note**: You may be prompted to enter your password to receive the secret key.
+
+Your account will have two sets of API keys – Live and Test. In order to get access to both of them, you will need to use the toggle switch that says “View Test Data”. Clicking that switch will toggle between the live and test keys.
+
+You can tell the difference between the two types of keys by looking at the first part of the keys:
+
+Live keys will start with pk_ and sk_. The pk_ keys are the publishable keys. The sk_keys are the secret keys. Test keys will start with pk_test_ and sk_test_. 
+
+The pk_ keys are the publishable keys. The sk_keys are the secret keys.
+
+Provide Spare with **both the live and test API keys**.
+
+**Note:** API keys are considered sensitive information. You should only share this information through secure channels such as a secure cloud drive link, Slack or other encrypted forms of communication.
+
+Below is an example of how this information can be provided to Spare.
+
+**Test keys** 
+
+Publishable key: pk_test_tjP5Dhp53kB62UgkPQ2Tqc 
+
+Secret key: sk_test_1amKLI2S5325ntzo8BZg
+
+**​Live keys**
+
+- Publishable key: pk_live_wpF8kK32xHikmrKlQrBql 
+
+Secret key: sk_live_RQjMVZAR52NMymu1icTP
+
+![](https://spare-74fa64f80617.intercom-attachments-1.com/i/o/971763385/5c70896b1364c3013b46d7fe/jqFyysTC8Ihg-XW_HgpI9RwjMX9BC44leQ.png?expires=1753820100&signature=1a508422d666765247c669c90966f63eaf49e9018e6b9660bfd752390beff0eb&req=fScmEc99nolaFb4f3HP0gC%2FCyROBPoD5dLTx6nOJ57TfLuVArd6bHIyuQxn2%0AkPs%3D%0A)
+
+## What are Stripe Test and Live API Keys?
+
+You will notice that there are two sets of secret and publishable keys. 
+
+There is a** test set of keys** and a live set. The test keys can be used to run test transactions to make sure the system is working and is communicating with your Stripe account correctly. Fortunately, this lets you **test the setup without actually charging a credit card**, as Stripe provides credit card numbers to use for testing purposes. There are specific card numbers to use for specific scenarios that you may want to test (i.e. charge accepted, card declined, etc.). When in the test mode you can use any CVC number and expiration date.
+
+**Live keys **are the final keys Spare will need to** set up real transactions**. In your Stripe dashboard, you can toggle between displaying live and test data using the switch in your Stripe dashboard.
+
+![](https://spare-74fa64f80617.intercom-attachments-1.com/i/o/971763392/21776d70a5a58e571de63fdb/NjUjvWwFGLKAeHZNpSPVb27XBTZDzqkuiQ.png?expires=1753820100&signature=2c80eaf0bbf489796a94cd2418b7686fc9aa2b7e665a88e4f881c4d28c0473f9&req=fScmEc99nohdFb4f3HP0gIfkd8x6tbLl0OwUnHdVh54dRPCI%2FdyGJehOfd3n%0AkEY%3D%0A)
+
+## What statutes can a charge have?**Pending: **
+
+- The charge has not been captured yet, but the process to collect payment has started.
+
+**Succeeded: **The charge has been successfully captured.
+
+**Refunded:** The charge has been refunded to the user.
+
+**Failed: **The capture of payment has failed.
+
+![](https://spare-74fa64f80617.intercom-attachments-1.com/i/o/971763392/21776d70a5a58e571de63fdb/NjUjvWwFGLKAeHZNpSPVb27XBTZDzqkuiQ.png?expires=1753820100&signature=2c80eaf0bbf489796a94cd2418b7686fc9aa2b7e665a88e4f881c4d28c0473f9&req=fScmEc99nohdFb4f3HP0gIfkd8x6tbLl0OwUnHdVh54dRPCI%2FdyGJehOfd3n%0AkEY%3D%0A)
+
+## Can I issue a partial refund?You can issue a partial refund for a fare pass purchase within 
+
+Spare
+
+You can also issue a refund from within Stripe directly

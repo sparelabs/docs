@@ -1,0 +1,71 @@
+---
+title: "Visualizing Datasets"
+description: "Learn how to visualize datasets in Spare Realize, understand their role in demand modeling, and request new datasets for your study area."
+---
+
+<Tip>
+In this article, you will find answers to the following questions:
+- What are Datasets?
+- How do I visualize them in Spare Realize?
+- How do I request new Datasets?
+</Tip>
+
+## What are Datasets?
+
+Datasets are a fundamental part of Spare Realize. 
+
+They play two important roles:
+
+1. They allow you to **visualize data** in a spatial format (i.e. overlaid on a map), in order to better understand the data landscape in your study area
+
+2. They are used to **drive Demand Models in Realize**, which estimate the total volume of trips that can be expected in a Zone, and where trips are likely to start and end
+
+<Info>
+A handful of core Datasets are provided as standard in Realize. These are usually **socio-demographic data**, such as total population and job distributions, and some additional **Point-of-Information** (POI) data such as the locations of shops, entertainment facilities, and healthcare facilities. They are uploaded for your study area when you first purchase Realize and are updated with new versions of the data regularly.
+</Info>
+
+Once uploaded, Datasets can be visualized by clicking on the **'Data Layers'** button in the top left of your screen.
+
+![Data Layers button in Spare Realize interface](/images/spare-realize/datasets/data-layers-interface.png)
+
+Datasets are also used to underpin Demand Models when you are building a Service. When you select a certain Dataset in your Demand Model, it effectively represents the home/origin locations of one-half of the trips that are automatically generated in Realize for your Zone.
+
+![Demand Model interface showing dataset selection](/images/spare-realize/datasets/demand-model-interface.png)
+
+## How Do I Visualize a Dataset?
+
+1. To explore the Datasets available to you, go to Spare Realize, select your project, and click **"Run Project"**.
+
+![Run Project button in Spare Realize project interface](/images/spare-realize/datasets/run-project-interface.png)
+
+2. In the Visualization mode, click **"Data Layers"**. This reveals a **list of all the Datasets** that have been enabled for your geography. The source and date of publication for each Dataset are shown in smaller gray text above the name.
+
+3. **Use the toggles** to turn Datasets on and off. Datasets are automatically colored according to the dataset types they represent (e.g. population data, jobs data, point-of-interest (POI) data, etc.).
+
+![Data Layers panel showing available datasets with toggles](/images/spare-realize/datasets/data-layers-panel.png)
+
+<Note>
+Only the Datasets with at least one data point in your map view are shown in the Data Layers. If you cannot see a Dataset you expected to find, try **zooming out** on your map to reveal more Datasets.
+</Note>
+
+## How Do I Request New Datasets?
+
+If you would like to see a specific Dataset that is currently unavailable for your study region, please get in touch with the Realize team.
+
+**Option 1: Request a standard Dataset**
+
+If you are requesting a **standard Dataset** (e.g. total population across a city, or the locations of healthcare and entertainment facilities in an area), the Realize team may be able to create it for you.
+
+**Option 2: Upload your own Dataset**
+
+If you **already have a Dataset** to hand and want to visualize in Realize, send the file to your Spare Partner Success representative in a spatial format, preferably **CSV (*.csv), geojson (*.geojson), or shapefile (*.shp)**.
+
+<Info>
+If the Dataset is in CSV format, it should be organized as a row per data point, and each row containing three columns: latitude, longitude, and value (the value is the data you wish to display, e.g. total population count at that latitude/longitude pair).
+</Info>
+
+![CSV format example showing latitude, longitude, and value columns](/images/spare-realize/datasets/csv-format-example.png)
+
+<Note>
+Currently, Dataset uploads are not self-serve, so the Realize team will gladly do it for you. However, you will soon be able to upload your own Datasets yourself.
+</Note>

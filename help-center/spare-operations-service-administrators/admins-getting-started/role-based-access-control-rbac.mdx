@@ -1,0 +1,60 @@
+---
+title: "Role-Based Access Control (RBAC)"
+description: "Set permissions by creating groups and adding users. Then use access grants to indicate which roles a group should have."
+---
+
+## OverviewOur new permissions system is designed to give administrators fine-grained control over who can access what within your organization. This flexible framework allows you to organize users into logical groups, assign them appropriate roles, and define precisely what data they can interact with. 
+
+Whether you need to grant broad access across your entire organization or restrict users to specific data objects, this permission model makes it easy to implement exactly the security boundaries your team requires. 
+
+**Useful Terms**
+
+**User Group**: A collection of users who share the same access privileges or permissions. Rather than assigning permissions individually to each user, you can create logical groups based on job functions, departments, or responsibilities, and then assign appropriate roles to these groups. When a new employee joins the organization, they can be added to the relevant user groups to automatically inherit all necessary access rights for their position.
+
+![](https://downloads.intercomcdn.com/i/o/wyxobwoi/1492412937/2403d601b73a814c30c643fd2db3/Screenshot+2025-03-20+at+2_35_27%E2%80%AFPM.png?expires=1753820100&signature=6f2f10debb97cf56802f608872d097534d73c243b9a5846cd50cae3fcd4ad3c8&req=dSQuFM1%2Fn4hcXvMW1HO4zZCrlIJaQ12t%2BRh7bKkSPUOL69KFqpMrYJzrvNhK%0AKOY7%0A)
+
+**Role**: A pre-defined set of permissions, typically aligned with specific job functions or responsibilities within an organization. (e.g. scheduler, administrator, booking agent). [See a full list of the roles that Spare provides here.](https://help.sparelabs.com/en/articles/11138859) 
+
+![](https://downloads.intercomcdn.com/i/o/wyxobwoi/1492416055/867f652b02b2072088d4167f0d7a/image.png?expires=1753820100&signature=992a54447839c32c8f165d92b431618603821d1e1313a51c6c5a49490fb26b7e&req=dSQuFM1%2Fm4FaXPMW1HO4zYJzMdrbG5nMYt66LGq2jHf7qJwgv%2F5Cw3n8dyXH%0AmQIw%0A)
+
+**Access grant**: the link between the group, the role, and the level of access. Think of this as the overall “permission": who has access, what they have access to, what the limitations are.
+
+An access grant can be org-wide: see all the data related to that permission
+
+Or object-level: see some of the data related to that permission
+
+![](https://downloads.intercomcdn.com/i/o/wyxobwoi/1492417304/9e2c2be1e271c0ed3d64a2897739/Screenshot+2025-04-24+at+10_08_46%E2%80%AFAM.png?expires=1753820100&signature=3b20e9861b86b54db55efe4eade559dd0c188a94c216721c546442b522e8a388&req=dSQuFM1%2FmoJfXfMW1HO4zYOm8zXio0aR%2BuJxbJR8WF4vbSu536%2BTYuSMnZAA%0A9SCK%0A)
+
+**How will permissions work?**
+
+- For the majority of users, the flow to set up permissions will be:
+
+Create a User Group: Navigate to User Groups by select the **initials icon** on the left-hand side of the screen, navigate to the **Settings **section, and select **User Groups**. Click the `+ Add User Group` button, and enter the group name and description. 
+
+Add users to the group by clicking the `+ Add membership` button. You can search for existing users in Spare. If you're adding a new user, you'll need to [create them as a platform user first](https://help.sparelabs.com/en/articles/8989061-platform-users-and-permissions). 
+
+Link the group to a role (this link is called an “access grant”) to indicate what permissions that group should have. Click the `+ Add Access Grant` button and search for the role you want to give the group. You can add as many access grants as needed in order to give the right permissions to your group. 
+
+![](https://downloads.intercomcdn.com/i/o/wyxobwoi/1492426634/ade17da62553ac327898f89a4bee/Screenshot+2025-04-24+at+10_11_36%E2%80%AFAM.png?expires=1753820100&signature=ab543e9d8753261528607b1e5e20e236e30ffa27ac9dc795e85593901f4e81e0&req=dSQuFM18m4dcXfMW1HO4za3%2F5rmjv6ruI6RbUO7LXUT6aRxLHYtgqoO9tLFL%0A9wiE%0A)
+
+![](https://downloads.intercomcdn.com/i/o/wyxobwoi/1492434567/99fd0e069b0ef62786de723af248/image.png?expires=1753820100&signature=43637538aeb878f2a43783da9ee7c2940a5f9446d843c8517046e466f829cd8f&req=dSQuFM19mYRZXvMW1HO4zZUpLD4ZsRdv5NGz6gKAEbFXkZ5aVnkBtjCKgTAa%0ArH89%0A)
+
+**What if I need additional granularity?**
+
+- By default, the permissions (via access grants) are scoped to be **organization-wide.** This means that the users' permissions are across the whole organization - e.g. a user in this group can view *all* fleets in the organization. If you want to limit which data the user can see/interact with (e.g. view just *some* of the fleets), you need object-level filtering. 
+
+When adding an Access Grant, set the scope to be **Object-level**, then search for the relevant object. This will limit your group to only see the object that you've selected (e.g. the fleet that you select). 
+
+![](https://downloads.intercomcdn.com/i/o/wyxobwoi/1492441527/36ad943ebcc04951a6f25e3e8242/Screenshot+2025-04-24+at+10_17_26%E2%80%AFAM.png?expires=1753820100&signature=dc40ef42ee70a2034983f247eaff995a002f590d23129c0d4c8139e6f10303ea&req=dSQuFM16nIRdXvMW1HO4zSKyAXNZ6kW7M1PGWb0zasQonxIOzOPxBCu7PbEu%0ALQSc%0A)
+
+**Example**
+
+- An agency works with an operator (Operator A) and wants to limit the visibility of those users in Spare. Specifically, the agency wants Operator A schedulers to only be able to access their own vehicles in Spare, not vehicles that belong to the Agency or other operators. The flow would be:
+
+Create a group for the schedulers named "Operator A scheduler”
+
+Link to the existing “scheduler” role in Spare. This allows anyone in the group to create vehicles, edit vehicles, etc - all the actions around vehicles that a “scheduler” role in Spare covers.
+
+Set access grant to object-level. This indicates that you don’t want the schedulers to be about to create/edit/view/etc *all* vehicles in the customer’s organization - just specific vehicles.
+
+Select Operator A’s vehicles as the object. This indicates which vehicles they should be able to access.

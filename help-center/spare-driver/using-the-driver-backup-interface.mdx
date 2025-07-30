@@ -1,0 +1,117 @@
+---
+title: "Using the Driver Backup Interface"
+description: "Learn how to log in, navigate, and use the backup interface to maintain service continuity when the Spare Driver app is unavailable"
+---
+
+## About This Feature
+
+<Info>
+Accessing a backup manifest ensures that drivers can continue their duties seamlessly, even when the Spare Driver app becomes temporarily unavailable. This feature empowers drivers with an alternative, browser-based solution to manage their manifests and maintain service reliability.
+</Info>
+
+### Related Resources
+
+<CardGroup cols={2}>
+  <Card title="Setting up Disaster Recovery Backups" href="https://help.sparelabs.com/en/articles/10134588-setting-up-disaster-recovery-backups">
+    Learn how administrators can configure backup systems
+  </Card>
+  
+  <Card title="Emergency Response Guide" href="https://drive.google.com/file/d/1KXtfZy70AGhM48QElJGMvxnwqMAV3Shx/view?usp=sharing">
+    Comprehensive disaster recovery procedures
+  </Card>
+</CardGroup>
+
+## How It Works
+
+The backup interface allows you to access your manifest and update trip progress via a web browser when the mobile app is unavailable.
+
+## Logging Into the Backup Interface
+
+<Steps>
+  <Step title="Open Your Browser">
+    Open a browser on your tablet or another internet-enabled device.
+  </Step>
+  
+  <Step title="Navigate to the Regional URL">
+    Navigate to the link shared by your administrators. The URL depends on the region you're hosted in:
+    
+    <Accordion title="Regional URLs">
+      - `driver.us.sparedr.com`
+      - `driver.us2.sparedr.com`
+      - `driver.jp.sparedr.com`
+      - `driver.sparedr.com`
+    </Accordion>
+    
+    <Note>
+      Please reach out to your Partner Success Manager if you're unsure which URL to use.
+    </Note>
+  </Step>
+  
+  <Step title="Enter Your Credentials">
+    Log in using the following credentials:
+    
+    - **Organization Key:** Unique identifier for your organization
+    - **Username:** The same username used for the Spare Driver app
+    - **Disaster Recovery Code:** A special code set by your administrators (different from your usual password)
+  </Step>
+</Steps>
+
+## Accessing and Using Your Manifest
+
+Once logged in, you'll view the **most recent backup** of your manifest.
+
+<Warning>
+The backup updates every 15 minutes. Completed tasks might need manual updates if the last backup was slightly outdated.
+</Warning>
+
+### Trip Information Available
+
+You can view detailed trip information, including:
+
+- Base fare (in cents)
+- Number of passengers
+- Mobility aid requirements (if applicable)
+
+<Tip>
+To navigate to a pickup or drop-off location, tap the blue link to open directions in Google Maps.
+</Tip>
+
+## Updating Duty Progress and Returning to the App
+
+<Steps>
+  <Step title="Mark Trips as Completed">
+    Mark trips as **completed** after pickups and drop-offs by selecting the appropriate status for each trip in the manifest.
+  </Step>
+  
+  <Step title="Send Data Before Switching Back">
+    Once directed to use the Spare Driver app again, scroll to the bottom of the backup interface and select **Finish Driving and Send Data**.
+    
+    <Warning>
+      This step is critical! If you don't send your data, your trip updates may be lost and won't be reconciled with your dispatch team.
+    </Warning>
+  </Step>
+  
+  <Step title="Resume Normal Operations">
+    Switch back to the Spare Driver app to resume normal operations.
+    
+    <Note>
+      Because the Spare Driver app and the backup interface are separate systems, your Driver App manifest may show trips that you have already completed via the backup interface.
+    </Note>
+  </Step>
+</Steps>
+
+## For Administrators: Receiving Driver Data
+
+After a driver selects **Finish Driving and Send Data**, an email will be sent to your specified Backup Email inbox containing a record of their activity.
+
+![Example of driver data email received after backup interface use](/images/spare-driver/backup-interface-email-example.png)
+
+This data can be used to reconcile scheduled trip times with actual trip times.
+
+### Additional Documentation
+
+For more detailed information, refer to the comprehensive guide:
+
+<Card title="Detailed Backup Interface Guide" href="https://drive.google.com/file/d/1Un1Sb4aJ3c4haystzqXeVa_i71-fMT5h/view">
+  ![Screenshot of detailed backup interface documentation guide](/images/spare-driver/backup-interface-guide-screenshot.png)
+</Card>

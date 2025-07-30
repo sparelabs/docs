@@ -1,0 +1,40 @@
+---
+title: "Creating Fleets"
+description: ""
+---
+
+## The basics of a fleet
+
+Fleets define what set of duties are available for a service to use.
+
+To create a new fleet on Spare Platform, you can do the following:
+
+In Spare Operations, select **Service Planning**
+
+- Under **Service Planning**, select **Fleets**
+
+- In the top right, select **+Add Fleet**
+
+![](https://spare-74fa64f80617.intercom-attachments-1.com/i/o/971478392/d5887b91325de90ee1f478cf/mJEHtuOxIL05x0e_eq1svUm98NPVUL9tyw.png?expires=1753820100&signature=04ec7bab58957d58d52355870ae5d2ab803a272972caf18bb5645b11c77ed98a&req=fScmEs52nohdFb4f3HP0gG%2BzhzWTdmkW4nsUHiTCMy192g03M38fBrRUfNzY%0AnrI%3D%0A)
+
+Once you start creating your fleet, you will have the option to set the name, type, driver wait time threshold, and potentially the matching configuration.
+
+To better understand how to use fleets, refer to the examples below.
+
+### **Fleets as a transportation operator**Imagine you are a taxi company that has been contracted to provide a service to a transit agency. 
+
+You might operate two different fleets of vehicles:
+
+Fleet 1: Your entire taxi fleet which has the option to accept (or reject) incoming trip requests from the transit agency
+
+Fleet 2: A set of drivers who work hourly for the transit agency as dedicated drivers who will be automatically pushed trips by the transit agency
+
+You can easily set up these two fleets using Spare Platform. Because Fleet 1 is allowed to accept or reject trips, you will want to set the Type to Accept/Reject. Because Fleet 2 uses dedicated drivers who should automatically accept trips from the transit agency you should set the Type to Auto accept.
+
+As both of these fleets are used for a transit agency, you will also want to set up fleet sharing. Search for the "Fleet Sharing" article in our help center to learn how to set up shared fleets.
+
+### **Fleets as a transportation service provider**
+
+- If you both provide a service to end-users, and you manage the operations directly, you can set up fleets directly in your organization.
+
+Imagine you are a transit provider looking to provide dedicated vehicle service in two service areas. You might want each service area to have its dedicated fleet of vehicles. In this case, you would want to create two fleets, one for each service area.

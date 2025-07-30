@@ -1,0 +1,131 @@
+---
+title: "Managing Duties"
+description: "How to create, edit, duplicate, and manage duties in Spare Platform"
+---
+
+## Accessing the Duty Schedule
+
+Navigate to the Duty Schedule by selecting **Shift Scheduling** in the left side menu and selecting **Duties**, or by using search.
+
+![Screenshot of the Duty Schedule page, with the search box expanded to show a search in progress.](https://downloads.intercomcdn.com/i/o/wyxobwoi/1350855711/43c0982183a020d2c33060d816b6/Screenshot+2025-01-24+at+10_25_11%E2%80%AFAM.png?expires=1753820100&signature=c6db81797a04aece2b059a7dfc65f065e861b9d854c83f12333295e856a53ee9&req=dSMiFsF7mIZeWPMW1HO4zYMQywobhAxExXg9VVgLb7g90sx5wdpV5BuJrUtY%0ANLu5%0A)
+
+Once viewing the duty schedule page, you can filter, sort, and customize to make it suit your needs.
+
+- **Problems Only:** Filter to only view late pullouts, duties with no assigned driver, or vehicle conflicts. See [Statuses](#what-statuses-can-a-duty-have) below for more information.
+- **Sort:** Sort by start time, end time, duty identifier, vehicle identifier, or driver name.
+- **View:** Show or hide features, to make your view meet your needs. Your preferences are unique to you, and will not affect other users.
+- **Search:** Highlight a duty, driver, or vehicles using a text search.
+- **Date Picker:** Open a calendar view to quickly navigate to a specific date, or click **Today** to jump to the current duty schedule.
+
+## Creating and Editing Duties
+
+To create a duty, click **Add Duty** then fill in the required information. 
+
+> Note that duties can be created without having a driver assigned, but a driver will need to be assigned before the duty starts.
+
+![Screenshot of the duty creation modal, with example data filled](https://downloads.intercomcdn.com/i/o/wyxobwoi/1350875354/6c6fb397dabc6c45552dce8f25b6/Screenshot+2025-01-24+at+12_03_36%E2%80%AFPM.png?expires=1753820100&signature=5dd984d2949f2a906bea75c5298e04f038553b1f9a65c21c1c08a12656a10d28&req=dSMiFsF5mIJaXfMW1HO4zSz57isIEy5wnyfSkWKbWEIF8lx%2BwJaX4qn%2B4Q7D%0ANfyY%0A)
+
+> Please note that Spare will take into account the driving time required to get from the Start Address to the first pickup and from the last dropoff to the End Address.
+
+To edit a duty, click a duty present on the page. This will open the edit modal.
+
+![](https://downloads.intercomcdn.com/i/o/wyxobwoi/1350881349/8f8e39bca63d5305b20dd939833a/Screenshot+2025-01-24+at+12_08_47%E2%80%AFPM.png?expires=1753820100&signature=6adc68f4c44b4879971cf31d2cc9db211b60ac9cf9afc05847bd557b578e5472&req=dSMiFsF2nIJbUPMW1HO4zd6ZF0NZssg4m3DjZzMZBJ3WVAypUIeLJrFv4QAF%0AbVzp%0A)
+
+In the edit modal, make any changes you need and click **Save** when you're done. You will only see fields that are available to edit, so Scheduled Start Time and Start Address will not appear when editing a duty that's in progress.
+
+> _Note: you won't be able to update the end time of a duty if the new end time won't allow enough time to drop off riders on board the vehicle._
+
+![Screenshot of the Edit Duty modal, showing an example of the duty in progess.](https://downloads.intercomcdn.com/i/o/wyxobwoi/1350873705/c631533bbf3b06fb3f859dbe1774/Screenshot+2025-01-24+at+12_02_09%E2%80%AFPM.png?expires=1753820100&signature=0fa39d01c40d381c2d5b297bc9cbd4f6a4e689317187216ab7f7dac64bf8d712&req=dSMiFsF5noZfXPMW1HO4zd6kWXV4DGDASA2ADKkOX2akqAUyV2F%2FCIjbWhUe%0AR%2Fx7%0A)
+
+> If your organization has [Global Optimization of Live Duties (GOLD)](https://help.sparelabs.com/en/articles/8946518-spare-s-ai-engine-matching-optimizing-requests#h_8a5b72adcd) enabled and you attempt to shorten or extend a duty, Spare will automatically rematch requests on that duty to avoid disrupting riders.
+
+The following warning modal will appear to allow confirmation of the change:
+
+[![](https://downloads.intercomcdn.com/i/o/wyxobwoi/1407176699/625afa3c5c7dced88a65dc676485/Screenshot+2025-03-04+at+5_33_41%E2%80%AFPM.png?expires=1753820100&signature=2ae149a2755ea6d1bb302a6d6da3063c95537add5606c2a996beb6c239b7979d&req=dSQnEch5m4dWUPMW1HO4zV%2BDGcHh7Ug26Rlds8lMJw8aWubFd7S3uNBgYZxY%0AaCaf%0A)](https://app.supademo.com/demo/cm7pe591s0v5fhilgna1wpqew?step=5)
+
+## Duplicating Duties
+
+To schedule weeks of duties at once, you can use the Duplicate feature to apply an existing duty schedule to as many future dates as you choose. First, select the duties you want to duplicate by ticking the checkboxes next to each duty you want to copy. Then, click **Duplicate** in the top-right corner of the page. 
+
+> You can also tick the checkbox at the top of the duties list to select all scheduled duties for that day.
+
+![Duty selection interface for duplication](https://downloads.intercomcdn.com/i/o/wyxobwoi/1350957713/82b7a159a9be0181068714e0df25/Screenshot+2025-01-24+at+1_22_15%E2%80%AFPM.png?expires=1753820100&signature=2261468bc502a11e2a708eb1dfe54caf8704a9558387bc395fff426a3c95f0e0&req=dSMiFsB7moZeWvMW1HO4zQPQpwKt8bPBIAjtYuBZjPREt9VNJEkZi%2BKMznSJ%0Autce%0A)
+In the Duplicate Duties modal, use the calendar interface to select which dates to duplicate your duty schedule to, whether to copy existing driver assignments, and whether to copy any manually added driver breaks. If your organization uses a [break policy](https://help.sparelabs.com/en/articles/8967492-driver-breaks) to automatically schedule breaks, do not include break assignments when duplicating duties.
+
+![Screenshot of the duplicate duties modal, showing where a user selects what dates to apply the duplication to, whether the driver assignments should be duplicated, and whether the break assignments should be duplicated.](https://downloads.intercomcdn.com/i/o/wyxobwoi/1350870073/222ee7a2968924444b4bfc3c9283/Screenshot+2025-01-24+at+10_35_03%E2%80%AFAM.png?expires=1753820100&signature=98c91a9578e24226a4b77d560d9a88113991f4348b2efd582325fedef4f61dc3&req=dSMiFsF5nYFYWvMW1HO4zb8qRDItQwyqtjAvYZx3ZwRDh4qQK3zbry8cdnkE%0AWK7N%0A)
+
+## Cancelling Duties
+
+To provide operational visibility into why duties get canceled, starting July 17, 2025 we've added the ability to add a reason and notes when cancelling a Duty. Since day-of-service cancellations (like driver callouts, vehicle breakdowns) significantly impact on-time performance (OTP), this feature helps agencies understand patterns and better manage service disruptions.
+
+To cancel a duty in Spare, click on the duty you want to cancel, then click the **Cancel** button. You'll be prompted to select a cancellation reason from the dropdown menu, add any additional notes if needed, and confirm the cancellation. For bulk cancellations, first select multiple duties, then click **Cancel**. You'll see a review screen displaying all the duties you're about to cancel if you've selected multiple duties, where you can select a single cancellation reason that will apply to all selected duties, add optional notes, and confirm the bulk cancellation.
+
+![Duty cancellation modal](https://downloads.intercomcdn.com/i/o/wyxobwoi/1604220084/7b6779c83fc3c3d1ecaa8f22f1d3/Modal+%282%29.png?expires=1753820100&signature=7af8f7b7738ef4267dfb6832c28c935c01c686d9a83067b231e5a77c7eb7fcd0&req=dSYnEst8nYFXXfMW1HO4zeeLqaGUjDPpfyu4q5RUOyp45pe0QcV%2FSQv2Id3j%0AaouY%0A)
+
+### Cancelling a Scheduled Duty
+
+If the duty has trips already matched to it, you'll see a warning that these trips will be rematched to other duties—the Spare engine will automatically handle this redistribution. For bulk cancellations, select multiple scheduled duties, click **Cancel**, review the list of duties to be canceled, select a reason that applies to all, add any notes, and confirm.
+
+### Cancelling an In-Progress Duty
+
+For duties without riders onboard, all remaining trips will automatically be rematched to other available duties. However, if riders are currently on board, cancelling triggers the vehicle breakdown flow: the system cancels the current trips, creates new trips for the on-board riders with pickup locations set to the vehicle's current position, and rematches all future trips to other duties.
+
+This ensures rider safety and service continuity during unexpected cancellations.
+
+![](https://downloads.intercomcdn.com/i/o/wyxobwoi/1604224152/5d7119bfcd5daa089eae30683d52/Modal+%283%29.png?expires=1753820100&signature=5fd98c887414b140ee09974a3c553978dd50231f245e5b19fc72de5e65be244f&req=dSYnEst8mYBaW%2FMW1HO4zS6PQUb0ncRWEnlVdY%2B8K7xTal148KvnG%2FeW9MS9%0AVNgV%0A)After cancellations, the reason and the cancellation notes will be displayed on the Duty from the Shift Scheduling page and within an individual Duty.
+
+## Deleting Duties
+
+Spare will allow duties to be deleted as long as no requests have been matched to them. If matches have been made, the duty must be cancelled instead. 
+
+> This preserves a record of activity and ensures rides rematch to available duties whenever possible.
+
+To delete multiple duties at once, select the duties to delete like you would when duplicating duties, but click **Delete** instead. Note that if the duties are in progress or already matched to requests, you will not be able to delete them. A message explaining that these duties cannot be deleted, and you will need to cancel them instead.
+
+![Screenshot of a pop-up indicating that duties cannot be deleted](https://downloads.intercomcdn.com/i/o/wyxobwoi/1350971649/00da7b0caab9368e8020ea35616f/Screenshot+2025-01-24+at+1_34_32%E2%80%AFPM.png?expires=1753820100&signature=64a652513158b8a7ba48cc467e9c5bcc15aa498bec99135668f545cbc1253e6a&req=dSMiFsB5nIdbUPMW1HO4zRSSHxmMIyhW3ukK%2F21sNhT%2BbEC4KV1JzdXbzNyt%0A%2B%2Bx6%0A)
+
+To delete an individual duty, click the duty like you would when editing a duty, then click the **Delete Duty** button and confirm you want to delete the duty. A duty deletion cannot be reversed.
+
+> If the duty cannot be deleted, the **Delete Duty** button will be replaced with a **Cancel** button.
+
+![](https://downloads.intercomcdn.com/i/o/wyxobwoi/1350973503/1554cbbb21dfee55d83a873ed82a/Screenshot+2025-01-24+at+1_41_16%E2%80%AFPM.png?expires=1753820100&signature=8efe3e8202227ab20d6cd143d64a6ca137dad9294e694dfde8eb5efb7723fd12&req=dSMiFsB5noRfWvMW1HO4zctBk1B%2Fpy31WWQOeRSQn9HQB176AKBr3WOGSe3r%0ABpQd%0A)
+
+## Duty Details Page
+
+To learn more about a specific duty, open the edit modal then click **View Duty** to navigate to the duty details page. [Review this article to learn more about Duty Details](https://help.sparelabs.com/en/articles/10366209-new-duty-and-driver-pages).
+
+## What Statuses Can a Duty Have?
+
+### Unassigned
+
+![Unassigned duty status icon](https://downloads.intercomcdn.com/i/o/978129068/fae0339eb1fc78af8a95cf85/Duty+%287%29.png?expires=1753820100&signature=279c45bbf8d2bd4a5641996d61524919a2a5a9f266b44e219c7fda28c3c265b4&req=fScvF8t3nYdXFb4f3HP0gKMdibGZqEOJQaXroZHMGNiNiJatLJH4LLiPd860%0A3Nc%3D%0A)
+
+The duty has not been assigned to a driver.
+
+### Late Pullout
+
+![](https://downloads.intercomcdn.com/i/o/978128945/7a7c1fead78f77f1c6ea4410/Duty+%286%29.png?expires=1753820100&signature=af9aaf76b80c40cc6aaa6744dba3994288f0b9420b519eb3b313b16865511b7a&req=fScvF8t2lIVaFb4f3HP0gF%2FggS5G7evm1ly1fkEVyeawR0EY7pSvW8%2BXvlag%0Az50%3D%0A)
+
+| The driver started their duty later than planned | Vehicle Conflict |
+
+![](https://downloads.intercomcdn.com/i/o/978128556/125d7845b03a6276ef08bd29/Duty+%285%29.png?expires=1753820100&signature=e3128ed7502911031cf95ab004f4e88dea64477324c2d14de48d226609fdf5cd&req=fScvF8t2mIRZFb4f3HP0gOJZjRG4D1BRZqTd7EyciX1wKSZI6R0g5gS6%2Brja%0Ajhw%3D%0A)
+
+| The vehicle is assigned to more than one driver | Driver Conflict |
+
+![](https://downloads.intercomcdn.com/i/o/wyxobwoi/1493174934/401a4f209d2ab59f44e367c22563/Duty%2B-285-29.png?expires=1753820100&signature=72fef62c9e95ed65f0b6ae27dfadc254bda1c89f13b0872bc65a2547ab4d4d79&req=dSQuFch5mYhcXfMW1HO4zYv8oiMZV2RONJdrZhfrLaAftnfMKUlEz4fNTi%2FW%0AyZp5%0A)The driver is assigned to more than one vehicle
+
+| Scheduled | ![](https://downloads.intercomcdn.com/i/o/978128793/11c3b439a7537f7a1ee39e7c/Duty+%284%29.png?expires=1753820100&signature=b99cf478ecc9b362ed54a385319fcd726bd5e0d3aa18df1f0318e5f0237039d3&req=fScvF8t2mohcFb4f3HP0gKA%2BM%2Bg1Yls0YfQCxQpW0n6Dm%2BqZo%2FuXchI32gMd%0APmM%3D%0A) |
+
+| The duty is scheduled in the Spare Platform. Passengers can request trips for duties that have been scheduled. | In Progress |
+
+![](https://downloads.intercomcdn.com/i/o/978113628/5d0cc1df6dbe98390a74d820/Duty+%282%29.png?expires=1753820100&signature=651bc680f7bfec3048be7826bed64252df2ba097d6797680c8843b6dfd49b9ac&req=fScvF8h9m4NXFb4f3HP0gPqeK07dm69WiAWIFsswXvWoePRmaCmBlLt2A9re%0A7U8%3D%0A)
+
+| The duty is in progress and the vehicle is currently performing pickups, dropoffs, or standing by for requests. Passengers can request trips for duties that are in progress. | Completed  |
+
+![](https://downloads.intercomcdn.com/i/o/978112581/527f9492090e0bfe4b477f9b/Duty.png?expires=1753820100&signature=31fe60ce0998deca78c4e5379dcf95fc9cf617db33e039629bfbb9f9bac4d9cd&req=fScvF8h8mIleFb4f3HP0gKHH9Xi8XEIKjpUTIShgJnC%2B1StyxLdZa%2FKuPtC7%0A60w%3D%0A)The duty is completed and cannot receive new passenger requests.
+
+| Paused | ![](https://downloads.intercomcdn.com/i/o/978129934/fb3b8a87790dd0da2237d2ab/Duty+%288%29.png?expires=1753820100&signature=914eb34b7b46e56b9c6b5c9d761f85a3e9e699f0a91d979dd1cb6acf9ab55796&req=fScvF8t3lIJbFb4f3HP0gIKjMBkCDolaZIN7ebukJFylujUQV%2FK%2F83sOWs8w%0ApDk%3D%0A)The duty is paused and Spare won’t perform any automatic matching or optimization on this duty.  |
+
+| Cancelled | ![](https://downloads.intercomcdn.com/i/o/978113442/0268411c1e02587e0b0566f6/Duty+%281%29.png?expires=1753820100&signature=5892dd13076df545989a35da48bf66cc6f14c3c29cfc5e5ff6f061c5ec0c9e21&req=fScvF8h9mYVdFb4f3HP0gG1PWmASKSPR0XXQmmvItRpvd7i7flzzgERgqUZe%0Aec0%3D%0A) |
+
+The duty is cancelled and cannot receive new passenger requests.

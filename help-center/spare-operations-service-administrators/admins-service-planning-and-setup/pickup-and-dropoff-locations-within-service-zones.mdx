@@ -1,0 +1,43 @@
+---
+title: "Pickup and Dropoff Locations within Service Zones"
+description: ""
+---
+
+This feature enhances the rider experience by validating pickup and dropoff locations in real-time during the booking process. It provides immediate feedback if a location is outside the service zone, allowing riders to make adjustments without delay, ultimately streamlining the booking flow.
+
+# How does it work?## **Enter Locations**
+
+- When riders input a location, the system instantly checks if the location is within the designated service zone.
+
+If a location is outside the service zone or in a separate service area, a notification appears directly in the booking interface.
+​
+
+## **Map Interaction**
+
+- On the map view, areas outside the service zones are clearly marked or greyed out, preventing selection.
+
+If a rider selects a location on the map that is outside the valid zones, an error message is promptly displayed.
+​
+
+## **Correcting Errors**
+
+- The system offers suggestions for nearby valid locations when possible.
+
+Riders can drag the pin on the map within the valid zones to fine-tune their pickup or dropoff points.
+
+![](https://downloads.intercomcdn.com/i/o/1029146758/67b58c57044020ca5d945f18/image.png?expires=1753820100&signature=8ceb7da2db293acfc6b79fb5e9c3bbd9879a7a469bd4f262d9502a3e1f4b4eb6&req=dSAlH8h6m4ZaUfMW1HO4zV8P%2BDacD75zB0dHeW%2FAkNrqIhcdbdAiA7nIGuhz%0A98FN%0A)## # FAQ**Q: What happens if I mistakenly enter a location outside the service zones?** 
+
+A: The system will immediately alert you and prevent you from proceeding. It may suggest nearby valid locations to assist you in correcting the entry.
+​
+
+**Q: Can I manually adjust my location on the map after receiving an error?** 
+
+A: Yes, you can manually adjust your pickup or dropoff location by moving the pin within the boundaries of valid service zones on the map.
+
+**Q: How does Spare select the Zone used by the rider?**
+
+- The zones are ranked based on the following rules:
+
+First we select Zones that have time rules that are active at at the time the trip is requested
+
+If multiple zones satisfy the time rules, we check the size of the zone and use the smallest possible zone.

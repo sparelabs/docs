@@ -1,0 +1,82 @@
+---
+title: "Reservationist and Reporting Copilot Security"
+description: "Security and data handling information for Spare's AI-powered Reservationist and Reporting Copilot features"
+---
+
+## Overview
+
+Spare remains committed to providing an excellent user experience while adhering to security guidelines and best practices. This document addresses how Spare's latest features, **Reservationist Copilot** and **Reporting Copilot**, process and use data using artificial intelligence.
+
+## AI Model
+
+Both **Reservation** and **Analytics Copilot** utilize [Google's Vertex AI](https://cloud.google.com/vertex-ai?hl=en) solutions.
+
+### Security and Compliance
+
+- **Google Cloud** (including Vertex AI) is [HIPAA compliant](https://cloud.google.com/security/compliance/hipaa)
+- The **Vertex AI models** are all regionally co-hosted in the same data center as Spare Platform
+- **Google Vertex AI** meets all necessary security standards and does not use prompts or associated information to improve its products. See [here](https://ai.google.dev/gemini-api/terms#data-use-paid) for details
+- **Spare** has strict access controls, including multi-factor authentication and regular audits
+- **Spare** has an incident response plan in place for any breaches or incidents
+
+### Data Hosting Locations
+
+At present, data is hosted in either:
+- **Canada:** `northamerica-northeast1`
+- **US:** `us-east1`
+
+## Data Transmitted to Vertex AI
+
+All data sent to Google's Vertex AI is encrypted in transit (using TLS v1.2+ as per Google's documentation) and at rest (AES-256 as per industry standards).
+
+The following information is used to build the prompt used for AI generation:
+
+### Analytics Copilot
+
+**Data USED for prompt generation:**
+- The question submitted within the Analytics Copilot input
+- All column names associated with Analytics
+- Custom Field Names for `Rider`, `Driver`, `Duty` and `Request`
+
+**What is NOT USED for prompt generation:**
+- Any specific column values
+- Any information, including PII relating to specific riders, duties, requests, etc
+
+### Reservationist Copilot
+
+**Data USED for prompt generation:**
+- The timezone of the Organization (e.g., `America/Vancouver`)
+- Default locale of the Organization (e.g., `English`)
+- List of requests covering the requested time period, which include:
+  - Request Status
+  - Intent Type (ArriveBy or LeaveAt)
+  - RequestedPickupTs or RequestedDropoffTs
+  - Travel Distance in meters
+  - Travel Duration in seconds
+  - Lateness in seconds
+  - Requested Pickup Address
+  - Requested Dropoff Address
+  - Created Interface (Admin, Rider, RiderWeb, IVR)
+  - CreatedAt timestamp
+  - Booked By (the name of who booked the request - could be the Reservationist or rider)
+- **Cancellation details** (if cancelled) includes:
+  - Reason (either: noShow, riderBan, lateDriver, alternativeMethod, scheduleChange, other)
+  - Cancelled By (either: Rider, Driver, Admin)
+  - Fault (either: driverFault, riderFault, noShow)
+  - Notes
+  - Cancelled Timestamp
+- **Recurring Request details** (if a recurring request):
+  - Days (which days the recurrence occurs on)
+  - dayOverrides (if the recurring request has been overridden for a specific day)
+  - outboundTime
+  - inboundTime
+
+**What is NOT USED for prompt generation:**
+- Any Rider profile information (other than their name IF they booked it themselves)
+- Rider ID Number
+- Request Notes
+- Location Notes
+- Favorite Locations
+- Accessibility Features
+- Group Memberships & Eligibility Conditions
+- Payment information

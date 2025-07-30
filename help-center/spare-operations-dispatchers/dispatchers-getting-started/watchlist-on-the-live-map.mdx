@@ -1,0 +1,173 @@
+---
+title: "Watchlist on the Live Map"
+description: "Learn how to use the Live Map Watchlist to identify and resolve operational issues before they escalate into service disruptions."
+---
+
+The Live Map has undergone a significant update designed to aid dispatchers in identifying and resolving issues **before they escalate into service disruptions**. Dispatchers no longer need to manually search for problems among hundreds of vehicles; the map surfaces real-time alerts for key operational issues such as late pull-outs and unexpected delays, empowering dispatchers to take immediate action.
+
+# Understanding Alert Types and Meanings
+
+The Watchlist displays 5 different types of alerts: 
+
+![Watchlist alert types overview](https://downloads.intercomcdn.com/i/o/wyxobwoi/1576873481/db4ebb3d45aed02ca26621cc0007/Screenshot+2025-06-18+at+9_24_39%E2%80%AFAM+1.png?expires=1753820100&signature=8d1b2f9403725eaf7d62a96300b8e9735268117ca322735bd9c8a9d9a3481cd2&req=dSUgEMF5noVXWPMW1HO4zY9v67NDWJsI40TNRsvk4GH0I7PMdU9nYPfmBfqD%0AL%2Fqw%0A)
+
+## 1. Late Pullout
+
+**What it is:** Identifies drivers who are late to leave the yard.
+
+**What triggers it:** Triggered when a driver has not started their duty, or has started but hasn't left the yard
+
+**When it shows in the Watchlist:** Appears when the delay exceeds 5 minutes
+
+**When it ends:** Ends when the driver starts the duty and begins moving toward their first pick-up.
+
+## 2. Offline
+
+**What it is:** Indicates that the vehicle's tablet is not sending location data.
+
+**What triggers it:** Triggered when no vehicle location is received from the tablet for over 5 minutes
+
+**When it shows in the Watchlist:** Appears after 5 minutes of no location updates
+
+**When it ends:** Ends automatically once a location is received from the tablet
+
+## 3. Idle Outside Service Zone
+
+**What it is:** Flags duties that have been stationary outside their assigned service zone
+
+**What triggers it:** Triggered when a duty has been idle outside its assigned zones for more than 5 minutes
+
+**When it shows in the Watchlist:** Appears once the 5-minute threshold is reached
+
+**When it ends:** Ends when the duty returns to its assigned service zone
+
+## 4. Prolonged Stop
+
+**What it is:** Highlights stops that take longer than expected and cause downstream delays—often due to trouble finding locations, incorrect addresses, or unscheduled driver breaks
+
+**What triggers it:** Triggered when a pickup or drop-off causes over 5 minutes of downstream delay
+
+**When it shows in the Watchlist:** Appears when the delay has affected other trips by more than 5 minutes
+
+**When it ends:** Ends when the duty leaves the stop location
+
+## 5. Unexpected Stop
+
+**What it is:** Flags unplanned stops that cause delays while the driver should be en route to a pickup or drop-off. Common reasons include unscheduled breaks or completing pickups/drop-offs out of order
+
+**What triggers it:** Triggered when a driver is stationary for over 5 minutes while they should be en route to a pick-up or drop-off location
+
+**When it shows in the Watchlist:** Appears once the delay surpasses 5 minutes
+
+**When it ends:** Ends when the vehicle moves away from the stop location
+
+# Duty Statuses
+
+The color of the duty on the map will change to reflect the status of the duty: 
+
+**Green:**
+- 0-2 minutes offline
+- 0-30 seconds late for an upcoming request in their next four stops
+
+**Yellow:**
+- Duty is 30 seconds to 10 minutes late for an upcoming request in their next four stops
+- Late Pullout, Unexpected Stop or Prolonged Stop that's impacting requests by 5-10 minutes
+
+**Red:**
+- Duty is 10+ minutes late for an upcoming request in their next four stops
+- Late Pullout, Unexpected Stop or Prolonged Stop that's impacting requests by 10+ minutes
+
+**Black:** 2+ minutes offline
+
+**White:** Driver on a break
+
+**Grey:** Paused duty
+
+**Blue:** Idle duty (no upcoming request at all, but available)
+
+# How to use the Watchlist
+
+We recommend that dispatch teams designate at least 1 dispatcher to monitoring the Watchlist full-time, as proactively resolving these issues can have a large impact on On-Time Performance. Large dispatch teams can have several people monitoring the Watchlist, can designate dispatchers to monitor specific types: 
+
+![Watchlist interface showing alert filtering options](https://downloads.intercomcdn.com/i/o/wyxobwoi/1513677814/f80f14628709b4d28ad7e97890a0/Screenshot+2025-05-07+at+10_12_26%E2%80%AFPM.png?expires=1753820100&signature=53a878be0ad07d66240185d6c7f6759bdc4d291c99d9b8b77bb69c8cb71a363a&req=dSUmFc95moleXfMW1HO4zZbc%2BxD90NvM%2BssXXDrv9ascWu93cUfqeZRnUh3i%0Ai%2F6t%0A)
+
+> The Watchlist is updated every minute, and ordered by importance, with the most impactful alerts at the top of the list. We recommend dispatchers start at the top and work their way down the list.
+
+## Suggested Dispatcher Actions for Alerts
+
+We provide a way for Dispatchers to add the reason and additional notes for each alert. If an alert has already been looked at and investigated, the dispatch team can also choose to dismiss the alert. This provides further operational visibility into what are the most frequent reasons of delays on the day of service that have a negative impact on OTP and Productivity.
+
+![Alert reason and notes interface](https://downloads.intercomcdn.com/i/o/wyxobwoi/1576876379/cf3bb8d41864373cc5fd84c670eb/Screenshot+2025-06-18+at+9_21_20%E2%80%AFAM.png?expires=1753820100&signature=65027cfb3f35e726b89b10156a51acb397b80329135f48db69aab69cc495e9a6&req=dSUgEMF5m4JYUPMW1HO4zSjsn1BdystQNDrLOUZCfex66UizryN1iHFabg6V%0AMxpi%0A)
+
+![Alert dismissal interface](https://downloads.intercomcdn.com/i/o/wyxobwoi/1576876728/b938830c211126adc1a145033543/Screenshot+2025-06-18+at+9_21_29%E2%80%AFAM.png?expires=1753820100&signature=5c5b55751fb893cafa2e0ee2eb8d8daa139a01d35d0719a4580f96c91e07aafe&req=dSUgEMF5m4ZdUfMW1HO4zcNR1TQv1GZFaNYqZauEAlg1MkDmOss10OT9Jqmv%0AXJJa%0A)
+
+We appreciate that every dispatch team and service is unique, but here are some common-practices for dealing with each type of alert: 
+
+### Offline
+
+- Try to contact the driver via phone or radio, as offline tablets cannot receive messages sent through Spare
+- If you cannot contact the driver, send a road supervisor to check in on them or report the incident to a senior staff member
+
+### Idle Outside Service Zone
+
+- Contact the driver over messaging, phone or radio, and ask them to re-enter the service area
+- If you're unable to contact the driver, send a road supervisor to check-in on them or report the incident to a senior staff member
+
+### Late Pullouts
+
+- If the driver hasn't logged into the tablet, ascertain if they can fulfill the duty that day
+- If not, find a standby driver or cancel the duty
+- If the driver has logged in but hasn't left the yard, radio or message them to identify and resolve any issues preventing them from pulling out
+- If necessary, head out to the yard to check in on them
+
+### Prolonged Stops & Unexpected Stops
+
+- Press 'View' to open the start of the alert in Time Travel
+
+![Time Travel view button](https://downloads.intercomcdn.com/i/o/wyxobwoi/1513685515/39e265daa89a2c7790aa7a6c996d/image.png?expires=1753820100&signature=df91928723dcabcfb1da126ff4e4ca2c6b5bfd96032c83c853a20a17478d5e2e&req=dSUmFc92mIReXPMW1HO4zb0ML0ME4nMsoGorFDUGiDyl2PMQyaycJ39%2FwHjp%0Anf%2FL%0A)
+
+- Use Time Travel to understand the situation better
+
+![Time Travel interface for analyzing alerts](https://downloads.intercomcdn.com/i/o/wyxobwoi/1513700585/c589bbb4f71027179a852fe98ff0/image.png?expires=1753820100&signature=3b9768508e65e0f9dc0f3b1bdf2daae21266e71210c149954bf38b4d06b39982&req=dSUmFc5%2BnYRXXPMW1HO4zQhcIf%2FkyIOiLtj5C2l%2B%2BG75V9%2BW66BlID3tlAtV%0AGP4r%0A)
+
+- Check any messages with the driver to see if there is previous correspondence explaining the alert
+- Reach out to the driver via message or radio to understand the situation and work with them to resolve it and get back on the road
+- If the driver is unresponsive, send a road supervisor or report the incident to a senior staff member
+
+# Frequently Asked Questions
+
+### **Is it possible to view alerts that have ended?**
+
+To enhance oversight and analysis, upcoming functionality will provide supervisors with the ability to view and analyze completed alerts. This will support identifying and understanding trends in alert activity over time.
+
+### **Is it possible to comment on alerts?**
+
+Spare is adding the ability to comment on alerts into the platform in the near future. 
+
+### **Are Drivers Automatically Notified of Prolonged or Unexpected Stops?**
+
+Drivers are reminded to mark riders as 'No-Shows' once the designated No-Show Timer has expired. The system currently does not provide automated warnings for unexpected or prolonged vehicle stops. This functionality is planned for a future release.
+
+### **What happens to alerts if I pause a duty?**
+
+Alerts triggered by paused duties are not displayed on the Watchlist. It is assumed dispatchers are already aware of issues with that duty.
+
+### **What happens to alerts if the duty goes on a break?**
+
+When a duty starts a break, any in-progress driver behavior is ended. If necessary, new driver behaviors are created after the break ends.
+
+### **What do the drivers see in the driver app during an Unexpected Stop?**
+
+When an Unexpected Stop is triggered, the driver app is navigating the driver to a pick-up or drop-off location. An unexpected stop cannot be triggered when the driver app instructs the driver to wait at a safe location. The alert only triggers when navigation is being shown to the driver.
+
+### **What do the drivers see in the driver app during a Prolonged Stop?**
+
+A prolonged stop indicates that the driver is spending too much time at a pick-up or drop-off location, impacting future requests on their manifest. If at a pick-up location, the no-show timer will have expired in the driver application, and the driver may need to perform the pick-up or drop-off in the driver app to see navigation to the next stop. A prolonged stop cannot be triggered when the driver app instructs the driver to wait at a safe location. The alert only triggers when navigation is being shown to the driver, or when the driver needs to perform a pick-up or drop-off.
+
+### **What's the difference between a prolonged stop and an unexpected stop?**
+
+Both prolonged and unexpected stops trigger when the driver is stationary, when the system thinks they should be moving. Prolonged stops trigger when the driver is within 200m of a pick-up or drop-off location. Unexpected stops trigger when the driver is more than 200m away from a pick-up location.
+
+### **Does Spare create alerts for Open Fleets drivers?**
+
+No, Spare only creates alerts for dedicated fleets.

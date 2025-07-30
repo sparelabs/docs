@@ -1,0 +1,49 @@
+---
+title: "Creating Fleets in Spare Realize"
+description: "Learn how to create and configure vehicle fleets in Spare Realize simulation mode, including setting up shift parameters and operational costs."
+---
+
+In Spare Realize, fleets represent groups of vehicles that operate together. This guide walks you through creating and configuring fleets for your simulation.
+
+## Getting Started
+
+To create a new fleet in Spare Realize:
+
+1. **Navigate to the Fleets tab** in the right sidebar
+2. **Click on 'Add Fleet'** to open the fleet configuration sidebar
+
+![Fleet creation interface showing Add Fleet button and fleet configuration sidebar](/images/spare-realize/simulation-mode/fleet-creation-interface.png)
+
+## Fleet Configuration Steps
+
+### Step 1: Name Your Fleet
+
+Give your fleet an **informative name** that clearly identifies its purpose or characteristics.
+
+![Fleet naming interface with text input field for entering fleet name](/images/spare-realize/simulation-mode/fleet-naming-interface.png)
+
+### Step 2: Configure Shift Parameters
+
+**Enter the total number of driver shifts** (Realize takes this to mean the total number of vehicles in your Fleet), and **the average shift length** of each driver shift. The blue box calculates the number of vehicle hours the Fleet is supplying, by multiplying the number of shifts and the average shift length.
+
+![Shift parameter configuration showing number of driver shifts and average shift length fields with vehicle hours calculation](/images/spare-realize/simulation-mode/shift-parameter-configuration.png)
+
+<Note>
+Realize does not currently allow you to create a complex shift schedule (including breaks) for your Fleet. This is to ensure simple and robust simulations, but may soon change.
+</Note>
+
+### Step 3: Set Additional Parameters
+
+Enter **additional parameters** in the fields below the blue box, which mainly control the operational and capital costs associated with each Fleet.
+
+![Additional fleet parameters form showing operational and capital cost configuration fields](/images/spare-realize/simulation-mode/additional-fleet-parameters.png)
+
+## Adding Multiple Fleets
+
+**Repeat these steps** to add as many Fleets as necessary for your simulation.
+
+<Warning>
+Your Fleets are not connected to a Service until you explicitly connect a Fleet in the Services tab.
+</Warning>
+
+![Fleet management overview showing multiple created fleets in the fleet list](/images/spare-realize/simulation-mode/fleet-management-overview.png)

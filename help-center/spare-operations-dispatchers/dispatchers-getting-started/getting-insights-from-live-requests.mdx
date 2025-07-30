@@ -1,0 +1,58 @@
+---
+title: "Getting Insights from Live Requests"
+description: "Learn how dispatchers use Live Requests to monitor operations, track OTP metrics, and identify trends in real-time."
+---
+
+Large mobility operations, particularly paratransit operations, are complex. They must accommodate every booked trip while keeping them relatively on-time, all while managing issues that can arise throughout the day, such as vehicle breakdowns.
+
+# How Dispatchers Use Live Requests
+
+You can use Live Requests to:
+
+- Get an overview of current aggregated OTP for the day, including completed and predicted OTP
+- Identify trends in OTP by breaking down by hour
+- Drill down into current request stats by Service and Driver
+- Take immediate action with quick filters based on your selection
+
+> **Looking for the Watchlist?**
+>
+> We are integrating the Watchlist features into Live Requests to enhance the dispatcher experience. The merge eliminates redundancy, as both Watchlist and Live Requests served similar monitoring purposes, streamlining the workflow and improving user efficiency by consolidating relevant information in one location.
+
+# Monitoring Live Requests
+
+The Live Requests section consists of two core views:
+
+- The **Metrics** view - the primary interactive element that enables you to see aggregated Request metrics for the day that is selected
+- The **Requests** view - shows results for all Requests that are filtered by the selection in the Metrics view
+
+You can select any item in the metrics table except OTP, and when selected, the Requests table will filter by the selection. Additionally, the columns shown in the Requests table will be relevant to the filter. 
+
+## Past and Upcoming Requests
+
+Easily monitor your on-demand operations for upcoming hiccups, dig into today's past requests or total requests all within the Metrics table. 
+
+![](https://downloads.intercomcdn.com/i/o/985350521/708cf2dda574269c1e8e0864/image.png?expires=1753820100&signature=049db16b61c3e9b3dfa64b3f5aba7f0b1b5a7d0f49478d41c729d53ae688927c&req=fSgiFcx%2BmINeFb4f3HP0gPcT2EpoFmBoH2CAW3teS%2BZLJ7auSZy7dR1kIIIR%0Az9U%3D%0A)
+
+# Grouping the Data
+
+The Metrics table on Live Requests lets you group the aggregated data by selecting one of the tabs at the top of the metrics. Currently, you can **group by hour, by driver, and by service**.
+
+In the "By Hour" view, the current hour of the day is indicated by a purple shade. To **drill down** into a single category (e.g., On Time trips) in a single hour, you can **select the individual cell** in the table that corresponds to both. The Requests table will then be filtered by your selection.
+
+![](https://downloads.intercomcdn.com/i/o/985358893/1bee62e823eba0ace20f3aa3/image.png?expires=1753820100&signature=825f9855f6cfef8c2f974e5f6696ffceb0bb389fb6511e25cb69bca31bcec1c0&req=fSgiFcx2lYhcFb4f3HP0gFTzfXxfzwGzH%2BG0xowSGgLueaUh89uEHlnHFf5P%0Al8Q%3D%0A)
+
+# On-Time Performance (OTP) Tracking
+
+OTP is displayed throughout the Live Requests table and is measured in three ways: **by Pickup, by Dropoff, and by Relevant OTP**.
+
+Relevant OTP is defined as OTP on pickup for Leave At requests and OTP on Dropoff for Arrive By requests. All OTP metrics are sortable.
+
+> **Note:** OTP Metrics are currently defined strictly by the flexibility windows on a service. To check current flexibility settings for your service, go to the Service planning tab and click on the service name on the Map.
+
+![](https://downloads.intercomcdn.com/i/o/985362535/6cfdd877e2bd14a668c7b236/image.png?expires=1753820100&signature=e7002f04ef8f6de469d6f87fd03536fb433739ba344c175ff494970eaabeaf5c&req=fSgiFc98mIJaFb4f3HP0gFqtMgerqy7lcLyvM00I%2FMUa316q6lIQFMfg2GJa%0AOoc%3D%0A)
+
+"Green" OTP is measured as anything greater than 92%. Anything below 90% will be Red.
+
+To learn more about monitoring your entire on-demand operation, check out the articles below:
+
+[Getting Insights from Live Maps](/help-center/spare-operations-dispatchers/dispatchers-getting-started/getting-insights-from-the-live-map)

@@ -1,0 +1,195 @@
+---
+title: "Service General Setup"
+description: "Complete step-by-step guide to creating and configuring a new service in Spare Operations"
+---
+
+In this article, you will find a step-by-step guide on how to set up your new service.
+
+## Step 1: Access Service Settings
+
+In the Navigation, select **'Services'** on the left-hand side underneath **'Service Planning'**. Then, select the **'+ Add Service'** button.
+
+![Service Navigation](https://spare-74fa64f80617.intercom-attachments-1.com/i/o/971484454/b4c5a5bb7db21f30a7377de1/AD-5d7FTDZ7E2MmpEM6Fd6U1jCjOq16HmA.png?expires=1753820100&signature=b5aee4403919c16c058439d11893d15675f3d1609b5adf37d000fa86077814b0&req=fScmEsF6mYRbFb4f3HP0gDjIRS9FtHcnwcdlI8kp40qaWqLGGBpILSokwGql%0Azzk%3D%0A)
+
+## Step 2: Fill Out the Core Service Details
+
+Next, fill out the core information about your new service:
+
+![Service Details Form](https://spare-74fa64f80617.intercom-attachments-1.com/i/o/971484457/05bab49e92514b23081db38e/FE7cldyXbpXy3nrHTRMY4527a03G0XaFoA.png?expires=1753820100&signature=2c10ec564931fa58a906b59dec0b0adcec0e9622822e8c8de31ccc17ba5d4e22&req=fScmEsF6mYRYFb4f3HP0gLMgx%2BJW%2FXUIU75uja7Dfar1FkdHXkv2lGNUVBlc%0ATGQ%3D%0A)
+
+### Core Service Information
+
+**Service Name**: The Service Name will be the name shown to riders when they book a ride in the Rider App. It will also be shown to dispatchers when they are booking rides through the Admin Panel. In some cases, certain riders will only be able to ride with certain services. You can restrict riders into [groups](https://help.sparelabs.com/en/articles/8988097-creating-rider-groups) so that they are only able to be booked to a certain service.
+
+**Service Description**: Service descriptions are typically only used internally. They are used to describe the type and specifications of the particular service.
+
+**Service Brand Image**: The service brand image will be shown to the rider in the rider application. Click on the circle that says "Upload an Image" to add your brand image to the service.
+
+### Service Status Configuration
+
+**Service Status: 'Enabled'**: Setting the Service Status to 'Enabled' means that the service is active. Rides will be able to be booked to this service through the Admin Panel and/or the Rider App. If the Service Start Date is set to a date in the future and the service is Enabled, it means that starting on that date dispatchers and riders will be able to book trips.
+
+**Service Status: 'Disabled'**: Setting the Service Status to 'Disabled' means that the service is inactive. Dispatchers and riders will not be able to book trips to this service through either the Admin Panel or Rider App.
+
+**Service Start and End Dates**: The Service Start Date is the date when service will begin. Please ensure on this date you switch the Service Status to 'Enabled' if it was previously set to 'Disabled'. The Service End Date is the date when the service will finish. Trips will not be able to be booked to the service after the end date has passed.
+
+### Service Configuration Options
+
+**Pooling**: Pooling enables two or more requests to be fulfilled by a duty at the same time. This increases efficiency, but it also means that riders may share a ride ('pool') with riders from another request.
+
+**Disallow Pooling with Other Services**: When set to 'No', requests can be pooled with requests from other services. When set to 'Yes', requests cannot be pooled with request from other services. This can be used to ensure minors only ride with other minors and are not pooled with adults.
+
+**Cancellation Policy**: Specifies if drivers can cancel requests directly in the driver app of if they need to request cancellations from dispatchers. [More information here.](https://help.sparelabs.com/en/articles/10355840-driver-cancellation-policies)
+
+## Step 3: Add Zones, Stops and Time Rules to Your Service
+
+More info on how to do this here: [Adding Zones and Stops](https://help.sparelabs.com/en/articles/8994903-adding-zones-and-stops).
+
+## Step 4: Add Fleets to Your Service
+
+Fleets are synonymous with the "group" of drivers dedicated to servicing a particular area. When setting up your service, search and select which fleet(s) you would like to have service it. Remember to click the 'Link' button to ensure the fleet connects to that service. If you do not yet have any fleets set up, click the search bar and then select **'+ Add Fleet'**.
+
+Learn more on how to set up fleets [here.](https://help.sparelabs.com/en/articles/8988059-creating-fleets)
+
+![Fleet Configuration](https://spare-74fa64f80617.intercom-attachments-1.com/i/o/971484471/36e8224cbbe8b4cd38b27400/w6TjTq7NXWlSdaGY0yjGXIHyu83cK5GjfA.png?expires=1753820100&signature=95528d0ea9017b1f049e4fc4815cbdc08741f318bc20f4c76a97e1b70ec830f6&req=fScmEsF6mYZeFb4f3HP0gPf7yx71kVKHOvqflApXyB0u7NiAQiX3IdCRWhkl%0A7Z4%3D%0A)
+
+## Step 5: Fill Out the Payment Information
+
+![Payment Configuration](https://spare-74fa64f80617.intercom-attachments-1.com/i/o/971484461/fc118682db195c5ac2a6ba61/qEXdMK8U8VXfImen0fxcDwla3T6EJNKCYQ.png?expires=1753820100&signature=57e46dd27932e7f59fb8331487f90163ae08562557701918ab12f04328bbe96a&req=fScmEsF6mYdeFb4f3HP0gCUd1rgr0nVcOtUy5dTwfFx9ewTCxmjtLdrhqCS1%0Ay7w%3D%0A)
+
+### Payment Configuration Options
+
+**Fare Rules**: This section allows you to assign a fare to the service based on the fare rules that you have already defined in the Spare Pay. You can use the search function to find the Fare rules that match your criteria.
+
+**Enabled Payment Method Types**: You can choose which payment methods you want to offer for this service by checking the boxes in this section. These are the payment methods you have set up in the Spare pay section. If you leave a box unchecked, that payment method will not be an option for this service. For example, if you have 'Stripe' and 'Cash' in Spare Pay, but you only check the 'Cash' box for this service, then your customers will not be able to pay with Stripe for this service.
+
+**Allow Driver to Edit Payment Method**: You can choose if you want to let drivers edit the payment method of the trip in the driver app. If enabled, drivers can change the payment method for a request. This is useful in circumstances where a rider has booked to pay by credit card but wants to change this to another method like cash when they board the vehicle. Drivers from [shared fleets](https://help.sparelabs.com/en/articles/8984472-fleet-sharing) are unable to edit payment methods.
+
+**Tipping Enabled**: If you are a Driver Pro user, you have the option to activate tipping for your drivers. This allows riders to show their appreciation for your drivers' service by following the tipping policies that you have set up. To learn more about how to set up tipping, please check out [Tips Setup](https://help.sparelabs.com/en/articles/8993971-creating-and-applying-tipping-policies).
+
+## Step 6: Fill Out the Accepted Rider Types and Accessibility Features
+
+### Service Configuration
+
+**Service Rider Types**: Select the types of riders that are accepted on this service.
+
+**Service Base Boarding/Alighting Time**: Specify the minimum amount of time the vehicle will wait at each stop. The base boarding/alighting time is always the same no matter how many riders or accessibility features are loaded or unloaded at the stop.
+
+**Service Accessibility Features**: Specify the different types of accessibility features and mobility devices that riders are able to use on this service. For each device, you can also specify additional boarding and alighting time for the device. If multiple accessibility features are boarding or alighting at a single stop, the additional boarding times for each are added together so that there's enough time to load and unload every accessibility feature.
+
+## Step 7: Specify Any Booking Restrictions
+
+### Booking Limitations
+
+**Maximum Number of Riders**: When enabled, this will limit the maximum number of riders that can be added to a single request. If this field is left blank, a limit will not be set.
+
+**Minimum Trip Distance (meters)**: This is the minimum amount of meters a trip needs to be for it to be bookable.
+
+### Advance Booking Settings
+
+**Minimum Advance Booking Time**:
+- **No Cutoff**: Trips can be booked to leave immediately
+- **Cutoff Based on Trip Time**: Trips cannot be booked within a specified number of hours or minutes of the requested departure time. E.g. Trips must be booked 2 hours in advance.
+- **Cutoff at Set Time**: Trips must be booked before a specified time the day before travel. E.g. 5 pm the day before travel. [More info here](https://help.sparelabs.com/en/articles/8994592-booking-cutoff-time).
+
+**Maximum Advance Booking Days**: Here, you can indicate how many days in advance a rider or dispatcher will be able to schedule a trip through the Rider App or Admin Panel.
+
+**Apply Maximum Advance Booking Days to Requests Created in Spare Operations**: If enabled, the maximum advance booking days setting applies to requests created in Spare Operations and all other interfaces. If disabled, it applies to all interfaces except Spare Operations.
+
+## Step 8: Specify the Spare Engine Configuration
+
+### Engine Settings
+
+**Unmatched Requests**: [More information on configuring this here](https://help.sparelabs.com/en/articles/8994566-unmatched-requests).
+
+**Move Leave ASAP trips as early as possible**: Normally, once Spare schedules a Leave ASAP (as soon as possible) trip it won't move the pickup any earlier than "Leave-At Backwards Flexibility" allows. Enabling this option allows Spare to ignore that limit, and move the trip as early as it can. This means riders will truly get their trip as soon as possible, at the cost of less predictable pickup times.
+
+**Disable bumping to earlier & later protection**: [More info here](https://help.sparelabs.com/en/articles/8994594-bumping-constraints).
+
+## Step 9: Fill Out the Windows & Flexibilities Settings
+
+The windows & flexibilities settings control the On-Time Performance Windows of the service.
+
+### Window Types and Optimization
+
+**Scheduled Pickup/Dropoff Window Type**: We recommend consistent pickup/dropoff windows. [More info on this here](https://help.sparelabs.com/en/articles/8994600-service-flexibilities-setup).
+
+**Targeted Optimization**: If the service is using the Consistent Windows Scheduled Pickup/Dropoff Window Type, you can enable Targeted Optimization. The algorithm tries to reduce lateness and find a match for unmatched trips. This algorithm runs once per minute on all late requests with Requested Pickup Times in the next 3 hours, and all unmatched requests with Requested Pickup Times in the next 24 hours.
+
+**Automatic Overrides**: If Targeted Optimization is Enabled, you can choose to enable Automatic Overrides. If this setting is enabled, Spare Engine can automatically override the flexibility windows of requests by up to 15 minutes during Targeted Optimization. With this enabled, the Spare Engine will be able to move trips more aggressively, which can significantly improve OTP.
+
+### Flexibility Settings
+
+**Leave-At Forwards Flexibility (minutes)**: After a rider's trip request has been confirmed, their pick-up time may be moved later by this many minutes. For example, a 5-minute leave-at-ward flexibility means if a rider books a trip pick-up for 12:00 pm, there is a chance they can be picked up at 12:05 pm.
+
+**Leave-At Backwards Flexibility (minutes)**: After a rider's trip request has been confirmed, their pick-up time may be moved earlier by this many minutes. For example, 5-minute leave-at-backward flexibility means if a rider books a trip pick-up for 12:00 pm, there is a chance they can be picked up at 11:55 am.
+
+**Arrive-By Backwards Flexibility (minutes)**: After a rider's trip request has been confirmed, their arrive-by drop-off time may be moved earlier by this many minutes. For example, a 5-minute arrive-by backward flexibility means if a rider is scheduled to arrive at their destination at 12 pm, there is a chance they can be dropped off at 11:55 am.
+
+### Detour Flexibility Configuration
+
+**Detour Flexibility Level**: Detour flexibility settings allow you to control how much extra time a rider can spend in a vehicle to accommodate pickups and drop-offs for other passengers. There are four key parameters you can configure:
+
+- **Minimum Allowed Detour**: The minimum detour time that can be added to any trip, regardless of its original length. This ensures every request has some tolerance for deviation.
+- **Maximum Time in Vehicle**: The system will attempt to keep each rider's total time onboard below this limit.
+- **Detour Basis**: You can define how the system calculates allowable detours using one of the following methods:
+  - **Direct Drive & Multiplier**
+  - **Fixed Route Equivalent & Multiplier**
+
+[More details on Windows & Flexibilities Service Settings](https://help.sparelabs.com/en/articles/8994600-service-flexibilities-setup)
+
+### Search Flexibility Settings
+
+**Scheduled Search Leave-At Forwards Flexibility (minutes)**: Before notifying the rider of their trip times, the scheduled search leave-at forwards flexibility outlines how many minutes after the requested leave-at/pick-up time the trip can be booked.
+
+**Scheduled Search Leave-At Backwards Flexibility (minutes)**: Before notifying the rider of their trip times, the scheduled search leave-at backward flexibility outlines how many minutes before the requested leave-at/pick-up time the trip can be booked.
+
+**Scheduled Search Arrive-By Backwards Flexibility (minutes)**: Before notifying the rider of their trip times, the scheduled search arrive-by backward flexibility outlines how many minutes before the requested arrive-by/drop-off time the trip can be booked.
+
+![Flexibility Configuration Interface](https://spare-74fa64f80617.intercom-attachments-1.com/i/o/971484479/8342ad7fc51eec7fec59ae97/rJ5WBkmyeQOGR468yjPy0y1cf7U4Y1qs6w.png?expires=1753820100&signature=7dabda721b7567671ea0d54973cd545f4aa23ba3e4fdf2b6dd10a138397555d6&req=fScmEsF6mYZWFb4f3HP0gPFob1fqop3MbhcXrVr0fs22UXGIrtpB6yEQS79A%0AEDA%3D%0A)
+
+## Step 10: Specify Rider Interface Options
+
+### Interface Availability
+
+**Available to these interfaces**: Specify where the service can be booked. Available to Driver App means that the driver will be able to add walk-ons through the Driver App. Please be mindful that you can only have this turned on for one bookable service at a time. If it is enabled for multiple services, the system will not know which service to add the rider booking to.
+
+### Rider Experience Settings
+
+**Pickup and Dropoff Windows Visible to Riders**: Controls whether riders will see estimated times of arrival or on-time performance windows in rider interfaces.
+
+**Driver Profile Visible to Riders**: Controls whether the drivers name is visible to the rider in the riders interfaces
+
+**Rider Reviews (Rider Pro)**: Enabling rider reviews will allow riders to submit reviews to Spare after they have completed their trip. Note: if using a proprietary service to your organization (not the Spare Rider app), this will have to be built and enabled to your function. You can learn more about rider reviews [here](https://help.sparelabs.com/en/articles/8978806-viewing-rider-reviews).
+
+**Walking Directions (Rider Pro)**: You have the option to select which type of walking directions you would like the riders to see in the Rider App when walking to or from their pick-up/drop-off location. The different types of walking directions are 'Straight Line' or 'Realistic Route'. You can learn more about walking directions [here](https://help.sparelabs.com/en/articles/8994559-enabling-walking-directions).
+
+### Booking Type Options
+
+**Allow Scheduled 'Depart At' Bookings**: Enabling 'Depart At' bookings allows your users to schedule trips for the future (e.g., schedule a trip for the next day). Otherwise, users will only be able to schedule trips at the next available time for your service.
+
+**Allow Scheduled 'Arrive By' Bookings**: Enabling 'Arrive By' bookings allows your users to schedule trips where the system attempts to guarantee they will arrive at their destination before, or at, their selected time (they will 'Arrive By' the time they designate). However, because this means adding extra buffer time to make sure riders arrive by their selected time, riders may arrive at their destination much earlier than their selected time.
+
+**Available to Rider Interface**: If 'Yes' is selected, the rider will be able to book trips through the respective Rider App.
+
+**Available to Driver Interface**: If 'Yes' is selected, the driver will be able to add walk-ons through the Driver App. Please be mindful that you can only have this turned on for one bookable service at a time. If it is enabled for multiple services, the system will not know which service to add the rider booking to.
+
+## Next Steps
+
+Once all the basic service settings are set up, it's time to [Input Drivers](https://help.sparelabs.com/en/articles/8969226-setting-up-driver-accounts), [Input Riders](https://help.sparelabs.com/en/articles/8955368-managing-riders), [Input Vehicles](https://help.sparelabs.com/en/articles/8967686-managing-vehicles), and [Create Duties](https://help.sparelabs.com/en/articles/8967719-managing-duties).
+
+## Configuring Existing Settings
+
+If you decide to configure any of the current settings, be mindful of when the new settings come into effect:
+
+- **Boarding Times**: Immediately
+- **Time Rules**: Immediately  
+- **Flexibilities**: Only with newly created requests
+
+<Warning>
+Changes to flexibility settings only apply to new requests created after the change. Existing requests will continue to use the flexibility settings that were in place when they were originally created.
+</Warning>
+
+<Tip>
+Take time to carefully plan your service configuration before going live. Many settings significantly impact rider experience and operational efficiency, so it's worth testing different configurations in a controlled environment first.
+</Tip>

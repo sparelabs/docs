@@ -1,0 +1,34 @@
+---
+title: "Offering Trips to Unscheduled Drivers"
+description: "Understand how Spare Engine determines when and to whom trip offers are sent for unscheduled drivers"
+---
+
+Spare Engine decides who/when to send a trip offer to for unscheduled drivers based on various conditions. 
+
+## Who to send to
+
+The system sends a trip offer to the closest driver to the scheduled pickup location (considering none of the drivers have any trips at the moment).
+
+Who receives the offer depends on the driver's location and manifest.
+
+## Distance
+
+Drivers need to be within 10 km + driving distance when the system dispatches a trip. 
+
+For instance, if the driving distance for the trip is 8 km, the system sends the trip offer to whoever is within 18 km of the scheduled pickup location.
+
+## When to dispatch a trip offer
+
+If the trip duration is less than 15 minutes, the trip will be dispatched to a driver 15 minutes prior to the scheduled pickup time.  
+
+If a trip duration is more than 15 minutes, the logic requires some quick math to explain:
+
+**Dispatch time = scheduled pickup time - trip duration**
+
+So, if the trip is 1 hour long and the scheduled pickup time is 12:00pm, the trip will be dispatched at 11:00 am. If there is no driver available at the time the trip is dispatched, the system will keep looking for an available driver until 10 minutes prior to the scheduled pickup time.
+
+## Offer Duration
+
+An offer is valid for **2 minutes**.
+
+Drivers will have **30 seconds** to decide whether to accept or reject the trip.

@@ -1,0 +1,166 @@
+---
+title: "Admins - Getting Started"
+description: "Essential guide for administrators to get started with Spare EAM, covering core concepts and common workflows for effective enterprise asset management"
+---
+
+![Spare EAM Default Dashboard showing the main interface with asset management features](/images/spare-eam/eam-default-dashboard.png)
+
+<Info>
+This article gives you the nuts-and-bolts of Spare EAM so you can hit the ground running. For starters, EAM stands for **Enterprise Asset Management**. Spare EAM is not just for vehicles—it tracks *every asset* that matters: vehicles, lifts, shop equipment, facilities, even fareboxes.
+</Info>
+
+## What is Spare EAM?
+
+Spare EAM is a cloud platform that lets you monitor asset health, schedule preventive maintenance (PM), manage inventory and vendors, and eliminate paper from the garage—all in real-time and on any device.
+
+<CardGroup cols={3}>
+  <Card title="Web-Based Interface" icon="desktop">
+    Mobile-friendly UI for administering asset maintenance from anywhere
+  </Card>
+  <Card title="Spare Maintain Mobile App" icon="mobile">
+    Available on [Android](https://play.google.com/store/apps/details?id=com.sparelabs.maintain&pli=1) and [iOS](https://apps.apple.com/us/app/spare-maintain/id6747355824) for Operators & Technicians
+  </Card>
+  <Card title="Role-Based Permissions" icon="users">
+    Tailored access for Admins, Managers, Technicians, and Drivers
+  </Card>
+</CardGroup>
+
+## Core Concepts
+
+Understanding these key terms will help you navigate Spare EAM effectively:
+
+<AccordionGroup>
+  <Accordion title="Asset">
+    Any maintainable item—vehicle, equipment, facility, or tooling. Vehicle assets contain additional fields, such as odometer and telematics.
+  </Accordion>
+  
+  <Accordion title="Work Orders (WO)">
+    A digital job card that logs labor, parts, and cost for maintenance activities.
+  </Accordion>
+  
+  <Accordion title="Service Program & Service Schedule">
+    Recurring Preventative Maintenance (PM) rules based on time or meter readings.
+  </Accordion>
+  
+  <Accordion title="Service Tasks">
+    Recurring preventive maintenance tasks scheduled by time or mileage—such as coolant flushes, brake-fluid changes, and tire rotations—plus occasional one-off repairs like replacing a serpentine belt or fixing a faulty sensor.
+  </Accordion>
+  
+  <Accordion title="Service Reminders">
+    An alert linked to a service task's date or mileage interval that notifies you when it comes due, with an optional "due-soon" buffer for an earlier heads-up.
+  </Accordion>
+  
+  <Accordion title="Inspection">
+    Checklist completed in either the **Spare Maintain** app, or **Spare Driver** app; defects can auto-create Issues, which can then be tied to Work Orders.
+  </Accordion>
+  
+  <Accordion title="Part">
+    A component of an asset or vehicle where you can track identifying information. Tracked through inventory by Location.
+  </Accordion>
+  
+  <Accordion title="Issue">
+    Unforeseen, ad-hoc repairs and issues that fall outside regular preventive maintenance. Typical examples are leaks, equipment breakdowns, or items that fail an inspection.
+  </Accordion>
+  
+  <Accordion title="Vendor">
+    External supplier (shops, parts, fuel, etc).
+  </Accordion>
+</AccordionGroup>
+
+## Navigating the Interface
+
+<CardGroup cols={3}>
+  <Card title="Sidebar Navigation" icon="bars">
+    Jump straight to Assets, Service, Inspections, Inventory, and more from the left sidebar
+  </Card>
+  <Card title="Profile Management" icon="user">
+    Click your profile photo to manage your profile, notification preferences, and organization settings
+  </Card>
+  <Card title="Universal Search" icon="search">
+    Use **Ctrl + K** to locate any asset, work order, or part in seconds
+  </Card>
+</CardGroup>
+
+## Common Workflows
+
+Here are the most frequently performed tasks in Spare EAM:
+
+<AccordionGroup>
+  <Accordion title="Driver Pre/Post Trip Inspection">
+    <Steps>
+      <Step title="With Spare Operations">
+        1. Driver opens **Spare Driver** app
+        2. Complete pre/post trip inspection when prompted before starting/ending duty
+        3. Inspections automatically display in Spare EAM
+        
+        <Note>Pre and Post trip inspections can be linked on the [Vehicle Type](https://help.sparelabs.com/en/articles/9392316-creating-vehicle-types) of a vehicle.</Note>
+      </Step>
+      <Step title="Without Spare Operations">
+        1. Driver opens **Spare Maintain** app
+        2. Press **Start Inspection**
+        3. Choose the inspection form
+        4. Choose the Vehicle
+        5. Complete inspection
+      </Step>
+    </Steps>
+  </Accordion>
+  
+  <Accordion title="Turn Inspection Defect into Issue">
+    When an inspection has a failed item, an issue will be automatically created. That issue can then be added to a work order for resolution.
+  </Accordion>
+  
+  <Accordion title="Manage Preventive Maintenance (PM) Schedule">
+    When Service Programs and Service Schedules are configured, the system automatically generates Service Reminders for all associated preventive maintenance (PM) tasks based on defined time or meter-based intervals.
+  </Accordion>
+  
+  <Accordion title="Close a Work Order">
+    <Steps>
+      <Step title="Access Work Order">
+        A technician can view and manage work orders in Spare EAM or the **Spare Maintain** app
+      </Step>
+      <Step title="Complete Work">
+        Work Orders log labor & parts as work is performed
+      </Step>
+      <Step title="Mark Complete">
+        Mark the work order as *complete* when all tasks are finished
+      </Step>
+    </Steps>
+  </Accordion>
+  
+  <Accordion title="Technician Clock In/Out">
+    Technicians can use the Spare Maintain app to clock in and out of specific Service tasks by navigating to a Work Order where they are assigned as Labor.
+  </Accordion>
+  
+  <Accordion title="Order & Receive Parts">
+    <Steps>
+      <Step title="Create Adjustment">
+        Go to Inventory → Adjustments → Add Inventory Adjustment
+      </Step>
+      <Step title="Provide Details">
+        Provide a reason for the adjustment and the items to be adjusted, then create the adjustment (creates a draft)
+      </Step>
+      <Step title="Finalize">
+        When inventory is received, Finalize the adjustment to complete the process
+      </Step>
+    </Steps>
+  </Accordion>
+  
+  <Accordion title="Record Meter Entry">
+    <Steps>
+      <Step title="Navigate to Asset">
+        Navigate to Assets → Select an asset
+      </Step>
+      <Step title="Add Entry">
+        Go to Meter Entries → Add Meter Entry
+      </Step>
+    </Steps>
+  </Accordion>
+</AccordionGroup>
+
+<Note>
+The workflows above represent the most common tasks you'll perform in Spare EAM. Each workflow is designed to be intuitive and can be completed either through the web interface or mobile apps, depending on your role and location.
+</Note>
+
+<Tip>
+Take advantage of the Universal Search feature (Ctrl + K) to quickly locate any asset, work order, or part. This can significantly speed up your daily workflows.
+</Tip>

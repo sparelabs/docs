@@ -1,0 +1,54 @@
+---
+title: "Why did the system do x?"
+description: "Understanding system behavior and diagnosing operational issues"
+---
+
+Occasionally you may have questions such as:
+
+- Why wasn't I able to book a trip for person A?
+- Why wasn't person B and person C pooled?
+- Why was the driver taking a long detour to pickup person D?
+
+Although these questions are not always easy to answer, they do usually have some logical explanations.
+
+## Diagnosing Operational Problems
+
+The easiest way to diagnose operational problems and answer questions, such as the current capacity of a vehicle or its current route is using the Live Map.
+
+> **Note:** You can access the Live Map through your platform interface to view real-time vehicle and trip information.
+
+Whenever a new request is created or changes are being made, the Spare Engine must evaluate if and how the system can accommodate, given the constraints and settings provided in the Service.
+
+Some of the most important constraints include:
+
+- Start/End address and time of the Duties
+- Accessibility features and capacity of the vehicles available
+- Time Rules (opening hours)
+- Detour Flexibility Level: The maximum allowed in-trip detour for Riders
+- Leave-At-Forwards Flexibility: How many minutes a confirmed pickup may be moved?
+- Scheduled Search Flexibility: How many minutes before/after scheduled bookings can be made?
+- Trip Consistency: If the service accommodates for consistency of trips
+- Group restrictions: Only members of a specific group can book trips within a specific zone
+
+## FAQs
+
+Back to the questions above, here are some typical explanations:
+
+### Why wasn't I able to book a trip for person A?
+
+- The number of passengers and/or accessibility features cannot be accommodated (either at this time due to other trips or generally by the service)
+- The estimated pickup and/or dropoff time falls outside of the service's operating hours
+- There are no duties scheduled for this service during the estimated pickup and/or dropoff time
+- The Driver won't have time to go back to the End Address of the duty in time
+
+### Why wasn't person B and person C pooled?
+
+- Pooling persons B and C will not comply with the detour constraint
+- They cannot be pooled without moving person B, C, or someone else's pickup by too much
+- The number of accessibility features cannot be accommodated
+
+### Why was the driver taking a long detour to pick up person D?
+
+- The detour was within the maximum allowed in-trip detour for Riders
+
+> **Additional Information:** Other service configurations may impact how the Spare Engine does its matching and routing.

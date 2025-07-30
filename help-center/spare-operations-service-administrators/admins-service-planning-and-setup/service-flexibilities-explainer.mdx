@@ -1,0 +1,209 @@
+---
+title: "Service Flexibilities Explainer"
+description: ""
+---
+
+In this article, you will find answers to the following questions:
+
+What does each flexibility mean?
+
+How is it applicable to real-world scenarios?
+
+How does it interact with other flexibilities?
+
+To learn about Service flexibilities as a concept and to find step-by-step instructions on how to set flexibilities up for your service, click on the link below
+
+**[Service Flexibilities Setup and Best Practices](https://help.sparelabs.com/en/articles/8994600-service-flexibilities-setup)**
+
+![](https://spare-74fa64f80617.intercom-attachments-1.com/i/o/978362925/71bb4bc25abf07bfbdedb182/JSOvGfBP-jJNf2fkWpEowTq2asmo3Wl_vg.png?expires=1753820100&signature=cf0118146ca7847d19d94dd53be6e1b3717085f2c904bbe2668b1574693c519c&req=fScvFc98lINaFb4f3HP0gOl7U140EN%2B6I7o5bLpX8DqT55iYB99iMdQqKXc8%0A%2BrQ%3D%0A)
+
+# Spare Service Flexibilities DescriptionEach of the descriptions below consists of the following:
+
+A flexibility definition;
+
+A scenario/example which illustrates how this flexibility works;
+
+Information about what trips the flexibility applies to;
+
+## ***Detour 
+
+Flexibility***### Description:
+
+Detour flexibility settings allow you to control how much extra time a rider can spend in a vehicle to accommodate pickups and drop-offs for other passengers.
+
+There are four key parameters you can configure:
+
+**Minimum Allowed Detour**
+The minimum detour time that can be added to any trip, regardless of its original length. This ensures every request has some tolerance for deviation.
+
+**Maximum Time in Vehicle**
+The system will attempt to keep each rider’s total time onboard below this limit.
+
+**Detour Basis**
+You can define how the system calculates allowable detours using one of the following methods:
+
+**Direct Drive & Multiplier**
+The detour allowance is based on the direct drive time between the rider’s pickup and drop-off, multiplied by a set percentage.
+*Example:*
+If a direct trip takes 30 minutes and the multiplier is 50%, the rider can be detoured up to 15 additional minutes (30 x 0.5) to accommodate other passengers.
+
+**Fixed Route Equivalent & Multiplier**
+The allowable time in vehicle is based on the duration of the fastest equivalent fixed-route journey, multiplied by a set percentage.
+*Example:*
+
+Direct drive: 30 minutes
+
+Fastest fixed-route equivalent: 60 minutes
+
+Multiplier: 120%
+
+Maximum time in vehicle: 120 minutes
+
+The rider may be kept onboard for up to 72 minutes (60 x 1.2), as long as it’s within the max vehicle time.
+
+**Note:**
+Higher flexibility settings generally lead to longer trip durations but also increase the likelihood of pooled rides.
+
+## **Leave-At Forwards 
+
+Flexibility (minutes)**### Description:
+
+After a rider's trip request has been confirmed, their **pick-up time may be moved later by this many minutes**.
+
+### Scenario:The Leave-At Forwards 
+
+Flexibility is set for 15 min.
+
+If a rider books a trip pick-up for 12:00 p.m., their pick-up window is between 12:00 p.m. and 12:15 p.m.
+
+### Compatibility:Leave 
+
+Now requests
+
+## **Leave-At Backwards 
+
+Flexibility (minutes)**### Description:
+
+After a rider's trip request has been confirmed, their **pick-up time may be moved earlier by this many minutes.**
+
+### Scenario:The Leave-At Backwards 
+
+Flexibility is set for 10 min
+
+If a rider books a trip pick-up for 12:00 p.m., their pick-up window is between 11:50 a.m. and 12:00 p.m.
+
+### Compatibility:Leave 
+
+Now requests
+
+## **Arrive-By Backwards 
+
+Flexibility (minutes)**### Description:
+
+After a rider's trip request has been confirmed, their** arrive-by drop-off time may be moved earlier by this many minutes.**
+
+### Scenario:The Arrive-By Backwards 
+
+Flexibility is set for 5 minutes.
+
+If a rider is scheduled to arrive in Point B at 12:00 p.m., their drop-off window is between 11:55 a.m. and 12:00 p.m. 
+
+### Compatibility:Arrive-
+
+By requests
+
+## **Scheduled Search Leave-At Forwards 
+
+Flexibility (minutes)**### Description:Before notifying the rider of their trip times, the Scheduled Search Leave-At Forwards 
+
+Flexibility **outlines how many minutes after the requested leave-at/pick-up time the trip can be booked**.
+
+### Scenario:The Scheduled Search Leave-At Forwards 
+
+Flexibility is set for 20 min.
+
+If a rider is requesting to be picked up in Point A at 12 p.m., the system can search for pick-up options between 12:00 p.m. and 12:20 p.m.
+
+### Compatibility:Scheduled - Leave-
+
+At requests
+
+## **Scheduled Search Leave-At Backwards 
+
+Flexibility (minutes)**### Description:Before notifying the rider of their trip times, the Scheduled Search Leave-at Backwards 
+
+Flexibility outlines **how many minutes after the requested leave-at/pick-up time the trip can be booked**.
+
+### Scenario:The Scheduled Search Leave-At Backwards 
+
+Flexibility is set for 20 min.
+
+If a rider is requesting to be picked up in Point A at 12 p.m., the system can search for pick-up options between 11:40 a.m. and 12:00 p.m. 
+
+### Compatibility:Scheduled - Leave-
+
+At requests
+
+## **Scheduled Search Arrive-By Backwards 
+
+Flexibility (minutes)**### Description:Before notifying the rider of their trip times, the Scheduled Search Arrive-By Backwards 
+
+Flexibility outlines** how many minutes before the requested arrive-by/drop-off time the trip can be booked.**
+
+### Scenario:The Scheduled Search Arrive-By Backwards 
+
+Flexibility is set for 20 min.
+
+If a rider is requesting to be dropped off in Point B by 12 p.m., their drop-off window may be between 11:40 a.m. and 12:00 p.m.
+
+### Compatibility:Scheduled - Arrive-
+
+By requests
+
+## **Recurring Trip Leave-At Forwards 
+
+Flexibility (minutes)**### Description:The Recurring Trip Leave-At 
+
+Forwards flexibility allows **a** **recurring trip request to be booked up to this many minutes after the requested leave-at time**.
+
+### Scenario:The Recurring Trip Leave-At Forwards 
+
+Flexibility is set for 20 min.
+
+If a rider is requesting to be picked up in Point A at 12 p.m. every Monday, Wednesday, and Friday, their pick-up window on any of these days may be between 12:00 p.m. and 12:20 p.m.
+
+### Compatibility:Recurring - Leave-
+
+At requests
+
+## **Recurring Trip Leave-At Backwards 
+
+Flexibility (minutes)**### Description:The Recurring Trip Leave-At 
+
+Backwards flexibility allows** a recurring trip request to be booked up to this many minutes before the requested leave-at time**.
+
+### Scenario:The Recurring Trip Leave-At Backwards 
+
+Flexibility is set for 20 min.
+
+If a rider is requesting to be picked up in Point A at 12 p.m. every Monday, Wednesday, and Friday, their pick-up window on any of these days may be between 11:40 a.m. and 12:00 p.m
+
+### Compatibility:Recurring - Leave-
+
+At requests
+
+## **Recurring Trip Arrive-By Backwards 
+
+Flexibility (minutes)**### Description:The Recurring Trip Arrive-By Backwards flexibility allows** a recurring trip request to be booked up to this many minutes before the requested Arrive-
+
+By time**.
+
+### Scenario:The Recurring Trip Arrive-By 
+
+Flexibility is set for 20 minutes.
+
+If a rider is requesting to be dropped off in Point B at 12 p.m. every Monday, Wednesday, and Friday, their drop-off window on any of these days may be between 11:40 a.m. and 12:00 p.m.
+
+### Compatibility:Recurring - Arrive-
+
+By requests

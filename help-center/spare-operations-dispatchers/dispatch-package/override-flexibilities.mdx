@@ -1,0 +1,218 @@
+---
+title: "Override Flexibilities"
+description: "Fitting a request onto a duty when there isn't room."
+---
+
+Every request in Spare has an **On time performance** window that's set using the [Flexibilities and Windows configuration](/help-center/service-flexibilities-setup) on the service. Spare Engine will never knowingly push a request outside of these windows. This can make it hard for dispatchers and booking agents to fit new requests into packed schedules, or move requests from one duty to another. 
+
+Flexibility Overrides allow users to violate these windows in order to assign a request to a duty. This gives dispatchers complete control over driver manifests, and for Paratransit services in the US, ensures agencies can accept all requests and meet ADA requirements.
+
+# What can Override Flexibilities do?
+
+Override flexibilities can be used to make changes to schedules, even when they're packed. For example, the feature can be used to:
+
+- Create new requests, even when schedules are full
+- Move a request from one duty to another
+- Find a home for an upcoming trip that's [unmatched](/help-center/unmatched-requests)
+- Ensure a late trip is completed on-time
+
+# Who has access to this feature?A user needs to have **Operations Manager** or **Administrator** access to use this feature. Further details about different platform user permissions can be found [here](/help-center/platform-users).
+
+# Where do I find the Override Flexibilities feature?There are two ways to open the Override Flexibilities feature:
+
+### When Creating or Rematching a RequestWhen attempting to create or rematch a request, you may receive a message that the Spare Engine can't find a spot for it. 
+
+You will then be offered two options:
+
+Override flexibilities
+
+[Create Unmatched](https://help.sparelabs.com/en/articles/8994566-unmatched-requests)
+
+If you decide to squeeze in the request, click **"Override Flexibilities"**.
+
+![](https://spare-74fa64f80617.intercom-attachments-1.com/i/o/965611353/4a04da8187b52d83ee2b3232/tTXZt6YvjB0x-aMjzAYv8JVtFFhvFn_qKw.png?expires=1753820100&signature=227f40be4a8b7943acfd42132ec5cf4d7ec7490373f7b5a2299eab31bc5bdb48&req=fSYiEMh%2FnoRcFb4f3HP0gEYHa8Xlnx%2Fc2GqTtjsSFiSAGPGwicVPV%2F6hB4zt%0AXvI%3D%0A)
+
+### Using the Request Actions MenuThe 'Actions' menu that appears next to requests can also be used to open the override flexibilities feature. This menu is available everywhere you see requests on the platform. Three options in this menu open the Override 
+
+Flexibilities feature:
+
+**Override**
+
+- Available for all 'Accepted' and 'Arriving Soon' requests.
+
+Opens the override flexibilities feature and pre-selects the 'Lock to Duty' option. See below for more details.
+
+**Fix Lateness**
+
+- Available for all 'Accepted' and 'Arriving Soon' requests.
+
+Opens the override flexibilities feature and pre-selects the 'Other Requests' option. See below for more details.
+
+**Assign Duty**
+
+- Available for all 'Processing' requests.
+
+Opens the override flexibilities feature and pre-selects both the 'Current Request' and 'Other Requests Options. See below for more details. 
+
+![](https://downloads.intercomcdn.com/i/o/wyxobwoi/1566334382/659e5b69c74967b964498da63f01/Screenshot+2025-06-11+at+10_53_59%E2%80%AFAM.png?expires=1753820100&signature=41a5076014721a6d5144fe7560910278570ff4d853de945dc6e2d0b86a703320&req=dSUhEMp9mYJXW%2FMW1HO4zR4yg2oKbD0RcWVRoWFHhMEhMDFqQZre0bcrw5u4%0ASNDr%0A)
+
+## Using the Override Flexibilities Feature:The override flexibilities feature lets users configure their overrides. The feature displays the impact of the resulting overrides to users. Users must confirm the overrides for the change to take effect. 
+
+Below is a guide on how to use this feature:
+
+#### Configuring Overrides
+
+There are 4 settings that can be configured in the overrides feature: 
+
+**Override the current request, other requests, or both:**
+
+**Current Request:** Only the trip that you're creating or rematching will have its on-time performance window violated. This configuration should be used if you don't want this trip to affect existing trips.
+
+**Other Requests: **Only other requests will have their on-time performance window violated. The trip you are creating or rematching will be on-time. Use this setting if you want the current request to be completed on time. 
+
+**Both (Current Request and Other Requests): **This option gives the system the best chance of finding a home for the trip. It lets the system violate the OTP window of this trip and other trips. 
+
+**Lock the request to a duty: **Read more [here](https://help.sparelabs.com/en/articles/8967347-locking-requests-to-duties)** **
+
+**Extend the Duty: **The system will then see if it's possible to accommodate the request by extending an active duty. 
+
+**Force match: **Read more [here](https://help.sparelabs.com/en/articles/8967377-manually-rematching-a-trip-request) 
+
+#### Viewing Override Estimates After you configure the overrides the system will generate and display an override estimate. 
+
+The estimate comprises of up to three sections.
+
+#### Current Request Information 
+
+At the bottom of the overrides feature, we display the impact that this override will have on the request that you're creating or rematching. 
+
+'Match Found' or 'No Match Found'. If the system has found a duty to match the request to, you will see 'Match Found'. If the system has not found a duty to match the request to, you will see 'No Match Found'. If you see this, it may be possible to find a match by tweaking your override configuration.
+
+Estimated pickup time - the new estimated pickup time if the override is confirmed by the user).
+
+The requests' on-time performance window
+
+Current OTP - The OTP of the request before the override. If the request is unmatched then the current OTP will be blank.
+
+New OTP - The OTP of the request (if the override is confirmed by the user). 
+
+New Detour Override - The new detour override of the request (if the override is confirmed by the user). 
+
+![](https://downloads.intercomcdn.com/i/o/1041061335/25e99875cb21e206964b89ca/image.png?expires=1753820100&signature=6dc877bd0708721ee4c70000de77e4bb65c3494a320ae227c260c4657b73c7e2&req=dSAjF8l4nIJcXPMW1HO4zU%2BZDVabAmc8oUQvjU5JmG0jUE%2F8GS5gjxg3aDDP%0A89Rc%0A)
+
+#### DutiesIf the 'Extend Duty' option is checked, a duty override estimate may be displayed. 
+
+The estimate displays the:
+
+Driver Name
+
+Vehicle Name
+
+Current Duty End Time
+
+New Duty End Time
+
+Duty End Override
+
+![](https://downloads.intercomcdn.com/i/o/1041060064/be753cc0110df36a5c34d034/image.png?expires=1753820100&signature=9f7c11b8dddb1fcec7b9b2001e8cc108b3d4cc7d7a6fe315bb075f6221f0ff3e&req=dSAjF8l4nYFZXfMW1HO4zeCmSDeYq8%2FtzjYFAZWX0VAnSRAOxv0XY4I0edoN%0AYCu2%0A)
+
+#### Other Requests If the 'Other Requests' option is checked, then other requests may be impacted by this override. The Overriden Requests section shows you the other requests that will be impacted by the override. 
+
+The table shows the following information: 
+
+Rider Name
+
+Service 
+
+Trip Type (arrive-by or leave-at)
+
+Current OTP - The trips on-time performance before the override
+
+New OTP - The predicted on-time performance of the trip after the user confirms the override 
+
+New Detour Override - The predicted detour violation of the trip after the user confirms the override 
+
+![](https://downloads.intercomcdn.com/i/o/1041058194/645ed8f357f9dc91c38c4883/image.png?expires=1753820100&signature=4c261942768f0f379a3e360e2190a04defd6767df84bec91935d1f4898ec7025&req=dSAjF8l7lYBWXfMW1HO4zX%2BNJ5WfjSgoUL0GYkubHzYe6hB3oPw4Fuzht6KH%0ArbT0%0A)
+
+#### Confirming the Override Estimates and Creating the OverridesOnce you are happy with the Override Configuration and Results, press 'Match 
+
+Request' to confirm and create the overrides! 
+
+![](https://downloads.intercomcdn.com/i/o/1041066968/865dd2357f31c3be63a4f41e/Untitled.jpg?expires=1753820100&signature=bd4eebc62dbefb7ef4d35940c8b01b359eab8a7d7672f47fc556c63203c90495&req=dSAjF8l4m4hZUfMW1HO4zQ0gRXqJUcEkEt5GWEjCvNuoL%2B6Fb9e%2FID6hGbnj%0AibRr%0A)
+
+## What happens if No Match is found?If 'No Match' is found, then it may still be possible to find a match for the trip by selecting a different override configuration. Try overriding both 'Current' and 'Other' requests, or extending a duty. If you can't find a match then you may see an option to 'Force 
+
+Match' the request. 
+
+## Using Force MatchForce Match allows dispatchers to force a trip onto a duty, even if it violates the constraints of the duty or other trips. 
+
+It’s a dispatcher's last-resort to get a trip on a vehicle.
+
+### 
+How does Force Match Work?When using Force 
+
+Match:
+
+**If you've selected a specific duty:**
+
+- The system attempts to insert the trip into your selected duty.
+
+**If no duty is selected:**
+
+- The system automatically chooses the duty closest to the trip’s pickup location.
+
+In either scenario, the system tries to insert the trip by temporarily overriding existing trips and extending the duty end-time as much as required to insert the request into the manifest. The maximum override size is 6 hours.
+
+**If the override is successful:** The trip is scheduled accordingly.
+
+**If the override fails,** The system forcibly inserts the trip as the immediate next pickup or dropoff on the selected duty. This insertion happens regardless of any negative impacts it may have on other scheduled trips or the duty’s end time.
+
+The system will only give you the option to Force Match if all of these criteria are met:
+
+You are rematching a request
+
+The request you are rematching is in the 'service disruption' or 'processing' status and has a dispatch status of 'on hold' or 'unmatched'
+
+You selected "This Request", "Other Requests" or "Extend Duties" in your override configuration
+
+No override estimate was found ("No Match" is displayed next to the current request in the override flexibilities feature)
+
+The Estimated Pickup Time is less than 1 hour away
+
+![](https://downloads.intercomcdn.com/i/o/992937620/661d9a962920889ca6f99ac9/Unified+Overrides.png?expires=1753820100&signature=ccb0258fe7e7482d1c6482abeb240dcadafb078efbaaef30eb292ddeab1a18c8&req=fSklH8p5m4NfFb4f3HP0gFmvADET8MyTJTGDMRZykLm0flsU%2BOq4m%2BgAEa%2By%0Aedg%3D%0A)## # How do I see what overrides that have been made in the past? Organizations which have this feature enabled will see a new tab under “Rides” which allows Admins to see all overrides performed by users. The following information is available. 
+
+Author - the author can be blank if overrides are performed automatically by the Spare Engine, speak to your Spare representative to learn more
+
+Created At Date 
+
+Initiated Request - the request which you are overriding others for
+
+Overrides Caused - list of trips overridden, and their new estimated pickup/dropoff times 
+
+![](https://downloads.intercomcdn.com/i/o/988602939/196fe34deee470f3b903c98c/image.png?expires=1753820100&signature=61353534e515174c6247b5ad34a311cc89d2ba118549cb593f5dec1cadc31c50&req=fSgvEMl8lIJWFb4f3HP0gFZG%2FBFYv%2B3HqLBcyJ1dkYJmBdRWlD37Rrivm7ww%0AsKk%3D%0A)
+
+# What is the Override Flexibilities Limit?The Override Flexibilities Limit is a service setting that restricts the maximum on-time performance violation override flexibilities will offer to a user. For example, if you set the override flexibility limit to 60 minutes, the system will only display override options less than 60 minutes.
+
+# How do I set the Override Flexibilities Limit?The "Override Flexibilities Limit" can found in the service settings under 'Windows and Flexibilities". 
+
+![](https://downloads.intercomcdn.com/i/o/1041051977/993ec9ff42781d7552a4b869/Screenshot+2024-05-03+at+4_37_53%E2%80%AFPM.png?expires=1753820100&signature=d8078233753988cce19545d5605a0960145041131aef89b4e1a629c7eb597cdd&req=dSAjF8l7nIhYXvMW1HO4zYj0eLymPpWq3DXQ4F2atEfomce05w9fGObu4pKS%0AmhNs%0A)
+
+# **Why can't I override a request? **Flexibility overrides have the power to override the following service settings:
+
+Detour Flexibility Level
+
+Leave-At Forwards Flexibility
+
+Leave-At Backwards Flexibility
+
+Arrive-By Backwards Flexibility
+
+If the ‘Override Flexibilities’ button is displayed, but after the button is pressed, no override is found, it could be for a few reasons:
+
+A duty’s start/end time conflicts with a trip (e.g. the trip would be 11am-12pm but the duty ends at 11:30). If this is the case you should try [Allowing Duty Overrides](#h_4a4cdb6369).
+
+The [Bumping Constraints](https://help.sparelabs.com/en/articles/8994594-bumping-constraints) of the trip may have been violated 
+
+Moving the request to the duty may cause the trip to be routed past its pick-up or drop-off multiple times.
+
+An override was found, but the[ override flexibility limit ](#h_80503c5251)on the service was too low

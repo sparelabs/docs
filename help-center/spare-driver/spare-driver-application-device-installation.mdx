@@ -1,0 +1,247 @@
+---
+title: "Spare Driver Application Device Installation"
+description: "Complete guide for installing the Spare Driver app on devices, setting up driver accounts, and configuring vehicle hardware for optimal performance."
+---
+
+## Overview
+
+To get started with the Spare Driver platform, you must download the **Spare Driver** app on each device by searching "spare driver" in your device's application store.
+
+<Info>
+The Spare Driver app is available for both Android and iOS devices. Make sure to download the official app published by Spare Labs Inc.
+</Info>
+
+### Mobile Device Management (MDM)
+
+Spare recommends implementing an MDM (Mobile Device Management) solution to remotely manage all devices from a centralized interface. This is especially important for fleet operations with multiple tablets.
+
+<CardGroup cols={2}>
+  <Card title="Jamf" icon="apple" href="https://www.jamf.com/lp/jamf-shared/?utm_source=google&utm_medium=cpc&utm_content=20327509085_153793416627_jamf_e_c_g&attr=google_ads-brand-search-shared&gad_source=1&gclid=Cj0KCQiAy9msBhD0ARIsANbk0A-P0xQR32Mw21-kTHYBJ3Q1j1U6Wrs610xRxCxQglzaFGJZXHUSYd8aAgAyEALw_wcB">
+    Popular MDM solution for Apple devices
+  </Card>
+  <Card title="Meraki" icon="cisco" href="https://meraki.cisco.com/products/systems-manager/">
+    Cisco's cloud-managed device management platform
+  </Card>
+</CardGroup>
+
+<Warning>
+Ensure auto-updates are enabled on all devices and that they regularly connect to WiFi to receive the latest Spare Driver app updates.
+</Warning>
+
+## Driver Account Setup
+
+Before drivers can use the app, a Spare Administrator must create driver accounts through the admin portal.
+
+<Steps>
+  <Step title="Access Admin Portal">
+    Navigate to **Spare Operations > Users > Drivers > Add Driver** in the admin interface.
+  </Step>
+  <Step title="Create Driver Profile">
+    Complete the driver profile with the required information (see requirements below).
+  </Step>
+  <Step title="Send Invitation">
+    The system automatically sends an email invitation to the driver.
+  </Step>
+  <Step title="Driver Sets Password">
+    The driver receives the email and creates their password to complete setup.
+  </Step>
+</Steps>
+
+### Required Profile Information
+
+![Driver profile setup form showing required fields for first name, last name, and email](/images/spare-driver/driver-profile-setup-form.png)
+
+**Required Fields:**
+- **First Name** - Driver's legal first name
+- **Last Name** - Driver's legal last name  
+- **Email Address** - This will serve as the driver's login username
+
+**Optional Fields:**
+- Phone Number (not required for app functionality)
+
+<Note>
+Drivers will use their **email address** as their login username when accessing the app.
+</Note>
+
+### Password Management
+
+Once a driver profile is created, the driver receives an automatic email invitation to set up their password. After creating their password, they can immediately start using the app.
+
+![Admin interface showing password reset button for driver accounts](/images/spare-driver/admin-password-reset-interface.png)
+
+<Tip>
+If drivers forget their passwords, administrators can reset them using the **PASSWORD RESET** button in each driver's profile.
+</Tip>
+
+## Device Installation Instructions
+
+The installation process varies depending on your device's operating system. The Spare Driver app supports both **Android** and **iOS** platforms.
+
+<Info>
+Supported platforms: Android 8+ and iOS 14+. Choose established OEMs like Apple or Samsung for better support and stability.
+</Info>
+
+<Tabs>
+  <Tab title="Android Installation">
+    <Steps>
+      <Step title="Prepare Your Device">
+        Ensure your Android device is unlocked and connected to the internet.
+      </Step>
+      <Step title="Open Google Play Store">
+        Locate the "Play Store" icon on your home screen or in the app drawer and tap to open.
+      </Step>
+      <Step title="Search for the App">
+        Use the search bar at the top and search for **"Spare Driver"**. Select the official Spare Driver app from the search results.
+      </Step>
+      <Step title="Install the App">
+        Tap the **"Install"** button and wait for the download and installation to complete.
+      </Step>
+      <Step title="Launch the App">
+        Once installed, tap **"Open"** from the Play Store or find the app icon on your home screen.
+      </Step>
+    </Steps>
+  </Tab>
+  <Tab title="iOS Installation">
+    <Steps>
+      <Step title="Prepare Your Device">
+        Ensure your iPad or iPhone is unlocked and connected to the internet.
+      </Step>
+      <Step title="Open App Store">
+        Locate the "App Store" icon on your home screen and tap to open.
+      </Step>
+      <Step title="Search for the App">
+        Use the search tab at the bottom and search for **"Spare Driver"**. Select the official app from the results.
+      </Step>
+      <Step title="Download the App">
+        Tap **"Get"** and authenticate using Face ID, Touch ID, or your Apple ID password.
+      </Step>
+      <Step title="Wait for Installation">
+        The app will download and install automatically. You'll see a progress circle and the app icon will appear on your home screen.
+      </Step>
+      <Step title="Launch the App">
+        Tap the app icon on your home screen to open the Spare Driver app.
+      </Step>
+    </Steps>
+  </Tab>
+</Tabs>
+
+<Note>
+Installation steps may vary slightly depending on your device model and operating system version.
+</Note>
+
+## Vehicle Device Installation
+
+Plan your vehicle setup carefully to ensure a smooth deployment. Create a comprehensive setup plan that includes:
+
+- **Who** will perform the installation
+- **When** the setup will occur (allow 1-2 weeks before launch)
+- **What tools** and equipment will be needed
+
+<Warning>
+Allow at least **1-2 weeks** before your planned launch date to complete vehicle setup and testing.
+</Warning>
+
+### Additional Hardware Components
+
+Depending on your service requirements, you may need to integrate:
+
+<AccordionGroup>
+  <Accordion title="Payment Systems">
+    - Ticket systems and validators
+    - Fare collection boxes
+    - Mobile payment terminals
+  </Accordion>
+  <Accordion title="Communication Equipment">
+    - Two-way radio systems
+    - Emergency communication devices
+  </Accordion>
+  <Accordion title="Accessibility Features">
+    - Wheelchair accessibility equipment
+    - Audio/visual announcement systems
+    - Priority seating indicators
+  </Accordion>
+</AccordionGroup>
+
+### Vehicle Setup Checklist
+
+<AccordionGroup>
+  <Accordion title="Device Installation">
+    - [ ] Install driver device mounting hardware
+    - [ ] Install and test device charger
+    - [ ] Verify device positioning for optimal visibility
+    - [ ] Test device connectivity and GPS signal
+  </Accordion>
+  <Accordion title="Payment & Ticketing">
+    - [ ] Install ticketing hardware (if applicable)
+    - [ ] Configure fare collection systems
+    - [ ] Test payment processing functionality
+  </Accordion>
+  <Accordion title="Communication Systems">
+    - [ ] Install radio equipment (if applicable)
+    - [ ] Test communication channels
+    - [ ] Configure emergency protocols
+  </Accordion>
+  <Accordion title="Safety & Accessibility">
+    - [ ] Install and validate seating configurations
+    - [ ] Test safety devices and emergency equipment
+    - [ ] Verify accessibility features functionality
+    - [ ] Ensure ADA compliance where required
+  </Accordion>
+  <Accordion title="Final Testing">
+    - [ ] Conduct full system integration test
+    - [ ] Verify all hardware components work together
+    - [ ] Complete driver training on vehicle-specific features
+  </Accordion>
+</AccordionGroup>
+
+## Device Recommendations
+
+### Device Types
+
+<CardGroup cols={2}>
+  <Card title="Tablets" icon="tablet">
+    Larger screens provide better visibility for drivers
+    **Recommended:** iPads (6th gen+ with LTE)
+  </Card>
+  <Card title="Smartphones" icon="mobile">
+    Compact and portable option
+    **Recommended:** iPhone 12 or newer
+  </Card>
+</CardGroup>
+
+### System Requirements
+
+<Card title="Minimum OS Versions" icon="cog">
+  - **iOS:** Version 14 or later
+  - **Android:** Version 8 or later
+</Card>
+
+### Recommended Specifications
+
+<Tip>
+Choose established OEMs like **Apple** or **Samsung** for better long-term support and stability.
+</Tip>
+
+**Preferred Devices:**
+- **Tablets:** iPad 6th generation or later with LTE connectivity
+- **Phones:** iPhone 12th generation or newer
+- **Android:** Samsung Galaxy tablets or phones with equivalent specifications
+
+### Additional Resources
+
+For detailed device specifications and compatibility:
+- [iPad Models Reference](https://en.wikipedia.org/wiki/List_of_iPad_models)
+- [iPhone Models Reference](https://en.wikipedia.org/wiki/List_of_iPhone_models)
+
+## Next Steps
+
+Once installation is complete:
+1. Test the app functionality with your driver accounts
+2. Complete vehicle hardware integration
+3. Conduct driver training sessions
+4. Perform system testing before launch
+
+For additional support, see:
+- [Dedicated Driver Guide](/help-center/spare-driver/the-spare-driver-app-for-dedicated-drivers)
+- [Non-Dedicated Driver Guide](/help-center/spare-driver/the-spare-driver-app-for-non-dedicated-drivers-guide-video)
+- [Driver-to-Rider Calling](/help-center/spare-driver/using-spare-driver-to-rider-calling)

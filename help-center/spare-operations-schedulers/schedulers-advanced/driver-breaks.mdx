@@ -1,0 +1,244 @@
+---
+title: "Driver Breaks"
+description: "Configure automated driver breaks for your fleets to ensure compliance and improve driver satisfaction"
+---
+
+> In this article, you will find answers to the following questions:
+> - What are Driver Breaks?
+> - How are they configured, and who can do that?
+> - Where can I view the scheduled breaks?
+> - What do the breaks look like from the driver's side?
+> - How can I edit/cancel a break?
+
+# What are Driver Breaks?
+
+With **Driver Breaks**, you will be able to **set up a policy for how breaks should be facilitated** on your fleets. This policy will then automatically schedule breaks in your duties.
+
+With Driver Breaks, we're taking the efficient, driver-friendly operation to the next level, decreasing the burden on shift schedulers and maximizing your system efficiency.
+
+# Static, Dynamic, and Ad-Hoc Driver Breaks
+
+Spare supports two types of policy-generated Driver Break—Static and Dynamic—as well as ad-hoc driver breaks.
+
+## Static Driver Breaks
+
+**How do they work?**
+
+With Static Driver Breaks, you **set up a policy** for how breaks should be facilitated on your fleets. This policy will then **automatically schedule breaks** in your duties. Drivers are notified when their break starts in the driver app, and dispatchers can easily view in-progress and upcoming breaks on the live map.
+
+**Can Static Breaks move around to accommodate trips that coincide with the break?**
+
+No. Static Breaks are not optimized, and cannot move to accommodate trips that coincide with the break.
+
+## Dynamic Driver Breaks
+
+**How do they work?**
+
+With **Dynamic** Driver Breaks, you **set up a policy** for how breaks should be facilitated on your fleets. This policy will then **automatically schedule breaks** in your duties. As your duties fill up with trips, the breaks will **automatically move around** in order to maximize the overall efficiency of your schedule. Once your driver starts their duty, **real-time optimization** will ensure that breaks remain efficiently scheduled and adapt to the events of the day.
+
+**How are the Dynamic Breaks adjusted to the duty schedule?**
+
+The start time of Dynamic Driver Breaks is adjusted by GOLD to ensure that it's in the most optimal place in the duty that satisfies the "Max driving time" constraint.
+
+For example:
+- If the Max driving time without a break is 5 hours and the duty is 8 hours long
+- The duty starts at 12pm and ends at 8pm
+- The break can start anywhere between 2:30pm and 5pm
+
+Even if the duty is very busy between 12pm and 6pm, there will still be a break somewhere between 2:30pm and 5pm.
+
+> 💡 Please reach out to your Spare Representative to enable Dynamic Driver Breaks.
+
+## Ad-Hoc Driver Breaks
+
+> 💡 Please reach out to your Spare Representative to enable Ad-Hoc Driver Breaks.
+
+**How do they work?**
+
+Ad-hoc driver breaks can be used to create custom break-schedules, or adjust driver schedules for the unplanned day-to-day occurrences that result in drivers needing a break or a vehicle being temporarily out of service.
+
+To add an ad-hoc break you can either:
+- Navigate to the Duty on the Live Map, press 'Actions' and 'Add Break'
+
+![Add break from live map](/images/spare-operations-schedulers/driver-breaks-add-break-from-live-map-1.png)
+
+- Navigate to the Duties page, click the Duty you want to update, and hit Edit Breaks and 'Add Break'
+
+![Add break from duties page](/images/spare-operations-schedulers/driver-breaks-add-break-from-duties-page-2.png)
+
+When adding a break, you can specify:
+
+**Timing**:
+
+**ASAP**: The break will immediately follow the current tasks on the driver's itinerary. ASAP breaks will be forcefully inserted into the manifest by Spare's Engine, becoming the next action after dropping off any onboard passengers. A duty must already be in progress to schedule an ASAP break.
+
+**For Later**: Allows you to schedule the break within a specific future time range. You must select both a 'Start No Earlier Than' and 'Start No Later Than' time, providing the window during which the break can begin. If existing trips conflict with the scheduled break, the system will display an error.
+
+**Break Duration**:
+
+Select how long the break should last. You can choose from predefined intervals (15, 30, 45, or 60 minutes) or manually specify a custom duration.
+
+**Break Location (optional)**:
+
+Specify an address or location for the break. The driver will be directed to this location before the break starts. _Requires Spare Driver v2.70 or higher._
+
+**Notes (optional)**:
+
+Provide additional context or instructions relevant to the break, which will be visible when you view the driver on the live map.
+
+![Break notes interface](/images/spare-operations-schedulers/driver-breaks-break-notes-interface-3.png)
+
+![Break configuration example](/images/spare-operations-schedulers/driver-breaks-break-configuration-example-4.png)
+
+# Setting Up Automated Driver Breaks
+
+Driver breaks can be configured by:
+- System Administrators
+- Service Planners
+
+> Please note that any changes to break policies will not update the breaks of existing duties. If you want to apply changes immediately, you will need to re-create all currently scheduled duties.
+
+## Set Up Your Driver Break Policy
+
+**1.** In Spare Operations, navigate to the **Service Planning** tab and choose a **Fleet** you'd like to **edit**. By default, the Breaks policy is disabled.
+
+![Fleet breaks settings](/images/spare-operations-schedulers/driver-breaks-fleet-breaks-settings-5.png)
+
+**2.** Once in the **Breaks settings**, choose the duration of each break and the maximum driving time without a break.
+
+![Break duration settings](/images/spare-operations-schedulers/driver-breaks-break-duration-settings-6.png)
+
+**3.** Click **"Save"** to activate new settings. Any new duties associated with the fleet will have a break added to its manifest.
+
+![Save break settings](/images/spare-operations-schedulers/driver-breaks-save-break-settings-7.png)
+
+## View Scheduled Breaks
+
+Automated Driver Breaks can be viewed from the Admin and the Driver sides:
+
+### 1. From the Admin Side: Live Map
+
+To view a driver's break schedule, go to the **Live Map [1]** and click on the **vehicle icon [2]**. You will then see **Upcoming Itinerary information [3]**.
+
+![Live map break view](/images/spare-operations-schedulers/driver-breaks-live-map-break-view-8.png)
+
+The ☕️ icon indicates the Beginning and the End of each break. You can also click **"Duty Information" [4]** to view all breaks scheduled for the shift.
+
+> Please note that vehicles currently on a break are displayed in white.
+
+![Break duty information](/images/spare-operations-schedulers/driver-breaks-break-duty-information-9.png)
+
+### 2. From the Driver's side: Spare Driver App
+
+Drivers can see the break policy in the Vehicle Status section of the Spare Driver App. Drivers are also given a push notification during their break in case they've closed the Driver application.
+
+![Driver app break view](/images/spare-operations-schedulers/driver-breaks-driver-app-break-view-10.png)
+
+Drivers are told when their break has started and how long they have until it ends. Drivers are unable to start or end their break early or late. Here's how a break looks on their end:
+
+![Driver break interface](/images/spare-operations-schedulers/driver-breaks-driver-break-interface-11.png)
+
+## Edit/Cancel Scheduled Breaks
+
+### Cancelling a Break
+
+Administrators, Service Planners, and Shift Schedulers can view and cancel the breaks in any upcoming duty on the Edit Duty page.
+
+![Cancel break interface](/images/spare-operations-schedulers/driver-breaks-cancel-break-interface-12.png)
+
+> Please note that cancelling a break cannot be reversed.
+
+![Break cancellation confirmation](/images/spare-operations-schedulers/driver-breaks-break-cancellation-confirmation-13.png)
+
+If a new break needs to be added to replace a cancelled break, use the Add Break view to do so.
+
+## Viewing Break Data in Spare Analytics
+
+### Reporting
+
+Breaks are visible in the Duty report that can be downloaded from Spare Analytics.
+
+In the report we include the following data for each duty:
+- Total Number of Breaks
+- Total Scheduled Break Length
+- Total Break Length (dispatchers can end breaks early)
+- Total Break Distance (any miles/kms travelled during the break)
+- Break Times:
+  - Break Start Time
+  - Break completed time
+  - Break cancelled time (null if the break wasn't cancelled)
+  - Break scheduled end time
+
+Breaks are also excluded from the following metrics in our NTD reporting:
+- Vehicle Distance
+- Revenue Hours
+- Revenue Distance
+- Actual Vehicle Hours
+
+### Analytics
+
+Breaks are visible under Vehicle KPIs:
+- Total break distance
+- Total break hours
+
+In addition, the following analytics have been updated to exclude breaks:
+- Total Vehicle Travel Distance
+- Revenue Hours
+- Total Revenue Distance
+- Actual Vehicle Hours
+
+# Frequently Asked Questions
+
+### Can the breaks move around within the duty?
+
+While Static Driver Breaks are not automatically moved around the duty, Dynamic Driver breaks start time can be adjusted by Spare's Engine to improve the efficiency of manifests.
+
+### Can I configure the minimum length of a duty that needs a break?
+
+Not directly. This is inferred from the 'Max driving time without a break' setting. If the Max driving time without a break is 5 hours, any duties under 5 hours will get no break.
+
+### Can there be multiple breaks in the duty?
+
+Yes, for example, if the max driving time without a break is 3 hours and the duty is 8 hours long, there will be two breaks.
+
+### Can breaks be ended early?
+
+No. Breaks will only end at the scheduled time.
+
+### Can breaks be cancelled?
+
+Yes. Upcoming and in-progress breaks can be cancelled by admin users.
+
+### What happens when I upgrade from Static Driver Breaks to Dynamic Driver Breaks?
+
+Any new duties that are created will have Dynamic Driver breaks. Any duties created before the upgrade will have static driver breaks.
+
+### When I edit the start or end time of a duty, what happens to the breaks?
+
+If a duty is edited, the break times and associated dynamic windows **will not change**.
+
+For example:
+- If the Max driving time without a break is 5 hours and a new duty is created starting at 12pm and ending at 8pm
+- Initially, the break can start anywhere between 2:30pm and 5pm
+- If the duty is then edited to end at 7pm, **the break will still be between 2:30pm and 5pm**
+
+If you need the break times to update, you must delete and re-create the duty.
+
+### When I edit a break policy, how does that affect existing duties?
+
+Breaks cannot be edited after a duty has been created.
+
+If you want to change your break policy and apply the change to your existing duties, you need to do the following:
+1. Delete the duties
+2. Modify the break policy on the fleet
+3. Re-create the duties
+
+### Why can't I insert an ad-hoc break? It says "Unable to add break to this duty."
+
+If the duty has trips on it that conflict with the specified break start time, end time or length, then the system will throw this error.
+
+In this situation, you can make room for the break by:
+1. Pausing the duty
+2. Unmatching trips from the duty so that there's space for the break
+3. Creating the break
+4. Unpausing the duty

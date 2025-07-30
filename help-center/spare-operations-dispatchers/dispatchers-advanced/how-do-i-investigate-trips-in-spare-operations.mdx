@@ -1,0 +1,79 @@
+---
+title: "How do I investigate trips in Spare Operations?"
+description: ""
+---
+
+Spare Engine is a complex mechanism that works tirelessly on duty optimization. The Engine takes into account multiple factors, such as rider's location, vehicle availability, service zoning, service settings, and many more.**​
+| However, there are times when we really need to know why X happened**. So how do we do this? In this article, we'll walk you through the **investigation framework** to get a thorough understanding of what was the logic behind the Engine's decision. | See also: |
+
+**​[​Driver Activity**](https://help.sparelabs.com/en/articles/8967297-investigating-a-driver-s-activity)
+
+**[Why Can't I Book a Trip?](https://help.sparelabs.com/en/articles/8979141-why-can-t-i-book-a-trip)**
+
+**Step 1. Locate the Request Information Page**
+
+- Locate the request via the rider's profile. For that, type in the rider's name in the main search bar, open their profile and scroll down to view the requests history. 
+
+| Open the request you'd like to investigate. Scroll down to view the **status changes** and the **activity log**. | From the Request Information Page, locate and write down the following details: |
+
+**The date & tim**e the trip was supposed to happen (look for the "Intent time" and 'Request pickup time")
+
+**Flexibility**, in minutes (to consider the time range)
+
+**Pickup & Dropoff **locations.
+
+![](https://spare-74fa64f80617.intercom-attachments-1.com/i/o/967291194/0bb6e682f099cafa5e294144/6KDcKhGvhYK29pqQi9PZhbL1dew8HHxngw.png?expires=1753820100&signature=761194c9481a0532c68d9898968ef8a5ecef9b2e4cd28ec06818ed6af9ebc4ba&req=fSYgFMB%2FnIhbFb4f3HP0gB2TrcWEFmZJWRnsjP6%2FTLy37woHrXq8Y8fg9vh5%0AQpg%3D%0A)
+
+**About Request Statuses**
+​
+
+![](https://spare-74fa64f80617.intercom-attachments-1.com/i/o/967291199/f4742cc57a98b6853e720978/cGqZ7nQxUarsf_ENd_0kjEeTscBckYMMcA.png?expires=1753820100&signature=1f217f06390d3718344aab1a948e267964f697037c3536c4c060a72587947846&req=fSYgFMB%2FnIhWFb4f3HP0gPe9X%2B8v%2FElkeLL78%2B12rcQ4h6JzLeW9BwqmHXsB%0Ab%2Fk%3D%0A)
+
+| Take a look at the table below to learn what each status means: | | **Status**  || **Explanation** |
+|------------|-----------------|
+
+- Processing
+
+The matching process is updating the request based on the latest information regarding driver availability.
+​
+​
+
+| With "Leave-at" requests operated by Open Fleets, the request will first go into the Processing status and remain in it until 10 minutes before the requested pickup time. | No Drivers Available |
+
+| The matching process did not find any drivers for the passenger to match with. | Accepted |
+
+| The request has been accepted into a driver duty. | Arriving Soon |
+
+| Arriving Soon is used to notify the rider that the driver is near their pickup. The notification & state is set when both of these conditions are true: | A. The current time is less than 4 minutes away from the scheduled pickup time |
+| B. The driver is less than 2 minutes drive away | Arrived at Pickup/Dropoff |
+
+| This status is used to calculate OTP & Lateness in the platform. The arrived state is set when both of these conditions are true: | A. The driver is 300m away from pickup |
+| B. The current time is within 15 minutes of scheduled pickup. | Very occasionally it takes longer than 2 minutes to drive 300m (e.g. in busy city areas), so it is possible for the ‘Arrived at Pickup’ state to trigger before the ‘Arriving Soon’ notification is sent to the rider. This doesn't affect the functionality or experience of the rider or driver. |
+
+| Trip in Progress | Trip is in progress. |
+
+| Cancelled | The request has been cancelled. To find more information about the specific cancellation reason, navigate to the detailed information regarding the specific request. |
+
+| Trip Completed | The trip/request was completed by a driver. |
+
+**About the Request Activity Log**
+
+**Request Activity Log **records the following activity changes of a particular request/trip:
+
+*Estimate Generated | Request Created | Request Accepted | Request Rematched | Duty Cancelled | Request Edited | Notification Sent to the Rider | Request Cancelled*
+
+![](https://spare-74fa64f80617.intercom-attachments-1.com/i/o/967291215/f36e3adc7e2f7291865c02a3/Mx0ihCbgoMMe7F6stGIGu_VZCV19ORMdTg.png?expires=1753820100&signature=d459f6f927568bff55ffb864a9f76e732f4e0674cd0152e1d7e8673febb30cb9&req=fSYgFMB%2Fn4BaFb4f3HP0gBm%2BWMQkBM8PPqRlepyugDiFXkInjmqpAx%2BVq6dc%0AHi4%3D%0A)
+
+**Step 2. Identify Related Duties**
+
+- Go to the Duties page (Shift scheduling ➡️ Duties). 
+
+| Selected the correct date using toggles. If applicable, limit your fleet options, i.e. deselect other fleets. | Open all duties that were/are scheduled around the trip time. |
+
+![](https://spare-74fa64f80617.intercom-attachments-1.com/i/o/967291239/30c9c77602251825a746dca8/kr17Pr7N-FY_D0Z4falEmZEcYw_4amRHwA.png?expires=1753820100&signature=3163dedd2fc77023ea786162ffb97ea38516b16056475ace278b20c3c0d911e5&req=fSYgFMB%2Fn4JWFb4f3HP0gG4av3vouHYWV2nGRzLXt5MVveP4%2FDSyIMGuieLA%0Aths%3D%0A)
+
+**Step 3. Investigate Duty Itineraries**
+
+- From the Duty information page, adjust the **time travel map** by moving the toggle to the very **beginning of the shift**. This way, you will be able to see the original trip fitting logic, without additional optimization.
+
+| After that, **investigate each duty itinerary** to see if the trip could potentially fit. | ![](https://spare-74fa64f80617.intercom-attachments-1.com/i/o/967291258/a951274b9f40100f40b0e35a/qZ-tpO2J2Um5oRSQhh8kljamqJHBrTjt9g.png?expires=1753820100&signature=5719a88ec6b681e1c9dbf292607ba4c438046c840e3d22bff924cc98b90712c3&req=fSYgFMB%2Fn4RXFb4f3HP0gJL3T65dv8jZGO3BAF8%2FH0lPPaUVoUO1eGWV1yQI%0ABhk%3D%0A) |

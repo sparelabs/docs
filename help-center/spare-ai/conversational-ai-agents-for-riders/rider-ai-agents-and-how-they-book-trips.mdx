@@ -1,0 +1,130 @@
+---
+title: "Rider AI Agents and How They Book Trips"
+description: "Learn about the conversational flow and booking processes used by rider AI agents for new trips, rebookings, and special scenarios"
+---
+
+All our conversational agents are free-flowing and flexible, capable of engaging in natural conversations. However, they follow structured flows when working to achieve specific outcomes like booking trips.
+
+## Booking a New Trip Flow
+
+<Steps>
+  <Step title="Initiation">
+    The user expresses interest in booking a new trip with phrases like "I need a ride" or "Book a trip."
+  </Step>
+  
+  <Step title="Location Collection">
+    The AI collects pickup and drop-off information:
+    - Asks for pickup and drop-off locations
+    - Uses location lookup to validate addresses
+    - Offers suggestions if addresses are unclear
+    - Confirms both locations with the user
+  </Step>
+  
+  <Step title="Time Inquiry">
+    The AI asks when the user would like to travel, including both date and time preferences.
+  </Step>
+  
+  <Step title="Time Type Clarification">
+    The AI clarifies whether the requested time is for "leave at" or "arrive by" to ensure accurate scheduling.
+  </Step>
+  
+  <Step title="Service Selection">
+    The AI identifies available transportation options and presents their estimated costs to the user.
+  </Step>
+  
+  <Step title="Confirmation">
+    The AI presents a complete summary of trip details (locations, time, service, cost) for user confirmation.
+  </Step>
+  
+  <Step title="Booking">
+    Upon the user's approval, the AI processes and books the trip.
+  </Step>
+  
+  <Step title="Booking Confirmation">
+    The AI confirms that the booking was successful and provides relevant trip details.
+  </Step>
+</Steps>
+
+## Rebooking a Previous Trip Flow
+
+<Steps>
+  <Step title="Previous Trip Recognition">
+    If the user has previous trips, the AI will proactively highlight this and ask if they would like to rebook a previous trip.
+  </Step>
+  
+  <Step title="Rebooking Request">
+    The user indicates they want to rebook a recent trip with phrases like "Can I book that last trip again?"
+  </Step>
+  
+  <Step title="Time Inquiry">
+    The AI asks for the desired date and time for the new trip.
+  </Step>
+  
+  <Step title="Estimate Retrieval">
+    The AI retrieves details from the previous trip and calculates a new cost estimate for the requested time.
+  </Step>
+  
+  <Step title="Smart Booking">
+    **Automatic booking** occurs if:
+    - The cost remains the same, OR
+    - The user previously agreed to rebook similar trips
+    
+    Otherwise, the AI presents the new time and cost for confirmation.
+  </Step>
+  
+  <Step title="Booking Confirmation">
+    The AI confirms the details of the newly booked trip with the user.
+  </Step>
+</Steps>
+
+## Pickup Notes Feature
+
+<Callout type="info">
+AI rider agents now automatically add pickup and drop-off notes when booking trips to help drivers locate riders more efficiently.
+</Callout>
+
+### Purpose and Examples
+
+The purpose of pickup notes is to include information that helps drivers locate riders at pickup time.
+
+**Common pickup note examples:**
+- "I'll be waiting at the back entrance"
+- "I'll be at the Exxon gas station"
+- "Outside McDonald's"
+
+### Note Management
+
+- If a rider already has default notes saved for a location, new notes are **added in addition**
+- Existing notes are never overwritten, ensuring no important information is lost
+
+<Warning>
+While automatic pickup notes are now the default AI behavior, the `locationNotes` feature flag must be enabled for these notes to appear in the Driver App and Spare Platform.
+</Warning>
+
+When enabled, drivers will see these notes, helping them locate riders faster and improve on-time performance.
+
+## Advanced Booking Logic
+
+### Negotiations and Alternative Times
+
+<Card title="Driver Availability" icon="clock">
+If no drivers are available at the requested time, the AI will suggest an alternative time as close to the original request as possible. This functionality relies on the windows & flexibilities logic configured on the service.
+</Card>
+
+### Service Restrictions
+
+<Card title="Booking Requirements" icon="shield-check">
+If a rider tries to book a trip that conflicts with service restrictions (e.g., "must book 30 minutes in advance"), the AI will clearly communicate what the restriction is and how to comply.
+</Card>
+
+### Unmatched Requests
+
+<Card title="Unmatched Trip Handling" icon="x-circle">
+By default, AI agents are not allowed to book unmatched trips. However, this functionality can be enabled in the Engine options on the service level if needed.
+</Card>
+
+### Return Trips
+
+<Card title="Return Trip Prompts" icon="arrow-u-turn-left">
+AI agents will always prompt riders to book a return trip. If there are restrictions around advance bookings, these will be clearly communicated to the rider (e.g., "You have to book by 5pm the day before the trip").
+</Card>

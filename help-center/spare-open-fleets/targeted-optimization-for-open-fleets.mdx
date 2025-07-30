@@ -1,0 +1,41 @@
+---
+title: "Targeted Optimization for Open Fleets"
+description: "Improve service reliability by automatically rematching late requests to available Open Fleets"
+---
+
+💡 This feature is included as part of the **Open Fleets Platform**. Please reach out to your Spare Representative for more details.
+
+## About this featureThis is an extension of Spare Engine's [
+
+Targeted optimization](https://help.sparelabs.com/en/articles/8946518-spare-s-ai-engine-matching-optimizing-requests#h_ead452f724) designed to help agencies improve On Time Performance by automatically rematching unmatched and late requests to available Open fleets, like TNCs (e.g., Lyft, Uber), Taxis using MTI, iCabbi and Uzurv.  This increases the chances of fulfilling late or unmatched requests without manual intervention.
+
+## 
+Configuring it for your Service![](https://downloads.intercomcdn.com/i/o/wyxobwoi/1458705727/387160082a653d94a54aa8dbcf7a/Group+2+%283%29.png?expires=1753820100&signature=f44c4947c560ed8e80aadc1a521ac483c879bf7254db40104b2ef94e947b0f10&req=dSQiHs5%2BmIZdXvMW1HO4zfATGaZ9owCHja5586TybBAMRIgeRg5fHlRP82f1%0AqThx%0
+
+A)
+
+To configure, go to Service Settings and the Open Fleet you want to enable this for. The **Edit Fleet Connection** panel allows you to configure how Spare connects to a specific fleet, such as Uber, by setting its **Fleet Priority** (High, Medium, Low) to influence trip matching order based on wait times. Enabling **Automatically rematch late trips to this fleet** lets Spare reassign trips that exceed the defined **Lateness Threshold** (e.g., 15 minutes) to this fleet, with a configurable **Limit Per Hour** (e.g., 20) to control the max amount of trips that can be rematched to this Open Fleet. Once configured, click **Save Fleet Connection** to apply the settings.
+
+## How does it work?Every 3 minutes Spare’s AI 
+
+Engine will look for trips that are unmatched or running later than the configured threshold and automatically rematch it to an available non-dedicated fleet.
+
+This algorithm is designed to be mostly invisible to users and reduce the amount of manual action needed to keep requests on time.
+
+The algorithm will stop trying to rematch unmatched requests once the requested time is more than 1 hour ago.
+
+## FAQ's**
+
+- What is considered a “late request”?**
+A request is considered late if the scheduled pickup time is beyond the defined lateness threshold (e.g., more than 5 minutes late).
+
+**Can I change the rematching thresholds later?**
+Yes. You can go back to the fleet settings at any time and update the lateness threshold or the max number of rematches per hour.
+
+**Why don’t I see the rematching settings?****Rematching settings only appear when you are editing or viewing a non-dedicated fleet**. They do not apply to dedicated fleets.
+
+**How often does the rematching logic run?**
+The scheduled task that triggers rematching typically runs every 3 minutes. If your request qualifies, it should be offered to a fleet shortly after.
+
+**What happens after a request is rematched?**
+The request is offered to the configured non-dedicated fleet (like Lyft). If accepted, the ride will proceed as usual with that provider.

@@ -1,0 +1,138 @@
+---
+title: "Building a Demand Model" 
+description: "Learn how to create demand segments and estimate rider demand using Realize's three demand modeling methods: Predicted by Realize, Manual Input, and Past Trips Data."
+---
+
+<Tip>
+**In this article, you will learn:**
+- How to create a Demand Segment
+- How to use the 'Predicted by Realize' method
+- How to use the 'Manual Input' method
+- How to use the 'Past Trips Data' method
+</Tip>
+
+Once you have built the skeleton of your Service and Zones, you need to define the kinds of riders that could theoretically access your service. From that, Realize can help you estimate the levels of demand on a given day.
+
+<Info>
+Realize relies on the concept of **'Demand Segments'** to generate demand estimates for your transportation simulation.
+
+A Demand Segment is a group of riders whose home or origin locations can be described with the same spatial Dataset.
+</Info>
+
+For example, if you have a Dataset that shows where all senior citizens reside in a city, you could build a Seniors Demand Segment from that dataset.
+
+## How to create a Demand Segment?
+
+To create a Demand Segment, scroll down to the **'Demand Model'** section of the right sidebar. 
+
+Select your method of demand estimation from the dropdown menu:
+
+- 'Predicted by Realize'
+- 'Manual Input'
+- 'Past Trips Data'
+
+![Demand Model dropdown menu showing three methods: Predicted by Realize, Manual Input, and Past Trips Data](/images/spare-realize/simulation-mode/demand-model-methods-dropdown.png)
+
+### 'Predicted by Realize' Method
+
+Scroll down to the Demand Segments table below. At first, it will be empty. Click on **'Add Demand Segment'** to create your first Demand Segment. Note that you can create as many different Demand 
+
+Segments as you wish; they will all appear in this table.
+
+In the revealed sidebar, give your Demand Segment an **informative name** (e.g. 'Senior Riders', 'General Microtransit Population', 'Paratransit Riders').
+
+![Add Demand Segment sidebar with name field for creating a new demand segment](/images/spare-realize/simulation-mode/add-demand-segment-sidebar.png)
+
+From the **'Dataset' dropdown menu**, select the corresponding Dataset that spatially describes the home locations of this Demand Segment. 
+
+<Note>
+Only the Datasets that have data points located in your Service Zone(s) will show up in the dropdown menu. If the Dataset you need is not shown here, consider expanding your Zone(s).
+</Note>
+
+![Dataset dropdown selection showing available datasets for the demand segment](/images/spare-realize/simulation-mode/dataset-dropdown-selection.png)
+
+The next step differs depending on whether you selected **'Predicted by Realize'** or **'Manual Input'** as the Demand Model in the previous sidebar.
+
+If you select **'Predicted by Realize',** an Adoption Rate Slider will appear, which you can click and drag between 0% and 100%. 
+
+<Info>
+The Adoption Rate describes the proportion of all trips in this Demand Segment that are taken using on-demand, once a service is introduced.
+</Info>
+
+![Adoption Rate slider allowing selection between 0% and 100% for trip adoption rates](/images/spare-realize/simulation-mode/adoption-rate-slider.png)
+
+The **Adoption Rate directly controls how many trips are assigned** to different 'Trip Types' in the table below the slider. **Realize estimates the relative proportions** of different trip types (e.g. commuting, healthcare trips, entertainment and shopping trips, etc.) based on large travel surveys conducted across multiple continents. It then **randomly generates the origins and destinations** of trips using the home locations of a Demand Segment and available Datasets corresponding to different Trip Types.
+
+<Warning>
+Please note that as you change the Adoption Rate slider, Realize will recalculate the total number of daily trips in each row of the Trip Types table.
+</Warning>
+
+![Trip Types table showing different categories of trips with daily trip counts and temporal distributions](/images/spare-realize/simulation-mode/trip-types-table.png)
+
+You can **click on individual rows** in the Trip Types table **to view the temporal distribution** of this Trip Type throughout a typical day. Two graphs are shown: an outbound distribution, which shows the times at which riders travel away from home to that particular activity, and an inbound distribution, which shows the times at which riders travel from the activity back home. 
+
+<Note>
+Please note that you cannot edit these temporal distributions in 'Predicted by Realize' mode.
+</Note>
+
+### 'Manual Input' Method
+
+If you'd like more control of the distribution of Trip Types, select **'Manual Input'** as the Demand Model.
+
+![Manual Input method interface for demand modeling showing empty trip types table](/images/spare-realize/simulation-mode/manual-input-method.jpg)
+
+If you select **'Manual Input'** as the Demand Model, there will be **no Adoption Rate slider**, and the Trip Types table will initially be empty. **Click 'Add Trip Type'**.
+
+![Add Trip Type button to create new trip types in manual input mode](/images/spare-realize/simulation-mode/add-trip-type-button.png)
+
+This takes you to a new sidebar allowing you to **create a new Trip Type**. Select your Trip Type from the **dropdown menu**. Realize presents you with a handful of key Trip Types that cover the majority of trips in most urban and rural areas.
+
+![Trip Type dropdown menu showing available trip categories like Commuting, Healthcare, Entertainment, etc.](/images/spare-realize/simulation-mode/trip-type-dropdown.png)
+
+Next, **enter an estimate for the number of daily trips** of this particular Trip Type that will be taken by this Demand Segment.
+
+![Daily trips estimate input field for entering the number of trips per day for a specific trip type](/images/spare-realize/simulation-mode/daily-trips-estimate.png)
+
+Navigate back to the previous sidebar, and **repeat the steps above** to populate your Trip Types table as necessary.
+
+### 'Past Trips Data' Method
+
+<Info>
+If you have data from past trips that you'd like to use instead of simulating trips, select 'Past Trips Data' as the Demand Model. Note that this model assumes a single representative day of trips, each with an origin, a destination, and a time of travel.
+</Info>
+
+Click the **'Import Past Trips'** dropdown menu. You have two choices here:
+
+- Import Trips from Launch
+- Upload CSV
+
+![Import Past Trips dropdown menu with options to Import Trips from Launch or Upload CSV](/images/spare-realize/simulation-mode/import-past-trips-dropdown.png)
+​
+
+To import trips from a specific service in Spare Launch, click on 'Import Trips from Launch'.
+
+![Import Trips from Launch option selected showing interface for importing historical trip data](/images/spare-realize/simulation-mode/import-from-launch.png)
+
+This reveals a **popup window**. Click the **dropdown arrow** and **select as many available Services as you like**, to serve as a source for your past trips.
+
+![Service selection popup window with dropdown to select available services for trip import](/images/spare-realize/simulation-mode/service-selection-popup-1.png)![Service selection popup showing multiple services that can be selected as trip data sources](/images/spare-realize/simulation-mode/service-selection-popup-2.png)
+
+**Set the date** for which you want to select your past trip data.
+
+![Date selection interface for choosing which date to import past trip data from](/images/spare-realize/simulation-mode/set-date-selection.png)
+
+The alternative for importing past trips is to click the **'Upload CSV'** button.
+
+​
+
+![Upload CSV button for importing trip data from a CSV file](/images/spare-realize/simulation-mode/upload-csv-button.png)
+
+This reveals a popup window that invites you to upload a CSV file of past trips. **Each trip in your CSV file should contain an origin, destination, and travel time**. It is crucial your file format should follow the same column headers contained in the CSV template, which can be downloaded from the popup window.
+
+![CSV upload popup window with instructions and template download option for trip data format](/images/spare-realize/simulation-mode/csv-upload-popup.png)
+
+Once you have uploaded your CSV file, **Realize will confirm it has been imported in the bottom left corner**. Your file can be seen displayed below the Demand Model.
+
+**To remove the file** as the source of your past trip data, click on the trash can icon next to the file name.
+
+![CSV file imported confirmation showing successful upload with file name and trash icon for removal](/images/spare-realize/simulation-mode/csv-file-imported-confirmation.png)

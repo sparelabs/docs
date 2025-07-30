@@ -1,0 +1,164 @@
+---
+title: "Spare Driver Changelog"
+description: "Improvements and changes to Spare Driver App"
+rss: true
+---
+
+<Update label="August 7, 2025" description="Driver App v2.72">
+  ## Introduction
+  
+  This release of the Spare Driver App introduces several key features designed to improve communication, operational awareness, and overall driver experience. Highlights include customizable Quick Replies for Driver Dispatch communication, significant enhancements to offline mode functionality and additional alerts directly in the driver app.
+
+  ## Release Timeline
+  
+  - **Phased Release Date:** July 31, 2025
+  - **Expected Full Release:** Thursday, August 7, 2025
+
+  ## New Features
+
+  ### Improved Offline Mode
+  
+  Drivers will now experience a more robust offline mode when Network is lost, ensuring critical functions remain available without connectivity.
+  
+  - Drivers can see the navigation for their next stop even after losing their connection
+  - Pickup and drop-off actions can be completed while offline and will sync with Spare Operations once connectivity is restored
+  
+  This will be available to all customers including customers using Mapbox and Google Navigation.
+
+  ### Customizable Quick Replies for Driver Dispatch Communication
+  
+  ![Quick Replies Interface](/images/changelogs/driver-quick-replies.png)
+  
+  This feature was built to make communication between drivers and dispatchers faster, clearer, and more efficient. By providing pre-set, one-tap responses, it minimizes the need for users, especially drivers on the road, to manually type out common messages. This improves safety and ensures that operational communication is quick and consistent.
+  
+  Administrators can configure these "quick replies" in Spare Operations within the **Driver-Dispatch Messaging** section. The system provides distinct configuration areas for both roles, allowing for customized message sets tailored to each user group:
+  
+  - **Dispatcher Quick Replies:** Administrators can create and manage a list of replies for dispatchers to use
+  - **Driver Quick Replies:** Similarly, a separate list of quick replies can be configured for drivers. These appear as tappable buttons in the driver's chat interface, enabling them to respond to dispatch inquiries with a single touch
+  
+  *Please reach out to your Spare representative to enable this feature.*
+
+  ### Live Alerts in Driver App
+  
+  ![Live Alerts Screenshot](/images/changelogs/driver-live-alerts.png)
+  
+  Drivers can now receive relevant alerts on the Driver App, identical to what dispatchers see on the Watchlist, to proactively improve on-time performance and reduce delays. The following alerts can now be shown:
+  
+  - **Late Pull-out:** Appears when a driver is logged in but has not started navigation after the scheduled pull-out time
+  - **Idle outside of Service Zone:** Triggers when a driver is idle or on a break outside of the designated service area
+  - **Prolonged Stops:** Shown when a pickup or drop-off creates a downstream delay of more than five minutes
+  - **Unexpected Stops:** Activates when a vehicle is stationary for over five minutes while it should be en route to a stop
+  
+  *Please reach out to your Spare representative to enable this feature.*
+
+  ### Permanently Visible Info Button
+  
+  ![Info Button Feature](/images/changelogs/driver-info-button.png)
+  
+  The "Info" button, which contains any additional rider details, is now always visible for upcoming stops, not just when the driver is close to the location. This allows drivers to access information whenever required.
+
+  ## Bug Fixes & Improvements
+  
+  This release includes several fixes to improve app stability and performance:
+  
+  - Resolved an issue where logging out did not clear local storage or stop navigation
+  - Fixed a bug that caused voice instructions to continue after the app was closed
+  - Addressed issues where dark mode was not applying to the entire application
+  - Fixed a problem preventing customers using Mapbox Navigation from loading the map
+  - Corrected an issue where connecting the tablet dock/charging pin would crash the app
+  - Ensured that back/close button colors update correctly and fixed the close button on the profile edit screen
+</Update>
+
+<Update label="February 2025" description="Driver App v2.68">
+  ## Colour contrast improvements
+  
+  ![Light Mode Map](/images/changelogs/driver-light-mode-map.png)
+  
+  Colour contrast on the map has been updated for improved readability, making it easier for drivers to see important information at a glance.
+  
+  ![Default Light Mode View](/images/changelogs/driver-default-light-mode.png)
+
+  ## Break visibility on View All Stops
+  
+  When the Show All Stops setting is enabled, scheduled breaks now appear in the all stops view with an hourglass icon, giving drivers better visibility of their complete schedule. This helps drivers see their full manifest including break times in one consolidated view.
+
+  ## Map visibility when idle (iOS)
+  
+  ![Map When Idle](/images/changelogs/driver-map-when-idle.png)
+  
+  A setting for viewing the map while the vehicle is idle is now enabled for iOS. The driver map can appear when the vehicle is idle, showing the vehicle's current location. This helps drivers maintain situational awareness even during downtime.
+  
+  *Talk to your Spare Representative if you would like this enabled for your drivers.*
+
+  ## Testing & Release Process
+  
+  This Driver App version undergoes strict testing across multiple phases:
+  
+  **Internal Testing (Phase I)**
+  - Complete tests on both Android and iOS devices testing over 100 scenarios using different configurations, settings and manifests
+  - Multi-device testing using Browserstack and SauceLabs, targeting the exact hardware and operating system configurations of our customers
+  
+  **Agency Testing (Phase II, Optional)**
+  - Opt-in phase for organizations that have opted in to early testing
+  - Select users receive an early access build and use it to perform real duties
+  
+  **Public Release (Phase III)**
+  - Once user testing is complete, the new version becomes available on the Play Store and App Store for users to download on the timeline they choose
+
+  ## Bug fixes and stability improvements
+  
+  We are releasing bug fixes and stability improvements alongside these changes to ensure a smooth driver experience.
+</Update>
+
+<Update label="December 2024" description="Driver App v2.67">
+  ## Key Changes
+  
+  This update focuses on improving the experience of drivers by addressing bugs and messaging defects:
+  
+  - **Bug fix for No-Show Timers:** Fixed countdown timer resetting unexpectedly when arrived at pickup
+  - **Increase clarity on when to start driving:** Display time until driver needs to start driving on main screen with real-time countdown
+  - **Improving performance of Driver - Dispatch Messaging on Android Devices**
+  - **Reintroducing the ability for drivers to mark multiple passengers as dropped off together**
+  - **Driver Cancellation Policies improvements**
+
+  ## Time until next pickup
+  
+  ![Start Driving Timer](/images/changelogs/driver-start-driving-timer.png)
+  
+  **Previous Behaviour:** When drivers had idle time before their next pickup, the tablet would display that they were early without making it clear when they needed to start driving.
+  
+  **New Behaviour:** The time until a driver needs to start driving is displayed on main screen and counts down in real time.
+
+  ## No-Show Timer Fixes
+  
+  **Previous Behaviour:** When arrived at a pickup, the countdown timer for when a driver should mark a rider as a No-Show would reset unexpectedly.
+  
+  **New Behaviour:** Once the countdown timer has begun, it does not reset or add time.
+
+  ## Driver - Dispatch Messaging Performance
+  
+  We've improved the performance of [Driver - Dispatch Messaging](https://help.sparelabs.com/en/articles/8967287-driver-dispatch-messaging) on Android devices, ensuring smoother communication between drivers and dispatchers.
+
+  ## Multiple Passenger Drop-off
+  
+  We've reintroduced the ability for drivers to mark multiple passengers as dropped off together, streamlining the process for shared rides and improving efficiency.
+
+  ## Driver Cancellation Policies
+  
+  Improvements to [Driver Cancellation Policies](https://help.sparelabs.com/en/articles/10355840-driver-cancellation-policies) help ensure proper handling of trip cancellations by drivers.
+
+  ## Testing & Release Process
+  
+  This release has undergone strict testing across multiple devices and operating systems:
+  
+  **Internal Testing (Phase I)**
+  - Complete tests on both Android and iOS devices testing 100+ scenarios
+  - Multi-device testing using Browserstack and SauceLabs, targeting the exact hardware and operating system configurations of our customers
+  
+  **Agency Testing (Phase II, Optional)**
+  - Opt-in phase for organizations that have opted in to early testing
+  - During this opt-in phase, select users update to v2.67 and use it to perform real duties
+  
+  **Public Release (Phase III)**
+  - Once user testing is complete, v2.67 becomes available on the Play Store and App Store for users to download on the timeline they choose
+</Update>

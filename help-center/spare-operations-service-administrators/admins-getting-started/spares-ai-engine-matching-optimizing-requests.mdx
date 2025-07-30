@@ -1,0 +1,122 @@
+---
+title: "Spare's AI Engine (Matching & Optimizing Requests)"
+description: ""
+---
+
+In this article, you will find answers to the following questions:
+
+How does Spare's Engine insert new trips into manifests? 
+
+What does Spare's Engine do to ensure existing trips are completed on-time?
+
+How do I prevent Spare's Engine from optimizing requests or a duty?
+
+# Matching RequestsSpare's Engine will match requests to duties when a new request is created, or when an existing request is rematched. To find a match, Spare’s Engine will search through all available duties to determine if there is room for the request to be inserted into existing manifests. To make that decision, the Engine uses data on the current request and the existing requests on the driver's manifest, including:
+
+The requested pick-up or drop-off time
+
+The passengers and accessibility features on the request
+
+The boarding time of the request
+
+The travel time of the request
+
+Traffic for the journey that time of day 
+
+Flexibility windows of the request
+
+The service the request was booked onto (e.g. is pooling enabled)
+
+The vehicle capacity at that time 
+
+If Spare's Engine is unable to insert a request into an existing manifest, it will try to find a match by re-arranging manifests (moving requests between drivers). It does this by running the [GOLD](#h_bb62472c13) algorithm for 8 seconds. When this is happening we display "Trying hard to find a good match" on the request creation page. 
+
+If the Engine still can't find a home for the request, the user can either [create the request as unmatched](https://help.sparelabs.com/en/articles/8994566-unmatched-requests) or use [override flexibilities](https://help.sparelabs.com/en/articles/8959245-override-flexibilities). 
+
+# Updating Pick-up and Drop-off Times If there’s a cancellation, or if a driver is running early or late, Spare's Engine will automatically update all the pick-up and drop-off times of trips on the driver's manifest to ensure they're as close to the requested pick-up or drop-off time as possible. Spare's Engine updates trips on in-progress duties every 30 seconds. Spare also updates trips on duties that were **scheduled** to start in the last 15 minutes every 30 seconds. This ensures the trips can be optimized by [GOLD](#h_bb62472c13).
+
+Spare uses the current time, the driver's current location, the estimated boarding, traffic data and travel times to update the pickup and drop-off time of requests. 
+
+# Optimizing Manifests Before Service (GO)From 7 days to 12 hours before service, Spare's Engine uses it's AI algorithm, GO (Global Optimization) to reshuffle requests between duties and ensure maximum efficiency on the day of service:
+
+Pre-Day Optimization runs once per day for customers with the base-package, and every hour for customers with Optimization Pro. 
+
+Pre-Day Optimization runs on duties in [auto accept](https://help.sparelabs.com/en/articles/8988059-creating-fleets) fleets
+
+Spare's Engine selects a group of slots within the Organization’s duties, removes them from duties, and then re-assigns them in a more efficient way (adhering to all Flexibility Constraints).
+
+Next, the algorithm checks to see if the new duty schedule for the Organization is sufficiently better than the existing one.
+
+At a minimum, there should be a 2-minute decrease in wait time for each modified duty (requests have been re-ordered, added, or removed).
+
+# Optimizing Manifests During Service (GOLD)On the day of service, Spare's Engine uses it's AI algorithm, GOLD (Global Optimization for Live Duties) to improve On-Time Performance and Efficiency. The algorithm runs on all duties in auto-accept fleets that are live or scheduled to start in the next 12 hours.
+
+GOLD runs every hour for customers with the base package, and every 5 minutes for customers with Optimization Pro.
+
+GOLD runs on duties in [auto-accept](https://help.sparelabs.com/en/articles/8988059-creating-fleets) fleets
+
+GOLD selects a group of requests within the organization’s duties and then re-assigns them more efficiently, adhering to all Flexibility Constraints.
+
+Next, GOLD evaluates whether the new duty schedule is sufficiently better than the existing one.
+
+At a minimum, there should be a 2-minute decrease in wait time for each modified duty (requests have been re-ordered, added, or removed).
+
+# **How does GOLD Identify **Requests** to Optimize? **GOLD is designed to make your routes as efficient as possible, but no one likes it when plans change unexpectedly. To keep things running smoothly, we prevent GOLD from modifying requests in some circumstances.
+
+The requests we lock in for the driver depend on a few factors, like how much wiggle room there is in the schedule. But don't worry, this doesn't stop you from adding new requests to the driver's manifest. It just means we won't swap out or remove the requests they're already close to. More details on these constraints is provided below:
+
+Constraint 1:
+
+If the next stop is in less than 10 min, it cannot be moved by GOLD.
+
+If the second stop is in less than 10 min, it cannot be moved by GOLD.
+
+Constraint 2:
+
+If the next stop is in less than 30 min, **and** the "slack time" is less than 5 minutes, it cannot be modified by GOLD. The slack time is defined as the [time left to arrive at the stop on-time] minus [the time that it will take to go to the stop]. For example, if we have to arrive at a stop in 40 minutes, and the travel time to the stop is 30 minutes, the slack time is 10 minutes.
+
+Constraint 3:
+
+If the next stop is in less than 1h **and** has been visited by the vehicle in the past hour, the stop cannot be modified by GOLD. This prevents GOLD from moving requests of the driver's manifest if a driver forgets to complete pickups or dropoffs at a previous stop.
+
+If the second stop is in less than 1h **and** has been visited by the vehicle in the past hour, the stop cannot be modified by GOLD.
+
+Constraint 4:
+
+[Bumping Constraints](https://help.sparelabs.com/en/articles/8994594-bumping-constraints)
+
+These constraints do not apply to *adding* a brand new request to a driver’s manifest, it just prevents GOLD from removing or switching the next few requests in a manifest.
+
+# **Targeted Optimization**Targeted Optimization is an algorithm specifically designed to increase on-time performance and ensure as many requests as possible get matched to a vehicle. The algorithm runs every minute on any late requests and unmatched requests in the next 24 hours.
+
+It targets requests that are either late (by at least 3 minutes) or unmatched
+
+If the algorithm finds a better match (improvement of over 2 minutes), it will make the appropriate change
+
+This algorithm is designed to be mostly invisible to users and reduce the amount of manual action needed to keep requests on time.
+
+The algorithm will stop trying to rematch unmatched requests once the requested time is more than 1 hour ago
+
+Targeted Optimization can also optionally be enabled for any Open Fleets if available in your service. Read more [here](https://help.sparelabs.com/en/articles/11036845-targeted-optimization-for-open-fleets).
+
+Targeted Optimization requires services to be using the **"Consistent Pickup/Dropoff Windows"** flexibility type. Requests attached to services using "**Variable Pickup/Dropoff Windows**" are not optimized by Targeted Optimization. 
+
+# Automatic Overrides**Automatic Overrides are advanced functionality. Talk to your Spare Representative if you would like to enable Automatic Overrides. **
+
+- If enabled, Spare Engine can situationally override the flexibility limits of requests, just like a human dispatcher would. Using Automatic Overrides allows Spare Engine to move trips more aggressively, which can significantly improve overall OTP. Your Spare Representative can configure an automatic override limit with you so that Spare Engine will not override trips by more than you'd allow a human dispatcher to.
+
+# How do I stop GO or GOLD from optimizing a request or duty?You can prevent GO and GOLD from optimizing a manifest using [Pause Duty](https://help.sparelabs.com/en/articles/8959723-pausing-duties). You can prevent GO and GOLD from moving a specific request using [Lock to Duty](https://help.sparelabs.com/en/articles/8967347-locking-requests-to-duties). 
+
+# FAQ**What factors does Spare's AI Engine consider when moving trips between drivers?**
+
+- Spare's AI Engine is always trying to get every rider as close as possible to their desired pick-up or drop-off time. On-top of this, it also considers Detour Time, Driving Time, Walking Distance and Fleet and  Service Priorities. 
+
+**A trip was just added into a driver’s manifest and it made them change routes quickly. Why didn’t the GOLD constraints prevent this?**
+
+- GOLD's constraints just prevent GOLD from rearranging trip manifests by removing or switching requests. It *does not* prevent a totally new trip being added to a manifest, or an existing trip on the manifest being re-ordered. So if our trip creation algorithm or GOLD sees a big gap at the start of a duty and thinks it can fit something there (without violating anyone else's constraints), it often will.
+
+**What would happen to prescheduled trips after GO is enabled?**
+
+- Once GO is enabled any trips booked in the future are able to be optimized within their flexibility windows.
+
+#

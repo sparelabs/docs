@@ -1,0 +1,62 @@
+---
+title: "What is an AI Outcome"
+description: "Learn how outcomes are defined and measured for rider AI agents, including types of actions and counting rules"
+---
+
+# Overview
+
+An outcome is measured as a successfully performed action by the AI agent. Outcomes help track the effectiveness and usage of your AI agents.
+
+## Types of AI Outcomes
+
+The AI agent can currently achieve the following outcomes:
+
+<CardGroup cols={2}>
+  <Card title="Trip Management">
+    - Check an ETA of a trip
+    - Cancel a trip
+    - Book a trip
+  </Card>
+  <Card title="Account Services">
+    - Add a payment method
+    - Leave a rider review
+    - Rider registration
+    - Check status of eligibility application
+  </Card>
+</CardGroup>
+
+<Info>
+More outcome types are continuously being added to expand AI agent capabilities.
+</Info>
+
+## Outcome Counting Rules
+
+Understanding how outcomes are counted is important for accurately measuring AI agent performance:
+
+<Accordion title="Multiple Outcomes Per Call">
+Multiple outcomes can occur within a single call. For example, if a rider asks for an ETA check and then books a trip shortly after, this counts as **2 outcomes**.
+</Accordion>
+
+<Accordion title="Trip Cancellations">
+When a rider cancels a trip, the AI typically reads out upcoming trips to confirm which one to cancel. This interaction counts as **2 outcomes**:
+1. Reading the trip list
+2. Canceling the selected trip
+</Accordion>
+
+<Accordion title="Multiple Actions">
+Riders can perform multiple actions of the same type per call:
+- Canceling multiple rides = one outcome per ride canceled
+- Booking multiple rides = one outcome per ride booked
+</Accordion>
+
+<Accordion title="ETA Check Clarifications">
+Each time the AI performs an ETA check, it counts as a separate outcome, even if the rider asks for clarification or requests the same ETA multiple times.
+</Accordion>
+
+<Accordion title="Single Trip, Multiple Details">
+If a rider requests an ETA check and the AI reads out multiple trips in response, this counts as only **1 outcome**.
+</Accordion>
+
+<Warning>
+Calls containing outcomes can still be transferred to a Customer Service Representative (CSR). This transfer capability sometimes causes confusion when analyzing AI voice data, as successful outcomes may still result in human handoffs.
+</Warning>

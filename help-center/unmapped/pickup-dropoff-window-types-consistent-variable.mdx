@@ -1,0 +1,164 @@
+---
+title: "Pickup & Dropoff Window Types: Consistent & Variable"
+description: ""
+---
+
+This is a new service configuration that allows customers to change how pickup and dropoff windows work for scheduled requests only.  It allows pickup/dropoff windows to work in a new way that is more intuitive and a much better fit for ADA compliance.
+
+Using this service setting provides the following value to customers:
+
+## **Less confusing for agents and riders**
+
+- The information that we display in the admin panel on estimates & requests is more intuitive for users to understand.
+
+The ‘estimated’ time on the estimate can now be guaranteed to the rider before the booking agent presses ‘create request’. **This stops situations like:**
+
+- Rider asks for 9 am pickup
+
+System estimates 9:15 am
+
+The agent negotiates a 9:15 am - 9:45 am window and the rider agrees
+
+The agent presses ‘create request’
+
+The request is created with a window of 9:30-10 am, not what the rider agreed to. ​
+
+OTP windows now remain the same when a trip is rematched or goes into service disruption 
+
+## **Better compliance with ADA Regulations**This service configuration greatly improves OTP accuracy for Paratransit because these agencies **do not negotiate arrive-by times.** If the rider requests to be dropped off by 4 pm, the **OTP window should always be 3:30-4pm.** 
+
+Previously our system would always try to negotiate on behalf of the agency for arrive-by trips.
+
+The accuracy of the ‘Originally Requested Pickup Time’ tracked in our system is improved when riders negotiate. Previously, booking agents needed to overwrite the originally requested pickup time in order to negotiate. e.g:
+​
+
+If the rider asks for 9 am pickup
+
+The system gives a 9:45 am estimate, and the agent communicates this to them.
+
+The rider says they have to leave by 9:30 am.
+
+The only way for the agent to find a new time is to **change the initially requested pickup time**, but Paratransit agencies need to keep track of this for FTA reporting. This new service setting introduces functionality that ensures the **Originally Requested Pickup Time** of the rider is tracked on the request & ridership report. 
+
+## **What does it look like for customers/users?**You can make use of a user guide to help a user get a complete understanding of a feature or a product. 
+
+For example, this is how a user guide might look for using an article template
+
+When configuring a service, in the Pickup Windows and Flexibilities section, there’s a new setting:
+
+![](https://downloads.intercomcdn.com/i/o/1036541758/ad12930794c9c389de39486d/Screenshot+2024-02-16+at+8_33_10%E2%80%AFAM.png?expires=1753820100&signature=858cfe3e4b4ddee34f091b9f3433a97e31960c766b76600bb514db81e5e6d55f&req=dSAkEMx6nIZaUfMW1HO4zUbhsL7tGNgR6gpJl3%2FpVI7ez9TLrFsCQHTk4gaD%0Axgw%2F%0A)
+
+# How does each setting work?## Consistent Pickup & Dropoff Windows in Spare LaunchThis is the new option.  We’ll also explain with an example. 
+
+Say we have a service configured with **-0 mins/+30 mins of flexibility:**
+
+**Note - There’s no search flex vs. accepted flex anymore, just the one type of flexibility!**
+
+**Creating the estimate**
+
+- Say the rider asks to be picked up at 11 am. The estimate will search for a pickup anywhere from 11 am to 11:30 am
+
+If we estimate an 11:25 am pickup.  The “accepted window” is still 11 am-11:30 am. **Note how it’s no longer centered around the “initially scheduled time” (11:25 am)**, it’s centered around the requested time (11 am). The OTP window is displayed on the estimate:  
+
+![](https://spare-74fa64f80617.intercom-attachments-1.com/i/o/965454578/28da5f32b9f57dfa58e88233/EDgJVbqYoYHoZxZtm2GGsL9g9hGm58QfeA.png?expires=1753820100&signature=2ad1f83eb9a1bf1315f81f5d8a065228ef7c0f7c117bf1b8aead98b4e0d6a0c4&req=fSYiEsx6mIZXFb4f3HP0gBZRxsVHTWMVrowv1xWiGp6cpA8DEiE7KQlaDD0y%0AeYU%3D%0A)If the system can’t find a spot between 11 and 11:30 am then it will return a “no driver’s available” estimate and [alternative trip options](https://help.sparelabs.com/en/articles/8978820-using-alternative-trip-times). 
+
+**Negotiating the pickup/dropoff time:**
+​
+
+Say the rider originally asks for 2 pm pickup, but nothing is available then (you get a “no driver’s available” estimate). To help you negotiate, Spare's Engine will automatically search for alternative trip times that are available, and display them beneath the estimate. Learn how to configure alternative trip times. 
+
+![](https://downloads.intercomcdn.com/i/o/1047631105/1261ec3e9ad4ce572830a476/image.png?expires=1753820100&signature=bc5cf0b5fc80675df5e51a0284fb9163865ade1b631301d85c25bce5196cbfdd&req=dSAjEc99nIBfXPMW1HO4zUQr5TUYD6TvdHzcl792DZrDV3Dr4UEEFna8IiaX%0AjOtj%0A)
+​
+
+**Creating the request:**
+​
+
+When you press create request, we continue looking for a spot in the 11-11:30 am window. One of two things will happen:
+
+The request is successfully created
+
+![](https://spare-74fa64f80617.intercom-attachments-1.com/i/o/965454614/3f5245d8ade4305d00db82a1/Eu7I-866Zy-PP2drdXEgUZvzu8CUzLc8Fg.png?expires=1753820100&signature=961a9488e187b4da41ac4bd7e03325a6170591403d15ab94929222363527329e&req=fSYiEsx6m4BbFb4f3HP0gEMEJAJLp78aMMoY7CBuG%2F%2FoAmmm%2Bk%2F1RynZK82C%0Axw0%3D%0A)OR the spot from the estimate no longer exists (another rider may have taken it). In this case, the trip will stay in processing and eventually go to NDA. The user must then rematch the trip and search for alternative pick-up windows by changing the requested leave time.
+
+## **How Engine Optimizes within the windows:**For Leave-
+
+At trips:
+
+We always try to get the trip as close to the ‘Requested Pick Up Time’ as possible. In this example, the system is shooting for 11 am but can move the trip between 11 am and 11:30 am to accommodate other trips.
+
+For Arrive-By trips:
+
+**If the arrive-by flexibility is >20 minutes:**
+
+- We prefer to drop the rider off **20 minutes before their requested time**, but it’s just a preference, it could be any time in the window. For example, if the rider has a 10-10:45 am drop-off window, we’ll aim for 10:25 am.
+
+**If the arrive-by flexibility is ≤20 minutes:**
+
+- We prefer to drop the rider off at the start of their drop-off window, but it’s just a preference, it could be anytime in the window. For example, if the rider has a 10-10:20 am drop-off window, we’ll aim for 10 am.
+
+## **Rematching the request**If you **don’t change the requested time,** the first match after the rematch becomes the new initially scheduled time, say 11:10 am. But the “accepted window” is still 11 am-11:30 am, as it’s based on the requested time, not the initially scheduled time. If we can’t find a spot for the trip between 11 am-11:30 am, **the trip may go to ND
+
+A if a dispatcher doesn’t manually intervene.**​
+
+If you change the requested pickup time to say, 12pm, then the “accepted window” would shift to 12-12:30 pm (as it’s based on the requested pickup time). 
+
+## **Cancelling a duty**If the duty the trip is assigned to is cancelled, the trip will go into Service Disruption while we try to find a new home for it. When we find a new home, the initially scheduled time of the trip updates, to say 11:10 am. But the “accepted window” is still 11 am-11:30 am, as it’s based on the requested time, not the initially scheduled time. If we can’t find a spot for the trip between 11 am-11:30 am and 11:30 am, **the trip may go to ND
+
+A if a dispatcher doesn’t manually intervene. **
+
+## Consistent Pickup & Dropoff Windows in Spare Rider & WebSay we have a service configured with **-0 mins/+30 mins of flexibility. **When a rider requests a trip for 9am, we will try to find a trip between 9am and 9:30am and display this in the estimate. If the system cannot find a trip at this time, Spare's Engine will search for alternative trip times. The number of alternative times considered is set by the '[Alternative Trip Options](https://help.sparelabs.com/en/articles/8978820-using-alternative-trip-times)' setting. If an alternative time is found, Spare's 
+
+Engine will automatically display the closest alternative trip time to the rider. 
+
+## Variable Pickup & Dropoff WindowsThis is the default and how pickup/dropoff windows used to work. 
+
+If we have a service configured with **variable windows**, with **leave at search flex +30 mins**, and **leave at accepted flex -0 mins/+30 mins:**
+
+**Creating the estimate:**
+Say the rider asks to be picked up at 9 am. We could initially schedule the pickup for anywhere from 9 am to 9:30 am (based on the search flex). Let's say we get an estimate for 9:28 am. Using this service setting, the OTP window for this estimate will be based on the initially estimated pickup time - 9:28-9:58 am. However, this is not displayed on the estimate. On the estimate you see the Search Flex Window:
+​
+
+![](https://spare-74fa64f80617.intercom-attachments-1.com/i/o/965454542/fe8791872a50caf649420303/oFftt_d52XKsogdR-_ZUA1EOr31NJovO-g.png?expires=1753820100&signature=1812652c31fbc1a3c10c2c5bc0b3ada3f4e47a0326ed6959a54bf23d457cc7b2&req=fSYiEsx6mIVdFb4f3HP0gBHel8xkjE94smiU%2BuHoEIGWSQ2LajojJLKJ0xzQ%0A4Ws%3D%0A)​
+
+**Negotiating the pickup/drop-off time:
+​**The negotiation is automatic (using the search flexibility). If the rider doesn’t like the 9:28 am estimate (and the resulting 9:28 am - 9:58 am OTP window), the booking agent must update the requested time in order to get a new estimate.
+
+**Creating the request:**
+
+- When you press create request, we first use the search-flex window based on the requested time (9 am to 9:30 am) to try and find a spot for the trip. Three things could happen:
+
+The spot from the estimate (9:28 am) still exists, and the request is booked for that time. The OTP window is (9:28 am-9:58 am). As more bookings come in, if we need to move the pickup around to fit them, we can move the pickup any time from 9:28 am to 9:58 am
+
+![](https://spare-74fa64f80617.intercom-attachments-1.com/i/o/965454560/3c5c1192095716abdea4666a/sUCWJuZmkxuOcq4o_rET7biVXzowFB5JTw.png?expires=1753820100&signature=c5b9259814a7ce4819d31b82f3c9c48bc47e7c528e8d9f200b1f30f493e13f1c&req=fSYiEsx6mIdfFb4f3HP0gBTWMRv%2FWQp5lQ0wurqiNBRzNLleyqxWQqvih4G4%0AIBQ%3D%0A)
+
+2. The spot from the estimate is taken but there’s another spot within the 9 am to 9:30 am search window, say 9:10, and the trip is created with a 9:10-9:40 window.
+
+3. There is no spot available in the 9 am to 9:30 am window. The trip will stay in processing and eventually result in an NDA. The agent must edit and rematch the trip to find a new time.
+​
+
+**Note that in the 2nd scenario, it’s possible for the request to have a different OTP window to the estimate **
+
+## **How Engine Optimizes within the windows**For Leave-
+
+At trips:
+
+**When the estimate or request is being created:** We use the Search Flex window, and the Engine tries to get the trip as close to the ‘Requested Pickup Time’. In the scenario above, the system is trying to book a trip for 9 am but can book it anywhere between 9 am and 9:30 am.9 am
+
+**After the trip is created:** After the trip has been created, we try to get the trip as close to the ‘Initial Scheduled Pickup Time’ as possible. In this example, when the trip has been created, the system is shooting for 9:28 am but can move the trip between 9:28 am and 9:58 am to accommodate other trips.9:58 am
+​
+
+For Arrive-By trips:
+
+If we have a 30-minute arrive-by-search** flex and 30 minute arrive-by-accepted flex:**
+​
+
+**When the estimate or request is being created:** We minus 5 minutes from the requested drop-off time, and then base the Search Flex window off this time. If the rider requests a 4 pm drop-off. We try to find them a drop-off at 3:55, but we’ll optimize anywhere between 3:25-3:55 pm.
+
+**After the trip is created:** After the trip has been created, we try to get the trip as close to the ‘Initial Scheduled Dropoff Time’ as possible. If the rider requested a 4 pm drop-off, and a trip was created with a 3:45 pm drop-off. Our system is aiming for 3:45, but it can move the trip up to 3:15 if required.​
+
+## **Rematching the request****If the request is rematched, it goes into ‘processing’ while we try to find a new spot for it. During this process, we follow the same steps as request creation. 
+
+This means that the ‘accepted window’ (9:28-9:58) can change.**
+
+## ## **Cancelling a duty****If the duty the request is matched to is canceled. The trip goes into service disruption and we’ll try to find a new home for it. 
+
+We follow the same steps as [request creation](https://sparelabs.freshdesk.com/7a9ed321208041c193c8bf961a0c9cd9?pvs=25#2ca8aaaa9e0d4485adf5dc1e9eb8d812). This means that the ‘accepted window’ (9:28-9:58) can change.**
