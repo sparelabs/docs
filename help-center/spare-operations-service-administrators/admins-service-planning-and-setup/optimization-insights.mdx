@@ -1,47 +1,40 @@
 ---
 title: "Optimization Insights"
-description: ""
+description: "Learn how to use Optimization Insights to simulate and analyze how service changes would affect trip performance and system efficiency."
 ---
 
 ![](https://spare-74fa64f80617.intercom-attachments-1.com/i/o/972670211/52a6d7add0ed017ced2b93b7/odgF55WIrHMFURND7IY4fUmIb41FxIe7Ow.png?expires=1753820100&signature=c259cd4fab337ea91993b49e679a0fb142f708d48929c3c03ae96f3a3a13b431&req=fSclEM5%2Bn4BeFb4f3HP0gFPRxl66ugXAXMRalvvEn8JPWN%2Fuewh0rSTyl3XI%0A%2F0c%3D%0A)
 
 In this article, you will find answers to the following questions:
 
-What is Optimization Insights, and what's its value?
-
-What does it look like?
-
-How do I get this feature enabled for my service?
+- What is Optimization Insights, and what's its value?
+- What does it look like?
+- How do I get this feature enabled for your service?
 
 ![](https://spare-74fa64f80617.intercom-attachments-1.com/i/o/972670213/371598b529be255263b6e8f7/k783tccYqaW5JR8V20JH2VmBf2RF_KVdtw.png?expires=1753820100&signature=8392d43a4208c7f76e4b8f102a01ada7c974150025dfebe185f68718bc48fd09&req=fSclEM5%2Bn4BcFb4f3HP0gHmxDQJrAhO2pJZO1POl03ufXLwDTD3rqHkZU192%0AppU%3D%0A)
 
-## What is Optimization Insights, and what's its value?Optimization Insights is a simulation tool** **that lets customers analyze how a previous day’s trips would have gone if the 
+## What is Optimization Insights, and what's its value?
 
-X setting was changed.
+Optimization Insights is a simulation tool that lets you analyze how a previous day's trips would have gone if the X setting was changed.
 
 Many Spare settings impact rider experience and system efficiency:
 
-Duty schedules (how many duties, when they're scheduled, etc.)
-
-Flexibility windows (accepted flex, detour flex, etc.)
-
-Fleet sliders
-
-The driving speed multiplier
-
-Boarding times
+- Duty schedules (how many duties, when they're scheduled, etc.)
+- Flexibility windows (accepted flex, detour flex, etc.)
+- Fleet sliders
+- The driving speed multiplier
+- Boarding times
 
 Optimization Insights aims to let you get to an ideal configuration much faster, with much less pain. **It enables you to answer questions like, "If I changed settings X and Y, how would last Thursday have worked out?"**
 
-- There are two processes the Optimization Insights feature relies on:
+There are two processes the Optimization Insights feature relies on:
 
-Gathering data about duties/requests from the past day
+1. Gathering data about duties/requests from the past day
+2. Running [Global Optimization](https://help.sparelabs.com/en/articles/8946518-spare-engine-go-gold-and-targeted-optimization) on the day's duties/requests, but with changes to service settings, fleet settings, number of duties, or driving speed, so you can see the impact the settings changes would have
 
-Running [Global Optimization](https://help.sparelabs.com/en/articles/8946518-spare-engine-go-gold-and-targeted-optimization) on the day's duties/requests, but with changes to service settings, fleet settings, number of duties, or driving speed, so you can see the impact the settings changes would have
+## What does it look like, and how does it work?
 
-## What does it look like, and how does it work?To access Optimization Insights, select **Service Planning** and click **Optimization 
-
-Insights**.
+To access Optimization Insights, select **Service Planning** and click **Optimization Insights**.
 
 ![](https://spare-74fa64f80617.intercom-attachments-1.com/i/o/972670214/b1a5740e3b673a370c2ffac3/TTC6kdx3MfPgI57mS9hWQI2dUGUrwpMYzA.png?expires=1753820100&signature=f42e755e9a6b3342ff2efa078bbf765d2a5a37ee4f4fa34c57d5512cf30dccdd&req=fSclEM5%2Bn4BbFb4f3HP0gCrBGXagtJl6J9BIfPYXSvteqUEun3c85JkEwIHh%0AtAA%3D%0A)
 
@@ -57,21 +50,11 @@ Results will show a comparison between the simulation result and the past value 
 
 ![](https://spare-74fa64f80617.intercom-attachments-1.com/i/o/972670223/53db5e31cb9f0591c9cb1ae8/MXEiGd4s9uMk5oe53CQP_xfuBE98NcNT1A.png?expires=1753820100&signature=c622e08f39a88eab5c44cee28ee07487600def3ec0ebe844620fb25a2153f74f&req=fSclEM5%2Bn4NcFb4f3HP0gLD0kXkkWnIWxn4Wv2O%2Bnc6FYsG0Tauw%2BJamNw1d%0Aus0%3D%0A)
 
-## **
+## What does each of the results mean?
 
-- What does each of the results mean?**
-
-**Boardings Per Vehicle Hr. **
-
-- The mean number of Completed Boardings for each hour that the vehicle was scheduled
-
-**Duties **
-
-- The number of duties scheduled on the day in question.  This will only ever change if you make use of the “Duty Reduction Percentage” feature.
-
-**Pooled Trips Ratio **
-
-- Percentage of trips where a passenger shared their ride with another passenger (that isn't included in their request). 
+- **Boardings Per Vehicle Hr.:** The mean number of Completed Boardings for each hour that the vehicle was scheduled
+- **Duties:** The number of duties scheduled on the day in question. This will only ever change if you make use of the "Duty Reduction Percentage" feature
+- **Pooled Trips Ratio:** Percentage of trips where a passenger shared their ride with another passenger (that isn't included in their request) 
 
 For example, if Susie books a trip with Jim, this isn't a pooled trip. But if Susie books a trip and Jim separately books a trip and they ride together, this is pooling. 
 
@@ -103,7 +86,9 @@ Arrive-By requests use dropoff time instead of pickup time.
 
 E.g. if we could get drive you directly from your pickup to dropoff in 20 minutes, but due to pooling-related detours, it’ll take 35 minutes, and detour time is 15 minutes.
 
-## Are there any limitations to using Optimization Insights? **Note:** Currently, Optimization Insights uses Global Optimization Data from a single day. It takes into account all completed duties/requests and runs a Global Optimization on the current settings. 
+## Are there any limitations to using Optimization Insights?
+
+**Note:** Currently, Optimization Insights uses Global Optimization Data from a single day. It takes into account all completed duties/requests and runs a Global Optimization on the current settings. 
 
 Because every day varies slightly, we advise running simulations on data from multiple different days to reduce the likelihood of anomalies.
 
@@ -111,34 +96,24 @@ Often, agencies judge success based on OTP (On-Time Performance). This is curren
 
 There is currently no way to save or view past simulations. 
 
-## F
+## FAQ
 
-AQ#### **How does the optimization insights tool gather the "Past Value" data? It seems to vary each time, even with the same inputs.**It uses completed duties/requests. 
+#### How does the optimization insights tool gather the "Past Value" data? It seems to vary each time, even with the same inputs?
+
+It uses completed duties/requests. 
 
 It is normal that you get slightly different results each time - it runs a 75 second “global optimization” on the current settings and the altered settings each time, and “global optimization” is non-deterministic, as in it won’t always come up with the exact same answer.
 
 Subsequent runs don’t affect each other, but if you keep running over and over again with the same settings, you will get slightly different results each time. They should be similar, but not exactly the same.
 
-#### Are there particular types of organizations where Optimization Insights works best? Yes, Optimization 
+#### Are there particular types of organizations where Optimization Insights works best?
 
-Insights will yield the most accurate results for: 
+Yes, Optimization Insights will yield the most accurate results for:
 
-Larger organizations (10+ daily duties, the more the better). If there are too few duties, there isn't much to change / optimize. 
-
-Organizations that want to optimize their auto-accept fleets. Because Optimization Insights doesn't take into consideration accept/reject fleets or Open Fleets, organizations who rely heavily on these will not have actionable results. 
-
-Organizations that have fairly "homogenous requests". This means that most requests can fit on most duties / vehicles. 
-
-e.g. if for 70%+ of requests, it’s possible for that request to match to 70%+ of duties active at the time of the request, this is a good fit for Optimization Insights
-
-Highly subdivided setups (a tonne of disconnected zones, kept fully separate from one another by service/fleet/zone setups) are not a good fit for Optimization Insights
-
-Organizations that don't make heavy use of fixed routes in Spare. 
-
-Organizations that are interested in fleet efficiency rather than increasing demand. This tool can help to cut shifts, pool more, etc, but it does not give tips on how to get *more* trips in the first place. 
-
-It only considers requests that were completed, and how you could have served those requests better
-
-For now, it doesn’t consider things riders who looked for an estimate, but didn’t book (because they got an NDA on the estimate, or the wait time was too long, or …), which tends to be the focus of orgs looking to increase demand
+- **Larger organizations** (10+ daily duties, the more the better). If there are too few duties, there isn't much to change / optimize
+- **Organizations that want to optimize their auto-accept fleets.** Because Optimization Insights doesn't take into consideration accept/reject fleets or Open Fleets, organizations who rely heavily on these will not have actionable results
+- **Organizations that have fairly "homogenous requests".** This means that most requests can fit on most duties / vehicles. For example, if for 70%+ of requests, it's possible for that request to match to 70%+ of duties active at the time of the request, this is a good fit for Optimization Insights. Highly subdivided setups (a tonne of disconnected zones, kept fully separate from one another by service/fleet/zone setups) are not a good fit for Optimization Insights
+- **Organizations that don't make heavy use of fixed routes in Spare**
+- **Organizations that are interested in fleet efficiency rather than increasing demand.** This tool can help to cut shifts, pool more, etc, but it does not give tips on how to get *more* trips in the first place. It only considers requests that were completed, and how you could have served those requests better. For now, it doesn't consider things riders who looked for an estimate, but didn't book (because they got an NDA on the estimate, or the wait time was too long, or …), which tends to be the focus of orgs looking to increase demand
 
 If your organization fits all the criteria above, this will be a great tool! If you're unsure, please speak to your Spare Representative to learn more.

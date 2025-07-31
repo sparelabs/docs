@@ -3,13 +3,19 @@ title: "Setting up Disaster Recovery Backups"
 description: "All about the email and driver backups that allow you to maintain operations during a disaster."
 ---
 
-# About this FeatureSpare backups provide layers of redundancy to enable uninterrupted transit operations during system outages. 
+## About this Feature
 
-# How Does it Work?The Disaster Response backup system has two parts: backup files for dispatchers that maintain a record of every in-progress and upcoming trip and a driver view that can be accessed while on the road.
+Spare backups provide layers of redundancy to enable uninterrupted transit operations during system outages. 
+
+## How Does it Work?
+
+The Disaster Response backup system has two parts: backup files for dispatchers that maintain a record of every in-progress and upcoming trip and a driver view that can be accessed while on the road.
 
 Backups are created on a frequency determined by each agency, and stored in a separate data environment. If the primary data environment is temporarily unavailable, the backups can be used to continue operating. This backup source can be accessed by either dispatcher-facing email links or a driver-facing web interface.
 
-## Dispatcher BackupsAn authorized access link will be sent to the specified recovery email address every 12 hours. This link will connect to the most recently generated backup for as long as the link is active. 
+### Dispatcher Backups
+
+An authorized access link will be sent to the specified recovery email address every 12 hours. This link will connect to the most recently generated backup for as long as the link is active. 
 
 Note that links expire 24 hours after they are generated to reduce the risk of misuse.
 
@@ -19,7 +25,9 @@ Once a backup has been downloaded, dispatchers can use it to review in-progress 
 
 Read this [guide to using dispatcher backup files](https://help.sparelabs.com/en/articles/10263338-using-dispatch-backup-files) to learn more. 
 
-## Driver BackupsDriver-specific backups can also be accessed by logging in to a web app. 
+### Driver Backups
+
+Driver-specific backups can also be accessed by logging in to a web app. 
 
 Drivers will need to enter their driver username, as well as your organization key and driver backup password, at which point they will be able to view a backup of their manifests. 
 
@@ -31,13 +39,15 @@ For more information, refer to the following guide by clicking on the image belo
 
 Read this [guide to using the driver backup interface](https://help.sparelabs.com/en/articles/10263309-using-the-driver-backup-interface) to learn even more!
 
-# How Do I Set It Up?Only users with Administrator permissions can update Backup Settings.
+## How Do I Set It Up?
+
+Only users with Administrator permissions can update Backup Settings.
 
 Navigate to Settings > Organization, and scroll to the bottom of the page. 
 
 ![](https://downloads.intercomcdn.com/i/o/wyxobwoi/1253597936/a9015793acecb95a84987cd1f2dd/Screenshot+2024-11-15+at+10_32_26%E2%80%AFAM.png?expires=1753820100&signature=67ea8404e0f56f1bda98e4111041145856af7131796ea82364333357d97f9c6a&req=dSIiFcx3mohcX%2FMW1HO4zSAKnOuxCDueu8i1fJ5MZqQwPmbsdDCKQsU%2BXlxy%0AS9FB%0A)
 
-2. Under Edit Backup Settings Detail, fill in the necessary information. 
+1. Under Edit Backup Settings Detail, fill in the necessary information. 
 
 Note: all fields must be filled out for backups to be successfully generated.
 
@@ -50,8 +60,12 @@ For more information, refer to the following guide by clicking on the image belo
 
 ​
 
-# Frequently Asked Questions**When changing the Backup Setting, how long does it take for a new backup to be created?**
-New backups take an average of 5 minutes to be created. The Last Backed Up field may update before your changes take effect. 
+## Frequently Asked Questions
+
+**When changing the Backup Setting, how long does it take for a new backup to be created?**
+
+New backups take an average of 5 minutes to be created. The Last Backed Up field may update before your changes take effect.
 
 **Are the backups hosted in the same data region as my main organization?**
+
 No. Your Spare organization and backups are hosted in different data regions–eg: US East and US West–so that if your primary region is disrupted, the backup will still be available.
