@@ -1,0 +1,134 @@
+---
+title: "Multimodal Journey Enhancements"
+description: "Learn about new transportation modes and journey options available in the multimodal service"
+---
+
+The Spare multimodal service has been enhanced to support additional transportation modes, providing riders with more comprehensive journey planning options.
+
+## New Transportation Modes
+
+### Bicycle Support
+
+The multimodal service now includes **bicycle** as a supported mode of transport in journey leg responses. This enhancement allows for more comprehensive trip planning that incorporates cycling as part of multimodal journeys.
+
+<Info>
+Bicycle mode is automatically included in journey planning calculations where appropriate, based on distance, terrain, and available cycling infrastructure.
+</Info>
+
+### How Bicycle Mode Works
+
+When planning multimodal journeys, the system now considers bicycle transportation for:
+- **First/last mile connections**: Cycling to or from transit stops
+- **Short-distance segments**: Direct cycling routes for shorter distances
+- **Alternative routing**: Bicycle options when other modes are unavailable
+
+### Journey Response Format
+
+The multimodal API now returns bicycle as a possible journey leg mode:
+
+```json
+{
+  "journeyLegs": [
+    {
+      "mode": "bicycle",
+      "distance": 2.5,
+      "duration": 12,
+      "instructions": "Cycle north on Main Street for 2.5km"
+    }
+  ]
+}
+```
+
+## Benefits for Riders
+
+<CardGroup cols={2}>
+  <Card title="Comprehensive Planning" icon="map">
+    More complete journey options that include cycling as a viable transportation mode.
+  </Card>
+  
+  <Card title="Flexible Routing" icon="route">
+    Alternative routing options when traditional transit modes are limited or unavailable.
+  </Card>
+  
+  <Card title="Sustainable Options" icon="leaf">
+    Environmentally friendly transportation choices integrated into journey planning.
+  </Card>
+  
+  <Card title="Cost Effective" icon="dollar-sign">
+    Free transportation option for appropriate distances and conditions.
+  </Card>
+</CardGroup>
+
+## Configuration
+
+Bicycle mode is automatically enabled in the multimodal service and requires no additional configuration. The system intelligently determines when to include bicycle options based on:
+
+- **Distance thresholds**: Appropriate cycling distances
+- **Infrastructure availability**: Presence of bike lanes or cycling paths
+- **Weather conditions**: Current and forecasted weather
+- **User preferences**: Rider's transportation mode preferences
+
+## API Integration
+
+For developers integrating with the multimodal API, bicycle mode appears alongside other transportation modes in journey responses. No changes to existing API calls are required - the enhanced mode options are automatically included in responses where applicable.
+
+<Accordion>
+  <AccordionItem title="Example API Response">
+    ```json
+    {
+      "journey": {
+        "legs": [
+          {
+            "mode": "bicycle",
+            "startLocation": {
+              "lat": 43.6532,
+              "lng": -79.3832
+            },
+            "endLocation": {
+              "lat": 43.6555,
+              "lng": -79.3790
+            },
+            "distance": 1.2,
+            "duration": 6,
+            "instructions": "Head east on Queen Street"
+          },
+          {
+            "mode": "transit",
+            "route": "Line 1 Subway",
+            "duration": 15
+          }
+        ]
+      }
+    }
+    ```
+  </AccordionItem>
+</Accordion>
+
+## Best Practices
+
+<Steps>
+  <Step title="Consider User Context">
+    Bicycle options work best when users have indicated cycling as an acceptable mode or when other options are limited.
+  </Step>
+  
+  <Step title="Weather Awareness">
+    Consider weather conditions when promoting bicycle options to users.
+  </Step>
+  
+  <Step title="Safety First">
+    Ensure bicycle routing prioritizes safe cycling infrastructure where available.
+  </Step>
+  
+  <Step title="Clear Communication">
+    Provide clear information about cycling segments including distance and estimated time.
+  </Step>
+</Steps>
+
+## Future Enhancements
+
+The multimodal service continues to evolve with additional transportation modes and enhanced journey planning capabilities. Future updates may include:
+
+- Electric scooter integration
+- Walking path optimization
+- Real-time bicycle availability (bike share systems)
+- Weather-based mode recommendations

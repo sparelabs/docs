@@ -1,0 +1,176 @@
+---
+title: "Managing Object Links in Cases"
+description: "Learn how to link objects like Riders, Drivers, and Duties to Resolve cases for better case management"
+---
+
+Object links allow you to connect Resolve cases to other objects in the Spare ecosystem, such as Riders, Drivers, Duties, and more. This feature helps you maintain context and relationships between cases and the entities they involve.
+
+<Note>
+Object links are only available for Resolve cases. Eligibility cases do not support object linking.
+</Note>
+
+## Overview
+
+Object links provide a way to:
+- Associate cases with relevant riders, drivers, or duties
+- Maintain context about which entities are involved in a case
+- Enable better case tracking and management
+- Improve case resolution workflows
+
+## Managing Object Links via Admin Interface
+
+### Adding Object Links to Case Templates
+
+When setting up case templates, you can configure which types of objects can be linked to cases of that type.
+
+<Steps>
+  <Step title="Navigate to Case Setup">
+    Go to **Spare Engage** → **Case Types** and select the Resolve case type you want to configure.
+  </Step>
+  
+  <Step title="Configure Object Links">
+    In the Case Setup page, locate the **Object Links** section. This section only appears for Resolve case types.
+  </Step>
+  
+  <Step title="Add Link Types">
+    Click **Add object link** to open the configuration dialog. Select from available object types:
+    - Riders
+    - Drivers  
+    - Duties
+    - Other system objects
+  </Step>
+  
+  <Step title="Reorder Links">
+    Use drag-and-drop to reorder the object link types as needed for your workflow.
+  </Step>
+  
+  <Step title="Save Configuration">
+    Save your case type configuration to apply the object link settings.
+  </Step>
+</Steps>
+
+### Managing Links on Individual Cases
+
+Once object links are configured for a case type, you can manage links on individual cases.
+
+<Accordion>
+  <AccordionItem title="Adding Links to a Case">
+    1. Open the specific Resolve case
+    2. Navigate to the Object Links section
+    3. Click **Add Link** and select the object type
+    4. Choose the specific object (rider, driver, etc.) to link
+    5. Save the case to apply the link
+  </AccordionItem>
+  
+  <AccordionItem title="Viewing Linked Objects">
+    All objects linked to a case are displayed in the Object Links section of the case details page. Each link shows:
+    - Object type (with icon)
+    - Object identifier/name
+    - Link creation date
+  </AccordionItem>
+  
+  <AccordionItem title="Removing Links">
+    To remove an object link:
+    1. Navigate to the Object Links section of the case
+    2. Click the remove/delete button next to the link
+    3. Confirm the removal
+    4. Save the case to apply changes
+  </AccordionItem>
+</Accordion>
+
+## API Reference
+
+The object links feature provides three main API endpoints for programmatic management:
+
+### List Object Links
+
+```http
+GET /cases/:id/links
+```
+
+Returns all objects linked to a specific case.
+
+**Response:**
+```json
+{
+  "links": [
+    {
+      "id": "link_123",
+      "objectType": "rider",
+      "objectId": "rider_456",
+      "createdAt": "2025-07-31T10:00:00Z"
+    }
+  ]
+}
+```
+
+### Create Object Link
+
+```http
+POST /cases/:id/links
+```
+
+Links an object to a case.
+
+**Request Body:**
+```json
+{
+  "objectType": "rider",
+  "objectId": "rider_456"
+}
+```
+
+### Remove Object Link
+
+```http
+DELETE /cases/:id/links/:linkId
+```
+
+Removes a specific object link from a case.
+
+## Permissions
+
+Object link management requires appropriate admin permissions:
+
+<Warning>
+Only admin users with case management permissions can create, view, or delete object links. Regular users cannot access these features.
+</Warning>
+
+- **View Links**: Requires case read permissions
+- **Create Links**: Requires case edit permissions  
+- **Delete Links**: Requires case edit permissions
+
+## Best Practices
+
+<CardGroup cols={2}>
+  <Card title="Link Relevant Objects" icon="link">
+    Only link objects that are directly related to the case to maintain clarity and avoid clutter.
+  </Card>
+  
+  <Card title="Use Consistent Naming" icon="tag">
+    Establish consistent naming conventions for object links across your organization.
+  </Card>
+  
+  <Card title="Regular Cleanup" icon="broom">
+    Periodically review and remove outdated or irrelevant object links to keep cases organized.
+  </Card>
+  
+  <Card title="Document Relationships" icon="file-text">
+    Use case notes to document why specific objects are linked when the relationship isn't obvious.
+  </Card>
+</CardGroup>
+
+## Troubleshooting
+
+**Object link option is disabled**
+- Check that you haven't already added all available object types to the case template
+- Verify you have the necessary permissions to manage object links
+
+**Cannot see Object Links section**
+- Ensure you're working with a Resolve case type (not Eligibility)
+- Confirm the case template has object links configured
+
+**API requests failing**
+- Verify you have admin permissions for case management
+- Check that the case ID and object IDs are valid
+- Ensure the case type supports object links

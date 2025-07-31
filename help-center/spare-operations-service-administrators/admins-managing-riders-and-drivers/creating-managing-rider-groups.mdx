@@ -82,6 +82,74 @@ To import group memberships, you will need to fill out a CSV file with the rider
 
 ![Import Group Memberships interface](https://spare-74fa64f80617.intercom-attachments-1.com/i/o/971487347/0e6573e6d70b4fb96f6db377/d3ll2BWJhcSoiMd7ZB20CFEJ8A-QKD8_Tg.png?expires=1753820100&signature=6ee3697e40c830106089e4d3f5b7ae9abebe2f22de00d97a99950dca49229540&req=fScmEsF5noVYFb4f3HP0gJ2qgqsXUWGVtKoWx9qZblNoyos0aFz59di0LwLE%0AHs0%3D%0A)
 
+## Restricted Services Permissions
+
+In addition to zone-based restrictions, you can now mark entire services as **restricted**, which provides an additional layer of access control.
+
+<Info>
+Restricted services require users to have specific permissions to book trips or edit requests on those services, regardless of group membership.
+</Info>
+
+### How Restricted Services Work
+
+When a service is marked as restricted:
+- Only users with appropriate permissions can book trips on that service
+- Booking requests and trip modifications are subject to permission checks
+- The service appears in admin interfaces with an `isRestricted: true` flag
+- Estimate endpoints filter out restricted services for unauthorized users
+
+### Configuring Restricted Services
+
+<Steps>
+  <Step title="Navigate to Service Management">
+    Go to **Services** in the admin portal and select the service you want to restrict.
+  </Step>
+  
+  <Step title="Enable Service Restriction">
+    In the service configuration, enable the **Restricted Service** option. New services default to unrestricted.
+  </Step>
+  
+  <Step title="Configure User Permissions">
+    Ensure that users who should access this service have the appropriate permissions assigned to their roles.
+  </Step>
+  
+  <Step title="Test Access">
+    Verify that authorized users can book trips while unauthorized users receive appropriate error messages.
+  </Step>
+</Steps>
+
+### Permission Requirements
+
+<Warning>
+Users attempting to book or modify trips on restricted services without proper permissions will receive error messages indicating insufficient access rights.
+</Warning>
+
+Restricted services affect:
+- **Trip booking**: Users must have service access permissions
+- **Request modifications**: Editing existing requests requires permissions
+- **Trip rematching**: Rematching operations check service permissions
+- **Estimate requests**: Restricted services are filtered from estimate responses
+
+### Best Practices for Restricted Services
+
+<CardGroup cols={2}>
+  <Card title="Clear Communication" icon="megaphone">
+    Inform users about service restrictions and how to request access when needed.
+  </Card>
+  
+  <Card title="Role-Based Access" icon="users">
+    Use role-based permissions to manage access to restricted services efficiently.
+  </Card>
+  
+  <Card title="Regular Review" icon="calendar">
+    Periodically review which services need to remain restricted and update permissions as needed.
+  </Card>
+  
+  <Card title="Fallback Options" icon="route">
+    Ensure users have access to alternative services when restricted services are not available to them.
+  </Card>
+</CardGroup>
+
 ## Export Group Members (Optional)
 
 Last but not least, you can Export Group Memberships! To export group memberships, click into groups and select the group in question. You can then hit **Export Group Memberships** to download the group membership and eligibility data.

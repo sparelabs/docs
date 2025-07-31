@@ -1,0 +1,149 @@
+---
+title: "Rider App Home Screen Settings"
+description: "Configure trip mode options displayed on the rider app home screen"
+---
+
+The rider app home screen can be customized to show different trip booking options based on your organization's needs. You can control which trip modes are available to riders when they open the app.
+
+## Home Screen Trip Mode Setting
+
+The **Home screen trip mode** setting allows you to configure which booking options riders see on the main screen of the rider app.
+
+### Available Options
+
+<CardGroup cols={3}>
+  <Card title="Scheduled and Leave Now" icon="clock">
+    Shows both scheduled trip booking and immediate "leave now" options on the home screen.
+  </Card>
+  
+  <Card title="Scheduled Only" icon="calendar">
+    Only displays scheduled trip booking options, hiding immediate departure features.
+  </Card>
+  
+  <Card title="Leave Now Only" icon="play">
+    Only shows immediate "leave now" booking options, hiding scheduled trip features.
+  </Card>
+</CardGroup>
+
+## Configuring Home Screen Settings
+
+<Steps>
+  <Step title="Access Rider Interface Settings">
+    Navigate to **Organization Settings** → **Rider Interface** → **Rider Settings** in the admin portal.
+  </Step>
+  
+  <Step title="Locate Home Screen Trip Mode">
+    Find the **Home screen trip mode** setting in the rider configuration section.
+  </Step>
+  
+  <Step title="Select Trip Mode">
+    Choose from the three available options:
+    - **Scheduled and leave now** (default)
+    - **Scheduled only**
+    - **Leave now only**
+  </Step>
+  
+  <Step title="Save Configuration">
+    Save your changes to apply the new home screen configuration to the rider app.
+  </Step>
+</Steps>
+
+## Use Cases
+
+### Scheduled and Leave Now
+Best for general-purpose transportation services where riders need flexibility for both planned and immediate trips.
+
+**Example scenarios:**
+- Public transit services
+- General on-demand transportation
+- Mixed-use transportation systems
+
+### Scheduled Only
+Ideal for services that require advance booking or have limited capacity.
+
+**Example scenarios:**
+- Paratransit services requiring advance notice
+- Medical transportation with appointment scheduling
+- Services with limited vehicle availability
+
+### Leave Now Only
+Perfect for high-frequency services focused on immediate transportation needs.
+
+**Example scenarios:**
+- Campus shuttle services
+- High-frequency urban routes
+- Emergency or urgent transportation services
+
+## Impact on User Experience
+
+<Info>
+The home screen setting affects the initial interface riders see when opening the app. Riders can still access other booking modes through navigation if your service supports multiple trip types.
+</Info>
+
+### User Interface Changes
+
+- **Scheduled and Leave Now**: Full interface with both booking options prominently displayed
+- **Scheduled Only**: Streamlined interface focused on date/time selection
+- **Leave Now Only**: Simplified interface emphasizing immediate departure
+
+### Accessibility Considerations
+
+<Accordion>
+  <AccordionItem title="Screen Reader Compatibility">
+    All home screen configurations maintain full screen reader support and accessibility features.
+  </AccordionItem>
+  
+  <AccordionItem title="Visual Clarity">
+    Simplified interfaces (scheduled only or leave now only) can improve usability for users who might be overwhelmed by multiple options.
+  </AccordionItem>
+  
+  <AccordionItem title="Cognitive Load">
+    Reducing options on the home screen can decrease cognitive load for users with disabilities or those unfamiliar with the app.
+  </AccordionItem>
+</Accordion>
+
+## API Configuration
+
+The home screen trip mode setting is managed through the Organization Rider App Settings API:
+
+```json
+{
+  "homeScreenTripMode": "scheduled_and_leave_now" | "scheduled_only" | "leave_now_only"
+}
+```
+
+<Warning>
+Changes to the home screen trip mode setting take effect immediately for new app sessions. Users may need to restart the app to see the updated interface.
+</Warning>
+
+## Best Practices
+
+<CardGroup cols={2}>
+  <Card title="Match Service Type" icon="bullseye">
+    Choose the trip mode that best matches your primary service offering and user expectations.
+  </Card>
+  
+  <Card title="User Testing" icon="flask">
+    Test different configurations with your user base to determine which option provides the best experience.
+  </Card>
+  
+  <Card title="Clear Communication" icon="comment">
+    Inform users about any changes to the home screen interface through announcements or help documentation.
+  </Card>
+  
+  <Card title="Monitor Usage" icon="chart-line">
+    Track booking patterns to ensure the selected trip mode aligns with actual user behavior.
+  </Card>
+</CardGroup>
+
+## Troubleshooting
+
+**Changes not appearing in the app**
+- Ensure users have restarted the rider app after configuration changes
+- Verify the setting was saved correctly in the admin portal
+- Check that the app version supports the home screen configuration feature
+
+**Users confused by interface changes**
+- Provide clear communication about interface updates
+- Consider gradual rollouts for significant changes
+- Offer user training or help documentation for new interfaces
