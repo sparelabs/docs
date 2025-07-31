@@ -29,17 +29,16 @@ All login methods on a rider's profile can be used for that rider across all of 
 
 - For example, if I've signed up with the Rider Hub via phone number only, I can only access my account in the Rider App via phone number as well.
 
-## Managing Login 
+## Managing Login Methods
 
-Methods### Enabling for an Organization**For Phone & Email:** 
+### Enabling for an Organization
 
+**For Phone & Email:** 
 Available by default
 
 **For Rider ID:**
-
-- The organization must have the **Enable External Numeric Rider ID** setting turned on in organization settings.
-
-The feature flag **RiderPhonePin** must be enabled.
+- The organization must have the **Enable External Numeric Rider ID** setting turned on in organization settings
+- The feature flag **RiderPhonePin** must be enabled
 
 **Shared Login (Representatives):** The **RiderRepresentatives** feature flag must be enabled.
 
@@ -49,11 +48,13 @@ Navigate to any rider profile to see their login configuration:
 
 **For Phone & Email:** The **Login Methods** field shows which authentication methods are enabled for each rider. Displays as a comma-separated list (e.g., "Phone, Email") or "None" if no methods are configured.
 
-![](https://downloads.intercomcdn.com/i/o/wyxobwoi/1621583865/618f2efa0e2f297538c1a527cbbc/image.png?expires=1753820100&signature=72d8334567727458640f100cd0eeffe9ed56063f8c3a73c0301ee7253dcfa1b4&req=dSYlF8x2nolZXPMW1HO4zd6zlGDMdJSHrF4%2BYBSqGmX8v2VKJwcNKiRkOO9f%0ArMbb%0A)
+![Login Methods field showing enabled authentication methods](https://downloads.intercomcdn.com/i/o/wyxobwoi/1621583865/618f2efa0e2f297538c1a527cbbc/image.png?expires=1753820100&signature=72d8334567727458640f100cd0eeffe9ed56063f8c3a73c0301ee7253dcfa1b4&req=dSYlF8x2nolZXPMW1HO4zd6zlGDMdJSHrF4%2BYBSqGmX8v2VKJwcNKiRkOO9f%0ArMbb%0A)
 
 **For Rider ID & PIN:** Assuming Rider ID is enabled for the organization (displays the rider's numeric ID on the Rider Profile), the field **PIN Configured** shows "Configured" or "Not Configured."
 
-![](https://downloads.intercomcdn.com/i/o/wyxobwoi/1621584742/8bb1079d16f0dc8dc1551907b667/image.png?expires=1753820100&signature=da22e9fa4b118bb1d2cf6fee0bccddd2f6c5af01092094ecaeb9c20a9d930811&req=dSYlF8x2mYZbW%2FMW1HO4zQ0TgoRnSZn8cQFpT19D5hkLgGsJvptFFf%2BUWPrk%0AVjxg%0A)**Note: **The **Login Methods field does not display Rider ID + PIN capability**. Check the **Rider ID Number** and **Phone PIN** fields separately to determine if Rider ID authentication is available.
+![PIN Configured field showing rider PIN status](https://downloads.intercomcdn.com/i/o/wyxobwoi/1621584742/8bb1079d16f0dc8dc1551907b667/image.png?expires=1753820100&signature=da22e9fa4b118bb1d2cf6fee0bccddd2f6c5af01092094ecaeb9c20a9d930811&req=dSYlF8x2mYZbW%2FMW1HO4zQ0TgoRnSZn8cQFpT19D5hkLgGsJvptFFf%2BUWPrk%0AVjxg%0A)
+
+> **Note:** The **Login Methods field does not display Rider ID + PIN capability**. Check the **Rider ID Number** and **Phone PIN** fields separately to determine if Rider ID authentication is available.
 
 **For Shared Logins:**
 
@@ -61,17 +62,21 @@ Navigate to any rider profile to see their login configuration:
 
 In Eligibility, this window is not currently available on the rider profile, but a representative would be seen as the case author in the rider activity log.
 
-![](https://downloads.intercomcdn.com/i/o/wyxobwoi/1621586486/5af089c7b513bd4342ea9bf7d14a/image.png?expires=1753820100&signature=d460f55730fa115d1003f532d5fc1a356dc92310cfbd1bd13da9b097fe08d11b&req=dSYlF8x2m4VXX%2FMW1HO4zdi1RqikQ5hJUjwxONn4s3GcxXqvGsO3HWF4SdHB%0As%2FKr%0A)
+![Authorized Representatives section in rider profile](https://downloads.intercomcdn.com/i/o/wyxobwoi/1621586486/5af089c7b513bd4342ea9bf7d14a/image.png?expires=1753820100&signature=d460f55730fa115d1003f532d5fc1a356dc92310cfbd1bd13da9b097fe08d11b&req=dSYlF8x2m4VXX%2FMW1HO4zdi1RqikQ5hJUjwxONn4s3GcxXqvGsO3HWF4SdHB%0As%2FKr%0A)
 
-### Enabling for a Rider**For Phone & Email:** Edit the core "phone number" and "email" fields in Spare Admin. Once a phone number or email is added, this will be reflected in the **Login 
+### Enabling for a Rider
 
-Methods** field.
+**For Phone & Email:** Edit the core "phone number" and "email" fields in Spare Admin. Once a phone number or email is added, this will be reflected in the **Login Methods** field.
 
-![](https://downloads.intercomcdn.com/i/o/wyxobwoi/1621589345/c2dee802f0939415a719c8f8a16c/image.png?expires=1753820100&signature=8aa2e61f981c8d01f98ba3327d56e7dbb48ac7c4ed638860dc01e8cb67220695&req=dSYlF8x2lIJbXPMW1HO4zZeAtVhzvSSskPGrk6fgISGjDCMbrtArta4QaEG3%0AqR5S%0A)**Note: **Changing a verified phone number/email will log the rider out of all apps.
+![Phone number and email fields in rider profile](https://downloads.intercomcdn.com/i/o/wyxobwoi/1621589345/c2dee802f0939415a719c8f8a16c/image.png?expires=1753820100&signature=8aa2e61f981c8d01f98ba3327d56e7dbb48ac7c4ed638860dc01e8cb67220695&req=dSYlF8x2lIJbXPMW1HO4zZeAtVhzvSSskPGrk6fgISGjDCMbrtArta4QaEG3%0AqR5S%0A)
+
+> **Note:** Changing a verified phone number/email will log the rider out of all apps.
 
 **For Rider ID & PIN:** Click the **Actions** menu (⋯) → Select "**Update Phone PIN**."
 
-![](https://downloads.intercomcdn.com/i/o/wyxobwoi/1621591556/7ad91c2740d7526d91a46c408601/image.png?expires=1753820100&signature=125a298381469804e2b3a16c1e205c8083413cfcef4598b7a8026d677e186994&req=dSYlF8x3nIRaX%2FMW1HO4zdVphC89KCZHRBjyGQIaO%2F1qsgVRqS0soMxHXfA%2F%0AHWvf%0A)**For Shared Logins:**
+![Actions menu with Update Phone PIN option](https://downloads.intercomcdn.com/i/o/wyxobwoi/1621591556/7ad91c2740d7526d91a46c408601/image.png?expires=1753820100&signature=125a298381469804e2b3a16c1e205c8083413cfcef4598b7a8026d677e186994&req=dSYlF8x3nIRaX%2FMW1HO4zdVphC89KCZHRBjyGQIaO%2F1qsgVRqS0soMxHXfA%2F%0AHWvf%0A)
+
+**For Shared Logins:**
 
 **In Operations:** Representative relationships can be managed directly in the rider's **Overview** tab using "Add Representative" buttons in the **Authorized Representatives** and **Riders Represented** sections.
 

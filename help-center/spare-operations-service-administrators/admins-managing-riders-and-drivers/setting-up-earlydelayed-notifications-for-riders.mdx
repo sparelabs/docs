@@ -1,176 +1,82 @@
 ---
 title: "Setting Up Early/Delayed Notifications for Riders"
-description: ""
+description: "Learn how to configure early and delayed notifications to keep riders informed when their scheduled rides are running significantly ahead or behind schedule."
 ---
 
-💡 To enable Early/Delayed Notifications, please contact your Partner Success Manager.
+> To enable Early/Delayed Notifications, please contact your Partner Success Manager.
 
 In this article, you will find answers to the following questions:
 
-What are Early/Delayed Notifications, and what is their value?
+- What are Early/Delayed Notifications, and what is their value?
+- How and when do they work?
+- How do I set up Early/Delayed Notifications for my service?
 
-How and when do they work?
-
-How do I set up Early/Delayed Notifications for my service?
-
-Visit the link below to read more about Rider Notifications:
-
+For more information about rider notifications in general, visit:
 [Rider Notifications](https://help.sparelabs.com/en/articles/8984355-rider-notifications)
 
-![](https://spare-74fa64f80617.intercom-attachments-1.com/i/o/972659477/5e1447f732f33f3339346459/0OtxarG_CH_umeqb0HorKf9-tinc2JGQPQ.png?expires=1753820100&signature=0ec8014bd78faa556c7842b33e4561ae9d3da754a29590666d567457fda25b00&req=fSclEMx3mYZYFb4f3HP0gJmWmPtQxa1YodFDTHXwiFsYKXK7duCYIa%2FImgMf%0A388%3D%0A)
+![Early/Delayed Notifications interface overview](https://spare-74fa64f80617.intercom-attachments-1.com/i/o/972659477/5e1447f732f33f3339346459/0OtxarG_CH_umeqb0HorKf9-tinc2JGQPQ.png?expires=1753820100&signature=0ec8014bd78faa556c7842b33e4561ae9d3da754a29590666d567457fda25b00&req=fSclEMx3mYZYFb4f3HP0gJmWmPtQxa1YodFDTHXwiFsYKXK7duCYIa%2FImgMf%0A388%3D%0A)
 
-## OverviewEarly and Late Trip 
+## Overview
 
-Notifications keep riders informed when their scheduled ride is running significantly earlier or later than expected. 
+Early and Late Trip Notifications keep riders informed when their scheduled ride is running significantly earlier or later than expected.
 
-## How It 
+## How It Works
 
-Works## When You'll Receive Notifications
+### When You'll Receive Notifications
 
 The system uses different rules for the first and subsequent notifications:
 
 **First Notification (No Previous Delayed/Early Notifications):**
-
 - Triggered when the ETA changes by **more than 7 minutes** from your original scheduled pickup time
-
-**Early notifications**: Sent **10 minutes before** the new estimated pickup time (or immediately if less time remains)
-
-**Late notifications**: Sent **10 minutes before** the original scheduled pickup time (or immediately if less time remains)
+- **Early notifications**: Sent **10 minutes before** the new estimated pickup time (or immediately if less time remains)
+- **Late notifications**: Sent **10 minutes before** the original scheduled pickup time (or immediately if less time remains)
 
 **Follow-up Notifications (After First Alert):**
-
 - Triggered when the ETA changes by **more than 7 minutes** from the **last notified time**
-
 - Sent **immediately** to keep you updated on significant changes
 
-The system always compares to the most recent ETA you were notified about, not the original scheduled time
+The system always compares to the most recent ETA you were notified about, not the original scheduled time.
 
-## Examples
+### Examples
 
-Scenario
+| Scenario | Scheduled Time | Previous Notification | New ETA | Change Calculation | Send ETA update | Time Sent |
+|----------|---------------|----------------------|---------|-------------------|----------------|-----------|
+| First notification (late) | 10:00 AM | None | 10:08 AM | +8 min | Yes | 9:50 AM (10 min before scheduled time) |
+| First notification (early) | 10:00 AM | None | 9:52 AM | -8 min | Yes | 9:42 AM (10 min before new ETA) |
+| First notification (small change) | 10:00 AM | None | 10:05 AM | +5 min | No | N/A |
+| Follow-up (small change) | 10:00 AM | 10:09 AM | 10:13 AM | +4 min | No | N/A |
+| Follow-up (late to later) | 10:00 AM | 10:09 AM | 10:18 AM | +9 min | Yes | Immediate |
+| Follow-up (late to early) | 10:00 AM | 10:18 AM | 10:10 AM | -8 min | Yes | Immediate |
 
-Scheduled Time
-
-Previous Notification
-
-New ETA
-
-Change Calculation
-
-Send ETA update
-
-Time Sent
-
-First notification (late)
-
-10:00 AM
-
-None
-
-10:08 AM
-
-+8 min
-
-Yes
-
-9:50 AM (10 min before scheduled time)
-
-First notification (early)
-
-10:00 AM
-
-None
-
-9:52 AM
-
--8 min
-
-Yes
-
-9:42 AM (10 min before new ETA)
-
-First notification (small change)
-
-10:00 AM
-
-None
-
-10:05 AM
-
-+5 min
-
-No
-
-N/A
-
-Follow-up (small change)
-
-10:00 AM
-
-10:09 AM
-
-10:13 AM
-
-+4 min
-
-No
-
-N/A
-
-Follow-up (late to later)
-
-10:00 AM
-
-10:09 AM
-
-10:18 AM
-
-+ 9 min
-
-Yes
-
-Immediate
-
-Follow-up (late to early)
-
-10:00 AM
-
-10:18 AM
-
-10:10 AM
-
-- 8 min
-
-Yes
-
-Immediate
-
-## Smart Notification Logic
+### Smart Notification Logic
 
 The system is designed to be helpful, not annoying:
 
-**7-minute threshold**: Both first and follow-up notifications require at least a 7-minute change to trigger
+- **7-minute threshold**: Both first and follow-up notifications require at least a 7-minute change to trigger
+- **Reference point changes**: After each notification, the system updates its reference point to the last notified ETA
+- **Cancelled notifications**: If the driver gets back on schedule before the notification is sent, it's automatically cancelled
+- **Immediate follow-ups**: Unlike first notifications (sent 10 min before arrival), follow-up notifications are sent immediately when detected
 
-**Reference point changes**: After each notification, the system updates its reference point to the last notified ETA
+## Setting Up Early/Delayed Notifications
 
-**Cancelled notifications**: If the driver gets back on schedule before the notification is sent, it's automatically cancelled
+To enable Early/Delayed Notifications, please contact your Partner Success Manager.
 
-**Immediate follow-ups**: Unlike first notifications (sent 10 min before arrival), follow-up notifications are sent immediately when detected 
+Once the feature is enabled, follow these steps to set it up:
 
-## Setting Up Early/Delayed NotificationsTo enable Early/Delayed Notifications, please contact your Partner Success 
+1. From your Spare Operations account, select **Rider Notifications** and then **+ Add Rider Notification**
 
-Manager.
+![Add Rider Notification button in the interface](https://spare-74fa64f80617.intercom-attachments-1.com/i/o/972659479/f7d3bb89b94238e6c1534eea/VrFId_CwDJkGQIMpO2H5GJyz5dKl9fQEqQ.png?expires=1753820100&signature=c878bc2d5a7122d4d59e9eced591628ebbabb9a94ca016cd9908cb83125a613f&req=fSclEMx3mYZWFb4f3HP0gB6QkyNJqAw%2FBnXp0CdFaI7VLDszZ%2FpJP030D76a%0A1Dc%3D%0A)
 
-Once the feature is enabled, follow the steps to set it up:
+2. In the Edit Rider Notification Form, click on the **Trigger** parameter and select **"Driver over 5 minutes late for pickup"** or **"Driver over 5 minutes early for pickup"**.
 
-From your Spare Operations account, select Rider Notifications and then "+ Add Rider Notification"
+![Trigger selection dropdown with early/late pickup options](https://spare-74fa64f80617.intercom-attachments-1.com/i/o/972659484/305fb09992b50bfe5a42b1d0/2FcoGd2NrheQeroXX6IewyqEAggXoGhM9g.png?expires=1753820100&signature=e74477e15f93be2d546aeebe48fd9f95cfb4bd1222fe4fc6926471adb189dc21&req=fSclEMx3mYlbFb4f3HP0gKSMErHn9W2NeJ42fajIrjCSdhAY1%2BL1d5bC1LDu%0AAnY%3D%0A)
 
-![](https://spare-74fa64f80617.intercom-attachments-1.com/i/o/972659479/f7d3bb89b94238e6c1534eea/VrFId_CwDJkGQIMpO2H5GJyz5dKl9fQEqQ.png?expires=1753820100&signature=c878bc2d5a7122d4d59e9eced591628ebbabb9a94ca016cd9908cb83125a613f&req=fSclEMx3mYZWFb4f3HP0gB6QkyNJqAw%2FBnXp0CdFaI7VLDszZ%2FpJP030D76a%0A1Dc%3D%0A)In the Edit Rider Notification Form, click on the Trigger parameter and select "Driver over 5 minutes late for pickup" or "Driver over 5 minutes early for pickup".
+3. Finally, select the communication mode and click **"Create New Rider Notification"** to apply the changes.
 
-![](https://spare-74fa64f80617.intercom-attachments-1.com/i/o/972659484/305fb09992b50bfe5a42b1d0/2FcoGd2NrheQeroXX6IewyqEAggXoGhM9g.png?expires=1753820100&signature=e74477e15f93be2d546aeebe48fd9f95cfb4bd1222fe4fc6926471adb189dc21&req=fSclEMx3mYlbFb4f3HP0gKSMErHn9W2NeJ42fajIrjCSdhAY1%2BL1d5bC1LDu%0AAnY%3D%0A)Finally, select the communication mode and click "Create New Rider Notification" to apply the changes.
+![Communication mode selection and Create button](https://spare-74fa64f80617.intercom-attachments-1.com/i/o/972659486/517cd45fcd94b41907af0d8d/X_gowSMnMDwgvdFN7X0K_5FwTsmEkZnHDA.png?expires=1753820100&signature=ae53f8da6186348c2b780d51cf6e0aab537b2ec689ecb99bcd80440a116e00a1&req=fSclEMx3mYlZFb4f3HP0gFq0rPw%2Biv2pbVMi14ml%2Bm2xj8PmouC6g3FMGsGQ%0AB3Q%3D%0A)
 
-![](https://spare-74fa64f80617.intercom-attachments-1.com/i/o/972659486/517cd45fcd94b41907af0d8d/X_gowSMnMDwgvdFN7X0K_5FwTsmEkZnHDA.png?expires=1753820100&signature=ae53f8da6186348c2b780d51cf6e0aab537b2ec689ecb99bcd80440a116e00a1&req=fSclEMx3mYlZFb4f3HP0gFq0rPw%2Biv2pbVMi14ml%2Bm2xj8PmouC6g3FMGsGQ%0AB3Q%3D%0A)
+## Rider Experience
 
-Here's what the rider will see: 
+Here's what the rider will see:
 
-![](https://spare-74fa64f80617.intercom-attachments-1.com/i/o/972659491/4b3204714b17ad93be91fa6d/2PxoVt6TuQIwuDrwVw-vYkJ2gLRdYdINKg.png?expires=1753820100&signature=32e18691ad0038c237fd2d9226e7f61264e52a2e32e909c4515f576d84261244&req=fSclEMx3mYheFb4f3HP0gHrBT7j0zyGhLEucw1GTfh9Cf7qPlAJWt%2FHGbYaD%0AU%2B8%3D%0A)
+![Sample early/delayed notification as seen by riders](https://spare-74fa64f80617.intercom-attachments-1.com/i/o/972659491/4b3204714b17ad93be91fa6d/2PxoVt6TuQIwuDrwVw-vYkJ2gLRdYdINKg.png?expires=1753820100&signature=32e18691ad0038c237fd2d9226e7f61264e52a2e32e909c4515f576d84261244&req=fSclEMx3mYheFb4f3HP0gHrBT7j0zyGhLEucw1GTfh9Cf7qPlAJWt%2FHGbYaD%0AU%2B8%3D%0A)

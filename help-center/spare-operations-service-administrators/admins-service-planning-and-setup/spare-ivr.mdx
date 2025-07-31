@@ -1,45 +1,42 @@
 ---
 title: "Spare IVR"
-description: ""
+description: "Interactive Voice Response (IVR) features that enable riders to book, cancel, and check ride status over the phone."
 ---
 
 This feature is an add-on to Spare Operations, reach out to your Spare representative for more information! 
 
-## What is Spare IVR?Spare IVR is a suite of IVR features that enable riders to book, cancel, and check the status of rides over the phone with an IV
+## What is Spare IVR?
 
-R agent.
+Spare IVR is a suite of IVR features that enable riders to book, cancel, and check the status of rides over the phone with an IVR agent.
 
-## What is the value?Spare IVR is valuable for Agencies and 
+## What is the value?
 
-Riders:
+Spare IVR is valuable for Agencies and Riders:
 
 **Riders:**
 
 - The majority of Paratransit riders still book over the phone. For many agencies the avg. wait time to speak to an agent is >5 minutes. With Spare IVR, riders can self-serve without waiting for an agent.
 
-Most call centers operate from 9-5 pm, but many riders are busy during those times. With Spare IVR, riders can book, cancel, and get ETA’s 24/7
+- Most call centers operate from 9-5 pm, but many riders are busy during those times. With Spare IVR, riders can book, cancel, and get ETA's 24/7
 
-Previously, riders who booked over the phone had no way to check on the status of their ride. They can’t open the app to see an updated ETA… but with Spare IVR the answer is just a phone call away.
+- Previously, riders who booked over the phone had no way to check on the status of their ride. They can't open the app to see an updated ETA… but with Spare IVR the answer is just a phone call away.
 
 **Agencies:**
 
 - Agencies find it challenging to staff call centers, especially during off-peak hours (evenings and weekends). With Spare IVR you can expand your call center coverage quickly and efficiently.
 
-Spare IVR reduces the load on the call center and automates simple tasks, enabling agencies to focus their resources on more complex issues
+- Spare IVR reduces the load on the call center and automates simple tasks, enabling agencies to focus their resources on more complex issues
 
-## ## How does it work?Spare IVR automatically identifies and authenticates the rider by recognising the rider's phone number. If Spare IV
+## How does it work?
 
-R doesn't recognize the rider's phone number the rider is forwarded straight to a call center agent 
+Spare IVR automatically identifies and authenticates the rider by recognising the rider's phone number. If Spare IVR doesn't recognize the rider's phone number the rider is forwarded straight to a call center agent 
 
 Authenticated riders are presented with four options:
 
-Get an updated ETA for your next ride
-
-Book a new trip
-
-Cancel an existing trip
-
-Speak to a call center agent
+- Get an updated ETA for your next ride
+- Book a new trip
+- Cancel an existing trip
+- Speak to a call center agent
 
 A rider can get the ETA for their next trip
 
@@ -47,47 +44,43 @@ A rider can cancel any of their upcoming rides
 
 A rider can book trips:
 
-To the 10 locations they've visited most frequently in the last 60 days
+- To the 10 locations they've visited most frequently in the last 60 days
+- With their default passengers and accessibility features, or the passengers and accessibility features from their last trip
+- On any service available to the 'IVR Booking' interface (configurable in service settings)
+- Using any of the payment methods accepted by the service. However, it's not currently possible for riders to add new digital payment methods.
 
-With their default passengers and accessibility features, or the passengers and accessibility features from their last trip
+## Setup Instructions
 
-On any service available to the 'IVR Booking' interface (configurable in service settings)
-
-Using any of the payment methods accepted by the service. However, it's not currently possible for riders to add new digital payment methods.
-
-## Setup Instructions:To set up the Spare IVR feature, your organization only needs to provide a forwarding number that goes to your customer service/reservations team. Spare will use this number as a backup in case the customer/caller wants to bypass the IVR. 
+To set up the Spare IVR feature, your organization only needs to provide a forwarding number that goes to your customer service/reservations team. Spare will use this number as a backup in case the customer/caller wants to bypass the IVR. 
 
 Spare will take care of the rest of the setup internally.
 
 Please note that Spare IVR is not included in the Spare base package. It is charged per minute and may require a contract modification if it’s not already included in the customer’s contract with Spare. If you have any questions about access or pricing, please contact your Spare Account Manager.
 
-## What are the current limitations?All Spare IVR features only work in 
+## What are the current limitations?
 
-English
+All Spare IVR features only work in English
 
-We use the incoming phone number to authenticate riders, so all ISpare IVR features only work if the rider is calling from the phone number linked to their account.
+We use the incoming phone number to authenticate riders, so all Spare IVR features only work if the rider is calling from the phone number linked to their account.
 
-IVR Booking:
+**IVR Booking:**
 
-The booking system can only use pickup and dropoff locations that have previously been used by the rider. This means that the rider needs to have completed at least one completed trip to use the IVR system.
+- The booking system can only use pickup and dropoff locations that have previously been used by the rider. This means that the rider needs to have completed at least one completed trip to use the IVR system.
+- It's not currently possible to add a digital payment method to the IVR booking flow.
+- Due to limitations with digital payments and Stripe, riders can only book up to 7 days in advance
+- We list the 10 most popular addresses from the previous 60 days 
 
-It’s not currently possible to add a digital payment method to the IVR booking flow.
+**IVR ETA and Cancellation:**
 
-Due to limitations with digital payments and Stripe, riders can only book up to 7 days in advance
+- You can only get the ETA for your next trip
 
-We list the 10 most popular addresses from the previous 60 days 
+- Cancellation doesn't request a cancellation reason
 
-IVR ETA and Cancellation:
+- Twilio can't provide phone numbers with voice capability in some countries
 
-You can only get the ETA for your next trip
+- You can see the list of availability [here](https://support.twilio.com/hc/en-us/articles/223183068-Twilio-international-phone-number-availability-and-their-capabilities)
 
-Cancellation doesn’t request a cancellation reason
-
-Twilio can’t provide phone numbers with voice capability in some countries
-
-You can see the list of availability [here](https://support.twilio.com/hc/en-us/articles/223183068-Twilio-international-phone-number-availability-and-their-capabilities)
-
-(Using an international number as a workaround isn’t doable, it would cause [SMS issues](https://support.twilio.com/hc/en-us/articles/235288367-Receiving-Two-Way-SMS-and-MMS-Messages-with-Twilio).)
+- (Using an international number as a workaround isn't doable, it would cause [SMS issues](https://support.twilio.com/hc/en-us/articles/235288367-Receiving-Two-Way-SMS-and-MMS-Messages-with-Twilio).)
 
 ## IVR Call Flows & Call Recordings Available 
 
