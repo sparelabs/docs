@@ -1,13 +1,25 @@
 ---
 title: "Creating a New Case"
-description: "Learn how to create new eligibility cases, search for riders, and assign cases to specialists in Spare Eligibility."
+description: "Learn how to create new eligibility cases, search for users, and assign cases to specialists in Spare Eligibility."
 ---
 
-This guide covers the essential steps for creating and managing new cases in Spare Eligibility, including rider search functionality and case assignment workflows.
+This guide covers the essential steps for creating and managing new cases in Spare Eligibility, including user search functionality and case assignment workflows.
 
 <Info>
-Before creating a case, ensure you have the necessary permissions and that the rider profile exists in the system.
+Before creating a case, ensure you have the necessary permissions and that the user profile exists in the system.
 </Info>
+
+## Enhanced Case Management for Multiple User Types
+
+Spare Eligibility now supports enhanced case management capabilities that allow multiple user types to serve as case reporters:
+
+- **Riders** - Traditional eligibility case subjects
+- **Drivers** - Driver-related eligibility and compliance cases  
+- **Administrators** - Admin-initiated cases and system-related issues
+
+<Tip>
+The enhanced Resolve product integration allows for more comprehensive case tracking across all user types in your transportation system.
+</Tip>
 
 ## Adding a New Case
 
@@ -24,26 +36,32 @@ Before creating a case, ensure you have the necessary permissions and that the r
 
 ![Screenshot of All Cases screen with Add Case button highlighted](/images/spare-eligibility/managing-cases/add-case-button-all-cases.png)
 
-### Searching for Riders
+### Searching for Users
 
-From the **Add Case** form, search for the rider using any of the following:
-- Rider name
+From the **Add Case** form, search for the case subject using any of the following:
+- User name (riders, drivers, or administrators)
 - Phone number  
 - Email address
 
+<Info>
+The search functionality now supports all user types in your system. You can create cases for riders, drivers, or administrators depending on your case requirements.
+</Info>
+
 <Warning>
-If you are creating a case for a new rider whose profile is not in the system yet, you will be offered to [create a Rider Profile first](https://help.sparelabs.com/en/articles/8955368-managing-riders).
+If you are creating a case for a new user whose profile is not in the system yet, you will be offered to create the appropriate user profile first based on the user type selected.
 </Warning>
 
 ### Completing the Case Creation
 
-1. Add internal notes if necessary
-2. Click **"Create New Case"** to save your changes
+1. **Select User Type**: Choose whether this case relates to a rider, driver, or administrator
+2. **Add Case Details**: Include relevant case information specific to the user type
+3. **Add Internal Notes**: Include any additional context if necessary
+4. Click **"Create New Case"** to save your changes
 
-![Screenshot of Add Case form showing Add Rider and Create New Case buttons](/images/spare-eligibility/managing-cases/add-case-form-rider-creation.png)
+![Screenshot of Add Case form showing Add User and Create New Case buttons](/images/spare-eligibility/managing-cases/add-case-form-rider-creation.png)
 
 <Tip>
-Once the case record is created, you will be able to see it in both the **Case Type** tab and the **All Cases** tab.
+Once the case record is created, you will be able to see it in both the **Case Type** tab and the **All Cases** tab, with clear indicators of the user type associated with each case.
 </Tip>
 
 ![Screenshot of All Cases screen displaying a newly created case record](/images/spare-eligibility/managing-cases/newly-created-case-display.png)
@@ -64,27 +82,45 @@ Once the case record is created, you will be able to see it in both the **Case T
   </Step>
 </Steps>
 
+### User Type-Specific Case Assignment
+
+Different user types may require assignment to specialists with specific expertise:
+
+- **Rider Cases**: Assign to eligibility specialists familiar with rider requirements
+- **Driver Cases**: Assign to specialists handling driver compliance and certification  
+- **Administrator Cases**: Assign to system administrators or operational specialists
+
 ### Changing Case Assignment
 
 To change the assignee, click on the specialist name again and type in the new name.
 
 ![Screenshot of case page showing updated assignee information](/images/spare-eligibility/managing-cases/case-assignee-updated.png)
 
-### Viewing Cases by Assignee
+### Viewing Cases by Assignee and User Type
 
 <Steps>
   <Step title="Navigate to All Cases">
     Go to **Cases** → **All Cases**
   </Step>
   
-  <Step title="Apply Filter">
-    Filter the results by **"Assigned"** → **"Assigned to"** → **Employee Name**
+  <Step title="Apply Filters">
+    Filter the results by:
+    - **"Assigned"** → **"Assigned to"** → **Employee Name**
+    - **"User Type"** → Select **Rider**, **Driver**, or **Administrator**
   </Step>
   
   <Step title="Apply Changes">
-    Click **"Done"** to apply the filter.
+    Click **"Done"** to apply the filters.
   </Step>
 </Steps>
+
+## Enhanced Resolve Product Integration
+
+The enhanced case management system integrates seamlessly with the Resolve product, providing:
+
+- **Unified Case Tracking**: Track cases across all user types in a single interface
+- **Cross-User Type Reporting**: Generate reports that span rider, driver, and administrator cases
+- **Enhanced Workflow Management**: Streamlined processes that adapt to different user type requirements
 
 ## Related Articles
 
