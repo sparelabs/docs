@@ -6,47 +6,145 @@ description: "Learn how riders can schedule trips in advance with optimized flow
 It's common to offer both same-day and scheduled trips. However, riders are habitual and will often do one or the other. This article explains how Spare has optimized both of these flows, so that riders can book in a way that's convenient to them.
 
 <Info>
-This feature must be enabled by your Spare Representative to become available to your riders.
+The booking options available to you depend on how your service administrator has configured the home screen trip mode for your service.
 </Info> 
 
-## What has changed?
+## Home Screen Trip Mode Configuration
 
-In the past, you had to choose for *all* or *no* riders to automatically see the time and date selection page before scheduling a trip. 
+Your service administrator can configure which booking options appear on your home screen based on your service's operational model:
 
-This is an unnecessary step for riders looking for a trip now, but a critical one for those scheduling in advance. 
+### Available Trip Mode Options
 
-## How it works
+Depending on your service configuration, you may see one of the following booking interfaces:
 
-Once this feature is enabled by your Spare Representative, your riders will see the following interface changes: 
+<Tabs>
+  <Tab title="Scheduled and Leave Now">
+    **Full Booking Options Available**
+    
+    You'll see both immediate and scheduled booking options on your home screen:
+    
+    ![Rider app home screen showing both "Where to?" and "Schedule" options](/images/spare-rider/scheduling/home-screen-options.png)
+    
+    This configuration provides maximum flexibility for riders who need both immediate and advance booking capabilities.
+  </Tab>
+  
+  <Tab title="Scheduled Only">
+    **Advance Booking Required**
+    
+    Your home screen will only show scheduled booking options. All trips must be booked in advance:
+    
+    - You'll be required to select a future time and date for your trip
+    - Immediate "leave now" booking is not available
+    - This is common for paratransit services and fixed-route operations
+    
+    <Note>
+    If you only see scheduled booking options, your service requires advance planning for all trips. Contact your transportation provider if you need immediate trip assistance.
+    </Note>
+  </Tab>
+  
+  <Tab title="Leave Now Only">
+    **Immediate Booking Only**
+    
+    Your home screen will focus on immediate booking:
+    
+    - You'll see the "Where to?" option for immediate trip requests
+    - Scheduled booking for future trips is not available
+    - This is typical for on-demand ride services
+    
+    <Tip>
+    Services configured for "leave now only" prioritize immediate availability and quick response times.
+    </Tip>
+  </Tab>
+</Tabs>
 
-![Rider app home screen showing "Where to?" and "Schedule" options](/images/spare-rider/scheduling/home-screen-options.png)
+## How the Booking Flows Work
 
-### Two booking flows
+Depending on your service's configuration, you'll have access to different booking flows:
 
-On the home screen, riders can choose between two optimized booking flows:
+### Immediate Trip Booking ("Where to?")
 
-**Immediate trips ("Where to?"):**
-- Takes riders directly to destination entry
-- Origin is pre-filled with the rider's current location
+When available, immediate booking:
+- Takes you directly to destination entry
+- Your current location is pre-filled as the origin
 - Optimized for same-day travel
+- Provides the fastest booking experience
 
-**Scheduled trips ("Schedule"):**
+![Immediate booking flow showing destination entry](/images/spare-rider/scheduling/immediate-booking-flow.png)
+
+### Scheduled Trip Booking ("Schedule")
+
+When available, scheduled booking:
 - Starts with time and date selection
-- Requires manual entry of both origin and destination
+- Requires manual entry of both origin and destination  
 - Optimized for advance planning
+- Allows you to book trips for future dates and times
 
 ![Trip scheduling interface showing time selection options](/images/spare-rider/scheduling/time-selection-interface.png)
 
-### Improved time selection
+### Enhanced Time Selection Interface
 
-UI updates were made to the "choose a time" page, with the intention of making it easier to choose between Now, Leave At, and Arrive By. 
+When scheduling trips in advance, you'll see improved time selection options:
+
+- **Now**: Book for immediate departure (if enabled)
+- **Leave At**: Specify when you want to be picked up
+- **Arrive By**: Specify when you need to arrive at your destination
 
 ![Enhanced time selection interface with Now, Leave At, and Arrive By options](/images/spare-rider/scheduling/enhanced-time-selection.png)
 
-### Origin field improvements
+## Understanding Your Service Configuration
 
-In both flows, when the rider confirms their origin, the design was adjusted to make it clearer to the rider that this field can be re-edited.
+<Info>
+Your transportation provider determines which booking options are available based on operational requirements, service capacity, and rider needs.
+</Info>
+
+### Why Different Configurations Exist
+
+**Scheduled Only Services** are often used for:
+- Paratransit and medical transportation
+- Services requiring resource planning
+- Fixed-route or timed services
+- Services with limited vehicle capacity
+
+**Leave Now Only Services** are common for:
+- Urban on-demand transportation
+- Services with real-time availability
+- High-frequency operations
+- Immediate response requirements
+
+**Combined Services** offer:
+- Maximum rider flexibility
+- Both planned and spontaneous trip options
+- Comprehensive transportation solutions
+
+## Tips for Efficient Booking
+
+### For Scheduled Bookings
+- Plan ahead when possible to ensure availability
+- Use favorite locations to speed up the booking process
+- Set up recurring trips if you travel regularly
+
+### For Immediate Bookings
+- Ensure your location services are enabled for accurate pickup
+- Be ready to depart when your ride arrives
+- Have your destination details ready before booking
+
+### General Tips
+- Save frequently used addresses as favorites
+- Keep your profile information updated
+- Check your trip confirmations for accurate details
+
+<Warning>
+The booking options available to you are determined by your service administrator. If you need access to different booking types, contact your transportation provider directly.
+</Warning>
+
+## Origin Field Improvements
+
+In all booking flows, when you confirm your origin location, the interface has been designed to make it clear that you can re-edit this field throughout the booking process.
 
 <Tip>
-Riders can always modify their origin location even after initial confirmation, providing flexibility throughout the booking process.
+You can always modify your origin location even after initial confirmation, providing flexibility throughout the booking process.
 </Tip>
+
+## Need Help?
+
+If you're unsure about which booking options are available to you or need assistance with trip planning, contact your transportation provider. They can explain your service's specific configuration and help you book trips efficiently.
