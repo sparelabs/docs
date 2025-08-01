@@ -166,6 +166,20 @@ The windows & flexibilities settings control the On-Time Performance Windows of 
 
 ### Booking Type Options
 
+**Home Screen Trip Mode**: Configure which booking options are displayed on the rider app home screen. This setting controls the primary trip booking interface that riders see when they open the app:
+
+<Info>
+The Home Screen Trip Mode setting allows you to customize the rider booking experience based on your service's operational model and rider needs.
+</Info>
+
+- **Scheduled and Leave Now**: Shows both scheduled booking options and immediate "leave now" booking. This is the most flexible option for riders who may need both advance planning and immediate transportation.
+- **Scheduled Only**: Displays only scheduled booking options, requiring riders to book trips in advance. This is ideal for services that operate primarily on scheduled routes or need advance planning for resource allocation.
+- **Leave Now Only**: Shows only immediate booking options for on-demand service. This setting is perfect for services that focus on immediate response and don't require advance scheduling.
+
+<Tip>
+Consider your service model when selecting this setting. Paratransit services often benefit from "Scheduled Only" mode, while urban on-demand services might prefer "Leave Now Only" or the combined "Scheduled and Leave Now" option.
+</Tip>
+
 **Allow Scheduled 'Depart At' Bookings**: Enabling 'Depart At' bookings allows your users to schedule trips for the future (e.g., schedule a trip for the next day). Otherwise, users will only be able to schedule trips at the next available time for your service.
 
 **Allow Scheduled 'Arrive By' Bookings**: Enabling 'Arrive By' bookings allows your users to schedule trips where the system attempts to guarantee they will arrive at their destination before, or at, their selected time (they will 'Arrive By' the time they designate). However, because this means adding extra buffer time to make sure riders arrive by their selected time, riders may arrive at their destination much earlier than their selected time.
@@ -173,6 +187,10 @@ The windows & flexibilities settings control the On-Time Performance Windows of 
 **Available to Rider Interface**: If 'Yes' is selected, the rider will be able to book trips through the respective Rider App.
 
 **Available to Driver Interface**: If 'Yes' is selected, the driver will be able to add walk-ons through the Driver App. Please be mindful that you can only have this turned on for one bookable service at a time. If it is enabled for multiple services, the system will not know which service to add the rider booking to.
+
+<Warning>
+Changes to the Home Screen Trip Mode setting affect the rider app interface immediately. Ensure you communicate any changes to your riders if you modify this setting for an active service.
+</Warning>
 
 ## Next Steps
 
@@ -185,6 +203,7 @@ If you decide to configure any of the current settings, be mindful of when the n
 - **Boarding Times**: Immediately
 - **Time Rules**: Immediately  
 - **Flexibilities**: Only with newly created requests
+- **Home Screen Trip Mode**: Immediately (affects rider app interface)
 
 <Warning>
 Changes to flexibility settings only apply to new requests created after the change. Existing requests will continue to use the flexibility settings that were in place when they were originally created.
