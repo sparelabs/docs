@@ -1,6 +1,6 @@
 ---
 title: "Creating & Managing Rider Groups"
-description: "Groups allow you to make specific zones and services available to only specific sets of riders."
+description: "Groups allow you to make specific zones and services available to only specific sets of riders, including multimodal transit approvals."
 ---
 
 For instance, you may have a paratransit or specialized service that is only available to those who apply and become eligible for that service. To allow those riders to book themselves through an app or web interface, you need a way to determine who has access to the special service and who does not - and that's where groups come in! 
@@ -74,16 +74,78 @@ A group membership can last forever or can be automatically set to expire at a s
 
 Once you're done adding riders to the group, you're all set!
 
+## Managing Transit Mode Approvals for Multimodal Services
+
+<Info>
+Transit mode approval management is available when the multimodal feature is enabled for your service. This allows you to control which transportation modes group members can access.
+</Info>
+
+For services that offer multiple transportation modes (such as on-demand rides, fixed routes, and microtransit), you can manage transit mode approvals at the group membership level.
+
+### Setting Transit Mode Approvals
+
+<Steps>
+  <Step title="Access Group Membership">
+    Navigate to the specific group and locate the group membership you want to manage transit mode approvals for.
+  </Step>
+  
+  <Step title="Edit Membership Details">
+    Click on the group membership to access the detailed management interface.
+  </Step>
+  
+  <Step title="Configure Transit Mode Approvals">
+    In the membership details, you'll find the **Transit Mode Approvals** section where you can:
+    - Enable or disable specific transit modes for this member
+    - Set approval expiration dates for individual transit modes
+    - Manage mode-specific restrictions or requirements
+  </Step>
+  
+  <Step title="Save Changes">
+    Click **Save** to apply the transit mode approval settings.
+  </Step>
+</Steps>
+
+### Available Transit Modes
+
+Depending on your service configuration, you may be able to manage approvals for:
+
+- **On-Demand Service** - Traditional ride-hailing within the service area
+- **Fixed Route Integration** - Access to scheduled bus or train services
+- **Microtransit** - Shared rides with flexible routing
+- **Paratransit** - Specialized accessible transportation services
+
+<Tip>
+Transit mode approvals work in conjunction with existing group restrictions. A rider must both be a member of the appropriate group AND have the specific transit mode approved to access that service.
+</Tip>
+
+### Managing Bulk Transit Mode Approvals
+
+For organizations managing large numbers of group members, you can:
+
+1. **Use the Import Function**: Include transit mode approval columns in your bulk import CSV
+2. **Export Current Settings**: Download existing transit mode approvals to review or modify in bulk
+3. **Apply Consistent Policies**: Set standard transit mode approvals for entire groups or member categories
+
+<Warning>
+Changes to transit mode approvals take effect immediately. Removing a transit mode approval will prevent the rider from booking that mode of transportation until the approval is restored.
+</Warning>
+
 ## Import Group Members (Optional)
 
 You can also import group memberships in bulk from the Groups menu by clicking on **Import Group Memberships**.
 
 To import group memberships, you will need to fill out a CSV file with the riders' phone numbers (this must match the phone number of the rider's profile and must include the country code), the group name, and any membership expiration dates. You can download an import template by clicking on Download on the right. Once you have your template filled out, you can drag and drop or browse to import it.
 
+<Tip>
+When importing group memberships for multimodal services, you can include transit mode approval settings in your CSV file to automatically configure transportation mode access for new members.
+</Tip>
+
 ![Import Group Memberships interface](https://spare-74fa64f80617.intercom-attachments-1.com/i/o/971487347/0e6573e6d70b4fb96f6db377/d3ll2BWJhcSoiMd7ZB20CFEJ8A-QKD8_Tg.png?expires=1753820100&signature=6ee3697e40c830106089e4d3f5b7ae9abebe2f22de00d97a99950dca49229540&req=fScmEsF5noVYFb4f3HP0gJ2qgqsXUWGVtKoWx9qZblNoyos0aFz59di0LwLE%0AHs0%3D%0A)
 
 ## Export Group Members (Optional)
 
 Last but not least, you can Export Group Memberships! To export group memberships, click into groups and select the group in question. You can then hit **Export Group Memberships** to download the group membership and eligibility data.
+
+The export will include transit mode approval information when the multimodal feature is enabled, allowing you to review current approval settings across all group members.
 
 ![Export Group Memberships button](https://spare-74fa64f80617.intercom-attachments-1.com/i/o/971487355/7a934450e3d9953ce9643275/V69o3z3_IQbQ_57P_RWcJwMA4XTFvtj-1g.png?expires=1753820100&signature=80a0cbb503c39eabefc585bb4bb2b694231de50c79c74fc755b1d1fdac5821a7&req=fScmEsF5noRaFb4f3HP0gCVc4Fw5dTYBQABoI8rqrEUC%2BpqCJ4KFD4aqG67L%0AB6g%3D%0A)
