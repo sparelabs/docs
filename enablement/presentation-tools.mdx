@@ -1,0 +1,776 @@
+---
+title: Presentation Builder
+description: One-click tools for creating and customizing sales presentations
+---
+
+# Presentation Builder Tools
+
+Quickly create customized presentations using our template library.
+
+<Info>
+**How to use**: This tool helps you quickly duplicate presentations or copy specific slide sections. The "Add Slides" feature provides direct links to pre-selected slide ranges.
+</Info>
+
+## Master Sales Deck - Q1 2025
+
+<Card>
+  <div style={{padding: "20px"}}>
+    <h3>Spare Platform Overview</h3>
+    <p style={{color: "#666", marginBottom: "20px"}}>
+      30 slides • Updated Jan 2025 • Includes latest product updates
+    </p>
+    
+    <Tabs>
+      <Tab title="Quick Actions">
+        <div style={{display: "flex", gap: "10px", flexWrap: "wrap", marginTop: "20px"}}>
+          <a 
+            href="https://docs.google.com/presentation/d/1Sx6BlmHHD5Nrp8Ihfvp3RrjyVm1BPpU3PHPUup8e7mg/copy"
+            target="_blank"
+            style={{
+              display: "inline-flex",
+              alignItems: "center",
+              gap: "8px",
+              padding: "12px 24px",
+              backgroundColor: "#0F172A",
+              color: "white",
+              borderRadius: "6px",
+              textDecoration: "none",
+              fontWeight: "500",
+              transition: "all 0.2s",
+              border: "2px solid #0F172A"
+            }}
+            onMouseOver={(e) => {
+              e.currentTarget.style.backgroundColor = "#1e293b";
+              e.currentTarget.style.borderColor = "#1e293b";
+            }}
+            onMouseOut={(e) => {
+              e.currentTarget.style.backgroundColor = "#0F172A";
+              e.currentTarget.style.borderColor = "#0F172A";
+            }}
+          >
+            📋 Duplicate Full Deck
+          </a>
+          
+          <button
+            id="addSlidesBtn"
+            style={{
+              display: "inline-flex",
+              alignItems: "center",
+              gap: "8px",
+              padding: "12px 24px",
+              backgroundColor: "white",
+              color: "#0F172A",
+              borderRadius: "6px",
+              fontWeight: "500",
+              cursor: "pointer",
+              transition: "all 0.2s",
+              border: "2px solid #0F172A"
+            }}
+            onMouseOver={(e) => {
+              e.currentTarget.style.backgroundColor = "#f8fafc";
+            }}
+            onMouseOut={(e) => {
+              e.currentTarget.style.backgroundColor = "white";
+            }}
+          >
+            ➕ Add Slides to Existing
+          </button>
+          
+          <a
+            href="https://docs.google.com/presentation/d/1Sx6BlmHHD5Nrp8Ihfvp3RrjyVm1BPpU3PHPUup8e7mg/edit"
+            target="_blank"
+            style={{
+              display: "inline-flex",
+              alignItems: "center",
+              gap: "8px",
+              padding: "12px 24px",
+              backgroundColor: "white",
+              color: "#0F172A",
+              borderRadius: "6px",
+              fontWeight: "500",
+              textDecoration: "none",
+              transition: "all 0.2s",
+              border: "2px solid #e2e8f0"
+            }}
+            onMouseOver={(e) => {
+              e.currentTarget.style.borderColor = "#0F172A";
+            }}
+            onMouseOut={(e) => {
+              e.currentTarget.style.borderColor = "#e2e8f0";
+            }}
+          >
+            👁️ View Original
+          </a>
+        </div>
+        
+        {/* Modal for Add Slides */}
+        <div id="slideModal" style={{
+          display: "none",
+          position: "fixed",
+          top: "0",
+          left: "0",
+          width: "100%",
+          height: "100%",
+          backgroundColor: "rgba(0,0,0,0.5)",
+          zIndex: "1000"
+        }}>
+          <div style={{
+            position: "relative",
+            backgroundColor: "white",
+            margin: "50px auto",
+            padding: "30px",
+            width: "90%",
+            maxWidth: "600px",
+            borderRadius: "8px",
+            maxHeight: "80vh",
+            overflowY: "auto"
+          }}>
+            <button 
+              id="closeModal"
+              style={{
+                position: "absolute",
+                right: "15px",
+                top: "15px",
+                fontSize: "24px",
+                background: "none",
+                border: "none",
+                cursor: "pointer",
+                color: "#666"
+              }}
+            >
+              ×
+            </button>
+            
+            <h2 style={{marginBottom: "20px"}}>Add Slides to Your Presentation</h2>
+            
+            <div style={{marginBottom: "25px"}}>
+              <h3 style={{fontSize: "16px", marginBottom: "10px"}}>Step 1: Open these slide ranges</h3>
+              <p style={{fontSize: "14px", color: "#666", marginBottom: "15px"}}>
+                Click each link to open the specific slides you want to copy:
+              </p>
+              
+              <div style={{display: "grid", gap: "10px"}}>
+                <a 
+                  href="https://docs.google.com/presentation/d/1Sx6BlmHHD5Nrp8Ihfvp3RrjyVm1BPpU3PHPUup8e7mg/edit#slide=id.g32aeff1afda_0_5101"
+                  target="_blank"
+                  style={{
+                    padding: "10px 15px",
+                    backgroundColor: "#f8fafc",
+                    border: "1px solid #e2e8f0",
+                    borderRadius: "4px",
+                    textDecoration: "none",
+                    color: "#0F172A",
+                    display: "block"
+                  }}
+                >
+                  📊 <strong>Introduction</strong> - Company & Problem (Slides 1-5)
+                </a>
+                
+                <a 
+                  href="https://docs.google.com/presentation/d/1Sx6BlmHHD5Nrp8Ihfvp3RrjyVm1BPpU3PHPUup8e7mg/edit#slide=id.g32aeff1afda_0_5106"
+                  target="_blank"
+                  style={{
+                    padding: "10px 15px",
+                    backgroundColor: "#f8fafc",
+                    border: "1px solid #e2e8f0",
+                    borderRadius: "4px",
+                    textDecoration: "none",
+                    color: "#0F172A",
+                    display: "block"
+                  }}
+                >
+                  🚀 <strong>Product Overview</strong> - Core Features (Slides 6-10)
+                </a>
+                
+                <a 
+                  href="https://docs.google.com/presentation/d/1Sx6BlmHHD5Nrp8Ihfvp3RrjyVm1BPpU3PHPUup8e7mg/edit#slide=id.g32aeff1afda_0_5111"
+                  target="_blank"
+                  style={{
+                    padding: "10px 15px",
+                    backgroundColor: "#f8fafc",
+                    border: "1px solid #e2e8f0",
+                    borderRadius: "4px",
+                    textDecoration: "none",
+                    color: "#0F172A",
+                    display: "block"
+                  }}
+                >
+                  🤖 <strong>AI Capabilities</strong> - Voice & Chat Agents (Slides 11-15)
+                </a>
+                
+                <a 
+                  href="https://docs.google.com/presentation/d/1Sx6BlmHHD5Nrp8Ihfvp3RrjyVm1BPpU3PHPUup8e7mg/edit#slide=id.g32aeff1afda_0_5116"
+                  target="_blank"
+                  style={{
+                    padding: "10px 15px",
+                    backgroundColor: "#f8fafc",
+                    border: "1px solid #e2e8f0",
+                    borderRadius: "4px",
+                    textDecoration: "none",
+                    color: "#0F172A",
+                    display: "block"
+                  }}
+                >
+                  🏆 <strong>Case Studies</strong> - Customer Success (Slides 16-22)
+                </a>
+                
+                <a 
+                  href="https://docs.google.com/presentation/d/1Sx6BlmHHD5Nrp8Ihfvp3RrjyVm1BPpU3PHPUup8e7mg/edit#slide=id.g32aeff1afda_0_5123"
+                  target="_blank"
+                  style={{
+                    padding: "10px 15px",
+                    backgroundColor: "#f8fafc",
+                    border: "1px solid #e2e8f0",
+                    borderRadius: "4px",
+                    textDecoration: "none",
+                    color: "#0F172A",
+                    display: "block"
+                  }}
+                >
+                  💰 <strong>Pricing & ROI</strong> - Business Case (Slides 23-27)
+                </a>
+                
+                <a 
+                  href="https://docs.google.com/presentation/d/1Sx6BlmHHD5Nrp8Ihfvp3RrjyVm1BPpU3PHPUup8e7mg/edit#slide=id.g32aeff1afda_0_5128"
+                  target="_blank"
+                  style={{
+                    padding: "10px 15px",
+                    backgroundColor: "#f8fafc",
+                    border: "1px solid #e2e8f0",
+                    borderRadius: "4px",
+                    textDecoration: "none",
+                    color: "#0F172A",
+                    display: "block"
+                  }}
+                >
+                  ✅ <strong>Next Steps</strong> - Timeline & Contact (Slides 28-30)
+                </a>
+              </div>
+            </div>
+            
+            <div style={{borderTop: "1px solid #e2e8f0", paddingTop: "20px"}}>
+              <h3 style={{fontSize: "16px", marginBottom: "10px"}}>Step 2: Copy slides to your presentation</h3>
+              <ol style={{fontSize: "14px", color: "#666", paddingLeft: "20px"}}>
+                <li>Select the slides you want in the opened presentation</li>
+                <li>Press <code style={{backgroundColor: "#f1f5f9", padding: "2px 6px", borderRadius: "3px"}}>Ctrl+C</code> (Windows) or <code style={{backgroundColor: "#f1f5f9", padding: "2px 6px", borderRadius: "3px"}}>Cmd+C</code> (Mac)</li>
+                <li>Go to your presentation and press <code style={{backgroundColor: "#f1f5f9", padding: "2px 6px", borderRadius: "3px"}}>Ctrl+V</code> or <code style={{backgroundColor: "#f1f5f9", padding: "2px 6px", borderRadius: "3px"}}>Cmd+V</code></li>
+              </ol>
+            </div>
+          </div>
+        </div>
+      </Tab>
+      
+      <Tab title="Slide Sections">
+        <p style={{color: "#666", marginTop: "20px", marginBottom: "20px"}}>
+          Click any section below to open those specific slides in Google Slides. Then copy (Ctrl/Cmd+C) and paste into your presentation.
+        </p>
+        
+        <AccordionGroup>
+          <Accordion title="🎯 Introduction (Slides 1-5)">
+            <div style={{display: "flex", gap: "10px", marginTop: "10px", marginBottom: "15px"}}>
+              <a 
+                href="https://docs.google.com/presentation/d/1Sx6BlmHHD5Nrp8Ihfvp3RrjyVm1BPpU3PHPUup8e7mg/edit#slide=id.g32aeff1afda_0_5101"
+                target="_blank"
+                style={{
+                  padding: "8px 16px",
+                  backgroundColor: "#0F172A",
+                  color: "white",
+                  borderRadius: "4px",
+                  textDecoration: "none",
+                  display: "inline-flex",
+                  alignItems: "center",
+                  gap: "6px"
+                }}
+              >
+                🔗 Open These Slides
+              </a>
+              <button 
+                onClick={() => {
+                  navigator.clipboard.writeText('Introduction Section:\n- Company overview\n- Mission & vision\n- Market opportunity\n- Problem statement\n- Solution overview');
+                  alert('Section details copied to clipboard!');
+                }}
+                style={{
+                  padding: "8px 16px",
+                  backgroundColor: "#f1f5f9",
+                  border: "1px solid #cbd5e1",
+                  borderRadius: "4px",
+                  cursor: "pointer"
+                }}
+              >
+                📋 Copy Section Info
+              </button>
+            </div>
+            <ul style={{paddingLeft: "20px", color: "#666"}}>
+              <li>Company overview & mission</li>
+              <li>Market opportunity ($2.5B TAM)</li>
+              <li>Problem statement - Legacy systems</li>
+              <li>Spare solution overview</li>
+              <li>Why now - Market timing</li>
+            </ul>
+          </Accordion>
+          
+          <Accordion title="🚀 Product Deep Dive (Slides 6-15)">
+            <div style={{display: "flex", gap: "10px", marginTop: "10px", marginBottom: "15px"}}>
+              <a 
+                href="https://docs.google.com/presentation/d/1Sx6BlmHHD5Nrp8Ihfvp3RrjyVm1BPpU3PHPUup8e7mg/edit#slide=id.g32aeff1afda_0_5106"
+                target="_blank"
+                style={{
+                  padding: "8px 16px",
+                  backgroundColor: "#0F172A",
+                  color: "white",
+                  borderRadius: "4px",
+                  textDecoration: "none",
+                  display: "inline-flex",
+                  alignItems: "center",
+                  gap: "6px"
+                }}
+              >
+                🔗 Open These Slides
+              </a>
+              <button 
+                onClick={() => {
+                  navigator.clipboard.writeText('Product Deep Dive:\n- Operations Cloud features\n- Live demo screenshots\n- Architecture overview\n- Integration capabilities\n- Security & compliance');
+                  alert('Section details copied to clipboard!');
+                }}
+                style={{
+                  padding: "8px 16px",
+                  backgroundColor: "#f1f5f9",
+                  border: "1px solid #cbd5e1",
+                  borderRadius: "4px",
+                  cursor: "pointer"
+                }}
+              >
+                📋 Copy Section Info
+              </button>
+            </div>
+            <ul style={{paddingLeft: "20px", color: "#666"}}>
+              <li>Operations Cloud - Core platform</li>
+              <li>Booking & scheduling engine</li>
+              <li>Real-time dispatch console</li>
+              <li>Driver & rider mobile apps</li>
+              <li>Analytics dashboard</li>
+              <li>Integration architecture</li>
+              <li>API ecosystem</li>
+              <li>Security & compliance (SOC 2, HIPAA)</li>
+              <li>Multi-tenant cloud architecture</li>
+              <li>White-label capabilities</li>
+            </ul>
+          </Accordion>
+          
+          <Accordion title="🤖 AI & Innovation (Slides 11-15)">
+            <div style={{display: "flex", gap: "10px", marginTop: "10px", marginBottom: "15px"}}>
+              <a 
+                href="https://docs.google.com/presentation/d/1Sx6BlmHHD5Nrp8Ihfvp3RrjyVm1BPpU3PHPUup8e7mg/edit#slide=id.g32aeff1afda_0_5111"
+                target="_blank"
+                style={{
+                  padding: "8px 16px",
+                  backgroundColor: "#0F172A",
+                  color: "white",
+                  borderRadius: "4px",
+                  textDecoration: "none",
+                  display: "inline-flex",
+                  alignItems: "center",
+                  gap: "6px"
+                }}
+              >
+                🔗 Open These Slides
+              </a>
+              <button 
+                onClick={() => {
+                  navigator.clipboard.writeText('AI & Innovation:\n- Conversational AI agents\n- Voice booking system\n- Predictive analytics\n- Route optimization AI\n- Demand forecasting');
+                  alert('Section details copied to clipboard!');
+                }}
+                style={{
+                  padding: "8px 16px",
+                  backgroundColor: "#f1f5f9",
+                  border: "1px solid #cbd5e1",
+                  borderRadius: "4px",
+                  cursor: "pointer"
+                }}
+              >
+                📋 Copy Section Info
+              </button>
+            </div>
+            <ul style={{paddingLeft: "20px", color: "#666"}}>
+              <li>AI voice agents - 24/7 booking</li>
+              <li>Natural language processing</li>
+              <li>100+ language support</li>
+              <li>Predictive demand modeling</li>
+              <li>Smart routing optimization</li>
+            </ul>
+          </Accordion>
+          
+          <Accordion title="🏆 Customer Success (Slides 16-22)">
+            <div style={{display: "flex", gap: "10px", marginTop: "10px", marginBottom: "15px"}}>
+              <a 
+                href="https://docs.google.com/presentation/d/1Sx6BlmHHD5Nrp8Ihfvp3RrjyVm1BPpU3PHPUup8e7mg/edit#slide=id.g32aeff1afda_0_5116"
+                target="_blank"
+                style={{
+                  padding: "8px 16px",
+                  backgroundColor: "#0F172A",
+                  color: "white",
+                  borderRadius: "4px",
+                  textDecoration: "none",
+                  display: "inline-flex",
+                  alignItems: "center",
+                  gap: "6px"
+                }}
+              >
+                🔗 Open These Slides
+              </a>
+              <button 
+                onClick={() => {
+                  navigator.clipboard.writeText('Customer Success Stories:\n- DART: 30% cost reduction\n- Wilson: First same-day paratransit\n- TransLink: 300K+ trips annually\n- RTC Nevada: 95% OTP\n- Industry awards & recognition');
+                  alert('Section details copied to clipboard!');
+                }}
+                style={{
+                  padding: "8px 16px",
+                  backgroundColor: "#f1f5f9",
+                  border: "1px solid #cbd5e1",
+                  borderRadius: "4px",
+                  cursor: "pointer"
+                }}
+              >
+                📋 Copy Section Info
+              </button>
+            </div>
+            <ul style={{paddingLeft: "20px", color: "#666"}}>
+              <li><strong>DART (Dallas)</strong>: 30% reduction in cost per trip</li>
+              <li><strong>City of Wilson</strong>: First same-day paratransit in US</li>
+              <li><strong>TransLink</strong>: 300,000+ trips annually</li>
+              <li><strong>RTC Southern Nevada</strong>: 95% on-time performance</li>
+              <li><strong>King County Metro</strong>: 50% faster eligibility processing</li>
+              <li>Customer testimonials & quotes</li>
+              <li>Industry recognition & awards</li>
+            </ul>
+          </Accordion>
+          
+          <Accordion title="💰 Pricing & ROI (Slides 23-27)">
+            <div style={{display: "flex", gap: "10px", marginTop: "10px", marginBottom: "15px"}}>
+              <a 
+                href="https://docs.google.com/presentation/d/1Sx6BlmHHD5Nrp8Ihfvp3RrjyVm1BPpU3PHPUup8e7mg/edit#slide=id.g32aeff1afda_0_5123"
+                target="_blank"
+                style={{
+                  padding: "8px 16px",
+                  backgroundColor: "#0F172A",
+                  color: "white",
+                  borderRadius: "4px",
+                  textDecoration: "none",
+                  display: "inline-flex",
+                  alignItems: "center",
+                  gap: "6px"
+                }}
+              >
+                🔗 Open These Slides
+              </a>
+              <button 
+                onClick={() => {
+                  navigator.clipboard.writeText('Pricing & ROI:\n- SaaS subscription model\n- Volume-based pricing\n- ROI calculator results\n- 6-month payback period\n- Cost comparison vs legacy');
+                  alert('Section details copied to clipboard!');
+                }}
+                style={{
+                  padding: "8px 16px",
+                  backgroundColor: "#f1f5f9",
+                  border: "1px solid #cbd5e1",
+                  borderRadius: "4px",
+                  cursor: "pointer"
+                }}
+              >
+                📋 Copy Section Info
+              </button>
+            </div>
+            <ul style={{paddingLeft: "20px", color: "#666"}}>
+              <li>Flexible SaaS pricing models</li>
+              <li>Volume discounts available</li>
+              <li>ROI within 6-12 months</li>
+              <li>30% operational cost savings</li>
+              <li>Cost comparison with competitors</li>
+            </ul>
+          </Accordion>
+          
+          <Accordion title="📅 Implementation & Next Steps (Slides 28-30)">
+            <div style={{display: "flex", gap: "10px", marginTop: "10px", marginBottom: "15px"}}>
+              <a 
+                href="https://docs.google.com/presentation/d/1Sx6BlmHHD5Nrp8Ihfvp3RrjyVm1BPpU3PHPUup8e7mg/edit#slide=id.g32aeff1afda_0_5128"
+                target="_blank"
+                style={{
+                  padding: "8px 16px",
+                  backgroundColor: "#0F172A",
+                  color: "white",
+                  borderRadius: "4px",
+                  textDecoration: "none",
+                  display: "inline-flex",
+                  alignItems: "center",
+                  gap: "6px"
+                }}
+              >
+                🔗 Open These Slides
+              </a>
+              <button 
+                onClick={() => {
+                  navigator.clipboard.writeText('Implementation & Next Steps:\n- 8-12 week deployment\n- Data migration included\n- Comprehensive training\n- 24/7 support\n- Success metrics tracking');
+                  alert('Section details copied to clipboard!');
+                }}
+                style={{
+                  padding: "8px 16px",
+                  backgroundColor: "#f1f5f9",
+                  border: "1px solid #cbd5e1",
+                  borderRadius: "4px",
+                  cursor: "pointer"
+                }}
+              >
+                📋 Copy Section Info
+              </button>
+            </div>
+            <ul style={{paddingLeft: "20px", color: "#666"}}>
+              <li>8-12 week typical implementation</li>
+              <li>Phased rollout approach</li>
+              <li>Data migration & training included</li>
+              <li>Dedicated customer success team</li>
+              <li>Clear next steps & timeline</li>
+            </ul>
+          </Accordion>
+        </AccordionGroup>
+      </Tab>
+      
+      <Tab title="Custom Builder">
+        <div style={{marginTop: "20px"}}>
+          <h4>Build Your Custom Deck</h4>
+          <p style={{color: "#666", marginBottom: "20px"}}>
+            Select the slide sections you need, then we'll provide direct links to each:
+          </p>
+          
+          <div id="customSelections" style={{display: "grid", gap: "10px", marginBottom: "20px"}}>
+            <label style={{display: "flex", alignItems: "center", gap: "10px"}}>
+              <input type="checkbox" data-slides="1-5" data-name="Introduction" defaultChecked />
+              <span>Introduction & Company Overview (5 slides)</span>
+            </label>
+            <label style={{display: "flex", alignItems: "center", gap: "10px"}}>
+              <input type="checkbox" data-slides="6-10" data-name="Product Overview" defaultChecked />
+              <span>Product Features (5 slides)</span>
+            </label>
+            <label style={{display: "flex", alignItems: "center", gap: "10px"}}>
+              <input type="checkbox" data-slides="11-15" data-name="AI Capabilities" />
+              <span>AI & Innovation (5 slides)</span>
+            </label>
+            <label style={{display: "flex", alignItems: "center", gap: "10px"}}>
+              <input type="checkbox" data-slides="16-22" data-name="Case Studies" defaultChecked />
+              <span>Customer Success Stories (7 slides)</span>
+            </label>
+            <label style={{display: "flex", alignItems: "center", gap: "10px"}}>
+              <input type="checkbox" data-slides="23-27" data-name="Pricing" />
+              <span>Pricing & ROI (5 slides)</span>
+            </label>
+            <label style={{display: "flex", alignItems: "center", gap: "10px"}}>
+              <input type="checkbox" data-slides="28-30" data-name="Next Steps" defaultChecked />
+              <span>Implementation & Next Steps (3 slides)</span>
+            </label>
+          </div>
+          
+          <button
+            id="generateCustomBtn"
+            style={{
+              display: "inline-flex",
+              alignItems: "center",
+              gap: "8px",
+              padding: "12px 24px",
+              backgroundColor: "#0F172A",
+              color: "white",
+              borderRadius: "6px",
+              fontWeight: "500",
+              cursor: "pointer",
+              border: "none",
+              marginBottom: "20px"
+            }}
+          >
+            🚀 Generate Custom Links
+          </button>
+          
+          <div id="customLinks" style={{display: "none"}}>
+            <h4 style={{marginTop: "20px", marginBottom: "15px"}}>Your Custom Slide Links:</h4>
+            <div id="linksList" style={{display: "grid", gap: "10px"}}>
+            </div>
+            <p style={{marginTop: "20px", fontSize: "14px", color: "#666"}}>
+              <strong>How to use:</strong> Open each link, select all slides (Ctrl/Cmd+A), copy (Ctrl/Cmd+C), and paste into your presentation.
+            </p>
+          </div>
+        </div>
+      </Tab>
+    </Tabs>
+  </div>
+</Card>
+
+<script dangerouslySetInnerHTML={{ __html: `
+  // Modal functionality
+  document.addEventListener('DOMContentLoaded', function() {
+    const modal = document.getElementById('slideModal');
+    const addBtn = document.getElementById('addSlidesBtn');
+    const closeBtn = document.getElementById('closeModal');
+    const generateBtn = document.getElementById('generateCustomBtn');
+    const customLinks = document.getElementById('customLinks');
+    const linksList = document.getElementById('linksList');
+    
+    if (addBtn && modal) {
+      addBtn.addEventListener('click', function() {
+        modal.style.display = 'block';
+      });
+    }
+    
+    if (closeBtn && modal) {
+      closeBtn.addEventListener('click', function() {
+        modal.style.display = 'none';
+      });
+    }
+    
+    if (modal) {
+      window.addEventListener('click', function(event) {
+        if (event.target === modal) {
+          modal.style.display = 'none';
+        }
+      });
+    }
+    
+    // Custom builder functionality
+    if (generateBtn) {
+      generateBtn.addEventListener('click', function() {
+        const checkboxes = document.querySelectorAll('#customSelections input[type="checkbox"]:checked');
+        linksList.innerHTML = '';
+        
+        if (checkboxes.length === 0) {
+          alert('Please select at least one section');
+          return;
+        }
+        
+        const slideMap = {
+          '1-5': 'g32aeff1afda_0_5101',
+          '6-10': 'g32aeff1afda_0_5106',
+          '11-15': 'g32aeff1afda_0_5111',
+          '16-22': 'g32aeff1afda_0_5116',
+          '23-27': 'g32aeff1afda_0_5123',
+          '28-30': 'g32aeff1afda_0_5128'
+        };
+        
+        checkboxes.forEach(function(checkbox) {
+          const slides = checkbox.dataset.slides;
+          const name = checkbox.dataset.name;
+          const slideId = slideMap[slides];
+          
+          const link = document.createElement('a');
+          link.href = 'https://docs.google.com/presentation/d/1Sx6BlmHHD5Nrp8Ihfvp3RrjyVm1BPpU3PHPUup8e7mg/edit#slide=id.' + slideId;
+          link.target = '_blank';
+          link.style.cssText = 'padding: 10px 15px; background-color: #f8fafc; border: 1px solid #e2e8f0; border-radius: 4px; text-decoration: none; color: #0F172A; display: block;';
+          link.innerHTML = '🔗 <strong>' + name + '</strong> (Slides ' + slides + ')';
+          
+          linksList.appendChild(link);
+        });
+        
+        customLinks.style.display = 'block';
+      });
+    }
+  });
+`}} />
+
+## How It Works
+
+<Steps>
+  <Step title="Choose Your Method">
+    - **Full Duplication**: Creates a complete copy of the entire presentation
+    - **Section Selection**: Open specific slide ranges to copy just what you need
+    - **Custom Builder**: Select multiple sections and get direct links to each
+  </Step>
+  
+  <Step title="Open Slide Links">
+    Click the provided links to open presentations at the exact slides you need
+  </Step>
+  
+  <Step title="Copy Slides">
+    - Select slides: Click first slide, hold Shift, click last slide
+    - Copy: Press `Ctrl+C` (Windows) or `Cmd+C` (Mac)
+  </Step>
+  
+  <Step title="Paste Into Your Deck">
+    - Open your presentation
+    - Navigate to where you want the slides
+    - Paste: Press `Ctrl+V` (Windows) or `Cmd+V` (Mac)
+  </Step>
+</Steps>
+
+## Pro Tips
+
+<AccordionGroup>
+  <Accordion title="Maintaining Spare Branding">
+    When copying slides between presentations:
+    - Use "Keep source formatting" when pasting to maintain Spare colors
+    - Or use "Match destination formatting" to adapt to client templates
+    - Check slide transitions remain smooth after insertion
+  </Accordion>
+  
+  <Accordion title="Quick Keyboard Shortcuts">
+    **Google Slides shortcuts for efficiency:**
+    - `Ctrl/Cmd + A`: Select all slides
+    - `Ctrl/Cmd + C`: Copy selected slides
+    - `Ctrl/Cmd + V`: Paste slides
+    - `Ctrl/Cmd + D`: Duplicate selected slides
+    - `Shift + Click`: Select range of slides
+  </Accordion>
+  
+  <Accordion title="Organizing Mixed Content">
+    When combining slides from multiple sources:
+    1. Create section dividers with title slides
+    2. Reorder using drag and drop in the slide panel
+    3. Update slide numbers if needed
+    4. Check all hyperlinks still work
+  </Accordion>
+</AccordionGroup>
+
+## Additional Templates
+
+<CardGroup cols={2}>
+  <Card title="AI Agent Pitch" icon="robot">
+    15 slides focused on conversational AI
+    <div style={{marginTop: "10px"}}>
+      <a 
+        href="https://docs.google.com/presentation/d/[AI-TEMPLATE-ID]/copy"
+        style={{fontSize: "14px", fontWeight: "500"}}
+      >
+        → Duplicate Deck
+      </a>
+    </div>
+  </Card>
+  
+  <Card title="Eligibility Solution" icon="clipboard-check">
+    20 slides on ADA certification
+    <div style={{marginTop: "10px"}}>
+      <a 
+        href="https://docs.google.com/presentation/d/[ELIGIBILITY-TEMPLATE-ID]/copy"
+        style={{fontSize: "14px", fontWeight: "500"}}
+      >
+        → Duplicate Deck
+      </a>
+    </div>
+  </Card>
+  
+  <Card title="ROI Calculator" icon="calculator">
+    10 slides with financial analysis
+    <div style={{marginTop: "10px"}}>
+      <a 
+        href="https://docs.google.com/presentation/d/[ROI-TEMPLATE-ID]/copy"
+        style={{fontSize: "14px", fontWeight: "500"}}
+      >
+        → Duplicate Deck
+      </a>
+    </div>
+  </Card>
+  
+  <Card title="Quick Demo" icon="play">
+    5 slides for initial calls
+    <div style={{marginTop: "10px"}}>
+      <a 
+        href="https://docs.google.com/presentation/d/[DEMO-TEMPLATE-ID]/copy"
+        style={{fontSize: "14px", fontWeight: "500"}}
+      >
+        → Duplicate Deck
+      </a>
+    </div>
+  </Card>
+</CardGroup>

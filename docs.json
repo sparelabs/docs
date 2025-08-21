@@ -550,6 +550,28 @@
             ]
           }
         ]
+      },
+      {
+        "tab": "Enablement",
+        "groups": [
+          {
+            "group": "Overview",
+            "icon": "rocket",
+            "pages": [
+              "enablement/welcome",
+              "enablement/quick-links",
+              "enablement/presentation-tools"
+            ]
+          },
+          {
+            "group": "EAM Cloud",
+            "icon": "wrench",
+            "description": "Enterprise Asset Management enablement",
+            "pages": [
+              "enablement/eam-cloud/overview"
+            ]
+          }
+        ]
       }
     ],
     "global": {
