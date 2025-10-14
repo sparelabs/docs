@@ -552,6 +552,19 @@
         ]
       },
       {
+        "tab": "Internal Changelog",
+        "groups": [
+          {
+            "group": "Internal Changelog",
+            "pages": [
+              "changelog-internal-features",
+              "changelog-internal-enhancements",
+              "changelog-internal-bugfixes"
+            ]
+          }
+        ]
+      },
+      {
         "tab": "Enablement",
         "groups": [
           {

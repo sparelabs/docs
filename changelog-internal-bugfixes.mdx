@@ -1,0 +1,41 @@
+---
+title: "Bug Fixes"
+description: "Bug fixes and issue resolutions across all Spare products for internal teams"
+rss: true
+---
+
+<Update label="October 9, 2025" description="Bug Fixes">
+  ### Request History Display (ENGINE-112)
+
+  **Issue**
+
+  Request history view had display bugs including incorrect author IDs and included deprecated AI summary endpoint that was causing errors.
+
+  **Resolution**
+
+  Request history now displays correctly with the right author information and without errors. We removed an old summary feature that was causing problems.
+
+  ---
+
+  ### East Bay Paratransit Booking Rules (BUS-3786)
+
+  **Issue**
+
+  East Bay Paratransit trips could be booked with only free riders (like Personal Care Attendants or children), creating a loophole for free rides and violating service requirements.
+
+  **Resolution**
+
+  You can no longer book an East Bay Paratransit trip with only free riders. All trips now require at least one paying rider, which keeps everything in line with service requirements.
+
+  ---
+
+  ### GTFS Real-Time Transit Information (REX-3697)
+
+  **Issue**
+
+  GTFS Realtime proxy was experiencing connection issues, data refresh problems, and JSON format errors.
+
+  **Resolution**
+
+  Fixed connection and data refresh issues with the GTFS real-time transit feed. Real-time bus and train information should now update reliably without errors.
+</Update>

@@ -1,0 +1,146 @@
+---
+title: "Feature Enhancements"
+description: "Feature enhancements and improvements across all Spare products for internal teams"
+rss: true
+---
+
+<Update label="October 9, 2025" description="Feature Enhancements">
+  ### Custom Views Auto-Select When Created ✨
+
+  **What's New**
+
+  When you create a new custom view in Resolve (case management), it's automatically selected and applied immediately.
+
+  **Where You'll See It**
+
+  Resolve case list page - when using the "Configure Views" dropdown to create a new custom view.
+  - **Requires `ConfigurableSummaryBar` feature flag**
+
+  **What Changed**
+  - **Before**: After creating a view, you had to manually click on it to apply it
+  - **Now**: The view is automatically selected, filters are applied, and you see the filtered results right away
+
+  **Why This Matters**
+
+  Saves clicks and time. When you create a view, you almost always want to use it immediately, so now it just works without extra steps.
+
+  ---
+
+  ### Clickable View Names 🖱️
+
+  **What's New**
+
+  In the Resolve "Configure Views" dropdown, you can now click directly on a view name to switch to it.
+
+  **Where You'll See It**
+
+  Resolve case list page - "Configure Views" dropdown menu.
+  - **Requires `ConfigurableSummaryBar` feature flag**
+
+  **What Changed**
+  - **Before**: You had to use specific buttons or controls to switch views
+  - **Now**: Click anywhere on the view name in the dropdown to instantly switch to that view
+
+  **Why This Matters**
+
+  Faster view switching. Most dropdowns work this way, so it's more intuitive and saves time when you're switching between saved views frequently.
+
+  ---
+
+  ### Smarter Trip Group Matching 🎯
+
+  **What's New**
+
+  The system now allows for small timing differences when matching recurring requests to trip groups.
+
+  **How It Works**
+
+  When you have a recurring trip group scheduled (e.g., every Monday at 9:00 AM) and incoming recurring requests (e.g., Monday at 9:02 AM), the system now tolerates small time differences and will match them together.
+  - **No feature flags or configuration required** - automatically improves matching for all trip groups
+
+  **What Changed**
+  - **Before**: Timing had to match very strictly for requests to be grouped
+  - **Now**: The system accepts small variations (a few minutes) when matching requests to existing trip groups
+
+  **Why This Matters**
+
+  More requests can be successfully grouped together, which means better route optimization and more efficient scheduling. Riders with slightly different preferred times can still be grouped if their timing is close enough.
+
+  ---
+
+  ### Better Tab Navigation Memory 🧭
+
+  **What's New**
+
+  When navigating between recurring trips, rider lists, and detail pages, the system now remembers which tab you were on.
+
+  **Where You'll See It**
+
+  Recurring trip management pages and rider detail pages.
+  - **No feature flags required** - automatic improvement to navigation
+
+  **What Changed**
+  - **Before**: Clicking back might take you to a different tab than where you started
+  - **Now**: When you navigate back, you land on the same tab you were viewing before
+
+  **Why This Matters**
+
+  Small detail, big time-saver. If you're working through a list on a specific tab, you don't have to keep re-selecting the right tab every time you go back.
+
+  ---
+
+  ### Dashboard Export Tracking 📊
+
+  **What's New**
+
+  We're now tracking when dashboard PDF exports are used.
+
+  **Why This Matters**
+
+  This helps us understand which reports and dashboards are most valuable to you, so we can prioritize improvements to the analytics features you actually use.
+
+  ---
+
+  ### AI Voice Call Transfer Improvements ☎️
+
+  **What's New**
+
+  Three improvements to how AI Voice handles calls that need human assistance:
+
+  1. **Auto-transfer on booking issues**: If there's a problem completing a booking, the call automatically transfers to a human agent
+  2. **Transfer after declined suggestions**: If a rider declines the booking options AI Voice suggests, the call forwards to an agent who can offer more alternatives
+  3. **Consistent booking prioritization**: AI Voice now uses the same smart algorithm for suggesting ride options as the rest of Spare's booking channels
+
+  **Where You'll See It**
+
+  When riders call your AI Voice number to book trips.
+  - **Requires AI Voice product** and appropriate call forwarding configuration
+
+  **Why This Matters**
+
+  Riders get help faster when automated booking doesn't work, and they hear consistent booking suggestions whether they book through phone, web, or app.
+
+  ---
+
+  ### EAM Inventory Analytics Enhanced 📦
+
+  **What's New**
+
+  Inventory analytics in EAM now show category and manufacturer information.
+
+  **Where You'll See It**
+
+  EAM analytics dashboards - in current inventory reports.
+  - **Requires `EamMfe` feature flag** for EAM (Enterprise Asset Management) access
+  - **Requires `AnalyticsV2` feature flag** to access analytics dashboards
+
+  **What You Can Do**
+
+  Filter and analyze your parts inventory by:
+  - Category (e.g., brakes, filters, electrical)
+  - Manufacturer (e.g., specific vendors or brands)
+
+  **Why This Matters**
+
+  Easier to understand what types of parts you stock most, identify spending patterns by category, and see which manufacturers you rely on. Helps with procurement planning and inventory optimization.
+</Update>
