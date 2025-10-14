@@ -1,7 +1,7 @@
 ---
 title: "New Features"
-description: "New features released across all Spare products for internal teams"
-rss: true
+description: "New features released across all Spare products. These descriptions are for Spare internal teams only."
+rss: "true"
 ---
 
 <Update label="October 9, 2025" description="New Features">
@@ -14,12 +14,16 @@ rss: true
   **Where You'll See It**
 
   The "Create Twilio Connection" button appears on the Twilio Connection list page (`/launch/twilioConnections`) when:
+
   - You have super admin permissions
   - The organization has no existing Twilio connections
+
+![Create Twilio Connection](/images/changelogs/CreateTwillioConnection.png)
 
   **What You Can Do**
 
   When you click the button, a modal opens where you can configure:
+
   - SMS messaging
   - AI Voice calls
   - Call forwarding
@@ -42,6 +46,7 @@ rss: true
   You can now assign specific vehicle types to trip groups and filter trip groups by vehicle type.
 
   **Where You'll See It**
+
   - Trip Group creation/edit forms: New "Vehicle Type" field with dropdown selector
   - Trip Group list page: New "Vehicle Type" column and filter option
   - The field shows "Any Vehicle Type" when no specific type is assigned
@@ -66,6 +71,7 @@ rss: true
   **Where You'll See It**
 
   Recurring trip group details page - a new section shows all requests linked to that trip group.
+
   - **No feature flags or special permissions required** - available to all users with trip group access
 
   **What You Can Do**
@@ -87,6 +93,7 @@ rss: true
   **Where You'll See It**
 
   Mobile app configuration section in admin settings.
+
   - **Requires Administrator access**
 
   **What You Can Do**
@@ -106,6 +113,7 @@ rss: true
   Drivers now see rider locations update in real-time on their map when riders share their location.
 
   **How It Works**
+
   - When a rider shares their location, it appears on the driver's map
   - The location marker moves in real-time as the rider moves
   - Connection status indicator shows connected/connecting/error states
@@ -114,6 +122,7 @@ rss: true
   **Where You'll See It**
 
   Driver app - on the map view when viewing upcoming stops and during active trips.
+
   - **No feature flags required** - automatically available when riders share location
 
   **Why This Matters**
@@ -129,6 +138,7 @@ rss: true
   A new analytics dashboard specifically for trip negotiations is now available.
 
   **What You Can See**
+
   - Trip negotiation success rates
   - How long negotiations typically take
   - Patterns in which trip types get negotiated most
@@ -137,8 +147,9 @@ rss: true
   **Where You'll See It**
 
   Analytics section - new "Trip Negotiation" cube/dashboard.
-  - **Requires `AnalyticsV2` feature flag** to access analytics dashboards
-  - **Requires `TripNegotiation` feature flag** to use trip negotiation features
+
+  - **`Requires AnalyticsV2 feature flag`** to access analytics dashboards
+  - **`Requires TripNegotiation feature flag`** to use trip negotiation features
 
   **Why This Matters**
 
