@@ -4,7 +4,7 @@ description: "Feature enhancements and improvements across all Spare products. T
 rss: true
 ---
 
-<Update label="October 9, 2025" description="Feature Enhancements">
+<Update label="October 9, 2025" description="7 Feature Enhancements">
   ### Custom Views Auto-Select When Created ✨
 
   **What's New**
@@ -143,4 +143,121 @@ rss: true
   **Why This Matters**
 
   Easier to understand what types of parts you stock most, identify spending patterns by category, and see which manufacturers you rely on. Helps with procurement planning and inventory optimization.
+</Update>
+
+<Update label="October 8, 2025" description="5 Feature Enhancements">
+  ### Android Driver App Display Fixes 📱
+
+  **What's New**
+
+  Fixed multiple layout issues on Android devices where UI elements were hidden or buttons were unpressable due to edge-to-edge rendering.
+
+  **Where You'll See It**
+
+  Driver app on Android devices, specifically in these screens:
+  - Dispatch Chat screen
+  - Login screen
+  - EAM Inspection screen
+  - Vehicle Edit screen
+  - **No feature flags required**
+
+  **What Changed**
+  - **Before**: On Android devices (especially with 3-button navigation), buttons could be hidden behind the system navigation bar, text input fields were obscured, and Terms & Conditions were not visible on login
+  - **Now**: All screens properly respect safe areas on Android devices, ensuring buttons are pressable and all content is visible
+
+  **Why This Matters**
+
+  If you were using the driver app on Android tablets or phones, you may have noticed critical buttons being hidden or hard to press. This fix ensures all interactive elements are accessible and visible, preventing workflow disruptions for drivers.
+
+  ---
+
+  ### Clickable Custom View Names 🖱️
+
+  **What's New**
+
+  In the Resolve "Configure Views" dropdown, you can now click directly on custom view names to switch to them.
+
+  **Where You'll See It**
+
+  Resolve case list page - "Configure Views" dropdown menu when viewing custom views.
+  - **Requires `ConfigurableSummaryBar` feature flag**
+
+  **What Changed**
+  - **Before**: You had to use specific controls to apply a custom view; clicking on the view name didn't do anything
+  - **Now**: Click anywhere on a view name in the dropdown to instantly apply that view and close the popover
+
+  **Why This Matters**
+
+  Makes view switching faster and more intuitive. Most dropdowns work this way, so it feels natural and saves time when you're frequently switching between saved views.
+
+  ---
+
+  ### EAM Part Vendor Search 🔍
+
+  **What's New**
+
+  When searching for parts in EAM, you can now search by part vendor information, and selecting a vendor will navigate you directly to the Vendors tab.
+
+  **Where You'll See It**
+
+  EAM part search in:
+  - Inventory Adjustments
+  - Parts list page (header search)
+  - Purchase Orders (line items)
+  - Work Orders (parts line item drawer)
+  - **Requires `EamMfe` feature flag** for EAM access
+
+  **What Changed**
+  - **Before**: Part search only found parts by part name or part number; you couldn't search by vendor information
+  - **Now**: Search results include both parts and part vendors. When you select a vendor from the Parts list search, it automatically opens the Vendors tab
+
+  **Why This Matters**
+
+  Makes it much easier to find parts when you know the vendor but not the exact part number. For example, if you know you need a filter from a specific manufacturer, you can now search by that vendor name. Purchase Orders also auto-fill unit prices from part cost data when available, speeding up order creation.
+
+  ---
+
+  ### Resolve Case Activity Feed - Object Links 🔗
+
+  **What's New**
+
+  The case activity feed in Resolve now displays when riders, drivers, or other objects are linked to or unlinked from a case.
+
+  **Where You'll See It**
+
+  Resolve case details page - Activity Feed tab.
+  - **Requires Resolve product access**
+
+  **What Changed**
+  - **Before**: When someone linked or unlinked a rider, driver, or other object from a case, this action wasn't visible in the activity feed
+  - **Now**: Clear activity feed entries show "Rider linked: [Name/ID]" or "Rider unlinked: [Name/ID]" with link/unlink icons, including who made the change and when
+
+  **Why This Matters**
+
+  Provides complete visibility into case history. If you're investigating a case, you can now see the full timeline of which riders or drivers were associated with it and when those associations changed. The linked object names are clickable, taking you directly to their detail pages.
+
+  ---
+
+  ### Rider Hub Link Spacing 📖
+
+  **What's New**
+
+  Fixed text formatting in Rider Hub where links and text appeared without proper spacing.
+
+  **Where You'll See It**
+
+  Rider Hub forms, specifically:
+  - Form submission "start over" links
+  - Rider Profile Dedupe step (phone/email links)
+  - Rider Auth Phone Form (email link)
+  - Rider Auth Email Form (phone number link)
+  - **Requires `EngageRiderHub` feature flag**
+
+  **What Changed**
+  - **Before**: Text and embedded links ran together without spaces (e.g., "Click herehere to start")
+  - **Now**: Proper spacing appears between text and links for normal readability
+
+  **Why This Matters**
+
+  Improves readability for riders using Rider Hub forms. Text that runs together looks unprofessional and can be confusing. Now everything reads naturally with proper spacing.
 </Update>
