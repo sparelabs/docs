@@ -1,0 +1,47 @@
+---
+title: "Standard - Driver Experience"
+description: "Feature flags for Spare Standard - Driver Experience"
+---
+
+# `ShowAllSlotsToDriver`
+
+**Description:** Enables a "View All Stops" feature in the driver app that allows drivers to see their complete duty manifest - all scheduled stops for their entire shift, not just the current or next few stops.
+
+**Why Enable:** Enable for organizations where drivers benefit from seeing their full day's schedule in advance. This helps drivers:
+- Plan their breaks and meal times around their schedule
+- Understand the overall flow of their shift
+- Anticipate long drives or complex routing
+- Mentally prepare for the number of trips remaining
+
+**Pre-requisites:**
+- None
+
+**Notes:**
+- Without this flag, drivers typically only see their current stop and a limited preview of upcoming stops
+- Provides transparency to drivers about their workload
+- Does not change driver workflow or routing, only visibility
+
+**Related Feature Flags:** Works independently but is often used alongside:
+- `DriverBreaks` - automated break scheduling
+
+---
+
+# `DriverBreaks`
+
+**Description:** Enables automated, optimized driver break scheduling where the routing engine automatically determines the best times and locations for driver breaks to maximize efficiency while respecting mandated break requirements.
+
+**Why Enable:** Enable for organizations that need to comply with driver break regulations (e.g., mandatory breaks after X hours of driving) and want the system to automatically optimize when these breaks occur. Instead of manually scheduling breaks or drivers taking breaks whenever convenient, the engine will insert breaks at optimal times that minimize impact on service delivery while ensuring compliance with break policies.
+
+**Pre-requisites:**
+- Break Policy must be configured for the organization (defining break length, frequency requirements, etc.)
+
+**Notes:**
+- System automatically finds optimal break timing based on duty schedules and trip assignments
+- Considers factors like: driver's location, upcoming pickup times, distance to next stops
+- More efficient than manual break scheduling as it continuously optimizes
+- Break policies can be configured per organization to match local labor regulations
+
+**Related Feature Flags:** Works independently but is often used alongside:
+- `AsapDriverBreaks` - allows manual ASAP breaks for urgent situations
+- `BreaksWithLocations` - enables specifying specific locations where breaks must be taken
+- `DutyInterruptionReasons` - allows managing break/interruption reasons and terminology

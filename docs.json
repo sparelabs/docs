@@ -565,6 +565,21 @@
         ]
       },
       {
+        "tab": "Feature Flag Glossary",
+        "groups": [
+          {
+            "group": "Feature Flags",
+            "pages": [
+              "feature-flags-standard-admins-service-planners",
+              "feature-flags-standard-dispatch-booking-agents",
+              "feature-flags-driver-experience",
+              "feature-flags-open-fleets",
+              "feature-flags-spare-one"
+            ]
+          }
+        ]
+      },
+      {
         "tab": "Enablement",
         "groups": [
           {

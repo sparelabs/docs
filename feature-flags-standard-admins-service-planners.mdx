@@ -1,0 +1,29 @@
+---
+title: "Standard - Admins & Service Planners"
+description: "Feature flags for Spare Standard - Admins & Service Planners"
+---
+
+# `FareRules`
+
+**Description:** Enables the Fare Rules tab under Spare Pay in the admin panel. This allows organizations to create custom fare calculation rules that define how much riders are charged based on various conditions such as rider type (adult, senior, child, etc.), distance traveled, time of day, payment methods, zones, and more.
+
+**Why Enable:** Enable for organizations that need customized, complex fare structures beyond simple flat rates. This is essential for transit agencies and mobility providers that need to:
+- Charge different rates for different rider types (e.g., seniors pay reduced fares, children ride free with adults)
+- Implement distance-based pricing with base fares and per-kilometer rates
+- Apply special pricing during certain times (e.g., free rides on specific dates, peak/off-peak pricing)
+- Honor specific payment methods (e.g., transit passes, employee cards)
+- Enforce zone-based travel restrictions or pricing
+- Create companion/dependent rider rules (e.g., personal care attendants ride free)
+
+**Pre-requisites:**
+- None
+
+**Notes:**
+- Fare rules are configured in code as schema-based calculators (TypeScript classes)
+- Each organization/service can have custom fare logic tailored to their specific policies
+- Examples of implemented fare rules include: distance-based fares, rider type discounts, time-based free fares, zone restrictions, companion rider rules, and payment method-specific pricing
+- Changes to fare rules require code deployment; this is not a self-service configuration in the UI (though the tab visibility is controlled by this feature flag)
+
+**Related Feature Flags:** Works independently but is often used alongside:
+- `FarePasses` - enables fare passes that riders can purchase
+- `TipPolicies` - enables tipping configurations

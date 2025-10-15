@@ -1,0 +1,27 @@
+---
+title: "Open Fleets"
+description: "Feature flags for Spare Open Fleets"
+---
+
+# `OpenFleet`
+
+**Description:** Enables integration with external fleet providers (like Uzurv, Lyft, Uber, and other third-party operators), allowing the system to route trip requests to these external services when appropriate and track their fulfillment.
+
+**Why Enable:** Enable for organizations that want to extend capacity beyond their own fleet by partnering with external providers. This is valuable when:
+- Demand exceeds available in-house fleet capacity
+- Service area extends beyond where your fleet operates
+- Cost-effective to outsource certain trips to third-party providers
+- Need to provide service 24/7 but don't have round-the-clock fleet availability
+
+**Pre-requisites:**
+- External fleet provider integrations must be configured and active
+- Business agreements with external providers must be in place
+
+**Notes:**
+- Requests can be automatically routed to external fleets based on availability, cost, or policy rules
+- System tracks trip status even when fulfilled by external providers
+- Billing and reconciliation with external providers must be managed
+- Useful for hybrid models combining owned fleet with on-demand marketplace capacity
+
+**Related Feature Flags:** Works independently but is often used alongside:
+- `OpenFleetRematching` - enables rematching trips to/from external fleets
