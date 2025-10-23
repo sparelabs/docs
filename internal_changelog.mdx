@@ -1,0 +1,214 @@
+## 2025-10-17 - Daily Update
+
+---
+title: "Internal Changelog"
+description: "All internal product updates"
+rss: true
+---
+
+<Update label="Friday, October 17, 2025" description="10 Updates" tags={["Analytics", "AI Voice", "Admin", "Engine", "Operations"]}>
+
+## 📊 Analytics
+### 📊 Query Group Membership Custom Fields Directly
+
+**What's New**  
+Custom fields for Group Memberships are now directly available as dimensions in Analytics. You can build reports using these fields without needing to join through the Ridership Report data, simplifying your queries.
+
+**Pre-requisites**
+- Requires `AnalyticsV2` feature flag
+
+<details>
+  <summary><strong>See More</strong></summary>
+
+  #### Where You'll See It
+- *Analytics > Query Builder* (new dimensions available in the dimension picker for the `group_membership` data source)
+
+  #### What You Can Do
+- Add custom fields from Group Memberships directly as dimensions or filters when building a report.
+- For example, if you have a custom field called "Certification Level" on your group memberships, you can now group or filter by that field directly.
+
+  #### Why This Matters
+Previously, accessing group membership custom fields required complex joins through the Ridership Report. This change makes reporting on this data much more straightforward and aligns it with how other custom fields work in Analytics.
+</details>
+
+---
+### 🔗 Link Case Data to Organization Admins in Reports
+
+**What's New**  
+You can now join `Case Data` with `Organization Admin` data in Analytics reports. This allows you to include details about the admin assigned to a case, such as their name or email, directly in your case-related reports.
+
+**Pre-requisites**
+- Requires `AnalyticsV2` feature flag
+
+<details>
+  <summary><strong>See More</strong></summary>
+
+  #### Where You'll See It
+- *Analytics > Query Builder* (when using `Case Data` as the primary data source)
+
+  #### What You Can Do
+- When building a report on `Case Data`, you can now add dimensions from the `Organization Admin` data source (e.g., `Organization Admin > First Name`).
+- Create reports that list all open cases and show the full name of the admin assigned to each one.
+
+  #### Why This Matters
+Previously, attempting to link case data to the assigned admin in a report would result in an error. This enhancement unlocks new reporting capabilities, allowing you to analyze case distribution and ownership more effectively.
+</details>
+
+---
+### 🐛 Bug Fixes
+
+- **Ridership Report Payment Method Capture (BUS-4303)**
+  - _Resolution_: Fixed an issue where the `Ridership Report` in Analytics was not correctly showing the payment method for certain payment types (e.g., Cash, Ticket). All payment method types are now accurately reflected.
+
+---
+
+## 🤖 AI Voice
+### 📅 More Accurate Date of Birth Recognition
+
+**What's New**  
+AI Voice is now stricter and more accurate when understanding dates of birth spoken by callers for authentication. It will now identify and reject ambiguous dates to prevent incorrect rider matches and improve security.
+
+**Pre-requisites**
+- No feature flags required
+
+<details>
+  <summary><strong>See More</strong></summary>
+
+  #### Where You'll See It
+- This is a behavioral change in the AI Voice system during rider authentication and has no specific UI location.
+
+  #### What You Can Do
+- Callers can authenticate using a variety of clear date formats.
+- For example, AI Voice will correctly understand both "June 6th 2025" and "2025 06 01".
+- However, it will now reject ambiguous spoken dates like "one one ninety two" (which could mean January 1st or November 1st) to avoid potential mismatches.
+
+  #### Why This Matters
+Previously, ambiguous dates could sometimes lead to incorrect authentications. This improvement ensures that only clearly stated dates of birth are accepted, increasing the accuracy and reliability of the voice authentication process.
+</details>
+
+---
+
+## ⚙️ Admin
+### 🌍 Set a Default Country for Your Organization
+
+**What's New**  
+You can now set a "Default Country" in your organization's settings. This country's flag and phone code will automatically be selected by default when adding phone numbers to new riders, streamlining the creation process for international operations.
+
+**Pre-requisites**
+- Requires Administrator access
+
+<details>
+  <summary><strong>See More</strong></summary>
+
+  #### Where You'll See It
+- *Settings > Organization > General Information* (new "Default Country" dropdown field)
+- *People > Riders > Create Rider* (the phone number input field will now default to the selected country)
+
+  #### What You Can Do
+- Set a default country for your entire organization.
+- When creating a new rider, the phone number field will pre-populate with the correct country code, reducing manual selection.
+
+  #### Why This Matters
+For organizations operating outside of North America, administrators had to manually select the correct country code for every new rider. This feature simplifies the workflow and reduces the chance of data entry errors.
+</details>
+
+---
+### ✈️ Cross-Region Data Migration Tool
+
+**What's New**  
+A new Data Migration Tool is now available for Super Admins to transfer data between organizations in different geographic regions. The redesigned interface allows for selecting source and destination regions, choosing specific data types to migrate, and viewing detailed results of the migration process.
+
+**Pre-requisites**
+- Requires Super admin permissions
+
+<details>
+  <summary><strong>See More</strong></summary>
+
+  #### Where You'll See It
+- *Super Admin > Data Migrations* (new page at `/admin/super-admin/crossRegionDataMigrations`)
+
+  #### What You Can Do
+- Select a source and destination region from dropdown menus.
+- Choose the specific source and destination organizations for the data transfer.
+- Select which data items (e.g., Services, Riders, Fare Passes) to migrate.
+- Monitor the results of the migration with per-item success and failure details.
+
+  #### Why This Matters
+This powerful internal tool provides a secure and reliable workflow for moving organization data between different hosting regions, which is critical for new customer onboarding and regional expansions.
+</details>
+
+---
+### 🗺️ Redesigned Multimodal Graph Configuration
+
+**What's New**  
+The interface for managing multimodal journey planning graphs has been completely redesigned and integrated into each organization's settings. It now provides a streamlined, organization-specific view for managing datasets, checking graph build status, and requesting a rebuild with a single click.
+
+**Pre-requisites**
+- Requires Administrator access
+
+<details>
+  <summary><strong>See More</strong></summary>
+
+  #### Where You'll See It
+- *Settings > Organization > Multimodal Configuration* (new tab on the View Organization page)
+
+  #### What You Can Do
+- View the current build status of the journey planning graph, including the last build time.
+- Click the "Request Rebuild" button to trigger a new graph build after updating data sources.
+- Manage all GTFS, real-time, and on-demand flex datasets for the organization in one place.
+- Assign datasets from a list that is automatically filtered to your organization, preventing misconfiguration.
+
+  #### Why This Matters
+Previously, configuring multimodal graphs was a complex, region-wide process prone to error. This new interface simplifies the entire workflow, reduces the risk of incorrect setup, and empowers administrators to manage their own journey planning data sources with confidence.
+</details>
+
+---
+### 🐛 Bug Fixes
+
+- **Driver and Admin Photo Display (BUS-4398)**
+  - _Resolution_: For enhanced security, the `Photo` column has been removed from the main list views for *People > Drivers* and *Settings > Team*. Photos remain visible on individual driver and admin detail pages.
+- **Address Field Headers in Form Viewer (ENG-708)**
+  - _Resolution_: Fixed an issue where headers from the address input field (e.g., "Address Details") were incorrectly appearing in the table of contents when viewing forms. The address search input has also been visually updated for better consistency.
+- **Group Membership Metadata Updates via API (ENG-831)**
+  - _Resolution_: Resolved a bug in the `PATCH /v1/kcmSync/groupMemberships/:id` API endpoint where updating a single metadata field would incorrectly erase all other existing metadata. The endpoint now correctly merges the changes, preserving other fields.
+
+---
+
+## ⚙️ Engine
+### ⏱️ Smarter Duty Interruption Scheduling
+
+**What's New**  
+When you create a duty interruption, the system now intelligently handles cases where the full duration won't fit before the duty ends. It will automatically create a shorter interruption if possible and notify you of the adjustment, preventing failures.
+
+**Pre-requisites**
+- Requires Administrator access
+
+<details>
+  <summary><strong>See More</strong></summary>
+
+  #### Where You'll See It
+- *Rides > Duties > (select a duty) > Driver Breaks modal*
+
+  #### What You Can Do
+- When creating a duty interruption (e.g., a break), the system checks for available time on the duty.
+- If a 30-minute interruption is requested but only 20 minutes remain on the duty, the system will create a 20-minute interruption.
+- A notification will appear confirming the change (e.g., "Interruption created but was shortened to fit on the duty.").
+
+  #### Why This Matters
+Previously, attempting to schedule an interruption that was longer than the remaining duty time would simply fail, forcing dispatchers to manually calculate the correct duration. This change automates the process, saving time and reducing frustration.
+</details>
+
+---
+
+## 🎯 Operations
+### 🐛 Bug Fixes
+
+- **Service Availability for Estimates (BUS-3786)**
+  - _Resolution_: Corrected an issue where a service might not appear as an option during trip estimation due to time-based rules on its service zones. The system now validates location first, showing all geographically valid services, and applies time-based rules only after a specific trip time is selected.
+
+</Update>
+
+---
+
+---
+
