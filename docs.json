@@ -553,15 +553,8 @@
       },
       {
         "tab": "Internal Changelog",
-        "groups": [
-          {
-            "group": "Internal Changelog",
-            "pages": [
-              "changelog-internal-features",
-              "changelog-internal-enhancements",
-              "changelog-internal-bugfixes"
-            ]
-          }
+        "pages": [
+          "internal_changelog"
         ]
       },
       {
