@@ -1,3 +1,112 @@
+## 2025-10-17 - Daily Update
+
+# Release Summary - Friday, October 17, 2025
+
+*What's New in Spare*
+
+---
+## 🤖 AI Voice
+
+### 🗣️ More Accurate Date of Birth Recognition
+
+**What's New**  
+AI Voice is now more precise when handling dates of birth for rider authentication. It is stricter about ambiguous formats and better at understanding various spoken date formats to improve the success rate of voice authentication.
+
+**Pre-requisites**
+- Requires AI Voice to be enabled for the organization.
+
+<details>
+<summary><strong>See More</strong></summary>
+
+**Where You'll See It**
+- This is a non-visual improvement to the background processing of the AI Voice call flow during rider authentication.
+
+**What You Can Do**
+- Riders can authenticate using dates like "June 6th 2025" or "2025 06 01," and the system will correctly understand them.
+- The system will now reject ambiguous dates like "one one ninety two" (which could be January 1st or November 1st) to prevent incorrect authentications.
+
+**Why This Matters**  
+Inaccurate date recognition could lead to failed authentications or, in rare cases, authenticating the wrong rider. This improvement increases the reliability and security of the AI Voice authentication process by correctly handling clear date formats and rejecting ambiguous ones.
+
+</details>
+
+---
+## 🎯 Operations
+
+### ⏱️ Smarter Duty Interruption Scheduling
+
+**What's New**  
+When creating a duty interruption, the system now intelligently handles situations where the duty is ending soon. If the full interruption doesn't fit, the system will automatically schedule a shorter one if possible and notify you of the change.
+
+**Pre-requisites**
+- Requires Administrator access with permissions to manage duties.
+
+<details>
+<summary><strong>See More</strong></summary>
+
+**Where You'll See It**
+- *Rides > Live Map > (Select a Duty) > Breaks tab > Add Break button*
+
+**What You Can Do**
+- When you create an interruption near the end of a duty:
+  - If the full duration fits, it will be created as requested.
+  - If only a partial duration fits, the interruption will be created for that shorter duration, and a notification will inform you (e.g., "Interruption created but shortened to 15 minutes").
+  - If it doesn't fit at all, you'll receive a clear failure message (e.g., "Could not create interruption as there is not enough time remaining in the duty").
+
+**Why This Matters**  
+Previously, attempting to create an interruption that didn't fit within the remaining duty time would simply fail without a clear explanation. This enhancement provides better feedback and automatically adjusts the break when possible, creating a more intuitive workflow for dispatchers.
+
+</details>
+
+---
+### 🐛 Bug Fixes
+
+- **Service Availability During Fare Estimation (BUS-3786)**
+  - _Resolution_: Fixed an issue where some services were not appearing as available during fare estimation due to time-based rules on their service zones. The system now validates geography first to show available services, and applies time validation only after a specific trip time is selected.
+
+---
+## 📊 Analytics
+
+### 📊 Query Group Membership Custom Fields
+
+**What's New**  
+Custom fields associated with Group Memberships are now directly available for querying in Analytics V2. This allows for building more detailed reports based on custom data stored on group memberships.
+
+**Pre-requisites**
+- Requires `AnalyticsV2` feature flag.
+
+<details>
+<summary><strong>See More</strong></summary>
+
+**Where You'll See It**
+- *Analytics > Query Builder* (when using the `Group Memberships` data source).
+
+**What You Can Do**
+- In the Query Builder, select the `Group Memberships` data source.
+- You will now see your custom fields (e.g., `metadata_field_name`) available as dimensions for filtering, grouping, and display.
+
+**Why This Matters**  
+Previously, accessing group membership custom fields was difficult and limited. This change makes that data a first-class citizen in Analytics, enabling richer reports on rider segments, eligibility, and other custom-tracked attributes.
+
+</details>
+
+---
+### 🔗 Link Case Assignees to Admin Details in Reports
+
+**What's New**  
+In Analytics V2, you can now join `Case Data` with `Organization Admin` data. This allows you to include details about the assigned administrator (like their name or phone number) in reports about cases.
+
+**Pre-requisites**
+- Requires `AnalyticsV2` feature flag.
+
+<details>
+<summary><strong>See More</strong></summary>
+
+**Where You'll See It**
+- *Analytics > Query Builder*
+
+---
+
 ## 2025-10-22 - Daily Update
 
 # Release Summary - Wednesday, October 22, 2025
