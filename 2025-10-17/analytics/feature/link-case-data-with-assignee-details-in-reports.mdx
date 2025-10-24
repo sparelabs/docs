@@ -1,0 +1,41 @@
+---
+title: "Internal Changelog"
+description: "All internal product updates"
+rss: true
+---
+
+<Update label="2025-10-17" description="1 Update" tags={["Analytics"]}>
+
+## Analytics
+
+### 📊 Link Case Data with Assignee Details in Reports
+
+### 
+
+**What's New**  
+In Analytics, you can now connect `Case Data` to `Organization Admin` details in your reports. This allows you to include information about the admin assigned to a case, such as their name or phone number, directly in your case-related analysis.
+
+
+**Pre-requisites**
+- Requires `AnalyticsV2` feature flag
+
+
+<Accordion title="See More">
+
+#### Where You'll See It
+- *Analytics > Query Builder*
+
+#### What You Can Do
+- Create a report using `Case Data` as the primary data source.
+- Add measures, dimensions, or filters from the `Organization Admin` data source to your report.
+- For example, you can now build a report that shows the number of open cases assigned to each individual administrator by name.
+
+#### Why This Matters
+Before this change, it was not possible to join case data with the details of the assigned administrator, limiting reporting capabilities. This new relationship unlocks deeper insights into agent workload and case management performance.
+</Accordion>
+
+---
+</Update>
+
+---
+

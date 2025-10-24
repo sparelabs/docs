@@ -1,0 +1,41 @@
+---
+title: "Internal Changelog"
+description: "All internal product updates"
+rss: true
+---
+
+<Update label="2025-10-17" description="1 Update" tags={["Operations"]}>
+
+## Operations
+
+### ⏱️ Smarter Scheduling for Duty Interruptions
+
+### 
+
+**What's New**  
+When creating a duty interruption (like an impromptu break), the system now intelligently handles situations where the duty is ending soon. If the full interruption doesn't fit, the system will automatically create a shorter one if possible and notify you of the adjustment.
+
+
+**Pre-requisites**
+- Requires Administrator access
+
+
+<Accordion title="See More">
+
+#### Where You'll See It
+- *Operations > Live Map > (select a duty) > Breaks tab* (when using the "Add Break" button)
+
+#### What You Can Do
+- Create an immediate interruption for a driver near the end of their duty.
+- The system will automatically shorten the interruption to the maximum possible duration if the requested length exceeds the remaining duty time.
+- Receive a notification confirming that the interruption was created but shortened to fit the duty schedule.
+
+#### Why This Matters
+Previously, attempting to create an interruption that was longer than the remaining duty time would simply fail without a clear explanation. This enhancement prevents failures by creating the longest possible interruption and provides clear feedback, saving dispatchers time and reducing frustration.
+</Accordion>
+
+---
+</Update>
+
+---
+

@@ -1,0 +1,99 @@
+# Spare AI Platform
+
+# `LaunchAIVoice`
+
+**Feature Flag Type:** Spare AI Platform
+
+**Description:** Enables the AI Voice agent for booking and managing trips over the phone within the Spare Launch product. Riders can call a designated phone number and interact with a voice assistant to perform actions like booking a new trip, checking the status of an existing trip, or cancelling a ride.
+
+**Why Enable:** This provides a powerful, automated, 2-4/7 booking channel for riders who prefer to use the phone. It can significantly reduce call volume to dispatch and booking agents, freeing up staff to handle more complex inquiries. It's ideal for organizations looking to improve efficiency and offer more flexible booking options to their riders.
+
+**Pre-requisites:**
+- Requires a configured Twilio account and phone number set up for voice calls.
+
+**Notes:**
+- This is the base flag for AI Voice functionality in the Launch product. Other related AI Voice flags often depend on this one being active.
+- The user experience and available voice agent skills can be further customized through the AI Voice configuration settings.
+
+**Related Feature Flags:**
+Works independently but is often used alongside:
+- `AiVoiceAddPaymentMethod`: Allows riders to add a new payment method over the phone.
+- `AiVoicePhoneNumberWithIdAndPinFallback`: Provides an alternative authentication method for riders.
+
+---
+
+# `AiChat`
+
+**Feature Flag Type:** Spare AI Platform
+
+**Description:** Enables an AI-powered chat agent that riders can interact with via SMS. Riders can send text messages to a designated number to book trips, get an ETA for their ride, and manage their bookings.
+
+**Why Enable:** Offers a convenient, asynchronous booking and trip management channel for riders. It's an excellent alternative for users who prefer texting over calling or using a mobile app. This can deflect a significant number of simple inquiries from live agents and provides a modern, accessible communication option.
+
+**Pre-requisites:**
+- Requires a configured Twilio account with an SMS-capable phone number.
+- The service the rider is booking must allow booking through the "AI Chat" interface (`allowCreatingNewUnmatchedRequests` setting).
+
+**Notes:**
+- When enabled, incoming SMS messages to the configured number are routed to the AI Chat agent.
+
+**Related Feature Flags:**
+Works independently of other flags.
+
+---
+
+# `AiVoiceAddPaymentMethod`
+
+**Feature Flag Type:** Spare AI Platform
+
+**Description:** Extends the AI Voice agent's capabilities to allow riders to securely add a new credit card as a payment method during a phone call.
+
+**Why Enable:** This removes a key friction point for new riders or those needing to update their payment information. Instead of requiring them to use the web or mobile app, they can manage their payment methods directly over the phone, creating a more seamless and self-contained voice booking experience. This can increase trip completion rates for riders who primarily interact via phone.
+
+**Pre-requisites:**
+- `LaunchAIVoice` or `EngageAIVoice` must be enabled.
+- A Stripe payment gateway must be configured for the organization.
+
+**Notes:**
+- The process is designed to be PCI compliant, as the agent handles the card information securely.
+
+**Related Feature Flags:**
+- **Requires:** `LaunchAIVoice` or `EngageAIVoice`.
+
+---
+
+# `AiVoicePhoneNumberWithIdAndPinFallback`
+
+**Feature Flag Type:** Spare AI Platform
+
+**Description:** Modifies the AI Voice authentication process. Instead of only relying on the rider's phone number (ANI) for identification, it allows for a fallback method where the rider can authenticate using their Rider ID and PIN if their phone number is not recognized.
+
+**Why Enable:** Increases the success rate of rider authentication over the phone. This is particularly useful for riders who may be calling from a different phone number than the one registered on their account (e.g., a family member's phone, a landline). It provides a secure alternative for verification, reducing failed authentications and ensuring more riders can access the system.
+
+**Pre-requisites:**
+- `LaunchAIVoice` or `EngageAIVoice` must be enabled.
+
+**Notes:**
+- This provides a more flexible and robust authentication flow for the AI Voice agent.
+
+**Related Feature Flags:**
+- **Requires:** `LaunchAIVoice` or `EngageAIVoice`.
+
+---
+
+# `RequestMisbookings`
+
+**Feature Flag Type:** Spare AI Platform
+
+**Description:** Enables a background job and associated tooling to automatically detect potential "misbookings". These are trips where the rider may have made a mistake, such as booking a trip for the wrong time of day (e.g., 3 AM instead of 3 PM) or from an unusual location.
+
+**Why Enable:** This feature acts as a proactive quality assurance tool to catch common booking errors before they result in a poor rider experience or wasted operational resources. By flagging potentially incorrect bookings for review, dispatchers can confirm the details with the rider and prevent no-shows or last-minute cancellations, leading to more efficient service delivery.
+
+**Pre-requisites:**
+- No hard pre-requisites, but most useful for organizations with higher booking volumes where manual review of every trip is not feasible.
+
+**Notes:**
+- This is primarily a backend and data analysis feature. The results are surfaced to admins for review.
+
+**Related Feature Flags:**
+Works independently of other flags.

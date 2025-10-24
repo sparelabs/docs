@@ -1,0 +1,117 @@
+---
+title: "Analytics"
+description: "Internal updates for Analytics product"
+rss: "true"
+---
+
+<Update label="October 7, 2025" description="2 Feature Updates">
+
+### 🔧 SQL Report Variables and Filtering
+
+<AccordionGroup>
+<Accordion title="What's New">
+SQL reports now support dynamic variables that allow you to filter and customize queries at runtime, with a new filter bar in the SQL editor and dashboard integration.
+</Accordion>
+
+<Accordion title="Where You'll See It">
+- **Analytics > SQL Editor** - new filter bar for defining and editing variables
+- **Analytics > Reports** - filter bar appears on SQL reports with date variables
+- **Analytics > Dashboards** - SQL reports in dashboards can be filtered
+- **Requires `AnalyticsV2` feature flag** to access analytics features
+</Accordion>
+
+<Accordion title="What You Can Do">
+- Define date range, fleet, and service variables in your SQL queries
+- Use the filter bar in the SQL editor to add, edit, and remove variables
+- Variables are automatically available in autocomplete as you write SQL
+- Execute queries with Cmd/Ctrl+Enter with variables applied
+- Filter SQL reports by date range when viewing them
+- Apply dashboard filters to SQL reports embedded in dashboards
+- Download SQL reports with current filter values applied
+- Variables are saved with your SQL queries for reuse
+</Accordion>
+
+<Accordion title="Why This Matters">
+Previously, if you wanted to run the same SQL report for different date ranges, fleets, or services, you'd have to manually edit the SQL query each time or create multiple copies of the same report. Now, you can write one query with variables and filter it dynamically. This is especially powerful for recurring reports - you can create a "Monthly Performance" report once and just change the date range each month. The dashboard integration means you can have one SQL report that responds to dashboard-wide filters, keeping all your reports in sync. The download functionality ensures your exported data matches exactly what you're seeing on screen, with filters applied.
+</Accordion>
+</AccordionGroup>
+
+---
+
+### 🚫 Dashboard Edit Mode Unsaved Changes Protection
+
+<AccordionGroup>
+<Accordion title="What's New">
+When editing an analytics dashboard, clicking Cancel now checks for unsaved changes and prompts you to confirm before exiting edit mode.
+</Accordion>
+
+<Accordion title="Where You'll See It">
+- **Analytics > Dashboards** - when in edit mode
+- **Requires `AnalyticsV2` feature flag** to access analytics features
+</Accordion>
+
+<Accordion title="What Changed">
+- **Before**: Clicking Cancel in dashboard edit mode would immediately exit edit mode, potentially losing any unsaved changes without warning.
+- **Now**: _If you have unsaved changes, a confirmation dialog appears asking if you want to discard them. You can choose to continue editing or confirm you want to exit without saving._
+</Accordion>
+
+<Accordion title="Why This Matters">
+Dashboard editing can involve significant work - rearranging reports, adjusting layouts, configuring filters. Accidentally clicking Cancel and losing all that work is frustrating and time-consuming. This protection ensures you don't lose work by accident, especially important when you're making complex changes or get interrupted mid-edit. The confirmation dialog gives you a chance to save your work or consciously decide to discard changes.
+</Accordion>
+</AccordionGroup>
+
+</Update>
+
+<Update label="October 6, 2025" description="1 Feature Update">
+
+### 🌐 Timezone Support for SQL Queries
+
+<AccordionGroup>
+<Accordion title="What's New">
+SQL queries in analytics now automatically respect your organization's configured timezone, ensuring time-based data and aggregations are accurate for your location.
+</Accordion>
+
+<Accordion title="Where You'll See It">
+- **Analytics > SQL Editor** - all SQL queries
+- **Analytics > Reports** - SQL-based reports
+- **Analytics > Dashboards** - SQL reports embedded in dashboards
+- **Requires `AnalyticsV2` feature flag** to access analytics features
+</Accordion>
+
+<Accordion title="What Changed">
+- **Before**: SQL queries did not automatically apply the organization's timezone, potentially showing times in UTC or incorrect timezones, leading to confusion and incorrect analysis.
+- **Now**: _All SQL queries automatically use your organization's configured timezone. Timestamps, date functions, and time-based aggregations now reflect your local time without manual timezone conversion._
+</Accordion>
+
+<Accordion title="Why This Matters">
+When analyzing operational data, timezone accuracy is critical. A report showing "trips by hour" needs to show hours in your local time, not UTC. Previously, SQL queries required manual timezone conversion, which was error-prone and made queries more complex. Now, your SQL queries automatically work in your organization's timezone, just like the REST API queries do. This means your reports, dashboards, and analysis are accurate without extra work. It's especially important for multi-timezone organizations or when comparing SQL and Cube-based reports - they now use the same timezone logic, ensuring consistency across all your analytics.
+</Accordion>
+</AccordionGroup>
+
+</Update>
+
+<Update label="September 29, 2025" description="1 Feature Update">
+
+### 🐛 Dashboard Import Fix
+
+<AccordionGroup>
+<Accordion title="What's New">
+Importing the same template dashboard multiple times now correctly creates new reports for each import, ensuring each dashboard has its own independent reports.
+</Accordion>
+
+<Accordion title="Where You'll See It">
+- **Analytics > Dashboards** - when importing template dashboards
+- **Requires `AnalyticsV2` feature flag** to access analytics features
+</Accordion>
+
+<Accordion title="What Changed">
+- **Before**: Importing the same template dashboard twice would create a second dashboard that linked to the reports from the first import, causing confusion and making it impossible to have independent copies.
+- **Now**: _Each dashboard import creates completely new reports with unique IDs. The dashboard tabs and layouts correctly reference the new reports, ensuring full independence between dashboard copies._
+</Accordion>
+
+<Accordion title="Why This Matters">
+You might want multiple copies of the same dashboard template for different purposes - one for each region, time period, or team. The bug made this impossible because the second import would share reports with the first, meaning changes to one dashboard's reports would affect the other. This was especially problematic for template dashboards that you wanted to customize differently for different use cases. Now, each import creates a truly independent dashboard with its own reports, allowing you to customize, modify, or delete one without affecting the others. This makes dashboard templates much more useful for creating multiple similar-but-different analytics views.
+</Accordion>
+</AccordionGroup>
+
+</Update>

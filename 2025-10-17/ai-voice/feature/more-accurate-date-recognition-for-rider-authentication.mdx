@@ -1,0 +1,40 @@
+---
+title: "Internal Changelog"
+description: "All internal product updates"
+rss: true
+---
+
+<Update label="2025-10-17" description="1 Update" tags={["AI Voice"]}>
+
+## AI Voice
+
+### 🤖 More Accurate Date Recognition for Rider Authentication
+
+### 
+
+**What's New**  
+AI Voice now uses a more rigorous process for understanding dates of birth during rider authentication. It will now reject ambiguous spoken dates to prevent incorrect matches, while correctly handling a wider variety of date formats.
+
+
+**Pre-requisites**
+- No feature flags required
+
+
+<Accordion title="See More">
+
+#### Where You'll See It
+- This is a non-visual change that affects the AI Voice authentication workflow when a rider calls in.
+
+#### What You Can Do
+- Riders can state their date of birth in various formats, such as "June 6th 2025" or "2025 06 01," and the system will understand it correctly.
+- If a rider provides an ambiguous date like "one one ninety two" (which could mean January 1st or November 1st), the system will now prompt for clarification instead of making a guess.
+
+#### Why This Matters
+This change improves the accuracy and security of the AI Voice authentication process. By rejecting ambiguous dates, it reduces the chance of authenticating the wrong rider, while improved recognition of valid formats creates a smoother experience for callers.
+</Accordion>
+
+---
+</Update>
+
+---
+

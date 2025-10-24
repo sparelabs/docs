@@ -1,0 +1,60 @@
+---
+title: "Do Not Enable - Built for Demo"
+description: "Feature flags built for demonstration purposes only"
+---
+
+# `DirectorySync`
+
+**Feature Flag Type:** Do Not Enable - Built for Demo
+
+**Description:** Enables a "Directory Sync" feature, which allows an organization to sync their user directory (e.g., from a provider like WorkOS) with the Spare platform.
+
+**Why Enable:** This feature is intended for demonstrations of enterprise capabilities, showing how Spare can integrate with a customer's existing identity and access management systems to automatically provision and manage users.
+
+**Pre-requisites:**
+- Requires an external directory provider and a configured integration (e.g., WorkOS).
+
+**Notes:**
+- The `hints.ts` file explicitly states this was "built for BC Transit Demo." It is not a generally available or supported feature.
+
+**Related Feature Flags:**
+Works independently of other flags.
+
+---
+
+# `AiVoiceFixedRouteEta`
+
+**Feature Flag Type:** Do Not Enable - Built for Demo
+
+**Description:** Enables the AI Voice Agent to check and report the Estimated Time of Arrival (ETA) for a fixed-route service.
+
+**Why Enable:** This extends the capabilities of the AI Voice agent to provide information for both on-demand and fixed-route services. It's a feature designed to showcase the versatility of the AI agent in a demonstration environment that includes different types of transit services.
+
+**Pre-requisites:**
+- The organization must have fixed-route services configured.
+- The `LaunchAIVoice` or `EngageAIVoice` feature flag must be enabled.
+
+**Notes:**
+- This is an add-on capability for the AI Voice product, likely built for specific demos.
+
+**Related Feature Flags:**
+- **Requires:** `LaunchAIVoice` or `EngageAIVoice`
+
+---
+
+# `RestrictedArea`
+
+**Feature Flag Type:** Do Not Enable - Built for Demo
+
+**Description:** Enables the ability to define "Restricted Areas" on the map. These are polygonal zones that can be used to trigger alerts or apply special rules when a trip's pickup or dropoff location falls within them.
+
+**Why Enable:** This feature is used to demonstrate advanced operational controls and monitoring. For example, a demo could showcase how the system can flag all trips going to a high-traffic area like an airport or a special event zone. It allows for creating alerts and filters based on geographic boundaries that are not tied to a specific service zone.
+
+**Pre-requisites:**
+- None.
+
+**Notes:**
+- This feature is also listed in the "In Development" group, indicating it is not a production-ready feature. It allows for the creation of arbitrary geographic zones for monitoring and alerting purposes.
+
+**Related Feature Flags:**
+Works independently of other flags.

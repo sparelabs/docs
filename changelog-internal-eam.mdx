@@ -1,0 +1,143 @@
+---
+title: "Enterprise Asset Management"
+description: "Internal updates for Enterprise Asset Management product"
+rss: "true"
+---
+
+<Update label="October 7, 2025" description="1 Feature Update">
+
+### 🔍 Part Vendor Search in Superbox (Backend)
+
+<AccordionGroup>
+<Accordion title="What's New">
+Part vendors are now searchable through the Superbox search system, with backend support for searching by vendor name and part numbers.
+</Accordion>
+
+<Accordion title="Where You'll See It">
+- **Superbox search** - backend infrastructure (frontend integration coming in future release)
+- **Requires `EamMfe` feature flag** for EAM (Enterprise Asset Management) access
+</Accordion>
+
+<Accordion title="What You Can Do">
+- Backend systems now index and search part vendor information
+- Search includes vendor-specific details like vendor part numbers, costs, MOQ, lead times, and descriptions
+- Part vendor search results respect existing parts permissions
+- Foundation for unified part and vendor search experience
+</Accordion>
+
+<Accordion title="Why This Matters">
+This is the backend foundation for the Part Vendor Search Integration feature (released October 8th). By making part vendors searchable at the system level, it enables the upcoming unified search experience where you can find parts by vendor name or part number. This infrastructure work ensures search results are fast, accurate, and properly secured with the right permissions. While you won't see the UI changes yet, this backend work is essential for the improved search workflows coming soon.
+</Accordion>
+</AccordionGroup>
+
+</Update>
+
+<Update label="October 6, 2025" description="1 Feature Update">
+
+### 🔍 Part Vendor Search API Enhancement
+
+<AccordionGroup>
+<Accordion title="What's New">
+The part vendor API now supports searching by vendor part number and makes part ID optional, enabling more flexible vendor searches.
+</Accordion>
+
+<Accordion title="Where You'll See It">
+- **Backend API** - foundation for improved part vendor search (frontend integration coming in future releases)
+- **Requires `EamMfe` feature flag** for EAM (Enterprise Asset Management) access
+</Accordion>
+
+<Accordion title="What You Can Do">
+- API now accepts a `search` parameter to filter part vendors by vendor part number
+- Part ID is now optional in queries, allowing you to search across all parts
+- Backend infrastructure supports searching through all part vendors in your organization
+- Maintains proper organization isolation and permission checks
+</Accordion>
+
+<Accordion title="Why This Matters">
+This is backend infrastructure work that enables the Part Vendor Search features released on October 7th and 8th. By making the API more flexible - allowing searches without requiring a specific part ID and enabling text-based searching - it creates the foundation for the unified search experience where you can find vendors by name or part number. While you won't see UI changes from this specific update, it's essential groundwork that makes the improved search workflows possible. The API changes ensure searches are fast, secure, and properly scoped to your organization.
+</Accordion>
+</AccordionGroup>
+
+</Update>
+
+<Update label="October 8, 2025" description="3 Feature Updates">
+
+### 🔍 Part Vendor Search Integration
+
+<AccordionGroup>
+<Accordion title="What's New">
+When searching for parts, you can now search by part vendor names and part numbers, with vendor results appearing directly in the search dropdown alongside regular parts.
+</Accordion>
+
+<Accordion title="Where You'll See It">
+- **Parts > List Parts** - header search bar
+- **Inventory Adjustments** - when selecting parts
+- **Purchase Orders** - when adding line items
+- **Work Orders** - when adding parts to line items
+- **Requires `EamMfe` feature flag** for EAM (Enterprise Asset Management) access
+</Accordion>
+
+<Accordion title="What You Can Do">
+- Type a vendor name or part number to see matching vendors in the dropdown
+- Select a vendor from search results to automatically navigate to the Vendors tab
+- Select a part directly from the unified search
+- When adding parts to purchase orders, unit prices auto-fill from part cost if available
+</Accordion>
+
+<Accordion title="Why This Matters">
+Finding parts by vendor used to require navigating to a separate tab or remembering exact part numbers. Now, you can search by vendor name and immediately see all their parts, or jump straight to the vendor's detail page. This is especially helpful when you know you need a part from a specific supplier but can't remember the exact part number. The unified search saves time and reduces the number of clicks needed to find and add parts across all EAM workflows.
+</Accordion>
+</AccordionGroup>
+
+---
+
+### 📍 Part Location Filtering
+
+<AccordionGroup>
+<Accordion title="What's New">
+You can now filter the parts list by specific part locations (bins/storage units), making it easy to see what parts are stored in each location.
+</Accordion>
+
+<Accordion title="Where You'll See It">
+- **Parts > List Parts** - new "Part Location" filter in the filter panel
+- **Locations > Location Units tree** - new "View Parts" button on each location unit
+- **Requires `EamMfe` feature flag** for EAM (Enterprise Asset Management) access
+</Accordion>
+
+<Accordion title="What You Can Do">
+- Use the Part Location filter to select a specific bin or storage location
+- See only the parts stored in that location
+- Click "View Parts" from the location units tree to jump directly to a filtered parts list for that location
+- Location unit labels now show clearer names combining location code and name when available
+</Accordion>
+
+<Accordion title="Why This Matters">
+When managing physical inventory across multiple bins, warehouses, or storage locations, you need to quickly see what's in each spot. Previously, you'd have to open individual parts to see their locations. Now, you can filter the entire parts list by location, making it much easier to do physical counts, plan restocking, or find parts when you're standing at a specific storage location. The direct link from the location tree makes this workflow even faster.
+</Accordion>
+</AccordionGroup>
+
+---
+
+### 🏷️ Part Location Labels in Settings
+
+<AccordionGroup>
+<Accordion title="What's New">
+The Part Inventory by Location settings drawer now displays clear labels for the location field, making it easier to understand what you're configuring.
+</Accordion>
+
+<Accordion title="Where You'll See It">
+- **Parts > Part Details > Inventory by Location settings drawer**
+- **Requires `EamMfe` feature flag** for EAM (Enterprise Asset Management) access
+</Accordion>
+
+<Accordion title="What Changed">
+- **Before**: The location field in the Part Inventory by Location settings drawer appeared without a clear label, making it unclear what information was being entered.
+- **Now**: _The location field now has a visible "Location" label, providing clear context for the data being configured._
+</Accordion>
+
+<Accordion title="Why This Matters">
+Clear labeling reduces confusion and errors when configuring part inventory locations. You'll immediately understand what information is expected in each field, making the data entry process smoother and more confident, especially for new users or when setting up multiple part locations quickly.
+</Accordion>
+</AccordionGroup>
+
+</Update>

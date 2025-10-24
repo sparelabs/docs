@@ -1,0 +1,326 @@
+---
+title: "Standard - Rider Experience"
+description: "Feature flags for rider experience and capabilities"
+---
+
+# `SMSRiderNotifications`
+
+**Feature Flag Type:** Spare Standard - Rider Experience
+
+**Description:** The foundational flag for enabling rider notifications to be sent via SMS text message.
+
+**Why Enable:** This is a core communication feature for any service. It allows the system to send important, time-sensitive updates to riders, such as "your vehicle is approaching" or "your trip has been confirmed." For riders who may not have a smartphone or the rider app, SMS is the primary way they will receive information about their trip.
+
+**Pre-requisites:**
+- The organization must have a configured SMS provider (e.g., Twilio).
+
+**Notes:**
+- This is the base flag that other SMS-related features depend on.
+
+**Related Feature Flags:**
+- **Required for:** `SmsEta`, `SmsCancelRide`
+
+---
+
+# `SmsEta` & `SmsCancelRide`
+
+**Feature Flag Type:** Spare Standard - Rider Experience
+
+**Description:** A pair of flags that enable interactive SMS functionality for riders. `SmsEta` allows a rider to text a keyword (like "ETA") to get the status of their upcoming trip. `SmsCancelRide` allows a rider to text a keyword (like "CANCEL") to cancel their next trip.
+
+**Why Enable:** This provides a convenient, app-free way for riders to manage their trips. It allows riders without a smartphone, or those who prefer SMS, to perform basic trip management functions on their own, reducing the need to call a dispatcher.
+
+**Pre-requisites:**
+- `SMSRiderNotifications` must be enabled.
+
+**Notes:**
+- The specific keywords are configurable.
+
+**Related Feature Flags:**
+- **Requires:** `SMSRiderNotifications`
+
+---
+
+# `BulkMessages`
+
+**Feature Flag Type:** Spare Standard - Rider Experience
+
+**Description:** Enables the ability for an administrator to send a bulk SMS message to a large number of riders at once. This can be used to send out service-wide announcements, alerts, or marketing messages.
+
+**Why Enable:** This is a powerful communication tool for reaching a large segment of riders quickly. It can be used to inform riders of a system-wide delay, announce a new service, or send out a promotional offer.
+
+**Pre-requisites:**
+- `SMSRiderNotifications` must be enabled.
+- For sending messages in the US and Canada, a Twilio short code is typically required to comply with carrier regulations.
+
+**Notes:**
+- This feature should be used in compliance with all applicable anti-spam and telecommunication regulations.
+
+**Related Feature Flags:**
+- **Requires:** `SMSRiderNotifications`
+
+---
+
+# `LanguageAndChannelPreferences`
+
+**Feature Flag Type:** Spare Standard - Rider Experience
+
+**Description:** Enables riders to set their preferred language and communication channel (e.g., SMS, email, voice call) for receiving notifications.
+
+**Why Enable:** This is a key feature for accessibility and personalization. It allows riders to receive communications in the language they are most comfortable with, and via the channel they prefer. This improves the rider experience and ensures that important information is communicated effectively.
+
+**Pre-requisites:**
+- The desired languages and notification channels must be configured in the system.
+
+**Notes:**
+- This is a significant enhancement to the rider notification system.
+
+**Related Feature Flags:**
+Works independently of other flags.
+
+---
+
+# `EtaChangedNotifications`
+
+**Feature Flag Type:** Spare Standard - Rider Experience
+
+**Description:** Enables the system to automatically send a notification to a rider if the estimated time of arrival (ETA) for their pickup changes significantly.
+
+**Why Enable:** This is a crucial feature for keeping riders informed and managing expectations. If a driver is delayed due to traffic, this feature will proactively notify the rider of the new ETA, reducing anxiety and preventing "where is my ride?" phone calls to dispatch.
+
+**Pre-requisites:**
+- A notification channel (like SMS or push notifications) must be enabled.
+
+**Notes:**
+- The threshold for what constitutes a "significant" change may be configurable.
+
+**Related Feature Flags:**
+Works independently of other flags.
+
+---
+
+# `VoiceNotifications`
+
+**Feature Flag Type:** Spare Standard - Rider Experience
+
+**Description:** Enables rider notifications to be sent as an automated voice call (sometimes called a "robocall").
+
+**Why Enable:** This is an important accessibility feature for riders who may have visual impairments or who do not use SMS. It ensures that these riders can still receive important, time-sensitive notifications about their trips.
+
+**Pre-requisites:**
+- The organization must have a configured voice provider (e.g., Twilio).
+
+**Notes:**
+- This is a key component of providing an accessible service.
+
+**Related Feature Flags:**
+Works independently of other flags.
+
+---
+
+# `RiderZoneRestrictionByGroups`
+
+**Feature Flag Type:** Spare Standard - Rider Experience
+
+**Description:** Enables the ability to restrict the visibility of service zones in the Rider App based on the rider's group memberships. For example, a zone could be configured to be visible only to riders who are members of the "Student" group.
+
+**Why Enable:** This allows for the creation of targeted services that are only available to specific groups of riders. It's a way to manage eligibility and access to different services or service areas within the same platform.
+
+**Pre-requisites:**
+- Rider groups and zones must be configured.
+
+**Notes:**
+- This is a powerful tool for creating and managing multiple, distinct services on a single platform.
+
+**Related Feature Flags:**
+Works independently of other flags.
+
+---
+
+# `RiderRepresentatives`
+
+**Feature Flag Type:** Spare Standard - Rider Experience
+
+**Description:** Enables a feature for managing "Rider Representatives," who are individuals authorized to book and manage trips on behalf of another rider (the "representee").
+
+**Why Enable:** This is a critical feature for many paratransit and community transport services. It allows caregivers, family members, or case managers to manage transportation for riders who may not be able to do so themselves.
+
+**Pre-requisites:**
+- None.
+
+**Notes:**
+- This is a core feature for services that cater to riders who may need assistance with booking.
+
+**Related Feature Flags:**
+Works independently of other flags.
+
+---
+
+# `Announcements`
+
+**Feature Flag Type:** Spare Standard - Rider Experience
+
+**Description:** Enables a feature for creating and displaying service announcements to riders within the Rider App. These announcements can be used to inform riders about service changes, upcoming events, or other important information.
+
+**Why Enable:** This provides a direct communication channel to riders within the app. It's an effective way to keep riders informed about things that might affect their travel, such as a holiday service schedule or a temporary service disruption.
+
+**Pre-requisites:**
+- None.
+
+**Notes:**
+- Announcements are created and managed in the admin panel.
+
+**Related Feature Flags:**
+Works independently of other flags.
+
+---
+
+# `CallForVerificationCode`
+
+**Feature Flag Type:** Spare Standard - Rider Experience
+
+**Description:** Enables an alternative method for riders to receive their login verification code. Instead of only receiving a code via SMS, they will also have the option to receive it via an automated phone call.
+
+**Why Enable:** This is an accessibility and usability feature. It provides an alternative for riders who may have difficulty receiving or reading SMS messages. It also serves as a fallback in areas where SMS delivery may be unreliable.
+
+**Pre-requisites:**
+- The organization must have a configured voice provider (e.g., Twilio).
+
+**Notes:**
+- This improves the reliability of the login process.
+
+**Related Feature Flags:**
+Works independently of other flags.
+
+---
+
+# `RecurringTripsInRider`
+
+**Feature Flag Type:** Spare Standard - Rider Experience
+
+**Description:** (BETA ONLY) Enables the ability for riders to book their own recurring trips directly from within the Rider App.
+
+**Why Enable:** This is a self-service feature that empowers riders to manage their own recurring travel needs without having to call a booking agent. For riders who travel regularly, this is a major convenience and time-saver.
+
+**Pre-requisites:**
+- The `RecurringTrips` feature flag must be enabled.
+
+**Notes:**
+- The hint in the code indicates that this is a "BETA ONLY" feature and should be enabled with caution.
+
+**Related Feature Flags:**
+- **Requires:** `RecurringTrips`
+
+---
+
+# `DisplayZonesOnRider`
+
+**Feature Flag Type:** Spare Standard - Rider Experience
+
+**Description:** A technical flag that enables the server-side merging of service zones for display in the Rider App.
+
+**Why Enable:** For services with a large number of complex zones, this can improve the performance and visual clarity of the map in the Rider App. It ensures that the map loads quickly and is easy to read, even in complex service areas.
+
+**Pre-requisites:**
+- None.
+
+**Notes:**
+- This is a performance and UI enhancement for the Rider App.
+
+**Related Feature Flags:**
+Works independently of other flags.
+
+---
+
+# `Promos`
+
+**Feature Flag Type:** Spare Standard - Rider Experience
+
+**Description:** Enables the creation and use of promotional codes (promos). Riders can enter a promo code in the app to receive a discount on their fare.
+
+**Why Enable:** This is a key marketing and customer acquisition tool. It allows an organization to run promotional campaigns, offer discounts to new riders, or reward loyal customers.
+
+**Pre-requisites:**
+- The organization must have a payment gateway configured.
+
+**Notes:**
+- Promo codes can be configured with various rules, such as expiration dates, usage limits, and a specific discount amount or percentage.
+
+**Related Feature Flags:**
+Works independently of other flags.
+
+---
+
+# `FarePasses`
+
+**Feature Flag Type:** Spare Standard - Rider Experience
+
+**Description:** Enables a feature for creating and selling fare passes. Riders can purchase a pass (e.g., a monthly pass, a 10-ride pass) which they can then use to pay for their trips.
+
+**Why Enable:** This is a common feature in public transit and provides a convenient and often more cost-effective option for frequent riders. It can help to build rider loyalty and provide a more predictable revenue stream for the organization.
+
+**Pre-requisites:**
+- The organization must have a payment gateway configured.
+
+**Notes:**
+- Fare passes are created and managed in the admin panel and can be purchased by riders in the app.
+
+**Related Feature Flags:**
+Works independently of other flags.
+
+---
+
+# `Wallet`
+
+**Feature Flag Type:** Spare Standard - Rider Experience
+
+**Description:** Enables a stored value account (a "wallet") for riders. Riders can add funds to their wallet and then use those funds to pay for their trips. The wallet can also be configured to automatically top up when the balance falls below a certain threshold.
+
+**Why Enable:** This provides a convenient payment option for riders, especially those who may not have a credit card or who prefer to pay with pre-loaded funds. It can also be used by organizations to distribute subsidies or funds to specific riders.
+
+**Pre-requisites:**
+- The organization must have a payment gateway configured.
+
+**Notes:**
+- This is a comprehensive payment feature with capabilities for auto-top-up and balance management.
+
+**Related Feature Flags:**
+Works independently of other flags.
+
+---
+
+# `ValidatePickupAndDropoffLocationsRider`
+
+**Feature Flag Type:** Spare Standard - Rider Experience
+
+**Description:** A validation feature that ensures that the pickup and dropoff locations selected by a rider for a trip are both within the same valid service area.
+
+**Why Enable:** This prevents booking errors and ensures that riders can only book trips that the service can actually fulfill. It provides immediate feedback to the rider if they try to book a trip that is outside the service area, preventing a frustrating "no drivers available" message later in the booking process.
+
+**Pre-requisites:**
+- The service must have defined service areas (zones).
+
+**Notes:**
+- This is a key validation step in the booking process.
+
+**Related Feature Flags:**
+Works independently of other flags.
+
+---
+
+# `ReduceRiderEstimatePollingRate`
+
+**Feature Flag Type:** Spare Standard - Rider Experience
+
+**Description:** A technical flag that reduces the frequency at which the Rider App polls the server for updated ETA information. When enabled, the polling rate is reduced from every 20 seconds to every 1 minute.
+
+**Why Enable:** This can help to reduce the load on the server and reduce data consumption for the rider, especially in a system with a very large number of active riders.
+
+**Pre-requisites:**
+- None.
+
+**Notes:**
+- The trade-off is that the ETA display in the Rider App will not update as frequently. This should be enabled in consultation with the Spare team.
+
+**Related Feature Flags:**
+Works independently of other flags.

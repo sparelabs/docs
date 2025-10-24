@@ -1,0 +1,160 @@
+---
+title: "Spare One"
+description: "Feature flags for integrated mobility and multimodal journey planning"
+---
+
+# `Multimodal`
+
+**Feature Flag Type:** Spare One
+
+**Description:** Enables multimodal journey planning, allowing riders to plan trips that combine different modes of transportation, such as on-demand services, fixed-route public transit (buses, trains), and walking.
+
+**Why Enable:** This transforms the rider application from a simple on-demand booking tool into a comprehensive journey planner. It's essential for organizations that are part of a larger public transit network and want to provide a seamless travel experience across all available services. It promotes the use of public transit by showing how it can be combined with on-demand services for first/last-mile connections.
+
+**Pre-requisites:**
+- Requires a GTFS feed for the public transit system to be loaded into Spare.
+- Requires a connection to a routing engine like Open Trip Planner.
+
+**Notes:**
+- This is a foundational feature for integrated mobility.
+- Several other feature flags exist to fine-tune the multimodal search behavior.
+
+**Related Feature Flags:**
+- `MultimodalDoNotBiasCostsTowardsRequested`: A fine-tuning parameter for the search algorithm.
+- `MultimodalSearchV3`: A technical flag to use an updated search strategy.
+- And several others for controlling the search algorithm.
+
+---
+
+# `Tickets`
+
+**Feature Flag Type:** Spare One
+
+**Description:** Enables the "Tickets" payment method, allowing organizations to create, sell, and accept digital tickets or passes for payment. Examples include single-ride tickets, day passes, or a 10-ride pass.
+
+**Why Enable:** Provides a flexible, cash-free payment option for riders. It allows organizations to offer different fare products to suit various rider needs, which can increase ridership and convenience. It's a key component for services that operate more like a traditional transit system with various fare options.
+
+**Pre-requisites:**
+- A payment gateway (like Stripe) must be configured to sell tickets.
+
+**Notes:**
+- Riders can purchase tickets in the app and then use them to pay for trips.
+- Ticket usage and validity are tracked within the Spare platform.
+
+**Related Feature Flags:**
+- Works with `Wallet` (riders can use wallet funds to buy tickets).
+- Similar to, but distinct from, `FarePasses`.
+
+---
+
+# `RiderGtfsScheduleViewer`
+
+**Feature Flag Type:** Spare One
+
+**Description:** Enables a new GTFS schedule viewer on the home screen of the Rider App. This allows riders to browse the schedules of fixed-route public transit services.
+
+**Why Enable:** Enhances the Rider App by providing riders with easy access to public transit information. Even if they are not planning a multimodal trip, they can use the app to check bus or train schedules, making it a more useful, all-in-one mobility tool.
+
+**Pre-requisites:**
+- `Multimodal` must be enabled, as it relies on the same GTFS data feeds.
+
+**Notes:**
+- This feature makes the Rider App more valuable for riders who use a mix of on-demand and fixed-route transit.
+
+**Related Feature Flags:**
+- **Requires:** `Multimodal`.
+
+---
+
+# `MultimodalDoNotBiasCostsTowardsRequested`
+
+**Feature Flag Type:** Spare One
+
+**Description:** A technical flag that adjusts the multimodal search algorithm. When enabled, it removes the cost bias that prefers journey options closer to the rider's requested departure or arrival time.
+
+**Why Enable:** Enable this for organizations that want to present the absolute cheapest travel options to riders, even if those options require departing significantly earlier or arriving later than requested. It prioritizes cost savings over time convenience.
+
+**Pre-requisites:**
+- `Multimodal` must be enabled.
+
+**Notes:**
+- This is a fine-tuning parameter for the journey planner. Disabling this flag (the default) will result in a more balanced set of results that consider both cost and time.
+
+**Related Feature Flags:**
+- **Requires:** `Multimodal`.
+
+---
+
+# `MultimodalSearchV3`
+
+**Feature Flag Type:** Spare One
+
+**Description:** A technical flag that enables a new, more efficient pagination and search strategy for the multimodal journey planner (Open Trip Planner).
+
+**Why Enable:** This can improve the performance and speed of multimodal trip searches, especially in complex transit networks. It should be enabled if organizations are experiencing slow response times for journey planning.
+
+**Pre-requisites:**
+- `Multimodal` must be enabled.
+
+**Notes:**
+- This is a technical performance enhancement and does not change the user-facing functionality, other than potentially faster search results.
+
+**Related Feature Flags:**
+- **Requires:** `Multimodal`.
+
+---
+
+# `MultimodalSearchReducedFinalSweep`
+
+**Feature Flag Type:** Spare One
+
+**Description:** A technical flag that reduces the duration of the "final sweep" in the multimodal search algorithm from 6 hours to 3 hours. The final sweep is an extended search for additional journey options.
+
+**Why Enable:** This provides a balance between search speed and comprehensiveness. By reducing the final sweep, it returns journey plan results faster, which improves the user experience. This is a good option for organizations that want faster results without completely eliminating the extended search.
+
+**Pre-requisites:**
+- `Multimodal` must be enabled.
+
+**Notes:**
+- This is mutually exclusive with `MultimodalSearchDisableFinalSweep`.
+
+**Related Feature Flags:**
+- **Requires:** `Multimodal`.
+
+---
+
+# `MultimodalSearchDisableFinalSweep`
+
+**Feature Flag Type:** Spare One
+
+**Description:** A technical flag that completely disables the "final sweep" in the multimodal search algorithm. This means the search stops as soon as the initial results are found.
+
+**Why Enable:** This is the best option for organizations that want the fastest possible response times for multimodal trip planning. By disabling the extended search, it returns results almost immediately. The trade-off is that it may miss some alternative journey options that a longer search would find.
+
+**Pre-requisites:**
+- `Multimodal` must be enabled.
+
+**Notes:**
+- This will provide the fastest searches, but is the least comprehensive. It is mutually exclusive with `MultimodalSearchReducedFinalSweep`.
+
+**Related Feature Flags:**
+- **Requires:** `Multimodal`.
+
+---
+
+# `MultimodalFilterServicesByGraph`
+
+**Feature Flag Type:** Spare One
+
+**Description:** A technical flag that modifies how the multimodal journey planner converts walking legs to on-demand trips. When enabled, it will only consider on-demand services that are explicitly linked to the multimodal graph.
+
+**Why Enable:** This provides more precise control over which on-demand services can be used as first/last-mile connections for public transit. It prevents the journey planner from suggesting on-demand services that are not intended to be part of the integrated multimodal network.
+
+**Pre-requisites:**
+- `Multimodal` must be enabled.
+
+**Notes:**
+- This is an advanced configuration option for fine-tuning the behavior of the journey planner.
+
+**Related Feature Flags:**
+- **Requires:** `Multimodal`.

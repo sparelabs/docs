@@ -1,0 +1,401 @@
+---
+title: "Standard - Admins & Service Planners"
+description: "Feature flags for administrative and service planning capabilities"
+---
+
+# `LatenessThresholdOneMinute`
+
+**Feature Flag Type:** Spare Standard - Admins & Service Planners
+
+**Description:** Changes the system's definition of an "on-time" trip. When enabled, trips that are less than one minute late are still considered to be on time.
+
+**Why Enable:** This provides a small buffer in on-time performance calculations, which can be useful for reporting and analytics. It prevents trips that are only a few seconds late from being flagged as "late," which can provide a more realistic picture of service performance.
+
+**Pre-requisites:**
+- None.
+
+**Notes:**
+- This primarily affects how data is presented in reports and analytics dashboards.
+
+**Related Feature Flags:**
+Works independently of other flags.
+
+---
+
+# `AutoCompleteOnlyWhenAtEndLocation`
+
+**Feature Flag Type:** Spare Standard - Admins & Service Planners
+
+**Description:** Prevents a duty from being automatically completed until the driver is physically within a 300-meter radius of their scheduled end location.
+
+**Why Enable:** This ensures that duty completion times are more accurate. Without this flag, a duty could be marked as complete as soon as the last dropoff is finished, even if the driver is far from their end-of-duty location. This feature enforces that the driver must return to their depot or end point for the duty to be considered complete.
+
+**Pre-requisites:**
+- None.
+
+**Notes:**
+- This helps to ensure more accurate data for calculating metrics like deadhead mileage at the end of a shift.
+
+**Related Feature Flags:**
+Works independently of other flags.
+
+---
+
+# `AllowMatchingConfiguration`
+
+**Feature Flag Type:** Spare Standard - Admins & Service Planners
+
+**Description:** Exposes advanced configuration settings ("sliders") on the fleet page in the admin panel. These settings allow for fine-tuning of the matching algorithm's parameters.
+
+**Why Enable:** This is for advanced users who need to customize the behavior of the matching engine. It provides granular control over how the system prioritizes different factors when assigning trips to vehicles, allowing for a highly customized dispatching strategy.
+
+**Pre-requisites:**
+- A deep understanding of the matching engine's parameters is recommended before adjusting these settings.
+
+**Notes:**
+- This is an advanced feature that should be used with caution, as it can have a significant impact on the performance of the matching engine.
+
+**Related Feature Flags:**
+Works independently of other flags.
+
+---
+
+# `ShowTargetedOptimization`
+
+**Feature Flag Type:** Spare Standard - Admins & Service Planners
+
+**Description:** Makes the "Targeted Optimization" configuration settings visible in the Service Planning section of the admin panel.
+
+**Why Enable:** This is a UI flag that exposes the settings for the Targeted Optimization feature. It should be enabled for organizations that are using or planning to use Targeted Optimization to improve the efficiency of their service.
+
+**Pre-requisites:**
+- The organization must have the Targeted Optimization feature available.
+
+**Notes:**
+- This flag only makes the configuration visible; it does not enable the feature itself.
+
+**Related Feature Flags:**
+Works independently of other flags.
+
+---
+
+# `VehicleClass`
+
+**Feature Flag Type:** Spare Standard - Admins & Service Planners
+
+**Description:** Enables customized routing based on vehicle type (e.g., "Car" vs. "Bus"). This allows the routing engine to use different road network data and apply different rules (like U-turn penalties) based on the type of vehicle.
+
+**Why Enable:** This is essential for organizations that operate a mixed fleet with different vehicle types that have different operational constraints. For example, a bus cannot make a tight U-turn like a car can. This feature ensures that the routing and travel time estimates are accurate for each specific vehicle type.
+
+**Pre-requisites:**
+- Requires the appropriate routing data (e.g., OSM maps with bus-specific information) to be loaded into the routing engine.
+
+**Notes:**
+- This allows for more realistic and accurate routing for mixed fleets.
+
+**Related Feature Flags:**
+Works independently of other flags.
+
+---
+
+# `FareRules`
+
+**Feature Flag Type:** Spare Standard - Admins & Service Planners
+
+**Description:** Enables a dedicated user interface for creating and managing complex, rule-based fare structures. This allows for the creation of fares that can vary based on factors like time of day, rider type, or geographic zone.
+
+**Why Enable:** This is for organizations that need more than just simple flat fares. It allows them to implement sophisticated fare policies, such as peak/off-peak pricing, discounts for seniors or students, or distance-based fares, all within a structured and manageable interface.
+
+**Pre-requisites:**
+- None.
+
+**Notes:**
+- This is a powerful tool for creating highly customized and flexible fare structures.
+
+**Related Feature Flags:**
+Works independently of other flags.
+
+---
+
+# `ZoneStopLibrary`
+
+**Feature Flag Type:** Spare Standard - Admins & Service Planners
+
+**Description:** Enables a refactored and more robust system for managing zones and the stops within them. This provides a more scalable and efficient way to handle the relationship between geographic zones and the individual stops they contain.
+
+**Why Enable:** This is a technical and architectural improvement that provides a better foundation for managing complex service areas. It should be enabled for organizations that have a large number of zones and stops, as it can improve performance and scalability.
+
+**Pre-requisites:**
+- None.
+
+**Notes:**
+- This is a backend and infrastructure enhancement that also has some UI implications for how zones and stops are managed.
+
+**Related Feature Flags:**
+Works independently of other flags.
+
+---
+
+# `TransactionGrouping`
+
+**Feature Flag Type:** Spare Standard - Admins & Service Planners
+
+**Description:** Enables the grouping of multiple Stripe charges made by the same customer with the same credit card within a 6-day period into a single transaction.
+
+**Why Enable:** This is a cost-saving feature. By grouping multiple small charges into a single larger transaction, it can significantly reduce the per-transaction fees charged by Stripe. This is particularly beneficial for organizations that have riders who take many trips and are charged for each one individually.
+
+**Pre-requisites:**
+- The organization must be using Stripe as their payment provider.
+
+**Notes:**
+- This feature is only available for the Stripe payment method.
+
+**Related Feature Flags:**
+Works independently of other flags.
+
+---
+
+# `DisablePleoLiveMessage`
+
+**Feature Flag Type:** Spare Standard - Admins & Service Planners
+
+**Description:** Disables the in-app "PLEO" feedback modal for the Live Messages feature. The PLEO modal is a product feedback tool that asks users how important a feature is to them.
+
+**Why Enable:** This can be enabled to reduce the number of pop-ups and feedback requests that users see in the admin panel, providing a cleaner user experience.
+
+**Pre-requisites:**
+- None.
+
+**Notes:**
+- This is a UI configuration flag to control a product feedback mechanism.
+
+**Related Feature Flags:**
+Works independently of other flags.
+
+---
+
+# `DisablePleoManualInterventions`
+
+**Feature Flag Type:** Spare Standard - Admins & Service Planners
+
+**Description:** Disables the in-app "PLEO" feedback modal for the Manual Interventions feature. The PLEO modal is a product feedback tool that asks users how important a feature is to them.
+
+**Why Enable:** This can be enabled to reduce the number of pop-ups and feedback requests that users see in the admin panel, providing a cleaner user experience.
+
+**Pre-requisites:**
+- None.
+
+**Notes:**
+- This is a UI configuration flag to control a product feedback mechanism.
+
+**Related Feature Flags:**
+Works independently of other flags.
+
+---
+
+# `AllowBookingWithoutPaymentMethod`
+
+**Feature Flag Type:** Spare Standard - Admins & Service Planners
+
+**Description:** Allows a ride to be booked using a promo code as the payment method, even if the rider does not have another valid payment method (like a credit card) on their account.
+
+**Why Enable:** This provides more flexibility for promotional campaigns. It allows an organization to offer a "first ride free" promotion to new riders without requiring them to first add a credit card, which can be a barrier to adoption.
+
+**Pre-requisites:**
+- The `Promos` feature must be enabled.
+
+**Notes:**
+- This was introduced for a specific customer need but can be useful for any organization running promotional campaigns.
+
+**Related Feature Flags:**
+- Works with `Promos`.
+
+---
+
+# `StripeCustomerDetails`
+
+**Feature Flag Type:** Spare Standard - Admins & Service Planners
+
+**Description:** When enabled, the system will include additional customer details (name, email, phone number) in the customer objects that are created in Stripe.
+
+**Why Enable:** This enriches the data in Stripe, making it easier to identify and manage customers in the Stripe dashboard. It provides a more complete picture of the customer in the payment system, which can be useful for customer support and financial reconciliation.
+
+**Pre-requisites:**
+- The organization must be using Stripe as their payment provider.
+
+**Notes:**
+- This is a data-enrichment feature for the Stripe integration.
+
+**Related Feature Flags:**
+Works independently of other flags.
+
+---
+
+# `MergeZonesOnServicesPage`
+
+**Feature Flag Type:** Spare Standard - Admins & Service Planners
+
+**Description:** Merges all the zones associated with a service into a single, unified polygon for display on the services page map.
+
+**Why Enable:** This provides a cleaner and less cluttered map view for services that have a large number of overlapping or complex zones. Instead of seeing a web of individual zone boundaries, the user sees a single, clean service area.
+
+**Pre-requisites:**
+- None.
+
+**Notes:**
+- This is a UI display feature and does not change the underlying zone boundaries or logic.
+
+**Related Feature Flags:**
+Works independently of other flags.
+
+---
+
+# `ReportTemplate`
+
+**Feature Flag Type:** Spare Standard - Admins & Service Planners
+
+**Description:** Enables a powerful feature in the Analytics section that allows users to create, save, and reuse custom templates for generating reports. Users can select the specific columns they want to include in a report and save that configuration as a template.
+
+**Why Enable:** This is a major workflow improvement for any user who regularly runs the same reports. Instead of manually selecting the desired columns each time, they can simply select a saved template. This saves time, reduces errors, and ensures consistency in reporting.
+
+**Pre-requisites:**
+- `AnalyticsV2` should be enabled.
+
+**Notes:**
+- Enabling this feature may change the default column order in exported reports, which could impact any existing automated workflows that rely on the old column order.
+
+**Related Feature Flags:**
+- Works with `AnalyticsV2`.
+
+---
+
+# `OrganizationSwitcherPopover`
+
+**Feature Flag Type:** Spare Standard - Admins & Service Planners
+
+**Description:** Enables a new popover UI component in the admin sidebar for users who have access to multiple organizations. This provides a cleaner and more modern interface for switching between different organizations.
+
+**Why Enable:** This is a UI/UX improvement for users who manage multiple organizations (e.g., Spare staff, regional managers). It makes the process of switching between organizations faster and more intuitive.
+
+**Pre-requisites:**
+- The user must have access to more than one organization.
+
+**Notes:**
+- This is a UI enhancement for a specific user group.
+
+**Related Feature Flags:**
+Works independently of other flags.
+
+---
+
+# `CustomCancellationReasons`
+
+**Feature Flag Type:** Spare Standard - Admins & Service Planners
+
+**Description:** Allows an organization to define its own custom reasons for why a trip was cancelled. These custom reasons can then be selected by dispatchers or drivers when cancelling a trip.
+
+**Why Enable:** This provides more granular and meaningful data on why trips are being cancelled. Instead of being limited to a predefined set of reasons, an organization can create reasons that are specific to their service (e.g., "Rider requested earlier trip," "Vehicle mechanical issue"). This leads to better data for operational analysis.
+
+**Pre-requisites:**
+- None.
+
+**Notes:**
+- Custom cancellation reasons can be created in the organization's settings.
+
+**Related Feature Flags:**
+Works independently of other flags.
+
+---
+
+# `TotalRevenueHoursV2`
+
+**Feature Flag Type:** Spare Standard - Admins & Service Planners
+
+**Description:** Switches the calculation of the "total revenue hours" metric to a new, more accurate formula (V2). The new formula is `lastDropoff.completedTs - firstPickup.arrivingTs`.
+
+**Why Enable:** This provides a more accurate and standardized way of calculating revenue hours, which is a key performance indicator for many transit services. It should be enabled to ensure that reporting and analytics are based on the most accurate data.
+
+**Pre-requisites:**
+- None.
+
+**Notes:**
+- This is a backend change that affects data in reports and analytics.
+
+**Related Feature Flags:**
+Works independently of other flags.
+
+---
+
+# `InAppTesting`
+
+**Feature Flag Type:** Spare Standard - Admins & Service Planners
+
+**Description:** Enables a UI in the admin panel for testing deep links into the Rider App. This is a developer and testing tool.
+
+**Why Enable:** This is primarily for internal use by Spare staff or developers who are working on the Rider App. It provides a convenient way to test deep link functionality without needing to manually construct the links.
+
+**Pre-requisites:**
+- None.
+
+**Notes:**
+- This is not a customer-facing feature.
+
+**Related Feature Flags:**
+Works independently of other flags.
+
+---
+
+# `DataRetention`
+
+**Feature Flag Type:** Spare Standard - Admins & Service Planners
+
+**Description:** Enables a comprehensive feature for defining and managing data retention policies for various types of data in the platform (e.g., rider data, trip data). Administrators can create schedules to automatically delete or anonymize data after a certain period.
+
+**Why Enable:** This is a critical feature for organizations that need to comply with data privacy regulations like GDPR, which mandate that personal data should not be kept for longer than necessary. It allows an organization to automate its data retention policies, ensuring compliance and reducing data storage liabilities.
+
+**Pre-requisites:**
+- Data retention schedules must be configured in the admin panel.
+
+**Notes:**
+- This is a powerful feature that involves the permanent deletion of data. It should be configured with extreme care.
+
+**Related Feature Flags:**
+Works independently of other flags.
+
+---
+
+# `AnalyticsV2`
+
+**Feature Flag Type:** Spare Standard - Admins & Service Planners
+
+**Description:** Enables the new, more powerful and flexible analytics platform (Analytics V2), which includes customizable dashboards and a new reporting interface.
+
+**Why Enable:** This is the modern analytics solution for Spare. It provides a much richer and more interactive experience for exploring data and creating reports than the legacy analytics tools. It should be enabled for any organization that wants to take full advantage of their data to understand and improve their service.
+
+**Pre-requisites:**
+- None.
+
+**Notes:**
+- This is the foundational flag for all the new analytics features.
+
+**Related Feature Flags:**
+- Works with `ReportTemplate`.
+
+---
+
+# `CustomRoles`
+
+**Feature Flag Type:** Spare Standard - Admins & Service Planners
+
+**Description:** Enables the ability to create custom administrator user roles with a granular set of permissions. This allows an organization to define roles beyond the standard built-in roles (e.g., "Administrator," "Dispatcher").
+
+**Why Enable:** This provides fine-grained control over user permissions, which is a key security and operational feature. An organization can create a role that has permission to view reports but not edit services, or a role that can manage drivers but not riders. This ensures that users only have access to the parts of the system that are relevant to their job.
+
+**Pre-requisites:**
+- None.
+
+**Notes:**
+- Custom roles are created and managed in the organization's settings.
+
+**Related Feature Flags:**
+Works independently of other flags.

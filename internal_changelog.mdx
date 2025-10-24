@@ -1,0 +1,473 @@
+<Update label="Thursday, October 23, 2025" description="4 Updates" tags={["Admin", "Operations"]}>
+
+## ⚙️ Admin
+### 🇪🇺 European (EU) Region Support
+
+**What's New**  
+The Spare platform now officially supports a European (EU) region, ensuring data residency and optimal performance for organizations operating in Europe. All platform services, including AI features, are fully supported in the new region.
+
+**Pre-requisites**
+- This is a platform-wide enhancement and does not require specific user permissions. No feature flags required.
+
+<Accordion title="See More">
+
+#### Where You'll See It
+- This is a foundational update affecting the entire platform for organizations hosted in the new EU region. This includes regional API endpoints (e.g., `api.eu.sparelabs.com`) and all associated services.
+
+#### What You Can Do
+- Organizations can now be provisioned and operate entirely within the European Union.
+
+#### Why This Matters
+This enhancement provides data residency within the EU to help organizations meet local data protection and privacy regulations (like GDPR). It also improves platform responsiveness and performance for users in Europe.
+</Accordion>
+
+---
+### 🔐 New OAuth Scope for Sensitive Data Access
+
+**What's New**  
+A new `sensitiveInformation:read` OAuth scope has been added, allowing administrators to grant specific API clients permission to view unmasked sensitive data, such as Personally Identifiable Information (PII).
+
+**Pre-requisites**
+- Requires Administrator access. No feature flags required.
+
+<Accordion title="See More">
+
+#### Where You'll See It
+- *System Settings > Apps > (Create New App or Edit an existing App)*. The new scope is available in the **Scopes** dropdown menu, labeled "Read sensitive information".
+
+#### What You Can Do
+- When creating or editing an OAuth application, you can now select the "Read sensitive information" scope. API tokens generated for that application will then be able to retrieve data that is normally masked by default.
+
+#### Why This Matters
+Previously, API access to sensitive data was an all-or-nothing permission. This new, granular scope allows organizations to provide necessary data access to trusted integrations or internal tools without granting overly broad permissions, enhancing security and control.
+</Accordion>
+
+---
+### 🐛 Bug Fixes
+
+- **Corrected App Authorization for Regional Hosts**
+  - _Resolution_: Fixed an issue where the app authorization page for organizations in non-US regions (e.g., Canada or EU) failed to load. The page now correctly uses the organization's regional API host to fetch application details.
+
+---
+
+## 🎯 Operations
+### 🐛 Bug Fixes
+
+- **Appointment Edit Preserves Original Date and Time (ENG-854)**
+  - _Resolution_: Fixed an issue where editing an existing appointment would cause the date and time to automatically jump to the next available slot. The system now preserves the appointment's original scheduled time unless it is manually changed by the user.
+
+</Update>
+
+
+<Update label="Wednesday, October 22, 2025" description="3 Updates" tags={["Enterprise Asset Management", "Operations", "Admin"]}>
+
+## 🏢 Enterprise Asset Management
+### 🔧 Create and Manage Work Order Categories
+
+**What's New**  
+You can now create custom categories for Work Orders, such as "Preventive Maintenance," "Repairs," or "Inspections." These categories can be used to filter the Work Orders list and organize your maintenance tasks more effectively.
+
+**Pre-requisites**
+- Requires Administrator access with EAM permissions
+- No feature flags required
+
+<Accordion title="See More">
+
+#### Where You'll See It
+- *EAM > Settings > Work Order Categories*: A new page to create, view, edit, and delete your custom categories.
+- *EAM > Work Orders*: A new 'Category' filter dropdown on the main list page.
+- *EAM > Work Orders > New Work Order button*: A new 'Category' dropdown field when creating or editing a work order.
+- *EAM > Work Orders > [Select a Work Order]*: The assigned category is now displayed on the work order's details page.
+
+#### What You Can Do
+- Define a list of standardized categories for all work orders within your operation.
+- Assign a category when creating or editing a work order to classify the type of work being done.
+- Quickly find specific types of work orders by using the new 'Category' filter on the list page.
+
+#### Why This Matters
+Previously, all work orders were uncategorized, making it difficult to organize and report on different types of maintenance. This feature provides a structured way to classify work orders, improving organization and making it easier to track maintenance activities.
+</Accordion>
+
+---
+
+## 🎯 Operations
+### 🐛 Bug Fixes
+
+- **Service Availability in Booking Forms (BUS-3786)**
+  - _Resolution_: Resolved an issue where services with specific operating hours might not appear in the service selection dropdown when booking a trip for a time outside of those hours. Services will now consistently appear for selection, with time-based rules applied after a pickup or drop-off time is chosen.
+
+---
+
+## ⚙️ Admin
+### 🐛 Bug Fixes
+
+- **Clearing Address Fields on Rider Profiles (ENG-835)**
+  - _Resolution_: Fixed an issue on rider profiles where the 'Province/State' and 'Country' fields in an address could not be cleared. The "None" option in the dropdown is now selectable, allowing you to completely remove this information when editing an address.
+
+</Update>
+
+
+<Update label="Tuesday, October 21, 2025" description="3 Updates" tags={["Enterprise Asset Management", "Admin"]}>
+
+## 🏢 Enterprise Asset Management
+### 🔧 Custom Fields for EAM Objects
+
+**What's New**  
+You can now add your own custom data fields to key Enterprise Asset Management (EAM) records. This allows you to track specific information relevant to your operations for Parts, Work Orders, Issues, and Meter Entries directly within Spare.
+
+**Pre-requisites**
+- Requires Administrator access to configure fields in the Field Manager. Standard EAM module permissions are required to view and edit the fields on EAM records.
+
+<Accordion title="See More">
+
+#### Where You'll See It
+- **Configuration**: *Settings > Field Manager*. New options for "Part," "Work Order," "Issue," and "Meter Entry" are available in the "Applies To" dropdown when creating a new custom field.
+- **Data Entry**: New custom fields will appear in a dedicated section on the creation and edit forms for Parts, Work Orders, Issues, and Meter Entries (e.g., *EAM > Work Orders > New Work Order*).
+- **Viewing Data**: Custom fields can be added as columns to the main list tables for each respective EAM object (e.g., *EAM > Parts*).
+
+#### What You Can Do
+- Define various types of custom fields (text, number, date, dropdown, etc.) for EAM records.
+- Enter and save data in these new fields when creating or editing Parts, Work Orders, Issues, and Meter Entries.
+- Add your custom fields as columns to list views for better visibility and filtering.
+
+#### Why This Matters
+Many operations need to track unique data points not included in Spare's standard fields, such as internal reference numbers or warranty expiration dates. This feature provides the flexibility to capture this essential information directly on the relevant EAM records, centralizing data and improving workflow efficiency.
+</Accordion>
+
+---
+### 🏷️ Work Order Categories
+
+**What's New**  
+A new "Categories" management page has been added to EAM, allowing you to define a list of categories (e.g., "Preventive Maintenance," "Unscheduled Repair," "Body Work"). These categories can then be assigned to Work Orders for improved organization and filtering.
+
+**Pre-requisites**
+- Requires Administrator access to create and manage categories. Standard EAM module permissions are required to assign categories to Work Orders.
+
+<Accordion title="See More">
+
+#### Where You'll See It
+- **Configuration**: A new management page for Work Order Categories is available within the EAM section of the admin portal, likely under *EAM > Settings*.
+- **Data Entry**: A new "Category" dropdown field is now present on the *EAM > Work Orders > New Work Order* and *Edit Work Order* forms.
+- **Filtering & Reporting**: The "Category" field is now available as a filter option on the *EAM > Work Orders* list page and can be added as a column to the table.
+
+#### What You Can Do
+- Create and manage a customized list of categories for your organization's work orders.
+- Assign a category to each work order upon creation or while editing.
+- Filter the work orders list by one or more categories to quickly find specific types of jobs.
+
+#### Why This Matters
+Previously, all work orders were grouped together, making it difficult to analyze maintenance trends or prioritize different types of work. By categorizing work orders, you can now easily separate preventive maintenance from emergency repairs, track costs by job type, and gain deeper insights into your fleet's maintenance activities.
+</Accordion>
+
+---
+
+## ⚙️ Admin
+### 🐛 Bug Fixes
+
+- **Improved Performance on Request Constraint Overrides Page**
+  - _Resolution_: Fixed a caching issue that caused significant slowdowns when navigating through paginated lists of Request Constraint Overrides. The page at *Settings > Trips > Request Constraints* will now load much faster, especially when many overrides exist.
+
+</Update>
+
+<Update label="Monday, October 20, 2025" description="1 Updates" tags={["Admin"]}>
+
+## ⚙️ Admin
+### 🐛 Bug Fixes
+
+- **Corrected Photo Uploads for Services and Organizations (BUS-4433)**
+  * _Resolution_: Fixed an issue that prevented administrators from successfully uploading profile photos for services or the main organization profile. The system now correctly processes and stores these images, ensuring they appear as expected.
+
+</Update>
+
+<Update label="Saturday, October 18, 2025" description="4 Updates" tags={["Analytics", "Operations", "Admin"]}>
+
+## 📊 Analytics
+### 📅 Configurable Date Filter Time Dimensions
+
+**What's New**  
+When creating or editing analytics reports, you can now choose which time-based field (e.g., "Request Created At", "Trip Scheduled At") the main date filter applies to. This gives you precise control over how date filtering works for each report on your dashboards.
+
+**Pre-requisites**
+- Requires Administrator access
+
+<Accordion title="See More">
+
+#### Where You'll See It
+- *Analytics > Query Builder* (a new "Date Filter Dimension" selector is available in the header, with a banner that clearly displays the currently selected dimension)
+- *Analytics > Report View* (a new tooltip on the date filter shows which time dimension is being used for filtering)
+- *Analytics > Dashboard View* (dashboard-level date filters will now respect the specific time dimension configured for each individual report widget)
+
+#### What You Can Do
+- For any report, select a specific time dimension (like "Duty Started At" or "Request Created At") to be the target of the date filter.
+- Build dashboards where different reports respond to the same date filter in different ways (e.g., one report shows trips created that day, while another shows trips scheduled for that day).
+
+#### Why This Matters
+Previously, date filters always applied to a default time dimension, which could make it difficult to analyze data based on other important timestamps like scheduled times or completion times. Now, you have explicit control to filter reports by the exact time dimension that matters for your analysis, ensuring greater accuracy and flexibility.
+</Accordion>
+
+---
+
+## 🎯 Operations
+### ⏱️ 'Prolonged Duration' Column Now Available in Live Requests
+
+**What's New**  
+The 'Prolonged Duration' column is now available by default in the Live Requests table for all users. This column helps dispatchers and operations managers quickly identify trips where riders are experiencing significant delays.
+
+**Pre-requisites**
+- No feature flags required (previously required `ProlongedDurationInLiveRequests` feature flag)
+- Requires Administrator access
+
+<Accordion title="See More">
+
+#### Where You'll See It
+- *Rides > Live Requests* (add the 'Prolonged Duration' column to the table view using the "Configure Columns" menu)
+
+#### What You Can Do
+- Monitor the 'Prolonged Duration' column, which shows how much longer a rider has been traveling in a vehicle beyond their planned maximum travel time.
+- Sort the table by this column to prioritize and address the most delayed active trips.
+
+#### Why This Matters
+Monitoring rider travel time against service standards is critical for maintaining a high quality of service. This column makes it easy to see which in-progress trips are exceeding their maximum travel time, allowing your team to intervene proactively.
+</Accordion>
+
+### 🐛 Bug Fixes
+
+- **Live Requests Custom Column Ordering**
+  * _Resolution_: Fixed an issue in the *Rides > Live Requests* table where hiding and then re-showing a column would cause it to move to the end of the table. Columns now return to their original configured position when they are made visible again.
+
+---
+
+## ⚙️ Admin
+### 🐛 Bug Fixes
+
+- **API Pagination Handling (BUS-4248)**
+  * _Resolution_: Resolved an issue where pagination controls could fail in certain scenarios, such as in the Cross-Region Data Migration Tool. The system now correctly handles numeric pagination parameters, ensuring that all paginated tables and lists across the platform load data reliably.
+
+</Update>
+
+<Update label="Friday, October 17, 2025" tags={["Operations", "Analytics", "AI Voice", "Admin", "Resolve"]} description="11 Updates">
+  ## 🎯 Operations
+
+  ### ⏱️ Smarter Scheduling for Duty Interruptions
+
+  **What's New**\
+  When creating a duty interruption (like a driver break), the system is now smarter about fitting it into the schedule. If the requested duration is too long (e.g., it extends past the duty's end time), the system will automatically create a shorter interruption that fits and notify you of the adjustment.
+
+  **Pre-requisites**
+
+  - Requires Administrator access
+
+  <Accordion title="See More">
+    #### Where You'll See It
+
+    - _Operations \> Duties \> (select a duty) \> Driver Breaks tab \> 'Add Break' button_
+
+    #### What You Can Do
+
+    - Create an immediate duty interruption for a driver. If the duty is ending soon and cannot accommodate the full interruption length, a shorter, valid interruption will be created instead. You will see a message confirming the adjusted length.
+
+    #### Why This Matters
+
+    This prevents failures when trying to add breaks near the end of a duty. Instead of an error, the system now finds the maximum possible duration, improving flexibility for dispatchers managing last-minute schedule changes.
+  </Accordion>
+  ---
+
+  ### 🐛 Bug Fixes
+
+  - **Service Estimates Zone Validation (BUS-3786)**
+    - _Resolution_: Corrected an issue where a service might not appear as an option during trip estimation if the location was in an area with time-based service gaps. The system now validates geography first for estimates, and applies time-based rules only after a specific trip time is selected for booking.
+
+  ---
+
+  ## 📊 Analytics
+
+  ### 📊 Query Group Membership Custom Fields Directly
+
+  **What's New**\
+  Custom fields for Group Memberships are now directly available within the `group_membership` data cube in Analytics. This allows for more detailed and direct reporting on membership data.
+
+  **Pre-requisites**
+
+  - Requires `AnalyticsV2` feature flag
+  - Requires Administrator access
+
+  <Accordion title="See More">
+    #### Where You'll See It
+
+    - _Analytics \> Query Builder_ (new dimensions available under the `Group Membership` cube)
+
+    #### What You Can Do
+
+    - Build reports that filter or group by custom fields on group memberships, such as `adaCode` or `disability`, without needing to join through the ridership report.
+
+    #### Why This Matters
+
+    Previously, these custom fields were only accessible indirectly. This change provides direct access, simplifying report creation and enabling more powerful queries on group membership details.
+  </Accordion>
+  ---
+
+  ### 🔗 Link Case Data to Administrator Details in Analytics
+
+  **What's New**\
+  You can now connect `Case Data` to `Organization Admin` information within the Analytics Query Builder, enabling you to report on which administrators are assigned to cases.
+
+  **Pre-requisites**
+
+  - Requires `AnalyticsV2` feature flag
+  - Requires Administrator access
+
+  <Accordion title="See More">
+    #### Where You'll See It
+
+    - _Analytics \> Query Builder_
+
+    #### What You Can Do
+
+    - When building a report based on `Case Data`, you can now add dimensions from the `Organization Admin` cube, such as the first and last name of the case assignee.
+
+    #### Why This Matters
+
+    Previously, it was not possible to join these two data sets, making it difficult to report on which administrators were assigned to which cases. This change enables direct reporting on case assignments and admin workloads.
+  </Accordion>
+  ---
+
+  ### 🐛 Bug Fixes
+
+  - **Ridership Report Payment Method Capture (BUS-4303)**
+    - _Resolution_: Fixed an issue in the Analytics V2 Ridership Report where the `payment_method_type_name` was not being correctly captured for cash or ticket-based payments. These payment types will now appear correctly in reports.
+
+  ---
+
+  ## 🤖 AI Voice
+
+  ### 🗣️ More Accurate Date of Birth Recognition for AI Voice
+
+  **What's New**\
+  AI Voice now more rigorously validates spoken dates of birth during rider authentication. It is better at understanding various formats and rejecting ambiguous ones to improve authentication success rates.
+
+  **Pre-requisites**
+
+  - No feature flags required
+
+  <Accordion title="See More">
+    #### Where You'll See It
+
+    - This applies to any AI Voice workflow that requires rider authentication via date of birth.
+
+    #### What You Can Do
+
+    - Riders can state their date of birth in formats like "June 6th 2025" or "2025 06 01," and the system will understand it correctly. Ambiguous dates like "one one ninety two" (which could be January 1st or November 1st) will be rejected, prompting the caller for a clearer response.
+
+    #### Why This Matters
+
+    This change improves the reliability of rider authentication over the phone. By correctly understanding unambiguous dates and asking for clarification on ambiguous ones, the system reduces failed authentications and improves the caller experience.
+  </Accordion>
+  ---
+
+  ## ⚙️ Admin
+
+  ### ✈️ New Cross-Region Data Migration Tool
+
+  **What's New**\
+  A new, dedicated interface for migrating data between organizations in different geographic regions is now available. This tool provides a guided workflow for selecting source and destination organizations and choosing specific data items to migrate.
+
+  **Pre-requisites**
+
+  - Requires Super admin permissions
+
+  <Accordion title="See More">
+    #### Where You'll See It
+
+    - _Super Admin \> Data Migrations_ (this opens a new full-screen interface)
+
+    #### What You Can Do
+
+    - Select a source and destination region, choose the source and destination organizations, and select specific data items to migrate (e.g., Services, Zones, Rider Groups). The tool provides real-time feedback on the migration status for each item.
+
+    #### Why This Matters
+
+    This tool provides a purpose-built, user-friendly way to perform complex cross-region data migrations, which was previously a manual and error-prone process. It gives administrators clear control and visibility over the entire migration.
+  </Accordion>
+  ---
+
+  ### 🗺️ Redesigned Multimodal Graph Configuration
+
+  **What's New**\
+  The interface for managing multimodal graphs has been completely redesigned and is now integrated directly into each organization's settings page, providing a more intuitive and error-proof workflow.
+
+  **Pre-requisites**
+
+  - Requires Super admin permissions
+
+  <Accordion title="See More">
+    #### Where You'll See It
+
+    - _Super Admin \> Organizations \> (select an organization) \> Multimodal Configuration tab_
+
+    #### What You Can Do
+
+    - View the build status of the current graph, request a rebuild with a single click, and manage all associated datasets (GTFS, Flex, OpenStreetMap) in a context-aware interface that only shows datasets relevant to the selected organization.
+
+    #### Why This Matters
+
+    The previous graph management UI was complex and made it easy to make mistakes, like assigning a dataset to the wrong organization. This new, streamlined workflow is organized by organization, significantly reducing the risk of configuration errors and making graph management much more intuitive.
+  </Accordion>
+  ---
+
+  ### 🌍 Set Default Country Code for Phone Numbers
+
+  **What's New**\
+  A new "Default Country" setting is available for your organization. This country's flag and dialing code will now automatically appear when adding or editing phone numbers for riders, saving time and reducing errors.
+
+  **Pre-requisites**
+
+  - Requires Administrator access
+
+  <Accordion title="See More">
+    #### Where You'll See It
+
+    - _Settings \> Organization \> General Information_ (new "Default Country" dropdown)
+    - _People \> Riders \> (select a rider) \> Edit_ or _People \> Riders \> New Rider_ (phone number input field)
+
+    #### What You Can Do
+
+    - Set a default country for your entire organization. When creating new riders, the phone number field will default to your selected country's code, removing the need to select it manually each time.
+
+    #### Why This Matters
+
+    This saves time and reduces errors for administrators who primarily operate in one country, as they no longer need to manually select the country code for every new rider or profile update.
+  </Accordion>
+  ---
+
+  ### 🖼️ Streamlined Profile Photo Management
+
+  **What's New**\
+  To improve security and streamline the interface, all photo URLs for administrators and drivers are now secure, short-lived links. Additionally, the 'Photo' column has been removed from the main list views for Drivers and Administrators.
+
+  **Pre-requisites**
+
+  - Requires Administrator access
+
+  <Accordion title="See More">
+    #### Where You'll See It
+
+    - _People \> Drivers_ (list view)
+    - _People \> Administrators_ (list view)
+
+    #### What You Can Do
+
+    - You can still view, add, or update photos by clicking into an individual driver's or administrator's profile. The main list views are now cleaner and load faster without the photo previews.
+
+    #### Why This Matters
+
+    This change enhances data security by preventing direct, permanent access to photo URLs. Removing the column from list views provides a more consistent user experience across different user types (Riders, Drivers, Admins).
+  </Accordion>
+  ---
+
+  ## 🔧 Resolve
+
+  ### 🐛 Bug Fixes
+
+  - **Address Field Headers in Form Viewer (ENG-708)**
+    - _Resolution_: Fixed a bug where headers from the address input field (e.g., "Search for an address") were incorrectly appearing in the table of contents on forms. The address input has also been updated for better visual consistency.
+</Update>
