@@ -1,0 +1,159 @@
+---
+title: "Do Not Enable - Customer Specific"
+description: "Feature flags for specific customer configurations"
+---
+
+# Do Not Enable - Customer Specific Configuration
+
+# `LaMetroHardcodedRiderDescriptions`
+
+**Feature Flag Type:** Do Not Enable - Customer Specific Configuration
+
+**Description:** A customer-specific flag that uses hardcoded rider type descriptions for LA Metro, overriding the standard, dynamically configured descriptions.
+
+**Why Enable:** This is enabled only for the LA Metro organization to meet their specific business requirement of having exact, unchanging text for rider type descriptions.
+
+**Pre-requisites:**
+- The organization must be LA Metro.
+
+**Notes:**
+- This is a highly specific override and should not be enabled for any other customer.
+
+**Related Feature Flags:**
+Works independently of other flags.
+
+---
+
+# `MbtaTestOrgSftp` & `MbtaProdOrgSftp`
+
+**Feature Flag Type:** Do Not Enable - Customer Specific Configuration
+
+**Description:** These flags enable specific SFTP (Secure File Transfer Protocol) data export jobs for the MBTA (Massachusetts Bay Transportation Authority) test and production organizations, respectively.
+
+**Why Enable:** These are enabled only for the MBTA organizations to meet their requirement of receiving regular data exports to a specific SFTP server. This is part of a custom data integration project.
+
+**Pre-requisites:**
+- The organization must be the specific MBTA test or production organization.
+- SFTP credentials and server details must be configured.
+
+**Notes:**
+- These flags trigger a specific, recurring data export job. They are not a generic SFTP feature.
+
+**Related Feature Flags:**
+Works independently of other flags.
+
+---
+
+# `RenameAccessibilityFeatures` & `RenameAccessibilityFeaturesMBTA`
+
+**Feature Flag Type:** Do Not Enable - Customer Specific Configuration
+
+**Description:** These flags enable customer-specific renaming of accessibility features within the UI. `RenameAccessibilityFeatures` is a general version, while `RenameAccessibilityFeaturesMBTA` is a more specific override for the MBTA.
+
+**Why Enable:** These are enabled to meet the specific terminology requirements of a customer. For example, a customer might refer to "Wheelchair" as "Mobility Device." These flags allow the UI to be tailored to use the customer's exact language, which can be a contractual or operational requirement.
+
+**Pre-requisites:**
+- The specific string replacements must be coded into the application.
+
+**Notes:**
+- These are UI text overrides and do not change the underlying functionality. They are hardcoded for specific customers.
+
+**Related Feature Flags:**
+Works independently of other flags.
+
+---
+
+# `DARTCrossFleetOptimization`
+
+**Feature Flag Type:** Do Not Enable - Customer Specific Configuration
+
+**Description:** Enables a specific cross-fleet optimization job for DART (Dallas Area Rapid Transit).
+
+**Why Enable:** This is enabled only for DART to run a custom optimization process that considers trips and vehicles across multiple fleets simultaneously. This is a bespoke feature built to meet DART's specific and complex operational needs.
+
+**Pre-requisites:**
+- The organization must be DART.
+- Multiple fleets must be configured in a way that is compatible with this job.
+
+**Notes:**
+- This is a customer-specific implementation of a complex backend process.
+
+**Related Feature Flags:**
+Works independently of other flags.
+
+---
+
+# `EnableSlotCompleteInVehicleStatus`
+
+**Feature Flag Type:** Do Not Enable - Customer Specific Configuration
+
+**Description:** Enables a UI change in the Driver App that allows a driver to mark a slot (a pickup or dropoff) as "complete" while still "in vehicle" (i.e., before the rider has disembarked).
+
+**Why Enable:** This was likely built to accommodate a specific workflow for a customer where the definition of "complete" is different from the standard workflow (where a dropoff is complete after the rider is out of the vehicle).
+
+**Pre-requisites:**
+- None.
+
+**Notes:**
+- This alters the standard trip lifecycle in the Driver App and should only be enabled if a customer's workflow explicitly requires it.
+
+**Related Feature Flags:**
+Works independently of other flags.
+
+---
+
+# `CapMetroCustomRoles`
+
+**Feature Flag Type:** Do Not Enable - Customer Specific Configuration
+
+**Description:** Enables a set of custom roles and permissions specifically for CapMetro (Capital Metropolitan Transportation Authority in Austin, TX).
+
+**Why Enable:** This is enabled only for CapMetro to provide them with a tailored set of user roles that match their specific organizational structure and access control requirements.
+
+**Pre-requisites:**
+- The organization must be CapMetro.
+
+**Notes:**
+- This is a customer-specific configuration of the roles and permissions system.
+
+**Related Feature Flags:**
+Works independently of other flags.
+
+---
+
+# `AccessLaRider360Export`
+
+**Feature Flag Type:** Do Not Enable - Customer Specific Configuration
+
+**Description:** Enables a custom data export named "Access LA Rider360." This is a specialized ridership report built to the exact specifications of Access Services (the paratransit provider for Los Angeles County).
+
+**Why Enable:** This is enabled only for Access LA to provide them with a specific, recurring report that they require for their internal data analysis and reporting.
+
+**Pre-requisites:**
+- The organization must be Access LA.
+
+**Notes:**
+- This is a customer-specific data export and is not a general-purpose reporting tool.
+
+**Related Feature Flags:**
+Works independently of other flags.
+
+---
+
+# `NoMultimodalGCTDParkAndRide`
+
+**Feature Flag Type:** Do Not Enable - Customer Specific Configuration
+
+**Description:** A customer-specific flag for GCTD (Gold Coast Transit District) that modifies multimodal trip planning logic to exclude "Park and Ride" options from journey plans.
+
+**Why Enable:** This is enabled only for GCTD to meet their specific business rule of not presenting "Park and Ride" as an option to their riders in multimodal journey plans.
+
+**Pre-requisites:**
+- The organization must be GCTD.
+- The `Multimodal` feature flag must be enabled.
+
+**Notes:**
+- This is a specific override of the standard multimodal trip planning logic.
+
+**Related Feature Flags:**
+- **Requires:** `Multimodal`

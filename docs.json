@@ -574,7 +574,11 @@
               "spare-standard-dispatch-and-booking-agents",
               "spare-standard-driver-experience",
               "spare-standard-rider-experience",
-              "spare-other"
+              "spare-other",
+              "do-not-enable-built-for-demo",
+              "do-not-enable-customer-specific-configuration",
+              "do-not-enable-in-development",
+              "to-be-removed-soon"
             ]
           }
         ]

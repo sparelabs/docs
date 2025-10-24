@@ -1,0 +1,1030 @@
+---
+title: "Do Not Enable - In Development"
+description: "Feature flags currently under development"
+---
+
+# Do Not Enable - In Development
+
+# `CapMetroGroupExpiryNotifications`
+
+**Feature Flag Type:** Do Not Enable - In Development
+
+**Description:** Enables a job that sends expiry notifications for rider groups, specifically for CapMetro.
+
+**Why Enable:** This is a customer-specific feature in development that is not ready for production use. It is designed to automate notifications to riders whose group memberships are about to expire.
+
+**Pre-requisites:**
+- The organization must be CapMetro.
+
+**Notes:**
+- This is a backend job with no UI component. It is a highly specific, customer-driven feature.
+
+**Related Feature Flags:**
+Works independently of other flags.
+
+---
+
+# `RequestInsights`
+
+**Feature Flag Type:** Do Not Enable - In Development
+
+**Description:** Enables the calculation and storage of "insights" for a request, such as carbon emissions.
+
+**Why Enable:** This is a feature in development to provide more data and analytics about individual trips. It is not yet fully implemented or exposed in the UI.
+
+**Pre-requisites:**
+- None.
+
+**Notes:**
+- This feature adds a new data model (`RequestInsights`) to store additional analytics data related to a request.
+
+**Related Feature Flags:**
+Works independently of other flags.
+
+---
+
+# `LyftPassLink`
+
+**Feature Flag Type:** Do Not Enable - In Development
+
+**Description:** A feature flag related to an integration with Lyft Pass.
+
+**Why Enable:** This is a feature in development to integrate with Lyft's "Lyft Pass" program, likely for co-mingled services. It is not ready for production use.
+
+**Pre-requisites:**
+- A configured integration with Lyft.
+
+**Notes:**
+- This is part of a larger, third-party integration that is still in development.
+
+**Related Feature Flags:**
+Works independently of other flags.
+
+---
+
+# `ManuallyTriggeredOptimization`
+
+**Feature Flag Type:** Do Not Enable - In Development
+
+**Description:** Enables a UI element in the admin panel that allows a dispatcher to manually trigger an optimization run for a specific duty.
+
+**Why Enable:** This provides a way for dispatchers to force a re-optimization of a duty, which can be useful for testing or for responding to real-time events. However, the feature is still in development.
+
+**Pre-requisites:**
+- None.
+
+**Notes:**
+- This provides more granular control over the optimization engine, but it is not yet a fully supported feature.
+
+**Related Feature Flags:**
+Works independently of other flags.
+
+---
+
+# `LiveTraffic`
+
+**Feature Flag Type:** Do Not Enable - In Development
+
+**Description:** Enables the use of live traffic data in the Driver App's navigation.
+
+**Why Enable:** This is a feature in development to provide more accurate ETAs and better routing by incorporating real-time traffic conditions. It is not yet ready for production use.
+
+**Pre-requisites:**
+- A configured mapping provider that supports live traffic data.
+
+**Notes:**
+- This is an enhancement to the Driver App's navigation capabilities.
+
+**Related Feature Flags:**
+Works independently of other flags.
+
+---
+
+# `RestrictedArea`
+
+**Feature Flag Type:** Do Not Enable - In Development
+
+**Description:** Enables the ability to define "Restricted Areas" on the map, which can be used to trigger alerts or apply special rules.
+
+**Why Enable:** This is a feature in development for advanced operational controls. It is also in the "Built for Demo" category, indicating it is not a production-ready feature.
+
+**Pre-requisites:**
+- None.
+
+**Notes:**
+- This feature is not fully implemented or supported.
+
+**Related Feature Flags:**
+Works independently of other flags.
+
+---
+
+# `Routes`
+
+**Feature Flag Type:** Do Not Enable - In Development
+
+**Description:** Enables a "Routes" feature, likely related to the creation and management of fixed routes.
+
+**Why Enable:** This is a core feature for fixed-route services, but it is still under development or being refactored. It is not ready for general use.
+
+**Pre-requisites:**
+- None.
+
+**Notes:**
+- This is a significant feature that is not yet production-ready.
+
+**Related Feature Flags:**
+Works independently of other flags.
+
+---
+
+# `MultimodalTransitHubs`
+
+**Feature Flag Type:** Do Not Enable - In Development
+
+**Description:** Enables the concept of "transit hubs" in multimodal trip planning, allowing the system to route riders to and from these specific points.
+
+**Why Enable:** This enhances multimodal trip planning by providing a way to structure journeys around key transit connection points. The feature is still in development.
+
+**Pre-requisites:**
+- The `Multimodal` feature flag must be enabled.
+
+**Notes:**
+- This is an enhancement to the multimodal trip planning engine.
+
+**Related Feature Flags:**
+- **Requires:** `Multimodal`
+
+---
+
+# `TelecomsV2`
+
+**Feature Flag Type:** Do Not Enable - In Development
+
+**Description:** Enables a new, refactored version of the telecommunications service.
+
+**Why Enable:** This is a major backend refactoring project to improve the scalability and reliability of SMS, voice, and other communication features. It is not ready for production use.
+
+**Pre-requisites:**
+- None.
+
+**Notes:**
+- This is a backend-only feature that is in active development. Enabling it on a production system would be highly disruptive.
+
+**Related Feature Flags:**
+Works independently of other flags.
+
+---
+
+# `PhoneNumberWebhookMigration`
+
+**Feature Flag Type:** Do Not Enable - In Development
+
+**Description:** Enables a migration job for phone number webhooks, likely related to the `TelecomsV2` project.
+
+**Why Enable:** This is a specific, one-time migration tool used for the `TelecomsV2` refactoring. It is not a user-facing feature.
+
+**Pre-requisites:**
+- Likely depends on `TelecomsV2`.
+
+**Notes:**
+- This is an internal, backend-only tool.
+
+**Related Feature Flags:**
+Works independently of other flags.
+
+---
+
+# `MergeZonesOnRider`
+
+**Feature Flag Type:** Do Not Enable - In Development
+
+**Description:** Enables a feature to merge all service zones into a single polygon for display on the rider's map.
+
+**Why Enable:** This is a UI/performance feature in development. For services with many overlapping zones, this can simplify the map display. It is not yet fully tested or supported.
+
+**Pre-requisites:**
+- The service must be zone-based.
+
+**Notes:**
+- This is a UI enhancement that is still in development.
+
+**Related Feature Flags:**
+Works independently of other flags.
+
+---
+
+# `FixedRouteAntiCannibalization`
+
+**Feature Flag Type:** Do Not Enable - In Development
+
+**Description:** Enables a feature in multimodal trip planning to prevent on-demand services from "cannibalizing" ridership from parallel fixed-route services.
+
+**Why Enable:** This is a feature in development to provide more control over how multimodal options are presented to riders. It allows for business rules that prioritize fixed-route services.
+
+**Pre-requisites:**
+- The `Multimodal` feature flag must be enabled.
+
+**Notes:**
+- This is an advanced feature for multimodal planning that is not yet production-ready.
+
+**Related Feature Flags:**
+- **Requires:** `Multimodal`
+
+---
+
+# `DutyDelays`
+
+**Feature Flag Type:** Do Not Enable - In Development
+
+**Description:** Enables the tracking and visibility of "duty delays" in the admin panel.
+
+**Why Enable:** This is a feature in development to provide more granular analytics about on-time performance and the sources of delays. It is not yet fully implemented.
+
+**Pre-requisites:**
+- None.
+
+**Notes:**
+- This is an analytics feature that is still in development.
+
+**Related Feature Flags:**
+Works independently of other flags.
+
+---
+
+# `GoogleMapsOnDriverApp` & `GoogleMapsPerTripBilling`
+
+**Feature Flag Type:** Do Not Enable - In Development
+
+**Description:** `GoogleMapsOnDriverApp` enables the use of Google Maps as the base map in the Driver App. `GoogleMapsPerTripBilling` enables a specific billing model for Google Maps usage.
+
+**Why Enable:** These are features in development to provide an alternative to the default mapping provider. They are not yet ready for production use and have significant licensing and cost implications.
+
+**Pre-requisites:**
+- A valid Google Maps API key with the correct entitlements.
+
+**Notes:**
+- These are major, infrastructure-level features that are not yet generally available.
+
+**Related Feature Flags:**
+Works independently of other flags.
+
+---
+
+# `GoogleRoutingTesting` & `GoogleTrafficMirroring`
+
+**Feature Flag Type:** Do Not Enable - In Development
+
+**Description:** These are internal, backend flags for testing a new routing engine based on Google Maps.
+
+**Why Enable:** These are for internal Spare testing and development only. They are used to compare the performance of the existing routing engine with a new Google-based engine.
+
+**Pre-requisites:**
+- None.
+
+**Notes:**
+- These are internal, backend-only flags.
+
+**Related Feature Flags:**
+Works independently of other flags.
+
+---
+
+# `UseNavigationService`
+
+**Feature Flag Type:** Do Not Enable - In Development
+
+**Description:** A backend flag that directs the system to use a new, separate "navigation service" for routing and travel time calculations.
+
+**Why Enable:** This is part of a major backend refactoring to create a more scalable and flexible routing architecture. It is not ready for production use.
+
+**Pre-requisites:**
+- None.
+
+**Notes:**
+- This is a backend-only feature that is in active development.
+
+**Related Feature Flags:**
+Works independently of other flags.
+
+---
+
+# `DutyActivityFeed`
+
+**Feature Flag Type:** Do Not Enable - In Development
+
+**Description:** Enables a new "Activity Feed" tab on the Duty view in the admin panel, which is intended to replace the existing "Activity Log."
+
+**Why Enable:** This is a UI/UX enhancement in development to provide a more modern and user-friendly view of duty-related events. It is not yet fully implemented.
+
+**Pre-requisites:**
+- None.
+
+**Notes:**
+- This is a UI feature that is still in development.
+
+**Related Feature Flags:**
+Works independently of other flags.
+
+---
+
+# `FixedRouteEquivalentDetour`
+
+**Feature Flag Type:** Do Not Enable - In Development
+
+**Description:** A feature in development related to calculating detour flexibility for fixed-route equivalent services.
+
+**Why Enable:** This is a backend feature in development for advanced routing and service configuration. It is not ready for production use.
+
+**Pre-requisites:**
+- Likely requires `FixedRouteTravelDuration`.
+
+**Notes:**
+- This is a backend-only feature that is in active development.
+
+**Related Feature Flags:**
+- May be related to `FixedRouteTravelDuration`.
+
+---
+
+# `LiveGlobalOptimizationExtendedRuntime`
+
+**Feature Flag Type:** Do Not Enable - In Development
+
+**Description:** An internal performance-tuning flag that extends the runtime of the live global optimization (GOLD) job.
+
+**Why Enable:** This is for internal Spare testing and development only. It is used to experiment with different optimization parameters.
+
+**Pre-requisites:**
+- None.
+
+**Notes:**
+- This is an internal, backend-only flag.
+
+**Related Feature Flags:**
+Works independently of other flags.
+
+---
+
+# `RequireBreaksWithLocationsToBeStartedManually`
+
+**Feature Flag Type:** Do Not Enable - In Development
+
+**Description:** Changes the behavior of breaks that have a specific location, requiring the driver to manually start the break in the app.
+
+**Why Enable:** This is a feature in development to provide more control over break management. It is not yet fully tested or supported.
+
+**Pre-requisites:**
+- `BreaksWithLocations` must be enabled.
+
+**Notes:**
+- This changes the standard workflow for breaks with locations.
+
+**Related Feature Flags:**
+- **Requires:** `BreaksWithLocations`
+
+---
+
+# `DisableDriverOfflineScreen`
+
+**Feature Flag Type:** Do Not Enable - In Development
+
+**Description:** A feature flag to disable the offline screen in the Driver App.
+
+**Why Enable:** This is a feature in development, likely for testing or specific use cases where the standard offline behavior is not desired.
+
+**Pre-requisites:**
+- None.
+
+**Notes:**
+- This is a UI/UX change in the Driver App that is still in development.
+
+**Related Feature Flags:**
+Works independently of other flags.
+
+---
+
+# `MergeZonesServerSide`
+
+**Feature Flag Type:** Do Not Enable - In Development
+
+**Description:** A backend performance flag that enables server-side merging of zones.
+
+**Why Enable:** This is a feature in development to improve the performance of map rendering in the admin panel for organizations with many complex zones.
+
+**Pre-requisites:**
+- None.
+
+**Notes:**
+- This is a backend-only feature that is in active development.
+
+**Related Feature Flags:**
+Works independently of other flags.
+
+---
+
+# `MetabaseReports`
+
+**Feature Flag Type:** Do Not Enable - In Development
+
+**Description:** Enables an integration with Metabase for custom reporting.
+
+**Why Enable:** This is a feature in development to provide more advanced and customizable reporting capabilities by embedding Metabase dashboards. It is not yet ready for production use.
+
+**Pre-requisites:**
+- A configured Metabase instance.
+
+**Notes:**
+- This is a major integration that is still in development.
+
+**Related Feature Flags:**
+Works independently of other flags.
+
+---
+
+# `AnalyticsAboveLaunchAndEngage`
+
+**Feature Flag Type:** Do Not Enable - In Development
+
+**Description:** A UI flag that changes the order of products in the sidebar, moving "Analytics" up.
+
+**Why Enable:** This is a minor UI tweak, likely for A/B testing or internal experimentation.
+
+**Pre-requisites:**
+- None.
+
+**Notes:**
+- This is a cosmetic change that is still in development.
+
+**Related Feature Flags:**
+Works independently of other flags.
+
+---
+
+# `PermissionBasedSidebarProductVisibility`
+
+**Feature Flag Type:** Do Not Enable - In Development
+
+**Description:** Enables a more granular permission model for controlling the visibility of products in the sidebar.
+
+**Why Enable:** This is a feature in development to provide more control over what different admin users can see and access. It is not yet fully implemented.
+
+**Pre-requisites:**
+- `CustomRoles` must be enabled.
+
+**Notes:**
+- This is a significant change to the roles and permissions system that is still in development.
+
+**Related Feature Flags:**
+- **Requires:** `CustomRoles`
+
+---
+
+# `AuditLogs`
+
+**Feature Flag Type:** Do Not Enable - In Development
+
+**Description:** Enables an "Audit Logs" feature for tracking changes made in the system.
+
+**Why Enable:** This is a security and compliance feature in development to provide a detailed log of all actions taken by users. It is not yet ready for production use.
+
+**Pre-requisites:**
+- None.
+
+**Notes:**
+- This is a major feature that is still in development.
+
+**Related Feature Flags:**
+Works independently of other flags.
+
+---
+
+# `ShallowSearchAllWindows`
+
+**Feature Flag Type:** Do Not Enable - In Development
+
+**Description:** An internal performance-tuning flag for the booking and estimation process.
+
+**Why Enable:** This is for internal Spare testing and development only. It is used to experiment with different search parameters in the matching engine.
+
+**Pre-requisites:**
+- None.
+
+**Notes:**
+- This is an internal, backend-only flag.
+
+**Related Feature Flags:**
+Works independently of other flags.
+
+---
+
+# `ExcludeWalkingTimeInDesiredTs`
+
+**Feature Flag Type:** Do Not Enable - In Development
+
+**Description:** (DEPRECATED) An old flag related to how walking time is handled in multimodal trip planning.
+
+**Why Enable:** This flag should not be enabled. It is deprecated and no longer in use.
+
+**Pre-requisites:**
+- None.
+
+**Notes:**
+- The `hints.ts` file explicitly states this is "DEPRECATED - Do not use."
+
+**Related Feature Flags:**
+Works independently of other flags.
+
+---
+
+# `ExperimentalMapStyles`
+
+**Feature Flag Type:** Do Not Enable - In Development
+
+**Description:** Enables experimental new map styles in the admin panel.
+
+**Why Enable:** This is for internal Spare testing and development only, to preview and test new map visualizations.
+
+**Pre-requisites:**
+- None.
+
+**Notes:**
+- This is a cosmetic change that is still in development.
+
+**Related Feature Flags:**
+Works independently of other flags.
+
+---
+
+# `AiInWorkflows`
+
+**Feature Flag Type:** Do Not Enable - In Development
+
+**Description:** Enables AI-powered step types in the "Workflows" feature.
+
+**Why Enable:** This is a feature in development to integrate AI capabilities into the automated workflows. It is not yet ready for production use.
+
+**Pre-requisites:**
+- The `MultipleWorkflows` feature flag must be enabled.
+
+**Notes:**
+- This is an enhancement to the Workflows feature that is still in development.
+
+**Related Feature Flags:**
+- **Requires:** `MultipleWorkflows`
+
+---
+
+# `RbacProviderUi`
+
+**Feature Flag Type:** Do Not Enable - In Development
+
+**Description:** Enables a new UI for Role-Based Access Control (RBAC) related to providers.
+
+**Why Enable:** This is a feature in development to provide a more granular and user-friendly way to manage permissions for different providers. It is not yet fully implemented.
+
+**Pre-requisites:**
+- `CustomRoles` must be enabled.
+
+**Notes:**
+- This is a significant change to the roles and permissions system that is still in development.
+
+**Related Feature Flags:**
+- **Requires:** `CustomRoles`
+
+---
+
+# `AddressV2`
+
+**Feature Flag Type:** Do Not Enable - In Development
+
+**Description:** Enables a new, refactored version of the address input component and address data model.
+
+**Why Enable:** This is a major frontend refactoring project to improve the usability and data quality of address entry. It is not yet fully implemented or supported.
+
+**Pre-requisites:**
+- None.
+
+**Notes:**
+- This is a frontend-heavy feature that is in active development.
+
+**Related Feature Flags:**
+Works independently of other flags.
+
+---
+
+# `EnableGBFSTripPlanning`
+
+**Feature Flag Type:** Do Not Enable - In Development
+
+**Description:** Enables trip planning using GBFS (General Bikeshare Feed Specification) data, for integrating with bike-share services.
+
+**Why Enable:** This is a feature in development to expand multimodal capabilities to include bike-share. It is not yet ready for production use.
+
+**Pre-requisites:**
+- The `Multimodal` feature flag must be enabled.
+
+**Notes:**
+- This is an enhancement to the multimodal trip planning engine.
+
+**Related Feature Flags:**
+- **Requires:** `Multimodal`
+
+---
+
+# `ReadOnlyExternalRiderIds`
+
+**Feature Flag Type:** Do Not Enable - In Development
+
+**Description:** Makes the "External Rider ID" field read-only in the admin panel.
+
+**Why Enable:** This is a feature in development, likely for integrations where the external ID is managed by an external system and should not be editable in Spare.
+
+**Pre-requisites:**
+- None.
+
+**Notes:**
+- This is a UI change that is still in development.
+
+**Related Feature Flags:**
+Works independently of other flags.
+
+---
+
+# `UpcomingStopsVisibility`
+
+**Feature Flag Type:** Do Not Enable - In Development
+
+**Description:** Enables visibility of the next three stops in the Driver App.
+
+**Why Enable:** This is a UI/UX enhancement in development to provide drivers with more visibility of their upcoming route. It is not yet fully tested or supported.
+
+**Pre-requisites:**
+- None.
+
+**Notes:**
+- This is similar to `ShowAllSlotsToDriver` but with a more limited scope.
+
+**Related Feature Flags:**
+- May be related to `ShowAllSlotsToDriver`.
+
+---
+
+# `EnableRiderAppMixpanelAnalytics`
+
+**Feature Flag Type:** Do Not Enable - In Development
+
+**Description:** Enables the integration with Mixpanel for analytics in the Rider App.
+
+**Why Enable:** This is a feature in development to provide more detailed analytics about rider behavior in the app. It is not yet fully implemented.
+
+**Pre-requisites:**
+- A configured Mixpanel account.
+
+**Notes:**
+- This is a third-party integration that is still in development.
+
+**Related Feature Flags:**
+Works independently of other flags.
+
+---
+
+# `DisableRiderAppPhotoEditing`
+
+**Feature Flag Type:** Do Not Enable - In Development
+
+**Description:** Disables the ability for riders to edit their profile photo in the app.
+
+**Why Enable:** This is a feature in development, likely for organizations that manage profile photos centrally or have specific policies about profile images.
+
+**Pre-requisites:**
+- None.
+
+**Notes:**
+- This is a UI change in the Rider App that is still in development.
+
+**Related Feature Flags:**
+Works independently of other flags.
+
+---
+
+# `DisableRiderOnboarding`
+
+**Feature Flag Type:** Do Not Enable - In Development
+
+**Description:** Disables the onboarding flow for new riders in the Rider App.
+
+**Why Enable:** This is a feature in development, likely for specific use cases or for testing where the onboarding flow is not desired.
+
+**Pre-requisites:**
+- None.
+
+**Notes:**
+- This is a UI/UX change in the Rider App that is still in development.
+
+**Related Feature Flags:**
+Works independently of other flags.
+
+---
+
+# `DisableUpdatingDefaultProfileFields`
+
+**Feature Flag Type:** Do Not Enable - In Development
+
+**Description:** Prevents riders from changing their first and last name in the app.
+
+**Why Enable:** This is a feature in development for organizations that manage rider identity centrally and do not want riders to be able to change their own name in the system.
+
+**Pre-requisites:**
+- None.
+
+**Notes:**
+- This is a UI change in the Rider App that is still in development.
+
+**Related Feature Flags:**
+Works independently of other flags.
+
+---
+
+# `HideStopDescriptionsOnRiderTimeline`
+
+**Feature Flag Type:** Do Not Enable - In Development
+
+**Description:** Hides the descriptions of stops on the rider's trip timeline.
+
+**Why Enable:** This is a minor UI tweak in development, likely for testing or specific customer requests.
+
+**Pre-requisites:**
+- None.
+
+**Notes:**
+- This is a cosmetic change that is still in development.
+
+**Related Feature Flags:**
+Works independently of other flags.
+
+---
+
+# `DisableLocationNotesInRiderApp`
+
+**Feature Flag Type:** Do Not Enable - In Development
+
+**Description:** Disables the ability for riders to view and edit location notes in the Rider App.
+
+**Why Enable:** This is a feature in development, likely for organizations that want to manage location notes centrally and not allow riders to edit them.
+
+**Pre-requisites:**
+- The `LocationNotes` feature flag must be enabled.
+
+**Notes:**
+- This is a UI change in the Rider App that is still in development.
+
+**Related Feature Flags:**
+- **Requires:** `LocationNotes`
+
+---
+
+# `HideAlternativeTripTimes`
+
+**Feature Flag Type:** Do Not Enable - In Development
+
+**Description:** Hides the display of alternative trip times in the booking flow.
+
+**Why Enable:** This is a UI/UX change in development, likely for testing or to simplify the booking flow for certain services.
+
+**Pre-requisites:**
+- None.
+
+**Notes:**
+- This is a UI change that is still in development.
+
+**Related Feature Flags:**
+Works independently of other flags.
+
+---
+
+# `PromptToCancelReturnTrip`
+
+**Feature Flag Type:** Do Not Enable - In Development
+
+**Description:** Enables a prompt that asks the user if they want to cancel their return trip when they cancel the outbound trip of a pair.
+
+**Why Enable:** This is a UI/UX enhancement in development to improve the workflow for managing round trips. It is not yet fully implemented.
+
+**Pre-requisites:**
+- The trip must be part of a round trip.
+
+**Notes:**
+- This is a UI change that is still in development.
+
+**Related Feature Flags:**
+Works independently of other flags.
+
+---
+
+# `LogDenials`
+
+**Feature Flag Type:** Do Not Enable - In Development
+
+**Description:** Enables the logging of "denials," which are instances where a rider was unable to book a trip (e.g., due to no availability).
+
+**Why Enable:** This is an analytics feature in development to provide data on unmet demand. It is not yet fully implemented.
+
+**Pre-requisites:**
+- None.
+
+**Notes:**
+- This is a backend and analytics feature that is still in development.
+
+**Related Feature Flags:**
+Works independently of other flags.
+
+---
+
+# `DispatcherAI` & `DispatcherAIAutomatedNoShows`
+
+**Feature Flag Type:** Do Not Enable - In Development
+
+**Description:** `DispatcherAI` enables a suite of AI-powered tools for dispatchers. `DispatcherAIAutomatedNoShows` is a sub-feature that uses AI to automatically detect and handle no-shows.
+
+**Why Enable:** These are major new features in development to bring AI capabilities to the dispatch workflow. They are not yet ready for production use.
+
+**Pre-requisites:**
+- None.
+
+**Notes:**
+- These are significant, complex features that are still in active development.
+
+**Related Feature Flags:**
+Works independently of other flags.
+
+---
+
+# `MultimodalReplaceWalkingWithOnDemand`
+
+**Feature Flag Type:** Do Not Enable - In Development
+
+**Description:** Enables a feature in multimodal trip planning that can replace long walking legs with an on-demand trip.
+
+**Why Enable:** This is a feature in development to create more seamless and convenient multimodal journeys. It is not yet ready for production use.
+
+**Pre-requisites:**
+- The `Multimodal` feature flag must be enabled.
+
+**Notes:**
+- This is an enhancement to the multimodal trip planning engine.
+
+**Related Feature Flags:**
+- **Requires:** `Multimodal`
+
+---
+
+# `ShowPickupWindowsToDrivers`
+
+**Feature Flag Type:** Do Not Enable - In Development
+
+**Description:** Enables the display of pickup time windows (e.g., "pickup between 10:00 and 10:15") to drivers in the Driver App.
+
+**Why Enable:** This is a UI/UX enhancement in development to provide drivers with more context about the flexibility of their schedule.
+
+**Pre-requisites:**
+- The service must be configured to use pickup windows.
+
+**Notes:**
+- This is a UI change in the Driver App that is still in development.
+
+**Related Feature Flags:**
+Works independently of other flags.
+
+---
+
+# `AIVoiceOutboundCalls`
+
+**Feature Flag Type:** Do Not Enable - In Development
+
+**Description:** Enables the use of AI Voice for making outbound calls (e.g., for notifications or confirmations).
+
+**Why Enable:** This is a feature in development to expand the capabilities of the AI Voice product. It is not yet ready for production use.
+
+**Pre-requisites:**
+- The `LaunchAIVoice` or `EngageAIVoice` feature flag must be enabled.
+
+**Notes:**
+- This is an enhancement to the AI Voice product that is still in development.
+
+**Related Feature Flags:**
+- **Requires:** `LaunchAIVoice` or `EngageAIVoice`
+
+---
+
+# `ArriveByV2`
+
+**Feature Flag Type:** Do Not Enable - In Development
+
+**Description:** Enables an improved version of the "arrive by" logic in the matching engine.
+
+**Why Enable:** This is a backend feature in development to improve the accuracy and reliability of "arrive by" bookings. It is not yet ready for production use.
+
+**Pre-requisites:**
+- None.
+
+**Notes:**
+- The `hints.ts` file explicitly states "DO NOT ENABLE FOR PRODUCTION ORGANIZATIONS."
+
+**Related Feature Flags:**
+Works independently of other flags.
+
+---
+
+# `SkipRequestLoadingView`
+
+**Feature Flag Type:** Do Not Enable - In Development
+
+**Description:** A UI flag that skips the "loading" view for a request in the admin panel.
+
+**Why Enable:** This is a minor UI tweak in development, likely for testing or internal experimentation.
+
+**Pre-requisites:**
+- None.
+
+**Notes:**
+- This is a cosmetic change that is still in development.
+
+**Related Feature Flags:**
+Works independently of other flags.
+
+---
+
+# `LiveMapNoShowFilter`
+
+**Feature Flag Type:** Do Not Enable - In Development
+
+**Description:** Enables a filter on the Live Map to show or hide drivers who are marked as a "no-show."
+
+**Why Enable:** This is a UI feature in development to provide more filtering and visibility options for dispatchers on the Live Map.
+
+**Pre-requisites:**
+- None.
+
+**Notes:**
+- This is a UI change that is still in development.
+
+**Related Feature Flags:**
+Works independently of other flags.
+
+---
+
+# `MultimodalUnmatchedJourneyOptions`
+
+**Feature Flag Type:** Do Not Enable - In Development
+
+**Description:** A feature in development related to how unmatched journey options are handled in multimodal trip planning.
+
+**Why Enable:** This is a backend feature in development for the multimodal engine. It is not ready for production use.
+
+**Pre-requisites:**
+- The `Multimodal` feature flag must be enabled.
+
+**Notes:**
+- This is a backend-only feature that is in active development.
+
+**Related Feature Flags:**
+- **Requires:** `Multimodal`
+
+---
+
+# `DisableDriverWaitTimeThresholdTimer`
+
+**Feature Flag Type:** Do Not Enable - In Development
+
+**Description:** Disables the wait time threshold timer in the Rider App.
+
+**Why Enable:** This is a feature in development, likely for specific use cases where the standard wait time behavior is not desired.
+
+**Pre-requisites:**
+- None.
+
+**Notes:**
+- This is a UI/UX change in the Rider App that is still in development.
+
+**Related Feature Flags:**
+Works independently of other flags.
+
+---
+
+# `RiderLocationSharing`
+
+**Feature Flag Type:** Do Not Enable - In Development
+
+**Description:** Enables the ability for a rider to share their live location with their driver.
+
+**Why Enable:** This is a feature in development to improve the pickup experience by allowing the driver to see the rider's exact location in real-time. It is not yet ready for production use.
+
+**Pre-requisites:**
+- None.
+
+**Notes:**
+- This is a significant feature that is still in development.
+
+**Related Feature Flags:**
+Works independently of other flags.
