@@ -1,3 +1,207 @@
+<Update label="Friday, October 17, 2025" description="11 Updates" tags={["Operations", "Analytics", "AI Voice", "Admin", "Resolve"]}>
+
+## 🎯 Operations
+### ⏱️ Smarter Scheduling for Duty Interruptions
+
+**What's New**  
+When creating a duty interruption (like a driver break), the system is now smarter about fitting it into the schedule. If the requested duration is too long (e.g., it extends past the duty's end time), the system will automatically create a shorter interruption that fits and notify you of the adjustment.
+
+**Pre-requisites**
+- Requires Administrator access
+
+<Accordion title="See More">
+
+#### Where You'll See It
+- *Operations > Duties > (select a duty) > Driver Breaks tab > 'Add Break' button*
+
+#### What You Can Do
+- Create an immediate duty interruption for a driver. If the duty is ending soon and cannot accommodate the full interruption length, a shorter, valid interruption will be created instead. You will see a message confirming the adjusted length.
+
+#### Why This Matters
+This prevents failures when trying to add breaks near the end of a duty. Instead of an error, the system now finds the maximum possible duration, improving flexibility for dispatchers managing last-minute schedule changes.
+</Accordion>
+
+---
+### 🐛 Bug Fixes
+
+- **Service Estimates Zone Validation (BUS-3786)**
+  - _Resolution_: Corrected an issue where a service might not appear as an option during trip estimation if the location was in an area with time-based service gaps. The system now validates geography first for estimates, and applies time-based rules only after a specific trip time is selected for booking.
+
+---
+
+## 📊 Analytics
+### 📊 Query Group Membership Custom Fields Directly
+
+**What's New**  
+Custom fields for Group Memberships are now directly available within the `group_membership` data cube in Analytics. This allows for more detailed and direct reporting on membership data.
+
+**Pre-requisites**
+- Requires `AnalyticsV2` feature flag
+- Requires Administrator access
+
+<Accordion title="See More">
+
+#### Where You'll See It
+- *Analytics > Query Builder* (new dimensions available under the `Group Membership` cube)
+
+#### What You Can Do
+- Build reports that filter or group by custom fields on group memberships, such as `adaCode` or `disability`, without needing to join through the ridership report.
+
+#### Why This Matters
+Previously, these custom fields were only accessible indirectly. This change provides direct access, simplifying report creation and enabling more powerful queries on group membership details.
+</Accordion>
+
+---
+### 🔗 Link Case Data to Administrator Details in Analytics
+
+**What's New**  
+You can now connect `Case Data` to `Organization Admin` information within the Analytics Query Builder, enabling you to report on which administrators are assigned to cases.
+
+**Pre-requisites**
+- Requires `AnalyticsV2` feature flag
+- Requires Administrator access
+
+<Accordion title="See More">
+
+#### Where You'll See It
+- *Analytics > Query Builder*
+
+#### What You Can Do
+- When building a report based on `Case Data`, you can now add dimensions from the `Organization Admin` cube, such as the first and last name of the case assignee.
+
+#### Why This Matters
+Previously, it was not possible to join these two data sets, making it difficult to report on which administrators were assigned to which cases. This change enables direct reporting on case assignments and admin workloads.
+</Accordion>
+
+---
+### 🐛 Bug Fixes
+
+- **Ridership Report Payment Method Capture (BUS-4303)**
+  - _Resolution_: Fixed an issue in the Analytics V2 Ridership Report where the `payment_method_type_name` was not being correctly captured for cash or ticket-based payments. These payment types will now appear correctly in reports.
+
+---
+
+## 🤖 AI Voice
+### 🗣️ More Accurate Date of Birth Recognition for AI Voice
+
+**What's New**  
+AI Voice now more rigorously validates spoken dates of birth during rider authentication. It is better at understanding various formats and rejecting ambiguous ones to improve authentication success rates.
+
+**Pre-requisites**
+- No feature flags required
+
+<Accordion title="See More">
+
+#### Where You'll See It
+- This applies to any AI Voice workflow that requires rider authentication via date of birth.
+
+#### What You Can Do
+- Riders can state their date of birth in formats like "June 6th 2025" or "2025 06 01," and the system will understand it correctly. Ambiguous dates like "one one ninety two" (which could be January 1st or November 1st) will be rejected, prompting the caller for a clearer response.
+
+#### Why This Matters
+This change improves the reliability of rider authentication over the phone. By correctly understanding unambiguous dates and asking for clarification on ambiguous ones, the system reduces failed authentications and improves the caller experience.
+</Accordion>
+
+---
+
+## ⚙️ Admin
+### ✈️ New Cross-Region Data Migration Tool
+
+**What's New**  
+A new, dedicated interface for migrating data between organizations in different geographic regions is now available. This tool provides a guided workflow for selecting source and destination organizations and choosing specific data items to migrate.
+
+**Pre-requisites**
+- Requires Super admin permissions
+
+<Accordion title="See More">
+
+#### Where You'll See It
+- *Super Admin > Data Migrations* (this opens a new full-screen interface)
+
+#### What You Can Do
+- Select a source and destination region, choose the source and destination organizations, and select specific data items to migrate (e.g., Services, Zones, Rider Groups). The tool provides real-time feedback on the migration status for each item.
+
+#### Why This Matters
+This tool provides a purpose-built, user-friendly way to perform complex cross-region data migrations, which was previously a manual and error-prone process. It gives administrators clear control and visibility over the entire migration.
+</Accordion>
+
+---
+### 🗺️ Redesigned Multimodal Graph Configuration
+
+**What's New**  
+The interface for managing multimodal graphs has been completely redesigned and is now integrated directly into each organization's settings page, providing a more intuitive and error-proof workflow.
+
+**Pre-requisites**
+- Requires Super admin permissions
+
+<Accordion title="See More">
+
+#### Where You'll See It
+- *Super Admin > Organizations > (select an organization) > Multimodal Configuration tab*
+
+#### What You Can Do
+- View the build status of the current graph, request a rebuild with a single click, and manage all associated datasets (GTFS, Flex, OpenStreetMap) in a context-aware interface that only shows datasets relevant to the selected organization.
+
+#### Why This Matters
+The previous graph management UI was complex and made it easy to make mistakes, like assigning a dataset to the wrong organization. This new, streamlined workflow is organized by organization, significantly reducing the risk of configuration errors and making graph management much more intuitive.
+</Accordion>
+
+---
+### 🌍 Set Default Country Code for Phone Numbers
+
+**What's New**  
+A new "Default Country" setting is available for your organization. This country's flag and dialing code will now automatically appear when adding or editing phone numbers for riders, saving time and reducing errors.
+
+**Pre-requisites**
+- Requires Administrator access
+
+<Accordion title="See More">
+
+#### Where You'll See It
+- *Settings > Organization > General Information* (new "Default Country" dropdown)
+- *People > Riders > (select a rider) > Edit* or *People > Riders > New Rider* (phone number input field)
+
+#### What You Can Do
+- Set a default country for your entire organization. When creating new riders, the phone number field will default to your selected country's code, removing the need to select it manually each time.
+
+#### Why This Matters
+This saves time and reduces errors for administrators who primarily operate in one country, as they no longer need to manually select the country code for every new rider or profile update.
+</Accordion>
+
+---
+### 🖼️ Streamlined Profile Photo Management
+
+**What's New**  
+To improve security and streamline the interface, all photo URLs for administrators and drivers are now secure, short-lived links. Additionally, the 'Photo' column has been removed from the main list views for Drivers and Administrators.
+
+**Pre-requisites**
+- Requires Administrator access
+
+<Accordion title="See More">
+
+#### Where You'll See It
+- *People > Drivers* (list view)
+- *People > Administrators* (list view)
+
+#### What You Can Do
+- You can still view, add, or update photos by clicking into an individual driver's or administrator's profile. The main list views are now cleaner and load faster without the photo previews.
+
+#### Why This Matters
+This change enhances data security by preventing direct, permanent access to photo URLs. Removing the column from list views provides a more consistent user experience across different user types (Riders, Drivers, Admins).
+</Accordion>
+
+---
+
+## 🔧 Resolve
+### 🐛 Bug Fixes
+
+- **Address Field Headers in Form Viewer (ENG-708)**
+  - _Resolution_: Fixed a bug where headers from the address input field (e.g., "Search for an address") were incorrectly appearing in the table of contents on forms. The address input has also been updated for better visual consistency.
+
+</Update>
+
+---
+
 <Update label="Wednesday, October 22, 2025" description="2 Updates" tags={["Enterprise Asset Management", "Operations"]}>
 
 ## 🏢 Enterprise Asset Management
