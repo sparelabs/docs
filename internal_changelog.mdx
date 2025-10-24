@@ -1,3 +1,51 @@
+<Update label="Wednesday, October 22, 2025" description="3 Updates" tags={["Enterprise Asset Management", "Operations", "Admin"]}>
+
+## 🏢 Enterprise Asset Management
+### 🔧 Create and Manage Work Order Categories
+
+**What's New**  
+You can now create custom categories for Work Orders, such as "Preventive Maintenance," "Repairs," or "Inspections." These categories can be used to filter the Work Orders list and organize your maintenance tasks more effectively.
+
+**Pre-requisites**
+- Requires Administrator access with EAM permissions
+- No feature flags required
+
+<Accordion title="See More">
+
+#### Where You'll See It
+- *EAM > Settings > Work Order Categories*: A new page to create, view, edit, and delete your custom categories.
+- *EAM > Work Orders*: A new 'Category' filter dropdown on the main list page.
+- *EAM > Work Orders > New Work Order button*: A new 'Category' dropdown field when creating or editing a work order.
+- *EAM > Work Orders > [Select a Work Order]*: The assigned category is now displayed on the work order's details page.
+
+#### What You Can Do
+- Define a list of standardized categories for all work orders within your operation.
+- Assign a category when creating or editing a work order to classify the type of work being done.
+- Quickly find specific types of work orders by using the new 'Category' filter on the list page.
+
+#### Why This Matters
+Previously, all work orders were uncategorized, making it difficult to organize and report on different types of maintenance. This feature provides a structured way to classify work orders, improving organization and making it easier to track maintenance activities.
+</Accordion>
+
+---
+
+## 🎯 Operations
+### 🐛 Bug Fixes
+
+- **Service Availability in Booking Forms (BUS-3786)**
+  - _Resolution_: Resolved an issue where services with specific operating hours might not appear in the service selection dropdown when booking a trip for a time outside of those hours. Services will now consistently appear for selection, with time-based rules applied after a pickup or drop-off time is chosen.
+
+---
+
+## ⚙️ Admin
+### 🐛 Bug Fixes
+
+- **Clearing Address Fields on Rider Profiles (ENG-835)**
+  - _Resolution_: Fixed an issue on rider profiles where the 'Province/State' and 'Country' fields in an address could not be cleared. The "None" option in the dropdown is now selectable, allowing you to completely remove this information when editing an address.
+
+</Update>
+
+
 <Update label="Tuesday, October 21, 2025" description="3 Updates" tags={["Enterprise Asset Management", "Admin"]}>
 
 ## 🏢 Enterprise Asset Management
