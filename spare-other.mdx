@@ -1,0 +1,365 @@
+---
+title: "Other"
+description: "Miscellaneous feature flags and custom configurations"
+---
+
+# Other
+
+# `CapMetroCustomRoles`
+
+**Feature Flag Type:** Other
+
+**Description:** (Customer Specific) Enables a set of additional, custom user roles specifically requested by the Capital Metro (CapMetro) organization.
+
+**Why Enable:** This should only be enabled for the CapMetro organization. It provides them with a set of user roles and permissions tailored to their specific operational structure, which was not covered by the standard set of roles.
+
+**Pre-requisites:**
+- This is for the CapMetro organization only.
+
+**Notes:**
+- This is an example of a customer-specific configuration.
+
+**Related Feature Flags:**
+- `CustomRoles`: The general feature for creating custom roles.
+
+---
+
+# `CompleteActivityLog`
+
+**Feature Flag Type:** Other
+
+**Description:** Expands the visibility of the activity log to show all past events. When disabled, the activity log is typically limited to showing events from the last 14 days.
+
+**Why Enable:** Provides full historical auditing and troubleshooting capabilities. For organizations that need to investigate past incidents, review the full history of a trip or case, or maintain long-term records for compliance, having access to the complete activity log is essential.
+
+**Pre-requisites:**
+- None.
+
+**Notes:**
+- Disabling this flag can improve performance for organizations that do not need long-term log retention.
+
+**Related Feature Flags:**
+Works independently of other flags.
+
+---
+
+# `FixedRouteTravelDuration`
+
+**Feature Flag Type:** Other
+
+**Description:** When enabled, the system calculates the equivalent travel time of a Spare trip if it were taken on a fixed-route public transit service. This data is then included in ridership reports.
+
+**Why Enable:** This provides a powerful data point for reporting and analysis, especially for transit agencies. It allows them to compare the performance and efficiency of their on-demand service against their existing fixed-route network. This can be used to justify the on-demand service, analyze its impact, and make data-driven decisions about service planning.
+
+**Pre-requisites:**
+- Requires integration with a third-party API or GTFS data to calculate fixed-route travel times.
+
+**Notes:**
+- This is primarily a reporting and analytics feature.
+
+**Related Feature Flags:**
+Works independently of other flags.
+
+---
+
+# `DriverRiderReviews`
+
+**Feature Flag Type:** Other
+
+**Description:** Enables a two-way rating and review system where drivers can rate their riders, and riders can rate their drivers, at the end of a trip.
+
+**Why Enable:** This is a key feature for maintaining service quality and safety in a two-sided marketplace. It allows the organization to identify high-performing drivers, as well as drivers or riders who may be causing issues. The feedback loop is crucial for managing quality in a TNC-style service.
+
+**Pre-requisites:**
+- None.
+
+**Notes:**
+- Ratings are typically on a 1-5 star scale and can include comments.
+
+**Related Feature Flags:**
+Works independently of other flags.
+
+---
+
+# `CapMetroGroupExpiryNotifications`
+
+**Feature Flag Type:** Other
+
+**Description:** (Customer Specific) Enables a set of notifications specifically for the Capital Metro (CapMetro) organization. It sends notifications to riders in the 'MetroAccess' group whose eligibility is due to expire in 30, 60, or 90 days.
+
+**Why Enable:** This is an automated retention and customer service feature for CapMetro's MetroAccess program. It proactively reminds riders to renew their eligibility, preventing a lapse in service and reducing the administrative burden of manually tracking and notifying riders about upcoming expiries.
+
+**Pre-requisites:**
+- This is for the CapMetro organization only.
+
+**Notes:**
+- An example of a highly customer-specific, automated notification workflow.
+
+**Related Feature Flags:**
+Works independently of other flags.
+
+---
+
+# `RenameAccessibilityFeatures`
+
+**Feature Flag Type:** Other
+
+**Description:** (Customer Specific) Renames several accessibility features in the UI across Spare Operations, Rider, and Driver apps. This was built for Winnipeg Transit.
+
+**Why Enable:** This allows the terminology used in the Spare platform to perfectly match the local language and terminology used by a specific transit agency. This consistency reduces confusion for riders, drivers, and staff. This should only be enabled for Winnipeg Transit.
+
+**Pre-requisites:**
+- This is for the Winnipeg Transit organization only.
+
+**Notes:**
+- An example of UI localization for a specific customer's vocabulary.
+
+**Related Feature Flags:**
+Works independently of other flags.
+
+---
+
+# `RenameAccessibilityFeaturesMBTA`
+
+**Feature Flag Type:** Other
+
+**Description:** (Customer Specific) Renames some accessibility features for the MBTA (Massachusetts Bay Transportation Authority).
+
+**Why Enable:** Similar to the Winnipeg flag, this aligns the in-platform terminology with the MBTA's specific vocabulary, ensuring a consistent and clear experience for their users and staff. This should only be enabled for MBTA.
+
+**Pre-requisites:**
+- This is for the MBTA organization only.
+
+**Notes:**
+- The hint notes this is to be deprecated by a more advanced feature in the future, likely a more general localization/terminology management tool.
+
+**Related Feature Flags:**
+Works independently of other flags.
+
+---
+
+# `LiveTraffic`
+
+**Feature Flag Type:** Other
+
+**Description:** Switches the Driver App to use Mapbox for driving directions, instead of the default OSRM routing engine.
+
+**Why Enable:** Mapbox driving directions are generally considered to be of higher quality than OSRM, as they include real-time traffic data. This can lead to more accurate ETAs and better route suggestions for drivers, improving on-time performance and efficiency.
+
+**Pre-requisites:**
+- A Mapbox account and API key must be configured.
+
+**Notes:**
+- The hint warns that while Mapbox directions are generally better, they ignore OpenStreetMap (OSM) changesets, which could be a factor for services in areas with frequent road network updates. The name is also misleading: it only impacts Driver App turn-by-turn directions, not the core Spare engine's travel time calculations.
+
+**Related Feature Flags:**
+Works independently of other flags.
+
+---
+
+# `DutyDelays`
+
+**Feature Flag Type:** Other
+
+**Description:** Enables the visibility of duty delays in the admin panel. This is the underlying feature that powers the `LiveMapAlerts` functionality.
+
+**Why Enable:** This is a core component for proactive dispatching. It surfaces information about duties that are running behind schedule, allowing dispatchers to take action. It should generally be enabled as part of the `LiveMapAlerts` feature.
+
+**Pre-requisites:**
+- None.
+
+**Notes:**
+- This functionality is automatically included if `LiveMapAlerts` is enabled.
+
+**Related Feature Flags:**
+- `LiveMapAlerts`: The primary feature that uses this data.
+
+---
+
+# `SchedulingBeforeEstimates`
+
+**Feature Flag Type:** Other
+
+**Description:** Changes the booking flow in the Rider App to force riders to choose their desired pickup or drop-off time *before* they are shown the available service options and estimates.
+
+**Why Enable:** This can simplify the booking experience for the rider in some contexts. By getting the time information first, the system can present a more focused set of options. It's a workflow choice that can be better for certain types of services.
+
+**Pre-requisites:**
+- None.
+
+**Notes:**
+- The default flow is typically to show service options first, and then have the rider select a time.
+
+**Related Feature Flags:**
+Works independently of other flags.
+
+---
+
+# `EnableRiderAppMixpanelAnalytics`
+
+**Feature Flag Type:** Other
+
+**Description:** Enables the sending of analytics events from the Rider App to a Mixpanel account.
+
+**Why Enable:** For organizations that use Mixpanel for product analytics, this is essential for understanding how riders are using the app. It provides detailed data on user behavior, feature adoption, and user flows, which can be used to make data-driven decisions about improving the rider experience.
+
+**Pre-requisites:**
+- A Mixpanel account and project token must be configured.
+
+**Notes:**
+- This is for product analytics and understanding user engagement.
+
+**Related Feature Flags:**
+Works independently of other flags.
+
+---
+
+# `DisableUpdatingDefaultProfileFields`
+
+**Feature Flag Type:** Other
+
+**Description:** Prevents riders from changing their own first and last name in the Rider App.
+
+**Why Enable:** This is a data integrity feature. For organizations where the rider's name is an official piece of identifying information (e.g., in many paratransit or eligibility-based services), this prevents riders from changing it themselves. Changes would need to be made by an administrator, ensuring that the name on the account always matches the official record.
+
+**Pre-requisites:**
+- None.
+
+**Notes:**
+- A control feature to maintain the integrity of rider profile data.
+
+**Related Feature Flags:**
+Works independently of other flags.
+
+---
+
+# `MetabaseReports`
+
+**Feature Flag Type:** Other
+
+**Description:** Enables the ability to embed custom reports and dashboards from a Metabase instance directly within the Spare admin panel.
+
+**Why Enable:** For organizations that have advanced, custom reporting needs that go beyond the built-in analytics, Metabase is a powerful open-source business intelligence tool. This feature allows those custom Metabase reports to be seamlessly integrated into the Spare platform, providing a single place for admins to access all their data.
+
+**Pre-requisites:**
+- The organization must have its own Metabase instance set up and configured.
+
+**Notes:**
+- This is for advanced analytics and business intelligence use cases.
+
+**Related Feature Flags:**
+Works independently of other flags.
+
+---
+
+# `DataReconciliation`
+
+**Feature Flag Type:** Other
+
+**Description:** Enables the ability for authorized users to edit metric-related fields on completed trips. This is used to correct data after a trip has finished, for example, to adjust the recorded mileage or fare if there was an error.
+
+**Why Enable:** This is a crucial tool for maintaining accurate data for reporting and billing. If a GPS error caused incorrect mileage to be recorded, or if a dispatcher needs to correct a fare after the fact, this feature allows for those post-trip adjustments. It ensures that reporting data is accurate and reliable.
+
+**Pre-requisites:**
+- Users must have the appropriate permissions to edit completed trip data.
+
+**Notes:**
+- This should be a permission-controlled feature, as it involves altering historical data.
+
+**Related Feature Flags:**
+Works independently of other flags.
+
+---
+
+# `MergeZonesOnRider`
+
+**Feature Flag Type:** Other
+
+**Description:** A performance and UI enhancement that merges all of a service's zones into a single visual layer on the map in the Rider App.
+
+**Why Enable:** For services with a very large number of complex zones, displaying each one as a separate entity can be slow and visually cluttered. This flag merges them for a cleaner and more performant user experience for the rider.
+
+**Pre-requisites:**
+- The service must use zones.
+
+**Notes:**
+- This is primarily a UI/performance tweak for the Rider App.
+
+**Related Feature Flags:**
+Works independently of other flags.
+
+---
+
+# `DisablePleoLiveMessage`
+
+**Feature Flag Type:** Other
+
+**Description:** Disables the "PLEO" (Please Let Engineering Observe) modal for feedback specifically related to the Live Message feature.
+
+**Why Enable:** This is an internal-facing flag, typically used to reduce the amount of low-priority feedback from internal users or during certain testing phases. It does not affect the functionality of the Live Message feature itself.
+
+**Pre-requisites:**
+- None.
+
+**Notes:**
+- Primarily for internal use.
+
+**Related Feature Flags:**
+Works independently of other flags.
+
+---
+
+# `DisablePleoManualInterventions`
+
+**Feature Flag Type:** Other
+
+**Description:** Disables the "PLEO" (Please Let Engineering Observe) modal for feedback specifically related to Manual Intervention features (e.g., Force Match).
+
+**Why Enable:** Similar to `DisablePleoLiveMessage`, this is an internal-facing flag used to manage the flow of feedback to the engineering team. It does not affect the functionality of manual interventions.
+
+**Pre-requisites:**
+- None.
+
+**Notes:**
+- Primarily for internal use.
+
+**Related Feature Flags:**
+Works independently of other flags.
+
+---
+
+# `HideStopDescriptionsOnRiderTimeline`
+
+**Feature Flag Type:** Other
+
+**Description:** A UI flag that hides the descriptions of stops on the trip timeline view in the Rider App.
+
+**Why Enable:** This can be used to create a cleaner, more simplified UI for the rider. If stop descriptions are long or not necessary for the rider, hiding them can make the timeline easier to read.
+
+**Pre-requisites:**
+- The service must use stops.
+
+**Notes:**
+- A minor UI configuration option.
+
+**Related Feature Flags:**
+Works independently of other flags.
+
+---
+
+# `LaMetroHardcodedRiderDescriptions`
+
+**Feature Flag Type:** Other
+
+**Description:** (Customer Specific) Enables the use of hardcoded rider-type descriptions specifically for the LA Metro organization.
+
+**Why Enable:** This ensures that the rider type descriptions displayed in the platform exactly match the official terminology used by LA Metro, providing a consistent experience for their users and staff. This should only be enabled for LA Metro.
+
+**Pre-requisites:**
+- This is for the LA Metro organization only.
+
+**Notes:**
+- An example of customer-specific UI text.
+
+**Related Feature Flags:**
+Works independently of other flags.

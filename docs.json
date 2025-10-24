@@ -569,7 +569,12 @@
               "spare-ivr",
               "spare-one",
               "spare-open-fleets",
-              "spare-resolve-platform"
+              "spare-resolve-platform",
+              "spare-standard-admins-and-service-planners",
+              "spare-standard-dispatch-and-booking-agents",
+              "spare-standard-driver-experience",
+              "spare-standard-rider-experience",
+              "spare-other"
             ]
           }
         ]

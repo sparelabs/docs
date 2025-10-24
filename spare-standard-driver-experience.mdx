@@ -1,0 +1,347 @@
+---
+title: "Standard - Driver Experience"
+description: "Feature flags for driver experience and capabilities"
+---
+
+# Spare Standard - Driver Experience
+
+# `DisableDriverAppFlagDown`
+
+**Feature Flag Type:** Spare Standard - Driver Experience
+
+**Description:** Disables the "Flag Down" feature in the Driver App. The Flag Down feature allows drivers to pick up riders who have not pre-booked a trip (i.e., they "flag down" the vehicle on the street).
+
+**Why Enable:** This is for services that operate on a strictly pre-booked basis and do not want to allow street hails. Enabling this flag removes the Flag Down button from the Driver App, preventing drivers from creating new, on-the-spot bookings.
+
+**Pre-requisites:**
+- None.
+
+**Notes:**
+- This is a simple on/off switch for a specific booking mode.
+
+**Related Feature Flags:**
+Works independently of other flags.
+
+---
+
+# `DisableEditingAddingVehicle`
+
+**Feature Flag Type:** Spare Standard - Driver Experience
+
+**Description:** Prevents drivers from adding a new vehicle or editing their existing vehicle information from within the Driver App.
+
+**Why Enable:** This is a control and data integrity feature. For organizations that have a fixed, centrally-managed fleet, this flag prevents drivers from making unauthorized changes to vehicle information. It ensures that the vehicle data in the system remains accurate and consistent with the organization's records.
+
+**Pre-requisites:**
+- None.
+
+**Notes:**
+- This is particularly useful for services where vehicles are assigned to drivers by a dispatcher, rather than drivers using their own vehicles.
+
+**Related Feature Flags:**
+Works independently of other flags.
+
+---
+
+# `ShowAllSlotsToDriver`
+
+**Feature Flag Type:** Spare Standard - Driver Experience
+
+**Description:** Allows drivers to see their entire duty manifest (all scheduled pickups and drop-offs) in the Driver App. If disabled, drivers can only see their current and next one or two stops.
+
+**Why Enable:** This provides drivers with a complete overview of their work for the day. It can help them plan their time more effectively, anticipate their route, and be more aware of their overall schedule. It improves driver autonomy and situational awareness.
+
+**Pre-requisites:**
+- None.
+
+**Notes:**
+- The decision to enable this can depend on the organization's operational model. Some prefer to only show the next stop to minimize driver distraction.
+
+**Related Feature Flags:**
+Works independently of other flags.
+
+---
+
+# `DriverTripHistory`
+
+**Feature Flag Type:** Spare Standard - Driver Experience
+
+**Description:** Enables a "Past Trips" or "Trip History" menu in the Driver App. This allows drivers to see a list of the trips they have completed in the past.
+
+**Why Enable:** This provides drivers with a record of their work, which can be useful for their own reference or for resolving discrepancies. It gives them more transparency into their completed trips.
+
+**Pre-requisites:**
+- None.
+
+**Notes:**
+- The level of detail shown in the trip history may be configurable.
+
+**Related Feature Flags:**
+Works independently of other flags.
+
+---
+
+# `TipPolicies`
+
+**Feature Flag Type:** Spare Standard - Driver Experience
+
+**Description:** Enables the ability to create and manage driver tipping policies in the admin panel. These policies can define suggested tip amounts (e.g., as percentages or fixed values) that are then presented to riders in the Rider App.
+
+**Why Enable:** This is essential for any service where tipping is a common practice (e.g., ride-hailing). It formalizes the tipping process, makes it easy for riders to add a tip, and provides a clear and consistent tipping structure.
+
+**Pre-requisites:**
+- The organization must have a payment gateway configured that supports tipping.
+
+**Notes:**
+- This works in conjunction with the tipping feature in the Rider App.
+
+**Related Feature Flags:**
+Works independently of other flags.
+
+---
+
+# `UnscheduledDriving`
+
+**Feature Flag Type:** Spare Standard - Driver Experience
+
+**Description:** Allows drivers to start an "unscheduled" duty from the Driver App. This is for drivers who do not have a pre-assigned shift but are available to drive.
+
+**Why Enable:** This provides flexibility for services that use a pool of on-call or part-time drivers. It allows these drivers to log in and make themselves available for work whenever they are free, without needing a dispatcher to manually create a duty for them.
+
+**Pre-requisites:**
+- The driver's fleet must be configured to allow unscheduled driving.
+
+**Notes:**
+- This is a key feature for more flexible, "gig-economy" style operational models.
+
+**Related Feature Flags:**
+Works independently of other flags.
+
+---
+
+# `AcceptRejectFleet`
+
+**Feature Flag Type:** Spare Standard - Driver Experience
+
+**Description:** Enables a fleet type where drivers are offered trips and must manually "Accept" or "Reject" the offer within a certain time limit. If the driver does not accept, the trip is offered to another driver.
+
+**Why Enable:** This operational model is common in ride-hailing and other services where drivers are independent contractors. It gives drivers more control over the trips they take. It's a key feature for services that want to operate a more flexible, offer-based dispatch model, as opposed to a traditional, centrally-assigned dispatch model.
+
+**Pre-requisites:**
+- A fleet must be configured as an "Accept/Reject" fleet in the admin panel.
+
+**Notes:**
+- This fundamentally changes the dispatch workflow and the driver's experience.
+
+**Related Feature Flags:**
+Works independently of other flags.
+
+---
+
+# `DriverRiderReviews`
+
+**Feature Flag Type:** Spare Standard - Driver Experience
+
+**Description:** Enables a two-way rating and review system. After a trip, the driver can rate the rider, and the rider can rate the driver.
+
+**Why Enable:** This is a standard feature in most modern ride-hailing services and is a key mechanism for maintaining service quality and safety. It provides a feedback loop for both riders and drivers, helps to identify and address issues, and builds trust in the platform.
+
+**Pre-requisites:**
+- None.
+
+**Notes:**
+- The rating criteria (e.g., a 1-5 star scale) and the visibility of comments are configurable.
+
+**Related Feature Flags:**
+Works independently of other flags.
+
+---
+
+# `DriverBreaks`
+
+**Feature Flag Type:** Spare Standard - Driver Experience
+
+**Description:** The foundational flag for the automated driver break scheduling feature. This allows breaks to be scheduled as part of a driver's duty, and the system will automatically route them to their break location at the appropriate time.
+
+**Why Enable:** This is essential for ensuring that drivers get their required breaks, which is important for safety, regulatory compliance, and driver well-being. It automates the process of break scheduling, which can be a complex manual task for dispatchers.
+
+**Pre-requisites:**
+- None.
+
+**Notes:**
+- This is the base feature that is enhanced by other flags like `AsapDriverBreaks` and `BreaksWithLocations`.
+
+**Related Feature Flags:**
+- `AsapDriverBreaks`: Allows for "ASAP" break scheduling.
+- `BreaksWithLocations`: Allows for breaks to have a specific location.
+
+---
+
+# `DriverShowRiderFullName`
+
+**Feature Flag Type:** Spare Standard - Driver Experience
+
+**Description:** When enabled, the Driver App will display the rider's full name (first and last). If disabled, it may only show the first name or first name and last initial.
+
+**Why Enable:** This can improve the pickup experience by helping the driver to more easily and confidently identify the correct rider. It can be particularly useful in busy locations with many people.
+
+**Pre-requisites:**
+- None.
+
+**Notes:**
+- The decision to enable this may depend on the organization's privacy policy.
+
+**Related Feature Flags:**
+Works independently of other flags.
+
+---
+
+# `UseDriverAppBearing`
+
+**Feature Flag Type:** Spare Standard - Driver Experience
+
+**Description:** A technical flag that tells the system to use the vehicle's bearing (the direction it is traveling) as reported by the Driver App's GPS.
+
+**Why Enable:** This can lead to more accurate real-time vehicle location tracking on the Live Map. By knowing the direction the vehicle is heading, the system can more accurately predict its path and provide better ETAs.
+
+**Pre-requisites:**
+- None.
+
+**Notes:**
+- This is a backend and data quality improvement.
+
+**Related Feature Flags:**
+Works independently of other flags.
+
+---
+
+# `DisableNavigationIos` & `DisableNavigationAndroid`
+
+**Feature Flag Type:** Spare Standard - Driver Experience
+
+**Description:** These flags disable the in-app, turn-by-turn navigation feature in the Driver App on the respective mobile platforms (iOS and Android). When disabled, the "Navigate" button will open the route in an external navigation app (like Google Maps or Apple Maps).
+
+**Why Enable:** This provides an option for organizations that prefer their drivers to use a standard, external navigation app that they are already familiar with. Some drivers may prefer the UI or features of an app like Waze or Google Maps over the built-in navigation.
+
+**Pre-requisites:**
+- None.
+
+**Notes:**
+- This provides flexibility in the driver's navigation experience.
+
+**Related Feature Flags:**
+Works independently of other flags.
+
+---
+
+# `DisplayDriveUntilMessaging`
+
+**Feature Flag Type:** Spare Standard - Driver Experience
+
+**Description:** A UI flag that displays a "drive until" message to the driver in certain contexts, likely related to flexible or on-demand duties.
+
+**Why Enable:** This provides clearer instructions to the driver about the expected duration of their work, particularly in unscheduled or flexible driving scenarios.
+
+**Pre-requisites:**
+- May be related to `UnscheduledDriving` or similar features.
+
+**Notes:**
+- This is a UI enhancement for the driver experience.
+
+**Related Feature Flags:**
+Works independently of other flags.
+
+---
+
+# `DriverIdleMap`
+
+**Feature Flag Type:** Spare Standard - Driver Experience
+
+**Description:** Changes the idle screen in the Driver App to show a map of the local area, rather than a blank or static screen.
+
+**Why Enable:** This can improve the driver's situational awareness when they are idle between trips. By seeing a map of their surroundings, they can be better prepared for their next trip offer.
+
+**Pre-requisites:**
+- None.
+
+**Notes:**
+- This is a UI/UX improvement for the Driver App.
+
+**Related Feature Flags:**
+Works independently of other flags.
+
+---
+
+# `IncidentReporting`
+
+**Feature Flag Type:** Spare Standard - Driver Experience
+
+**Description:** Enables a feature that allows drivers to report an incident (e.g., an accident, a medical emergency, a conflict with a rider) directly from the Driver App. This typically involves linking out to an external form or webpage where the driver can provide details of the incident.
+
+**Why Enable:** This provides a formal, streamlined process for reporting incidents, which is critical for safety, insurance, and regulatory compliance. It ensures that incidents are documented properly and that the organization is notified immediately.
+
+**Pre-requisites:**
+- The organization must provide a URL for the incident reporting form in the admin panel.
+
+**Notes:**
+- This is a key safety and compliance feature.
+
+**Related Feature Flags:**
+Works independently of other flags.
+
+---
+
+# `DriverAppRouteDistanceOnly`
+
+**Feature Flag Type:** Spare Standard - Driver Experience
+
+**Description:** A UI flag that changes the route information displayed in the Driver App to show only the distance to the next stop, not the estimated travel time.
+
+**Why Enable:** This can be used in situations where estimated travel times are unreliable (e.g., due to highly variable traffic) and the organization prefers to only show the more concrete distance information to the driver.
+
+**Pre-requisites:**
+- None.
+
+**Notes:**
+- This is a minor UI configuration option.
+
+**Related Feature Flags:**
+Works independently of other flags.
+
+---
+
+# `DisableDriverControlSoundNotifications`
+
+**Feature Flag Type:** Spare Standard - Driver Experience
+
+**Description:** Provides an option for drivers to disable sound notifications in the Driver App settings.
+
+**Why Enable:** This gives drivers more control over their app experience. Some drivers may find the notification sounds distracting and prefer to rely on visual cues.
+
+**Pre-requisites:**
+- None.
+
+**Notes:**
+- This is a user-preference feature for the Driver App.
+
+**Related Feature Flags:**
+Works independently of other flags.
+
+---
+
+# `DriverBehavioursInDriverApp`
+
+**Feature Flag Type:** Spare Standard - Driver Experience
+
+**Description:** Enables the display of "driver behavior" alerts within the Driver App. These are alerts generated by the system when it detects potentially unsafe or inefficient driving behavior, such as speeding or harsh braking.
+
+**Why Enable:** This provides real-time feedback to drivers, which can help to improve safety and efficiency. By making drivers aware of their behavior, it can encourage safer driving habits and reduce fuel consumption.
+
+**Pre-requisites:**
+- Requires the backend system to be configured to detect and generate driver behavior events.
+
+**Notes:**
+- This is a safety and performance management feature.
+
+**Related Feature Flags:**
+Works independently of other flags.

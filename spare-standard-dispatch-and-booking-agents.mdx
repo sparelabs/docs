@@ -1,0 +1,460 @@
+---
+title: "Standard - Dispatch & Booking Agents"
+description: "Feature flags for dispatch and booking operations"
+---
+
+# Spare Standard - Dispatch & Booking Agents
+
+# `LiveMessagesNotificationSound`
+
+**Feature Flag Type:** Spare Standard - Dispatch & Booking Agents
+
+**Description:** Enables an audible notification sound in the admin panel whenever a new message is received in the Live Messages chat.
+
+**Why Enable:** This provides an immediate, audible alert to dispatchers when a driver sends a message. For a busy dispatcher who may not be looking at the Live Messages screen at all times, this sound ensures that they are aware of new messages and can respond promptly. It's a simple but effective way to improve the responsiveness of dispatch-to-driver communication.
+
+**Pre-requisites:**
+- The `DriverDispatchCommunication` feature flag (which enables Live Messages) must be enabled.
+
+**Notes:**
+- The sound is played in the browser, so the user's computer must have sound enabled.
+
+**Related Feature Flags:**
+- **Requires:** `DriverDispatchCommunication`
+
+---
+
+# `MergeZonesOnLiveMap`
+
+**Feature Flag Type:** Spare Standard - Dispatch & Booking Agents
+
+**Description:** Merges all the zones associated with active services into a single, unified polygon for display on the Live Map.
+
+**Why Enable:** This provides a cleaner and less cluttered map view for dispatchers, especially in areas with many overlapping or complex zones. Instead of seeing a web of individual zone boundaries, the dispatcher sees a single, clean service area, which can make it easier to visualize the overall operational area at a glance.
+
+**Pre-requisites:**
+- None.
+
+**Notes:**
+- This is a UI display feature and does not change the underlying zone boundaries or logic.
+
+**Related Feature Flags:**
+Works independently of other flags.
+
+---
+
+# `MergeZonesOnDutyTimeTravel`
+
+**Feature Flag Type:** Spare Standard - Dispatch & Booking Agents
+
+**Description:** Merges all zones into a single, unified polygon for display in the Duty Time Travel feature.
+
+**Why Enable:** Similar to `MergeZonesOnLiveMap`, this provides a cleaner and less cluttered map view within the Duty Time Travel interface. It simplifies the visualization of the service area when reviewing a duty's history.
+
+**Pre-requisites:**
+- None.
+
+**Notes:**
+- This is a UI display feature for a specific tool and does not change any underlying logic.
+
+**Related Feature Flags:**
+Works independently of other flags.
+
+---
+
+# `LiveGlobalOptimization` & `EngineV2GlobalOptimization`
+
+**Feature Flag Type:** Spare Standard - Dispatch & Booking Agents
+
+**Description:** A pair of feature flags that work together to enable the continuous, automated optimization of live, in-progress duties. `EngineV2GlobalOptimization` enables the core backend logic for global optimization, while `LiveGlobalOptimization` specifically applies that logic to duties that are already underway.
+
+**Why Enable:** This is a core feature for maximizing the efficiency of the service. The system will automatically and continuously look for opportunities to improve the schedule, such as reassigning a trip to a closer vehicle or adjusting the order of stops to reduce travel time. This can lead to significant improvements in on-time performance, vehicle utilization, and overall service efficiency, without requiring manual intervention from a dispatcher.
+
+**Pre-requisites:**
+- Both flags should be enabled together for live optimization to function.
+
+**Notes:**
+- This is a powerful automation feature that is fundamental to running an efficient on-demand service.
+
+**Related Feature Flags:**
+- `EngineV2GlobalOptimization` is required for `LiveGlobalOptimization`.
+
+---
+
+# `LockToDuty`
+
+**Feature Flag Type:** Spare Standard - Dispatch & Booking Agents
+
+**Description:** Allows a dispatcher or booking agent to "lock" or "pin" a specific trip request to a specific duty. This overrides the normal matching engine and forces the trip to be assigned to the selected duty.
+
+**Why Enable:** This provides a manual override for the matching engine, which is essential for handling exceptions and special cases. For example, if a specific rider has requested a specific driver, or if a trip requires a specific vehicle (e.g., one with a wheelchair lift), this feature allows the dispatcher to manually ensure the correct assignment.
+
+**Pre-requisites:**
+- The user must have the appropriate permissions to lock a request to a duty.
+
+**Notes:**
+- This should be used judiciously, as it overrides the automated optimization engine.
+
+**Related Feature Flags:**
+Works independently of other flags.
+
+---
+
+# `ConstraintOverrides`
+
+**Feature Flag Type:** Spare Standard - Dispatch & Booking Agents
+
+**Description:** Enables a powerful feature for dispatchers that allows them to "force" a trip into the schedule, even if it violates certain constraints (like the rider's desired pickup window or the driver's duty end time). The system will show the "cost" or impact of the override (e.g., how late it will make other trips).
+
+**Why Enable:** This is an essential tool for handling the realities of day-of operations. When unexpected events occur (like a vehicle breaking down or a rider having an emergency), this feature gives dispatchers the flexibility to make manual adjustments to the schedule to accommodate the situation, while still understanding the downstream consequences of their actions.
+
+**Pre-requisites:**
+- None.
+
+**Notes:**
+- This is an advanced dispatcher tool that provides a great deal of power and flexibility.
+
+**Related Feature Flags:**
+Works independently of other flags.
+
+---
+
+# `ForceMatch`
+
+**Feature Flag Type:** Spare Standard - Dispatch & Booking Agents
+
+**Description:** Allows a dispatcher to manually force a request onto a duty, bypassing the normal matching constraints and validations. This is a more direct and powerful version of `LockToDuty`.
+
+**Why Enable:** This is an "escape hatch" for dispatchers when they need to make a match that the system would normally prevent. It provides a way to override the system's rules in exceptional circumstances.
+
+**Pre-requisites:**
+- The user must have the appropriate permissions.
+
+**Notes:**
+- This is a very powerful tool that should be used with extreme caution, as it can result in a schedule that is inefficient or even impossible to execute.
+
+**Related Feature Flags:**
+Works independently of other flags.
+
+---
+
+# `ManualInterventions`
+
+**Feature Flag Type:** Spare Standard - Dispatch & Booking Agents
+
+**Description:** Enables a suite of tools that allow dispatchers to manually correct the state of a trip in real-time. This includes actions like reversing a "no-show," reversing a pickup or dropoff, and editing the completed time of a pickup or dropoff.
+
+**Why Enable:** This is essential for maintaining accurate data and correcting common operational errors. For example, if a driver accidentally marks a rider as a "no-show," a dispatcher can use this feature to reverse that action and put the trip back on the schedule. This ensures that the system's data accurately reflects what is happening in the real world.
+
+**Pre-requisites:**
+- None.
+
+**Notes:**
+- This is a key set of tools for day-to-day dispatch operations.
+
+**Related Feature Flags:**
+Works independently of other flags.
+
+---
+
+# `AddRecurringTripFromRequestV2`
+
+**Feature Flag Type:** Spare Standard - Dispatch & Booking Agents
+
+**Description:** Enables a new, improved user interface (V2) for creating a recurring trip series from an existing, single trip request.
+
+**Why Enable:** This provides a more streamlined and user-friendly workflow for a common booking agent task. It makes it easier and faster to set up recurring trips for riders, reducing the time spent on data entry and minimizing the chance of errors.
+
+**Pre-requisites:**
+- The `RecurringTrips` feature flag must be enabled.
+
+**Notes:**
+- This is a UI/UX improvement for the recurring trips feature.
+
+**Related Feature Flags:**
+- **Requires:** `RecurringTrips`
+
+---
+
+# `MoreFrequentOptimization`
+
+**Feature Flag Type:** Spare Standard - Dispatch & Booking Agents
+
+**Description:** A technical flag that increases the frequency of the automated global optimization jobs.
+
+**Why Enable:** For high-volume or highly dynamic services, running the optimization more frequently can lead to better results, as the system can react more quickly to changing conditions.
+
+**Pre-requisites:**
+- `LiveGlobalOptimization` and `EngineV2GlobalOptimization` must be enabled.
+
+**Notes:**
+- This may have an impact on system performance and should be enabled in consultation with the Spare team.
+
+**Related Feature Flags:**
+- **Requires:** `LiveGlobalOptimization`, `EngineV2GlobalOptimization`
+
+---
+
+# `LiveMapAlerts`
+
+**Feature Flag Type:** Spare Standard - Dispatch & Booking Agents
+
+**Description:** Enables an improved live map experience with a new system of actionable alerts. Dispatchers will see alerts for events like a vehicle that is not moving, a driver who has deviated from their route, or a trip that is running late.
+
+**Why Enable:** This transforms the live map from a passive monitoring tool into a proactive operational management tool. Instead of having to manually scan the map to spot problems, dispatchers are automatically alerted to potential issues, allowing them to intervene before they impact the rider. It also includes a "watchlist" for tracking specific duties or requests.
+
+**Pre-requisites:**
+- None.
+
+**Notes:**
+- This is a major enhancement to the live map and the core dispatcher experience.
+
+**Related Feature Flags:**
+Works independently of other flags.
+
+---
+
+# `BreaksWithLocations`
+
+**Feature Flag Type:** Spare Standard - Dispatch & Booking Agents
+
+**Description:** Allows a dispatcher to specify a physical location for a driver's scheduled break. This location can be a specific address or a point on the map.
+
+**Why Enable:** This provides more control and precision in scheduling. It can be used to direct drivers to specific facilities for their breaks (e.g., a depot with a lunchroom) or to ensure that breaks are taken in a location that is convenient for the schedule (e.g., near the driver's next pickup).
+
+**Pre-requisites:**
+- The `DriverBreaks` feature flag must be enabled.
+
+**Notes:**
+- This enhances the `DriverBreaks` feature with location-specific scheduling.
+
+**Related Feature Flags:**
+- **Requires:** `DriverBreaks`
+
+---
+
+# `ImprovedNegotiationUi`
+
+**Feature Flag Type:** Spare Standard - Dispatch & Booking Agents
+
+**Description:** Enhances the booking "negotiation" UI (the screen where a booking agent sees the available trip options) with more detailed information and clearer visual cues. This includes badges that indicate if a trip option is on-time, late, or has other special characteristics.
+
+**Why Enable:** This provides more information to the booking agent at a glance, allowing them to make better and faster decisions when booking a trip for a rider. It makes it easier to understand the trade-offs between different trip options and to select the one that best meets the rider's needs.
+
+**Pre-requisites:**
+- None.
+
+**Notes:**
+- This is a UI/UX improvement for the booking workflow.
+
+**Related Feature Flags:**
+Works independently of other flags.
+
+---
+
+# `RecurringTrips`
+
+**Feature Flag Type:** Spare Standard - Dispatch & Booking Agents
+
+**Description:** Enables the ability to book and manage trips that recur on a regular schedule (e.g., every Monday and Wednesday at 9 AM).
+
+**Why Enable:** This is a fundamental feature for any service that has riders who travel regularly, such as for commuting to work, attending medical appointments, or going to school. It automates the process of booking these regular trips, saving a significant amount of time for both the rider and the booking agent.
+
+**Pre-requisites:**
+- None.
+
+**Notes:**
+- This is a core feature for many paratransit and community transport services.
+
+**Related Feature Flags:**
+Works independently of other flags.
+
+---
+
+# `LiveRequest`
+
+**Feature Flag Type:** Spare Standard - Dispatch & Booking Agents
+
+**Description:** Enables a new, comprehensive "Live Requests" dashboard. This dashboard provides a real-time, filterable, and sortable view of all active and recent trip requests, along with key performance metrics like on-time performance and boardings per hour.
+
+**Why Enable:** This is a powerful tool for real-time operational monitoring. It gives dispatchers and supervisors a single place to see the status of all trips, identify trends, and drill down into specific requests that may need attention. It's a major step up from monitoring individual requests on the live map.
+
+**Pre-requisites:**
+- None.
+
+**Notes:**
+- This is a modern, data-rich replacement for older request monitoring tools.
+
+**Related Feature Flags:**
+Works independently of other flags.
+
+---
+
+# `BookingCopilot`
+
+**Feature Flag Type:** Spare Standard - Dispatch & Booking Agents
+
+**Description:** Enables a "Rider Summary" component in various parts of the admin UI. This component provides a quick, at-a-glance overview of a rider's key details, such as their contact information, upcoming trips, and any special notes.
+
+**Why Enable:** This improves the efficiency of booking agents and dispatchers by providing them with the context they need about a rider without having to navigate to the full rider profile page. It saves clicks and makes it easier to provide a personalized and informed service to the rider.
+
+**Pre-requisites:**
+- None.
+
+**Notes:**
+- This is a UI/UX enhancement that surfaces key information in a more convenient way.
+
+**Related Feature Flags:**
+Works independently of other flags.
+
+---
+
+# `DutySchedulePlusPlusDetails`
+
+**Feature Flag Type:** Spare Standard - Dispatch & Booking Agents
+
+**Description:** Enables a set of performance optimizations and additional details in the Duty Schedule UI (the "++" or "Plus Plus" version). This includes more efficient data loading and the display of more granular information about each duty.
+
+**Why Enable:** This improves the usability and performance of the Duty Schedule, which is a core tool for dispatchers and service planners. It makes the interface faster and more responsive, and provides more of the detailed information that users need to manage their duties effectively.
+
+**Pre-requisites:**
+- None.
+
+**Notes:**
+- This is a performance and UI enhancement for the Duty Schedule.
+
+**Related Feature Flags:**
+Works independently of other flags.
+
+---
+
+# `RequestActivityFeed`
+
+**Feature Flag Type:** Spare Standard - Dispatch & Booking Agents
+
+**Description:** Enables a new, improved activity feed on the request details page. This feed provides a more detailed and user-friendly log of all the events that have occurred for a specific trip request, such as when it was created, matched, and completed.
+
+**Why Enable:** This provides a clearer and more comprehensive audit trail for each trip. It makes it much easier for a dispatcher or supervisor to understand the full history of a trip, which is invaluable for troubleshooting problems, answering rider questions, and analyzing operational performance.
+
+**Pre-requisites:**
+- None.
+
+**Notes:**
+- This is a UI/UX improvement that replaces the older, less detailed request history view.
+
+**Related Feature Flags:**
+Works independently of other flags.
+
+---
+
+# `RiderViewPeek`
+
+**Feature Flag Type:** Spare Standard - Dispatch & Booking Agents
+
+**Description:** Enables a "peek" side panel for viewing rider details. When a user clicks on a rider's name in a list or on the map, a side panel slides out with the rider's information, allowing the user to see the details without navigating away from their current page.
+
+**Why Enable:** This is a major workflow improvement for dispatchers and booking agents. It allows them to quickly access rider information in context, without losing their place in a list of trips or on the live map. It saves a significant number of clicks and makes the process of looking up rider details much more efficient.
+
+**Pre-requisites:**
+- None.
+
+**Notes:**
+- This is a significant UI/UX enhancement.
+
+**Related Feature Flags:**
+Works independently of other flags.
+
+---
+
+# `LocationNotes`
+
+**Feature Flag Type:** Spare Standard - Dispatch & Booking Agents
+
+**Description:** Enables the ability to add free-text notes to specific pickup and dropoff locations. These notes are then visible to drivers in the Driver App and to dispatchers in the admin panel.
+
+**Why Enable:** This is a simple but powerful feature for improving the quality of pickups and dropoffs. It allows for the capture of important location-specific information, such as "use the side entrance," "beware of the dog," or "the gate code is 1234." This information helps drivers find the correct location more easily, improving on-time performance and the rider experience.
+
+**Pre-requisites:**
+- None.
+
+**Notes:**
+- Notes can be added to a rider's favorite locations or to the specific pickup/dropoff points of a single trip.
+
+**Related Feature Flags:**
+Works independently of other flags.
+
+---
+
+# `DutyCancellationReasons`
+
+**Feature Flag Type:** Spare Standard - Dispatch & Booking Agents
+
+**Description:** Allows users to provide a reason when cancelling a duty. This is similar to the `CustomCancellationReasons` for trips, but applies to the cancellation of an entire duty.
+
+**Why Enable:** This provides valuable data on why duties are being cancelled. This information can be used to identify operational issues (e.g., frequent vehicle breakdowns, driver absenteeism) and to make data-driven decisions to improve service reliability.
+
+**Pre-requisites:**
+- None.
+
+**Notes:**
+- The list of reasons is configurable.
+
+**Related Feature Flags:**
+Works independently of other flags.
+
+---
+
+# `QuickReplies`
+
+**Feature Flag Type:** Spare Standard - Dispatch & Booking Agents
+
+**Description:** Enables the use of pre-written, one-click "quick replies" in the Live Messages chat for both drivers and dispatchers.
+
+**Why Enable:** This speeds up communication and ensures consistency in messaging. Instead of typing out common messages like "I'm on my way" or "I have arrived," users can simply click a button. This is safer for drivers, who can send a reply with a single tap, and more efficient for dispatchers.
+
+**Pre-requisites:**
+- The `DriverDispatchCommunication` feature flag (which enables Live Messages) must be enabled.
+
+**Notes:**
+- The list of quick replies is configurable in the admin panel.
+
+**Related Feature Flags:**
+- **Requires:** `DriverDispatchCommunication`
+
+---
+
+# `AsapDriverBreaks`
+
+**Feature Flag Type:** Spare Standard - Dispatch & Booking Agents
+
+**Description:** Allows a dispatcher to schedule a driver break "as soon as possible" (ASAP). When this option is selected, the system will automatically find the optimal time and place in the driver's schedule to insert the break, taking into account the existing trips.
+
+**Why Enable:** This provides more flexibility and automation in break scheduling. Instead of having to manually find a gap in a driver's schedule, the dispatcher can simply tell the system to add a break ASAP, and the system will do the work of finding the best slot. This is particularly useful for handling unplanned break requests from drivers.
+
+**Pre-requisites:**
+- The `DriverBreaks` feature flag must be enabled.
+
+**Notes:**
+- This enhances the `DriverBreaks` feature with more intelligent, automated scheduling.
+
+**Related Feature Flags:**
+- **Requires:** `DriverBreaks`
+
+---
+
+# `DutyInterruptionReasons`
+
+**Feature Flag Type:** Spare Standard - Dispatch & Booking Agents
+
+**Description:** Allows users to provide a reason when pausing or interrupting a duty. This is often used for unscheduled breaks or other interruptions to a driver's shift.
+
+**Why Enable:** This provides valuable data on why duties are being interrupted. This information can be used to track the frequency and duration of different types of interruptions (e.g., "vehicle maintenance," "driver rest stop," "traffic delay"), which can be useful for operational analysis and planning.
+
+**Pre-requisites:**
+- None.
+
+**Notes:**
+- The list of reasons is configurable.
+
+**Related Feature Flags:**
+Works independently of other flags.
