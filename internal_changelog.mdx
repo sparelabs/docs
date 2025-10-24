@@ -1,3 +1,64 @@
+<Update label="Thursday, October 23, 2025" description="4 Updates" tags={["Admin", "Operations"]}>
+
+## ⚙️ Admin
+### 🇪🇺 European (EU) Region Support
+
+**What's New**  
+The Spare platform now officially supports a European (EU) region, ensuring data residency and optimal performance for organizations operating in Europe. All platform services, including AI features, are fully supported in the new region.
+
+**Pre-requisites**
+- This is a platform-wide enhancement and does not require specific user permissions. No feature flags required.
+
+<Accordion title="See More">
+
+#### Where You'll See It
+- This is a foundational update affecting the entire platform for organizations hosted in the new EU region. This includes regional API endpoints (e.g., `api.eu.sparelabs.com`) and all associated services.
+
+#### What You Can Do
+- Organizations can now be provisioned and operate entirely within the European Union.
+
+#### Why This Matters
+This enhancement provides data residency within the EU to help organizations meet local data protection and privacy regulations (like GDPR). It also improves platform responsiveness and performance for users in Europe.
+</Accordion>
+
+---
+### 🔐 New OAuth Scope for Sensitive Data Access
+
+**What's New**  
+A new `sensitiveInformation:read` OAuth scope has been added, allowing administrators to grant specific API clients permission to view unmasked sensitive data, such as Personally Identifiable Information (PII).
+
+**Pre-requisites**
+- Requires Administrator access. No feature flags required.
+
+<Accordion title="See More">
+
+#### Where You'll See It
+- *System Settings > Apps > (Create New App or Edit an existing App)*. The new scope is available in the **Scopes** dropdown menu, labeled "Read sensitive information".
+
+#### What You Can Do
+- When creating or editing an OAuth application, you can now select the "Read sensitive information" scope. API tokens generated for that application will then be able to retrieve data that is normally masked by default.
+
+#### Why This Matters
+Previously, API access to sensitive data was an all-or-nothing permission. This new, granular scope allows organizations to provide necessary data access to trusted integrations or internal tools without granting overly broad permissions, enhancing security and control.
+</Accordion>
+
+---
+### 🐛 Bug Fixes
+
+- **Corrected App Authorization for Regional Hosts**
+  - _Resolution_: Fixed an issue where the app authorization page for organizations in non-US regions (e.g., Canada or EU) failed to load. The page now correctly uses the organization's regional API host to fetch application details.
+
+---
+
+## 🎯 Operations
+### 🐛 Bug Fixes
+
+- **Appointment Edit Preserves Original Date and Time (ENG-854)**
+  - _Resolution_: Fixed an issue where editing an existing appointment would cause the date and time to automatically jump to the next available slot. The system now preserves the appointment's original scheduled time unless it is manually changed by the user.
+
+</Update>
+
+
 <Update label="Wednesday, October 22, 2025" description="3 Updates" tags={["Enterprise Asset Management", "Operations", "Admin"]}>
 
 ## 🏢 Enterprise Asset Management
