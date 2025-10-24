@@ -1,0 +1,57 @@
+---
+title: "Eligibility"
+description: "Internal updates for Eligibility product"
+rss: "true"
+---
+
+<Update label="October 7, 2025" description="1 Feature Update">
+
+### 📝 Rider Hub Copy Improvements
+
+<AccordionGroup>
+<Accordion title="What's New">
+Updated text throughout the Rider Hub form submission process to be clearer and more concise, with improved messaging about Rider IDs and contact methods.
+</Accordion>
+
+<Accordion title="Where You'll See It">
+- **Rider Hub** - form submission flow for representatives creating rider accounts
+- **Requires `EngageRiderHub` feature flag**
+</Accordion>
+
+<Accordion title="What Changed">
+- **Before**: Confirmation messages showed redundant text for both contact methods even when only one was provided. Instructions about Rider IDs and contact methods were unclear or overly wordy.
+- **Now**: _Confirmation messages show only the relevant contact method that was provided. Clearer guidance about keeping Rider IDs for records and contacting the agency for status updates. Simplified label emphasizing Rider ID creation when no personal contact method exists._
+</Accordion>
+
+<Accordion title="Why This Matters">
+When representatives are creating rider accounts on behalf of clients, clear communication is essential. Confusing or redundant messages can lead to misunderstandings about how riders will be contacted or what information they need to save. The streamlined copy reduces confusion, makes the process feel more professional, and ensures representatives understand exactly what to communicate to their clients about Rider IDs and how they'll receive updates.
+</Accordion>
+</AccordionGroup>
+
+</Update>
+
+<Update label="October 6, 2025" description="1 Feature Update">
+
+### 🔒 Case Letter File Access Security Enhancement
+
+<AccordionGroup>
+<Accordion title="What's New">
+Case letter PDF downloads now use secure, permission-checked file URLs instead of temporary URLs, improving security and reliability.
+</Accordion>
+
+<Accordion title="Where You'll See It">
+- **Eligibility > Cases > Letters** - when viewing and downloading case letter PDFs
+- Available in Eligibility product only
+</Accordion>
+
+<Accordion title="What Changed">
+- **Before**: Case letter PDFs were accessed through temporary URLs that didn't properly validate permissions, creating a security vulnerability. File loading could also be intermittent or unreliable.
+- **Now**: _Case letter PDFs are accessed through secure URLs that properly check permissions. Files only display when available, and loading is more reliable with no broken file sections._
+</Accordion>
+
+<Accordion title="Why This Matters">
+Case letters often contain sensitive personal information that must be protected. The previous temporary URL system had a security vulnerability where files could potentially be accessed without proper permission checks. This fix ensures that only users with appropriate permissions can access case letter files, protecting sensitive data and maintaining compliance with privacy requirements. The improved reliability also means you won't encounter broken file links or intermittent loading issues, making the case letter workflow smoother and more dependable.
+</Accordion>
+</AccordionGroup>
+
+</Update>

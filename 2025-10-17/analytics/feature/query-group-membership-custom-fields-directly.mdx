@@ -1,0 +1,41 @@
+---
+title: "Internal Changelog"
+description: "All internal product updates"
+rss: true
+---
+
+<Update label="2025-10-17" description="1 Update" tags={["Analytics"]}>
+
+## Analytics
+
+### 📊 Query Group Membership Custom Fields Directly
+
+### 
+
+**What's New**  
+Custom fields for Group Memberships are now directly available for querying in Analytics. This allows you to build reports using group membership custom data without needing to join through the ridership report.
+
+
+**Pre-requisites**
+- Requires `AnalyticsV2` feature flag
+
+
+<Accordion title="See More">
+
+#### Where You'll See It
+- *Analytics > Query Builder*
+
+#### What You Can Do
+- When building a report, select the `Group Memberships` data source (cube).
+- You will now see your organization's group membership custom fields available as dimensions for filtering and grouping.
+- For example, you can now create a report showing a count of members broken down by a custom field like `certification_level`.
+
+#### Why This Matters
+Previously, accessing group membership custom fields in reports was complex and required using the ridership report as a starting point. This change makes these fields first-class citizens in Analytics, enabling more direct and powerful reporting on member data.
+</Accordion>
+
+---
+</Update>
+
+---
+

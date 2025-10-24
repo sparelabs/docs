@@ -1,0 +1,40 @@
+---
+title: "Internal Changelog"
+description: "All internal product updates"
+rss: true
+---
+
+<Update label="2025-10-17" description="1 Update" tags={["Admin"]}>
+
+## Admin
+
+### ⏱️ Timezone-Aware Filtering and Data Exports
+
+### 
+
+**What's New**  
+Filtering and exporting data now consistently use your organization's configured timezone. This ensures that date/time filters and exported timestamps accurately reflect your local time, preventing confusion from UTC-based values.
+
+
+**Pre-requisites**
+- No feature flags required
+
+
+<Accordion title="See More">
+
+#### Where You'll See It
+- This applies to date/time filters and export functionality on most list pages, such as *Rides > All Rides*, *Operations > Duties*, and *People > Riders*.
+
+#### What You Can Do
+- When you apply a date filter (e.g., for "today"), it will now be based on your organization's local timezone.
+- When you export data to CSV or XLSX, all timestamp columns will be displayed in your local timezone.
+
+#### Why This Matters
+Previously, some filters and exports were based on UTC, which could lead to confusion and incorrect data analysis for teams in different timezones. This change ensures that the data you see and export from Spare Admin always aligns with your real-world operational hours.
+</Accordion>
+
+---
+</Update>
+
+---
+
