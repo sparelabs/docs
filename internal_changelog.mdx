@@ -1,3 +1,47 @@
+<Update label="Wednesday, October 22, 2025" description="2 Updates" tags={["Enterprise Asset Management", "Operations"]}>
+
+## 🏢 Enterprise Asset Management
+### 🔧 Work Order Categories
+
+**What's New**  
+You can now create and manage custom categories for Work Orders. These categories can be assigned when creating or editing a work order and used to filter the main work order list, making it easier to organize and track maintenance tasks.
+
+**Pre-requisites**
+- Requires Administrator access with permissions for Enterprise Asset Management.
+
+<Accordion title="See More">
+
+#### Where You'll See It
+- *EAM > Settings > Work Order Categories*: A new page to create, view, edit, and delete your custom categories.
+- *EAM > Work Orders > List View*: A new "Category" column is available, and you can filter the list using the new "Category" filter.
+- *EAM > Work Orders > New/Edit Work Order*: A new "Category" dropdown field appears, allowing you to assign a category.
+
+#### What You Can Do
+- Create custom categories that match your operational needs, such as "Preventive Maintenance," "Collision Repair," or "Safety Inspection."
+- Assign a single category to any work order to classify the type of work being performed.
+- Quickly find all work orders of a specific category by filtering the main list.
+
+#### Why This Matters
+Previously, all work orders were listed together, making it difficult to organize and report on different types of maintenance. Categories provide a powerful way to classify, track, and analyze your maintenance activities, leading to better insights and more organized workflows.
+</Accordion>
+
+---
+
+## 🎯 Operations
+### 🐛 Bug Fixes
+
+- **Address Field Editing (ENG-835)**
+  * _Resolution_: Fixed an issue where the "Country" and "Province/State" fields could not be cleared when editing an address. The "None" option in the dropdown is now correctly enabled, allowing these fields to be emptied as needed.
+
+- **Service Discovery for Time-Restricted Services (BUS-3786)**
+  * _Resolution_: Corrected an issue where services with specific operating hours would not appear in service selection dropdowns if an administrator was booking outside of those hours. The system now correctly displays these services during initial discovery and validates the time only after a specific time is chosen for the trip estimate.
+
+---
+
+</Update>
+
+---
+
 <Update label="Tuesday, October 21, 2025" description="2 Updates" tags={["Enterprise Asset Management"]}>
 
 ## 🏢 Enterprise Asset Management
