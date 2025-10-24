@@ -554,7 +554,15 @@
       {
         "tab": "Internal Changelog",
         "pages": [
-          "internal_changelog"
+          "internal_changelog_admin",
+          "internal_changelog_ai-voice",
+          "internal_changelog_analytics",
+          "internal_changelog_eam",
+          "internal_changelog_eligibility",
+          "internal_changelog_engine",
+          "internal_changelog_operations",
+          "internal_changelog_resolve",
+           "internal_changelog_scout"
         ]
       },
       {
