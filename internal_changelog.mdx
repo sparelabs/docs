@@ -1,3 +1,48 @@
+<Update label="Wednesday, October 22, 2025" description="2 Updates" tags={["Enterprise Asset Management", "Operations"]}>
+
+## 🏢 Enterprise Asset Management
+### 🗂️ Customizable Work Order Categories
+
+**What's New**  
+You can now create and manage custom categories for your Work Orders. These categories can be assigned when creating or editing a work order and used as a filter on the main Work Orders list.
+
+**Pre-requisites**
+- Requires Administrator access
+
+<Accordion title="See More">
+
+#### Where You'll See It
+- *EAM > Settings > Work Order Categories*: A new page to create, view, edit, and delete your categories.
+- *EAM > Work Orders > New/Edit Work Order*: A new "Category" dropdown field to assign a category.
+- *EAM > Work Orders > List Page*: A new "Category" filter in the filter sidebar and a "Category" column in the table.
+- *EAM > Sidebar*: A new "Settings" section in the EAM sidebar, containing the link to "Work Order Categories".
+
+#### What You Can Do
+- Create custom categories like "Preventive Maintenance," "Unscheduled Repair," or "Inspection Follow-up."
+- Assign a category to a work order to better classify the type of work being done.
+- Filter the work orders list to see only those belonging to a specific category.
+
+#### Why This Matters
+Previously, all work orders were treated the same, making it difficult to organize and report on different types of maintenance. With categories, you can now structure your maintenance operations, streamline workflows, and gain clearer insights into where your team's efforts are focused.
+</Accordion>
+
+---
+
+## 🎯 Operations
+### 🐛 Bug Fixes
+
+- **Improved Service Discovery for Time-Restricted Services (BUS-3786)**
+  - _Resolution_: Fixed an issue where some services with specific operating hours (e.g., weekdays only) would not appear in the service selection dropdown when booking outside of those hours. The system now shows all geographically available services during initial discovery, and applies time-based rules only after a specific booking time is chosen.
+
+- **Address Fields Can Be Cleared on Rider Profiles (ENG-835)**
+  - _Resolution_: Resolved an issue where the "Country" and "Province/State" fields could not be cleared when editing a rider's address. You can now select "None" from the dropdown menu for these fields to remove the previously saved information.
+
+---
+
+</Update>
+
+---
+
 <Update label="Tuesday, October 21, 2025" description="3 Updates" tags={["Enterprise Asset Management", "Admin"]}>
 
 ## 🏢 Enterprise Asset Management
