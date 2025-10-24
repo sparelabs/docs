@@ -1,3 +1,67 @@
+<Update label="Tuesday, October 21, 2025" description="3 Updates" tags={["Enterprise Asset Management", "Admin"]}>
+
+## 🏢 Enterprise Asset Management
+### 🔧 Custom Fields for EAM Objects
+
+**What's New**  
+You can now add your own custom data fields to key Enterprise Asset Management (EAM) records. This allows you to track specific information relevant to your operations for Parts, Work Orders, Issues, and Meter Entries directly within Spare.
+
+**Pre-requisites**
+- Requires Administrator access to configure fields in the Field Manager. Standard EAM module permissions are required to view and edit the fields on EAM records.
+
+<Accordion title="See More">
+
+#### Where You'll See It
+- **Configuration**: *Settings > Field Manager*. New options for "Part," "Work Order," "Issue," and "Meter Entry" are available in the "Applies To" dropdown when creating a new custom field.
+- **Data Entry**: New custom fields will appear in a dedicated section on the creation and edit forms for Parts, Work Orders, Issues, and Meter Entries (e.g., *EAM > Work Orders > New Work Order*).
+- **Viewing Data**: Custom fields can be added as columns to the main list tables for each respective EAM object (e.g., *EAM > Parts*).
+
+#### What You Can Do
+- Define various types of custom fields (text, number, date, dropdown, etc.) for EAM records.
+- Enter and save data in these new fields when creating or editing Parts, Work Orders, Issues, and Meter Entries.
+- Add your custom fields as columns to list views for better visibility and filtering.
+
+#### Why This Matters
+Many operations need to track unique data points not included in Spare's standard fields, such as internal reference numbers or warranty expiration dates. This feature provides the flexibility to capture this essential information directly on the relevant EAM records, centralizing data and improving workflow efficiency.
+</Accordion>
+
+---
+### 🏷️ Work Order Categories
+
+**What's New**  
+A new "Categories" management page has been added to EAM, allowing you to define a list of categories (e.g., "Preventive Maintenance," "Unscheduled Repair," "Body Work"). These categories can then be assigned to Work Orders for improved organization and filtering.
+
+**Pre-requisites**
+- Requires Administrator access to create and manage categories. Standard EAM module permissions are required to assign categories to Work Orders.
+
+<Accordion title="See More">
+
+#### Where You'll See It
+- **Configuration**: A new management page for Work Order Categories is available within the EAM section of the admin portal, likely under *EAM > Settings*.
+- **Data Entry**: A new "Category" dropdown field is now present on the *EAM > Work Orders > New Work Order* and *Edit Work Order* forms.
+- **Filtering & Reporting**: The "Category" field is now available as a filter option on the *EAM > Work Orders* list page and can be added as a column to the table.
+
+#### What You Can Do
+- Create and manage a customized list of categories for your organization's work orders.
+- Assign a category to each work order upon creation or while editing.
+- Filter the work orders list by one or more categories to quickly find specific types of jobs.
+
+#### Why This Matters
+Previously, all work orders were grouped together, making it difficult to analyze maintenance trends or prioritize different types of work. By categorizing work orders, you can now easily separate preventive maintenance from emergency repairs, track costs by job type, and gain deeper insights into your fleet's maintenance activities.
+</Accordion>
+
+---
+
+## ⚙️ Admin
+### 🐛 Bug Fixes
+
+- **Improved Performance on Request Constraint Overrides Page**
+  - _Resolution_: Fixed a caching issue that caused significant slowdowns when navigating through paginated lists of Request Constraint Overrides. The page at *Settings > Trips > Request Constraints* will now load much faster, especially when many overrides exist.
+
+</Update>
+
+---
+
 <Update label="Monday, October 20, 2025" description="1 Updates" tags={["Admin"]}>
 
 ## ⚙️ Admin
