@@ -6,6 +6,227 @@ description: "All internal product updates"
 rss: true
 ---
 
+<Update label="Friday, October 17, 2025" description="11 Updates" tags={["Operations", "Analytics", "AI Voice", "Admin", "Resolve"]}>
+
+## 🎯 Operations
+### ⏱️ Better Handling for Duty Interruptions
+
+**What's New**  
+When creating a duty interruption that is too long to fit before a duty's scheduled end time, the system will now automatically shorten it to the maximum possible duration. You will receive a specific notification indicating that the interruption has been shortened.
+
+**Pre-requisites**
+- Requires Administrator access
+
+<Accordion title="See More">
+
+#### Where You'll See It
+- *Rides > Duties* (when clicking on a duty and using the 'Add Break' modal for an 'Interruption').
+
+#### What You Can Do
+- Create a duty interruption near the end of a duty's shift.
+- If the interruption is too long, the system will create a shorter one and notify you of the adjusted duration (e.g., "Interruption created but shortened to 15 minutes").
+- If no time is available at all, you will receive a clear failure message (e.g., "Could not create interruption as there is not enough time remaining in the duty").
+
+#### Why This Matters
+Previously, attempting to create an interruption that couldn't fit on a duty would simply fail without a clear reason. This change improves the workflow by creating a partial interruption when possible and providing clear, actionable feedback to dispatchers.
+</Accordion>
+
+---
+
+## 📊 Analytics
+### 📊 Query Group Membership Custom Fields Directly
+
+**What's New**  
+Custom fields on Group Memberships are now directly accessible as dimensions within the `Group Membership` data cube in Analytics, enabling more detailed reporting on your rider groups.
+
+**Pre-requisites**
+- Requires `AnalyticsV2` feature flag
+
+<Accordion title="See More">
+
+#### Where You'll See It
+- *Analytics > Query Builder* (when selecting dimensions from the `Group Membership` data cube).
+
+#### What You Can Do
+- Build reports that filter, segment, or measure based on custom fields defined on your rider group memberships. For example, you can now report on trip counts by riders with a specific 'Certification Level' custom field.
+
+#### Why This Matters
+Previously, accessing group membership custom fields was limited and required complex queries. This change makes it much easier to build reports that directly leverage the unique data you store on group memberships.
+</Accordion>
+
+---
+### 📊 Join Case Data with Administrator Details
+
+**What's New**  
+A new data relationship has been added in Analytics, allowing you to connect the `Case Data` cube to the `Organization Admin` cube to report on cases by their assigned administrator's details.
+
+**Pre-requisites**
+- Requires `AnalyticsV2` feature flag
+
+<Accordion title="See More">
+
+#### Where You'll See It
+- *Analytics > Query Builder* (when building a report using the `Case Data` cube).
+
+#### What You Can Do
+- Create reports that include details about the administrator assigned to a case. For example, you can now group the total number of open cases by the assignee's first and last name.
+
+#### Why This Matters
+Previously, it was not possible to link case data to the administrators they were assigned to, limiting reporting capabilities. This change enables more detailed analysis of case management workloads by allowing you to include assignee information in your reports.
+</Accordion>
+
+---
+### 🐛 Bug Fixes
+
+- **Ridership Report Payment Method Capture (BUS-4303)**
+  * _Resolution_: Corrected an issue where the payment method name (e.g., "Cash," "Ticket") was not being properly captured in the Analytics V2 Ridership Report.
+
+---
+
+## 🤖 AI Voice
+### 🤖 More Accurate Date Recognition for Rider Authentication
+
+**What's New**  
+AI Voice now more rigorously validates date formats during rider authentication. It rejects ambiguous dates like "one one ninety two" (which could mean Jan 1 or Nov 1), while still correctly understanding clear formats like "June 6th 2025" and "2025 06 01".
+
+**Pre-requisites**
+- No feature flags required
+
+<Accordion title="See More">
+
+#### Where You'll See It
+- This is a background improvement to the AI Voice rider authentication workflow when a caller provides their date of birth.
+
+#### What You Can Do
+- This is an automatic system improvement; no user action is needed. You can expect more reliable authentication outcomes.
+
+#### Why This Matters
+This change reduces the chance of authenticating the wrong rider due to ambiguous date understanding. It improves the security and reliability of the AI Voice authentication process by requiring clearer date inputs from callers.
+</Accordion>
+
+---
+
+## ⚙️ Admin
+### ✈️ New Cross-Region Data Migration Tool
+
+**What's New**  
+A completely redesigned Data Migration Tool (DMT) is now available for Super Admins. This new interface is specifically built to support migrating data for an organization from a source region (e.g., North America) to a destination region (e.g., Europe).
+
+**Pre-requisites**
+- Requires Super admin permissions
+
+<Accordion title="See More">
+
+#### Where You'll See It
+- *Super Admin sidebar > Data Migrations*
+
+#### What You Can Do
+- Select a source and destination region from dropdown menus.
+- Choose the source and destination organizations for the migration.
+- Select specific data items to migrate (e.g., Services, Zones, Rider Groups).
+- View real-time results of the migration process, with success or failure details for each item.
+
+#### Why This Matters
+This tool provides a robust, purpose-built solution for onboarding new organizations or restructuring existing ones across Spare's global infrastructure. It gives Super Admins granular control and clear feedback during complex cross-region data transfers.
+</Accordion>
+
+---
+### 🗺️ New Organization-Level Multimodal Graph Configuration
+
+**What's New**  
+The configuration for multimodal graphs, which power public transit journey planning, has been redesigned and integrated directly into the organization details page. This new interface filters all datasets to the current organization, simplifying management and reducing errors.
+
+**Pre-requisites**
+- Requires Super admin permissions
+
+<Accordion title="See More">
+
+#### Where You'll See It
+- *Super Admin > Organizations* (select an organization to see the new "Multimodal Configuration" section).
+
+#### What You Can Do
+- View the build status of the current graph and see when it was last updated.
+- Trigger a graph rebuild directly from the UI using the "Request Rebuild" button.
+- Manage all datasets (like GTFS feeds or flex routes) for the organization's graph in one place.
+- When configuring a flex dataset, select from a list of services belonging only to that organization, preventing misconfiguration.
+
+#### Why This Matters
+The previous graph configuration UI was global, making it difficult to manage datasets for a specific organization. This new, organization-centric workflow is more intuitive, reduces the risk of errors, and provides clear visibility into the status of an organization's transit data graph.
+</Accordion>
+
+---
+### ⚙️ Set a Default Country for Your Organization
+
+**What's New**  
+You can now set a "Default Country" for your organization. This country's flag and phone prefix will automatically appear in phone number input fields, such as when adding a new rider.
+
+**Pre-requisites**
+- Requires Administrator access to change the setting. Super Admins can set this when creating or editing an organization.
+
+<Accordion title="See More">
+
+#### Where You'll See It
+- **Setting**: *Settings > Organization > General* (new "Default Country" dropdown field).
+- **Effect**: *Riders > All Riders* (click "New Rider" to see the "Phone Number" field).
+
+#### What You Can Do
+- Navigate to your organization settings to select a default country.
+- When creating new riders, the phone number field will default to your chosen country, simplifying data entry for staff.
+
+#### Why This Matters
+This helps reduce data entry errors and saves time for administrators by pre-filling the most common country code for your operations.
+</Accordion>
+
+---
+### 🔒 Secure Photo URLs and Updated User Lists
+
+**What's New**  
+To enhance data security, the "Photo" column has been removed from the main list views for both Drivers and Administrators. Profile photos remain accessible on individual user profiles, where they are now served via secure, temporary URLs.
+
+**Pre-requisites**
+- No feature flags required
+
+<Accordion title="See More">
+
+#### Where You'll See It
+- *Team > Drivers* (the "Photo" column is no longer present in the table).
+- *Team > Administrators* (the "Photo" column is no longer present in the table).
+
+#### What You Can Do
+- This is an automatic security improvement. You can continue to view and manage user photos by navigating to their individual profile pages.
+
+#### Why This Matters
+This change aligns Driver and Administrator data handling with the security standards already in place for Riders. By removing permanent photo URLs from list views, it enhances user privacy and overall platform security.
+</Accordion>
+
+---
+### 🐛 Bug Fixes
+
+- **Improved Service Estimates Zone Validation (BUS-3786)**
+  * _Resolution_: Fixed an issue where some services would not appear as available during the initial service estimate lookup. The system now validates location against service zones first, and only validates against time rules after a specific trip time has been selected.
+
+---
+
+## 🔧 Resolve
+### 🐛 Bug Fixes
+
+- **Form Address Field UI Cleanup (ENG-708)**
+  * _Resolution_: Fixed an issue where headers from the address input field (e.g., "Search for an address") were incorrectly appearing in the table of contents on forms. The address search field has also been updated to align with the platform's standard look and feel.
+
+</Update>
+
+---
+
+---
+
+## 2025-10-17 - Daily Update
+
+---
+title: "Internal Changelog"
+description: "All internal product updates"
+rss: true
+---
+
 <Update label="Friday, October 17, 2025" description="11 Updates" tags={["Analytics", "AI Voice", "Admin", "Operations"]}>
 
 ## 📊 Analytics
