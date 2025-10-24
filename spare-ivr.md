@@ -1,0 +1,96 @@
+# Spare IVR
+
+# `IvrCallRecording`
+
+**Feature Flag Type:** Spare IVR
+
+**Description:** Enables the recording of Interactive Voice Response (IVR) phone calls. When enabled, all interactions a rider has with the automated phone system will be recorded.
+
+**Why Enable:** This feature is essential for quality assurance, training, and dispute resolution. By recording IVR calls, organizations can review interactions to identify issues with the call flow, troubleshoot problems reported by riders, and maintain a record of bookings or cancellations made through the phone system.
+
+**Pre-requisites:**
+- Requires a configured Twilio account that supports call recording.
+
+**Notes:**
+- Organizations should be aware of and comply with all local regulations regarding call recording and consent.
+
+**Related Feature Flags:**
+Works independently of other flags.
+
+---
+
+# `PhoneIvrEta`
+
+**Feature Flag Type:** Spare IVR
+
+**Description:** Allows riders to check the estimated time of arrival (ETA) for their next scheduled trip by calling into the automated IVR system.
+
+**Why Enable:** Provides a simple, self-service way for riders to get an update on their ride status without needing to speak to a live agent. This reduces call volume to the dispatch center for routine "where's my ride?" inquiries and provides a convenient option for riders who may not have access to the mobile app.
+
+**Pre-requisites:**
+- Requires a configured Twilio account.
+
+**Notes:**
+- This is a core function of a basic IVR system for a transit service.
+
+**Related Feature Flags:**
+Works independently but is often used as part of a suite with `PhoneIvrBookRide` and `PhoneIvrCancelRide`.
+
+---
+
+# `PhoneIvrBookRide`
+
+**Feature Flag Type:** Spare IVR
+
+**Description:** Enables riders to book a new trip through the automated IVR system. The system guides the rider through the process of selecting a service, providing pickup and dropoff locations, and confirming the ride.
+
+**Why Enable:** This provides a 24/7 automated booking channel for riders, which is especially valuable for those without smartphone access or who prefer to use the phone. It can significantly reduce the number of booking calls that need to be handled by live agents, increasing operational efficiency.
+
+**Pre-requisites:**
+- Requires a configured Twilio account.
+- The IVR call flow must be configured to handle the booking process.
+
+**Notes:**
+- This is a key feature for providing a comprehensive, automated phone-based service.
+
+**Related Feature Flags:**
+Works independently but is often used as part of a suite with `PhoneIvrEta` and `PhoneIvrCancelRide`.
+
+---
+
+# `PhoneIvrCancelRide`
+
+**Feature Flag Type:** Spare IVR
+
+**Description:** Allows riders to cancel an upcoming trip through the automated IVR system.
+
+**Why Enable:** Provides a quick and easy self-service option for riders to cancel a trip, freeing up the vehicle for other riders and reducing the workload on dispatchers. This is a fundamental feature for any IVR system, as it allows riders to manage their bookings without needing to speak to an agent.
+
+**Pre-requisites:**
+- Requires a configured Twilio account.
+
+**Notes:**
+- The system will typically identify the rider's next upcoming trip and ask for confirmation before cancelling.
+
+**Related Feature Flags:**
+Works independently but is often used as part of a suite with `PhoneIvrEta` and `PhoneIvrBookRide`.
+
+---
+
+# `RiderPhonePin`
+
+**Feature Flag Type:** Spare IVR
+
+**Description:** Enables the use of a PIN (Personal Identification Number) as a security and authentication measure for riders. Riders can set a PIN on their account, which can then be used to authenticate themselves when calling into the IVR system or interacting with other phone-based services.
+
+**Why Enable:** Adds an extra layer of security to the rider's account. It helps to ensure that only the authorized rider or their approved representative can access their account information, book trips, or make changes. This is particularly important for services that handle sensitive rider data.
+
+**Pre-requisites:**
+- None.
+
+**Notes:**
+- Riders can typically set their PIN in the Rider App or an admin can set it for them.
+- This feature is also used for authentication with the AI Voice agent.
+
+**Related Feature Flags:**
+Works independently of other flags.

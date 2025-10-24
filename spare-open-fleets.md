@@ -1,0 +1,77 @@
+# Spare Open Fleets
+
+# `OpenFleet`
+
+**Feature Flag Type:** Spare Open Fleets
+
+**Description:** Enables the ability to integrate with external, third-party fleets, such as Transportation Network Companies (TNCs) like Uber and Lyft, or other local fleet providers. This allows an organization to supplement its dedicated fleet with external vehicles.
+
+**Why Enable:** This is a powerful tool for expanding service capacity and flexibility. Organizations can use open fleets to handle overflow demand during peak times, serve areas where they don't have dedicated vehicles, or provide a different class of service (e.g., wheelchair-accessible vehicles) that they may not have in their own fleet. It's a key feature for creating a flexible, hybrid transit network.
+
+**Pre-requisites:**
+- Requires a configured integration with the external fleet provider (e.g., API keys for Uber, Lyft).
+
+**Notes:**
+- When a trip is dispatched to an open fleet, Spare communicates with the external provider's API to book and manage the trip. The experience for the rider is seamless.
+
+**Related Feature Flags:**
+- `OpenFleetRematching`: Automates the process of rematching late trips to open fleets.
+
+---
+
+# `OpenFleetRematching`
+
+**Feature Flag Type:** Spare Open Fleets
+
+**Description:** Enables an automated system that monitors trips assigned to the dedicated fleet. If a trip is running significantly late, the system can automatically cancel the trip on the dedicated fleet and rematch it to a vehicle from an available open fleet.
+
+**Why Enable:** This is a powerful service reliability feature. It acts as an automated backup, ensuring that riders are not excessively delayed due to issues with the dedicated fleet. By automatically tapping into the capacity of open fleets to rescue late trips, it improves on-time performance and rider satisfaction without requiring manual intervention from a dispatcher.
+
+**Pre-requisites:**
+- `OpenFleet` must be enabled.
+- At least one open fleet must be configured and available.
+- Rematching rules must be configured on the service/fleet level.
+
+**Notes:**
+- This feature can be configured with specific thresholds for when a trip is considered "late" enough to trigger a rematch.
+
+**Related Feature Flags:**
+- **Requires:** `OpenFleet`.
+
+---
+
+# `PublishDispatchingEvents`
+
+**Feature Flag Type:** Spare Open Fleets
+
+**Description:** A backend feature that enables the publishing of "dispatch attempt" events. These events are created when the system attempts to dispatch a trip to a fleet, and they contain information about the success or failure of that attempt.
+
+**Why Enable:** This is primarily a data and visibility feature. It provides the underlying data needed for other features to show detailed dispatching information. It's a prerequisite for understanding the dispatching process, especially in a multi-fleet environment with open fleets.
+
+**Pre-requisites:**
+- None.
+
+**Notes:**
+- This is a technical flag that enables data to be generated. It does not have a direct user-facing component on its own.
+
+**Related Feature Flags:**
+- **Required for:** `ShowDispatchingEvents`.
+
+---
+
+# `ShowDispatchingEvents`
+
+**Feature Flag Type:** Spare Open Fleets
+
+**Description:** Enables the display of dispatching events in the admin panel. This includes showing which fleets were considered for a trip, the estimated cost from each, and why a particular fleet was chosen or rejected.
+
+**Why Enable:** Provides dispatchers and operations managers with deep insight and transparency into the dispatching process. It answers the question "Why was this trip assigned to this specific vehicle?". This is invaluable for troubleshooting dispatching issues, understanding the cost-effectiveness of different fleets, and fine-tuning the dispatching logic.
+
+**Pre-requisites:**
+- `PublishDispatchingEvents` must be enabled to generate the data that this flag displays.
+
+**Notes:**
+- This information is typically displayed in the request history or a similar diagnostic view.
+
+**Related Feature Flags:**
+- **Requires:** `PublishDispatchingEvents`.
