@@ -563,13 +563,13 @@
           {
             "group": "Feature Flags",
             "pages": [
-              "spare-ai-platform.md",
-              "spare-eligibility-platform.md",
-              "spare-enterprise.md",
-              "spare-ivr.md",
-              "spare-one.md",
-              "spare-open-fleets.md",
-              "spare-resolve-platform.md"
+              "spare-ai-platform.mdx",
+              "spare-eligibility-platform.mdx",
+              "spare-enterprise.mdx",
+              "spare-ivr.mdx",
+              "spare-one.mdx",
+              "spare-open-fleets.mdx",
+              "spare-resolve-platform.mdx"
             ]
           }
         ]
