@@ -1,3 +1,71 @@
+<Update label="Saturday, October 18, 2025" description="4 Updates" tags={["Analytics", "Operations", "Admin"]}>
+
+## 📊 Analytics
+### 📅 Configurable Date Filter Time Dimensions
+
+**What's New**  
+When creating or editing analytics reports, you can now choose which time dimension (e.g., "Request Created At", "Trip Scheduled At") the primary date filter applies to. This gives you precise control over how date filtering works for each report in both the Report View and on Dashboards.
+
+**Pre-requisites**
+- Requires Administrator access
+- Requires `AnalyticsV2` feature flag
+
+<Accordion title="See More">
+
+#### Where You'll See It
+- *Analytics > Query Builder*: A new banner at the top of the page displays the current time dimension being used for date filtering. Clicking it reveals a dropdown to select a different dimension.
+- *Analytics > Report View*: A tooltip on the date filter now shows which time dimension is being actively filtered.
+- *Analytics > Dashboard View*: The global date filter will now respect the specific time dimension configured for each individual report widget on the dashboard.
+
+#### What You Can Do
+- Build a report on "Completed Trips" and set the date filter to apply to the "Trip Completion Time" instead of the "Request Creation Time" to accurately analyze trips that finished within a specific period.
+- See at a glance which time dimension is driving the date filter for any report, preventing misinterpretation of data.
+
+#### Why This Matters
+Previously, date filters were applied to a default time dimension that could not be changed, sometimes leading to inaccurate analysis. Now, you have explicit control to filter reports by the most relevant timestamp, with clear visual indicators to ensure you always know exactly what data you're looking at.
+</Accordion>
+
+---
+
+## 🎯 Operations
+### ⏱️ "Prolonged Duration" Column Now Generally Available in Live Requests
+
+**What's New**  
+The "Prolonged Duration" column is now available for all users to add to the Live Requests table. This column shows how much longer a rider has been in a vehicle beyond their planned maximum travel time, helping dispatchers identify trips that are running significantly late.
+
+**Pre-requisites**
+- Requires Administrator access
+- No feature flags required (previously required `ProlongedDurationInLiveRequests` feature flag)
+
+<Accordion title="See More">
+
+#### Where You'll See It
+- *Rides > Live Requests*: Use the "Configure Columns" button to add the "Prolonged Duration" column to your table view.
+
+#### What You Can Do
+- Quickly identify trips that are exceeding their maximum travel time estimates.
+- Sort the Live Requests table by the "Prolonged Duration" column to prioritize monitoring or intervention for the most delayed trips.
+
+#### Why This Matters
+This provides dispatchers with immediate visibility into trips that are taking longer than expected. By easily identifying these trips, your team can proactively communicate with riders and drivers to manage expectations and address potential issues.
+</Accordion>
+
+### 🐛 Bug Fixes
+
+- **Live Requests Column Order Preservation**: Fixed an issue in the *Rides > Live Requests* table where hiding and then re-showing a column via the "Configure Columns" menu would incorrectly move it to the end of the table. Columns now return to their original configured position.
+
+---
+
+## ⚙️ Admin
+### 🐛 Bug Fixes
+
+- **API List Pagination (BUS-4248)**
+  * _Resolution_: Corrected an issue where pagination for some data tables could fail, especially during internal data migration tasks. The system now correctly handles numeric pagination values, ensuring that all list views with pagination load data reliably.
+
+</Update>
+
+---
+
 <Update label="Friday, October 17, 2025" description="12 Updates" tags={["Analytics", "AI Voice", "Admin", "Engine", "Resolve"]}>
 
 ## 📊 Analytics
