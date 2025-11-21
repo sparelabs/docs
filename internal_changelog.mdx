@@ -1,3 +1,141 @@
+<Update label="Monday, November 17, 2025" description="7 Updates" tags={["Operations", "Analytics", "Enterprise Asset Management", "Admin"]}>
+
+## 🎯 Operations
+### 📅 Advanced Duty Schedule Generation for Fixed Routes
+
+**What's New**  
+The duty auto-generation tool for Fixed Routes now includes two new advanced algorithms. These provide more sophisticated options for creating efficient and balanced duty schedules based on service activity levels.
+
+**Pre-requisites**
+- Requires Administrator access
+
+<Accordion title="See More">
+
+#### Where You'll See It
+- *Fixed Route > Duties* (in the "Auto-generate duties" modal)
+
+#### What You Can Do
+- When auto-generating duties, select a new algorithm from the 'Algorithm' dropdown.
+- **Low Activity Split:** Creates duties with breaks scheduled during periods of low service activity.
+- **Vibe Placeholder:** Generates duties with optional mid-shift breaks, particularly for schedules longer than 6 hours.
+
+#### Why This Matters
+Creating optimal duty schedules manually can be complex. These new algorithms offer automated, intelligent strategies to better handle break placement and split shifts, improving operational efficiency and driver schedule quality.
+</Accordion>
+
+---
+
+## 📊 Analytics
+### 📊 Download Large Reports Without Limits
+
+**What's New**  
+The 10,000-row limit on report downloads from Analytics V2 has been removed. You can now download complete datasets of any size, with a new progress indicator to track the download status.
+
+**Pre-requisites**
+- Requires `AnalyticsV2` feature flag and Administrator access
+
+<Accordion title="See More">
+
+#### Where You'll See It
+- *Analytics > Query Builder* (the 'Download' button)
+- *Analytics > Reports* (the download action in the list for a specific report)
+
+#### What You Can Do
+- Download reports with more than 10,000 rows in CSV or XLSX format.
+- See a real-time progress indicator showing how many rows have been downloaded.
+- Cancel downloads that are in progress.
+
+#### Why This Matters
+Previously, large reports had to be broken up or were incomplete, making comprehensive analysis difficult. Now, you can easily export full datasets directly from the UI, saving time and ensuring data integrity.
+</Accordion>
+
+---
+
+## 🏢 Enterprise Asset Management
+### ✅ Track Work Order Tasks with Completion Toggles and Notes
+
+**What's New**  
+Work Orders have been enhanced with a new 'Notes' field and the ability to track individual task completion. You can now add overall notes to a work order, add specific notes to each line item, and mark tasks as complete.
+
+**Pre-requisites**
+- Requires access to Enterprise Asset Management
+
+<Accordion title="See More">
+
+#### Where You'll See It
+- *EAM > Work Orders > [Select a Work Order]*
+
+#### What You Can Do
+- Add high-level notes to a work order in the new 'Notes' field when creating or editing.
+- Mark individual Service Task line items as complete using the new toggle in the 'Completed' column.
+- Add specific notes directly to each line item, which are automatically saved.
+
+#### Why This Matters
+Previously, tracking the status of individual tasks within a large work order was difficult, and there was no dedicated place for notes. These changes provide a clearer, more organized way to manage work order progress and document important details at both the order and task level.
+</Accordion>
+
+---
+### 🔌 New Telematics Integration for Automated Meter Readings
+
+**What's New**  
+A new integration framework for Enterprise Asset Management has been introduced, starting with support for telematics providers. This allows Spare to automatically receive data, such as meter readings, directly from third-party systems.
+
+**Pre-requisites**
+- Requires `EamTelematicsIntegration` feature flag and Administrator access
+
+<Accordion title="See More">
+
+#### Where You'll See It
+- A new UI to manage these connections will be available in *EAM > Settings > Integrations*.
+
+#### What You Can Do
+- Establish a connection to a supported telematics provider.
+- Once connected, meter entries from vehicles will be automatically created and updated in EAM.
+
+#### Why This Matters
+Manually entering meter readings is time-consuming and prone to error. This integration automates the process, ensuring that asset meter data is always up-to-date and accurate, which is critical for scheduling preventative maintenance.
+</Accordion>
+
+---
+### 🐛 Bug Fixes
+
+- **Multi-Word Search in Super Box (EAM-506)**
+  * _Resolution_: Fixed an issue where searches containing spaces (e.g., "Asset 123") in the EAM super search box were failing. Multi-word searches now correctly return the expected results.
+
+---
+
+## ⚙️ Admin
+### 🔍 Search and Quick-Open Workflows
+
+**What's New**  
+The Workflows list page now includes a search bar and improved navigation. You can quickly find workflows by name and open them in a new tab using right-click or keyboard shortcuts.
+
+**Pre-requisites**
+- Requires Administrator access
+
+<Accordion title="See More">
+
+#### Where You'll See It
+- *Settings > System > Workflows*
+
+#### What You Can Do
+- Use the new search bar at the top of the page to filter the workflow list by name.
+- Right-click on a workflow row to use the browser's context menu (e.g., "Open in new tab").
+- Use Cmd/Ctrl+Click or middle-click to open a workflow in a new tab.
+
+#### Why This Matters
+Finding a specific workflow previously required scrolling through the entire list. The new search and navigation options make it much faster to locate and manage workflows, especially for organizations with many of them.
+</Accordion>
+
+---
+### 🐛 Bug Fixes
+
+- **Driver/Dispatch Communications (BUS-4356)**
+  * _Resolution_: Resolved a regression where driver-to-dispatch communications failed for organizations not using their own custom Twilio connection. The system now correctly falls back to the default communication provider, restoring functionality.
+
+</Update>
+
+
 <Update label="Thursday, October 23, 2025" description="4 Updates" tags={["Admin", "Operations"]}>
 
 ## ⚙️ Admin
