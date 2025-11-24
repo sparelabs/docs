@@ -41,17 +41,6 @@
             ]
           }
         ]
-      },
-      {
-        "tab": "Guides",
-        "groups": [
-          {
-            "group": "User Guides",
-            "pages": [
-              "spare-platform-user-guides"
-            ]
-          }
-        ]
       }
     ],
     "global": {
@@ -69,8 +58,7 @@
     "dark": "/logo/dark.svg"
   },
   "navbar": {
-    "links": [
-    ],
+    "links": [],
     "primary": {
       "type": "button",
       "label": "Login",

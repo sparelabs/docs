@@ -1,3 +1,252 @@
+<Update label="Monday, November 17, 2025" description="5 Updates" tags={["Analytics", "Enterprise Asset Management", "Admin"]}>
+
+## 📊 Analytics
+### 📊 Download Large Reports Without Limits
+
+**What's New**  
+You can now download complete datasets from Analytics V2, as the previous 10,000-row limit has been removed. The system now automatically fetches all data in batches for both CSV and XLSX exports.
+
+**Pre-requisites**
+- Requires `AnalyticsV2` feature flag and Administrator access.
+
+<Accordion title="See More">
+
+#### Where You'll See It
+- *Analytics > Query Builder* (the 'Download' button)
+- *Analytics > Reports* (the download action from the report list)
+
+#### What You Can Do
+- Export reports containing hundreds of thousands of rows without the data being cut off.
+- See a "Preparing download..." notification that shows progress as the full report is generated.
+- Choose either CSV or XLSX format for the complete download.
+
+#### Why This Matters
+Previously, exporting large reports resulted in incomplete data, limiting analysis. This change ensures you can work with your entire dataset in external tools, enabling more comprehensive reporting and auditing.
+</Accordion>
+
+---
+
+## 🏢 Enterprise Asset Management
+### 📝 Complete Tasks and Add Notes in Work Orders
+
+**What's New**  
+Work Orders now support marking individual service tasks as complete and adding notes to both the overall order and specific line items.
+
+**Pre-requisites**
+- Requires Administrator access. No feature flags required.
+
+<Accordion title="See More">
+
+#### Where You'll See It
+- *EAM > Work Orders > [Select a Work Order]* (a new 'Notes' field for the work order).
+- *EAM > Work Orders > [Select a Work Order] > Line Items table* (a new 'Completed' column and an editable notes field for each task).
+
+#### What You Can Do
+- Add general notes to a work order in the new 'Notes' text area.
+- Mark an individual service task as finished by clicking the checkbox in the 'Completed' column.
+- Add specific notes to a line item, which are automatically saved as you type.
+
+#### Why This Matters
+This provides greater clarity and accountability during asset maintenance. Technicians can now track their progress directly within the work order and document important details for each task, improving record-keeping and communication.
+</Accordion>
+
+---
+### 🐛 Bug Fixes
+
+- **Corrected Multi-Word Search (EAM-506)**
+  - _Resolution_: Fixed an issue in the Enterprise Asset Management global search bar where queries containing spaces (e.g., "oil filter") would not return results. Multi-word searches now work as expected.
+
+---
+
+## ⚙️ Admin
+### 🔍 Search and Open Workflows More Easily
+
+**What's New**  
+The Workflows list page now includes a search bar to quickly find workflows by name and supports right-click context menus to open them in new tabs.
+
+**Pre-requisites**
+- Requires Administrator access. No feature flags required.
+
+<Accordion title="See More">
+
+#### Where You'll See It
+- *Settings > Workflows* (a new search bar in the page header).
+- *Settings > Workflows* (the table of workflows).
+
+#### What You Can Do
+- Type in the search bar to filter the list of workflows by name.
+- Right-click any workflow in the table to open the browser's context menu (e.g., to "Open in new tab").
+- Use Ctrl/Cmd+Click or middle-click to open workflows in a new tab.
+
+#### Why This Matters
+Finding a specific workflow used to require manually scrolling through the entire list. This makes managing a large number of workflows much faster and aligns with standard web navigation patterns.
+</Accordion>
+
+---
+### 🔐 Clearer Sidebar Feedback for Missing Permissions
+
+**What's New**  
+When a sidebar section is disabled due to your user role's permissions, hovering over it now displays a helpful tooltip explaining why it's unavailable.
+
+**Pre-requisites**
+- No special permissions required. No feature flags required.
+
+<Accordion title="See More">
+
+#### Where You'll See It
+- The main sidebar navigation menu across all Admin products.
+
+#### What You Can Do
+- Hover your cursor over a grayed-out sidebar link or section (e.g., 'Analytics').
+- See a tooltip that reads "This feature is unavailable due to your role's permissions."
+
+#### Why This Matters
+Previously, disabled sidebar items offered no explanation, which could be confusing. This change provides immediate clarity on why certain features are not accessible, improving the user experience for administrators with varied permission levels.
+</Accordion>
+
+</Update>
+
+
+<Update label="Monday, November 17, 2025" description="7 Updates" tags={["Operations", "Analytics", "Enterprise Asset Management", "Admin"]}>
+
+## 🎯 Operations
+### 📅 Advanced Duty Schedule Generation
+
+**What's New**  
+We've introduced two new algorithms for auto-generating duty schedules in Fixed Route, providing more flexible and intelligent options for creating driver shifts.
+
+**Pre-requisites**
+- Requires Administrator access
+
+<Accordion title="See More">
+
+#### Where You'll See It
+- *Fixed Route > Duties* (a new 'Algorithm' dropdown is available in the "Generate Duties" modal)
+
+#### What You Can Do
+- When generating duties, you can now select from two new algorithms:
+  - **Low Activity Split**: Automatically creates duty schedules with breaks scheduled during periods of low block activity.
+  - **Vibe Placeholder**: Generates duties with optional mid-shift breaks, which is ideal for longer schedules (e.g., over 6 hours).
+
+#### Why This Matters
+Previously, duty generation was less flexible. These new algorithms allow planners to create more efficient and compliant duty schedules that better align with operational needs, such as ensuring breaks occur during lulls in service.
+</Accordion>
+
+---
+### 🐛 Bug Fixes
+
+- **Driver/Dispatch Communications Reliability (BUS-4356)**
+  * _Resolution_: Fixed a regression that caused communication failures between drivers and dispatch for organizations that do not have their own third-party SMS/telephony accounts configured. The system now correctly falls back to Spare's default communication provider, restoring this functionality.
+
+---
+
+## 📊 Analytics
+### 📊 Unlimited Row Downloads for Analytics Reports
+
+**What's New**  
+The 10,000-row limit for downloading reports from Analytics has been removed. You can now download complete datasets of any size, with a new progress indicator to track the download status.
+
+**Pre-requisites**
+- Requires `AnalyticsV2` feature flag and Administrator access
+
+<Accordion title="See More">
+
+#### Where You'll See It
+- *Analytics > Query Builder* (the "Download" button)
+- *Analytics > Reports* (the download action from the report list)
+
+#### What You Can Do
+- Download reports (in CSV or XLSX format) that contain more than 10,000 rows.
+- View real-time download progress, including the number of rows processed.
+- Cancel downloads that are in progress.
+
+#### Why This Matters
+Previously, report downloads were capped at 10,000 rows, forcing users to run multiple exports with different date ranges for large datasets. Now, a single download will retrieve the entire dataset defined by your report's filters, saving time and ensuring data integrity.
+</Accordion>
+
+---
+
+## 🏢 Enterprise Asset Management
+### 🔌 Telematics Integration for Automatic Meter Entries
+
+**What's New**  
+A new integration framework has been introduced to connect with external telematics providers. This first release allows for the automatic creation of vehicle meter entries based on data received from telematics systems.
+
+**Pre-requisites**
+- Requires Administrator access
+
+<Accordion title="See More">
+
+#### Where You'll See It
+- This feature introduces a new backend service (`eam-integration-service`) and the necessary components to build a UI for managing these connections. Configuration for telematics integrations will be available within the EAM settings area.
+
+#### What You Can Do
+- Connect Spare's EAM to external telematics systems via a new integration service.
+- Automatically receive and process telematics data to create meter entries (e.g., odometer readings).
+- Identify automatically created entries, which will be marked with a "Telematics" source.
+
+#### Why This Matters
+Manually entering meter readings is time-consuming and prone to error. This integration automates the process, ensuring that vehicle meter data is always up-to-date and accurate, which is critical for scheduling preventative maintenance and tracking asset usage.
+</Accordion>
+
+---
+### ✅ Enhanced Work Order Task Management
+
+**What's New**  
+You can now add notes to both the overall work order and individual line items, as well as mark specific service tasks as complete directly from the work order view.
+
+**Pre-requisites**
+- Requires Administrator access and relevant EAM permissions
+
+<Accordion title="See More">
+
+#### Where You'll See It
+- *Enterprise Asset Management > Work Orders > [Select a Work Order]*
+
+#### What You Can Do
+- **Mark Tasks Complete**: A new "Completed" column with a checkbox toggle appears for service task line items, allowing you to track task completion status.
+- **Add Line Item Notes**: Click into a line item to add specific notes, which are saved automatically.
+- **Add Work Order Notes**: A new "Notes" field is available when creating or viewing a work order for general comments.
+
+#### Why This Matters
+Previously, tracking the status of individual tasks within a large work order was difficult, and there was no dedicated place for notes. This change provides a clearer, more organized way for maintenance teams to collaborate, track progress, and document their work.
+</Accordion>
+
+---
+### 🐛 Bug Fixes
+
+- **EAM Global Search Field (EAM-506)**
+  * _Resolution_: Fixed an issue where searching for terms with multiple words (e.g., "brake pads") in the Enterprise Asset Management global search bar would fail. The search now correctly handles spaces and returns the expected results.
+
+---
+
+## ⚙️ Admin
+### 🔍 Workflow Search and Navigation Improvements
+
+**What's New**  
+The Workflows list page now includes a search bar to quickly find workflows by name and supports right-click actions for easier navigation.
+
+**Pre-requisites**
+- Requires Administrator access
+
+<Accordion title="See More">
+
+#### Where You'll See It
+- *Settings > Workflows* (list page)
+
+#### What You Can Do
+- **Search**: Use the new search input at the top of the page to filter the list of workflows by name as you type.
+- **New Tab Navigation**: Right-click, Cmd/Ctrl+click, or middle-click a workflow in the list to open it in a new browser tab.
+
+#### Why This Matters
+Previously, for organizations with many workflows, locating the right one required manually scrolling through the entire list, and opening workflows in new tabs was not possible without copying the URL. These navigation improvements streamline workflow management, making it faster to find and edit workflows.
+</Accordion>
+
+---
+
+</Update>
+
+
 <Update label="Monday, November 17, 2025" description="7 Updates">
 
 ## 🎯 Operations
