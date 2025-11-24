@@ -11,30 +11,6 @@
   "navigation": {
     "tabs": [
       {
-        "tab": "Guides",
-        "groups": [
-          {
-            "group": "User Guides",
-            "pages": [
-              "spare-platform-user-guides"
-            ]
-          }
-        ]
-      },
-      {
-        "tab": "Changelog",
-        "groups": [
-          {
-            "group": "Changelog",
-            "pages": [
-              "changelog-platform",
-              "changelog-rider",
-              "changelog-driver"
-            ]
-          }
-        ]
-      },
-      {
         "tab": "Internal Changelog",
         "pages": [
           "internal_changelog"
