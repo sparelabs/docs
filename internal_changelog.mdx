@@ -1,3 +1,112 @@
+<Update label="Monday, November 17, 2025" description="5 Updates" tags={["Analytics", "Enterprise Asset Management", "Admin"]}>
+
+## 📊 Analytics
+### 📊 Download Large Reports Without Limits
+
+**What's New**  
+You can now download complete datasets from Analytics V2, as the previous 10,000-row limit has been removed. The system now automatically fetches all data in batches for both CSV and XLSX exports.
+
+**Pre-requisites**
+- Requires `AnalyticsV2` feature flag and Administrator access.
+
+<Accordion title="See More">
+
+#### Where You'll See It
+- *Analytics > Query Builder* (the 'Download' button)
+- *Analytics > Reports* (the download action from the report list)
+
+#### What You Can Do
+- Export reports containing hundreds of thousands of rows without the data being cut off.
+- See a "Preparing download..." notification that shows progress as the full report is generated.
+- Choose either CSV or XLSX format for the complete download.
+
+#### Why This Matters
+Previously, exporting large reports resulted in incomplete data, limiting analysis. This change ensures you can work with your entire dataset in external tools, enabling more comprehensive reporting and auditing.
+</Accordion>
+
+---
+
+## 🏢 Enterprise Asset Management
+### 📝 Complete Tasks and Add Notes in Work Orders
+
+**What's New**  
+Work Orders now support marking individual service tasks as complete and adding notes to both the overall order and specific line items.
+
+**Pre-requisites**
+- Requires Administrator access. No feature flags required.
+
+<Accordion title="See More">
+
+#### Where You'll See It
+- *EAM > Work Orders > [Select a Work Order]* (a new 'Notes' field for the work order).
+- *EAM > Work Orders > [Select a Work Order] > Line Items table* (a new 'Completed' column and an editable notes field for each task).
+
+#### What You Can Do
+- Add general notes to a work order in the new 'Notes' text area.
+- Mark an individual service task as finished by clicking the checkbox in the 'Completed' column.
+- Add specific notes to a line item, which are automatically saved as you type.
+
+#### Why This Matters
+This provides greater clarity and accountability during asset maintenance. Technicians can now track their progress directly within the work order and document important details for each task, improving record-keeping and communication.
+</Accordion>
+
+---
+### 🐛 Bug Fixes
+
+- **Corrected Multi-Word Search (EAM-506)**
+  - _Resolution_: Fixed an issue in the Enterprise Asset Management global search bar where queries containing spaces (e.g., "oil filter") would not return results. Multi-word searches now work as expected.
+
+---
+
+## ⚙️ Admin
+### 🔍 Search and Open Workflows More Easily
+
+**What's New**  
+The Workflows list page now includes a search bar to quickly find workflows by name and supports right-click context menus to open them in new tabs.
+
+**Pre-requisites**
+- Requires Administrator access. No feature flags required.
+
+<Accordion title="See More">
+
+#### Where You'll See It
+- *Settings > Workflows* (a new search bar in the page header).
+- *Settings > Workflows* (the table of workflows).
+
+#### What You Can Do
+- Type in the search bar to filter the list of workflows by name.
+- Right-click any workflow in the table to open the browser's context menu (e.g., to "Open in new tab").
+- Use Ctrl/Cmd+Click or middle-click to open workflows in a new tab.
+
+#### Why This Matters
+Finding a specific workflow used to require manually scrolling through the entire list. This makes managing a large number of workflows much faster and aligns with standard web navigation patterns.
+</Accordion>
+
+---
+### 🔐 Clearer Sidebar Feedback for Missing Permissions
+
+**What's New**  
+When a sidebar section is disabled due to your user role's permissions, hovering over it now displays a helpful tooltip explaining why it's unavailable.
+
+**Pre-requisites**
+- No special permissions required. No feature flags required.
+
+<Accordion title="See More">
+
+#### Where You'll See It
+- The main sidebar navigation menu across all Admin products.
+
+#### What You Can Do
+- Hover your cursor over a grayed-out sidebar link or section (e.g., 'Analytics').
+- See a tooltip that reads "This feature is unavailable due to your role's permissions."
+
+#### Why This Matters
+Previously, disabled sidebar items offered no explanation, which could be confusing. This change provides immediate clarity on why certain features are not accessible, improving the user experience for administrators with varied permission levels.
+</Accordion>
+
+</Update>
+
+
 <Update label="Monday, November 17, 2025" description="7 Updates" tags={["Operations", "Analytics", "Enterprise Asset Management", "Admin"]}>
 
 ## 🎯 Operations
