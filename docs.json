@@ -21,7 +21,7 @@
         "pages": [
           "internal_changelog/analytics",
           "internal_changelog/operations",
-          "internal_changelog/eam",
+          "internal_changelog/enterprise-asset-management",
           "internal_changelog/admin",
           "internal_changelog/ai-voice",
           "internal_changelog/resolve",
