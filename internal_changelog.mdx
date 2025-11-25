@@ -1,3 +1,123 @@
+<Update label="Monday, November 17, 2025" description="6 Updates" tags={["Operations", "Analytics", "Enterprise Asset Management", "Admin"]}>
+
+## 🎯 Operations
+### 🐛 Bug Fixes
+
+- **Multi-Word Search Queries (EAM-506)**
+  * _Resolution_: Fixed an issue where searching with multiple words (e.g., "Main Street") in the global search bar failed to return correct results. The system now correctly handles spaces in search terms.
+- **Driver-Dispatch Messaging (BUS-4356)**
+  * _Resolution_: Corrected a regression that caused the Driver-Dispatch messaging feature to fail for some organizations. The communication channel is now fully restored.
+
+---
+
+## 📊 Analytics
+### 📈 Unlimited Row Downloads for Reports
+
+**What's New**  
+The 10,000-row limit on report downloads has been removed. You can now download complete datasets of any size from the Analytics Query Builder and Reports pages, with a new progress indicator to track large exports.
+
+**Pre-requisites**
+- Requires `AnalyticsV2` feature flag
+
+<Accordion title="See More">
+
+#### Where You'll See It
+- *Analytics > Query Builder* (the "Download" button)
+- *Analytics > Reports > [Report Name]* (the "Download" option in the action menu)
+
+#### What You Can Do
+- Export reports with more than 10,000 rows in CSV or XLSX format.
+- Monitor the status of large downloads via a new progress notification that shows the number of rows processed.
+- Cancel downloads that are in progress.
+
+#### Why This Matters
+Previously, analyzing large datasets required multiple manual exports and file merging due to the 10,000-row limit. This change streamlines the process, allowing you to export complete, unfiltered datasets in a single action, saving time and eliminating manual data work.
+</Accordion>
+
+---
+
+## 🏢 Enterprise Asset Management
+### ✅ Interactive Checklists and Notes for Work Order Tasks
+
+**What's New**  
+Work Orders now feature interactive task lists. You can mark individual service tasks as complete and add specific notes to each line item, which are saved automatically.
+
+**Pre-requisites**
+- No feature flags required. Requires appropriate permissions to view and edit Work Orders.
+
+<Accordion title="See More">
+
+#### Where You'll See It
+- *Enterprise Asset Management > Work Orders > [Select a Work Order]* (in the "Line Items" table)
+
+#### What You Can Do
+- Mark a task as done using the new "COMPLETED" column checkbox.
+- Click into a line item's notes field to add or edit details; changes are saved automatically.
+- Add general notes to the entire Work Order in the new "Notes" field.
+
+#### Why This Matters
+Previously, tracking the completion status and context of individual tasks within a large work order was difficult. This enhancement provides a clear, interactive way for technicians and managers to update progress and share notes in real-time, improving communication and workflow efficiency.
+</Accordion>
+
+---
+### 🔌 Telematics Integrations for Automatic Meter Updates
+
+**What's New**  
+A new integration framework for EAM allows you to connect external telematics systems to Spare. The first available integration automatically syncs vehicle meter readings, creating meter entries in Spare to keep your asset data up-to-date.
+
+**Pre-requisites**
+- No feature flags required. Requires Administrator access within Enterprise Asset Management.
+
+<Accordion title="See More">
+
+#### Where You'll See It
+- *Enterprise Asset Management > Settings > Integrations* (new page to manage connections)
+- *Enterprise Asset Management > Assets > [Select an Asset] > Meter History* (new entries will appear with "Telematics" as the source)
+
+#### What You Can Do
+- Configure and manage connections to supported third-party telematics providers.
+- View meter readings that are automatically pulled from your telematics system.
+
+#### Why This Matters
+Manually entering meter readings is time-consuming and prone to error. This integration automates the process, ensuring meter data is consistently accurate and timely, which is critical for scheduling preventative maintenance and tracking asset utilization.
+</Accordion>
+
+---
+### 🐛 Bug Fixes
+
+- **Multi-Word Search Queries in EAM (EAM-506)**
+  * _Resolution_: Fixed an issue where searching with multiple words (e.g., "Ford Transit") in the EAM search bar failed to return correct results. The system now correctly handles spaces in search terms.
+
+---
+
+## ⚙️ Admin
+### 🔍 Workflow Search and Quick-Access Menu
+
+**What's New**  
+The Workflows list page now includes a search bar to quickly find workflows by name. Additionally, you can now right-click, command-click, or middle-click on any workflow to open it in a new tab.
+
+**Pre-requisites**
+- No feature flags required. Requires Administrator access.
+
+<Accordion title="See More">
+
+#### Where You'll See It
+- *Settings > System > Workflows* (new search bar in the header and new right-click behavior on the workflow table rows)
+
+#### What You Can Do
+- Type in the search bar to filter the list of workflows instantly.
+- Right-click a workflow row to access the browser's context menu (e.g., "Open in new tab").
+- Use keyboard shortcuts (Cmd/Ctrl+Click) or a middle-click to open workflows in new tabs without losing your place.
+
+#### Why This Matters
+Finding a specific workflow previously required scrolling through a potentially long list, and opening multiple workflows for comparison was cumbersome. These improvements make navigating and managing workflows much faster, especially for organizations with many automated processes.
+</Accordion>
+
+---
+
+</Update>
+
+
 <Update label="Monday, November 17, 2025" description="5 Updates" tags={["Analytics", "Enterprise Asset Management", "Admin"]}>
 
 ## 📊 Analytics
