@@ -1,8 +1,18 @@
 ---
 title: Analytics
 ---
+<Update label="24 November 2025" description="1 Updates">
 
-<Update label="Friday, November 22, 2025" description="1 Updates">
+### 🐛 Bug Fixes
+
+- **SQL Editor Timezone Handling for Aggregated Queries (BUS-4487)**
+  - _Resolution_: Fixed a bug in the *Analytics > SQL Editor* where queries using aggregate functions (like `SUM()` or `COUNT()`) on date fields did not correctly apply the organization's timezone, which could cause data to be grouped into the wrong day. All date functions in SQL queries now correctly respect the selected timezone.
+
+---
+
+</Update>
+
+<Update label="22 November 2025" description="1 Updates">
 
 ### 🐛 Bug Fixes
 
@@ -12,7 +22,7 @@ title: Analytics
 </Update>
 
 
-<Update label="Friday, November 21, 2025" description="2 Updates">
+<Update label="21 November 2025" description="2 Updates">
 
 ### 🏷️ Human-Readable Column Names in SQL Editor
 
@@ -54,7 +64,7 @@ Previously, technical column names required for certain queries would appear dir
 </Update>
 
 
-<Update label="Thursday, November 20, 2025" description="5 Updates">
+<Update label="20 November 2025" description="5 Updates">
 
 ### 💡 Clearer Tooltips for Date Filter Overrides
 
@@ -152,7 +162,7 @@ This integration makes it easier and faster to leverage AI for data analysis. In
 </Update>
 
 
-<Update label="Tuesday, November 19, 2025" description="1 Updates">
+<Update label="19 November 2025" description="1 Updates">
 
 ### 📅 Per-Report Date Filter Overrides on Dashboards
 
@@ -182,7 +192,7 @@ Sometimes, a dashboard needs to show a mix of timeframes, like "Today's Performa
 </Update>
 
 
-<Update label="Tuesday, November 18, 2025" description="8 Updates">
+<Update label="18 November 2025" description="8 Updates">
 
 ### 📊 Stacked Bar Charts Re-enabled
 
@@ -351,7 +361,7 @@ These new cubes provide deep visibility into operational communications, allowin
 </Update>
 
 
-<Update label="Monday, November 17, 2025" description="1 Updates">
+<Update label="17 November 2025" description="1 Updates">
 
 ### 📊 Download Complete Reports with No Row Limits
 

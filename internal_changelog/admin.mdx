@@ -1,8 +1,67 @@
 ---
 title: Admin
+rss: true
+---
+<Update label="24 November 2025" description="3 Updates">
+
+### 🔍 Global Search (Superbox) Now Available Everywhere
+
+**What's New**  
+The Superbox global search bar can now be opened and used from within all areas of the platform, including Micro-Frontend Applications (MFEs) like Enterprise Asset Management.
+
+**Pre-requisites**
+- Requires Admin access
+
+<Accordion title="See More">
+
+#### Where You'll See It
+- Any page within a Micro-Frontend, such as the *Enterprise Asset Management* app.
+
+#### What You Can Do
+- Use the `Cmd+K` (or `Ctrl+K`) keyboard shortcut to open the Superbox from any page in the platform.
+- Click the search bar in the sidebar of an MFE (like EAM) to trigger the Superbox.
+
+#### Why This Matters
+Previously, the global search was only accessible from the main application, forcing users to navigate away from modules like EAM to perform a search. This change provides a consistent and seamless search experience across the entire platform.
+</Accordion>
+
+---
+### 🔑 Faster Organization Access Requests for Super Admins
+
+**What's New**  
+When a Super Admin requests access to an organization, the "Administrator" role is now selected by default in the request form.
+
+**Pre-requisites**
+- Requires Super admin permissions
+
+<Accordion title="See More">
+
+#### Where You'll See It
+- The "Request Access" modal that appears when a Super Admin tries to access an organization they do not have permissions for.
+
+#### What You Can Do
+- Submit access requests more quickly, as the most common role ("Administrator") is pre-selected.
+- You can still manually select a different role from the dropdown if needed.
+
+#### Why This Matters
+This streamlines the workflow for Super Admins by removing a repetitive step, as "Administrator" is the most frequently requested role.
+</Accordion>
+
+---
+### 🐛 Bug Fixes
+
+- **"Navigate to Organization" Button Now Works Correctly (SEC-69)**
+  - _Resolution_: Fixed an issue where the "Navigate to Organization" button in the access request approval modal would close the dialog but fail to switch to the target organization. The button now correctly navigates as expected.
+- **Rider Creation with "Contact Only" Phone Numbers (ENG-1000)**
+  - _Resolution_: Fixed a bug that prevented creating a new rider from modals (e.g., when adding a rider to a new Case or Request) if their "Contact Only" phone number was already in use by another rider. This flow now works consistently with the main rider creation page.
+- **Workflow Search Now Handles Multiple Words (ENG-1001)**
+  - _Resolution_: Fixed an issue in *Settings > Workflows* where searching for a workflow using multiple words (e.g., "Rider Cancellation") would fail. The search now correctly handles spaces and returns the expected results.
+
 ---
 
-<Update label="Thursday, November 20, 2025" description="3 Updates">
+</Update>
+
+<Update label="20 November 2025" description="3 Updates">
 
 ### 🔑 Just-in-Time (JIT) Access Requests for Organizations
 
@@ -76,7 +135,7 @@ This prevents misconfigurations that could lead to payment processing failures. 
 </Update>
 
 
-<Update label="Tuesday, November 19, 2025" description="2 Updates">
+<Update label="19 November 2025" description="2 Updates">
 
 ### ✉️ Option to Skip Welcome Email for New Admins
 
@@ -109,7 +168,7 @@ This is useful for scenarios like temporary Just-In-Time (JIT) access, where an 
 </Update>
 
 
-<Update label="Tuesday, November 18, 2025" description="2 Updates">
+<Update label="18 November 2025" description="2 Updates">
 
 ### 🔧 Configurable Read-Only External Rider IDs
 
@@ -161,7 +220,7 @@ This system enhances security and accountability by replacing persistent access 
 </Update>
 
 
-<Update label="Monday, November 17, 2025" description="1 Updates">
+<Update label="17 November 2025" description="1 Updates">
 
 ### 🔍 Search and Navigate Workflows More Easily
 
