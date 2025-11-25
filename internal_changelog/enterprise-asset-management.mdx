@@ -1,3 +1,64 @@
 ---
 title: Enterprise Asset Management
 ---
+
+<Update label="Monday, November 17, 2025" description="3 Updates">
+
+### 🔌 New Telematics Integration for Automated Meter Readings
+
+**What's New**  
+A new integration service has been introduced, allowing external telematics systems to connect to Spare's EAM. This enables the automatic creation of meter entries for assets, reducing manual data entry.
+
+**Pre-requisites**
+- No feature flags required.
+- Requires Admin access with `eam:terminalConnection:create` permissions to configure new connections.
+
+<Accordion title="See More">
+
+#### Where You'll See It
+- This is primarily a new backend capability. The results are visible in *EAM > Energy > Meter Entries*, where a new 'Telematics' source will appear for automatically created entries.
+
+#### What You Can Do
+- Work with Spare to connect external telematics systems to automatically sync asset meter readings into EAM.
+- View meter entries created automatically from your telematics provider, identified by the 'Telematics' source type.
+
+#### Why This Matters
+Manually tracking and entering meter readings is time-consuming and prone to error. This integration automates the process, ensuring meter data in EAM is timely and accurate, which is crucial for scheduling preventive maintenance and maintaining compliance.
+</Accordion>
+
+---
+### 📝 Add Notes and Track Task Completion in Work Orders
+
+**What's New**  
+You can now add general notes to a Work Order and specific notes to each line item. A new "Completed" column with a checkbox toggle allows technicians to mark individual service tasks as finished.
+
+**Pre-requisites**
+- No feature flags required.
+- Requires Admin access with EAM permissions (e.g., `eam:workOrder:update`).
+
+<Accordion title="See More">
+
+#### Where You'll See It
+- *EAM > Service > Work Orders > [Select a Work Order]*
+- A new **Notes** field is available on the main work order view and in the create/edit forms.
+- In the **Line Items** table, there is a new **Completed** column and an editable **Notes** field for each line item.
+
+#### What You Can Do
+- Add high-level notes to an entire work order for general context.
+- Add specific notes to individual tasks for detailed instructions or observations.
+- Click the circular checkbox in the **Completed** column to mark a task as done, which is saved automatically.
+
+#### Why This Matters
+Previously, there was no dedicated place for notes on work orders or their tasks, and no way to track the completion of individual line items. These changes provide better communication and progress tracking for maintenance work, ensuring all details are captured and task status is clear.
+</Accordion>
+
+---
+### 🐛 Bug Fixes
+
+- **Multi-Word Search in EAM (EAM-506)**
+  - _Resolution_: Fixed an issue where searches with multiple words (e.g., "brake pad") in the EAM search bar were failing. The system now correctly handles spaces in search queries, returning accurate results.
+
+---
+
+</Update>
+
