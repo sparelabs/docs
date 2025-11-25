@@ -1,0 +1,215 @@
+---
+title: Enterprise Asset Management
+---
+
+<Update label="Friday, November 21, 2025" description="2 Updates">
+
+### 📝 Fault Code Descriptions
+
+**What's New**  
+When viewing fault codes for a vehicle, a new 'Description' column provides clear, human-readable explanations for each code, synced directly from your telematics provider.
+
+**Pre-requisites**
+- Requires Admin access to the EAM module.
+
+<Accordion title="See More">
+
+#### Where You'll See It
+- *EAM > Assets > (select an asset) > Fault Codes tab* (new 'Description' column in the table).
+
+#### What You Can Do
+- Quickly understand the meaning of a fault code without needing to look it up externally.
+- The description is displayed alongside the code, source, and timestamp for complete context.
+
+#### Why This Matters
+Fault codes were often cryptic and required external documentation to understand. By displaying the description directly in Spare, maintenance staff can diagnose issues faster and more efficiently.
+</Accordion>
+
+---
+### 🐛 Bug Fixes
+
+- **Precise Labor Time Entry (EAM-460)**
+  - _Resolution_: When adding a labor line item to a work order, the 'Minutes' field now accepts any whole number instead of only increments of 60. This allows for accurate time logging (e.g., 75 or 90 minutes).
+
+---
+
+</Update>
+
+
+<Update label="Thursday, November 20, 2025" description="2 Updates">
+
+### ⚠️ View Live Asset Fault Codes
+
+**What's New**  
+For assets connected to a telematics integration, you can now view active diagnostic trouble codes (DTCs) directly within Spare. A new "Fault Codes" tab on the asset page lists all current fault codes reported by the vehicle.
+
+**Pre-requisites**
+- Requires the Enterprise Asset Management (EAM) product
+
+<Accordion title="See More">
+
+#### Where You'll See It
+- *EAM > Assets > (select an asset) > Fault Codes tab*
+
+#### What You Can Do
+- Navigate to an asset's details page to see the new "Fault Codes" tab. This tab displays a table of current fault codes, including their description and the time they were detected.
+
+#### Why This Matters
+This feature provides maintenance teams with real-time visibility into vehicle health without needing to access a separate telematics portal. It allows for proactive maintenance by flagging issues as soon as they are detected by the vehicle's onboard diagnostics.
+</Accordion>
+
+---
+### 🐛 Bug Fixes
+
+- **Save Custom Fields on Work Order Creation (EAM-618)**
+  - _Resolution_: Fixed an issue where custom field data was not being saved when creating a new work order. All custom field values entered during creation are now correctly stored and visible when viewing the work order.
+
+---
+
+</Update>
+
+
+<Update label="Tuesday, November 19, 2025" description="2 Updates">
+
+### 🔧 Clearer Opt-Out for Smart Part Recommendations
+
+**What's New**  
+The setting to control smart part recommendations for a service task has been clarified. The field is now explicitly labeled "Opt out of smart part recommendations" and is only shown when creating or editing a service task, not in the main list view.
+
+**Pre-requisites**
+- Requires the `EAM` feature flag.
+- Requires Admin access.
+
+<Accordion title="See More">
+
+#### Where You'll See It
+- *EAM > Settings > Service Tasks > [New/Edit Service Task]*: The checkbox is now labeled **Opt out of smart part recommendations** with the hint text, "If yes, parts added to this task won't be suggested next time."
+- *EAM > Settings > Service Tasks*: The column for this setting has been removed from the list view to reduce clutter.
+
+#### What You Can Do
+- Confidently enable or disable part suggestions for specific service tasks.
+- Understand exactly what the setting does without ambiguity.
+
+#### Why This Matters
+The previous label for this setting was unclear. The new label and hint text make it obvious what the setting does, helping users manage part recommendations more effectively.
+</Accordion>
+
+---
+### 🔗 New EAM Integrations Page for Telematics
+
+**What's New**  
+A new "Integrations" page has been added to EAM, allowing you to connect with external telematics providers. Meter entries created from these integrations will now clearly show the integration as their source.
+
+**Pre-requisites**
+- Requires the `eamIntegrations` feature flag.
+- Requires Admin access.
+
+<Accordion title="See More">
+
+#### Where You'll See It
+- *EAM > Settings > Integrations*: A new page for managing telematics and other EAM integrations.
+- *EAM > Assets > [Select Asset] > Meter History*: The **Source** column will now display the name of the integration that created the meter entry.
+
+#### What You Can Do
+- View and manage connections to external telematics providers from a central location.
+- Easily trace the origin of meter entries back to the specific integration that provided the data.
+
+#### Why This Matters
+This new page provides a central place to manage telematics integrations, making it easier to synchronize vehicle data like meter readings. Clearly sourcing meter entries improves data traceability and trust.
+</Accordion>
+
+---
+
+</Update>
+
+
+<Update label="Tuesday, November 18, 2025" description="1 Updates">
+
+### 🔧 "General" Tasks to Bypass Part Recommendations
+
+**What's New**  
+You can now mark a Service Task as "General." When a technician adds a general task to a Work Order, the system will not show historical part recommendations, streamlining the workflow for catch-all or miscellaneous tasks.
+
+**Pre-requisites**
+- Requires Admin access
+- No feature flags required
+
+<Accordion title="See More">
+
+#### Where You'll See It
+- *EAM > Service Tasks > [Edit a Task]* (a new "General" checkbox is available).
+- *EAM > Work Orders > [Create/Edit a Work Order]* (when adding a line item, a hint appears for general tasks).
+
+#### What You Can Do
+- Edit a Service Task and check the **General** box to designate it as a catch-all task.
+- When this task is added to a work order, technicians will see a hint: "No parts recommendations, this is for catch all tasks."
+
+#### Why This Matters
+Not all maintenance tasks have predictable part requirements. This feature allows you to create general service tasks (e.g., "General Inspection," "Miscellaneous Repair") without triggering unnecessary part recommendations, making the work order creation process faster.
+</Accordion>
+
+---
+
+</Update>
+
+
+<Update label="Monday, November 17, 2025" description="3 Updates">
+
+### 🔌 New Telematics Integration for Automated Meter Readings
+
+**What's New**  
+A new integration service has been introduced, allowing external telematics systems to connect to Spare's EAM. This enables the automatic creation of meter entries for assets, reducing manual data entry.
+
+**Pre-requisites**
+- No feature flags required.
+- Requires Admin access with `eam:terminalConnection:create` permissions to configure new connections.
+
+<Accordion title="See More">
+
+#### Where You'll See It
+- This is primarily a new backend capability. The results are visible in *EAM > Energy > Meter Entries*, where a new 'Telematics' source will appear for automatically created entries.
+
+#### What You Can Do
+- Work with Spare to connect external telematics systems to automatically sync asset meter readings into EAM.
+- View meter entries created automatically from your telematics provider, identified by the 'Telematics' source type.
+
+#### Why This Matters
+Manually tracking and entering meter readings is time-consuming and prone to error. This integration automates the process, ensuring meter data in EAM is timely and accurate, which is crucial for scheduling preventive maintenance and maintaining compliance.
+</Accordion>
+
+---
+### 📝 Add Notes and Track Task Completion in Work Orders
+
+**What's New**  
+You can now add general notes to a Work Order and specific notes to each line item. A new "Completed" column with a checkbox toggle allows technicians to mark individual service tasks as finished.
+
+**Pre-requisites**
+- No feature flags required.
+- Requires Admin access with EAM permissions (e.g., `eam:workOrder:update`).
+
+<Accordion title="See More">
+
+#### Where You'll See It
+- *EAM > Service > Work Orders > [Select a Work Order]*
+- A new **Notes** field is available on the main work order view and in the create/edit forms.
+- In the **Line Items** table, there is a new **Completed** column and an editable **Notes** field for each line item.
+
+#### What You Can Do
+- Add high-level notes to an entire work order for general context.
+- Add specific notes to individual tasks for detailed instructions or observations.
+- Click the circular checkbox in the **Completed** column to mark a task as done, which is saved automatically.
+
+#### Why This Matters
+Previously, there was no dedicated place for notes on work orders or their tasks, and no way to track the completion of individual line items. These changes provide better communication and progress tracking for maintenance work, ensuring all details are captured and task status is clear.
+</Accordion>
+
+---
+### 🐛 Bug Fixes
+
+- **Multi-Word Search in EAM (EAM-506)**
+  - _Resolution_: Fixed an issue where searches with multiple words (e.g., "brake pad") in the EAM search bar were failing. The system now correctly handles spaces in search queries, returning accurate results.
+
+---
+
+</Update>
+

@@ -1,0 +1,383 @@
+---
+title: Analytics
+---
+
+<Update label="Friday, November 22, 2025" description="1 Updates">
+
+### 🐛 Bug Fixes
+
+- **Corrected Duty Duration Calculations in Reports (BUS-4488)**
+  * _Resolution_: Fixed an issue in the underlying data models for duty reporting that could cause minor inaccuracies in the `total_duration_hours` calculation. Analytics reports that use duty duration are now more accurate.
+
+</Update>
+
+
+<Update label="Friday, November 21, 2025" description="2 Updates">
+
+### 🏷️ Human-Readable Column Names in SQL Editor
+
+**What's New**  
+Column names in the Analytics SQL Editor are now automatically formatted for better readability in charts and tables. Technical suffixes like `_dim` are removed, and `snake_case` or `camelCase` names are converted to 'Title Case'.
+
+**Pre-requisites**
+- Requires `AnalyticsV2` feature flag.
+
+<Accordion title="See More">
+
+#### Where You'll See It
+- *Analytics > SQL Editor* (when viewing query results as a chart or table).
+
+#### What You Can Do
+- Write SQL queries using technical column names (e.g., `request_status_dim`). The final report will display a user-friendly name (e.g., 'Request Status') in the legend and table headers.
+- This works for columns with `_dim` or `_dimension` suffixes, as well as `camelCase` and `snake_case` names.
+
+#### Why This Matters
+Previously, technical column names required for certain queries would appear directly in reports, which could confuse users. This change automatically formats the display names, improving report clarity without requiring manual `AS` aliases in the SQL query.
+</Accordion>
+
+---
+### 🐛 Bug Fixes
+
+- **Table Pivot for Measures (BUS-4424)**
+  - _Resolution_: Fixed an issue in Analytics reports where the table view would show blank cells when 'Measures' were pivoted on the Y-axis. The table now automatically reorganizes the pivot to ensure all data is displayed correctly.
+- **Pie Chart Scaling (BUS-4501)**
+  - _Resolution_: Corrected a display bug where pie charts in dashboards and reports would not resize properly within their containers, sometimes causing them to appear cut off or overflow.
+- **Location Custom Fields on Maps (BUS-4504)**
+  - _Resolution_: Resolved an issue preventing location-based custom fields from being correctly displayed on map visualizations. The Query Builder also now shows a map-marker icon for these geographic dimensions.
+- **Day of Week Display (BUS-4551)**
+  - _Resolution_: The 'Day of Week' dimension in reports now shows full day names (e.g., 'Monday') instead of numeric values (e.g., 0-6).
+- **Query Builder Labeling (No Ticket ID)**
+  - _Resolution_: Updated labels in the Query Builder from 'Available/Selected Members' to 'Available/Selected Metrics' to more accurately describe their function.
+
+---
+
+</Update>
+
+
+<Update label="Thursday, November 20, 2025" description="5 Updates">
+
+### 💡 Clearer Tooltips for Date Filter Overrides
+
+**What's New**  
+Tooltips on analytics reports now provide clearer information about how the date filter is being applied. The icon has been updated to a filter, and the messages specify if a report is ignoring the date filter or using a custom range.
+
+**Pre-requisites**
+- Requires `AnalyticsV2` feature flag
+
+<Accordion title="See More">
+
+#### Where You'll See It
+- *Analytics > Report View* and *Analytics > Dashboard View* (on the tooltip icon next to a report's title)
+
+#### What You Can Do
+- Hover over the new filter icon on a report to see its date filtering behavior. The tooltip will now explicitly state:
+    - "Date filter is being ignored (showing all-time data)" if the override is active.
+    - "Date filter is using a custom range: [start] to [end]" if a custom range is set for that report.
+
+#### Why This Matters
+Previously, it was difficult to know if a report on a dashboard was using the dashboard's main date filter or its own override. These enhanced tooltips provide immediate clarity, preventing misinterpretation of report data.
+</Accordion>
+
+---
+### 🚚 New 'Dispatch Status' Dimension in Ridership Report
+
+**What's New**  
+The Ridership Report data cube now includes a `Dispatch Status` dimension. This allows you to build reports that show the state of requests before they are assigned to a vehicle, such as 'Awaiting Dispatch' or 'Offered to Fleet'.
+
+**Pre-requisites**
+- Requires `AnalyticsV2` feature flag
+
+<Accordion title="See More">
+
+#### Where You'll See It
+- *Analytics > Query Builder* (when using the `Ridership Report` cube)
+
+#### What You Can Do
+- Drag the new `Dispatch Status` dimension into your reports to analyze how many requests are in various pre-dispatch states.
+
+#### Why This Matters
+This provides deeper insight into the operational dispatching funnel, helping identify bottlenecks or delays that occur before a trip is scheduled onto a vehicle.
+</Accordion>
+
+---
+### 📈 New Estimate Fields Added to Request Data Cube
+
+**What's New**  
+The `Request` data cube in Analytics has been enriched with several fields from the original trip estimate. This includes the interface used to create the estimate (e.g., Admin, Rider App) and the type of search performed.
+
+**Pre-requisites**
+- Requires `AnalyticsV2` feature flag
+
+<Accordion title="See More">
+
+#### Where You'll See It
+- *Analytics > Query Builder* (when using the `Request` cube)
+
+#### What You Can Do
+- Add new dimensions like `Estimate Created Interface` and `Estimate Intent Type` to your request-based reports to analyze booking patterns and user behavior.
+
+#### Why This Matters
+Previously, analyzing how trips were being estimated and booked required joining multiple data sources. Embedding these fields directly into the Request cube simplifies report building and enables more detailed analysis of booking channel performance.
+</Accordion>
+
+---
+### 🤖 Build Analytics Reports with Scout AI
+
+**What's New**  
+You can now initiate the creation of an analytics report using Scout AI directly from the Analytics V2 interface. A new "Scout" option navigates you to the AI chat with a pre-populated prompt to get you started.
+
+**Pre-requisites**
+- Requires the AI Product to be enabled or Super admin permissions
+
+<Accordion title="See More">
+
+#### Where You'll See It
+- *Analytics > Reports* (in the floating "Add Report" action button menu)
+
+#### What You Can Do
+- Click the "Add Report" button and select the new "Scout" option (sparkles icon). You will be taken to the Scout AI chat with the message "Create me an analytics chart that " already typed, allowing you to simply complete the sentence with your request.
+
+#### Why This Matters
+This integration makes it easier and faster to leverage AI for data analysis. Instead of navigating to Scout separately, you can start the report-building process directly from your analytics workflow, streamlining the path from question to insight.
+</Accordion>
+
+---
+### 🐛 Bug Fixes
+
+- **Prevents Duplicate Report Names (BUS-4567)**
+  - _Resolution_: When renaming an analytics report, the system now checks if the new name is already in use. If it is, a clear error message is displayed, preventing the creation of duplicate report names and avoiding system errors.
+
+---
+
+</Update>
+
+
+<Update label="Tuesday, November 19, 2025" description="1 Updates">
+
+### 📅 Per-Report Date Filter Overrides on Dashboards
+
+**What's New**  
+You can now override the main dashboard date filter for individual reports on a dashboard. A new "Edit date filter" option allows you to set a custom date range or instruct a specific report to ignore the dashboard's filter entirely.
+
+**Pre-requisites**
+- Requires the `AnalyticsV2` feature flag.
+- Requires Admin access.
+
+<Accordion title="See More">
+
+#### Where You'll See It
+- *Analytics > Dashboards > [Select a Dashboard]*. In **Edit mode**, hover over a report widget and click the three-dot menu to find the new **Edit date filter** option.
+
+#### What You Can Do
+- Set a specific report to use its own date range (e.g., "Last 90 Days") while other reports on the dashboard use a different range (e.g., "Today").
+- Configure a report to completely ignore the dashboard's date filter, making it static.
+- Mix and match reports with different timeframes on a single dashboard.
+
+#### Why This Matters
+Sometimes, a dashboard needs to show a mix of timeframes, like "Today's Performance" alongside a "Last 30 Days Trend" report. Previously, all reports were locked to one dashboard-level filter. This change provides the flexibility to create more comprehensive and context-rich dashboards.
+</Accordion>
+
+---
+
+</Update>
+
+
+<Update label="Tuesday, November 18, 2025" description="8 Updates">
+
+### 📊 Stacked Bar Charts Re-enabled
+
+**What's New**  
+Stacked bar charts are now available again in Analytics. When you add a second dimension to a bar chart, the bars will be stacked by default, making it easier to compare sub-groups within a larger category.
+
+**Pre-requisites**
+- Requires `AnalyticsV2` feature flag
+- Requires Admin access
+
+<Accordion title="See More">
+
+#### Where You'll See It
+- *Analytics > Query Builder* (when selecting "Bar Chart" as the chart type and adding a second dimension to your query).
+
+#### What You Can Do
+- Create reports with stacked bar charts to visualize parts of a whole. For example, you can now build a chart that shows the total number of requests per day, with each bar segmented by `Booking Channel` to see the breakdown of web, app, and phone bookings.
+
+#### Why This Matters
+Previously, this useful visualization was temporarily disabled. Re-enabling it provides a key tool for comparing the composition of different categories in your data, all within a single, easy-to-read chart.
+</Accordion>
+
+---
+### 🔍 Redesigned Report Builder Side Panel
+
+**What's New**  
+The Query Builder side panel has been redesigned for a more intuitive experience. It now features two distinct sections—"Selected Members" and "Available Members"—eliminating the confusing "Used Only" toggle and fixing an issue where the panel would jump when expanding time dimensions.
+
+**Pre-requisites**
+- Requires `AnalyticsV2` feature flag
+- Requires Admin access
+
+<Accordion title="See More">
+
+#### Where You'll See It
+- *Analytics > Query Builder* (the left-hand side panel for selecting dimensions and measures).
+
+#### What You Can Do
+- View your selected metrics in the "Selected Members" card at the top and browse all possible metrics in the "Available Members" card below.
+- Expand time dimensions (e.g., "Request Created At") without the page scrolling unexpectedly.
+- Use the "Show all {cube} metrics" button within the "Selected Members" card to quickly find and add new items from the same data source.
+
+#### Why This Matters
+The previous design was confusing and had frustrating scroll behavior. This redesign provides a clearer, more stable interface for building reports, making it easier to find and manage the data you need for your analysis.
+</Accordion>
+
+---
+### ⏱️ Improved Date and Time Formatting in Tables
+
+**What's New**  
+Date and time values in Analytics tables are now displayed in a cleaner, more human-readable format. Instead of showing full timestamps with milliseconds, the format now intelligently adapts to the granularity of the data (e.g., `YYYY-MM-DD` for day, `YYYY-MM-DD HH:mm` for minute).
+
+**Pre-requisites**
+- Requires `AnalyticsV2` feature flag
+- Requires Admin access
+
+<Accordion title="See More">
+
+#### Where You'll See It
+- *Analytics > Report View* (in any report displayed as a Table chart).
+
+#### What You Can Do
+- View dates and times in a consistent, easy-to-read format that omits unnecessary detail like seconds and milliseconds. For example, a timestamp that previously appeared as `2025-11-18T14:30:15.123Z` will now simply show as `2025-11-18 14:30`.
+
+#### Why This Matters
+Previously, timestamps in tables were cluttered with excessive detail, making them hard to read. This change makes tables much easier to scan and understand, improving the overall readability of your reports.
+</Accordion>
+
+---
+### 🔗 Automatic URL Linking in Report Tables
+
+**What's New**  
+Any data in an Analytics table cell that is a full URL (starting with `http://` or `https://`) will now automatically be converted into a clickable link.
+
+**Pre-requisites**
+- Requires `AnalyticsV2` feature flag
+- Requires Admin access
+
+<Accordion title="See More">
+
+#### Where You'll See It
+- *Analytics > Report View* (in any report displayed as a Table chart).
+
+#### What You Can Do
+- If your report includes data with URLs (e.g., links to external records or resources in a note field), you can now click them directly from the table to open them in a new tab.
+
+#### Why This Matters
+Previously, URLs in tables were just plain text, requiring you to copy and paste them into your browser. This enhancement saves time and makes it easier to access linked resources directly from your reports.
+</Accordion>
+
+---
+### 📅 Smarter Default Time Dimensions for Reports
+
+**What's New**  
+When creating a new report, Analytics now selects a more relevant default time dimension based on the data source (cube) you are using. For example, reports based on the `Requests` cube will now default to `Request Scheduled At (Time)` instead of `Request Created At (Time)`.
+
+**Pre-requisites**
+- Requires `AnalyticsV2` feature flag
+- Requires Admin access
+
+<Accordion title="See More">
+
+#### Where You'll See It
+- *Analytics > Query Builder* (when a new report is started and a data source is selected, the time dimension field will be pre-populated).
+
+#### What You Can Do
+- The system now pre-selects a more logical time dimension, such as `Pickup (Time)` for trip-related reports, providing a better starting point for your analysis. You can still change it to any other time dimension.
+
+#### Why This Matters
+The previous default (`created_at`) was often not the most useful time dimension for analysis. This change provides a more intelligent default, reducing the need for manual changes and aligning the initial report more closely with common analytical questions.
+</Accordion>
+
+---
+### 📊 NTD Report Filtering by Fleet Product
+
+**What's New**  
+The NTD (National Transit Database) Report data source now includes a `Fleet Product` dimension. This allows you to filter your NTD reports to include or exclude data from specific Open Fleet products.
+
+**Pre-requisites**
+- Requires `AnalyticsV2` feature flag
+- Requires Admin access
+
+<Accordion title="See More">
+
+#### Where You'll See It
+- *Analytics > Query Builder* (when using the `NTD Report` cube, a new `Fleet Product` dimension is available in the "Available Members" panel).
+
+#### What You Can Do
+- Add a filter for the `Fleet Product` dimension in your NTD report queries to analyze data from specific TNCs or other open fleet providers.
+
+#### Why This Matters
+This gives you more granular control over NTD reporting, ensuring you can accurately report on different segments of your service, especially when working with multiple external fleet partners.
+</Accordion>
+
+---
+### 💬 New Duty Conversation & Message Analytics
+
+**What's New**  
+Two new data sources (cubes) are now available in Analytics for analyzing driver-dispatcher communications: `Duty Conversations` and `Duty Conversation Messages`.
+
+**Pre-requisites**
+- Requires `AnalyticsV2` feature flag
+- Requires Admin access
+
+<Accordion title="See More">
+
+#### Where You'll See It
+- *Analytics > Query Builder* (new `Duty Conversations` and `Duty Conversation Messages` cubes are available in the data source selector).
+
+#### What You Can Do
+- Use the `Duty Conversations` cube to report on high-level conversation metrics, such as the total number of conversations.
+- Use the `Duty Conversation Messages` cube to analyze individual messages, including their content, author, timestamps, and average response times.
+
+#### Why This Matters
+These new cubes provide deep visibility into operational communications, allowing you to monitor conversation volume, analyze dispatcher and driver response times, and identify trends in communication patterns.
+</Accordion>
+
+---
+### 🐛 Bug Fixes
+
+- **Dashboard Tooltip Visibility in View Mode (BUS-4480)**
+  - _Resolution_: Fixed an issue where a tooltip, which indicates if a report on a dashboard is not affected by the dashboard's date filter, was only visible in edit mode. This tooltip is now correctly displayed in view mode as well, ensuring all users are aware of the report's filtering behavior.
+
+---
+
+</Update>
+
+
+<Update label="Monday, November 17, 2025" description="1 Updates">
+
+### 📊 Download Complete Reports with No Row Limits
+
+**What's New**  
+The 10,000-row limit on downloading reports from Analytics V2 has been removed. You can now download the complete dataset for any report, regardless of size, directly from the Query Builder or the Reports List.
+
+**Pre-requisites**
+- Requires `AnalyticsV2` feature flag to access Analytics features.
+- Requires Admin access.
+
+<Accordion title="See More">
+
+#### Where You'll See It
+- *Analytics > Query Builder* (the 'Download' button in the top right).
+- *Analytics > Reports* (the download action in the list of available reports).
+
+#### What You Can Do
+- Download reports in CSV or XLSX format that contain more than 10,000 rows.
+- The download process now fetches data in batches, and a notification will show the progress.
+
+#### Why This Matters
+Previously, large reports were truncated at 10,000 rows, forcing users to apply narrow filters or find workarounds for complete data analysis. Now, you can export the full dataset for any query, enabling comprehensive analysis and reporting outside of Spare.
+</Accordion>
+
+---
+
+</Update>
+
+

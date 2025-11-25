@@ -1,0 +1,192 @@
+---
+title: Admin
+---
+
+<Update label="Thursday, November 20, 2025" description="3 Updates">
+
+### 🔑 Just-in-Time (JIT) Access Requests for Organizations
+
+**What's New**  
+A new self-serve system allows Spare employees (Super Admins) to request temporary, role-based access to customer organizations. This workflow includes justification, approvals, and automatic revocation, enhancing security and auditability.
+
+**Pre-requisites**
+- Requires Super admin permissions
+
+<Accordion title="See More">
+
+#### Where You'll See It
+- The organization selection page after login (*Select Organization*)
+- *Super Admin > Organizations > (select an org) > 'Request Access' button*
+- A new top-level *Access Requests* page in the sidebar
+
+#### What You Can Do
+- Request access to an organization for a specific duration and role, with a justification.
+- Designated approvers are notified to approve or deny the request.
+- Track the status of your requests and see when access will expire.
+- Manage all access requests and approval policies from the new "Access Requests" page.
+
+#### Why This Matters
+This replaces manual access grants with a structured, auditable, and time-bound system. It ensures that access to customer environments is granted on a need-to-know basis with the principle of least privilege, improving security and compliance.
+</Accordion>
+
+---
+### 🔎 Make Address and Phone Number Custom Fields Searchable
+
+**What's New**  
+You can now enable searching on custom fields of type "Address" and "Phone Number". Previously, only Text, Number, and Date fields could be made searchable.
+
+**Pre-requisites**
+- Requires Admin access
+
+<Accordion title="See More">
+
+#### Where You'll See It
+- *Settings > Field Manager > (select a field group) > (create or edit a custom field)*
+
+#### What You Can Do
+- When creating or editing a custom field for Riders or Requests, if you select the "Address" or "Phone Number" type, you can now check the "Searchable" box. This allows users to find riders or requests by searching for values in those fields.
+
+#### Why This Matters
+This expands search capabilities, making it easier for dispatchers and admins to locate records using important contact or location information stored in custom fields.
+</Accordion>
+
+---
+### 💳 Enhanced Stripe Configuration Validation
+
+**What's New**  
+The system now validates Stripe API keys when you save a Stripe payment provider configuration. It checks that the secret key is valid and that the publishable and secret keys are not mismatched (e.g., one Test key and one Live key).
+
+**Pre-requisites**
+- Requires Admin access
+
+<Accordion title="See More">
+
+#### Where You'll See It
+- *Settings > Payment > Payment Providers > (creating or editing a Stripe provider)*
+
+#### What You Can Do
+- When you enter Stripe API keys, the system will prevent you from saving if the keys are invalid or if there's a mismatch between Live and Test environments, showing a specific error message.
+
+#### Why This Matters
+This prevents misconfigurations that could lead to payment processing failures. By catching errors during setup, it ensures that the payment integration is correctly configured before it's used.
+</Accordion>
+
+---
+
+</Update>
+
+
+<Update label="Tuesday, November 19, 2025" description="2 Updates">
+
+### ✉️ Option to Skip Welcome Email for New Admins
+
+**What's New**  
+When creating a new administrator account via the API, you can now choose to skip sending the automated welcome email by using the `skipWelcomeEmail` parameter.
+
+**Pre-requisites**
+- Requires Super admin permissions to create new admins.
+
+<Accordion title="See More">
+
+#### Where You'll See It
+- This is an API-only enhancement available on the endpoint for creating administrators. It is not exposed in the admin user interface.
+
+#### What You Can Do
+- Programmatically create new admin accounts without triggering a welcome email.
+
+#### Why This Matters
+This is useful for scenarios like temporary Just-In-Time (JIT) access, where an employee is granted short-term admin rights and a welcome email is unnecessary. It helps reduce email clutter for internal or temporary accounts.
+</Accordion>
+
+---
+### 🐛 Bug Fixes
+
+- **Driver/Dispatch Communication Service Stability (BUS-4356)**
+  - _Resolution_: Restored a fallback mechanism for driver/dispatch communications. Systems that use this feature but do not have their own Twilio connection will now correctly use the platform's default service, preventing communication failures.
+
+---
+
+</Update>
+
+
+<Update label="Tuesday, November 18, 2025" description="2 Updates">
+
+### 🔧 Configurable Read-Only External Rider IDs
+
+**What's New**  
+A new feature is available to make the `External Rider ID` field on a rider's profile read-only. This is designed for organizations where this ID is managed by an external system and should not be editable by agents in Spare Admin.
+
+**Pre-requisites**
+- Requires `ReadOnlyExternalRiderIds` feature flag
+- Requires Admin access
+
+<Accordion title="See More">
+
+#### Where You'll See It
+- *People > Riders > [Select a Rider]* (the `External Rider ID` field in the rider's profile details).
+
+#### What You Can Do
+- When this feature is enabled for your organization, the `External Rider ID` field will be visible but not editable, preventing accidental changes by staff.
+
+#### Why This Matters
+This ensures data integrity for rider IDs that are synced from an external source of truth, preventing discrepancies between systems.
+</Accordion>
+
+---
+### ⚙️ Just-in-Time (JIT) Access for Spare Employees (Super Admins)
+
+**What's New**  
+A new system has been implemented for Spare employees (Super Admins) to request temporary, time-bound access to customer organizations. This provides a formal, auditable workflow for granting access for support and configuration purposes. (Note: The user interface for this feature will be released separately).
+
+**Pre-requisites**
+- Requires Super admin permissions
+- No feature flags required
+
+<Accordion title="See More">
+
+#### Where You'll See It
+- This is primarily a backend system that governs Super Admin access. The effects will be visible in audit logs and future administrative UIs.
+
+#### What You Can Do
+- Spare employees can request access to an organization for a specific duration and with a clear justification.
+- Access is automatically revoked when the approved time expires.
+- All requests and approvals are logged for a complete audit trail.
+
+#### Why This Matters
+This system enhances security and accountability by replacing persistent access with a "least privilege" model. It ensures that access to customer data is granted only when necessary, for a limited time, and with full transparency.
+</Accordion>
+
+---
+
+</Update>
+
+
+<Update label="Monday, November 17, 2025" description="1 Updates">
+
+### 🔍 Search and Navigate Workflows More Easily
+
+**What's New**  
+The Workflows list page now includes an autocomplete search bar to quickly find workflows by name. Additionally, you can now right-click, middle-click, or Cmd/Ctrl+click on a workflow row to open it in a new tab.
+
+**Pre-requisites**
+- No feature flags required.
+- Requires Admin access.
+
+<Accordion title="See More">
+
+#### Where You'll See It
+- *Settings > System > Workflows* (in the page header).
+
+#### What You Can Do
+- Use the new search bar at the top of the page to filter the list of workflows as you type.
+- Right-click any workflow row to open the browser's context menu (e.g., 'Open in new tab').
+- Use standard browser shortcuts like Cmd/Ctrl+click or middle-click to open workflows in new tabs.
+
+#### Why This Matters
+Finding a specific workflow was difficult in organizations with long lists, and opening multiple workflows for comparison required manual URL handling. This change streamlines navigation and makes managing many workflows much easier and more efficient.
+</Accordion>
+
+---
+
+</Update>
+

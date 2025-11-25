@@ -1,0 +1,63 @@
+---
+title: Resolve
+---
+
+<Update label="Tuesday, November 19, 2025" description="1 Updates">
+
+### 📝 Include Trip History in Case Letter Templates
+
+**What's New**  
+You can now include a rider's trip history directly in case letter templates using new variables. These variables allow you to create lists of trips filtered by status (e.g., `completed`, `noShow`) and time (e.g., `lastWeek`, `lastMonth`), perfect for generating invoices or trip summaries.
+
+**Pre-requisites**
+- Requires Admin access with permissions for the Resolve (Engage) module.
+
+<Accordion title="See More">
+
+#### Where You'll See It
+- *Resolve > Letters > Templates > [New/Edit Template]*: The variable picker now includes new `requests` variables.
+
+#### What You Can Do
+- Build templates that automatically pull in a rider's completed trips from the last month.
+- Generate letters that list all no-show incidents for a specific rider.
+- Use Handlebars logic (e.g., `{{#each requests.lastMonth.completed}}`) to format trip lists into tables or summaries.
+
+#### Why This Matters
+Manually compiling trip history for invoices or communications is time-consuming. This feature automates the process by allowing you to embed dynamic, filtered trip lists directly into your letter templates, saving time and reducing errors.
+</Accordion>
+
+---
+
+</Update>
+
+
+<Update label="Tuesday, November 18, 2025" description="1 Updates">
+
+### ✅ Case Management Features Now Standard
+
+**What's New**  
+Several features within Resolve (the new name for Engage) are now standard for all users and no longer require a feature flag. This includes the Activity Feed, the "Peek" view for forms and letters, and Conditional Form logic.
+
+**Pre-requisites**
+- Requires Admin access
+- No feature flags required (previously required `EngageActivityFeed`, `EngageCaseViewV2Peek`, and `ConditionalForms` feature flags)
+
+<Accordion title="See More">
+
+#### Where You'll See It
+- *Resolve > Cases > [Select a Case]* (the **Activity Feed** is now the default view instead of the "Activity Log" tab).
+- *Resolve > Forms > [Form Builder]* (conditional logic options are always available).
+
+#### What You Can Do
+- The modern **Activity Feed** is now the standard interface for viewing case history.
+- The ability to quickly **"Peek"** at forms and letters without leaving the main view is enabled by default.
+- **Conditional logic** in the Form Builder is now available to all, allowing you to create dynamic forms that show or hide fields based on user input.
+
+#### Why This Matters
+By making these mature features standard, we are providing a more consistent and powerful user experience for everyone using Resolve to manage cases.
+</Accordion>
+
+---
+
+</Update>
+

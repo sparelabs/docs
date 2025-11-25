@@ -1,0 +1,140 @@
+---
+title: Operations
+---
+
+<Update label="Friday, November 21, 2025" description="2 Updates">
+
+### 🚑 Emergency "Drop Off ASAP" Action
+
+**What's New**  
+Dispatchers can now prioritize an immediate drop-off for an on-board rider experiencing an urgent situation. This action moves the rider's drop-off to the next stop in the vehicle's manifest, overriding the previously optimized schedule.
+
+**Pre-requisites**
+- Requires `EmergencyDropoffAsap` feature flag and the `Request > Dropoff ASAP` permission.
+
+<Accordion title="See More">
+
+#### Where You'll See It
+- *Rides > Live Requests* > (select an in-transit request) > 'Actions' dropdown menu.
+
+#### What You Can Do
+- For a rider who is currently on board, select the "Drop Off ASAP" action from the request's action menu.
+- After confirming, the vehicle's manifest is immediately reordered to make that rider's drop-off the very next stop.
+- The action is automatically logged in both the Request and Duty activity logs for auditing purposes.
+
+#### Why This Matters
+In situations requiring a rider to be dropped off urgently, dispatchers previously had to manually edit the manifest, which was time-consuming and error-prone. This feature provides a dedicated, one-click solution to re-prioritize a trip, ensuring a swift response during critical events.
+</Accordion>
+
+---
+### 🐛 Bug Fixes
+
+- **Improved RPRH Metric Accuracy (MOT-2551)**
+  - _Resolution_: The Revenue Per Revenue Hour (RPRH) calculation for active duties now uses projected trip completion times instead of the current time. This provides a more stable and accurate RPRH value that doesn't fluctuate as the day progresses.
+
+---
+
+</Update>
+
+
+<Update label="Thursday, November 20, 2025" description="3 Updates">
+
+### 🔍 Filter by Multiple Cancellation Reasons in Workflows
+
+**What's New**  
+The Workflows module can now filter requests by multiple cancellation reasons at once. This allows for more complex and precise automation based on why a trip was cancelled.
+
+**Pre-requisites**
+- No feature flags required
+
+<Accordion title="See More">
+
+#### Where You'll See It
+- *Workflows > (when configuring a trigger or action that uses the 'Get Requests' step)*
+
+#### What You Can Do
+- Use a pipe-separated list (e.g., `noShow|lateDriver|other`) in the `requestCancellationReason` query parameter within a workflow step to fetch requests that match any of the specified reasons.
+
+#### Why This Matters
+Previously, workflows could only filter by a single cancellation reason, limiting automation possibilities. This change enables the creation of more sophisticated workflows that can handle different cancellation scenarios in a single rule.
+</Accordion>
+
+---
+### ⏱️ More Accurate Estimates for Third-Party Fleets During Rematch
+
+**What's New**  
+The system now distinguishes between real-time and "idealized" trip estimates from third-party fleets. When using the override modal to rematch a trip, only estimates based on actual fleet availability are shown, preventing bookings with fleets that may not have a vehicle available.
+
+**Pre-requisites**
+- No feature flags required
+
+<Accordion title="See More">
+
+#### Where You'll See It
+- *Rides > Live Requests > (select any request) > 'Rematch' button > Overrides modal*
+
+#### What You Can Do
+- When you use the rematch override modal, the list of available services will now exclude third-party fleets that provide only idealized estimates (estimates not based on real-time vehicle availability). Regular booking is unaffected.
+
+#### Why This Matters
+This prevents dispatchers from attempting to book a trip with a third-party fleet that appears available but has no real vehicles to serve the trip, reducing failed bookings and improving the reliability of the rematch tool.
+</Accordion>
+
+---
+### 🐛 Bug Fixes
+
+- **Improved Screen Reader Accessibility for Maps (MOT-2352)**
+  - _Resolution_: All interactive maps and their controls (e.g., zoom buttons, vehicle markers, route lines) are now hidden from screen readers. This provides a cleaner, more navigable experience for users of assistive technologies by focusing on data tables and lists rather than non-navigable visual map elements.
+
+---
+
+</Update>
+
+
+<Update label="Tuesday, November 19, 2025" description="2 Updates">
+
+### 📊 Improved Visibility for Recurring Trip Groups
+
+**What's New**  
+We've enhanced how Recurring Trip Groups are displayed. You can now see the total number of requests associated with a trip group directly in the list view, and tooltips for requests in the *Shift Scheduling* view now show more accurate daily counts.
+
+**Pre-requisites**
+- Requires the `tripGroup` feature flag.
+
+<Accordion title="See More">
+
+#### Where You'll See It
+- *Rides > Recurring Trips > [Select a recurring trip] > Recurring Trip Groups tab*: A new **Recurring Requests** column now shows the total count of requests in each group.
+- *Launch > Shift Scheduling*: When you hover over a request that is part of a recurring trip, the tooltip now shows a daily request count and only displays the relevant trip group (e.g., inbound or outbound) instead of both.
+
+#### What You Can Do
+- Quickly assess the size of a trip group by viewing the request count in the table.
+- Get more accurate, direction-specific information about a request's trip group from the Shift Scheduling view.
+
+#### Why This Matters
+Previously, it was difficult to quickly see how many requests were part of a trip group or to distinguish between inbound/outbound groups for a single request. This update provides clear, at-a-glance request counts and more precise tooltip information, making it easier for dispatchers and planners to manage recurring trips.
+</Accordion>
+
+---
+### 🐛 Bug Fixes
+
+- **Live Requests Date Filtering (BUG-1043)**
+  - _Resolution_: Fixed an "Internal Server Error" that occurred on the *Rides > Live Requests* page when filtering for a date entirely in the future. The page now correctly handles future date ranges without errors.
+
+---
+
+</Update>
+
+
+<Update label="Monday, November 17, 2025" description="1 Updates">
+
+### 🐛 Bug Fixes
+
+- **Driver/Dispatch Communications Stability (BUS-4356)**
+  - _Resolution_: Fixed a regression that caused the Driver/Dispatch communication feature to fail for some organizations. The system now correctly falls back to the appropriate credentials, restoring communication functionality.
+
+---
+
+</Update>
+
+
