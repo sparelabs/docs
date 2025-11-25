@@ -2,6 +2,35 @@
 title: Resolve
 ---
 
+<Update label="Tuesday, November 19, 2025" description="1 Updates">
+
+### 📝 Include Trip History in Case Letter Templates
+
+**What's New**  
+You can now include a rider's trip history directly in case letter templates using new variables. These variables allow you to create lists of trips filtered by status (e.g., `completed`, `noShow`) and time (e.g., `lastWeek`, `lastMonth`), perfect for generating invoices or trip summaries.
+
+**Pre-requisites**
+- Requires Admin access with permissions for the Resolve (Engage) module.
+
+<Accordion title="See More">
+
+#### Where You'll See It
+- *Resolve > Letters > Templates > [New/Edit Template]*: The variable picker now includes new `requests` variables.
+
+#### What You Can Do
+- Build templates that automatically pull in a rider's completed trips from the last month.
+- Generate letters that list all no-show incidents for a specific rider.
+- Use Handlebars logic (e.g., `{{#each requests.lastMonth.completed}}`) to format trip lists into tables or summaries.
+
+#### Why This Matters
+Manually compiling trip history for invoices or communications is time-consuming. This feature automates the process by allowing you to embed dynamic, filtered trip lists directly into your letter templates, saving time and reducing errors.
+</Accordion>
+
+---
+
+</Update>
+
+
 <Update label="Tuesday, November 18, 2025" description="1 Updates">
 
 ### ✅ Case Management Features Now Standard

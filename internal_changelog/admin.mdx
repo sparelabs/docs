@@ -2,6 +2,39 @@
 title: Admin
 ---
 
+<Update label="Tuesday, November 19, 2025" description="2 Updates">
+
+### ✉️ Option to Skip Welcome Email for New Admins
+
+**What's New**  
+When creating a new administrator account via the API, you can now choose to skip sending the automated welcome email by using the `skipWelcomeEmail` parameter.
+
+**Pre-requisites**
+- Requires Super admin permissions to create new admins.
+
+<Accordion title="See More">
+
+#### Where You'll See It
+- This is an API-only enhancement available on the endpoint for creating administrators. It is not exposed in the admin user interface.
+
+#### What You Can Do
+- Programmatically create new admin accounts without triggering a welcome email.
+
+#### Why This Matters
+This is useful for scenarios like temporary Just-In-Time (JIT) access, where an employee is granted short-term admin rights and a welcome email is unnecessary. It helps reduce email clutter for internal or temporary accounts.
+</Accordion>
+
+---
+### 🐛 Bug Fixes
+
+- **Driver/Dispatch Communication Service Stability (BUS-4356)**
+  - _Resolution_: Restored a fallback mechanism for driver/dispatch communications. Systems that use this feature but do not have their own Twilio connection will now correctly use the platform's default service, preventing communication failures.
+
+---
+
+</Update>
+
+
 <Update label="Tuesday, November 18, 2025" description="2 Updates">
 
 ### 🔧 Configurable Read-Only External Rider IDs

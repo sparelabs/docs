@@ -2,6 +2,36 @@
 title: Analytics
 ---
 
+<Update label="Tuesday, November 19, 2025" description="1 Updates">
+
+### 📅 Per-Report Date Filter Overrides on Dashboards
+
+**What's New**  
+You can now override the main dashboard date filter for individual reports on a dashboard. A new "Edit date filter" option allows you to set a custom date range or instruct a specific report to ignore the dashboard's filter entirely.
+
+**Pre-requisites**
+- Requires the `AnalyticsV2` feature flag.
+- Requires Admin access.
+
+<Accordion title="See More">
+
+#### Where You'll See It
+- *Analytics > Dashboards > [Select a Dashboard]*. In **Edit mode**, hover over a report widget and click the three-dot menu to find the new **Edit date filter** option.
+
+#### What You Can Do
+- Set a specific report to use its own date range (e.g., "Last 90 Days") while other reports on the dashboard use a different range (e.g., "Today").
+- Configure a report to completely ignore the dashboard's date filter, making it static.
+- Mix and match reports with different timeframes on a single dashboard.
+
+#### Why This Matters
+Sometimes, a dashboard needs to show a mix of timeframes, like "Today's Performance" alongside a "Last 30 Days Trend" report. Previously, all reports were locked to one dashboard-level filter. This change provides the flexibility to create more comprehensive and context-rich dashboards.
+</Accordion>
+
+---
+
+</Update>
+
+
 <Update label="Tuesday, November 18, 2025" description="8 Updates">
 
 ### 📊 Stacked Bar Charts Re-enabled

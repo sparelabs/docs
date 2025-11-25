@@ -2,6 +2,60 @@
 title: Enterprise Asset Management
 ---
 
+<Update label="Tuesday, November 19, 2025" description="2 Updates">
+
+### 🔧 Clearer Opt-Out for Smart Part Recommendations
+
+**What's New**  
+The setting to control smart part recommendations for a service task has been clarified. The field is now explicitly labeled "Opt out of smart part recommendations" and is only shown when creating or editing a service task, not in the main list view.
+
+**Pre-requisites**
+- Requires the `EAM` feature flag.
+- Requires Admin access.
+
+<Accordion title="See More">
+
+#### Where You'll See It
+- *EAM > Settings > Service Tasks > [New/Edit Service Task]*: The checkbox is now labeled **Opt out of smart part recommendations** with the hint text, "If yes, parts added to this task won't be suggested next time."
+- *EAM > Settings > Service Tasks*: The column for this setting has been removed from the list view to reduce clutter.
+
+#### What You Can Do
+- Confidently enable or disable part suggestions for specific service tasks.
+- Understand exactly what the setting does without ambiguity.
+
+#### Why This Matters
+The previous label for this setting was unclear. The new label and hint text make it obvious what the setting does, helping users manage part recommendations more effectively.
+</Accordion>
+
+---
+### 🔗 New EAM Integrations Page for Telematics
+
+**What's New**  
+A new "Integrations" page has been added to EAM, allowing you to connect with external telematics providers. Meter entries created from these integrations will now clearly show the integration as their source.
+
+**Pre-requisites**
+- Requires the `eamIntegrations` feature flag.
+- Requires Admin access.
+
+<Accordion title="See More">
+
+#### Where You'll See It
+- *EAM > Settings > Integrations*: A new page for managing telematics and other EAM integrations.
+- *EAM > Assets > [Select Asset] > Meter History*: The **Source** column will now display the name of the integration that created the meter entry.
+
+#### What You Can Do
+- View and manage connections to external telematics providers from a central location.
+- Easily trace the origin of meter entries back to the specific integration that provided the data.
+
+#### Why This Matters
+This new page provides a central place to manage telematics integrations, making it easier to synchronize vehicle data like meter readings. Clearly sourcing meter entries improves data traceability and trust.
+</Accordion>
+
+---
+
+</Update>
+
+
 <Update label="Tuesday, November 18, 2025" description="1 Updates">
 
 ### 🔧 "General" Tasks to Bypass Part Recommendations

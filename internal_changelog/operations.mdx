@@ -2,6 +2,41 @@
 title: Operations
 ---
 
+<Update label="Tuesday, November 19, 2025" description="2 Updates">
+
+### 📊 Improved Visibility for Recurring Trip Groups
+
+**What's New**  
+We've enhanced how Recurring Trip Groups are displayed. You can now see the total number of requests associated with a trip group directly in the list view, and tooltips for requests in the *Shift Scheduling* view now show more accurate daily counts.
+
+**Pre-requisites**
+- Requires the `tripGroup` feature flag.
+
+<Accordion title="See More">
+
+#### Where You'll See It
+- *Rides > Recurring Trips > [Select a recurring trip] > Recurring Trip Groups tab*: A new **Recurring Requests** column now shows the total count of requests in each group.
+- *Launch > Shift Scheduling*: When you hover over a request that is part of a recurring trip, the tooltip now shows a daily request count and only displays the relevant trip group (e.g., inbound or outbound) instead of both.
+
+#### What You Can Do
+- Quickly assess the size of a trip group by viewing the request count in the table.
+- Get more accurate, direction-specific information about a request's trip group from the Shift Scheduling view.
+
+#### Why This Matters
+Previously, it was difficult to quickly see how many requests were part of a trip group or to distinguish between inbound/outbound groups for a single request. This update provides clear, at-a-glance request counts and more precise tooltip information, making it easier for dispatchers and planners to manage recurring trips.
+</Accordion>
+
+---
+### 🐛 Bug Fixes
+
+- **Live Requests Date Filtering (BUG-1043)**
+  - _Resolution_: Fixed an "Internal Server Error" that occurred on the *Rides > Live Requests* page when filtering for a date entirely in the future. The page now correctly handles future date ranges without errors.
+
+---
+
+</Update>
+
+
 <Update label="Monday, November 17, 2025" description="1 Updates">
 
 ### 🐛 Bug Fixes
