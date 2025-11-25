@@ -2,6 +2,58 @@
 title: Admin
 ---
 
+<Update label="Tuesday, November 18, 2025" description="2 Updates">
+
+### 🔧 Configurable Read-Only External Rider IDs
+
+**What's New**  
+A new feature is available to make the `External Rider ID` field on a rider's profile read-only. This is designed for organizations where this ID is managed by an external system and should not be editable by agents in Spare Admin.
+
+**Pre-requisites**
+- Requires `ReadOnlyExternalRiderIds` feature flag
+- Requires Admin access
+
+<Accordion title="See More">
+
+#### Where You'll See It
+- *People > Riders > [Select a Rider]* (the `External Rider ID` field in the rider's profile details).
+
+#### What You Can Do
+- When this feature is enabled for your organization, the `External Rider ID` field will be visible but not editable, preventing accidental changes by staff.
+
+#### Why This Matters
+This ensures data integrity for rider IDs that are synced from an external source of truth, preventing discrepancies between systems.
+</Accordion>
+
+---
+### ⚙️ Just-in-Time (JIT) Access for Spare Employees (Super Admins)
+
+**What's New**  
+A new system has been implemented for Spare employees (Super Admins) to request temporary, time-bound access to customer organizations. This provides a formal, auditable workflow for granting access for support and configuration purposes. (Note: The user interface for this feature will be released separately).
+
+**Pre-requisites**
+- Requires Super admin permissions
+- No feature flags required
+
+<Accordion title="See More">
+
+#### Where You'll See It
+- This is primarily a backend system that governs Super Admin access. The effects will be visible in audit logs and future administrative UIs.
+
+#### What You Can Do
+- Spare employees can request access to an organization for a specific duration and with a clear justification.
+- Access is automatically revoked when the approved time expires.
+- All requests and approvals are logged for a complete audit trail.
+
+#### Why This Matters
+This system enhances security and accountability by replacing persistent access with a "least privilege" model. It ensures that access to customer data is granted only when necessary, for a limited time, and with full transparency.
+</Accordion>
+
+---
+
+</Update>
+
+
 <Update label="Monday, November 17, 2025" description="1 Updates">
 
 ### 🔍 Search and Navigate Workflows More Easily

@@ -2,6 +2,175 @@
 title: Analytics
 ---
 
+<Update label="Tuesday, November 18, 2025" description="8 Updates">
+
+### 📊 Stacked Bar Charts Re-enabled
+
+**What's New**  
+Stacked bar charts are now available again in Analytics. When you add a second dimension to a bar chart, the bars will be stacked by default, making it easier to compare sub-groups within a larger category.
+
+**Pre-requisites**
+- Requires `AnalyticsV2` feature flag
+- Requires Admin access
+
+<Accordion title="See More">
+
+#### Where You'll See It
+- *Analytics > Query Builder* (when selecting "Bar Chart" as the chart type and adding a second dimension to your query).
+
+#### What You Can Do
+- Create reports with stacked bar charts to visualize parts of a whole. For example, you can now build a chart that shows the total number of requests per day, with each bar segmented by `Booking Channel` to see the breakdown of web, app, and phone bookings.
+
+#### Why This Matters
+Previously, this useful visualization was temporarily disabled. Re-enabling it provides a key tool for comparing the composition of different categories in your data, all within a single, easy-to-read chart.
+</Accordion>
+
+---
+### 🔍 Redesigned Report Builder Side Panel
+
+**What's New**  
+The Query Builder side panel has been redesigned for a more intuitive experience. It now features two distinct sections—"Selected Members" and "Available Members"—eliminating the confusing "Used Only" toggle and fixing an issue where the panel would jump when expanding time dimensions.
+
+**Pre-requisites**
+- Requires `AnalyticsV2` feature flag
+- Requires Admin access
+
+<Accordion title="See More">
+
+#### Where You'll See It
+- *Analytics > Query Builder* (the left-hand side panel for selecting dimensions and measures).
+
+#### What You Can Do
+- View your selected metrics in the "Selected Members" card at the top and browse all possible metrics in the "Available Members" card below.
+- Expand time dimensions (e.g., "Request Created At") without the page scrolling unexpectedly.
+- Use the "Show all {cube} metrics" button within the "Selected Members" card to quickly find and add new items from the same data source.
+
+#### Why This Matters
+The previous design was confusing and had frustrating scroll behavior. This redesign provides a clearer, more stable interface for building reports, making it easier to find and manage the data you need for your analysis.
+</Accordion>
+
+---
+### ⏱️ Improved Date and Time Formatting in Tables
+
+**What's New**  
+Date and time values in Analytics tables are now displayed in a cleaner, more human-readable format. Instead of showing full timestamps with milliseconds, the format now intelligently adapts to the granularity of the data (e.g., `YYYY-MM-DD` for day, `YYYY-MM-DD HH:mm` for minute).
+
+**Pre-requisites**
+- Requires `AnalyticsV2` feature flag
+- Requires Admin access
+
+<Accordion title="See More">
+
+#### Where You'll See It
+- *Analytics > Report View* (in any report displayed as a Table chart).
+
+#### What You Can Do
+- View dates and times in a consistent, easy-to-read format that omits unnecessary detail like seconds and milliseconds. For example, a timestamp that previously appeared as `2025-11-18T14:30:15.123Z` will now simply show as `2025-11-18 14:30`.
+
+#### Why This Matters
+Previously, timestamps in tables were cluttered with excessive detail, making them hard to read. This change makes tables much easier to scan and understand, improving the overall readability of your reports.
+</Accordion>
+
+---
+### 🔗 Automatic URL Linking in Report Tables
+
+**What's New**  
+Any data in an Analytics table cell that is a full URL (starting with `http://` or `https://`) will now automatically be converted into a clickable link.
+
+**Pre-requisites**
+- Requires `AnalyticsV2` feature flag
+- Requires Admin access
+
+<Accordion title="See More">
+
+#### Where You'll See It
+- *Analytics > Report View* (in any report displayed as a Table chart).
+
+#### What You Can Do
+- If your report includes data with URLs (e.g., links to external records or resources in a note field), you can now click them directly from the table to open them in a new tab.
+
+#### Why This Matters
+Previously, URLs in tables were just plain text, requiring you to copy and paste them into your browser. This enhancement saves time and makes it easier to access linked resources directly from your reports.
+</Accordion>
+
+---
+### 📅 Smarter Default Time Dimensions for Reports
+
+**What's New**  
+When creating a new report, Analytics now selects a more relevant default time dimension based on the data source (cube) you are using. For example, reports based on the `Requests` cube will now default to `Request Scheduled At (Time)` instead of `Request Created At (Time)`.
+
+**Pre-requisites**
+- Requires `AnalyticsV2` feature flag
+- Requires Admin access
+
+<Accordion title="See More">
+
+#### Where You'll See It
+- *Analytics > Query Builder* (when a new report is started and a data source is selected, the time dimension field will be pre-populated).
+
+#### What You Can Do
+- The system now pre-selects a more logical time dimension, such as `Pickup (Time)` for trip-related reports, providing a better starting point for your analysis. You can still change it to any other time dimension.
+
+#### Why This Matters
+The previous default (`created_at`) was often not the most useful time dimension for analysis. This change provides a more intelligent default, reducing the need for manual changes and aligning the initial report more closely with common analytical questions.
+</Accordion>
+
+---
+### 📊 NTD Report Filtering by Fleet Product
+
+**What's New**  
+The NTD (National Transit Database) Report data source now includes a `Fleet Product` dimension. This allows you to filter your NTD reports to include or exclude data from specific Open Fleet products.
+
+**Pre-requisites**
+- Requires `AnalyticsV2` feature flag
+- Requires Admin access
+
+<Accordion title="See More">
+
+#### Where You'll See It
+- *Analytics > Query Builder* (when using the `NTD Report` cube, a new `Fleet Product` dimension is available in the "Available Members" panel).
+
+#### What You Can Do
+- Add a filter for the `Fleet Product` dimension in your NTD report queries to analyze data from specific TNCs or other open fleet providers.
+
+#### Why This Matters
+This gives you more granular control over NTD reporting, ensuring you can accurately report on different segments of your service, especially when working with multiple external fleet partners.
+</Accordion>
+
+---
+### 💬 New Duty Conversation & Message Analytics
+
+**What's New**  
+Two new data sources (cubes) are now available in Analytics for analyzing driver-dispatcher communications: `Duty Conversations` and `Duty Conversation Messages`.
+
+**Pre-requisites**
+- Requires `AnalyticsV2` feature flag
+- Requires Admin access
+
+<Accordion title="See More">
+
+#### Where You'll See It
+- *Analytics > Query Builder* (new `Duty Conversations` and `Duty Conversation Messages` cubes are available in the data source selector).
+
+#### What You Can Do
+- Use the `Duty Conversations` cube to report on high-level conversation metrics, such as the total number of conversations.
+- Use the `Duty Conversation Messages` cube to analyze individual messages, including their content, author, timestamps, and average response times.
+
+#### Why This Matters
+These new cubes provide deep visibility into operational communications, allowing you to monitor conversation volume, analyze dispatcher and driver response times, and identify trends in communication patterns.
+</Accordion>
+
+---
+### 🐛 Bug Fixes
+
+- **Dashboard Tooltip Visibility in View Mode (BUS-4480)**
+  - _Resolution_: Fixed an issue where a tooltip, which indicates if a report on a dashboard is not affected by the dashboard's date filter, was only visible in edit mode. This tooltip is now correctly displayed in view mode as well, ensuring all users are aware of the report's filtering behavior.
+
+---
+
+</Update>
+
+
 <Update label="Monday, November 17, 2025" description="1 Updates">
 
 ### 📊 Download Complete Reports with No Row Limits
