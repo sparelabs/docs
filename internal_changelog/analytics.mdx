@@ -2,6 +2,48 @@
 title: Analytics
 ---
 
+<Update label="Friday, November 21, 2025" description="2 Updates">
+
+### 🏷️ Human-Readable Column Names in SQL Editor
+
+**What's New**  
+Column names in the Analytics SQL Editor are now automatically formatted for better readability in charts and tables. Technical suffixes like `_dim` are removed, and `snake_case` or `camelCase` names are converted to 'Title Case'.
+
+**Pre-requisites**
+- Requires `AnalyticsV2` feature flag.
+
+<Accordion title="See More">
+
+#### Where You'll See It
+- *Analytics > SQL Editor* (when viewing query results as a chart or table).
+
+#### What You Can Do
+- Write SQL queries using technical column names (e.g., `request_status_dim`). The final report will display a user-friendly name (e.g., 'Request Status') in the legend and table headers.
+- This works for columns with `_dim` or `_dimension` suffixes, as well as `camelCase` and `snake_case` names.
+
+#### Why This Matters
+Previously, technical column names required for certain queries would appear directly in reports, which could confuse users. This change automatically formats the display names, improving report clarity without requiring manual `AS` aliases in the SQL query.
+</Accordion>
+
+---
+### 🐛 Bug Fixes
+
+- **Table Pivot for Measures (BUS-4424)**
+  - _Resolution_: Fixed an issue in Analytics reports where the table view would show blank cells when 'Measures' were pivoted on the Y-axis. The table now automatically reorganizes the pivot to ensure all data is displayed correctly.
+- **Pie Chart Scaling (BUS-4501)**
+  - _Resolution_: Corrected a display bug where pie charts in dashboards and reports would not resize properly within their containers, sometimes causing them to appear cut off or overflow.
+- **Location Custom Fields on Maps (BUS-4504)**
+  - _Resolution_: Resolved an issue preventing location-based custom fields from being correctly displayed on map visualizations. The Query Builder also now shows a map-marker icon for these geographic dimensions.
+- **Day of Week Display (BUS-4551)**
+  - _Resolution_: The 'Day of Week' dimension in reports now shows full day names (e.g., 'Monday') instead of numeric values (e.g., 0-6).
+- **Query Builder Labeling (No Ticket ID)**
+  - _Resolution_: Updated labels in the Query Builder from 'Available/Selected Members' to 'Available/Selected Metrics' to more accurately describe their function.
+
+---
+
+</Update>
+
+
 <Update label="Thursday, November 20, 2025" description="5 Updates">
 
 ### 💡 Clearer Tooltips for Date Filter Overrides
