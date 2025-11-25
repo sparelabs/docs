@@ -11,35 +11,15 @@
   "navigation": {
     "tabs": [
       {
-        "tab": "Internal Changelog",
+        "tab": "Overview",
         "pages": [
-          "internal_changelog"
+          "welcome"
         ]
       },
       {
-        "tab": "Feature Flag Glossary",
-        "groups": [
-          {
-            "group": "Feature Flags",
-            "pages": [
-              "spare-ai-platform",
-              "spare-eligibility-platform",
-              "spare-enterprise",
-              "spare-ivr",
-              "spare-one",
-              "spare-open-fleets",
-              "spare-resolve-platform",
-              "spare-standard-admins-and-service-planners",
-              "spare-standard-dispatch-and-booking-agents",
-              "spare-standard-driver-experience",
-              "spare-standard-rider-experience",
-              "spare-other",
-              "do-not-enable-built-for-demo",
-              "do-not-enable-customer-specific-configuration",
-              "do-not-enable-in-development",
-              "to-be-removed-soon"
-            ]
-          }
+        "tab": "Internal Changelog",
+        "pages": [
+          "internal_changelog"
         ]
       }
     ],
