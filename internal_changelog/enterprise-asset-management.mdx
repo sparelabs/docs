@@ -1,3 +1,81 @@
+<Update label="24 November 2025" description="4 Updates">
+
+### ⛽ Fuel Level Tracking for Assets
+
+**What's New**  
+You can now track fuel levels for your assets. This includes manually entering the fuel level as a percentage, viewing it in the asset list and detail pages, and filtering assets by a fuel level range. For assets with telematics integrations, the fuel level can also be synced automatically.
+
+**Pre-requisites**
+- No feature flags required. Requires Admin access.
+
+<Accordion title="See More">
+
+#### Where You'll See It
+- *EAM > Assets* (New 'Fuel Level' field in the create/edit asset form for applicable asset types)
+- *EAM > Assets* (New 'Fuel Level (Min)' and 'Fuel Level (Max)' filters in the filter dropdown)
+- *EAM > Assets* (Optional 'Fuel Level' column in the asset table)
+
+#### What You Can Do
+- Manually enter a fuel level (0-100%) when creating or editing an asset.
+- Add the 'Fuel Level' column to the asset list to see current levels at a glance.
+- Filter your asset list to find vehicles within a specific fuel level range (e.g., show all vehicles with less than 25% fuel).
+
+#### Why This Matters
+Previously, there was no way to track fuel levels within Spare, making it difficult to monitor fuel consumption or plan for refueling. This feature provides a centralized way to manage and report on asset fuel levels, either through manual entry or automated telematics data syncs.
+</Accordion>
+
+---
+### 🗓️ Clearer Messaging for Future Out-of-Service Dates
+
+**What's New**  
+The information banner on an asset's lifecycle page now displays more accurate wording based on the out-of-service date. It will now use future tense for dates that have not yet passed.
+
+**Pre-requisites**
+- No feature flags required. Requires Admin access.
+
+<Accordion title="See More">
+
+#### Where You'll See It
+- *EAM > Assets > [Select an Asset] > Lifecycle tab* (informational banner at the top of the view).
+
+#### What You Can Do
+- When you set an out-of-service date for an asset in the future, the banner will clearly state, "This asset **will be** taken out of service on [date]". Previously, it incorrectly used the past tense ("has been"), which could cause confusion.
+
+#### Why This Matters
+The previous wording was confusing for assets scheduled to be taken out of service in the future. This change clarifies the asset's status, ensuring operators have an accurate understanding of its service timeline.
+</Accordion>
+
+---
+### 🔢 Smarter Inventory Adjustments
+
+**What's New**  
+To help prevent accidental zeroing-out of inventory, the "Actual Quantity" field in the Adjust Inventory form now defaults to the part's current quantity.
+
+**Pre-requisites**
+- No feature flags required. Requires Admin access.
+
+<Accordion title="See More">
+
+#### Where You'll See It
+- *EAM > Parts > [Select a Part] > Inventory tab > Adjust Inventory button* (the 'Actual Quantity' field in the drawer).
+
+#### What You Can Do
+- When you open the "Adjust Inventory" drawer, the "Actual Quantity" will be pre-filled with the current stock level. Previously, this field defaulted to 0, increasing the risk of mistakenly setting a part's inventory to zero.
+
+#### Why This Matters
+Requiring manual entry of the current quantity for minor adjustments was error-prone. This change streamlines the stock-taking process and reduces the likelihood of data entry mistakes.
+</Accordion>
+
+---
+### 🐛 Bug Fixes
+
+- **Asset Resale Value Accepts Zero (EAM-585)**
+  - _Resolution_: Corrected a validation issue that prevented users from setting the "Estimated Lifecycle Resale Value" of an asset to zero. The field now correctly accepts `$0.00`, and validation error messages for related cost fields now appear under the correct input.
+
+---
+
+</Update>
+
 ---
 title: Enterprise Asset Management
 rss: true

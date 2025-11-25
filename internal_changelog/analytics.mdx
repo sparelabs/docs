@@ -2,6 +2,18 @@
 title: Analytics
 ---
 
+<Update label="24 November 2025" description="1 Updates">
+
+### 🐛 Bug Fixes
+
+- **Analytics SQL Editor Timezone Handling (BUS-4487)**
+  - _Resolution_: Fixed a bug in the SQL Editor where queries containing aggregations (like `SUM()` or `COUNT()`) could ignore the organization's timezone and return results in UTC. All date and time functions within SQL queries will now correctly respect the selected timezone.
+
+---
+
+</Update>
+
+
 <Update label="22 November 2025" description="1 Updates">
 
 ### 🐛 Bug Fixes
