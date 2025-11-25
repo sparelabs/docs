@@ -1,6 +1,16 @@
 ---
 title: Analytics
 ---
+<Update label="24 November 2025" description="1 Updates">
+
+### 🐛 Bug Fixes
+
+- **SQL Editor Timezone Handling for Aggregated Queries (BUS-4487)**
+  - _Resolution_: Fixed a bug in the *Analytics > SQL Editor* where queries using aggregate functions (like `SUM()` or `COUNT()`) on date fields did not correctly apply the organization's timezone, which could cause data to be grouped into the wrong day. All date functions in SQL queries now correctly respect the selected timezone.
+
+---
+
+</Update>
 
 <Update label="22 November 2025" description="1 Updates">
 
