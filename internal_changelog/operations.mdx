@@ -2,6 +2,60 @@
 title: Operations
 ---
 
+<Update label="Thursday, November 20, 2025" description="3 Updates">
+
+### 🔍 Filter by Multiple Cancellation Reasons in Workflows
+
+**What's New**  
+The Workflows module can now filter requests by multiple cancellation reasons at once. This allows for more complex and precise automation based on why a trip was cancelled.
+
+**Pre-requisites**
+- No feature flags required
+
+<Accordion title="See More">
+
+#### Where You'll See It
+- *Workflows > (when configuring a trigger or action that uses the 'Get Requests' step)*
+
+#### What You Can Do
+- Use a pipe-separated list (e.g., `noShow|lateDriver|other`) in the `requestCancellationReason` query parameter within a workflow step to fetch requests that match any of the specified reasons.
+
+#### Why This Matters
+Previously, workflows could only filter by a single cancellation reason, limiting automation possibilities. This change enables the creation of more sophisticated workflows that can handle different cancellation scenarios in a single rule.
+</Accordion>
+
+---
+### ⏱️ More Accurate Estimates for Third-Party Fleets During Rematch
+
+**What's New**  
+The system now distinguishes between real-time and "idealized" trip estimates from third-party fleets. When using the override modal to rematch a trip, only estimates based on actual fleet availability are shown, preventing bookings with fleets that may not have a vehicle available.
+
+**Pre-requisites**
+- No feature flags required
+
+<Accordion title="See More">
+
+#### Where You'll See It
+- *Rides > Live Requests > (select any request) > 'Rematch' button > Overrides modal*
+
+#### What You Can Do
+- When you use the rematch override modal, the list of available services will now exclude third-party fleets that provide only idealized estimates (estimates not based on real-time vehicle availability). Regular booking is unaffected.
+
+#### Why This Matters
+This prevents dispatchers from attempting to book a trip with a third-party fleet that appears available but has no real vehicles to serve the trip, reducing failed bookings and improving the reliability of the rematch tool.
+</Accordion>
+
+---
+### 🐛 Bug Fixes
+
+- **Improved Screen Reader Accessibility for Maps (MOT-2352)**
+  - _Resolution_: All interactive maps and their controls (e.g., zoom buttons, vehicle markers, route lines) are now hidden from screen readers. This provides a cleaner, more navigable experience for users of assistive technologies by focusing on data tables and lists rather than non-navigable visual map elements.
+
+---
+
+</Update>
+
+
 <Update label="Tuesday, November 19, 2025" description="2 Updates">
 
 ### 📊 Improved Visibility for Recurring Trip Groups

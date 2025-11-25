@@ -2,6 +2,104 @@
 title: Analytics
 ---
 
+<Update label="Thursday, November 20, 2025" description="5 Updates">
+
+### 💡 Clearer Tooltips for Date Filter Overrides
+
+**What's New**  
+Tooltips on analytics reports now provide clearer information about how the date filter is being applied. The icon has been updated to a filter, and the messages specify if a report is ignoring the date filter or using a custom range.
+
+**Pre-requisites**
+- Requires `AnalyticsV2` feature flag
+
+<Accordion title="See More">
+
+#### Where You'll See It
+- *Analytics > Report View* and *Analytics > Dashboard View* (on the tooltip icon next to a report's title)
+
+#### What You Can Do
+- Hover over the new filter icon on a report to see its date filtering behavior. The tooltip will now explicitly state:
+    - "Date filter is being ignored (showing all-time data)" if the override is active.
+    - "Date filter is using a custom range: [start] to [end]" if a custom range is set for that report.
+
+#### Why This Matters
+Previously, it was difficult to know if a report on a dashboard was using the dashboard's main date filter or its own override. These enhanced tooltips provide immediate clarity, preventing misinterpretation of report data.
+</Accordion>
+
+---
+### 🚚 New 'Dispatch Status' Dimension in Ridership Report
+
+**What's New**  
+The Ridership Report data cube now includes a `Dispatch Status` dimension. This allows you to build reports that show the state of requests before they are assigned to a vehicle, such as 'Awaiting Dispatch' or 'Offered to Fleet'.
+
+**Pre-requisites**
+- Requires `AnalyticsV2` feature flag
+
+<Accordion title="See More">
+
+#### Where You'll See It
+- *Analytics > Query Builder* (when using the `Ridership Report` cube)
+
+#### What You Can Do
+- Drag the new `Dispatch Status` dimension into your reports to analyze how many requests are in various pre-dispatch states.
+
+#### Why This Matters
+This provides deeper insight into the operational dispatching funnel, helping identify bottlenecks or delays that occur before a trip is scheduled onto a vehicle.
+</Accordion>
+
+---
+### 📈 New Estimate Fields Added to Request Data Cube
+
+**What's New**  
+The `Request` data cube in Analytics has been enriched with several fields from the original trip estimate. This includes the interface used to create the estimate (e.g., Admin, Rider App) and the type of search performed.
+
+**Pre-requisites**
+- Requires `AnalyticsV2` feature flag
+
+<Accordion title="See More">
+
+#### Where You'll See It
+- *Analytics > Query Builder* (when using the `Request` cube)
+
+#### What You Can Do
+- Add new dimensions like `Estimate Created Interface` and `Estimate Intent Type` to your request-based reports to analyze booking patterns and user behavior.
+
+#### Why This Matters
+Previously, analyzing how trips were being estimated and booked required joining multiple data sources. Embedding these fields directly into the Request cube simplifies report building and enables more detailed analysis of booking channel performance.
+</Accordion>
+
+---
+### 🤖 Build Analytics Reports with Scout AI
+
+**What's New**  
+You can now initiate the creation of an analytics report using Scout AI directly from the Analytics V2 interface. A new "Scout" option navigates you to the AI chat with a pre-populated prompt to get you started.
+
+**Pre-requisites**
+- Requires the AI Product to be enabled or Super admin permissions
+
+<Accordion title="See More">
+
+#### Where You'll See It
+- *Analytics > Reports* (in the floating "Add Report" action button menu)
+
+#### What You Can Do
+- Click the "Add Report" button and select the new "Scout" option (sparkles icon). You will be taken to the Scout AI chat with the message "Create me an analytics chart that " already typed, allowing you to simply complete the sentence with your request.
+
+#### Why This Matters
+This integration makes it easier and faster to leverage AI for data analysis. Instead of navigating to Scout separately, you can start the report-building process directly from your analytics workflow, streamlining the path from question to insight.
+</Accordion>
+
+---
+### 🐛 Bug Fixes
+
+- **Prevents Duplicate Report Names (BUS-4567)**
+  - _Resolution_: When renaming an analytics report, the system now checks if the new name is already in use. If it is, a clear error message is displayed, preventing the creation of duplicate report names and avoiding system errors.
+
+---
+
+</Update>
+
+
 <Update label="Tuesday, November 19, 2025" description="1 Updates">
 
 ### 📅 Per-Report Date Filter Overrides on Dashboards
