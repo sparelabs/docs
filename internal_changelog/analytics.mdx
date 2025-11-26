@@ -3,6 +3,44 @@ title: Analytics
 ---
 <Update label="25 November 2025" description="2 Updates">
 
+### 🧹 Cleaner Reports with Automatic Archival Filtering
+
+**What's New**  
+The Report Builder now automatically filters out archived or inactive records (like cases, riders, and assets) when you create a new report, ensuring your data is clean and relevant by default.
+
+**Pre-requisites**
+- Requires `AnalyticsV2` feature flag
+- Requires Admin access
+
+<Accordion title="See More">
+
+#### Where You'll See It
+- *Analytics > Report Builder* (when creating a new report)
+
+#### What You Can Do
+- When you add data cubes (e.g., `Case Data`, `Riders`, `Assets`) to a new report, a filter is automatically added to the query to exclude archived or inactive entries.
+- Examples of automatic filters include `case_data.is_archived = false` or `organization_rider.status = active`.
+- You can manually remove the automatically-added filter from the query builder if you need to report on archived data.
+- This change does not affect any of your existing saved reports.
+
+#### Why This Matters
+Previously, reports included old, archived data by default, requiring users to manually add filters to every new report. This automation saves time and reduces the chance of errors by providing more accurate insights from the start.
+</Accordion>
+
+---
+### 🐛 Bug Fixes
+
+- **SQL Report Failures (No Linear ID)**
+  - _Resolution_: Reverted a recent change to timezone handling in the analytics backend that was causing some SQL-based reports to fail. These reports should now run correctly.
+- **Report Builder Naming Correction (BUS-4555)**
+  - _Resolution_: Corrected a minor typo in the *Analytics* section, changing the label "Builder Report" to the correct "Report Builder" in a dropdown menu.
+
+---
+
+</Update>
+
+<Update label="25 November 2025" description="2 Updates">
+
 ### 🧹 Automatically Filter Archived Data in Report Builder
 
 **What's New**  
