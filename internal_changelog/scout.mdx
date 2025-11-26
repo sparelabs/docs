@@ -4,35 +4,6 @@ rss: true
 ---
 <Update label="25 November 2025" description="1 Updates">
 
-### 🛡️ Scout Query Performance Guardrails
-
-**What's New**  
-To improve performance and prevent browser issues, Scout AI analytics queries are now automatically limited to a maximum of 1,000 rows.
-
-**Pre-requisites**
-- Requires `scout` feature flag
-- Requires Admin access
-
-<Accordion title="See More">
-
-#### Where You'll See It
-- *Scout* (AI Assistant interface)
-
-#### What You Can Do
-- When you ask Scout a question that generates a data table (e.g., "show me all trips from yesterday"), the results will be capped at 1,000 rows.
-- If you ask for a specific number of results under 1,000 (e.g., "show me the top 10 longest trips"), your requested limit will be respected.
-- If you ask for a number of results greater than 1,000, the result set will be capped at 1,000.
-
-#### Why This Matters
-Previously, asking for a very large dataset could cause the browser to slow down or even crash while trying to render thousands of rows. This limit ensures Scout remains fast and responsive, even when working with large amounts of data.
-</Accordion>
-
----
-
-</Update>
-
-<Update label="25 November 2025" description="1 Updates">
-
 ### 🛡️ Improved Stability for Scout Analytics Queries
 
 **What's New**  

@@ -4,44 +4,6 @@ rss: true
 ---
 <Update label="25 November 2025" description="2 Updates">
 
-### 📊 Enhanced Meter Entry Readability
-
-**What's New**  
-Meter entries are now easier to read and analyze, with values automatically sorted from highest to lowest and formatted with commas and measurement units.
-
-**Pre-requisites**
-- Requires `eam` feature flag
-- Requires Admin access
-
-<Accordion title="See More">
-
-#### Where You'll See It
-- *Enterprise Asset Management > Assets > (Select an Asset) > Meter Entries tab*
-
-#### What You Can Do
-- **View Sorted Entries**: The table now sorts entries by the "Value" column in descending order by default, showing the most recent or highest readings first.
-- **Read Formatted Values**: Numeric values in the table are now formatted for readability. For example, a value of `10000` will now appear as `10,000 mi` or `10,000 km`, depending on your organization's settings.
-
-#### Why This Matters
-Previously, meter entries were sorted with the oldest, lowest values at the top, requiring users to scroll or re-sort to see the most relevant data. This change makes it quicker to view the latest meter readings and improves readability with better number formatting.
-</Accordion>
-
----
-### 🐛 Bug Fixes
-
-- **Work Orders Default Filter (EAM-489)**
-  - _Resolution_: Fixed an issue on the *EAM > Work Orders* page where the list would appear to be filtered by "Assigned to Me" on initial load but would actually show all work orders. The page now correctly defaults to and applies the "Assigned to Me" filter.
-- **EAM Payment Terminal Authentication (EAM-642)**
-  - _Resolution_: Adjusted a security policy that was preventing some payment terminal authentication pop-ups from working correctly within the EAM module.
-- **EAM Issues Table Sorting (EAM-510)**
-  - _Resolution_: Fixed a bug on the *EAM > Issues* page where clicking the column headers for "Asset" or "Number" did not sort the table. Sorting for these columns now works as expected.
-
----
-
-</Update>
-
-<Update label="25 November 2025" description="2 Updates">
-
 ### 📊 Improved Meter Entry Display and Sorting
 
 **What's New**  
