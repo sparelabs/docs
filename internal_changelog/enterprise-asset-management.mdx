@@ -2,6 +2,46 @@
 title: Enterprise Asset Management
 rss: true
 ---
+<Update label="25 November 2025" description="2 Updates">
+
+### 🔢 Improved Meter Entry Sorting and Formatting
+
+**What's New**  
+On an asset's detail page, meter entries are now sorted with the highest (most recent) value at the top by default. Additionally, numeric values are formatted with thousand separators and the organization's distance unit (e.g., "120,000 mi") for better readability.
+
+**Pre-requisites**
+- Requires `EAM` feature flag
+- Requires Admin access
+
+<Accordion title="See More">
+
+#### Where You'll See It
+- *Enterprise Asset Management > Assets > (Select an Asset) > Meter Entries tab*
+
+#### What You Can Do
+- View the most recent meter reading at the top of the list without needing to sort the table.
+- Read large meter values more easily thanks to improved number formatting.
+
+#### Why This Matters
+Previously, meter entries were sorted with the oldest, lowest values first. Displaying the most recent meter reading at the top makes it much faster for maintenance managers to see the current status of an asset.
+</Accordion>
+
+---
+### 🐛 Bug Fixes
+
+- **Work Order Filter Default (EAM-489)**
+  - _Resolution_: Fixed an issue on the *Work Orders* page where the list did not correctly filter to "Assigned to Me" on initial page load, even though the tab was selected.
+
+- **Payment Terminal Authentication (EAM-642)**
+  - _Resolution_: Adjusted a security setting to resolve an issue that was preventing pop-up windows required for payment terminal authentication from opening correctly.
+
+- **Issues Table Sorting (EAM-510)**
+  - _Resolution_: Enabled sorting for the 'Asset' and 'Number' columns on the *Issues* page. Clicking these column headers will now correctly sort the list.
+
+---
+
+</Update>
+
 <Update label="24 November 2025" description="3 Updates">
 
 ### ⛽ Manage and Sync Asset Fuel Levels

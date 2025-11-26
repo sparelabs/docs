@@ -1,6 +1,66 @@
 ---
 title: Analytics
 ---
+<Update label="25 November 2025" description="3 Updates">
+
+### 🧹 Automatically Exclude Archived Data from New Reports
+
+**What's New**  
+New reports created in the Report Builder now automatically include filters to exclude archived or inactive data, such as archived cases, inactive riders, or retired assets. This change ensures that new reports focus on current, relevant data by default.
+
+**Pre-requisites**
+- Requires `AnalyticsV2` feature flag
+- Requires Admin access
+
+<Accordion title="See More">
+
+#### Where You'll See It
+- *Analytics > Report Builder* (the 'Filters' section when creating a new report)
+
+#### What You Can Do
+- When you add data cubes related to cases, riders, or assets, a default filter is automatically applied (e.g., `Case Data Is Archived is false`).
+- You can remove the automatically-added filter if you need to report on archived data. The system will not re-apply a filter you have manually removed.
+
+#### Why This Matters
+Including archived data by default can clutter reports and lead to inaccurate conclusions about current operations. This change provides cleaner, more relevant data out-of-the-box while retaining the flexibility to include archived information when needed.
+</Accordion>
+
+---
+### ⏱️ New 'Duty Start Time' Dimension for Ridership Reports
+
+**What's New**  
+The Ridership Report data model now includes a `Duty Start Requested Time` dimension. This allows you to build reports that group, filter, and analyze requests based on the start date of the duty they were assigned to, rather than just the request's own timing.
+
+**Pre-requisites**
+- Requires `AnalyticsV2` feature flag
+- Requires Admin access
+
+<Accordion title="See More">
+
+#### Where You'll See It
+- *Analytics > Report Builder* (available in the dimension selector when building a report using `ridership_report` data)
+
+#### What You Can Do
+- Create reports that group requests by the day their assigned duty began.
+- For example, you can now build a report showing all trips completed by drivers whose shifts started last Monday.
+
+#### Why This Matters
+This provides a new way to analyze operational data, making it easier to correlate request volumes and performance metrics with daily duty schedules and driver shifts.
+</Accordion>
+
+---
+### 🐛 Bug Fixes
+
+- **SQL Report Data Correction**
+  - _Resolution_: Reverted a recent system change that was causing some SQL-based reports to fail or show incorrect data.
+
+- **Report Builder UI Text Correction (BUS-4555)**
+  - _Resolution_: Corrected a minor typo in the *Analytics* section, changing "Builder Report" to "Report Builder" in a dropdown menu for consistency.
+
+---
+
+</Update>
+
 <Update label="24 November 2025" description="1 Updates">
 
 ### 🐛 Bug Fixes
