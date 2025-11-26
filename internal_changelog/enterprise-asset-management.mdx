@@ -2,6 +2,46 @@
 title: Enterprise Asset Management
 rss: true
 ---
+<Update label="25 November 2025" description="2 Updates">
+
+### 📊 Improved Meter Entry Display and Sorting
+
+**What's New**  
+The Meter Entries table for an asset now sorts entries by the highest value first by default. Additionally, numeric values are now formatted with thousand-separators and unit labels (e.g., "10,000 km") for better readability.
+
+**Pre-requisites**
+- Requires `EAM` feature flag.
+- Requires Admin access.
+
+<Accordion title="See More">
+
+#### Where You'll See It
+- *Enterprise Asset Management > Assets > (select an asset) > Meter Entries tab*.
+
+#### What You Can Do
+- When viewing the meter entries for an asset, the list will now be sorted with the most recent or highest reading at the top.
+- Large numbers are now formatted with commas (or periods, depending on locale) and the organization's configured unit of distance, making them easier to read at a glance.
+
+#### Why This Matters
+Previously, meter entries were sorted with the lowest values first, requiring users to scroll or re-sort to see the most recent readings. This change makes it quicker to find the latest meter data and improves the clarity of the values.
+</Accordion>
+
+---
+### 🐛 Bug Fixes
+
+- **Work Order Default Filter (EAM-489)**
+  * _Resolution_: The Work Orders page now correctly defaults to the "Assigned to Me" filter on initial load, ensuring the displayed list of work orders matches the selected summary tab.
+
+- **Issues Table Sorting (EAM-510)**
+  * _Resolution_: Enabled sorting for the "Asset" and "Number" columns on the *Enterprise Asset Management > Issues* page. Clicking these column headers will now correctly sort the table.
+
+- **Payment Terminal Authentication (EAM-642)**
+  * _Resolution_: Fixed an issue where a strict security policy was preventing payment terminal authentication pop-ups from opening correctly.
+
+---
+
+</Update>
+
 <Update label="24 November 2025" description="3 Updates">
 
 ### ⛽ Manage and Sync Asset Fuel Levels
