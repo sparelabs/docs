@@ -2,6 +2,37 @@
 title: Operations
 rss: true
 ---
+<Update label="25 November 2025" description="1 Updates">
+
+### 📅 View Recurring Trip Group Details from Duty Schedule
+
+**What's New**  
+When viewing the *Shift Scheduling* page, you can now click on a "Recurring Trip Groups" entry to open a modal window. This new view provides detailed information about all trips within that group, including which riders are on the current duty and which are assigned to other duties.
+
+**Pre-requisites**
+- Requires `recurringTrip`, `tripGroup`, and `dutySchedulePlusPlus` feature flags
+- Requires Admin access
+
+<Accordion title="See More">
+
+#### Where You'll See It
+- *Launch > Shift Scheduling* (the clickable "X Recurring Trip Groups" line item within a duty's schedule)
+
+#### What You Can Do
+- Click the trip group summary line to open a detailed modal.
+- View all associated trip groups, each displayed in its own card.
+- See a list of riders assigned to the current duty for that group.
+- See a list of riders assigned to other duties, with a link to view that specific duty.
+- Navigate directly to the Trip Group details page or an individual rider's request.
+
+#### Why This Matters
+Previously, understanding the full context of a recurring trip group from the schedule was difficult, requiring navigation to multiple pages. This modal provides a quick, consolidated view of all related requests and their assignments, improving visibility and making schedule adjustments easier.
+</Accordion>
+
+---
+
+</Update>
+
 <Update label="24 November 2025" description="1 Updates">
 
 ### 🐛 Bug Fixes
