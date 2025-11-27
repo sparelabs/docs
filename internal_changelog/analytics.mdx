@@ -61,10 +61,10 @@ This new data source unlocks the ability to analyze travel survey responses dire
 
 <Update label="25 November 2025" description="3 Updates">
 
-### 🧹 Automatically Exclude Archived Data from New Reports
+### 🧹 Automatically Exclude Archived Case Data from New Reports
 
 **What's New**  
-New reports created in the Report Builder now automatically include filters to exclude archived or inactive data, such as archived cases, inactive riders, or retired assets. This change ensures that new reports focus on current, relevant data by default.
+New reports created in the Report Builder now automatically include filters to exclude archived cases. This change ensures that new reports focus on current, relevant data by default.
 
 **Pre-requisites**
 - Requires `AnalyticsV2` feature flag
@@ -76,7 +76,7 @@ New reports created in the Report Builder now automatically include filters to e
 - *Analytics > Report Builder* (the 'Filters' section when creating a new report)
 
 #### What You Can Do
-- When you add data cubes related to cases, riders, or assets, a default filter is automatically applied (e.g., `Case Data Is Archived is false`).
+- When you add data cubes related to cases a default filter is automatically applied (e.g., `case_data.is_archived = false`).
 - You can remove the automatically-added filter if you need to report on archived data. The system will not re-apply a filter you have manually removed.
 
 #### Why This Matters
