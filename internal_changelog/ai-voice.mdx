@@ -2,6 +2,34 @@
 title: AI Voice
 rss: true
 ---
+<Update label="26 November 2025" description="1 Updates">
+
+### 👤 Anonymous Access for AI Agents
+
+**What's New**  
+A new "None" authentication type is available for AI Voice and AI Chat agents. This allows conversations to be initiated without requiring the system to identify the user first, enabling support for unauthenticated callers or chat users.
+
+**Pre-requisites**
+- Requires Admin access
+- No feature flags required
+
+<Accordion title="See More">
+
+#### Where You'll See It
+- *AI > Agents > New/Edit Agent* (new "None" option in the "Authentication" dropdown)
+
+#### What You Can Do
+- Configure an agent to not require user authentication by selecting the "None" authentication type.
+- The system will automatically prevent you from assigning capabilities that require an authenticated user (e.g., "Book a trip") to an agent with "None" authentication.
+
+#### Why This Matters
+Previously, all AI agents required the user to be identified through their phone number or another method. This new option provides flexibility for use cases where the user is unknown or does not have a profile, such as providing general information to the public.
+</Accordion>
+
+---
+
+</Update>
+
 <Update label="25 November 2025" description="1 Updates">
 
 ### 🐛 Bug Fixes

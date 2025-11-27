@@ -1,6 +1,64 @@
 ---
 title: Analytics
 ---
+<Update label="26 November 2025" description="3 Updates">
+
+### 📅 Persistent Dashboard Filters
+
+**What's New**  
+Dashboard filters are now preserved when you navigate to a report and then return. When you set a date filter on a dashboard, click into a report, and then use the breadcrumbs or browser's back button to return, your original filter selection will remain active.
+
+**Pre-requisites**
+- Requires `AnalyticsV2` feature flag
+
+<Accordion title="See More">
+
+#### Where You'll See It
+- *Analytics > Dashboards* (global date filter bar)
+
+#### What You Can Do
+- Apply a date filter on any dashboard.
+- Click a chart widget to navigate to the detailed report view.
+- Use the breadcrumb link or the browser's back button to return to the dashboard.
+- Observe that the date filter you originally set is still applied, saving you from re-selecting it.
+
+#### Why This Matters
+Previously, navigating from a dashboard to a report and back would reset any applied filters, forcing you to re-apply them every time. This enhancement saves your filter context, creating a smoother and more efficient analysis workflow.
+</Accordion>
+
+---
+### 📝 New Travel Surveys Data for Reporting
+
+**What's New**  
+A new "Travel Surveys" data source is now available in the Query Builder. This allows you to create custom reports and dashboards to analyze data collected from your organization's travel surveys.
+
+**Pre-requisites**
+- Requires `AnalyticsV2` feature flag
+
+<Accordion title="See More">
+
+#### Where You'll See It
+- *Analytics > Query Builder* (new "Travel Surveys" option in the data source dropdown)
+
+#### What You Can Do
+- Build new reports using dimensions like Survey Date, Mode of Travel, Trip Purpose, and more.
+- Analyze measures such as total distance traveled and trip duration from survey responses.
+- Combine travel survey data with other data sources in your dashboards.
+
+#### Why This Matters
+This new data source unlocks the ability to analyze travel survey responses directly within Spare's analytics tools. You can now visualize travel patterns and behaviors without needing to export data or use external tools.
+</Accordion>
+
+---
+### 🐛 Bug Fixes
+
+- **Improved Analytics Error Messages (BUS-4558)**
+  * _Resolution_: Fixed an issue where queries that exceeded memory limits would show a cryptic error code. Now, a user-friendly message is displayed in reports and dashboards, advising the user to reduce the amount of data by adjusting filters or simplifying the query.
+
+---
+
+</Update>
+
 <Update label="25 November 2025" description="3 Updates">
 
 ### 🧹 Automatically Exclude Archived Data from New Reports
