@@ -2,6 +2,71 @@
 title: Enterprise Asset Management
 rss: true
 ---
+<Update label="26 November 2025" description="3 Updates">
+
+### 🖱️ Open EAM List Items in a New Tab
+
+**What's New**  
+You can now hold `Ctrl` (or `Cmd` on Mac) and click on rows in Enterprise Asset Management (EAM) lists to open the item's detail page in a new browser tab. This brings EAM lists in line with the behavior of other tables across the platform.
+
+**Pre-requisites**
+- Requires Admin access
+- No feature flags required
+
+<Accordion title="See More">
+
+#### Where You'll See It
+- *EAM > Assets* (table rows)
+- *EAM > Issues* (table rows)
+- *EAM > Parts* (table rows)
+- *EAM > Service Reminders* (table rows)
+
+#### What You Can Do
+- Perform a normal click on any row to navigate to the detail page in the current tab.
+- Hold `Ctrl` or `Cmd` and click a row to quickly open that item's detail page in a new tab for easy comparison or multitasking.
+
+#### Why This Matters
+Previously, all clicks on EAM list items would navigate in the same tab, forcing you to lose your place in the list. This update streamlines workflows by allowing you to open multiple items for reference without navigating away from the main list view.
+</Accordion>
+
+---
+### ⛽️ View Asset-Specific Energy Entries
+
+**What's New**  
+A new "Energy Entries" tab is now available on the asset detail page. This tab appears automatically for any asset belonging to an asset type that has been configured to track energy, providing a centralized place to view its energy history.
+
+**Pre-requisites**
+- Requires Admin access
+- No feature flags required
+
+<Accordion title="See More">
+
+#### Where You'll See It
+- *EAM > Assets > (select an asset)* (new "Energy Entries" tab)
+- *EAM > Energy Entries > Add Energy Entry* (form fields)
+
+#### What You Can Do
+- View a filtered list of all energy entries for a specific asset directly from its detail page.
+- Click the "Add Energy Entry" button from the tab, which pre-fills the form with the current asset.
+- Notice that the "Meter Entry" field on the energy entry form now only appears if the selected asset's type is configured for meter readings.
+
+#### Why This Matters
+Tracking energy consumption for a specific vehicle or asset was difficult, requiring you to search and filter the main Energy Entries list. This change provides a dedicated, filtered view on the asset's detail page, making it much easier to monitor an individual asset's energy usage.
+</Accordion>
+
+---
+### 🐛 Bug Fixes
+
+- **Improved Vehicle Asset Creation from Operations (EAM-660)**
+  * _Resolution_: Fixed an issue where creating a vehicle in Operations without filling in all fields could result in an incomplete asset record in EAM. Now, missing required fields (e.g., make, model, license plate, year) are populated with safe default values ('-' or 0) to ensure a complete record is created.
+
+- **Large Meter Entry Warning Restored (EAM-639)**
+  * _Resolution_: Fixed a bug where the warning for creating a meter entry with an unusually large value (e.g., a typo like 150,000 instead of 15,000) was not triggering correctly. The validation logic has been fixed, and the warning now appears as expected.
+
+---
+
+</Update>
+
 <Update label="25 November 2025" description="2 Updates">
 
 ### 🔢 Improved Meter Entry Sorting and Formatting
