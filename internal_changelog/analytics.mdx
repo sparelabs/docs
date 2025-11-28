@@ -1,6 +1,134 @@
 ---
 title: Analytics
 ---
+<Update label="27 November 2025" description="6 Updates">
+
+### 📅 Sortable "Created At" Column for Reports and Dashboards
+
+**What's New**  
+You can now see when reports and dashboards were created and sort by this date to easily find your most recent or oldest assets. This helps improve organization and discoverability within your analytics workspace.
+
+**Pre-requisites**
+- Requires `AnalyticsV2` feature flag
+
+<Accordion title="See More">
+
+#### Where You'll See It
+- *Analytics > Reports* (new "Created At" column in the table)
+- *Analytics > Dashboards* (new "Created At" column in the table)
+
+#### What You Can Do
+- View the creation timestamp for every report and dashboard.
+- Click the "Created At" column header to sort the list in either ascending or descending order, making it easier to manage a large number of assets.
+
+#### Why This Matters
+Previously, it was difficult to know when a report or dashboard was created without opening it. Now, you can quickly sort your lists to find newly created items or clean up old, unused ones directly from the list view.
+</Accordion>
+
+---
+### 🎛️ Improved Dashboard Filter Persistence and Edit Mode
+
+**What's New**  
+The behavior of filters on Analytics dashboards has been updated to be more intuitive, especially when switching between view and edit modes. Filter selections made in view mode are now stored in the URL, allowing you to share or bookmark a specifically filtered view.
+
+**Pre-requisites**
+- Requires `AnalyticsV2` feature flag
+
+<Accordion title="See More">
+
+#### Where You'll See It
+- *Analytics > Dashboards > [Select a Dashboard]* (URL and filter bar behavior)
+
+#### What You Can Do
+- Apply filters (e.g., Date, Service, Fleet) in a dashboard's view mode and see the URL update automatically.
+- Copy and share the URL to send others a pre-filtered view of the dashboard.
+- Enter edit mode, which now uses a draft state for filters, allowing you to make changes without affecting the live view until you click "Save".
+
+#### Why This Matters
+Previously, filter selections could be lost when navigating or sharing a link. This change ensures that your filtered view is preserved in the URL, making collaboration and analysis more seamless. The separation between view and edit modes also prevents accidental changes and provides a more predictable editing experience.
+</Accordion>
+
+---
+### 📈 Unpin Line Chart Y-Axis from Zero
+
+**What's New**  
+You can now configure line charts in the Query Builder to auto-scale the Y-axis based on the data's value range, rather than always pinning it to zero. This is particularly useful for visualizing small but significant fluctuations in datasets with high values.
+
+**Pre-requisites**
+- Requires `AnalyticsV2` feature flag
+
+<Accordion title="See More">
+
+#### Where You'll See It
+- *Analytics > Query Builder* (when a Line Chart visualization is selected)
+
+#### What You Can Do
+- When viewing a line chart, click the new **"Axes"** configuration button in the chart header.
+- In the popover, uncheck the **"Pin Y-axis to zero"** checkbox.
+- The chart's Y-axis will automatically adjust to focus on the range of your data (e.g., showing a range of 10,000-10,100 instead of 0-10,100).
+
+#### Why This Matters
+When analyzing metrics with high baseline values, pinning the axis to zero can make important variations look flat and insignificant. This feature allows you to "zoom in" on the Y-axis to better understand the true volatility and trends within your data.
+</Accordion>
+
+---
+### 📊 New "Request Force Matched" Analytics Cube
+
+**What's New**  
+A new data cube, **"Request Force Matched Event,"** is now available in the Query Builder. This allows you to build reports that track how often, when, and why requests are manually force-matched to duties by dispatchers.
+
+**Pre-requisites**
+- Requires `AnalyticsV2` feature flag
+
+<Accordion title="See More">
+
+#### Where You'll See It
+- *Analytics > Query Builder* (available in the cube selector dropdown)
+
+#### What You Can Do
+- Build reports to count the number of force-matched events over time.
+- Use the `Matched Duty Source` dimension to analyze the difference between user-initiated force matches (e.g., from the Live Map) and system-initiated ones.
+- Correlate force-matching events with specific duties or times of day to identify operational patterns.
+
+#### Why This Matters
+Force-matching is a key operational lever, but analyzing its usage was difficult. This new cube provides direct visibility into force-matching activities, helping you understand dispatcher workload and identify situations where the system's automated matching may need review.
+</Accordion>
+
+---
+### 🆔 "Fleet ID" Dimension Added to Duty Report Cube
+
+**What's New**  
+The "Duty Report" cube now includes a "Fleet ID" dimension, allowing you to filter, segment, and analyze duty-related data by the specific fleet the duty belongs to.
+
+**Pre-requisites**
+- Requires `AnalyticsV2` feature flag
+
+<Accordion title="See More">
+
+#### Where You'll See It
+- *Analytics > Query Builder* (as a new dimension within the "Duty Report" cube)
+
+#### What You Can Do
+- Add "Fleet ID" as a dimension to group metrics like `Total Duties` or `On-Time Performance` by fleet.
+- Use "Fleet ID" in a filter to create reports for a single fleet.
+- Add a dashboard-level Fleet filter that will now correctly apply to any reports built using the "Duty Report" cube.
+
+#### Why This Matters
+This change makes it possible to perform fleet-specific analysis on duty operations. You can now easily compare performance across different fleets or isolate data for a particular operational group directly within your reports and dashboards.
+</Accordion>
+
+---
+### 🐛 Bug Fixes
+
+- **NTD Report Accuracy and Performance (BUS-4553)**
+  - _Resolution_: The NTD report cube has been optimized for better performance and accuracy. It now uses a more reliable data source to determine the Open Fleet product, correcting a potential issue where the wrong product was associated with a request.
+- **Timezone Handling in Date Filters (BUS-4487)**
+  - _Resolution_: Fixed an issue where date filters could return incorrect results due to timezone discrepancies. Queries are now correctly adjusted for the organization's timezone, ensuring consistent filtering for users across different regions.
+
+---
+
+</Update>
+
 <Update label="26 November 2025" description="3 Updates">
 
 ### 📅 Persistent Dashboard Filters
