@@ -2,6 +2,39 @@
 title: Admin
 rss: true
 ---
+<Update label="28 November 2025" description="2 Updates">
+
+### 🔧 Targeted Optimization Service Setting
+
+**What's New**  
+An advanced setting for "Targeted Optimization" is now available in the service configuration interface.
+
+**Pre-requisites**
+- Requires Admin access.
+- No feature flags required (previously required `ShowTargetedOptimization` feature flag).
+
+<Accordion title="See More">
+
+#### Where You'll See It
+- *Settings > Services > [Service Name] > Edit > Other* tab.
+
+#### What You Can Do
+- Access and configure the Targeted Optimization setting directly within the service settings UI.
+
+#### Why This Matters
+This change makes an advanced optimization parameter more accessible by exposing it directly in the service configuration UI, removing the need for behind-the-scenes adjustments.
+</Accordion>
+
+---
+### 🐛 Bug Fixes
+
+- **Service Page Save Functionality**
+  * _Resolution_: Fixed an issue that prevented changes made on the *Settings > Services* page from being saved correctly. An internal configuration field that was causing the save operation to fail has been removed from the form.
+
+---
+
+</Update>
+
 <Update label="27 November 2025" description="2 Updates">
 
 ### ♿ New Accessibility Features for Uber Fleets
