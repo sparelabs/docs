@@ -1,6 +1,56 @@
 ---
 title: Analytics
 ---
+<Update label="28 November 2025" description="2 Updates">
+
+### 🔗 Persistent Dashboard Filters in URL
+
+**What's New**  
+Filters applied to Analytics Dashboards, such as date range, service, or fleet, are now automatically saved in the page's URL. This allows you to bookmark or share a link to a dashboard with your specific filters already applied.
+
+**Pre-requisites**
+- Requires access to the Analytics module.
+
+<Accordion title="See More">
+
+#### Where You'll See It
+- *Analytics > [Any Dashboard]* (the browser URL will update as you apply filters)
+
+#### What You Can Do
+- Apply any filter to a dashboard and see the URL update automatically.
+- Copy the updated URL and share it with colleagues, who will see the exact same filtered view upon opening the link.
+- Use the new "Reset" button in the filter bar to quickly return to the dashboard's default filter settings.
+
+#### Why This Matters
+Previously, sharing a specific, filtered view of a dashboard required verbally explaining the steps to reproduce it. Now, you can share a direct link, ensuring everyone is looking at the same data, which improves collaboration and makes analysis more efficient.
+</Accordion>
+
+---
+### ⏱️ New Median-Based Measures for Ridership Analysis
+
+**What's New**  
+The Ridership Report data source in Analytics now includes six new median-based measures for analyzing trip durations and distances. Medians provide a more accurate representation of typical performance by reducing the impact of unusually long or short trips (outliers).
+
+**Pre-requisites**
+- Requires access to the Analytics module.
+
+<Accordion title="See More">
+
+#### Where You'll See It
+- *Analytics > Query Builder* (new measures are available in the "Measures" dropdown when the `Ridership Report` data source is selected)
+
+#### What You Can Do
+- Build reports using new measures such as `Median Actual Travel Duration` and `Median Travel Distance` to analyze the typical rider experience.
+- Compare median values to existing average-based metrics to get a more complete picture of your service's performance.
+
+#### Why This Matters
+Average values can be easily skewed by a few extreme data points, which can misrepresent your overall performance. Medians offer a more robust and reliable metric for understanding the central tendency of your data, leading to more accurate insights and better-informed decisions.
+</Accordion>
+
+---
+
+</Update>
+
 <Update label="27 November 2025" description="6 Updates">
 
 ### 📅 Sortable "Created At" Column for Reports and Dashboards

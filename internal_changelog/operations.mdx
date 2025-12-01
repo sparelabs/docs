@@ -2,6 +2,99 @@
 title: Operations
 rss: true
 ---
+<Update label="28 November 2025" description="4 Updates">
+
+### 🗺️ Duties Tab in Live Map Watchlist
+
+**What's New**  
+A "Duties" tab is now available in the Watchlist pane on the Live Map. This allows dispatchers and operations staff to "pin" and continuously monitor specific duties, similar to how they can already watch riders and requests.
+
+**Pre-requisites**
+- No feature flags required (previously required `WatchlistDutiesTab` feature flag)
+
+<Accordion title="See More">
+
+#### Where You'll See It
+- *Rides > Live Map* (a new "Duties" tab within the "Watchlist" side pane)
+
+#### What You Can Do
+- Add duties to the watchlist to keep them persistently visible in the side pane.
+- Quickly access and monitor the progress of key duties without having to search for them repeatedly on the map.
+
+#### Why This Matters
+During busy periods, it can be difficult to keep track of high-priority duties. This feature allows you to create a focused list of duties to monitor, improving oversight and enabling quicker responses to operational events.
+</Accordion>
+
+---
+### 🔍 No-Show Filter on Live Map
+
+**What's New**  
+The filter bar on the Live Map now includes a "No-show" option. This allows you to toggle the visibility of riders who have been marked as a no-show for their trip.
+
+**Pre-requisites**
+- No feature flags required (previously required `LiveMapNoShowFilter` feature flag)
+
+<Accordion title="See More">
+
+#### Where You'll See It
+- *Rides > Live Map* (a new "No-show" toggle in the filter bar at the top of the map)
+
+#### What You Can Do
+- Hide all no-show requests from the map to reduce clutter.
+- Show no-show requests to review their locations or other details.
+
+#### Why This Matters
+This filter helps dispatchers declutter their map view by hiding completed no-show incidents. This allows them to focus more effectively on active and upcoming trips that require their attention.
+</Accordion>
+
+---
+### 📝 Cancellation Reasons for Duties
+
+**What's New**  
+When cancelling a duty, you are now prompted to select a reason for the cancellation from a configurable list. This standardizes the data captured for operational analysis.
+
+**Pre-requisites**
+- No feature flags required (previously required `DutyCancellationReasons` feature flag)
+
+<Accordion title="See More">
+
+#### Where You'll See It
+- A new modal window will appear after initiating a duty cancellation from locations such as the Live Map or the Duty Schedule page.
+
+#### What You Can Do
+- Select a predefined reason when you cancel a single duty or multiple duties in bulk.
+- Ensure that every duty cancellation has a corresponding reason logged in the system.
+
+#### Why This Matters
+Previously, the reasons for duty cancellations were not systematically tracked, making it difficult to analyze operational patterns. Capturing this data provides valuable insights into why duties are cancelled, helping to identify trends and areas for improvement in driver scheduling and resource planning.
+</Accordion>
+
+---
+### 📊 View Requests on Duty Schedules
+
+**What's New**  
+The Duty Schedule page now includes a "Show Requests" toggle. When enabled, it displays the individual requests assigned to each duty block directly on the timeline, offering a more detailed view of driver assignments.
+
+**Pre-requisites**
+- No feature flags required (previously required `DutySchedulePlusPlusDetails` feature flag)
+
+<Accordion title="See More">
+
+#### Where You'll See It
+- *Launch > Duty Schedule* (a new "Show Requests" toggle switch in the view options)
+
+#### What You Can Do
+- Toggle the visibility of individual trip requests within their assigned duty blocks on the schedule timeline.
+- Get a granular, at-a-glance understanding of how trips are distributed across duties for the day.
+
+#### Why This Matters
+This feature provides a more comprehensive view of driver workloads directly on the schedule. It allows schedulers and dispatchers to easily visualize trip assignments without needing to navigate to different pages, streamlining the process of reviewing and adjusting daily plans.
+</Accordion>
+
+---
+
+</Update>
+
 <Update label="26 November 2025" description="1 Updates">
 
 ### 🐛 Bug Fixes
