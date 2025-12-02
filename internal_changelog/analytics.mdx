@@ -1,6 +1,78 @@
 ---
 title: Analytics
 ---
+<Update label="1 December 2025" description="3 Updates">
+
+### 📈 Add Completed Pickup/Dropoff Addresses to Ridership Export
+
+**What's New**  
+The Ridership Export (V1) and Ridership Report now include two new columns: `Completed Pickup Address` and `Completed Dropoff Address`. These fields show the final address where a rider was actually picked up or dropped off, which may differ from the originally requested address.
+
+**Pre-requisites**
+- Requires `AnalyticsV2` feature flag to access the Reports UI
+
+<Accordion title="See More">
+
+#### Where You'll See It
+- *Analytics > Reports > Ridership Report* (new options in the column selector)
+- *Analytics > Exports > Ridership Export (V1)* (new columns in the generated CSV file)
+
+#### What You Can Do
+- Add `Completed Pickup Address` and `Completed Dropoff Address` as columns to your Ridership Reports.
+- Export ridership data that includes the precise, actual locations of service delivery.
+
+#### Why This Matters
+This provides more accurate data for reporting and reconciliation, especially for scenarios where the driver adjusts a location at the point of service. For example, if a rider walks to a different pickup point or moves around a large area like a mall or airport, the completed address will reflect the true service location.
+</Accordion>
+
+---
+### 🧭 New Analytics Cube: Slot Navigation Started Events
+
+**What's New**  
+A new data source, "Slot Navigation Started Events," is now available in the Analytics Query Builder. This cube tracks every time a driver initiates in-app navigation to a stop.
+
+**Pre-requisites**
+- Requires `AnalyticsV2` feature flag
+
+<Accordion title="See More">
+
+#### Where You'll See It
+- *Analytics > Query Builder* (available as a new data source in the "Data" dropdown)
+
+#### What You Can Do
+- Build reports to analyze how often and when drivers start navigation for their assigned stops.
+- Analyze data using key dimensions like `Started At` (timestamp), `Slot ID`, and `Author` (the user who initiated the action).
+
+#### Why This Matters
+This gives operations managers visibility into driver behavior and adherence to routes. It helps identify if drivers are using the in-app navigation as expected, providing insights for training and operational compliance.
+</Accordion>
+
+---
+### 🗓️ Supply Distribution Cube Now Includes Future Duties
+
+**What's New**  
+The "Supply Distribution" analytics cube has been updated to include data for scheduled (future) duties, in addition to completed ones.
+
+**Pre-requisites**
+- Requires `AnalyticsV2` feature flag
+
+<Accordion title="See More">
+
+#### Where You'll See It
+- *Analytics > Query Builder* (when using the `Supply Distribution` data source)
+
+#### What You Can Do
+- Previously, the cube only showed data for past, completed duties. Now, it includes all non-cancelled duties, whether they are in the past, present, or future.
+- Build reports that forecast vehicle supply for upcoming days or weeks.
+
+#### Why This Matters
+This enhancement allows for proactive analysis and forecasting of vehicle supply. Planners can now visualize scheduled supply to identify and address potential coverage gaps before they impact service.
+</Accordion>
+
+---
+
+</Update>
+
 <Update label="28 November 2025" description="2 Updates">
 
 ### 🔗 Persistent Dashboard Filters in URL

@@ -2,6 +2,43 @@
 title: Resolve
 rss: true
 ---
+<Update label="1 December 2025" description="2 Updates">
+
+### ⚖️ Configure Case Triage and Assignment Rules
+
+**What's New**  
+A new "Triage" configuration page allows you to define automated assignment rules for incoming cases based on their properties, streamlining your case management workflow.
+
+**Pre-requisites**
+- Requires Admin access. Editing rules requires the `Create, update, or delete any Triage Definition` (`WRITE_ANY_TRIAGE_DEFINITION`) permission.
+
+<Accordion title="See More">
+
+#### Where You'll See It
+- *Engage > Settings > Triage*
+
+#### What You Can Do
+- For each Case Type, configure a set of rules that determine how a new case is assigned.
+- Set a default assignee (a user, user group, or queue) and an assignment method (Round Robin or Load Balancing).
+- Use the Rule Builder to create conditional logic. For example, "IF `Tags` contains `Complaint` AND `Priority` is `High`, THEN assign to `Escalations Queue`."
+- For the Eligibility product, the rule builder is simplified to only configure the trigger, default assignee, and assignment method.
+
+#### Why This Matters
+This automates the process of routing cases to the correct team or individual, reducing manual effort and ensuring cases are handled promptly by the right people.
+</Accordion>
+
+---
+### 🐛 Bug Fixes
+
+- **Read-Only Triage View Correctly Hides Controls (ENG-1082)**
+  - _Resolution_: Fixed an issue where users without write permissions could still see editing controls (like 'Add Rule', edit, and delete buttons) on the Triage configuration page. These controls are now correctly hidden for read-only users.
+- **Archived Case Types Hidden from Triage Page (ENG-1083)**
+  - _Resolution_: The Triage configuration page no longer displays rules for archived Case Types, ensuring the view only contains relevant, active configurations.
+
+---
+
+</Update>
+
 <Update label="28 November 2025" description="1 Updates">
 
 ### ⚡ Bulk Actions and Grouping for Case Management
