@@ -2,6 +2,44 @@
 title: Resolve
 rss: true
 ---
+<Update label="1 December 2025" description="2 Updates">
+
+### ⚙️ Case Triage Rule Configuration
+
+**What's New**  
+A new Triage Definitions page allows you to configure sophisticated, rule-based assignment logic for incoming cases, automating how they are routed to agents, groups, or queues.
+
+**Pre-requisites**
+- Requires Admin access. Editing rules requires the `WRITE_ANY_TRIAGE_DEFINITION` permission.
+
+<Accordion title="See More">
+
+#### Where You'll See It
+- *Engage > Settings > Triage*.
+
+#### What You Can Do
+- For each Case Type, define a set of rules to automatically assign new cases based on their properties.
+- Use the rule builder to create conditions, including conditions based on the new "Tags" field.
+- Configure assignment outcomes to a specific user, user group, or queue.
+- Choose an assignment method, such as "Round Robin" or "Load Balancing," to distribute cases among assignees.
+- Set a default assignee for cases that do not match any rules.
+
+#### Why This Matters
+This feature transforms case assignment from a manual task to an automated, intelligent process. By defining rules, you can ensure cases are routed to the correct team or individual immediately, reducing response times and manual administrative effort.
+</Accordion>
+
+---
+### 🐛 Bug Fixes
+
+- **Read-Only Triage View Permissions (ENG-1082)**
+  - _Resolution_: Fixed an issue where users without write permissions could still see editing controls (like edit, delete, and add buttons) on Triage Definition rules. These controls are now correctly hidden for read-only users.
+- **Archived Case Types in Triage Definitions (ENG-1083)**
+  - _Resolution_: The Triage Definitions page no longer displays rules for archived Case Types. The view is now correctly filtered to show definitions for active Case Types only.
+
+---
+
+</Update>
+
 <Update label="28 November 2025" description="1 Updates">
 
 ### ⚡ Bulk Actions and Grouping for Case Management
