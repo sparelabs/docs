@@ -2,59 +2,6 @@
 title: Operations
 rss: true
 ---
-<Update label="21 November 2025" description="3 Updates">
-
-### 🚑 Emergency Drop Off ASAP
-
-<Warning>This feature is currently categorized as 'Do Not Enable - In Development' and is not yet ready for customer use. Please await communications from the Product team on a feature rollout plan.</Warning>
-
-**What's New**  
-Dispatchers can now prioritize an in-progress trip to drop off a specific rider immediately. This "Drop Off ASAP" action reorders the vehicle's manifest to make the selected rider's drop-off the very next stop, ensuring they are taken to their destination without delay.
-
-**Pre-requisites**
-- Requires `DropoffAsap` feature flag
-- Requires the `Request: Dropoff ASAP` (`request:dropoff-asap`) permission
-
-<Accordion title="See More">
-
-#### Where You'll See It
-- *Rides > Live Requests > [Select a Duty] > [Select an Active Request]* (new "Drop Off ASAP" option in the `...` actions menu)
-
-#### What You Can Do
-- For a rider who is currently on board a vehicle, navigate to their active request details.
-- Select "Drop Off ASAP" from the actions menu and confirm the action.
-- The system will lock the rider's drop-off as the next stop in the vehicle's manifest, overriding the previously optimized schedule.
-- This action is recorded in both the request and duty activity logs for auditing purposes.
-
-#### Why This Matters
-In emergency situations or when a rider has an urgent need, dispatchers require a way to override the optimized schedule. This feature provides a clear, one-click tool to immediately prioritize a rider's drop-off, improving responsiveness and rider care during critical moments.
-</Accordion>
-
----
-### ✅ Request Misbookings Analysis Now Standard
-
-**What's New**  
-The Request Misbookings analysis tool, which helps identify patterns of booking errors or rider confusion, is now a standard feature available to all customers.
-
-**Pre-requisites**
-- No feature flags required (previously required `requestMisbookings25Flash` feature flag)
-
-<Accordion title="See More">
-
-#### Why This Matters
-This tool helps identify requests that are repeatedly booked and canceled or show other signs of booking difficulty, allowing operators to proactively address potential issues with service areas, rider education, or app usability. Its standardization makes this analysis available to everyone without needing a special feature flag enabled.
-</Accordion>
-
----
-### 🐛 Bug Fixes
-
-- **RPRH Metric Stability and Accuracy (MOT-2551)**
-  - _Resolution_: Improved the Revenue Per Revenue Hour (RPRH) calculation on the *Rides > Live Requests* page. The metric now uses projected completion times for in-progress trips, providing a stable, more accurate value that doesn't fluctuate with the current time, and correctly uses actual drop-off times for completed duties.
-
----
-
-</Update>
-
 <Update label="28 November 2025" description="4 Updates">
 
 ### 🗺️ Duties Tab in Live Map Watchlist
