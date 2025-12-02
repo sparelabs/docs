@@ -1,6 +1,52 @@
 ---
 title: Analytics
 ---
+<Update label="21 November 2025" description="2 Updates">
+
+### 📊 Improved Column Names in SQL Editor Results
+
+**What's New**  
+Column names in SQL Editor query results are now automatically formatted to be more readable. Technical suffixes like `_dim` are removed, and `snake_case` or `camelCase` names are converted to "Title Case" for a cleaner presentation in charts and tables.
+
+**Pre-requisites**
+- Requires `AnalyticsV2` feature flag
+- Requires Admin access
+
+<Accordion title="See More">
+
+#### Where You'll See It
+- *Analytics > SQL Editor* (in the column headers of the results table and chart legends)
+
+#### What You Can Do
+- When running a query in the SQL editor, you no longer need to manually create aliases for every column to get clean names in your visualization.
+- For example, a column named `rider_id_dim` in your SQL query will now automatically display as "Rider Id" in the resulting chart or table.
+
+#### Why This Matters
+Previously, technical column names from the database would appear directly in charts and tables, which could be confusing for users. This change ensures that analytics results are presented with clean, human-readable labels, making reports easier to understand without extra SQL work.
+</Accordion>
+
+---
+### 🐛 Bug Fixes
+
+- **Day-of-Week Names in Reports (BUS-4551)**
+  - _Resolution_: Fixed an issue in Analytics where the "Day of Week" dimension was displayed as a number (e.g., 0-6). It now correctly shows the corresponding day name (e.g., Sunday, Monday), making reports easier to read.
+
+- **Query Builder Terminology Update**
+  - _Resolution_: In the *Analytics > Query Builder*, the labels "Available Members" and "Selected Members" have been updated to "Available Metrics" and "Selected Metrics" to more accurately describe their function.
+
+- **Pie Chart Scaling in Dashboards (BUS-4501)**
+  - _Resolution_: Corrected a scaling issue where pie charts in Analytics dashboards would not resize properly or could overflow their containers. Pie charts now scale correctly within their widgets when the dashboard layout is adjusted.
+
+- **Blank Cells in Pivoted Tables (BUS-4424)**
+  - _Resolution_: Fixed an issue in Analytics V2 where tables with multiple dimensions and measures on the 'Y' axis would display blank cells. The table view now automatically adjusts its structure to ensure all data is correctly displayed.
+
+- **Location Custom Fields on Analytics Maps (BUS-4504)**
+  - _Resolution_: Fixed a bug that prevented location-based custom fields from being displayed as points on Analytics V2 maps. The system now correctly recognizes and plots the GPS coordinates from these fields.
+
+---
+
+</Update>
+
 <Update label="28 November 2025" description="2 Updates">
 
 ### 🔗 Persistent Dashboard Filters in URL
