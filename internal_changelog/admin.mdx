@@ -2,6 +2,83 @@
 title: Admin
 rss: true
 ---
+<Update label="1 December 2025" description="3 Updates">
+
+### 🛠️ Overhaul of the Service Configuration Page
+
+**What's New**  
+The page for managing services has been completely redesigned with a new tab-based layout and a clear separation between viewing and editing information. This new V2 interface is optional and can be enabled by each user in their personal settings.
+
+**Pre-requisites**
+- Requires `ServiceViewV2` feature flag
+- Requires Admin access
+
+<Accordion title="See More">
+
+#### Where You'll See It
+- The new view is accessible from the *System > Services* page.
+- Enable the new interface by navigating to *Your Profile Icon > Personal Settings* and changing the "Service View" setting to "Version 2".
+
+#### What You Can Do
+- Navigate through service settings using the new tabbed layout: `Overview`, `Zones & Stops`, `Booking`, `Windows & Engine`, and `Activity Log`.
+- View a complete history of changes made to the service in the new `Activity Log` tab.
+- Use an improved map-based editor for managing service areas and stops in the `Zones & Stops` tab.
+
+#### Why This Matters
+The previous single-page layout for service configuration was becoming crowded. The new tabbed interface organizes settings logically, making it much easier to find and configure specific aspects of a service.
+</Accordion>
+
+---
+### 🔄 Designate Riders and Drivers in Simulations
+
+**What's New**  
+When configuring a "Demo" type simulation, you can now designate specific riders and drivers who will be guaranteed to have a trip or duty scheduled every day the simulation is active.
+
+**Pre-requisites**
+- Requires Admin access
+
+<Accordion title="See More">
+
+#### Where You'll See It
+- *System > Simulations > (Create or Edit a Simulation)*
+- When "Simulation Type" is set to "Demo", new fields for "Designated Demo Riders" and "Designated Demo Drivers" will appear.
+
+#### What You Can Do
+- Select one or more riders and drivers to be "designated" for a demo simulation.
+- The system will prioritize creating requests and duties for these individuals each day before scheduling for the rest of the random pool.
+
+#### Why This Matters
+This feature is useful for creating consistent, repeatable demonstration scenarios. It ensures that key participants (e.g., a specific "VIP rider" or "main driver") are always present in the simulation, making demos more predictable and reliable.
+</Accordion>
+
+---
+### 👥 Team Member Schedule and Capability Management
+
+**What's New**  
+A new dedicated view for managing team members' schedules, capabilities, and activities is now available, providing a centralized hub for user administration.
+
+**Pre-requisites**
+- Requires Admin access. To edit another user's profile, the `Update any Admin` (`PATCH_ANY_ADMIN`) permission is required.
+
+<Accordion title="See More">
+
+#### Where You'll See It
+- *System > Team > (Select a Team Member)*
+- This opens a new page with three tabs: `Activity`, `Capabilities`, and `Schedule`.
+
+#### What You Can Do
+- **Schedule Tab:** Configure a team member's standard working hours and add exceptions like "Days Off," "Hours Off," or "Extra Availability."
+- **Capabilities Tab:** View a user's authorization groups and, for Spare Engage, assign the "Appointment Types" they are qualified to handle.
+- **Activity Tab:** View a log of the team member's recent activities within the system.
+
+#### Why This Matters
+This provides a single, organized place to manage all aspects of a team member's availability and qualifications. This is critical for features that depend on user availability, such as appointment booking and automated case assignment.
+</Accordion>
+
+---
+
+</Update>
+
 <Update label="28 November 2025" description="2 Updates">
 
 ### 🔧 Targeted Optimization Service Setting
