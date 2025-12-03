@@ -2,6 +2,79 @@
 title: Enterprise Asset Management
 rss: true
 ---
+<Update label="2 December 2025" description="3 Updates">
+
+### 🔧 Manually Resolve Active Fault Codes
+
+**What's New**  
+You can now manually resolve active fault codes directly from an asset's details page. Additionally, a new indicator icon in the main assets list highlights which assets currently have active fault codes.
+
+**Pre-requisites**
+- Requires Admin access
+
+<Accordion title="See More">
+
+#### Where You'll See It
+- *Enterprise Asset Management > Assets* (new warning icon in the assets table for any asset with active faults).
+- *Enterprise Asset Management > Assets > [Select an Asset] > Fault Codes* tab (new "Mark as Resolved" option in the `...` actions menu for each active fault code).
+
+#### What You Can Do
+- Quickly identify assets that require attention directly from the main asset list.
+- Manually resolve a fault code in the UI after the underlying issue has been fixed, without waiting for an update from an external integration.
+
+#### Why This Matters
+Previously, fault codes could only be resolved via automated integration updates. This feature empowers maintenance staff to update an asset's status in real-time, providing a more accurate and immediate view of fleet health.
+</Accordion>
+
+---
+### 🔗 Re-authenticate Disconnected EAM Integrations
+
+**What's New**  
+A "Reauthenticate Integration" action is now available for EAM integrations with a "Disconnected" status, allowing you to easily re-establish the connection.
+
+**Pre-requisites**
+- Requires Admin access
+
+<Accordion title="See More">
+
+#### Where You'll See It
+- *Enterprise Asset Management > Settings > Integrations* (a new "Reauthenticate Integration" option appears in the `...` actions menu for any integration with a `Disconnected` status).
+
+#### What You Can Do
+- If an integration disconnects (e.g., due to an expired token), you can now click "Reauthenticate Integration" to initiate the authentication flow again.
+
+#### Why This Matters
+Before, a disconnected integration could not be fixed from the UI, often requiring support intervention. This self-service feature enables admins to quickly restore broken connections, minimizing downtime for data synchronization.
+</Accordion>
+
+---
+### 💡 EAM Lite Mode
+
+**What's New**  
+"EAM Lite" is a new, simplified mode for Enterprise Asset Management. When enabled via a feature flag, it streamlines the user interface by hiding more advanced features like Parts, Vendors, and Purchase Orders.
+
+**Pre-requisites**
+- Requires `EamLite` feature flag
+- Requires Admin access
+
+<Accordion title="See More">
+
+#### Where You'll See It
+- **Sidebar Navigation:** The *Enterprise Asset Management* sidebar is condensed to show only Assets, Issues, and Settings.
+- **Asset Details:** When viewing an asset at *Enterprise Asset Management > Assets > [Select an Asset]*, the number of available tabs is reduced to a core set.
+- **Superbox Search:** The global search bar will only return results for EAM Assets and Issues, hiding other EAM-related items.
+
+#### What You Can Do
+- Experience a cleaner, more focused EAM interface that prioritizes core asset and issue management workflows.
+
+#### Why This Matters
+This mode provides a less cluttered and more approachable experience for organizations that only need basic asset and issue tracking, making the EAM module easier to navigate and adopt.
+</Accordion>
+
+---
+
+</Update>
+
 <Update label="1 December 2025" description="2 Updates">
 
 ### 📎 Attach Documents and Images to Assets

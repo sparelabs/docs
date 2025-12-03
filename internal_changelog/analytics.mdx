@@ -1,6 +1,91 @@
 ---
 title: Analytics
 ---
+<Update label="2 December 2025" description="4 Updates">
+
+### 📅 Filter by Future Date Ranges in Dashboards and Reports
+
+**What's New**  
+You can now use future-looking, rolling date periods like "Next 7 Days," "Next 30 Days," and "Next Month" when filtering data in Analytics dashboards and the Report Builder.
+
+**Pre-requisites**
+- Requires `AnalyticsV2` feature flag
+
+<Accordion title="See More">
+
+#### Where You'll See It
+- *Analytics > Dashboards* (in the dashboard-level date filter)
+- *Analytics > Reports > [Report Name] > Edit* (in the date filter component)
+
+#### What You Can Do
+- Create reports and dashboards that show future-scheduled data, such as upcoming trips or duties.
+- Use new presets in the date selector, including `Next 7 Days`, `Next 30 Days`, `Next Week`, `Next Month`, `Next Quarter`, and `Next Year`.
+
+#### Why This Matters
+Previously, date filters were limited to past and current timeframes. This enhancement allows operators and planners to build reports that forecast future activity, enabling better resource planning and operational foresight.
+</Accordion>
+
+---
+### 📊 New 'Is Pooled' Dimension for Booking Analysis
+
+**What's New**  
+A new boolean (True/False) dimension named 'Is Pooled' is now available in the 'Pooling' analytics cube, making it simple to report on whether a booking was part of a shared ride.
+
+**Pre-requisites**
+- Requires `AnalyticsV2` feature flag
+
+<Accordion title="See More">
+
+#### Where You'll See It
+- *Analytics > Query Builder* (when using the 'Pooling' cube, the 'Is Pooled' dimension is under the 'Booking' group)
+
+#### What You Can Do
+- Easily filter, measure, or group by whether bookings were pooled or exclusive.
+- For example, you can now create a report that compares the on-time performance of pooled trips versus exclusive trips.
+
+#### Why This Matters
+Previously, identifying pooled trips required using a numeric flag that was not intuitive. This new, straightforward boolean dimension simplifies report creation and makes it easier for anyone to analyze the performance and characteristics of pooled services.
+</Accordion>
+
+---
+### ⏱️ New 'Request Status Changes' Cube for Lifecycle Analysis
+
+**What's New**  
+A new 'Request Status Changes' cube is now available in Analytics. This cube provides a detailed historical log of every status change for each request, allowing for powerful time-series analysis.
+
+**Pre-requisites**
+- Requires `AnalyticsV2` feature flag
+
+<Accordion title="See More">
+
+#### Where You'll See It
+- *Analytics > Query Builder* (a new 'Request Status Changes' cube is available in the cube selector dropdown)
+
+#### What You Can Do
+- Measure the duration a request spends in any status (e.g., how long requests remain 'Unmatched').
+- Count the number of times a request transitions between statuses.
+- Analyze status changes over time to identify operational bottlenecks or trends.
+
+#### Why This Matters
+This new data source unlocks deeper insights into the entire lifecycle of a request. It moves beyond just the final status to provide a granular, event-by-event history, which is critical for understanding operational efficiency and improving service quality.
+</Accordion>
+
+---
+### 🐛 Bug Fixes
+
+- **Query Builder Layout Issue with Many Filters (BUS-4526)**
+  - _Resolution_: Fixed a layout issue in the *Analytics > Query Builder* where adding a large number of filters would cause the page to scroll horizontally. Filters now wrap correctly to fit the screen.
+- **Inconsistent Address Formatting in Analytics (BUS-4552)**
+  - _Resolution_: Analytics will now correctly process and display addresses regardless of whether they are stored in the legacy or the new (Address V2) format, ensuring consistent address data in reports.
+- **Chart Y-Axis Setting Not Applied on Dashboards (BUS-4517)**
+  - _Resolution_: Corrected an issue where the "Unpin Y-axis from zero" setting in a report's configuration was ignored when the report was displayed as a widget on a dashboard. The Y-axis now auto-scales correctly in both the report view and dashboard widgets.
+- **Incorrect Duty and Fleet Information in Ridership Report (BUS-4589)**
+  - _Resolution_: Fixed an issue causing incorrect `dutyId` and `fleetId` information to appear in the Ridership Report data source, ensuring more accurate reporting.
+
+---
+
+</Update>
+
 <Update label="1 December 2025" description="3 Updates">
 
 ### 📈 Add Completed Pickup/Dropoff Addresses to Ridership Export
