@@ -2,4 +2,14 @@
 title: Engine
 rss: true
 ---
+<Update label="3 December 2025" description="1 Updates">
+
+### 🐛 Bug Fixes
+
+- **Arrive By V2 Logic for Open Fleets (MOT-2635)**
+  - _Resolution_: Corrected the `Arrive By V2` matching logic to ensure it applies exclusively to dedicated fleets. Previously, it was also being applied to open fleets, which could result in undesirably early pickup windows. This fix ensures open fleet trips use standard time calculations. This behavior is active when the `ArriveByV2` feature flag is enabled.
+
+---
+
+</Update>
 

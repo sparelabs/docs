@@ -2,6 +2,69 @@
 title: Operations
 rss: true
 ---
+<Update label="3 December 2025" description="3 Updates">
+
+### ⏱️ Live Requests Productivity Metrics Aligned with Analytics
+
+**What's New**  
+When viewing a past day in Live Requests, the productivity metrics (like RPRH and RPVH) are now calculated using "Completed Pickups" as the numerator. This aligns the calculation with Analytics V2, ensuring consistency between operational and analytical reporting.
+
+**Pre-requisites**
+- Requires `LiveRequest` feature flag.
+
+<Accordion title="See More">
+
+#### Where You'll See It
+- *Rides > Live Requests* (when the date filter is set to a past date, in the metrics tables like "By Service" or "By Fleet").
+
+#### Why This Matters
+This change ensures that when you look back at historical performance in Live Requests, the productivity numbers you see are calculated the same way as in your formal Analytics reports. This eliminates confusion and provides a consistent, accurate view of historical efficiency.
+</Accordion>
+
+---
+### 🎨 Improved Trip Negotiation Interface
+
+**What's New**  
+The trip negotiation interface in the booking flow has been updated with several visual improvements to make it clearer and easier to use. This includes a new "Requested Time" badge, a tooltip for recommended times, and color-coded headers.
+
+**Pre-requisites**
+- Requires `ImprovedNegotiationUi` feature flag.
+- Requires Admin access for booking agents.
+
+<Accordion title="See More">
+
+#### Where You'll See It
+- In the booking panel when booking a trip for a rider, specifically in the list of available booking options when trip negotiation is triggered.
+
+#### Why This Matters
+These UI enhancements provide booking agents with clearer visual cues during trip negotiation. This makes it faster to identify the rider's original request, understand the system's recommendation, and make more informed booking decisions.
+</Accordion>
+
+---
+### 💬 "Recurring Trip Group" Renamed to "Group Trip"
+
+**What's New**  
+The term "Recurring Trip Group" has been updated to "Group Trip" throughout the platform for improved clarity and consistency.
+
+**Pre-requisites**
+- Requires `TripGroup` feature flag.
+- Requires Admin access.
+
+<Accordion title="See More">
+
+#### Where You'll See It
+- *Rides > Recurring Trips > Group Trips* tab (previously the "Recurring Trip Groups" tab).
+- *Rides > Requests > (select a request)* (in the Request Details panel, the field is now "Group Trip").
+- *Launch > Duty Schedule* (in the tooltip for a request pill that belongs to a group trip).
+
+#### Why This Matters
+This change simplifies the terminology, making it more intuitive and consistent with how related features are named.
+</Accordion>
+
+---
+
+</Update>
+
 <Update label="2 December 2025" description="1 Updates">
 
 ### 🐛 Bug Fixes
