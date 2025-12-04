@@ -1,6 +1,44 @@
 ---
 title: Analytics
 ---
+<Update label="3 December 2025" description="2 Updates">
+
+### 🔗 New Analytics Cubes for Resolve Case Links
+
+**What's New**  
+A new data cube, `Case Object Link`, is now available in Analytics. This allows you to build reports on the objects (like riders, drivers, or vehicles) linked to your Resolve cases.
+
+**Pre-requisites**
+- Requires `AnalyticsV2` feature flag.
+- Requires Admin access with permissions to use Analytics.
+
+<Accordion title="See More">
+
+#### Where You'll See It
+- *Analytics > Query Builder* (in the list of available cubes/views on the left sidebar).
+
+#### What You Can Do
+- Create reports to count how many cases are linked to specific object types (e.g., Riders vs. Vehicles).
+- Analyze case trends based on the linked objects. For example, you can identify if a particular fleet is associated with a high number of cases.
+- Join `Case Object Link` data with other cubes like `Riders` or `Vehles` to get more detailed insights.
+
+#### Why This Matters
+Previously, it was difficult to analyze the relationship between Resolve cases and the specific entities they involved. You can now quantify and report on these connections directly within Analytics, helping to identify trends and operational issues tied to specific riders, vehicles, or services.
+</Accordion>
+
+---
+### 🐛 Bug Fixes
+
+- **Dashboard Filter Deselection (BUS-4642)**
+  - _Resolution_: Corrected an issue on Analytics Dashboards where unchecking all options in the 'Service' or 'Fleet' multi-select filters did not work. Users can now fully clear these filters.
+
+- **Metadata Dimension Selection in Query Builder (BUS-4459)**
+  - _Resolution_: When adding a metadata dimension (like a specific tag) in the Analytics Query Builder, the system no longer automatically adds its parent dimensions. This prevents unintended selections and gives users more precise control over the dimensions in their query. This change applies to systems with the `AnalyticsV2` flag enabled.
+
+---
+
+</Update>
+
 <Update label="2 December 2025" description="4 Updates">
 
 ### 📅 Filter by Future Date Ranges in Dashboards and Reports
