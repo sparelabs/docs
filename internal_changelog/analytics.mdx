@@ -1,6 +1,85 @@
 ---
 title: Analytics
 ---
+<Update label="4 December 2025" description="4 Updates">
+
+### 📊 New 'Request Recurrence' Analytics Cube
+
+**What's New**  
+A new 'Request Recurrence' data cube is now available in the Query Builder. This allows you to build detailed reports on recurring trips and subscriptions, analyzing patterns, statuses, and rider details over time.
+
+**Pre-requisites**
+- Requires `AnalyticsV2` feature flag
+
+<Accordion title="See More">
+
+#### Where You'll See It
+- *Analytics > Query Builder* (a new 'Request Recurrence' option is available in the data source dropdown menu)
+
+#### What You Can Do
+- Select 'Request Recurrence' as the data source for a new report.
+- Analyze recurring trip data using new dimensions like 'Recurrence Status', 'Scheduling Type', 'Pickup/Dropoff Location Names', and 'Rider Accessibility Needs'.
+- Use new measures such as 'Recurrence Count', 'Active Recurrence Count', and 'Unique Riders'.
+
+#### Why This Matters
+This cube provides direct insight into your subscription and recurring trip operations, which was previously difficult to analyze. You can now easily report on the volume of active subscriptions, understand cancellation reasons, and track the overall health of your recurring services.
+</Accordion>
+
+---
+### 🖼️ Modernized Filter Editing in Analytics
+
+**What's New**  
+The interface for adding and editing filters in Analytics has been updated from a side drawer to a more compact and modern modal window. This change provides a cleaner and more focused user experience when configuring report filters.
+
+**Pre-requisites**
+- Requires `AnalyticsV2` feature flag
+
+<Accordion title="See More">
+
+#### Where You'll See It
+- *Analytics > Query Builder* or any report/dashboard view with filters.
+
+#### What You Can Do
+- Previously, clicking a filter pill (e.g., 'Service', 'Fleet') opened a side drawer.
+- Now, the same action opens a modal window for editing, keeping the underlying report visible. Make your selections and click 'Save' to apply the filter.
+
+#### Why This Matters
+The previous drawer-style editor could obscure parts of the report you were working on. The new modal provides a more streamlined and less intrusive way to manage filters, improving the overall report-building workflow.
+</Accordion>
+
+---
+### ⏰ New 'Duty Start Time' Dimension in Ridership Report
+
+**What's New**  
+The 'Ridership Report' data cube now includes a new dimension: 'Duty Start Requested Time'. This allows you to analyze and group ridership data based on the scheduled start time of the duty that performed the trip.
+
+**Pre-requisites**
+- Requires `AnalyticsV2` feature flag
+
+<Accordion title="See More">
+
+#### Where You'll See It
+- *Analytics > Query Builder* (when using the 'Ridership Report' data source)
+
+#### What You Can Do
+- In the Query Builder, expand the 'Dimensions' section for the 'Ridership Report' cube.
+- Drag the new 'Duty Start Requested Time' dimension into your report to see the scheduled start time for the duty associated with each trip.
+- You can use this field for filtering, grouping, or simply as an additional column in your ridership data exports.
+
+#### Why This Matters
+This provides a crucial link between trip data and duty schedules. It enables more sophisticated analysis, such as comparing on-time performance or trip volume across different duty shifts (e.g., morning vs. evening duties).
+</Accordion>
+
+---
+### 🐛 Bug Fixes
+
+- **Pivot Table Column Reordering (BUS-4613)**
+  - _Resolution_: Fixed an issue in the *Analytics > Query Builder* pivot table editor where drag-and-drop functionality would not work correctly for lists with many columns. The entire list is now scrollable, and columns can be reordered as expected.
+
+---
+
+</Update>
+
 <Update label="3 December 2025" description="2 Updates">
 
 ### 🔗 New Analytics Cubes for Resolve Case Links

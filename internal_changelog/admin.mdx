@@ -2,6 +2,64 @@
 title: Admin
 rss: true
 ---
+<Update label="4 December 2025" description="3 Updates">
+
+### 🔐 Granular SQL Editor Access
+
+**What's New**  
+A new, specific permission is now available to grant non-super-admins access to the SQL Editor in Analytics. This allows organizations to provide advanced query capabilities to trusted users without granting full super-admin privileges.
+
+**Pre-requisites**
+- Requires Admin access to assign roles and permissions
+
+<Accordion title="See More">
+
+#### Where You'll See It
+- *Admin > Roles* (a new `SQL Editor` permission is available under the `Analytics` section)
+- *Analytics > SQL Editor* (now accessible to users with the new permission, previously super-admin only)
+
+#### What You Can Do
+- Create or edit a role to include the new `SQL Editor` permission.
+- Assign this role to non-super-admin users, who can then navigate to the *Analytics > SQL Editor* page to write and run custom SQL queries.
+
+#### Why This Matters
+Previously, access to the powerful SQL Editor was restricted to super-admins. This change allows for more flexible and secure delegation of data analysis tasks to team members who need direct database access for complex reporting.
+</Accordion>
+
+---
+### 🧾 Uzurv Ride Receipts in OpenFleet
+
+**What's New**  
+For OpenFleet trips dispatched through Uzurv, a detailed ride receipt is now available in the request details panel after the trip is completed. This provides a full breakdown of the final fare.
+
+**Pre-requisites**
+- Requires `OpenFleet` feature flag
+
+<Accordion title="See More">
+
+#### Where You'll See It
+- *Operations > Requests > [Select a completed Uzurv-fleeted request] > Fleet tab*
+
+#### What You Can Do
+- After an Uzurv trip is completed, navigate to the 'Fleet' tab in the request's detail panel.
+- A new 'Receipt' section will be visible, showing the final fare, distance traveled, trip duration, and an itemized list of fare components (e.g., base fare, per-mile charge).
+
+#### Why This Matters
+Previously, final fare details for Uzurv trips were not visible within the Spare platform. This integration provides transparency and simplifies reconciliation by displaying a complete, itemized receipt directly on the associated request.
+</Accordion>
+
+---
+### 🐛 Bug Fixes
+
+- **Service Configuration Display**
+  - _Resolution_: Fixed an issue in the *Admin > Services* (V2) interface where associated Groups and Fare Rules were not displaying correctly when viewing a service's configuration. These details now appear as expected in view mode.
+- **Trip Broker Integration Payment Handling (MOT-2674)**
+  - _Resolution_: Resolved an issue in the Trip Broker (Trapeze) integration where trip updates could fail if a booking contained multiple riders with different payment types. The system now correctly identifies the primary rider's payment method to ensure updates are processed successfully.
+
+---
+
+</Update>
+
 <Update label="3 December 2025" description="1 Updates">
 
 ### 🏢 Organization Switcher Now Available in More Apps
