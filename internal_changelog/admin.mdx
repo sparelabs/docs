@@ -2,6 +2,39 @@
 title: Admin
 rss: true
 ---
+<Update label="6 December 2025" description="2 Updates">
+
+### 📝 Improved Form and Custom Field Configuration
+
+**What's New**  
+We've introduced several quality-of-life improvements for managing custom fields and forms. You can now reorder choice options via drag-and-drop, edit the labels of existing choices without changing their underlying value, and quickly identify required fields in your forms with a new "Required" indicator.
+
+**Pre-requisites**
+- Requires Admin access
+
+<Accordion title="See More">
+
+#### Where You'll See It
+- **Choice Reordering & Editing**: *Settings > Field Manager > [Select a Single/Multiple Choice Field]* (in the "Choices" section). This also applies to choice-based fields within the Engage form builder at *Engage > Case Types > [Select Case Type] > Forms*.
+- **Required Indicator**: *Engage > Case Types > [Select Case Type] > Forms* (in the list of fields within the form builder, next to the visibility text).
+
+#### What You Can Do
+- **Reorder Choices**: When configuring a "Single Choice" or "Multiple Choice" custom field, use the new drag handle (grip-lines icon) to the left of each option to change its display order.
+- **Edit Choice Labels**: Click the new pencil icon next to a choice option to edit its public-facing label. The underlying value/key remains read-only to ensure data integrity.
+- **Identify Required Fields**: When viewing fields in the form builder, a "Required" indicator now appears next to the visibility text (e.g., "Editable and visible to Riders · Required"), making it easy to see which fields are mandatory at a glance.
+
+#### Why This Matters
+Previously, managing choice-based custom fields was rigid; reordering options required deleting and re-creating them, and labels couldn't be edited. These updates make form and custom field management more flexible and intuitive, saving administrators significant time and effort.
+</Accordion>
+
+---
+### 🐛 Bug Fixes
+
+- **Corrected Case Type Migration Failures (ENG-1089, ENG-1098)**
+  - *Resolution*: Fixed an issue where the Data Migration Tool (DMT) would fail when copying a case type if the source organization had a "todo" status that didn't exist in the destination. The tool now correctly skips attempting to create these system-generated statuses, allowing the migration to complete successfully for all other statuses.
+
+</Update>
+
 <Update label="4 December 2025" description="3 Updates">
 
 ### 🔐 Granular SQL Editor Access
