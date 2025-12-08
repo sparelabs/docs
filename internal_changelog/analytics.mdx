@@ -2,6 +2,83 @@
 title: Analytics
 rss: true
 ---
+<Update label="5 December 2025" description="4 Updates">
+
+### 📈 Increased Row Limit for Analytics Report Downloads
+
+**What's New**  
+The maximum number of rows that can be included in a single analytics report query or download has been substantially increased from 50,000 to 1,000,000. This allows for the analysis and export of much larger datasets.
+
+**Pre-requisites**
+- Requires `AnalyticsV2` feature flag.
+
+<Accordion title="See More">
+
+#### Where You'll See It
+- *Analytics > Query Builder* and *Analytics > Reports* (when running a query or using the 'Download' button for a report).
+
+#### What You Can Do
+- Run queries that return up to one million rows directly in the user interface.
+- Download large reports (e.g., a full month of trip data) as a single file without the data being truncated.
+
+#### Why This Matters
+The previous 50,000-row limit often required users to break up large reports into multiple smaller ones, making comprehensive analysis difficult. This update removes that barrier, enabling you to work with large, complete datasets more efficiently.
+</Accordion>
+
+---
+### 🗺️ New 'Total Revenue Distance' Dimension for Supply Analysis
+
+**What's New**  
+A new dimension, `Total Revenue Distance`, is now available in the `supply_distribution` data cube. This allows for filtering and analyzing duties based on the total distance they traveled while carrying passengers.
+
+**Pre-requisites**
+- Requires `AnalyticsV2` feature flag.
+
+<Accordion title="See More">
+
+#### Where You'll See It
+- *Analytics > Query Builder* (listed in the "Dimensions" section when the `supply_distribution` data cube is selected).
+
+#### What You Can Do
+- Add `Total Revenue Distance` as a filter to include or exclude duties based on the distance they traveled with riders.
+- Use this dimension to measure the productivity of supplied hours by focusing on vehicles that performed revenue-generating work.
+
+#### Why This Matters
+Previously, it was difficult to distinguish between vehicles that were simply on-duty and those that were actively generating revenue. You can now filter your supply analysis to focus specifically on productive, revenue-generating vehicle distance, leading to more accurate insights into operational efficiency.
+</Accordion>
+
+---
+### ⌨️ Improved Keyboard Controls for Analytics Filters
+
+**What's New**  
+The filter value input in the Analytics Query Builder now has improved keyboard support. You can press `Enter` to add a custom value directly from the input field and press `Escape` to close the value suggestions dropdown.
+
+**Pre-requisites**
+- Requires `AnalyticsV2` feature flag.
+
+<Accordion title="See More">
+
+#### Where You'll See It
+- *Analytics > Query Builder* (in the "Filters" section, when adding or editing a filter's value).
+
+#### What You Can Do
+- Type a value into a filter's input field and press `Enter` to add it, without needing to click.
+- If you open the suggestions dropdown by mistake or no longer need it, press `Escape` to close it and return focus to the input field.
+
+#### Why This Matters
+This change makes building reports faster and more efficient for keyboard-centric users. It reduces the need to switch between the keyboard and mouse, streamlining the process of adding and managing multiple filter values.
+</Accordion>
+
+---
+### 🐛 Bug Fixes
+
+- **SQL Editor Access for Super Admins (BUS-4661)**
+  - _Resolution_: Fixed an issue where the SQL Editor page in Analytics was not accessible to Super Admins. Access is now correctly granted to users with either the explicit SQL Editor permission or Super Admin privileges.
+
+---
+
+</Update>
+
 <Update label="4 December 2025" description="4 Updates">
 
 ### 📊 New 'Request Recurrence' Analytics Cube

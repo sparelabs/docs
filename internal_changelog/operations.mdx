@@ -2,6 +2,23 @@
 title: Operations
 rss: true
 ---
+<Update label="5 December 2025" description="1 Updates">
+
+### 🐛 Bug Fixes
+
+- **Duplicate 'Request Cancelled' Entries in Duty Activity Feed (MOT-2030)**
+  - _Resolution_: Corrected an issue that caused duplicate entries for cancelled requests to appear in the *Launch > Duties > [Duty] > Activity* tab. The feed now shows a single, more informative entry and displays data with improved real-time freshness.
+
+- **Service V2 Configuration Page Fixes (MOT-2552)**
+  - _Resolution_: Resolved two issues on the Service V2 configuration page (*Admin > Services*). Slider input fields (e.g., for detour multipliers) now correctly handle increments and manual typing, and editing stop coordinates now saves as expected.
+
+- **Missing Result Modal After Adding First Duty Interruption (MOT-2519)**
+  - _Resolution_: Fixed a bug where the success/failure result modal would not appear after adding the very first interruption (break) to a duty that previously had none. The result modal now displays correctly in all scenarios when adding breaks via the *Launch > Duties > [Duty] > Itinerary* tab.
+
+---
+
+</Update>
+
 <Update label="4 December 2025" description="1 Updates">
 
 ### 📜 Enhanced Duty Activity Feed with Infinite Scroll
