@@ -2,6 +2,116 @@
 title: Analytics
 rss: true
 ---
+<Update label="8 December 2025" description="5 Updates">
+
+### 📊 Improved Data Display for Empty Values in Charts and Tables
+
+**What's New**  
+Analytics charts and tables now display a dash (`-`) for data points that have no value, instead of showing a zero. This change provides a clearer distinction between a true value of zero and a complete absence of data.
+
+**Pre-requisites**
+- Requires `AnalyticsV2` feature flag to access analytics features
+- Requires Admin access
+
+<Accordion title="See More">
+
+#### Where You'll See It
+- *Analytics > Query Builder* (in all chart and table previews)
+- *Analytics > Reports & Dashboards* (on all saved reports)
+
+#### What You Can Do
+- **Before**: When a pivot table or chart had no data for a specific cell (e.g., no trips on a Sunday), it would display a `0`. In line charts, this caused a misleading dip to zero.
+- **After**: The same empty cell now displays a dash (`-`). In line charts, this creates a visual break in the line, accurately showing that data is missing for that point, not that the value is zero.
+
+#### Why This Matters
+This change prevents the misinterpretation of data. Previously, it was impossible to distinguish between a metric that was genuinely zero (e.g., 0 late trips) and a metric for which no data existed, improving the accuracy of visual analysis.
+</Accordion>
+
+---
+### 🔗 Link Duty and Driver Data in Reports
+
+**What's New**  
+You can now directly link `Duty` information to `Driver` details within the Analytics Query Builder. This enables you to include driver-specific information in reports that are based on duties.
+
+**Pre-requisites**
+- Requires `AnalyticsV2` feature flag to access analytics features
+- Requires Admin access
+
+<Accordion title="See More">
+
+#### Where You'll See It
+- *Analytics > Query Builder* (when building a query that includes the `Duty` cube)
+
+#### What You Can Do
+- When creating a report that uses the `Duty` cube, you can now add dimensions from the `Driver` cube, such as `Driver Full Name` or `Driver Status`.
+- For example, you can build a report on `Cases` that are linked to `Duties` and now also include the name of the `Driver` who was on that duty.
+
+#### Why This Matters
+Previously, it was not possible to connect duty-related events to the specific driver who performed them within a single report. This join enables more comprehensive operational reporting, allowing you to analyze performance, incidents, or other metrics by the assigned driver for any given duty.
+</Accordion>
+
+---
+### 🔍 New "Request Constraint Overrides" Data for Auditing
+
+**What's New**  
+A new `Request Constraint Overrides` data cube is now available in Analytics. This allows you to report on every instance where a dispatcher or admin manually overrode a system booking constraint.
+
+**Pre-requisites**
+- Requires `AnalyticsV2` feature flag to access analytics features
+- Requires Admin access
+
+<Accordion title="See More">
+
+#### Where You'll See It
+- *Analytics > Query Builder* (a new `Request Constraint Overrides` cube is available in the data model selector)
+
+#### What You Can Do
+- Create reports to track how often booking constraints (e.g., service area boundaries, booking hours) are being bypassed.
+- Analyze overrides by `Actor Type` (e.g., Admin) or `Author ID` to see who is performing the overrides.
+- Use dimensions like `Action At` to understand when overrides are most common.
+
+#### Why This Matters
+This feature provides critical oversight for operational compliance. Agencies can now monitor and audit exceptions to their established service rules, ensuring policies are being followed and identifying areas where rules may need adjustment.
+</Accordion>
+
+---
+### 📈 Expanded EAM Reporting with New Maintenance and Asset Data
+
+**What's New**  
+The data available for Enterprise Asset Management (EAM) reporting has been significantly expanded. Several new data cubes are now available in Analytics, providing deeper insights into vehicle maintenance, costs, and asset organization.
+
+**Pre-requisites**
+- Requires `AnalyticsV2` feature flag to access analytics features
+- Requires Admin access
+
+<Accordion title="See More">
+
+#### Where You'll See It
+- *Analytics > Query Builder* (new EAM-related cubes are available)
+
+#### What You Can Do
+- Report on new EAM entities, including:
+  - **`Work Order Categories`**: Group and filter work orders for better analysis.
+  - **`Service Entries`**: Track individual maintenance tasks and their completion dates.
+  - **`Service Entry Part Line Items`**: Analyze the cost and quantity of parts used in repairs.
+  - **`Fault Codes`**: Report on diagnostic fault codes to track vehicle reliability.
+  - **`Asset Groups` and `Asset Types`**: Organize and filter assets more effectively.
+  - **`Meter Entries`**: Analyze vehicle usage data like mileage.
+
+#### Why This Matters
+This expansion transforms EAM reporting from high-level summaries to detailed operational analysis. You can now build comprehensive dashboards to track maintenance costs, parts inventory, vehicle downtime, and technician performance, enabling data-driven decisions for your fleet management.
+</Accordion>
+
+---
+### 🐛 Bug Fixes
+
+- **Stability for Large Report Downloads (BUS-4662)**
+  - *Resolution*: To improve stability and prevent timeouts, the maximum number of rows for an analytics data export is now 250,000 (previously 1,000,000). This change, combined with increased server memory, ensures that large report downloads complete successfully without failing.
+
+---
+
+</Update>
+
 <Update label="5 December 2025" description="4 Updates">
 
 ### 📈 Increased Row Limit for Analytics Report Downloads
