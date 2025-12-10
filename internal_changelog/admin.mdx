@@ -2,6 +2,87 @@
 title: Admin
 rss: true
 ---
+<Update label="9 December 2025" description="4 Updates">
+
+### 📋 Copy Organization Settings on Creation
+
+**What's New**  
+When creating a new organization, you can now use the **"Copy From Organization"** feature to pre-populate its settings from an existing organization. This tool allows you to select a source organization from any region to use as a template.
+
+**Pre-requisites**
+- Requires Super admin permissions
+
+<Accordion title="See More">
+
+#### Where You'll See It
+- *Super Admin > Organizations > Add Organization*: A new **"Copy From Organization"** button is available at the top of the creation form.
+
+#### What You Can Do
+- Click the **"Copy From Organization"** button to open a modal.
+- In the modal, first select a region, then search for and select the source organization you want to copy settings from.
+- After confirming, the new organization form will be pre-filled with settings from the source, including basic settings (currency, timezone, etc.), feature flags, driver login configurations, and more.
+
+#### Why This Matters
+Setting up a new organization with complex configurations can be time-consuming and prone to error. This feature drastically speeds up the process and ensures consistency by allowing you to replicate a known-good configuration from an existing organization.
+</Accordion>
+
+---
+### 🗺️ Interactive Detour Visualization for Services
+
+**What's New**  
+The Service configuration page now includes an interactive visualization that shows how detour settings affect travel times. This tool provides a clear, graphical representation of pickup and dropoff flexibility, making it easier to understand and configure complex service parameters.
+
+**Pre-requisites**
+- Requires Admin access
+- No feature flags required
+
+<Accordion title="See More">
+
+#### Where You'll See It
+- *Settings > Services > [Service] > Engine*: The new **Detour Visualization** appears alongside the detour configuration fields.
+
+#### What You Can Do
+- **Visualize time windows:** The chart displays bars representing direct travel time, maximum detour time, and pickup/dropoff windows.
+- **Interact with sliders:** As you adjust sliders for fields like "Maximum detour per trip" or "Maximum time from request to pickup," the visualization updates in real-time to show the impact.
+- **Highlight related fields:** Hovering over a field in the form will highlight the corresponding element in the visualization, and vice-versa.
+
+#### Why This Matters
+Detour settings are powerful but can be abstract and difficult to conceptualize. This visualization provides immediate, intuitive feedback on how your changes will impact the rider experience, leading to more accurate and intentional service design.
+</Accordion>
+
+---
+### 🗣️ New "AI Voice & Chat" Settings Section
+
+**What's New**  
+AI-related settings have been moved from the "Advanced" menu into a new, dedicated **"AI Voice & Chat"** section in the main settings sidebar. This makes it easier to find and manage all configurations for AI Voice and Chat in one place.
+
+<Warning>This feature is currently categorized as 'Do Not Enable - In Development' and is not yet ready for customer use. Please await communications from the Product team on a feature rollout plan.</Warning>
+
+**Pre-requisites**
+- Requires Admin access
+- The section appears if at least one of the following feature flags is enabled: `LaunchAIVoice`, `EngageAIVoice`, or `AIVoiceOutboundCalls`.
+
+<Accordion title="See More">
+
+#### Where You'll See It
+- *Settings*: A new **"AI Voice & Chat"** menu item is now present in the sidebar, located below "Enterprise Asset Management".
+
+#### What You Can Do
+- **Access AI settings:** Navigate to the new section to find all AI-related configuration pages that were previously under the "Advanced" menu.
+- **Find settings easily:** This section consolidates links to pages like **Agent**, **Agent Forwarding Hours**, **AI Voice Exclusions**, and **Outbound AI Call Configurations**.
+
+#### Why This Matters
+As our AI capabilities expand, they deserve a distinct and easy-to-find home. This reorganization declutters the "Advanced" settings menu and provides a logical, centralized location for all current and future AI configurations.
+</Accordion>
+
+---
+### 🐛 Bug Fixes
+
+- **Correct Start Date for "Today" in Group Memberships (ENG-1120)**
+  - _Resolution_: Corrected an issue where creating a group membership with a start date of "Today" would store a `null` value. The system now correctly saves the current timestamp, ensuring the start date appears correctly in features like letter templates.
+
+</Update>
+
 <Update label="6 December 2025" description="2 Updates">
 
 ### 📝 Improved Form and Custom Field Configuration

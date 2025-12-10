@@ -2,6 +2,58 @@
 title: Analytics
 rss: true
 ---
+<Update label="9 December 2025" description="2 Updates">
+
+### 📈 Paginated Tables in All Analytics Views
+
+**What's New**  
+Table-based reports now load data one page at a time and include pagination controls at the bottom. This change improves performance for large datasets and applies universally across the *Query Builder*, *Report View*, and *Dashboard* widgets.
+
+**Pre-requisites**
+- Requires `AnalyticsV2` feature flag
+
+<Accordion title="See More">
+
+#### Where You'll See It
+- *Analytics > Query Builder*: Pagination controls appear below the results table after running a query.
+- *Analytics > Reports > [Table Report]*: The report view now includes a paginator at the bottom of the table.
+- *Analytics > Dashboards > [Dashboard]*: Table chart widgets now have pagination controls within the widget frame.
+
+#### What You Can Do
+- Navigate through large tables page by page instead of loading all data at once.
+- Experience faster initial load times for dashboards and reports containing large tables.
+- Notice that in the *Query Builder*, you must now click the **"Run"** button to refresh data after changing a query; it no longer auto-loads on every change.
+
+#### Why This Matters
+Previously, loading table reports with thousands of rows could be slow and memory-intensive. This update makes viewing large datasets much faster and more responsive by fetching data in manageable chunks.
+</Accordion>
+
+---
+### 👤 "Last Updated By" Column in Report List
+
+**What's New**  
+The Analytics Report List now includes a "Last Updated By" column, showing which user last modified each report. This new column is also sortable, making it easier to track recent changes and identify report owners.
+
+**Pre-requisites**
+- Requires `AnalyticsV2` feature flag
+
+<Accordion title="See More">
+
+#### Where You'll See It
+- *Analytics > Reports*: A new **"Last Updated By"** column is visible in the report list table.
+
+#### What You Can Do
+- See at a glance who made the last change to any report.
+- Click the column header to sort the list by the person who last updated the reports.
+
+#### Why This Matters
+This provides greater visibility into report management, helping teams understand who is actively working on different reports and improving collaboration.
+</Accordion>
+
+---
+
+</Update>
+
 <Update label="8 December 2025" description="5 Updates">
 
 ### 📊 Improved Data Display for Empty Values in Charts and Tables

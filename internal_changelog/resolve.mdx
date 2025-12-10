@@ -2,6 +2,41 @@
 title: Resolve
 rss: true
 ---
+<Update label="9 December 2025" description="2 Updates">
+
+### ☑️ Multi-Select for Priority and Tags in Triage Rules
+
+**What's New**  
+When building Triage Rules, you can now select multiple values for "Priority" and "Tags" conditions. The interface now uses a multi-select dropdown with checkboxes for these fields when using operators like "is one of" or "is none of."
+
+**Pre-requisites**
+- Requires Admin access
+- No feature flags required
+
+<Accordion title="See More">
+
+#### Where You'll See It
+- *Engage > Triage > [Case Type] > Add Rule / Edit Rule*: The value input for **Priority** and **Tags** conditions.
+
+#### What You Can Do
+- **Create multi-value conditions:** For example, you can create a rule where "Priority is one of [Urgent, High]".
+- **Use new operators:** The rule builder now supports multi-value operators like `is one of`, `is none of`, and `is all of`.
+- **Easily select multiple items:** A new dropdown component with a checkbox list allows you to select or deselect multiple priorities or tags. The trigger button will show a count of selected items (e.g., "2 priorities selected").
+
+#### Why This Matters
+This change makes Triage Rules more powerful and flexible. Instead of creating separate rules for each priority or tag, you can now group them into a single, more efficient rule, simplifying your triage automation setup.
+</Accordion>
+
+---
+### 🐛 Bug Fixes
+
+- **Missing Calendar Icon in Case Activity Log (ENG-1121)**
+  - _Resolution_: Restored the missing calendar icon for appointment-related events (created, updated, cancelled) in the *Engage > Cases > [Case] > Activity* log, ensuring visual consistency with other appointment UI elements.
+
+---
+
+</Update>
+
 <Update label="5 December 2025" description="1 Updates">
 
 ### 🐛 Bug Fixes

@@ -2,6 +2,69 @@
 title: Enterprise Asset Management
 rss: true
 ---
+<Update label="9 December 2025" description="2 Updates">
+
+### ✏️ Inline Editing for Asset, Issue, and Work Order Status
+
+**What's New**  
+You can now update the status, severity, or priority of items directly from EAM list pages. A new editable chip with a dropdown arrow allows for quick changes without needing to navigate to the item's detail page.
+
+**Pre-requisites**
+- Requires Admin access and the following permissions for the corresponding lists:
+
+  - `WRITE_ANY_EAM_ASSET` for the Assets list
+  - `WRITE_ANY_EAM_ISSUE` for the Issues list
+  - `WRITE_ANY_EAM_WORK_ORDER` for the Work Orders list
+- No feature flags required
+<Accordion title="See More">
+
+#### Where You'll See It
+- *EAM > Assets*: The **Status** column now contains an editable chip.
+- *EAM > Issues*: The **Severity** column now contains an editable chip.
+- *EAM > Work Orders*: The **Priority** column now contains an editable chip.
+
+#### What You Can Do
+- **Update from the list:** For users with write permissions, click the chip in the `Status`, `Severity`, or `Priority` column to open a dropdown menu and select a new value.
+- **See loading state:** A spinner will appear on the chip while the update is in progress.
+- **View-only mode:** For users without write permissions, the chip will appear as a standard, non-interactive badge. Clicking it will navigate to the item's detail page as before.
+
+#### Why This Matters
+This enhancement streamlines workflows for maintenance managers by allowing them to make rapid status updates across multiple assets, issues, or work orders directly from a single list view, saving time and clicks.
+</Accordion>
+
+---
+### 🛠️ Dynamic Custom Fields Across EAM
+
+**What's New**  
+Custom fields for EAM are now more dynamic and consistently integrated. Any custom fields you create for Issues, Parts, Vendors, Work Orders, and Meter Entries will automatically appear in their respective list page columns, creation forms, and detail views.
+
+**Pre-requisites**
+- Requires Admin access
+- No feature flags required
+
+<Accordion title="See More">
+
+#### Where You'll See It
+This change applies to all EAM objects where custom fields are supported, including:
+- *EAM > Work Orders* (List, New/Edit Form, View Page)
+- *EAM > Issues* (List, New/Edit Form, View Page)
+- *EAM > Parts* (List, New/Edit Form, View Page)
+- *EAM > Vendors* (List, New/Edit Form, View Page)
+- *EAM > Meter Entries* (List, New/Edit Form, View Page)
+
+#### What You Can Do
+- **View in Lists:** Custom fields configured as "Show in list" will now correctly appear as columns in the corresponding EAM list pages.
+- **Use in Forms:** Custom fields will be available in the forms when creating or editing any of the EAM objects listed above.
+- **See in Details:** All custom field values are displayed on the object's detail page.
+
+#### Why This Matters
+Previously, integrating custom fields across all EAM interfaces was inconsistent. This architectural improvement ensures that once you define a custom field, it is reliably available everywhere you need it, from data entry to list-based reporting.
+</Accordion>
+
+---
+
+</Update>
+
 <Update label="8 December 2025" description="1 Updates">
 
 ### 🐛 Bug Fixes
