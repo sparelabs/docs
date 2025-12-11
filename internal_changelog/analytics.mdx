@@ -2,6 +2,60 @@
 title: Analytics
 rss: true
 ---
+<Update label="10 December 2025" description="2 Updates">
+
+### ⚙️ Intelligent Ungrouping for Faster, More Granular Reports
+
+**What's New**  
+The Query Builder will now automatically enable an "Ungrouped Mode" for certain queries to deliver more granular, row-level data and improve performance. This behavior can be manually overridden using a new toggle.
+
+**Pre-requisites**
+- Requires `AnalyticsV2` feature flag
+- Requires Admin access with Analytics permissions
+
+<Accordion title="See More">
+
+#### Where You'll See It
+- *Analytics > Query Builder* (new "Ungrouped" toggle and "Optimized" badge in the toolbar)
+
+#### What You Can Do
+- The system will automatically enable Ungrouped Mode when it detects that a query would benefit from it (e.g., when all primary keys of a data cube are selected, or when more than 8 dimensions are added).
+- An "Optimized" badge will appear next to the "Ungrouped" toggle to indicate that the automatic setting is active.
+- Manually switch the "Ungrouped" toggle to "On" or "Off" to override the automatic detection. Your override will be saved with the report.
+
+#### Why This Matters
+Some reports, like manifests, require seeing every individual record rather than aggregated data. This feature intelligently detects when an ungrouped, row-level view is needed, improving query performance and providing the right level of detail automatically, while still giving you full manual control.
+</Accordion>
+
+---
+### 📊 New "Request Constraint Overrides" Analytics Cube
+
+**What's New**  
+A new data cube, "Request Constraint Overrides," is now available in Analytics. This allows you to build reports that analyze instances where dispatchers manually overrode booking constraints (e.g., `MaxWaitTime`, `MaxRideTime`).
+
+**Pre-requisites**
+- Requires `AnalyticsV2` and `ConstraintOverrides` feature flags
+- Requires Admin access with Analytics permissions
+
+<Accordion title="See More">
+
+#### Where You'll See It
+- *Analytics > Query Builder* (available in the cube selector dropdown)
+
+#### What You Can Do
+- Create reports to count how often specific constraints are overridden.
+- Analyze which admins are performing overrides.
+- Identify requests that required an override to be booked.
+- Correlate overrides with other request, rider, or trip data.
+
+#### Why This Matters
+Understanding why and when constraints are overridden is crucial for service planning and refinement. This new cube provides the data necessary to identify patterns, such as consistently tight time windows or service area limitations, enabling you to make data-driven adjustments to your service parameters.
+</Accordion>
+
+---
+
+</Update>
+
 <Update label="9 December 2025" description="2 Updates">
 
 ### 📈 Paginated Tables in All Analytics Views

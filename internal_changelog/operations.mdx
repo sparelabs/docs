@@ -2,6 +2,95 @@
 title: Operations
 rss: true
 ---
+<Update label="10 December 2025" description="4 Updates">
+
+### 🏷️ Retain Context with "Dismissed" Badge on Driver Alerts
+
+**What's New**  
+When a driver behavior alert (e.g., Late Pullout, Unscheduled Stop) is dismissed from the Live Map watchlist, it will now remain visible in the duty details pane, but with a new "Dismissed" badge. This provides dispatchers with a complete history of driver events for the day, even after an alert has been acknowledged.
+
+**Pre-requisites**
+- Requires `LiveMapAlerts` feature flag
+- Requires Admin access
+
+<Accordion title="See More">
+
+#### Where You'll See It
+- *Dispatch > Live Map* (select a duty with a dismissed alert, view the "Driver Behaviour" section in the duty details pane)
+
+#### What You Can Do
+- Dismiss a driver behavior alert from the Live Map watchlist.
+- Observe that the alert is removed from the active watchlist.
+- Select the associated duty on the map and see the alert is still listed in the duty pane, now with a "Dismissed" badge.
+
+#### Why This Matters
+Previously, dismissing an alert removed it from all views, erasing valuable operational context. This change ensures that dispatchers can see a full log of a driver's behavior throughout their duty, even after alerts are acknowledged, leading to more informed decision-making and better record-keeping.
+</Accordion>
+
+---
+### 📜 Track Duty Changes in the Activity Feed
+
+<Warning>This feature is currently categorized as 'Do Not Enable - In Development' and is not yet ready for customer use. Please await communications from the Product team on a feature rollout plan.</Warning>
+
+**What's New**  
+The Duty Activity Feed now provides a detailed before-and-after comparison for updated duty properties, such as driver, vehicle, or time changes. This brings the same level of transparency to duty edits that already exists for request updates.
+
+**Pre-requisites**
+- Requires `DutyActivityFeed` feature flag
+- Requires Admin access
+
+<Accordion title="See More">
+
+#### Where You'll See It
+- *Dispatch > Duties > [Select a Duty] > Activity Feed tab*
+
+#### What You Can Do
+- When a duty is updated, the activity feed will display a "Duty Updated" event.
+- The event details will show each changed field with its "Previous Value" and "Current Value," including changes to custom fields.
+
+#### Why This Matters
+It was previously difficult to track the history of changes made to a duty. This feature provides a clear, auditable log of all modifications, making it easy for dispatchers and managers to understand how a duty evolved over its lifecycle.
+</Accordion>
+
+---
+### 👥 Analyze Live Requests by Trip Group
+
+**What's New**  
+The Live Requests page now includes a "By Group" view, providing key operational metrics aggregated by Trip Group. This allows for at-a-glance analysis of how different groups of recurring trips are performing.
+
+**Pre-requisites**
+- Requires `TripGroup` feature flag
+- Requires Admin access
+
+<Accordion title="See More">
+
+#### Where You'll See It
+- *Rides > Live Requests* (new "By Group" tab)
+
+#### What You Can Do
+- Navigate to the "By Group" tab on the Live Requests page.
+- View a table that lists each Trip Group alongside key metrics, including:
+  - **Duty Count:** The number of unique duties servicing requests in that group.
+  - **Largest Pool Size:** The highest number of concurrently pooled riders from that group on a single vehicle.
+  - **Request Count:** The total number of non-canceled requests in that group.
+
+#### Why This Matters
+This provides a powerful new way to monitor the efficiency and utilization of your recurring services. By grouping metrics by Trip Group, you can quickly identify which groups are achieving high pooling rates and which may need adjustments to improve performance.
+</Accordion>
+
+---
+### 🐛 Bug Fixes
+
+- **External Integration Error Handling (No Ticket ID)**
+  - _Resolution_: Improved error handling for an external ride-hailing integration to provide clearer, more actionable messages when a ride cancellation or an overlapping request is rejected by the provider.
+
+- **Trapeze Integration Reliability (MOT-2700)**
+  - _Resolution_: Corrected the order of backend operations for the Trapeze integration to ensure that drop-off status updates are communicated more reliably and in the correct sequence.
+
+---
+
+</Update>
+
 <Update label="5 December 2025" description="1 Updates">
 
 ### 🐛 Bug Fixes

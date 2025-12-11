@@ -2,6 +2,35 @@
 title: Enterprise Asset Management
 rss: true
 ---
+<Update label="10 December 2025" description="1 Updates">
+
+### ⛓️ Decouple Issue and Work Order Statuses
+
+**What's New**  
+Issues linked to a Work Order can now be resolved, closed, edited, or reopened independently of the Work Order's status. Additionally, completing or canceling a Work Order will now automatically resolve any open Issues linked to it.
+
+**Pre-requisites**
+- Requires Admin access with EAM permissions
+
+<Accordion title="See More">
+
+#### Where You'll See It
+- *EAM > Issues* (actions in the grid and issue detail view)
+- *EAM > Work Orders > [Select Work Order]* (linked issues section)
+
+#### What You Can Do
+- **Independent Actions:** Resolve, close, or reopen an Issue directly from the Issues page, even if it is linked to an active Work Order.
+- **Informational Banners:** When taking action on a linked Issue, a warning banner will appear in the drawer to inform you that it is part of a Work Order.
+- **Automatic Resolution:** When a Work Order is moved to "Completed" or "Canceled," all of its open linked Issues will be automatically updated to "Resolved."
+
+#### Why This Matters
+Previously, an Issue's lifecycle was rigidly tied to its Work Order, preventing staff from closing out minor issues that were part of a larger job. This change provides greater flexibility, allowing maintenance staff to manage issues and work orders in a way that better reflects real-world workflows.
+</Accordion>
+
+---
+
+</Update>
+
 <Update label="9 December 2025" description="2 Updates">
 
 ### ✏️ Inline Editing for Asset, Issue, and Work Order Status

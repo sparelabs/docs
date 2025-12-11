@@ -2,3 +2,87 @@
 title: Eligibility
 rss: true
 ---
+<Update label="10 December 2025" description="4 Updates">
+
+### 🤖 Introducing Case Intelligence for Automated Investigation
+
+**What's New**  
+Case Intelligence is a new AI-powered system that automatically investigates cases in Spare Engage. It generates a detailed summary, identifies potential duplicate cases, and suggests actions such as adding tags or linking related requests, all to accelerate the case resolution process.
+
+**Pre-requisites**
+- Requires `CaseIntelligence` feature flag
+- Requires Admin access with Engage permissions
+
+<Accordion title="See More">
+
+#### Where You'll See It
+- *Engage > [Case Type] > [Select a Case] > Summary tab*
+
+#### What You Can Do
+- **View AI Summaries:** When a case is created or updated, Case Intelligence runs in the background to produce a summary of all relevant information, including form responses, notes, and linked items.
+- **Review Suggested Actions:** The system may suggest actions like "Add Tag: Urgent" or "Link Request #12345," which you can apply with a single click.
+- **Identify Duplicates:** The AI actively looks for other cases that may be duplicates and presents them for your review.
+- **Robust Generation:** The underlying AI model has been enhanced to ensure that summaries for even the most complex cases are generated completely and without being cut short.
+
+#### Why This Matters
+Manually gathering context and identifying next steps for a case can be time-consuming. Case Intelligence automates this discovery process, presenting agents with a pre-digested summary and actionable suggestions, significantly reducing manual effort and speeding up resolution times.
+</Accordion>
+
+---
+### ✉️ Include Upcoming Group Memberships in Letter Variables
+
+**What's New**  
+You can now use new letter variables in Spare Engage that pull data from a rider's "Upcoming" group memberships, in addition to their "Active" ones. This is ideal for sending renewal notices or eligibility letters that need to reference future membership periods.
+
+**Pre-requisites**
+- Requires Admin access with Engage permissions
+
+<Accordion title="See More">
+
+#### Where You'll See It
+- *Engage > Letters > [Select a Template]* (in the "Insert Variable" picker)
+
+#### What You Can Do
+- When editing a letter template, you will see new variables with an "(Including Upcoming)" suffix (e.g., `{{groupIncludingUpcoming.{groupId}.expiryTs}}`).
+- These variables will use data from the most recently created membership for a given group, whether it is Active or Upcoming.
+- **Example:** If a rider has an active membership expiring in Feb 2026 and an upcoming membership expiring in Feb 2027, this new variable will correctly display the 2027 expiry date.
+
+#### Why This Matters
+Previously, letter variables could only see active memberships, making it impossible to reference future eligibility periods. This change ensures you can communicate accurate, forward-looking information to riders about their upcoming memberships.
+</Accordion>
+
+---
+### 🔍 Filter Cases by Connected Appointments and Letters
+
+**What's New**  
+Case list views in Spare Engage can now be filtered by their connected items, such as Appointments and Letters. This allows you to create powerful, specific views like "cases with appointments in the next 7 days" or "cases with a specific letter template sent this month."
+
+**Pre-requisites**
+- Requires Admin access with Engage permissions
+
+<Accordion title="See More">
+
+#### Where You'll See It
+- *Engage > Eligibility > [Case Type]* (Filter dropdown)
+- *Engage > Resolve > [Case Type]* (Filter dropdown)
+
+#### What You Can Do
+- In the filter dropdown on a case list, you will see new filter options with "Appt:" and "Letter:" prefixes if the case type has appointments or letters configured.
+- **Appointment Filters:** Filter by Type, Status, Assigned To, Start Time, End Time, and Created At.
+- **Letter Filters:** Filter by Template, Generated At, and Sent At.
+- Save these filters as part of a custom view for easy access.
+
+#### Why This Matters
+Finding cases based on their related activities used to be impossible. This feature gives you the tools to quickly locate cases based on the status and timing of their associated appointments and communications, streamlining workflows for agents and managers.
+</Accordion>
+
+---
+### 🐛 Bug Fixes
+
+- **Appointment Extra Availability (ENG-1108)**
+  - _Resolution_: Fixed an issue where "Extra Availability" for appointments was not being split into correct time slots and booking attempts were failing. An admin's extra availability is now correctly handled, allowing appointments to be successfully booked during those times.
+
+---
+
+</Update>
+
