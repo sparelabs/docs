@@ -2,6 +2,40 @@
 title: Operations
 rss: true
 ---
+<Update label="11 December 2025" description="2 Updates">
+
+### ⏱️ Interactive Trip Negotiation Time Window Visualization
+
+**What's New**  
+A new interactive timeline visualization has been added to the Service V2 configuration page. It helps admins understand and configure how trip time negotiation works by visually representing pickup/drop-off windows, travel time, and detours.
+
+**Pre-requisites**
+- Requires Admin access
+
+<Accordion title="See More">
+
+#### Where You'll See It
+- *System Settings > Services > [Select a Service with Engine V2] > Windows & Engine* tab (new "Trip Negotiation" visualization)
+
+#### What You Can Do
+- Toggle between "Leave At" and "Arrive By" scenarios to see how time windows are calculated.
+- Visually see the requested time, the available pickup/drop-off windows, and how detours affect travel time.
+- The visualization updates in real-time as you adjust service settings.
+
+#### Why This Matters
+Understanding the complex interactions between different service time settings can be difficult. This visualization provides a clear, immediate visual representation of how trip negotiation windows are determined, making it easier to configure services correctly and confidently.
+</Accordion>
+
+---
+### 🐛 Bug Fixes
+
+- **Duty Activity Feed Stability for Large Duties (MOT-2030)**
+  * _Resolution_: Fixed a validation error that caused the *Duties > [Duty] > Activity Log* tab to fail for duties with more than 20 requests. The system now correctly handles large volumes of activity data and ensures events with the exact same timestamp are sorted in a logical order (e.g., "In Progress" before "Arriving").
+
+---
+
+</Update>
+
 <Update label="10 December 2025" description="4 Updates">
 
 ### 🏷️ Retain Context with "Dismissed" Badge on Driver Alerts

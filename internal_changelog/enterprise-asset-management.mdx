@@ -2,6 +2,44 @@
 title: Enterprise Asset Management
 rss: true
 ---
+<Update label="11 December 2025" description="2 Updates">
+
+### 🗄️ Archive and Unarchive EAM Integrations
+
+**What's New**  
+You can now archive EAM integrations that are no longer in use. Archiving an integration deactivates it, stopping all data synchronization without permanently deleting the configuration.
+
+**Pre-requisites**
+- Requires Admin access with `EAM - Write` permissions
+- No feature flags required
+
+<Accordion title="See More">
+
+#### Where You'll See It
+- *EAM > Integrations* (new "Archive" option in the actions menu for each integration)
+
+#### What You Can Do
+- Click the three-dot menu on an integration row and select "Archive".
+- Archived integrations will stop syncing data.
+- You can view and "Unarchive" integrations to reactivate them.
+
+#### Why This Matters
+Previously, old or temporary integrations cluttered the list and could not be disabled without being deleted. Archiving provides a way to safely deactivate integrations, keeping your active list clean while preserving the configuration for future use if needed.
+</Accordion>
+
+---
+### 🐛 Bug Fixes
+
+- **Creating Issues from Asset Details Page (EAM-730)**
+  * _Resolution_: Resolved a validation error ("reportedByUserId: Required") that occurred when adding a new issue from an asset's detail page (*EAM > Assets > [Asset] > Issues* tab). The "Reported By" field is now correctly pre-filled with the current user's name.
+
+- **Large Meter Entry Warning on Asset Page (EAM-733)**
+  * _Resolution_: Restored the confirmation warning that appears when a user enters an unusually large value in a meter reading on the *EAM > Assets > [Asset] > Meter Entries* tab. This helps prevent accidental data entry errors.
+
+---
+
+</Update>
+
 <Update label="10 December 2025" description="1 Updates">
 
 ### ⛓️ Decouple Issue and Work Order Statuses

@@ -2,6 +2,40 @@
 title: Admin
 rss: true
 ---
+<Update label="11 December 2025" description="2 Updates">
+
+### 🗺️ Set Favorite Location with an Interactive Map
+
+**What's New**  
+When adding or editing a rider's favorite location, you can now use an interactive map to precisely set the address coordinates. This allows for fine-tuning the location pin, which is especially useful for large venues like malls or airports.
+
+**Pre-requisites**
+- Requires Admin access
+- No feature flags required
+
+<Accordion title="See More">
+
+#### Where You'll See It
+- *Riders > Rider List > [Select a Rider] > Favorite Locations* (in the "Add Favorite Location" or "Edit Favorite Location" modal)
+
+#### What You Can Do
+- Search for an address as usual. A map will appear showing the location.
+- Drag the pin on the map to adjust the exact pickup or drop-off spot. The address field will update automatically based on the new pin location.
+
+#### Why This Matters
+Address search doesn't always place the pin in the most convenient spot for riders, especially in large areas. This feature gives admins the ability to manually adjust the location to a specific entrance or pickup point, improving accuracy and the rider's experience.
+</Accordion>
+
+---
+### 🐛 Bug Fixes
+
+- **Rider Import with Duplicate Phone Numbers (BUS-4733)**
+  * _Resolution_: The rider import process (*Data > Riders > Import Riders*) will now correctly allow multiple riders to have the same phone number, as long as the organization setting "Use phone number for authentication" is disabled. This aligns the import validation with the platform's overall authentication rules.
+
+---
+
+</Update>
+
 <Update label="10 December 2025" description="1 Updates">
 
 ### 🐛 Bug Fixes
