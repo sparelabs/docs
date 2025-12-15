@@ -2,6 +2,55 @@
 title: Analytics
 rss: true
 ---
+<Update label="12 December 2025" description="2 Updates">
+
+### 📊 Preview the Next Generation of Query Builder
+
+**What's New**  
+Introducing a preview of Query Builder V2, a complete rewrite of our analytics query interface. This new version offers significantly improved performance, a refreshed design, and new capabilities like Undo/Redo, while maintaining full feature parity with the original Query Builder.
+
+**Pre-requisites**
+- Requires Super admin permissions. The original Query Builder remains the default for all other users.
+
+<Accordion title="See More">
+
+#### Where You'll See It
+- Click the new flask icon (<i class="fa fa-flask"></i>) in *Analytics > Reports* next to the 'New Report' button to open the V2 editor.
+
+#### What You Can Do
+- Build and run queries in a faster, more responsive interface.
+- Use the new **Undo** and **Redo** buttons to easily reverse or re-apply changes to your query.
+- Access all the same measures, dimensions, and filters you are used to from the original Query Builder.
+
+#### Why This Matters
+This rewrite provides a more robust and scalable foundation for future AI-powered analytics features. For now, it delivers a much faster and more pleasant user experience for building and editing reports.
+</Accordion>
+
+---
+### 📊 New Fleet & Service Filters for Dashboards
+
+**What's New**  
+Analytics dashboards now include built-in, multi-select filters for Fleets and Services, allowing for more granular data exploration directly from the dashboard view.
+
+**Pre-requisites**
+- Requires `AnalyticsV2` feature flag.
+
+<Accordion title="See More">
+
+#### Where You'll See It
+- *Analytics > Dashboards > (Select a Dashboard)* (the new filters appear in the filter bar at the top of the dashboard)
+
+#### What You Can Do
+- Filter all reports on a dashboard by one or more specific fleets or services to narrow down insights. This is especially useful for embedded dashboards, such as the one on the EAM home page.
+
+#### Why This Matters
+Previously, filtering by fleet or service required building custom filters for each individual report. These new built-in dashboard filters streamline the process, making it faster and easier to analyze performance for specific operational segments.
+</Accordion>
+
+---
+
+</Update>
+
 <Update label="11 December 2025" description="1 Updates">
 
 ### 🐛 Bug Fixes

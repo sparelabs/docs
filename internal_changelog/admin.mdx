@@ -2,6 +2,40 @@
 title: Admin
 rss: true
 ---
+<Update label="12 December 2025" description="2 Updates">
+
+### 🛡️ Restricted Services Now a Standard Feature
+
+**What's New**  
+The ability to restrict a service to specific user groups is now a standard feature available to all organizations. The "Is Restricted" setting is always available when configuring a service.
+
+**Pre-requisites**
+- No feature flags required (previously required `restrictedServices` feature flag).
+- Requires Admin access to configure services.
+
+<Accordion title="See More">
+
+#### Where You'll See It
+- *Admin > Services > (Select a Service) > Edit* (the "Is Restricted" checkbox is now permanently visible in the service configuration)
+
+#### What You Can Do
+- Mark any service as "restricted" to limit who can book trips on it.
+- Grant booking permissions for these services to specific user groups via the `WRITE_RESTRICTED_SERVICE_REQUEST` permission.
+
+#### Why This Matters
+This feature was fully rolled out and proven stable, so we have removed the feature flag to make it a permanent part of the platform. It provides essential control for managing access to premium, specialized, or pilot services.
+</Accordion>
+
+---
+### 🐛 Bug Fixes
+
+- **Data Migration Tool (DMT) Case Type Copying (ENG-1140)**
+  - _Resolution_: The Data Migration Tool's case type copier now correctly reads all existing items (like forms and letters) in a destination organization, preventing "Key is already in use" errors when migrating configurations with more than 10 of any given item.
+
+---
+
+</Update>
+
 <Update label="11 December 2025" description="2 Updates">
 
 ### 🗺️ Set Favorite Location with an Interactive Map
