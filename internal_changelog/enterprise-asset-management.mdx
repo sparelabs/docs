@@ -2,6 +2,66 @@
 title: Enterprise Asset Management
 rss: true
 ---
+<Update label="13 December 2025" description="3 Updates">
+
+### ❗ Urgent Failure Configuration for Inspections
+
+**What's New**  
+You can now configure detailed actions for failed inspection items, including flagging failures as "Urgent." When an inspection is submitted with an urgent failure, a new modal immediately appears, highlighting the urgent issue and allowing for quick updates to the asset's status.
+
+**Pre-requisites**
+- Requires `VehicleInspections` feature flag
+- Requires Admin access
+
+<Accordion title="See More">
+
+#### Where You'll See It
+- **Configuration**: *Admin > EAM > Inspection Forms > [Create/Edit Form] > [Select Item]* (new "On Fail" dropdown and "Urgent Fail Message" field)
+- **Urgent Modal**: Appears automatically after submitting an inspection that contains an item marked as an urgent failure.
+- **Viewing**: *Admin > EAM > Inspections* (a new "Has Urgent Failure" column and filter are now available in the inspections list)
+
+#### What You Can Do
+- **Configure Fail Actions**: For each inspection item, use the new "On Fail" dropdown to choose what happens upon failure: "No Action," "Create Issue," or "Urgent Action Required."
+- **Set Urgent Messages**: When "Urgent Action Required" is selected, you can write a custom "Urgent Fail Message" that will be displayed to the user who submits the inspection.
+- **Update Asset Status Immediately**: The new "Urgent Failures" modal allows you to change the asset's status (e.g., to "Out of Service") directly from the modal without navigating to another page.
+
+#### Why This Matters
+This provides more control over the inspection process and improves safety-critical workflows. By distinguishing between minor failures and urgent issues, you can ensure that critical problems are immediately flagged and addressed, reducing vehicle downtime and improving operational safety.
+</Accordion>
+
+---
+### 🛡️ Automatic Voiding of Invalid Telematics Meter Entries
+
+**What's New**  
+The system now automatically detects and voids invalid meter entries synced from telematics providers. If a new meter reading is lower than a previous one (e.g., due to a device reset or data error), the entry is marked as "void" instead of causing the integration to fail.
+
+**Pre-requisites**
+- No feature flags required
+- Requires Admin access to view meter entries
+
+<Accordion title="See More">
+
+#### Where You'll See It
+- You will see the results in *Admin > EAM > Assets > [Select Asset] > Meter Entries tab*. Invalid entries synced from a telematics integration will have a "Void" status.
+
+#### What You Can Do
+- Previously, when a telematics integration sent a meter reading (e.g., mileage) that was chronologically later but numerically smaller than the last recorded value, the system would reject it, potentially halting the data sync.
+- Now, the system will accept the entry but automatically mark it as `isVoid=true`, allowing subsequent valid data to continue syncing without interruption.
+
+#### Why This Matters
+Telematics data can sometimes be faulty, with incorrect readings causing integration errors that require manual intervention. This change makes the data ingestion process more resilient by automatically isolating bad data without halting the entire sync, ensuring that valid meter readings continue to be processed.
+</Accordion>
+
+---
+### 🐛 Bug Fixes
+
+- **Work Order Loading (EAM-657)**
+  - _Resolution_: Fixed a bug that could cause the Work Order page to crash if it was associated with a vehicle that had no meter service entries. The page now loads correctly in all scenarios.
+
+---
+
+</Update>
+
 <Update label="12 December 2025" description="3 Updates">
 
 ### 📅 Optional Due Dates for Work Order Issues

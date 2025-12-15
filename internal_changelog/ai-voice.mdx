@@ -2,6 +2,35 @@
 title: AI Voice
 rss: true
 ---
+<Update label="13 December 2025" description="1 Updates">
+
+### 📞 Granular Call Forwarding by Time of Day
+
+**What's New**  
+AI Voice now supports assigning specific forwarding phone numbers to different time rules within an agent's Forwarding Hours. This allows calls to be routed to different teams or locations based on the time of day, day of the week, or for specific date overrides like holidays.
+
+**Pre-requisites**
+- Requires `LaunchAIVoice` feature flag
+- Requires Admin access
+
+<Accordion title="See More">
+
+#### Where You'll See It
+- *Admin > AI & Messaging > Voice Agents > [Select Agent] > Forwarding Hours tab* (a new "Forwarding Number" field is now available for each time rule and override)
+
+#### What You Can Do
+- Enter a unique phone number for each scheduled time rule (e.g., weekday business hours) and for each override (e.g., holidays).
+- If a time rule is active but does not have a specific number assigned, the system will fall back to using the main forwarding number set for the agent.
+- If no number is set for the active rule or the agent, the call will not be forwarded.
+
+#### Why This Matters
+Previously, an AI Voice agent could only forward to a single, static phone number. This change provides the flexibility to route rider calls to the correct destination—such as an after-hours call center, a specific department during business hours, or a holiday support line—automatically based on your defined schedules.
+</Accordion>
+
+---
+
+</Update>
+
 <Update label="11 December 2025" description="1 Updates">
 
 ### 🐛 Bug Fixes

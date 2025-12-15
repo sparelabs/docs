@@ -2,6 +2,17 @@
 title: Analytics
 rss: true
 ---
+<Update label="13 December 2025" description="1 Updates">
+
+### 🐛 Bug Fixes
+
+- **Pre-1970 Dates in Analytics Reports (BUS-4470)**
+  - _Resolution_: Fixed an issue where custom `Date` fields (like a rider's date of birth) with dates before 1970 were displayed with an incorrect year (e.g., 2106) in reports. These dates now show the correct year in all reports generated via the Query Builder.
+- **Duplicate Error Banners in Query Builder (BUS-4663)**
+  - _Resolution_: Resolved an issue in *Analytics > Query Builder* where running a query with an error could sometimes display both a red error banner and a yellow warning banner simultaneously. The interface will now correctly show only the single, relevant error banner.
+
+</Update>
+
 <Update label="12 December 2025" description="2 Updates">
 
 ### 📊 Preview the Next Generation of Query Builder
