@@ -2,6 +2,21 @@
 title: Operations
 rss: true
 ---
+<Update label="15 December 2025" description="1 Updates">
+
+### 🐛 Bug Fixes
+
+- **Trip Group Modal Accuracy**
+  - _Resolution_: Corrected an issue where cancelled requests were still appearing in the "On Other Duties" section of the Trip Group modal. Now, only active requests are displayed, providing an accurate view of trip distribution across duties.
+
+- **Duty Activity Feed Filtering (MOT-2703)**
+  - _Resolution_: The Duty Activity Feed (available with the `DutyActivityFeed` feature flag) now only shows status changes for a request that occurred *after* it was matched to the current duty. This removes irrelevant historical events from the feed, making it easier to see a clear history of events for that specific duty.
+
+- **Recurring Trip Rematch Logic (MOT-2547)**
+  - _Resolution_: Fixed a bug where rematching a recurring "Arrive-By" trip could cause incorrect pickup window calculations and "outside service hours" errors. The system now correctly identifies the trip as recurring during the rematch process, preserving the original time constraints.
+
+</Update>
+
 <Update label="12 December 2025" description="1 Updates">
 
 ### 🐛 Bug Fixes

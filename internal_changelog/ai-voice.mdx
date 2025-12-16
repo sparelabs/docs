@@ -2,6 +2,62 @@
 title: AI Voice
 rss: true
 ---
+<Update label="15 December 2025" description="3 Updates">
+
+### 🗣️ Norwegian Language Support for AI Voice
+
+**What's New**  
+AI Voice now supports Norwegian (`no-NO`). You can configure agents to interact with callers in Norwegian, with localized prompts and improved understanding of Norwegian language patterns.
+
+**Pre-requisites**
+- Requires `LaunchAIVoice` feature flag and Admin access.
+
+<Accordion title="See More">
+
+#### Where You'll See It
+- *Admin > AI Voice > Agents > (Select an agent) > Edit Agent* (in the "Language" dropdown)
+- *Admin > AI Voice > Agents > Add Agent* (in the "Language" dropdown)
+
+#### What You Can Do
+- Select "Norwegian" from the "Language" dropdown when creating or editing an AI Voice agent. The agent will then use Norwegian for all voice interactions with callers.
+
+#### Why This Matters
+This expansion allows agencies in Norway to provide automated, localized support to their riders via AI Voice. This improves accessibility and provides a better customer experience for Norwegian-speaking callers.
+</Accordion>
+
+---
+### 📞 Schedule-Specific Call Forwarding Numbers
+
+**What's New**  
+You can now set a unique call forwarding phone number for each "Forwarding Hours" time rule. If a specific number isn't set for a rule, calls will be routed to the agent's default forwarding number.
+
+**Pre-requisites**
+- Requires `LaunchAIVoice` feature flag and Admin access.
+
+<Accordion title="See More">
+
+#### Where You'll See It
+- *Admin > AI Voice > Agents > (Select an agent) > Forwarding Hours*
+
+#### What You Can Do
+- When creating or editing a "Regular Hours" or "Special Hours" rule, a new optional "Forwarding Number" field is available.
+- You can enter a specific phone number for that time period. If left blank, the system uses the main forwarding number configured for the agent.
+- The list of rules now includes a "Forwarding Number" column to show which number is assigned to each rule, or "Same as agent" if none is specified.
+
+#### Why This Matters
+This provides greater flexibility for call routing. For example, you can now forward calls to a different dispatch center during weekends, to an after-hours answering service overnight, or to a specific manager during holidays, all from within the same agent configuration.
+</Accordion>
+
+---
+### 🐛 Bug Fixes
+
+- **Japanese AI Voice Prompts (AIP-598)**
+  - _Resolution_: Improved the base prompts for Japanese AI Voice interactions by removing Hiragana annotations. This change refines how the system handles Japanese terms to encourage more accurate responses.
+
+---
+
+</Update>
+
 <Update label="13 December 2025" description="1 Updates">
 
 ### 📞 Granular Call Forwarding by Time of Day

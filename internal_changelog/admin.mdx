@@ -2,6 +2,38 @@
 title: Admin
 rss: true
 ---
+<Update label="15 December 2025" description="1 Updates">
+
+### 🗺️ Multimodal Graph Build Interface
+
+<Warning>This feature is currently categorized as 'Do Not Enable - In Development' and is not yet ready for customer use. Please await communications from the Product team on a feature rollout plan.</Warning>
+
+**What's New**  
+A new interface is available for super admins to trigger and monitor multimodal graph builds for an organization. This interface provides real-time status updates, logs, and controls to rebuild graphs.
+
+**Pre-requisites**
+- Requires Super admin permissions.
+- Access is currently limited via a special URL parameter (`?graphBuildsV2=true`).
+- The underlying feature requires the `Multimodal` feature flag.
+
+<Accordion title="See More">
+
+#### Where You'll See It
+- *Super Admin > Organizations > (Select an organization)*. The new UI is visible on this page when the `?graphBuildsV2=true` query parameter is added to the URL.
+
+#### What You Can Do
+- View the current status of multimodal graph builds (e.g., `Completed`, `Building`, `Failed`).
+- Trigger a new build by clicking the "Request Rebuild" button.
+- View detailed, color-coded logs for current and past builds in a modal window.
+
+#### Why This Matters
+This internal tool provides super admins with direct visibility and control over the multimodal graph building process. It is essential for setting up and troubleshooting multimodal trip planning for an organization.
+</Accordion>
+
+---
+
+</Update>
+
 <Update label="12 December 2025" description="2 Updates">
 
 ### 🛡️ Restricted Services Now a Standard Feature
