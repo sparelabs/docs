@@ -2,6 +2,38 @@
 title: Resolve
 rss: true
 ---
+<Update label="16 December 2025" description="1 Updates">
+
+### 📋 Case Type Templates for Quick Setup
+
+**What's New**  
+Backend infrastructure is now in place for Case Type templates, enabling the rapid creation of pre-configured case types. The first available template is for "Incident" reporting, which automatically sets up the case type, statuses, a custom form, and relevant object links.
+
+**Pre-requisites**
+- Requires access to the Spare Resolve product
+- Requires Admin access with permissions for Engage/Resolve
+
+<Accordion title="See More">
+
+#### Where You'll See It
+- This is currently a backend and API-level feature. Activation is performed via API, with a user interface to follow in a future release.
+
+#### What You Can Do
+- **Activate Templates via API:** Use the new `/engage/caseTypeTemplates` endpoints to list available templates and activate them.
+- **Auto-Create "Incident" Case Type:** Activating the `incident` template automatically creates:
+  - An "Incident" case type.
+  - A linked form with fields for `Incident Datetime`, `Description`, `Severity`, and `Category`.
+  - Object links to associate incidents with a `Duty` or `Request`.
+- **Intelligent Re-activation:** If you activate a template for a case type that was previously created and then archived, the system will unarchive the existing case type instead of creating a duplicate.
+
+#### Why This Matters
+Setting up a new case type with all its associated forms and fields can be time-consuming. Templates streamline this process, allowing administrators to deploy standardized configurations like incident management with a single action, ensuring consistency and saving time.
+</Accordion>
+
+---
+
+</Update>
+
 <Update label="12 December 2025" description="1 Updates">
 
 ### 🐛 Bug Fixes

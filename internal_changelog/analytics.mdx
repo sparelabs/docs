@@ -2,6 +2,57 @@
 title: Analytics
 rss: true
 ---
+<Update label="16 December 2025" description="2 Updates">
+
+### 📊 Analyze Rider Favorite Locations
+
+**What's New**  
+A new **Favorite Locations** data cube is now available in the Query Builder, allowing you to create reports on riders' saved "Home," "Work," and other custom favorite locations.
+
+**Pre-requisites**
+- Requires `AnalyticsV2` feature flag
+- Requires Admin access with permissions for Analytics
+
+<Accordion title="See More">
+
+#### Where You'll See It
+- *Analytics > Query Builder* (a new **Favorite Locations** cube is available in the data source selector)
+
+#### What You Can Do
+- **Query Favorite Location Data:** Build reports using dimensions such as `Type` (e.g., Home, Work, Other), `Address`, and `Name`.
+- **Measure Adoption:** Use new measures like `Count`, `Home Count`, `Work Count`, and `Other Count` to analyze how many riders have saved specific types of favorite locations.
+- **Join with Rider Data:** Combine favorite location data with the `Organization Riders` cube to analyze trends across different rider segments.
+
+#### Why This Matters
+Understanding how riders use favorite locations provides valuable insight into travel patterns and feature adoption. This new cube enables you to quantify how many riders have saved their home or work addresses, helping you tailor services and communications more effectively.
+</Accordion>
+
+---
+### 📈 New Specialized Report for Groupage KPIs
+
+**What's New**  
+For select organizations, a new specialized report for calculating Groupage KPIs is now available, providing targeted metrics for specific operational models.
+
+**Pre-requisites**
+- This report is automatically enabled for specific organizations.
+- Requires Admin access
+
+<Accordion title="See More">
+
+#### Where You'll See It
+- *Analyze > Specialized Reports* (a new report card titled **"Groupage KPI Calculation"** will appear)
+
+#### What You Can Do
+- Access a pre-built Metabase report designed to calculate key performance indicators related to trip and passenger grouping.
+
+#### Why This Matters
+This provides a ready-to-use reporting tool for organizations with complex groupage requirements, saving time and ensuring consistent KPI calculations without needing to build a custom query.
+</Accordion>
+
+---
+
+</Update>
+
 <Update label="13 December 2025" description="1 Updates">
 
 ### 🐛 Bug Fixes

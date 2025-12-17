@@ -2,6 +2,44 @@
 title: Enterprise Asset Management
 rss: true
 ---
+<Update label="16 December 2025" description="2 Updates">
+
+### 🗄️ Automatic Archiving of Duplicate Inspection Issues
+
+**What's New**  
+To prevent clutter and redundant work, the system now automatically archives older, open issues when a new issue is created from an inspection for the same item on the same asset.
+
+**Pre-requisites**
+- Requires access to the Enterprise Asset Management (EAM) product
+- No feature flags required
+
+<Accordion title="See More">
+
+#### Where You'll See It
+- *EAM > Assets > [Select an Asset] > Issues Tab*
+
+#### What You Can Do
+- **Reduced Duplication:** When an inspection is failed for an item that already has an existing open issue (and that issue is not part of a work order), the system automatically archives the old issue. The newly created issue becomes the single active one for that item.
+- **Example Scenario:** A driver fails the "Tire Pressure" item on a pre-duty inspection for Vehicle 101. An issue is created. The next day, another driver fails the same item for the same vehicle. Instead of creating a second open issue, the system archives the first one and keeps the newest one active.
+- **View Archived Issues:** You can still find historical issues by using the filters on the *Issues* tab to include archived items.
+
+#### Why This Matters
+Previously, repeated failures of the same inspection item would create multiple open issues for a single underlying problem, making it difficult to track and manage. This change ensures that only the most recent report for a specific problem remains active, streamlining the maintenance workflow.
+</Accordion>
+
+---
+### 🐛 Bug Fixes
+
+- **Inspection Form Selection in Vehicle Types (EAM-764)**
+  * _Resolution_: Fixed an error ("Model 'InspectionForm' not found") that occurred when editing a Vehicle Type. The "Pre-Duty EAM Inspection Form" and "Post-Duty EAM Inspection Form" dropdowns now load and function correctly.
+
+- **Fault Code Description Wrapping (EAM-763)**
+  * _Resolution_: Corrected an issue in *EAM > Assets > Fault Codes* where long descriptions in the **Description** column were cut off. The text now wraps properly, ensuring the full description is always visible.
+
+---
+
+</Update>
+
 <Update label="15 December 2025" description="1 Updates">
 
 ### 🔢 Automatic Comma Formatting for Meter Entries

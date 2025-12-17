@@ -2,6 +2,37 @@
 title: Operations
 rss: true
 ---
+<Update label="16 December 2025" description="1 Updates">
+
+### 🗺️ "By Group Trip" View in Live Requests
+
+**What's New**  
+To provide deeper insights into trip group performance, a new **"By Group Trip"** tab is now available in Live Requests. This view introduces new metrics like "Group Pooling Rate" and "Unique Duties," while the existing "By Driver" and "By Fleet" tabs have been streamlined to hide irrelevant columns.
+
+**Pre-requisites**
+- Requires `TripGroup` feature flag (part of the Spare Enterprise package)
+- Requires Admin access
+
+<Accordion title="See More">
+
+#### Where You'll See It
+- *Rides > Live Requests* (a new **"By Group Trip"** tab is now visible in the view selector)
+
+#### What You Can Do
+- **Analyze Group Performance:** Navigate to the **"By Group Trip"** tab to see a list of all active trip groups.
+- **Use New Metrics:** Two new columns are available exclusively in this view:
+  - **Group Pooling Rate:** Shows the percentage of trips within a single trip group that are assigned to the same duty. This helps measure the efficiency of keeping recurring riders together.
+  - **Unique Duties:** Displays the total count of distinct duties that are serving a trip group.
+- **Enjoy a Cleaner Interface:** On the **"By Driver"** and **"By Fleet"** tabs, columns that are not relevant to those views (such as "Unscheduled," "Dispatching," and "No Drivers Available") are now automatically hidden to reduce clutter.
+
+#### Why This Matters
+Previously, it was difficult to assess the operational efficiency of trip groups directly from the Live Requests page. This new view provides dispatchers and operations managers with dedicated metrics to monitor and improve how trip groups are being served in real-time.
+</Accordion>
+
+---
+
+</Update>
+
 <Update label="15 December 2025" description="1 Updates">
 
 ### 🐛 Bug Fixes

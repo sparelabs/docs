@@ -2,6 +2,73 @@
 title: Admin
 rss: true
 ---
+<Update label="16 December 2025" description="3 Updates">
+
+### 🎟️ Promo Code Validity Based on Pickup Time
+
+<Warning>This feature is currently categorized as 'Do Not Enable - In Development' and is not yet ready for customer use. Please await communications from the Product team on a feature rollout plan.</Warning>
+
+**What's New**  
+A new setting allows promo code validity to be determined by the trip's requested pickup time, rather than the time the trip was booked. This ensures promotions are applied only to trips that actually occur within the valid time frame.
+
+**Pre-requisites**
+- Requires `PromoPeriodBasedOnPickup` feature flag
+- Requires Admin access
+
+<Accordion title="See More">
+
+#### Where You'll See It
+- This is a backend change that affects how promo codes are validated during trip booking in the Rider App, Rider Web, and Admin booking.
+
+#### What You Can Do
+- **Enable Pickup-Based Validation:** When the feature flag is active, the system checks the promo's `start` and `expiry` date against the trip's requested pickup time.
+- **Example Scenario:** You create a promo valid only on December 25th.
+  - **Without the flag:** A rider booking a trip on December 24th for travel on the 25th cannot apply the promo, because the booking time is outside the valid period.
+  - **With the flag:** The same rider can successfully apply the promo, because the trip's pickup time falls within the valid period.
+
+#### Why This Matters
+This change provides more precise control over promotions, especially for advance bookings. It ensures that discounts are correctly applied based on when the service is rendered, not just when it is requested, preventing unintended usage outside of promotional periods.
+</Accordion>
+
+---
+### 📜 New Activity Log Events for Service Zones and Stops
+
+**What's New**  
+The activity log for a service now provides a complete audit trail of all changes made to its zones and stops. Any creation, update, or deletion of these geographic components is now recorded.
+
+**Pre-requisites**
+- Requires Admin access
+- No feature flags required
+
+<Accordion title="See More">
+
+#### Where You'll See It
+- *Launch > Services > [Select a Service] > Activity Log Tab*
+- *System > Events*
+
+#### What You Can Do
+- **Track Changes:** View a detailed history of all modifications to a service's zones and stops directly within the service's own activity log.
+- **Audit Geofences:** See exactly who created, updated, or deleted a zone or stop, and when the change occurred. This is useful for troubleshooting service behavior or reviewing configuration history.
+
+#### Why This Matters
+Previously, changes to service geometry like zones and stops were not logged, making it difficult to audit historical configurations. This enhancement brings full transparency to service management, ensuring every change is tracked and accounted for.
+</Accordion>
+
+---
+### 🐛 Bug Fixes
+
+- **AI Chat Analytics Block Rendering (AIP-682, AIP-683)**
+  * _Resolution_: Improved the reliability of displaying analytics charts and tables within AI Chat conversations. The system now better handles the data stream from the AI, preventing rendering failures caused by malformed content.
+
+- **Service Zone and Time Rule Configuration**
+  * _Resolution_: Fixed two issues in the Service configuration page:
+    1. The "Merge Zones" map display now correctly respects the `MergeZonesOnServicesPage` feature flag.
+    2. When creating a new Time Rule from within the Zone edit pane, the new rule now correctly appears in the selection dropdown without requiring a page refresh.
+
+---
+
+</Update>
+
 <Update label="15 December 2025" description="1 Updates">
 
 ### 🗺️ Multimodal Graph Build Interface

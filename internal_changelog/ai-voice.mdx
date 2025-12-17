@@ -2,6 +2,38 @@
 title: AI Voice
 rss: true
 ---
+<Update label="16 December 2025" description="2 Updates">
+
+### ⏱️ Configurable Pause for AI Voice Inbound Calls
+
+<Warning>This feature is currently categorized as 'Do Not Enable - Customer Specific Configuration' and is not yet ready for customer use. Reach out to the Product team with questions.</Warning>
+
+**What's New**  
+For specific AI Voice call forwarding workflows, the initial pause before the call connects has been reduced. A new feature flag also allows this pause to be skipped entirely for applicable organizations.
+
+**Pre-requisites**
+- Requires `PstaAiVoiceSkipInboundPause` feature flag
+- Requires Admin access
+
+<Accordion title="See More">
+
+#### Where You'll See It
+- This is a backend change affecting the rider's calling experience for certain inbound AI Voice numbers.
+
+#### Why This Matters
+Long pauses can lead to rider confusion or abandoned calls. This change shortens the connection time, creating a smoother and more responsive experience for riders using AI Voice.
+</Accordion>
+
+---
+### 🐛 Bug Fixes
+
+- **Twilio Call Forwarding (AIP-678)**
+  * _Resolution_: Fixed an issue where the AI Voice call forwarding function was using an incorrect internal identifier, ensuring calls are routed correctly.
+
+---
+
+</Update>
+
 <Update label="15 December 2025" description="3 Updates">
 
 ### 🗣️ Norwegian Language Support for AI Voice
