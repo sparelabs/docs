@@ -2,6 +2,63 @@
 title: Resolve
 rss: true
 ---
+<Update label="17 December 2025" description="2 Updates">
+
+### 🚀 Quick Launch for Case Type Templates
+
+<Warning>This feature is currently categorized as 'Do Not Enable - Built for Demo' and is not yet ready for customer use. Reach out to the Product team with questions.</Warning>
+
+**What's New**  
+A new "Quick Launch" section in Resolve allows you to instantly activate pre-configured case type templates, starting with a new "Incident" template. Activating a template creates a new case type with all necessary forms and fields, which are then protected from accidental modification.
+
+**Pre-requisites**
+- Requires `IncidentReporting` feature flag
+- Requires Admin access with permissions for Resolve
+
+<Accordion title="See More">
+
+#### Where You'll See It
+- *Resolve > Case Types*: A new **Case Templates** section appears at the top of the page.
+
+#### What You Can Do
+- **Activate a Template**: Click "Activate" on the "Incident" template to open a setup modal. After providing a name and key, a new, fully configured case type is created.
+- **Use Pre-Built Structure**: The activated case type comes with pre-built forms and object links (e.g., for Duty, Driver, Vehicle), ready for immediate use.
+- **Protected Resources**: Forms, fields, and object links created from a template are locked to prevent accidental deletion or archiving. A tooltip on these items indicates they are part of a template.
+
+#### Why This Matters
+Setting up new case types for common scenarios like incident reporting can be complex and time-consuming. Case templates provide a one-click solution to deploy best-practice configurations, saving administrator time and ensuring consistency across your organization.
+</Accordion>
+
+---
+### ⏱️ Case Deadlines for SLA Management
+
+**What's New**  
+The new Deadlines feature provides a powerful, automated way to monitor and enforce Service Level Agreements (SLAs) for cases in Resolve. You can now define dynamic timers that start and stop based on case criteria (like status changes or added tags) and trigger alerts if a deadline is breached.
+
+**Pre-requisites**
+- No feature flags required
+- Requires new permissions: `create:deadlineDefinition`, `read:deadlineDefinition`, `RECEIVE_DEADLINE_BREACHED_ALERT`, etc.
+
+<Accordion title="See More">
+
+#### Where You'll See It
+- *Resolve*: A new "Deadlines" area for creating and managing deadline definitions.
+- *System Settings > Roles*: New permissions related to creating, viewing, and managing deadlines.
+- *System Settings > Notifications > Alert Policies*: A new `DeadlineBreached` alert type will be available.
+
+#### What You Can Do
+- **Define Deadlines**: Create "Deadline Definitions" that specify a duration and the conditions for starting and stopping a timer on a case.
+- **Automate SLA Tracking**: For example, define a 1-hour deadline that starts whenever a case is tagged as "Urgent" and stops when its status is changed to "Resolved."
+- **Configure Breach Alerts**: Set up alert policies to automatically notify supervisors or teams via the new `DeadlineBreached` alert type when a case's timer expires.
+
+#### Why This Matters
+This feature ensures that critical cases are addressed in a timely manner without manual tracking. It provides a formal system for enforcing SLAs, improving accountability, and generating clear data on your team's response-time performance.
+</Accordion>
+
+---
+
+</Update>
+
 <Update label="16 December 2025" description="1 Updates">
 
 ### 📋 Case Type Templates for Quick Setup

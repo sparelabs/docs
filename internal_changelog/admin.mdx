@@ -2,6 +2,118 @@
 title: Admin
 rss: true
 ---
+<Update label="17 December 2025" description="5 Updates">
+
+### 🗺️ Map Style Selector for Favorite Locations
+
+<Warning>This feature is currently categorized as 'Do Not Enable - In Development' and is not yet ready for customer use. Please await communications from the Product team on a feature rollout plan.</Warning>
+
+**What's New**  
+When adding or editing a favorite location, you can now switch between 'Street', 'Satellite', and 'Detailed' map views. This helps you place the location pin with greater accuracy in complex environments.
+
+**Pre-requisites**
+- Requires `ExperimentalMapStyles` feature flag
+- Requires Admin access
+
+<Accordion title="See More">
+
+#### Where You'll See It
+- *System Settings > Places > Favorite Locations > Add Location* or *Edit Location*: A new map layers dropdown menu now appears in the top-right corner of the map.
+
+#### What You Can Do
+- Toggle between three map styles to get the best view for placing a location pin.
+- Use the 'Satellite' view to pinpoint a specific building entrance or a location within a large area like a mall or airport.
+- Switch back to the 'Street' or 'Detailed' view to confirm the address and road access.
+
+#### Why This Matters
+Standard street maps don't always provide enough detail for precise pin placement. This feature gives you the flexibility to choose the right map style for the job, ensuring that favorite locations are set with high accuracy, which in turn improves the reliability of bookings.
+</Accordion>
+
+---
+### ⚙️ Improved Service Configuration Experience
+
+**What's New**  
+The service configuration page has been updated with several quality-of-life improvements. These include a sticky header for easier saving, persistent edits when switching between tabs, and a redesigned overview tab to streamline the editing process.
+
+**Pre-requisites**
+- No feature flags required
+- Requires Admin access
+
+<Accordion title="See More">
+
+#### Where You'll See It
+- *System Settings > Services > [Select a Service]*: The entire page for editing a service has been enhanced.
+
+#### What You Can Do
+- **Save from Anywhere**: The header containing the 'Save', 'Revert', and 'Actions' buttons now stays visible as you scroll, so you no longer need to scroll to the top to save your changes.
+- **Switch Tabs Without Losing Work**: Your unsaved changes are now preserved when you switch between tabs (e.g., from 'Overview' to 'Zones').
+- **Better Map Interaction**: When editing a zone, the map now correctly zooms to fit the zone's boundaries automatically.
+
+#### Why This Matters
+These changes significantly improve the workflow for configuring services. The sticky header removes tedious scrolling, and persisting edits across tabs prevents accidental data loss, making complex service setups faster and less error-prone.
+</Accordion>
+
+---
+### ⏱️ Enhanced Date & Time Handling in Workflows
+
+**What's New**  
+Two new Handlebars helpers, `parseDate` and `parseDatetime`, are now available in the Workflows feature. These helpers convert date strings from sources like custom fields into timestamps, enabling date-based comparisons within workflow filter steps.
+
+**Pre-requisites**
+- No feature flags required
+- Requires Admin access
+
+<Accordion title="See More">
+
+#### Where You'll See It
+- *System Settings > Workflows*: The new helpers can be used in the "Filter" step when building or editing a workflow.
+
+#### What You Can Do
+- Use `{{parseDate 'YYYY-MM-DD'}}` to handle date-only strings, converting them to a timestamp based on your organization's timezone.
+- Use `{{parseDatetime 'ISO_8601_STRING'}}` to handle full datetime strings.
+- Create workflows that trigger based on date comparisons. For example, you can now build a workflow to send an email when a driver's license (stored in a custom field) is 30 days from expiring by comparing `{{parseDate driver.metadata.driversLicenseExpiry}}` to `{{addTs (currentTs) 30 'days'}}`.
+
+#### Why This Matters
+Previously, workflow filters only supported numeric comparisons, making it impossible to automate actions based on dates stored as text. These helpers unlock powerful time-based automation for scenarios like credential expiry reminders, appointment follow-ups, and other date-driven processes.
+</Accordion>
+
+---
+### 🚨 Automated Incident Creation from Driver Breaks
+
+<Warning>This feature is currently categorized as 'Do Not Enable - Built for Demo' and is not yet ready for customer use. Reach out to the Product team with questions.</Warning>
+
+**What's New**  
+You can now designate specific driver break reasons as "Incidents." When a dispatcher starts a break for a driver using one of these reasons, the system automatically creates an associated Incident case in Resolve for immediate tracking and follow-up.
+
+**Pre-requisites**
+- Requires `IncidentReporting` feature flag
+- Requires Admin access
+
+<Accordion title="See More">
+
+#### Where You'll See It
+- *System Settings > Operations > Driver Break Reasons*: A new **Incident** toggle column is now available in the table.
+- *Rides > Live Map > [Select Duty] > Add Break*: When creating a break, a confirmation modal will appear if an incident-flagged reason is chosen.
+
+#### What You Can Do
+- First, activate the "Incident" case type template from *Resolve > Case Types*.
+- In settings, enable the "Incident" toggle for any break reason that should trigger an incident report (e.g., "Vehicle Accident," "Mechanical Failure").
+- When a dispatcher logs a break with that reason, a modal will confirm the creation of an Incident case and provide a direct link to edit the new case in Resolve.
+
+#### Why This Matters
+This feature creates a direct, automated link between an operational event and the administrative follow-up process. It ensures that critical incidents are captured and documented in Resolve immediately, reducing manual data entry, preventing missed reports, and improving response time.
+</Accordion>
+
+---
+### 🐛 Bug Fixes
+
+- **Corrected Error Response for Invalid Import Status Checks (BUS-4732)**
+  - _Resolution_: Fixed an issue where checking the status of a non-existent data import would cause a generic `500 Internal Server Error`. The system now correctly returns a `404 Not Found` error, providing a more accurate response for automated tools and integrations.
+
+---
+
+</Update>
+
 <Update label="16 December 2025" description="3 Updates">
 
 ### 🎟️ Promo Code Validity Based on Pickup Time
