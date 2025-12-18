@@ -3,6 +3,36 @@ title: Analytics
 ---
 <Update label="17 December 2025" description="1 Updates">
 
+### 📊 New Dimensions for Address, Service, and Deadhead Data in Ridership Report
+
+**What's New**  
+The Ridership Report now includes several new data dimensions, allowing for more detailed analysis of completed addresses, service configurations, and vehicle deadhead distance. This provides deeper insights into operational efficiency and service performance.
+
+**Pre-requisites**
+- Requires `AnalyticsV2` feature flag
+- Requires Admin access
+
+<Accordion title="See More">
+
+#### Where You'll See It
+- *Analytics > Query Builder* (new options available in the dimension selector when building a report based on the Ridership Report cube)
+
+#### What You Can Do
+You can now add the following dimensions to your ridership reports:
+- **Service Base Boarding Time**: The base boarding time in seconds configured for the service a trip belongs to.
+- **Completed Pickup/Dropoff Address**: The actual street addresses where the pickup and dropoff were completed, which may differ from the planned address.
+- **Deadhead to Pickup Distance**: The distance a vehicle traveled to a pickup location without any passengers, displayed in your organization's configured unit (miles or kilometers). Previously, this was only available in meters.
+
+#### Why This Matters
+These new fields enable more granular analysis. You can now compare configured service parameters like boarding time against reality, use precise completed addresses for location-based analysis, and quantify unproductive vehicle mileage to identify efficiency opportunities.
+</Accordion>
+
+---
+
+</Update>
+
+<Update label="17 December 2025" description="1 Updates">
+
 ### 📊 New Ridership Report Dimensions for Deeper Analysis
 
 **What's New**  

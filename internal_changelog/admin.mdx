@@ -2,6 +2,90 @@
 title: Admin
 rss: true
 ---
+<Update label="17 December 2025" description="4 Updates">
+
+### ✨ Enhanced Service Configuration Experience
+
+**What's New**  
+The service configuration pages have been updated for a smoother and more intuitive editing experience. Key improvements include a redesigned overview tab, a sticky header for easier saving, and the ability to switch between tabs without losing unsaved changes.
+
+**Pre-requisites**
+- No feature flags required
+- Requires Admin access
+
+<Accordion title="See More">
+
+#### Where You'll See It
+- *Settings > Services > [Select a Service]*
+
+#### What You Can Do
+- **Persist Changes Across Tabs**: Make changes on multiple tabs (e.g., Overview, Zones, Fares) without needing to save in between. All edits are preserved until you click the main "Save" button.
+- **Use Sticky Header**: The header containing the "Save," "Cancel," and other action buttons now remains visible at the top of the page as you scroll.
+- **View Redesigned Overview**: The "Overview" tab now features an improved two-column layout for better readability.
+
+#### Why This Matters
+Editing complex services used to require frequent saving and could be difficult to navigate. This redesign streamlines the workflow, preventing lost work and making it faster to configure and update services by keeping key actions always accessible.
+</Accordion>
+
+---
+### ⏱️ New Date and Datetime Helpers for Workflow Conditions
+
+**What's New**  
+Two new Handlebars helpers, `parseDate` and `parseDatetime`, are now available for use in Workflow filter steps. These helpers convert date-based text into a numerical format (a Unix timestamp), enabling time-based comparisons that were not previously possible.
+
+**Pre-requisites**
+- No feature flags required
+- Requires Admin access
+
+<Accordion title="See More">
+
+#### Where You'll See It
+- *Settings > Workflows > [Select a Workflow] > Add Step > Filter* (within the value fields that support Handlebars)
+
+#### What You Can Do
+- **`{{parseDate 'YYYY-MM-DD'}}`**: Handles date-only text and converts it to a timestamp based on the organization's timezone.
+- **`{{parseDatetime 'ISO 8601 string'}}`**: Handles full datetime text and converts it to a timestamp.
+- **Build Time-Based Filters**: Use these helpers to create conditions based on date custom fields. For example, you can now build a workflow to send an email 30 days before a driver's license expiry date by comparing `{{parseDate driver.metadata.driversLicenseExpiry}}` to a calculated future timestamp.
+
+#### Why This Matters
+Previously, workflows could not perform comparisons on dates stored as text, limiting their automation capabilities. These helpers unlock powerful new use cases, such as sending proactive notifications for expiring credentials or other date-sensitive events.
+</Accordion>
+
+---
+### 🗺️ Map Style Selector for Favorite Locations
+
+<Warning>This feature is currently categorized as 'Do Not Enable - In Development' and is not yet ready for customer use. Please await communications from the Product team on a feature rollout plan.</Warning>
+
+**What's New**  
+When adding or editing a favorite location, you can now switch between different map styles. This allows you to choose the view that best helps you pinpoint the exact location.
+
+**Pre-requisites**
+- Requires `ExperimentalMapStyles` feature flag
+- Requires Admin access
+
+<Accordion title="See More">
+
+#### Where You'll See It
+- *Settings > Favorite Locations > Add Location* or *[Edit Location]*
+
+#### What You Can Do
+- On the map used for setting a favorite location, click the new **"Map Layers"** dropdown.
+- Switch between **Street**, **Satellite**, and **Detailed** map views.
+
+#### Why This Matters
+Finding a precise location, like a specific entrance to a large hospital or a pickup point in a park, can be difficult with only a street map. The ability to switch to a satellite or detailed view makes it easier to accurately place the pin, improving location data quality.
+</Accordion>
+
+---
+### 🐛 Bug Fixes
+
+- **Correct Error for Non-Existent Data Imports (BUS-4732)**
+  - _Resolution_: Previously, checking the status of an invalid or non-existent data import job resulted in a server error (500). The system now correctly returns a "not found" (404) response with a clear error message.
+
+---
+
+</Update>
+
 <Update label="17 December 2025" description="1 Updates">
 
 ### 🐛 Bug Fixes

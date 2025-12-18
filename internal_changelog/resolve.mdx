@@ -4,6 +4,63 @@ rss: true
 ---
 <Update label="17 December 2025" description="2 Updates">
 
+### 🚨 Activate and Use Incident Management Templates
+
+<Warning>This feature is currently categorized as 'Do Not Enable - Built for Demo' and is not yet ready for customer use. Reach out to the Product team with questions.</Warning>
+
+**What's New**  
+A new "Incident" case type template can now be activated to automatically create and track incident reports in Resolve. When a driver break is created for a reason you have marked as an "Incident," a corresponding case is automatically generated, linking the event to a formal report.
+
+**Pre-requisites**
+- Requires `IncidentReporting` feature flag
+- Requires Admin access
+
+<Accordion title="See More">
+
+#### Where You'll See It
+- *Resolve > Case Types*: A new **"Quick Launch"** section to activate the "Incident" template.
+- *Settings > Driver Break Reasons*: A new **"Incident"** toggle in the table.
+- *Rides > Duties > [Select a Duty] > Add Break modal*: Creating a break with an incident-enabled reason will now trigger case creation.
+
+#### What You Can Do
+1.  **Activate Template**: In *Resolve > Case Types*, click **"Activate"** on the Incident template in the "Quick Launch" section.
+2.  **Configure Break Reason**: In *Settings > Driver Break Reasons*, enable the **"Incident"** toggle for any reason that should trigger an incident report (e.g., "Vehicle Accident").
+3.  **Create Case from Break**: When a dispatcher logs a driver break using an incident-enabled reason, a new case is created automatically in Resolve. The confirmation modal will include the new Case ID and an **"Edit Report"** button to navigate directly to the case.
+
+#### Why This Matters
+This feature standardizes and automates the incident reporting process. By linking driver breaks directly to formal cases in Resolve, it ensures that critical events are documented consistently and immediately, reducing manual effort and improving response times.
+</Accordion>
+
+---
+### ⏳ Introducing Case Deadlines for SLAs
+
+**What's New**  
+This release introduces the backend framework for Case Deadlines, a new capability for tracking Service Level Agreements (SLAs) in Resolve. Deadlines allow you to configure dynamic timers that start, stop, and trigger alerts when breached, based on case criteria like status or tags.
+
+**Pre-requisites**
+- Requires `CaseIntelligence` feature flag
+- Requires Admin access and new permissions (`Create/Read/Update/Delete Deadline Definitions`)
+
+<Accordion title="See More">
+
+#### Where You'll See It
+- **New Permissions**: New permissions for managing Deadline Definitions and viewing Deadline Instances will be available in role configurations.
+- **New Alerts**: A new alert type, **"Deadline Breached,"** will appear in system notifications and emails when a deadline is missed.
+- *Future UI*: The user interface for configuring deadlines will be available in a future release under the Resolve product area.
+
+#### What You Can Do
+- While the UI is not yet available, this framework enables the system to track deadlines. For example, once configured, a "2-hour response" timer can start when a case is tagged as "Urgent." If the case isn't acted upon within two hours, a "Deadline Breached" alert will be automatically sent to designated users.
+
+#### Why This Matters
+Tracking SLAs has been a manual and challenging process. The Deadlines feature provides the foundation for automating SLA monitoring, helping teams prioritize critical cases, measure performance against key targets, and ensure timely resolutions.
+</Accordion>
+
+---
+
+</Update>
+
+<Update label="17 December 2025" description="2 Updates">
+
 ### 🚨 Activate and Use Incident Management Case Templates
 
 <Warning>This feature is currently categorized as 'Do Not Enable - Built for Demo' and is not yet ready for customer use. Reach out to the Product team with questions.</Warning>

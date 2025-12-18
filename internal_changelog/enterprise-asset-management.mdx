@@ -4,6 +4,37 @@ rss: true
 ---
 <Update label="17 December 2025" description="1 Updates">
 
+### 🔍 View and Manage Duplicate Inspection Issues
+
+**What's New**  
+When multiple issues are created from the same failed inspection item on an asset, they are now automatically linked. A new grid on the issue page displays all duplicates, and an "Archived" badge clearly indicates which issues were automatically archived after the main issue was resolved.
+
+**Pre-requisites**
+- Requires `VehicleInspections` feature flag
+- Requires Admin access
+
+<Accordion title="See More">
+
+#### Where You'll See It
+- *EAM > Issues > [Select an issue created from an inspection]*: A new **"Duplicate Issues"** grid appears at the bottom.
+- *EAM > Inspections > [Select an inspection] > View Results*: An **"Archived"** badge appears next to issues that are archived duplicates.
+
+#### What You Can Do
+- View all duplicate issues related to a single root cause in one place.
+- See which issue is designated as the **"Main Issue"**.
+- Use the **"Go to Main Issue"** link to quickly navigate from a duplicate to the primary issue being worked on.
+- Identify automatically archived duplicates at a glance within inspection results.
+
+#### Why This Matters
+Previously, repeat failures on inspections would create multiple, disconnected issues, leading to confusion and redundant work. This feature consolidates duplicate issues, ensuring that maintenance teams can focus their efforts on a single, primary ticket while maintaining a complete historical record.
+</Accordion>
+
+---
+
+</Update>
+
+<Update label="17 December 2025" description="1 Updates">
+
 ### 🛠️ View and Manage Duplicate Inspection Issues
 
 **What's New**  
