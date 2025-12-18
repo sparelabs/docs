@@ -2,6 +2,46 @@
 title: Resolve
 rss: true
 ---
+<Update label="17 December 2025" description="2 Updates">
+
+### 🚨 Activate and Use Incident Management Case Templates
+
+<Warning>This feature is currently categorized as 'Do Not Enable - Built for Demo' and is not yet ready for customer use. Reach out to the Product team with questions.</Warning>
+
+**What's New**  
+You can now activate a pre-configured "Incident" case type template from Spare Resolve. Once activated, you can link driver break reasons to this template, enabling the automatic creation of an incident report case whenever a driver reports a break for a reason like "Accident" or "Mechanical Failure".
+
+**Pre-requisites**
+- Requires `IncidentReporting` feature flag
+- Requires Admin access
+
+<Accordion title="See More">
+
+#### Where You'll See It
+- *Resolve > Case Types*: A new "Quick Launch" section is available for activating the "Incident" template.
+- *Settings > System > Driver Break Reasons*: A new "Incident" toggle column appears in the table.
+- *Operations > Duties > [select a duty] > Breaks tab*: A confirmation modal with a link to the incident case will appear after creating a break with an incident-linked reason.
+
+#### What You Can Do
+- **Activate Template**: Navigate to *Resolve > Case Types* and click "Activate" on the "Incident" template in the new "Quick Launch" section to make it available.
+- **Configure Break Reasons**: Go to *Settings > Driver Break Reasons* and enable the "Incident" toggle for any interruption-type break reason. This option is only available after the Incident template has been activated.
+- **Auto-Create Cases**: When a dispatcher logs a break for a driver using an incident-linked reason, an incident case is automatically created in Resolve.
+- **View Case Link**: After creating the break, a confirmation modal will appear showing the new incident Case ID and a button to navigate directly to the case.
+
+#### Why This Matters
+Previously, tracking incidents reported by drivers was a manual process disconnected from other workflows. This feature streamlines incident reporting by automatically creating a formal case, ensuring that critical events are documented, tracked, and resolved consistently.
+</Accordion>
+
+---
+### 🐛 Bug Fixes
+
+- **Triage Event Processing Restored (ENG-1175)**
+  - _Resolution_: Fixed an issue where events for case creation and form submissions in Spare Resolve were not being processed correctly. The system now reliably triggers triage workflows when new cases or forms are submitted.
+
+---
+
+</Update>
+
 <Update label="3 December 2025" description="1 Updates">
 
 ### 🐛 Bug Fixes

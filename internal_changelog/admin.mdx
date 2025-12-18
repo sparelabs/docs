@@ -2,6 +2,94 @@
 title: Admin
 rss: true
 ---
+<Update label="17 December 2025" description="1 Updates">
+
+### 🐛 Bug Fixes
+
+- **Data Import Status Check (BUS-4732)**
+  - _Resolution_: Corrected an error where checking the status of a non-existent data import would cause a server error (500). The system now correctly returns a "not found" (404) response as expected.
+
+</Update>
+
+<Update label="17 December 2025" description="3 Updates">
+
+### ⚙️ Compare Dates in Workflows with New Helpers
+
+**What's New**  
+Two new Handlebars helpers, `parseDate` and `parseDatetime`, are now available in Workflows. These allow you to convert date and datetime strings from custom fields or other data sources into a numerical format (Unix timestamp) for comparisons in Filter steps.
+
+**Pre-requisites**
+- No feature flags required
+- Requires Admin access
+
+<Accordion title="See More">
+
+#### Where You'll See It
+- *Settings > System > Workflows* (within the "Filter" step of a workflow configuration)
+
+#### What You Can Do
+- Use `{{parseDate 'YYYY-MM-DD'}}` to convert a date string into a timestamp, correctly handled in your organization's timezone.
+- Use `{{parseDatetime 'ISO_8601_STRING'}}` to convert a full datetime string into a timestamp.
+- **Example Scenario**: Create a workflow that sends an email 30 days before a driver's license expires. In a Filter step, you can now compare a `driversLicenseExpiry` custom field to the current date by checking if `{{parseDate driver.metadata.driversLicenseExpiry}}` is less than `{{addTs (currentTs) 30 'days'}}`.
+
+#### Why This Matters
+Previously, you could not perform date-based comparisons in workflow filters because they only supported numerical values. This enhancement unlocks new automation possibilities, such as triggering actions based on upcoming expiry dates stored in custom fields.
+</Accordion>
+
+---
+### 🗺️ Select Map Styles When Setting Favorite Locations
+
+<Warning>This feature is currently categorized as 'Do Not Enable - In Development' and is not yet ready for customer use. Please await communications from the Product team on a feature rollout plan.</Warning>
+
+**What's New**  
+When adding or editing a favorite location, you can now switch between "Street", "Satellite", and "Detailed" map views. This helps you precisely place the pin, especially in complex areas like malls, airports, or large campuses.
+
+**Pre-requisites**
+- Requires `ExperimentalMapStyles` feature flag
+- Requires Admin access
+
+<Accordion title="See More">
+
+#### Where You'll See It
+- *Data > Favorite Locations > Add Favorite Location*: A new "Map Layers" dropdown appears in the top-right corner of the map.
+
+#### What You Can Do
+- Click the "Map Layers" dropdown to choose from three map styles: "Street" (the default), "Satellite" (aerial imagery), or "Detailed" (a hybrid view with labels).
+- Use the satellite or detailed view to identify the exact building entrance or pickup spot before saving the favorite location.
+
+#### Why This Matters
+Setting a precise location pin using only a street map can be difficult for large or poorly mapped areas. The ability to switch to a satellite or detailed view gives you the visual context needed to save the correct location with confidence.
+</Accordion>
+
+---
+### ⚙️ Improved Service Creation and Editing Experience
+
+**What's New**  
+The service configuration pages have been updated for a smoother, more intuitive workflow. Key improvements include a sticky header so you don't lose context, the ability to switch tabs without losing unsaved changes, and a better layout on the "Overview" tab.
+
+**Pre-requisites**
+- No feature flags required
+- Requires Admin access
+
+<Accordion title="See More">
+
+#### Where You'll See It
+- *Planning > Services* (on the main list and within the service editing pages)
+
+#### What You Can Do
+- **Navigate Without Losing Work**: You can now switch between tabs (e.g., from "Overview" to "Eligibility") without being forced to save or discard your changes first. Your edits are preserved as you move between sections.
+- **Always See Key Actions**: When scrolling down a long service configuration page, the header containing the service name and "Save" button now remains visible at the top.
+- **View a Cleaner Overview**: The "Overview" tab has been redesigned with a cleaner, two-column layout for service details.
+- **Experience Smarter Zone Editing**: The map now zooms more intelligently to fit the boundaries of the zone you are editing.
+
+#### Why This Matters
+Editing complex services often requires moving between different tabs, and the previous workflow could cause users to accidentally lose their work. These changes create a more seamless and forgiving editing experience, preventing frustration and saving time.
+</Accordion>
+
+---
+
+</Update>
+
 <Update label="3 December 2025" description="1 Updates">
 
 ### 🏢 Organization Switcher Now Available in More Apps
