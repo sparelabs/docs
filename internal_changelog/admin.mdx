@@ -2,6 +2,44 @@
 title: Admin
 rss: true
 ---
+<Update label="18 December 2025" description="2 Updates">
+
+### ⏰ New "Leave At" Visualization for Service Windows
+
+**What's New**  
+A new interactive timeline visualization has been added to the Service configuration page for "Leave At" trips. This visual tool helps you understand the relationship between the rider's desired departure time, the pickup window, travel time, and the final drop-off window based on your service's settings.
+
+**Pre-requisites**
+- Requires Admin access.
+- No feature flags required.
+
+<Accordion title="See More">
+
+#### Where You'll See It
+- *System > Services > (select a service) > Engine tab*. In the "Service Windows" section for "Leave At" trips.
+
+#### What You Can Do
+- Adjust settings like "Pickup Window" or "Flexibility" in the service window editor.
+- Immediately see how your changes affect the timeline visualization next to the settings.
+- Use the visualization to understand the earliest and latest possible pickup and drop-off times for a rider.
+
+#### Why This Matters
+Configuring service windows can be complex, and it's not always clear how different settings interact. This visualization provides immediate, clear feedback, helping you design and validate your service parameters with confidence.
+</Accordion>
+
+---
+### 🐛 Bug Fixes
+
+- **Standardized Activity Log Permissions**
+  - _Resolution_: Fixed an issue where different activity logs across the platform used inconsistent permissions. Access to all activity logs is now correctly governed by the "View Activity Log" (`LIST_ANY_EVENT`) permission.
+
+- **Rider Import Robustness (BUS-4748)**
+  - _Resolution_: Fixed a bug that caused the rider import tool to crash if the uploaded CSV file was missing address-related columns (e.g., `address1`, `city`). The importer now correctly handles files with incomplete address information.
+
+---
+
+</Update>
+
 <Update label="17 December 2025" description="4 Updates">
 
 ### ✨ Enhanced Service Configuration Experience

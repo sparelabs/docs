@@ -2,6 +2,98 @@
 title: Operations
 rss: true
 ---
+<Update label="18 December 2025" description="4 Updates">
+
+### 🗺️ See Riders on Board in Live Map Time Travel
+
+**What's New**  
+The Live Map's Time Travel feature now displays a "Riders on Board" list within the duty details card. This shows exactly who was in the vehicle at any selected historical point, mirroring the information available in the main Duty Details view.
+
+**Pre-requisites**
+- Requires `LiveMapAlerts` feature flag.
+- Requires Admin access.
+
+<Accordion title="See More">
+
+#### Where You'll See It
+- *Live Map > (select a duty) > Time Travel*. A new "Riders on Board" field appears in the duty information card when you scrub through the timeline.
+
+#### What You Can Do
+- Select a duty on the Live Map and open the Time Travel pane.
+- Move the time slider to a past moment.
+- Observe the "Riders on Board" field to see a list of riders in the vehicle at that time. The field will display "None" if the vehicle was empty.
+
+#### Why This Matters
+Previously, to see which riders were on a vehicle at a specific time, you had to cross-reference multiple views. This change provides immediate historical context directly within the Live Map, making it easier to investigate past events or service issues.
+</Accordion>
+
+---
+### 🏷️ New Icons for Trip Groups and Locked-to-Duty Requests
+
+**What's New**  
+To provide more at-a-glance information, two new icons are now displayed next to requests in duty timelines and manifests. A "ball-pile" icon indicates the request is part of a Trip Group (hovering shows the group name), and a "lock" icon indicates the request is locked to that duty.
+
+**Pre-requisites**
+- Requires `TripGroup` and `LiveMapAlerts` feature flags.
+- Requires Admin access.
+
+<Accordion title="See More">
+
+#### Where You'll See It
+- *Live Map > Duty Details card*
+- *Live Map > Time Travel pane*
+- *Operations > Duties > (select a duty) > Itinerary tab*
+- *Operations > Duties > (select a duty) > Time Travel tab*
+
+#### What You Can Do
+- Quickly scan a duty's itinerary or timeline to identify requests with special constraints.
+- Hover over the "ball-pile" icon to see the name of the Trip Group a request belongs to.
+- Hover over the "lock" icon to confirm a request is locked to the current duty.
+
+#### Why This Matters
+This change makes it much easier for dispatchers to understand the context of each trip without clicking into individual request details. It helps prevent unintended changes to grouped or locked trips and improves operational awareness.
+</Accordion>
+
+---
+### 💬 See Request Details on Comments in Duty Activity Feed
+
+<Warning>This feature is currently categorized as 'Do Not Enable - In Development' and is not yet ready for customer use. Please await communications from the Product team on a feature rollout plan.</Warning>
+
+**What's New**  
+The Duty Activity Feed now provides more context for comments originating from a request. When a comment is added to a request that is part of a duty, that comment will appear in the duty's activity feed with the rider's name and a clickable link to the associated request.
+
+**Pre-requisites**
+- Requires `DutyActivityFeed` feature flag.
+- Requires Admin access.
+
+<Accordion title="See More">
+
+#### Where You'll See It
+- *Operations > Duties > (select a duty) > Activity Feed tab*.
+
+#### What You Can Do
+- Add a comment to a request's activity feed.
+- Navigate to the activity feed of the duty that request is assigned to.
+- See the comment appear there, prefixed with the rider's name and a link to the request.
+- Click the link to navigate directly to the request details page.
+
+#### Why This Matters
+Previously, comments from requests would appear in the duty feed without context, making it hard to know which trip they referred to. This change links comments directly to the relevant request, improving clarity and communication for dispatchers monitoring a duty.
+</Accordion>
+
+---
+### 🐛 Bug Fixes
+
+- **Improved Rematching for Service Interface Changes**
+  - _Resolution_: Fixed an issue where rematching a trip could fail if the service's allowed booking interfaces (e.g., Admin vs. Rider App) had changed since the original booking. The system now correctly handles these estimates during a rematch.
+
+- **Corrected Resizing of Duty and Request Detail Panels**
+  - _Resolution_: Resolved a UI bug where the detail panels for duties and requests could not be resized to be smaller. The panels, especially the Activity Feed tab, can now be freely resized.
+
+---
+
+</Update>
+
 <Update label="17 December 2025" description="1 Updates">
 
 ### 💬 "Leave Now" Option Renamed to "Next Available"

@@ -2,6 +2,41 @@
 title: Scout
 rss: true
 ---
+<Update label="18 December 2025" description="2 Updates">
+
+### 🤖 Scout Provides Clearer Query Summaries
+
+<Warning>This feature is currently categorized as 'Do Not Enable - In Development' and is not yet ready for customer use. Please await communications from the Product team on a feature rollout plan.</Warning>
+
+**What's New**  
+Scout now generates a comprehensive summary in plain language for every analytics query it performs. This summary explains each measure, dimension, filter, and time range used. Additionally, Scout now automatically uses your organization's preferred fields for On-Time Performance (e.g., relevant vs. pickup OTP) and productivity metrics when building queries.
+
+**Pre-requisites**
+- Requires `ScoutMastra` feature flag.
+- Requires Admin access.
+
+<Accordion title="See More">
+
+#### Where You'll See It
+- In the chat interface for Scout, after asking a question that results in an analytics query.
+
+#### What You Can Do
+- Ask Scout a question like "What was our on-time performance last week?".
+- Review the new, detailed `summary` section in Scout's response to understand exactly how it constructed the query.
+- Confirm that queries for OTP or productivity use the metrics configured in your organization's settings.
+
+#### Why This Matters
+Previously, understanding how Scout arrived at an answer could be difficult. The new query summary provides full transparency, building trust and helping you validate the data. By respecting organization settings, Scout now delivers more relevant and consistent analytics results without needing manual clarification.
+</Accordion>
+
+---
+### 🐛 Bug Fixes
+
+- **Scout Chat Initialization (ENG-1168)**
+  - _Resolution_: Fixed a bug where the Scout chat interface would try to load messages before a conversation was created, causing an error. The system now waits for a valid conversation to exist before fetching messages.
+
+</Update>
+
 <Update label="2 December 2025" description="1 Updates">
 
 ### 🤖 New AI Architecture for Scout

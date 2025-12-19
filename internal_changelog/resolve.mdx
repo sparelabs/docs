@@ -2,6 +2,20 @@
 title: Resolve
 rss: true
 ---
+<Update label="18 December 2025" description="1 Updates">
+
+### 🐛 Bug Fixes
+
+- **Case Intelligence Stability and Accuracy (ENG-892, ENG-1170, ENG-1169)**
+  - _Resolution_: Made several improvements to Case Intelligence:
+    - Duplicate case detection is now faster and more reliable, using a database query to find cases with shared objects (e.g., same rider, request) created within a 2-hour window.
+    - Fixed an issue where case summaries could get stuck in a "pending" state. Stuck jobs are now automatically reset after 5 minutes, allowing them to be retried.
+    - Resolved an API validation error related to date formats in suggested duplicate cases.
+
+---
+
+</Update>
+
 <Update label="17 December 2025" description="2 Updates">
 
 ### 🚨 Activate and Use Incident Management Templates

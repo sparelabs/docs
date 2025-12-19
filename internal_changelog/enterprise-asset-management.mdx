@@ -2,6 +2,60 @@
 title: Enterprise Asset Management
 rss: true
 ---
+<Update label="18 December 2025" description="2 Updates">
+
+### 🚚 Bulk Import Assets via CSV File
+
+**What's New**  
+The data import tool has been expanded to support assets. You can now use a CSV file to add new assets or update existing ones in bulk, streamlining the process of populating and managing your asset registry.
+
+**Pre-requisites**
+- Requires access to the Enterprise Asset Management (EAM) product.
+- No feature flags required.
+
+<Accordion title="See More">
+
+#### Where You'll See It
+- *Enterprise Asset Management > Imports > New Import*. You will see a new "Assets" option in the import type selection.
+
+#### What You Can Do
+- Navigate to the EAM Imports page and click "New Import".
+- Select "Assets" as the import type and download the template CSV file.
+- Populate the template with your asset data, including fields like identifier, make, model, VIN, license plate, status, and associated asset groups/types.
+- Upload the file to create or update assets in the system.
+
+#### Why This Matters
+Manually creating or updating a large number of assets is time-consuming and error-prone. This feature provides a fast and efficient way to manage your asset data, especially during initial system setup or when integrating data from other sources.
+</Accordion>
+
+---
+### ⚠️ Resolve Telematics Conflicts When Adding Meter Entries
+
+**What's New**  
+If you try to create a manual meter entry that conflicts with an existing entry created automatically by a telematics integration, the system now presents a conflict resolution dialog. This dialog gives you the option to immediately void all conflicting telematics entries and proceed with creating your manual entry.
+
+**Pre-requisites**
+- Requires access to the Enterprise Asset Management (EAM) product and a configured telematics integration.
+- No feature flags required.
+
+<Accordion title="See More">
+
+#### Where You'll See It
+- *Enterprise Asset Management > Assets > (select an asset) > Meter tab*. The dialog appears when you click "Save" on a new meter entry that causes a conflict.
+
+#### What You Can Do
+- Attempt to add a new meter entry with a date or value that conflicts with an existing telematics-sourced entry.
+- When the "Telematics Conflict" dialog appears, review the conflicting entries.
+- Click the "Void Telematics Entries & Submit" button to automatically void the conflicting data and save your new entry.
+
+#### Why This Matters
+Manual corrections to meter readings were previously blocked by automatic telematics data, forcing a multi-step process of finding and voiding entries. This new workflow streamlines data correction by identifying telematics-only conflicts and providing a one-click resolution.
+</Accordion>
+
+---
+
+</Update>
+
 <Update label="17 December 2025" description="1 Updates">
 
 ### 🔍 View and Manage Duplicate Inspection Issues
