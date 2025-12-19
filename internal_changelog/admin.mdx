@@ -2,6 +2,44 @@
 title: Admin
 rss: true
 ---
+<Update label="18 December 2025" description="2 Updates">
+
+### ⏰ New "Leave At" Service Window Visualization
+
+**What's New**  
+A new interactive visualization has been added to the Service configuration page to help you understand "Leave At" service windows. This visual tool displays the relationship between the pickup window, travel time, and the resulting drop-off window.
+
+**Pre-requisites**
+- No feature flags required
+- Requires Admin access
+
+<Accordion title="See More">
+
+#### Where You'll See It
+- *System > Services > (select a service) > Engine tab > Service Windows section*.
+
+#### What You Can Do
+- As you adjust settings like "Pickup Window" or "Flexibility," the visualization updates in real-time.
+- See a clear graphical representation of the pickup window, estimated travel time, and the calculated drop-off window.
+- Toggle between on-demand and recurring trip examples to see how settings apply differently.
+
+#### Why This Matters
+Understanding how different time-based settings interact can be complex. This visualization makes the "Leave At" logic transparent and intuitive, helping you configure your service windows with confidence and ensuring they behave exactly as you expect.
+</Accordion>
+
+---
+### 🐛 Bug Fixes
+
+- **Corrected Permission Check for Activity Logs**
+  * _Resolution_: Fixed an issue where the system would attempt to load activity log data for users without the necessary `View Activity Log` permission, resulting in errors. The interface now correctly verifies permissions before fetching data.
+
+- **Improved Rider CSV Import Robustness (BUS-4748)**
+  * _Resolution_: Fixed a crash that occurred during rider CSV import if optional address-related columns (e.g., `address1`, `city`) were not present in the file. The importer now correctly handles missing columns without failing.
+
+---
+
+</Update>
+
 <Update label="17 December 2025" description="5 Updates">
 
 ### 🗺️ Map Style Selector for Favorite Locations

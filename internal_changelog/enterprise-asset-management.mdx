@@ -2,6 +2,60 @@
 title: Enterprise Asset Management
 rss: true
 ---
+<Update label="18 December 2025" description="2 Updates">
+
+### 🚚 Bulk Import Assets with CSV Uploader
+
+**What's New**  
+You can now bulk import assets into the Enterprise Asset Management (EAM) module using a CSV file. The platform's import tool has been enhanced to support both assets and energy entries.
+
+**Pre-requisites**
+- No feature flags required
+- Requires Admin access to the EAM module
+
+<Accordion title="See More">
+
+#### Where You'll See It
+- *EAM > Imports > 'New Import' button*. A new 'Assets' option is available in the import type selection dropdown.
+
+#### What You Can Do
+- Select 'Assets' as the import type to begin the workflow.
+- Download a template CSV with the required headers for asset import.
+- Upload a CSV file to create new assets or update existing ones in bulk.
+- The importer supports fields like identifier, make, model, VIN, license plate, asset group, asset type, and more.
+
+#### Why This Matters
+Manually creating a large number of assets is time-consuming and error-prone. The new bulk import functionality streamlines fleet and asset setup, saving significant administrative time and ensuring data consistency.
+</Accordion>
+
+---
+### ⚠️ Quickly Resolve Telematics Meter Entry Conflicts
+
+**What's New**  
+When you try to add a manual meter entry in EAM that conflicts with existing entries created automatically by a telematics integration, a new dialog will appear. This dialog allows you to immediately void all the conflicting telematics entries and proceed with your manual entry.
+
+**Pre-requisites**
+- No feature flags required
+- Requires Admin access to the EAM module
+
+<Accordion title="See More">
+
+#### Where You'll See It
+- *EAM > Assets > (select an asset) > 'Add Meter Entry' drawer*.
+
+#### What You Can Do
+- If a manual meter entry is blocked only by telematics-generated entries, a "Telematics Conflict" dialog will appear.
+- The dialog will show how many telematics entries are blocking your action.
+- Click 'Void and Submit' to automatically void the conflicting entries and save your new manual entry in one step.
+
+#### Why This Matters
+Correcting inaccurate telematics data could be a tedious, multi-step process. This new workflow provides a one-click solution to resolve common data conflicts, allowing maintenance staff to quickly and easily correct meter readings without leaving their current task.
+</Accordion>
+
+---
+
+</Update>
+
 <Update label="17 December 2025" description="1 Updates">
 
 ### 🔍 View and Manage Duplicate Inspection Issues

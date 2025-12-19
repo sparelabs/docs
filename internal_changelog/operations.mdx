@@ -2,6 +2,94 @@
 title: Operations
 rss: true
 ---
+<Update label="18 December 2025" description="4 Updates">
+
+### 🗺️ See Riders on Board in Live Map Time Travel
+
+**What's New**  
+The Live Map Time Travel feature now displays a list of riders currently on board a vehicle at any selected point in the past. This provides the same level of detail previously only available in the Duty Details Time Travel tab.
+
+**Pre-requisites**
+- Requires `liveMapAlerts` feature flag
+- Requires Admin access
+
+<Accordion title="See More">
+
+#### Where You'll See It
+- *Live Map > (select a duty) > 'Time Travel' button*. A new "Riders on Board" field appears in the duty information card in the time travel pane.
+
+#### What You Can Do
+- Scrub through a duty's history using the time slider and see exactly which riders were in the vehicle at any given moment. The list will display "None" if the vehicle was empty.
+
+#### Why This Matters
+Previously, dispatchers had to switch to a different screen to see which riders were on board during a historical review. This change brings crucial context directly into the Live Map Time Travel view, streamlining incident investigation and operational review workflows.
+</Accordion>
+
+---
+### 🔗 View Trip Group and Lock Status in Duty Details
+
+**What's New**  
+New icons in duty itineraries now instantly show if a request is part of a Trip Group or is locked to a specific duty. Hovering over the icons reveals the Trip Group name or confirms the lock status, providing at-a-glance context.
+
+**Pre-requisites**
+- Requires `TripGroup` and `liveMapAlerts` feature flags
+- Requires Admin access
+
+<Accordion title="See More">
+
+#### Where You'll See It
+- *Live Map > (select a duty)* (in the duty details card)
+- *System > Duties > (select a duty) > Itinerary tab*
+- *System > Duties > (select a duty) > Time Travel tab*
+
+#### What You Can Do
+- Quickly identify requests belonging to a Trip Group with the new group icon.
+- Hover over the group icon to see the name of the Trip Group in a tooltip.
+- Instantly see requests locked to the duty via a lock icon.
+
+#### Why This Matters
+Previously, identifying grouped or locked trips required checking individual request details. These new visual indicators provide immediate context directly within the duty view, helping dispatchers make faster, more informed decisions about trip management.
+</Accordion>
+
+---
+### 💬 See Associated Request Info in Duty Activity Feed Comments
+
+<Warning>This feature is currently categorized as 'Do Not Enable - In Development' and is not yet ready for customer use. Please await communications from the Product team on a feature rollout plan.</Warning>
+
+**What's New**  
+When a comment made on a request appears in a duty's activity feed, it will now be clearly labeled with the rider's name and a direct link to the associated request.
+
+**Pre-requisites**
+- Requires `dutyActivityFeed` feature flag
+- Requires Admin access
+
+<Accordion title="See More">
+
+#### Where You'll See It
+- *System > Duties > (select a duty) > Activity tab*
+
+#### What You Can Do
+- View comments from associated requests within the duty's central activity feed.
+- Immediately identify which request a comment belongs to via the rider's name displayed next to the comment.
+- Click the link to navigate directly to the request details page for more context.
+
+#### Why This Matters
+Previously, comments from requests appeared in the duty activity feed without context, making it difficult to know which trip they referred to. This enhancement provides that missing information, saving dispatchers time and preventing confusion when reviewing a duty's complete history.
+</Accordion>
+
+---
+### 🐛 Bug Fixes
+
+- **Improved Trip Rematching with Service Interface Restrictions**
+  * _Resolution_: Resolved an error that could prevent a trip from being rematched to a new service if the new service had different interface restrictions (e.g., Rider App vs. Admin) than the original one. The system now correctly handles these scenarios during rematching.
+
+- **Enhanced Resizing of Duty and Request Detail Panels**
+  * _Resolution_: Fixed a layout issue where the side panels for Duty Details and Request Details could not be resized to be smaller, sometimes cutting off content. The panels can now be freely resized for better screen space management.
+
+---
+
+</Update>
+
 <Update label="17 December 2025" description="1 Updates">
 
 ### 💬 Clearer Booking Terminology

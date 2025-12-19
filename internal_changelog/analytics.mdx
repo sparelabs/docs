@@ -2,6 +2,85 @@
 title: Analytics
 rss: true
 ---
+<Update label="18 December 2025" description="3 Updates">
+
+### 📂 Improved Dashboard Filters with Active/Archived Tabs
+
+**What's New**  
+The Service and Fleet filters on Analytics Dashboards have been redesigned for better organization and usability. The filter popover now separates options into 'Active' and 'Archived' tabs, includes a search bar, and displays counts of selected items.
+
+**Pre-requisites**
+- Requires `AnalyticsV2` feature flag
+- Requires Admin access
+
+<Accordion title="See More">
+
+#### Where You'll See It
+- *Analytics > Dashboards*. The 'Service' and 'Fleet' filter buttons at the top of a dashboard.
+
+#### What You Can Do
+- Click a filter to open a popover with 'Active' and 'Archived' tabs, each with a count of items.
+- Use the 'Select All' option for either active or archived items independently.
+- Search within the popover to quickly find specific services or fleets.
+- See a count of how many items are currently selected displayed on the filter button itself.
+
+#### Why This Matters
+As lists of services and fleets grow, finding the right ones to filter by becomes challenging. This new design makes it much easier to manage long lists by separating active from archived items and providing powerful search and selection tools, speeding up the process of refining dashboard data.
+</Accordion>
+
+---
+### 🔧 Apply Multiple Filters to Custom Calculation Measures
+
+**What's New**  
+When creating a custom calculation in the Analytics Query Builder, you can now apply multiple filters to a single measure. Previously, you were limited to only one filter.
+
+**Pre-requisites**
+- Requires `AnalyticsV2` feature flag
+- Requires Admin access
+
+<Accordion title="See More">
+
+#### Where You'll See It
+- *Analytics > Query Builder > (in Measures section) > 'Create Calculation' button*. The expression builder for measures now supports an array of filters.
+
+#### What You Can Do
+- Define more complex and precise custom measures. For example, you can now create a measure for "Trips completed by 'Vehicle Type A' *and* paid for with 'Fare Type B'".
+
+#### Why This Matters
+This change removes a significant limitation in custom calculations, allowing for more powerful and specific data analysis. You can now create highly targeted metrics by combining multiple conditions, leading to more accurate and insightful reports.
+</Accordion>
+
+---
+### 📈 Expanded Data in Ridership Reports
+
+**What's New**  
+The underlying data model for the Ridership Report has been enhanced to include more detailed information. New fields are now available for use in custom reports and queries in the Query Builder.
+
+**Pre-requisites**
+- Requires Admin access to Analytics features (e.g., `AnalyticsV2`, `ReportTemplate`)
+
+<Accordion title="See More">
+
+#### Where You'll See It
+- *Analytics > Query Builder* and *Reports*. The new fields are available when building queries on the `Ridership Report` cube.
+
+#### What You Can Do
+- Build reports using new fields such as:
+    - Original request time
+    - Completed pickup and dropoff addresses
+    - Duty and service start/end times
+    - Pickup and dropoff zone IDs
+    - Fare ID
+    - Creator metadata (e.g., the ID of the user who created the request)
+
+#### Why This Matters
+This expansion provides deeper insights and more granular data for analysis. You can now create more sophisticated reports to track operational details, audit trip creation, and analyze fare usage without needing complex data joins.
+</Accordion>
+
+---
+
+</Update>
+
 <Update label="17 December 2025" description="1 Updates">
 
 ### 📊 New Ridership Report Dimensions for Deeper Analysis

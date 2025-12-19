@@ -2,6 +2,39 @@
 title: Resolve
 rss: true
 ---
+<Update label="18 December 2025" description="2 Updates">
+
+### ⚖️ Simplified and More Reliable Duplicate Case Detection
+
+**What's New**  
+Case Intelligence now uses a more straightforward and deterministic method for identifying duplicate cases. The system now flags cases as potential duplicates if they are created within a two-hour window of each other and share at least one linked object (e.g., the same rider, request, or duty).
+
+**Pre-requisites**
+- Requires `CaseIntelligence` feature flag
+- Requires Admin access to the Resolve module
+
+<Accordion title="See More">
+
+#### Where You'll See It
+- *Resolve > (select a case) > Intelligence tab*. The "Suggested Duplicates" section is populated based on the new logic.
+
+#### What You Can Do
+- Review a more predictable and consistent list of potential duplicate cases based on clear, time-based, and object-linked criteria.
+
+#### Why This Matters
+The previous AI-based approach could sometimes produce inconsistent or hard-to-understand results. This new database-driven logic provides a faster, more reliable, and easily explainable method for identifying duplicates, helping agents merge related cases more effectively.
+</Accordion>
+
+---
+### 🐛 Bug Fixes
+
+- **Case Intelligence Stability Fixes (ENG-1168, ENG-1169, ENG-1170)**
+  * _Resolution_: Addressed multiple issues in Case Intelligence: summaries that were stuck in a "pending" state will now automatically reset after 5 minutes, and an error in the chat interface that occurred when a conversation had not yet been created has been fixed.
+
+---
+
+</Update>
+
 <Update label="17 December 2025" description="2 Updates">
 
 ### 🚀 Quick Launch for Case Type Templates
