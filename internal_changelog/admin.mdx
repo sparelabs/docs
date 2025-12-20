@@ -2,6 +2,45 @@
 title: Admin
 rss: true
 ---
+<Update label="19 December 2025" description="2 Updates">
+
+### 📊 Interactive 'Arrive-By' Service Window Visualization
+
+<Warning>This feature is currently categorized as 'Do Not Enable - In Development' and is not yet ready for customer use. Please await communications from the Product team on a feature rollout plan.</Warning>
+
+**What's New**  
+A new interactive visualization is available on the Service configuration page to help you better understand the impact of 'Arrive-By' settings. This timeline tool visually demonstrates how pickup buffers, drop-off buffers, and travel time combine to create the effective pickup and arrival windows for a rider.
+
+**Pre-requisites**
+- Requires `ArriveByV2` feature flag.
+- Requires Admin access.
+
+<Accordion title="See More">
+
+#### Where You'll See It
+- *System Settings > Services > [Select an Arrive-By Service] > Edit > Engine tab* (new visualization panel is displayed).
+
+#### What You Can Do
+- Use the **'Requested Arrival Time' slider** to see how changing the desired arrival time affects the calculated pickup window.
+- Toggle between **'On-time'** and **'Early/Late'** scenarios to understand how the system accommodates variability.
+- Hover over different segments of the timeline to see detailed tooltips explaining the 'Effective Arrival Window', 'Drop-off Buffer', and 'Pickup Window'.
+
+#### Why This Matters
+Configuring 'Arrive-By' services involves several interacting time-based settings that can be difficult to conceptualize. This visualization provides immediate, clear feedback on how your settings will behave, making it easier to fine-tune service parameters and understand the rider's experience.
+</Accordion>
+
+---
+### 🐛 Bug Fixes
+
+- **Enhanced Security for Password Resets on Shared Accounts (BUS-4611)**
+  - _Resolution_: When a user who has linked Rider or Driver accounts resets their password, the system now automatically invalidates their login sessions across all associated apps. This prevents old, potentially compromised sessions from remaining active after a password change.
+- **Corrected Date and Time Formatting for Non-English Languages (PR 30630)**
+  - _Resolution_: Fixed an issue where dates and times in the Admin platform were not respecting the user's selected language settings. All date and time displays now correctly follow the appropriate format for the chosen locale (e.g., French, Spanish).
+
+---
+
+</Update>
+
 <Update label="18 December 2025" description="2 Updates">
 
 ### ⏰ New "Leave At" Service Window Visualization

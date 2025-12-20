@@ -2,6 +2,40 @@
 title: Analytics
 rss: true
 ---
+<Update label="19 December 2025" description="2 Updates">
+
+### 🎨 Modernized Buttons and Tooltips in Query Builder
+
+**What's New**  
+The buttons and controls within the Analytics Query Builder have been updated to match the modern design system used across the Spare platform. This change provides a cleaner, more consistent user interface and improves usability with more descriptive tooltips.
+
+**Pre-requisites**
+- Requires `AnalyticsV2` feature flag.
+
+<Accordion title="See More">
+
+#### Where You'll See It
+- *Analytics > Query Builder*
+
+#### What You Can Do
+- **Updated Buttons**: The 'Run Query', 'Reset', 'Undo', 'Redo', and download buttons now feature the updated visual style.
+- **Improved Tooltips**: Instead of relying on standard browser tooltips, hovering over buttons now displays enhanced tooltips that provide clearer information about the button's function.
+- **New Download Menu**: The download button now opens a popover menu, allowing you to select your desired format (CSV, XLSX, PDF) more easily.
+
+#### Why This Matters
+This update brings the Query Builder's interface in line with the rest of the application, creating a more cohesive and intuitive user experience. The improved tooltips and download menu make the tool easier to navigate and use effectively.
+</Accordion>
+
+---
+### 🐛 Bug Fixes
+
+- **Repaired Analytics Queries Combining Fare and Request Data (AIP-623)**
+  - _Resolution_: Fixed a broken data relationship in the `Fare` cube that caused errors when building queries that included measures from both `Fares` and `Requests`. Queries combining these data sets, such as analyzing `Total Fare Amount Collected` against `Completed Trips`, now execute correctly.
+
+---
+
+</Update>
+
 <Update label="18 December 2025" description="3 Updates">
 
 ### 📂 Improved Dashboard Filters with Active/Archived Tabs

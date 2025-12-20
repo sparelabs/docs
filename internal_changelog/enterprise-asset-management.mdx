@@ -2,6 +2,57 @@
 title: Enterprise Asset Management
 rss: true
 ---
+<Update label="19 December 2025" description="2 Updates">
+
+### 🛠️ View Resolved Fault Codes for Assets
+
+**What's New**  
+The 'Fault Codes' tab for an asset now includes a history of resolved fault codes. A new "Resolved Fault Codes" table appears below the existing "Active Fault Codes" table, providing a complete diagnostic history for each asset.
+
+**Pre-requisites**
+- Requires access to Enterprise Asset Management.
+
+<Accordion title="See More">
+
+#### Where You'll See It
+- *Enterprise Asset Management > Assets > [Select an Asset] > Fault Codes tab*
+
+#### What You Can Do
+- View all active fault codes for an asset in the top table.
+- View all previously resolved fault codes in the new "Resolved Fault Codes" table at the bottom of the page.
+- See when a fault code was resolved in the new **'Resolved At'** column.
+
+#### Why This Matters
+Previously, it was difficult to track the history of an asset's issues once a fault code was resolved. This enhancement provides a complete and permanent record of all fault codes, helping maintenance teams identify recurring problems and review an asset's full service history.
+</Accordion>
+
+---
+### ⛽ Analyze Vehicle Energy Entries in Analytics
+
+**What's New**  
+Data from vehicle energy entries, such as fuel-ups or charging sessions, is now available as a data source within the Analytics platform. You can now query, report on, and analyze energy consumption and cost data recorded in Enterprise Asset Management.
+
+**Pre-requisites**
+- Requires `AnalyticsV2` feature flag and access to Enterprise Asset Management.
+
+<Accordion title="See More">
+
+#### Where You'll See It
+- *Analytics > Query Builder* (new `Energy Entry` cube available for querying).
+
+#### What You Can Do
+- Build reports on energy consumption across your fleet.
+- Analyze metrics such as total fuel cost, average energy price, and consumption volume.
+- Join energy entry data with other data sources, like vehicle or asset information, to create comprehensive fleet performance dashboards.
+
+#### Why This Matters
+This integration allows you to move beyond operational tracking and perform in-depth analysis of your fleet's energy usage. It enables you to monitor costs, identify trends, and make data-driven decisions related to fleet energy management.
+</Accordion>
+
+---
+
+</Update>
+
 <Update label="18 December 2025" description="2 Updates">
 
 ### 🚚 Bulk Import Assets with CSV Uploader

@@ -2,6 +2,47 @@
 title: Resolve
 rss: true
 ---
+<Update label="19 December 2025" description="2 Updates">
+
+### ⏱️ Manage and Track Case Deadlines in Engage
+
+**What's New**  
+You can now create, manage, and monitor deadlines for cases directly within Spare Engage. This feature introduces a dedicated settings page for defining deadline rules and integrates deadline status indicators throughout the case management interface, including the main case list and individual case detail pages.
+
+**Pre-requisites**
+- Requires permissions for managing and viewing case deadlines.
+
+<Accordion title="See More">
+
+#### Where You'll See It
+- **Deadline Configuration**: *Engage > Settings > Deadlines* (new page for creating and managing deadline definitions).
+- **Case List View**: *Engage > Cases* (new 'Deadline' column displaying the status of the most urgent deadline).
+- **Case Detail View**: *Engage > Cases > [Select a Case]* (new timeline cards showing all applicable deadlines, their status, and time remaining).
+- **Alerts**: *Top navigation bar > Alerts dropdown* (new alerts for breached deadlines).
+
+#### What You Can Do
+- Create deadline definitions with specific timeframes (e.g., "2 days to resolve").
+- Define rules for when a deadline applies using conditions based on case status or rider eligibility criteria.
+- See at a glance which cases have upcoming (yellow) or breached (red) deadlines in the case list.
+- Hover over deadline indicators to see detailed information, such as the deadline name and due date.
+- View a comprehensive history of all deadlines for a specific case within its activity feed.
+
+#### Why This Matters
+Tracking service level agreements (SLAs) or internal resolution targets was previously a manual process. This feature automates deadline tracking, providing clear visual cues to help teams prioritize work, prevent breaches, and ensure timely case resolution.
+</Accordion>
+
+---
+### 🐛 Bug Fixes
+
+- **Corrected Permissions for Engage and Operations Manager Roles to Access Deadlines (ENG-1185)**
+  - _Resolution_: The `Operations Manager` and `Access to Engage` default roles now include the necessary permissions to view and manage Case Deadlines, ensuring users with these roles can access the new feature as intended.
+- **Prevent Errors for Case Type Templates without Permissions (ENG-1186)**
+  - _Resolution_: The system now checks for the `GET_ANY_CASE_TYPE` permission before attempting to load case type templates in the Engage `Quick Launch` section. This prevents errors for users who do not have permission to view these templates.
+
+---
+
+</Update>
+
 <Update label="18 December 2025" description="2 Updates">
 
 ### ⚖️ Simplified and More Reliable Duplicate Case Detection
