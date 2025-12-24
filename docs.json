@@ -45,6 +45,17 @@
             ]
           }
         ]
+      },
+      {
+        "language": "jp",
+        "tabs": [
+          {
+            "tab": "概要",
+            "pages": [
+              "jp/welcome"
+            ]
+          }
+        ]
       }
     ],
     "global": {
