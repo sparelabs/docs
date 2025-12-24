@@ -9,25 +9,41 @@
   },
   "favicon": "/favicon.svg",
   "navigation": {
-    "tabs": [
+    "languages": [
       {
-        "tab": "Overview",
-        "pages": [
-          "welcome"
+        "language": "en",
+        "tabs": [
+          {
+            "tab": "Overview",
+            "pages": [
+              "welcome"
+            ]
+          },
+          {
+            "tab": "Internal Changelog",
+            "pages": [
+              "internal_changelog/analytics",
+              "internal_changelog/operations",
+              "internal_changelog/enterprise-asset-management",
+              "internal_changelog/admin",
+              "internal_changelog/ai-voice",
+              "internal_changelog/resolve",
+              "internal_changelog/scout",
+              "internal_changelog/eligibility",
+              "internal_changelog/engine"
+            ]
+          }
         ]
       },
       {
-        "tab": "Internal Changelog",
-        "pages": [
-          "internal_changelog/analytics",
-          "internal_changelog/operations",
-          "internal_changelog/enterprise-asset-management",
-          "internal_changelog/admin",
-          "internal_changelog/ai-voice",
-          "internal_changelog/resolve",
-          "internal_changelog/scout",
-          "internal_changelog/eligibility",
-          "internal_changelog/engine"
+        "language": "fr",
+        "tabs": [
+          {
+            "tab": "Aperçu",
+            "pages": [
+              "fr/welcome"
+            ]
+          }
         ]
       }
     ],
