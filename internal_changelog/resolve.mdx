@@ -2,6 +2,17 @@
 title: Resolve
 rss: true
 ---
+<Update label="23 December 2025" description="1 Updates">
+
+### 🐛 Bug Fixes
+
+- **Corrected Permissions for Case Deadlines (INC-181)**
+  - _Resolution_: Previously, users without sufficient permissions encountered an error when viewing a case in Spare Resolve because the system tried to load deadline information they were not authorized to see. We've corrected this by first checking if the user has the `LIST_ANY_DEADLINE_INSTANCE` permission before fetching the data, ensuring a smooth experience without errors.
+
+---
+
+</Update>
+
 <Update label="22 December 2025" description="1 Updates">
 
 ### 🐛 Bug Fixes
