@@ -2,6 +2,36 @@
 title: Operations
 rss: true
 ---
+<Update label="2 January 2026" description="1 Updates">
+
+### 🔍 Enhanced Trip Group View in Live Requests
+
+**What's New**  
+The 'By Group Trip' tab in Live Requests now exclusively displays requests associated with a trip group, providing a cleaner, more focused view for dispatchers. The metrics totals and the request table in this tab are now filtered to only include these relevant requests.
+
+**Pre-requisites**
+- Requires `TripGroup` feature flag
+- Requires Admin access
+
+<Accordion title="See More">
+
+#### Where You'll See It
+- *Rides > Live Requests* (on the 'By Group Trip' tab)
+
+#### What You Can Do
+- View a filtered list of requests that belong to any trip group in the main request table.
+- See accurate metric counts (e.g., 'Dispatching', 'Unmatched') that reflect only the requests within trip groups.
+- Click on a metric cell (e.g., a trip group's 'Dispatching' count) to filter the request table to just those specific requests.
+- The 'Group Trip' column in the request table now correctly displays the trip group name that matches the request's direction.
+
+#### Why This Matters
+Previously, the 'By Group Trip' tab included all requests, making it difficult for dispatchers to focus on managing trips that are part of a group. This change ensures that the view is dedicated to trip group management, improving operational efficiency and reducing visual clutter.
+</Accordion>
+
+---
+
+</Update>
+
 <Update label="22 December 2025" description="1 Updates">
 
 ### 🐛 Bug Fixes

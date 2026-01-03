@@ -2,6 +2,37 @@
 title: Engine
 rss: true
 ---
+<Update label="2 January 2026" description="1 Updates">
+
+### 🗺️ Dynamic Travel Time Updates for More Accurate ETAs
+
+<Warning>This feature is currently categorized as 'Do Not Enable - In Development' and is not yet ready for customer use. Please await communications from the Product team on a feature rollout plan.</Warning>
+
+**What's New**  
+A new automated background job periodically refreshes the direct travel time for active and upcoming trips. This ensures that the system's understanding of travel durations remains current, especially when live traffic data is used.
+
+**Pre-requisites**
+- Requires `LiveTraffic` feature flag
+
+<Accordion title="See More">
+
+#### Where You'll See It
+- This is a backend enhancement with no direct UI. The impact will be seen in the accuracy of system calculations.
+
+#### What You Can Do
+- The primary benefit is improved system performance without user action. The system will automatically:
+  - Re-calculate direct travel times for trips scheduled in the near future.
+  - Update detour flexibility calculations with more current data.
+  - Provide more accurate ETAs and pickup windows when live traffic conditions change.
+
+#### Why This Matters
+Stale travel time data can lead to inaccurate ETAs and inefficient routing, especially in areas with variable traffic. This recurring job ensures that the optimization engine is always working with the most up-to-date information, improving the reliability of schedules and the overall rider experience.
+</Accordion>
+
+---
+
+</Update>
+
 <Update label="3 December 2025" description="1 Updates">
 
 ### 🐛 Bug Fixes

@@ -2,6 +2,65 @@
 title: Analytics
 rss: true
 ---
+<Update label="2 January 2026" description="3 Updates">
+
+### 🔗 Linkable IDs in Analytics V2 Reports
+
+**What's New**  
+Key identifiers within Analytics V2 reports, such as `Group ID` and `User ID`, are now clickable links. This allows you to navigate directly from a report to the corresponding item's page in the Admin interface.
+
+**Pre-requisites**
+- Requires `AnalyticsV2` feature flag
+- Requires Admin access
+
+<Accordion title="See More">
+
+#### Where You'll See It
+- *Analytics > Reports* (when viewing reports built from the 'Ridership Report' or 'Group Membership' data sources)
+
+#### What You Can Do
+- In a 'Ridership Report', click on a `User ID` to open that rider's profile.
+- In a 'Group Membership' report, click on a `Group ID` to navigate to that group's settings page.
+- Supported linked fields now include `Group ID`, `User ID`, and `Fleet ID`.
+
+#### Why This Matters
+Investigating data points from an analytics report previously required manually searching for the ID in another part of the platform. This change creates a seamless workflow, allowing you to move from data analysis to action in a single click, saving time and effort.
+</Accordion>
+
+---
+### ⏱️ New Duty Performance Dimensions in Analytics V2
+
+**What's New**  
+Two new dimensions have been added to the 'Duty Report' data source in Analytics V2, enabling more detailed analysis of driver and vehicle time.
+
+**Pre-requisites**
+- Requires `AnalyticsV2` feature flag
+- Requires Admin access
+
+<Accordion title="See More">
+
+#### Where You'll See It
+- *Analytics > Query Builder* (when using the 'Duty Report' data source)
+
+#### What You Can Do
+- Add **'Total Duration with No Riders Onboard (Hours)'** to your reports to measure empty vehicle time.
+- Add **'Total Scheduled Break Length (Hours)'** to analyze the total duration of planned breaks within duties.
+- Use these new dimensions to build more granular reports on fleet utilization and driver productivity.
+
+#### Why This Matters
+These new metrics provide deeper insights into how duty time is spent. For example, you can now accurately track and report on non-revenue hours (time without riders) or compare scheduled break time against actuals, helping to optimize schedules and improve operational efficiency.
+</Accordion>
+
+---
+### 🐛 Bug Fixes
+
+- **Heat Map Visualization (BUS-4793)**
+  * _Resolution_: Fixed an issue where heat maps were not displaying in the legacy *Analytics > Analyze* section. Heat map visualizations for demand data are now rendering correctly on the map.
+
+---
+
+</Update>
+
 <Update label="19 December 2025" description="2 Updates">
 
 ### 🎨 Modernized Buttons and Tooltips in Query Builder

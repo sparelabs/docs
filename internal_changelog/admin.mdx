@@ -2,6 +2,34 @@
 title: Admin
 rss: true
 ---
+<Update label="2 January 2026" description="1 Updates">
+
+### 💵 New Custom Fare Calculator with Peak-Hour Surcharges
+
+**What's New**  
+A new custom fare calculator is available that supports complex pricing structures, including service-specific base fares and peak-hour surcharges.
+
+**Pre-requisites**
+- Requires `FareRules` feature flag
+- Requires Admin access to configure
+
+<Accordion title="See More">
+
+#### Where You'll See It
+- This is a backend calculator. Once configured for a service, its fare calculations will be visible when booking a trip in Admin or the rider app.
+
+#### What You Can Do
+- This calculator can be configured by the Spare team to:
+  - Set different base fares depending on the service a rider selects.
+  - Automatically add a surcharge to the fare if the trip occurs during defined peak hours (e.g., 7-9 AM and 2-4 PM on weekdays).
+  - Exclude surcharges on weekends or specific holidays.
+
+#### Why This Matters
+This provides the flexibility to implement demand-based pricing models. Agencies can now create fare structures that encourage off-peak travel or recover costs during high-demand periods, without needing a fully custom development effort.
+</Accordion>
+
+</Update>
+
 <Update label="19 December 2025" description="2 Updates">
 
 ### 📊 Interactive 'Arrive-By' Service Window Visualization
