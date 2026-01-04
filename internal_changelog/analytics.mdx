@@ -2,6 +2,58 @@
 title: Analytics
 rss: true
 ---
+<Update label="3 January 2026" description="2 Updates">
+
+### 🧮 Introducing Custom Calculations in Query Builder
+
+<Warning>This feature is currently categorized as 'Do Not Enable - In Development' and is not yet ready for customer use. Please await communications from the Product team on a feature rollout plan.</Warning>
+
+**What's New**  
+This update introduces the foundational user interface for creating your own Custom Calculations directly within the Query Builder. You can now access a visual editor to build new "Measures" (e.g., "Cancellation Rate") and "Dimensions" (e.g., "Cost Per Trip").
+
+**Pre-requisites**
+- Requires `AnalyticsV2` feature flag.
+
+<Accordion title="See More">
+
+#### Where You'll See It
+- *Analytics > Query Builder* (new "Create Measure" and "Create Dimension" buttons in the side panel header).
+- *Analytics > Query Builder* (a new "Custom Metrics" section in the side panel to house saved calculations).
+- A new "Create Custom Calculation" modal that appears when you click either of the create buttons.
+
+#### What You Can Do
+- Open the visual builder to define a new custom calculation.
+- Create a "Measure" by selecting a base metric, an aggregation type (like count, sum, average), and applying filters.
+- Create a "Dimension" by chaining arithmetic operations (+, -, *, /) on existing metrics.
+- See a live preview of your formula as you build it.
+
+#### Why This Matters
+This feature provides the building blocks for creating bespoke metrics tailored to your organization's specific reporting needs. Instead of relying only on pre-defined metrics, you will soon be able to construct complex calculations and reuse them across your analytics reports.
+</Accordion>
+
+---
+### 🔍 Automatically Load Filter Suggestions in Query Builder
+
+**What's New**  
+The Query Builder now automatically displays a list of suggested values as soon as you click into a filter's input field. This makes it faster to find and select the filter criteria you need without having to type first.
+
+**Pre-requisites**
+- Requires `AnalyticsV2` feature flag.
+
+<Accordion title="See More">
+
+#### Where You'll See It
+- *Analytics > Query Builder* (when adding or editing a filter in the "Filters" panel).
+
+#### What You Can Do
+- Click into any filter's value input field (e.g., for "Rider Tag" or "Service Name"), and a dropdown of available values will appear immediately.
+
+#### Why This Matters
+Previously, you had to start typing in a filter's value field to see any suggestions. This change removes that extra step, improving discoverability and speeding up the process of building and refining your reports.
+</Accordion>
+
+</Update>
+
 <Update label="2 January 2026" description="3 Updates">
 
 ### 🔗 Linkable IDs in Analytics V2 Reports
