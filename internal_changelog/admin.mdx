@@ -2,6 +2,47 @@
 title: Admin
 rss: true
 ---
+<Update label="6 January 2026" description="2 Updates">
+
+### 🔧 Retry Failed User Access Propagation
+
+**What's New**  
+When a Just-in-Time (JIT) access request fails to propagate a user's permissions to an organization, a new "Retry" button now appears, allowing you to manually trigger the process again.
+
+**Pre-requisites**
+- Requires Super admin permissions.
+
+<Accordion title="See More">
+
+#### Where You'll See It
+- *Super Admin > Access Requests*: The `Retry` button is visible when viewing the details of a specific access request that has a "Propagation Failed" status.
+
+#### What You Can Do
+- If an access request fails, navigate to its detail page and click the `Retry` button to re-attempt the permission propagation.
+
+#### Why This Matters
+Previously, a failed permission propagation required manual intervention from the engineering team to resolve. This new button provides a self-service tool for Super Admins to resolve common propagation errors directly, saving time and restoring user access more quickly.
+</Accordion>
+
+---
+### 🐛 Bug Fixes
+
+- **JIT Access Request Stability (BUS-4823)**
+  * _Resolution_: Addressed several issues to improve the reliability of Just-in-Time access requests. The system now prevents errors by filtering out deleted authorization groups during permission propagation, adds upfront validation to reject requests with non-existent group IDs, and resolves a cache issue that could affect users across different regions.
+
+- **Superbox Search Results Display (BUS-4597)**
+  * _Resolution_: Fixed an issue where custom fields (e.g., a rider's middle name) would not appear in the Superbox search results if the search contained multiple words. Now, a custom field will be displayed if it matches any part of the search query.
+
+- **Service V2 Configuration Navigation**
+  * _Resolution_: Fixed navigation issues within the new Service V2 interface. Clicking into stops and navigating between zones and stops now works as expected without errors.
+
+- **Date Picker Language (BUS-4811)**
+  * _Resolution_: Corrected a bug where date pickers throughout the admin portal would sometimes initially display in the wrong language before switching to the user's selected language. The correct language is now loaded immediately.
+
+---
+
+</Update>
+
 <Update label="5 January 2026" description="1 Updates">
 
 ### 🐛 Bug Fixes

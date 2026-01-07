@@ -2,6 +2,37 @@
 title: Analytics
 rss: true
 ---
+<Update label="6 January 2026" description="1 Updates">
+
+### 🚀 Query Builder V2 Enhancements: Downloads, Auto-Filters, and Custom Calculation Previews
+
+**What's New**  
+The Query Builder has been updated with several new capabilities: you can now download reports in CSV, Excel, or PDF formats; apply automatic filters when selecting certain data cubes; and see live previews with instant validation when building Custom Calculations.
+
+**Pre-requisites**
+- Requires `AnalyticsV2` feature flag
+
+<Accordion title="See More">
+
+#### Where You'll See It
+- *Analytics > Query Builder*:
+    - **Downloads**: A new `Download` button is available in the header.
+    - **Auto-Filters**: Filters are automatically added to the `Filters` panel when a relevant data cube (e.g., "Rides") is selected for the first time.
+    - **Custom Calculations**: In the `Create Custom Measure` or `Create Custom Dimension` modals, you will see a real-time expression preview and receive inline error messages if the configuration is invalid.
+
+#### What You Can Do
+- **Download Reports**: Click the `Download` button to export the current chart or data table as a CSV, Excel, or PDF file.
+- **Use Auto-Filters**: When you select a data cube like "Rides," a filter for "Request Status equals Completed" will be automatically applied to ensure you start with relevant data. You can still remove or modify this filter.
+- **Build Custom Calculations**: As you select fields, aggregations, and filters for a new custom measure or dimension, the system will show you a live preview of the resulting expression and provide immediate feedback if your formula is incomplete or invalid.
+
+#### Why This Matters
+These changes streamline the report creation workflow. The new download functionality adds a critical export option that was previously missing. Automatic filters reduce manual setup time, and the interactive Custom Calculation builder makes it easier to create complex metrics correctly on the first try.
+</Accordion>
+
+---
+
+</Update>
+
 <Update label="3 January 2026" description="2 Updates">
 
 ### 🧮 Introducing Custom Calculations in Query Builder
