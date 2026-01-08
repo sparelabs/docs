@@ -2,6 +2,33 @@
 title: AI Voice
 rss: true
 ---
+<Update label="7 January 2026" description="1 Updates">
+
+### 📞 SIP Trunking Support for AI Voice
+
+**What's New**  
+AI Voice now supports receiving inbound calls via a direct SIP (Session Initiation Protocol) trunk connection. This provides a flexible alternative to using Twilio Programmable Voice for connecting your phone system to Spare's AI agents.
+
+**Pre-requisites**
+- Requires `LaunchAIVoice` feature flag
+
+<Accordion title="See More">
+
+#### Where You'll See It
+- This is a backend capability that is configured in your telephony provider (e.g., Twilio) and affects how AI Voice agents are set up. There is no direct UI in Spare Admin for this.
+
+#### What You Can Do
+- Configure your phone numbers to use a SIP trunk to route calls directly to AI Voice.
+- The system automatically detects SIP-based calls to handle functions like call transfers and recording retrieval correctly without requiring different agent configurations.
+
+#### Why This Matters
+This provides greater flexibility for integrating AI Voice with existing enterprise telephony systems. It can help simplify call routing architecture and potentially reduce telecommunications costs by allowing the use of existing SIP infrastructure.
+</Accordion>
+
+---
+
+</Update>
+
 <Update label="6 January 2026" description="1 Updates">
 
 ### 📅 Improved Date Recognition for Rider Authentication

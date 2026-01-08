@@ -2,6 +2,42 @@
 title: Admin
 rss: true
 ---
+<Update label="7 January 2026" description="2 Updates">
+
+### 🗓️ Recurring Annual Time Periods for Fare Rules
+
+**What's New**  
+You can now create fare rules with time-based conditions that recur annually. This allows you to set up rules for holidays or events that happen on the same date each year without needing to manually update them.
+
+**Pre-requisites**
+- Requires `FareRules` feature flag
+- Requires Admin access
+
+<Accordion title="See More">
+
+#### Where You'll See It
+- *System > Billing & Payments > Fare Rules* (when adding a "Time of Day" condition to a fare rule)
+
+#### What You Can Do
+- When defining a time period for a fare rule, you can now set it to be a recurring annual event.
+- For example, you can create a rule that makes all rides free every "July 4th from 8:00 PM to 11:59 PM," and it will apply automatically each year without further intervention.
+
+#### Why This Matters
+This feature automates the management of recurring event-based or holiday fares. It eliminates the administrative overhead of manually creating or updating these specific fare rules every year, reducing the chance of error and saving time.
+</Accordion>
+
+---
+### 🐛 Bug Fixes
+
+- **Data Retention Schedule Creation**
+  - _Resolution_: Fixed an issue that caused an error when an administrator tried to save a new Data Retention schedule under *System > Data > Data Retention*.
+- **Expanded Phone Number Area Code Support (BUS-4813)**
+  - _Resolution_: Fixed an issue where some valid phone number area codes (e.g., 730) were incorrectly marked as invalid during rider creation or profile updates. The system's phone number validation now correctly recognizes a wider range of valid North American area codes.
+
+---
+
+</Update>
+
 <Update label="6 January 2026" description="2 Updates">
 
 ### 🔧 Retry Failed User Access Propagation

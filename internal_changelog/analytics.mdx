@@ -2,6 +2,39 @@
 title: Analytics
 rss: true
 ---
+<Update label="7 January 2026" description="2 Updates">
+
+### 🧪 Real-time Validation for Custom Calculations
+
+**What's New**  
+The Query Builder now proactively validates the syntax of Custom Calculation formulas before you save them. This prevents the creation of invalid formulas that could cause reports or dashboards to fail.
+
+**Pre-requisites**
+- Requires `AnalyticsV2` feature flag
+
+<Accordion title="See More">
+
+#### Where You'll See It
+- *Analytics > Query Builder* (when creating or editing a "Custom Calculation" measure or dimension)
+
+#### What You Can Do
+- When creating a custom calculation, the system will check the formula for correctness.
+- If the formula contains a syntax error or references a field that doesn't exist, an error message will appear, and you will be blocked from saving the invalid calculation.
+
+#### Why This Matters
+Previously, it was possible to save a Custom Calculation with an incorrect formula, which would only be discovered later when a report using it failed to load. This real-time validation ensures all saved calculations are valid from the start, improving report reliability and saving time on troubleshooting.
+</Accordion>
+
+---
+### 🐛 Bug Fixes
+
+- **Timezone-Aware Date Queries**
+  - _Resolution_: Corrected an issue where Analytics queries using date filters could return inaccurate results for data recorded near the midnight boundary. The system now more reliably handles date conversions between UTC and an organization's local timezone, ensuring greater accuracy in time-sensitive reports.
+
+---
+
+</Update>
+
 <Update label="6 January 2026" description="1 Updates">
 
 ### 🚀 Query Builder V2 Enhancements: Downloads, Auto-Filters, and Custom Calculation Previews

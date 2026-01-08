@@ -2,6 +2,39 @@
 title: Operations
 rss: true
 ---
+<Update label="7 January 2026" description="2 Updates">
+
+### 📊 New Pooling & Duty Metrics for Grouped Trips
+
+**What's New**  
+Two new efficiency metrics, "Total Unique Duties" and "Total Pooling Rate," are now displayed in the summary row on the "By Group Trip" tab, providing an at-a-glance overview of operational performance for grouped trips.
+
+**Pre-requisites**
+- Requires `LiveRequest` and `TripGroup` feature flags
+
+<Accordion title="See More">
+
+#### Where You'll See It
+- *Rides > Live Requests* (in the summary row at the bottom of the table on the "By Group Trip" tab)
+
+#### What You Can Do
+- **Total Unique Duties**: See the total count of distinct duties that are being used to service all trips within the filtered trip groups. This helps you understand how many unique vehicles/drivers are involved.
+- **Total Pooling Rate**: View the overall pooling efficiency, calculated as the sum of the largest pool sizes for each group divided by the total number of requests in those groups.
+
+#### Why This Matters
+Previously, dispatchers had to manually assess multiple trip groups to gauge pooling effectiveness and vehicle utilization. These new summary metrics provide an immediate, high-level understanding of how efficiently grouped trips are being served, helping to identify opportunities for consolidation and improved performance.
+</Accordion>
+
+---
+### 🐛 Bug Fixes
+
+- **Watchlist Visibility for Paused Duties (DR-2694)**
+  - _Resolution_: Fixed an issue where duties with active alerts (e.g., Late Pullout, Offline) would incorrectly disappear from the Watchlist when the duty was paused. These duties will now remain visible on the Watchlist as long as the alert is active, ensuring dispatchers don't lose sight of important operational issues.
+
+---
+
+</Update>
+
 <Update label="6 January 2026" description="1 Updates">
 
 ### 🗺️ View Full Group Trip Names on Hover in Live Requests
