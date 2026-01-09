@@ -2,6 +2,62 @@
 title: Analytics
 rss: true
 ---
+<Update label="8 January 2026" description="2 Updates">
+
+### 🗺️ Improved Map Chart Configuration in Query Builder
+
+**What's New**  
+The Map chart type in Query Builder has been enhanced to allow configuration before running a query and now displays a clear empty state if no geographic data is found.
+
+**Pre-requisites**
+- Requires `AnalyticsV2` feature flag.
+- Requires Admin access.
+
+<Accordion title="See More">
+
+#### Where You'll See It
+- *Analytics > Query Builder > Visualization* (when "Map" chart type is selected)
+
+#### What You Can Do
+- Select the "Map" chart type and configure its settings (like which geographic dimension to plot) *before* running the query.
+- If a query is run that returns no data or no geographic data, the map will now show an "Empty State" message instead of defaulting to a world map centered on [0,0].
+
+#### Why This Matters
+Previously, you had to run a query first to see the map configuration options, slowing down the report-building process. These improvements create a more intuitive and efficient workflow for building geographic visualizations and provide clearer feedback when data is unavailable.
+</Accordion>
+
+---
+### 📊 New Enterprise Asset Management (EAM) Data in Analytics
+
+**What's New**  
+The data available in Analytics has been significantly expanded to include key tables from the Enterprise Asset Management (EAM) module. You can now build reports on asset types, inventory levels, inspections, issues, and parts.
+
+**Pre-requisites**
+- Requires `AnalyticsV2` feature flag.
+- Requires an active Enterprise Asset Management subscription.
+- Requires Admin access.
+
+<Accordion title="See More">
+
+#### Where You'll See It
+- *Analytics > Query Builder > Data* (new EAM-related cubes and dimensions will be available for selection)
+
+#### What You Can Do
+- Create custom reports and dashboards using new data sources, including:
+    - `asset_type`: Analyze asset configurations and custom fields.
+    - `current_inventory`: Track stock levels and identify when reordering is needed.
+    - `inspection`: Report on inspection records and their duration.
+    - `issue`: Track the lifecycle of maintenance issues.
+    - `part`: Analyze parts inventory, including categories and manufacturers.
+
+#### Why This Matters
+This update unlocks a wealth of maintenance and asset data for analysis, enabling you to create detailed reports on fleet health, inventory costs, inspection compliance, and issue resolution times directly within the Spare platform.
+</Accordion>
+
+---
+
+</Update>
+
 <Update label="7 January 2026" description="2 Updates">
 
 ### 🧪 Real-time Validation for Custom Calculations

@@ -2,6 +2,62 @@
 title: Admin
 rss: true
 ---
+<Update label="8 January 2026" description="3 Updates">
+
+### 🔍 Expandable Superbox Search Results
+
+**What's New**  
+The global Superbox search now includes "Show more" and "Show less" options, allowing you to expand search results for categories like Riders when there are many matches for a common name.
+
+**Pre-requisites**
+- Requires Admin access
+
+<Accordion title="See More">
+
+#### Where You'll See It
+- *Top Navigation Bar* (Superbox search input)
+- *Superbox Search Results Dropdown* (new "Show more" / "Show less" buttons below result groups)
+
+#### What You Can Do
+- By default, see the top 3 results for each category (e.g., Riders, Trips).
+- If more than 3 results exist in a category, click the "Show more" button to reveal up to 10 additional results at a time.
+- Click the "Show less" button to collapse the list back to the top 3 results.
+
+#### Why This Matters
+Previously, finding the correct rider or trip was difficult when a search for a common name returned more than three matches, as only the top three were shown. This change makes it easy to view all potential matches without having to refine your search query.
+</Accordion>
+
+---
+### 🔧 Expanded Data Management Permissions for SREs
+
+**What's New**  
+Internal users with the Site Reliability Engineer (SRE) role now have the ability to delete organization-wide data, such as all riders or all Enterprise Asset Management (EAM) data. This aligns their permissions with the capabilities already available to the Partner Success role.
+
+**Pre-requisites**
+- Requires Super admin permissions
+
+<Accordion title="See More">
+
+#### Where You'll See It
+- This is a backend permission change and does not introduce a new UI. It enables SREs to use existing data deletion tools that were previously restricted.
+
+#### What You Can Do
+- Users in the SRE role can now access and use administrative functions for bulk-deleting an organization's data.
+
+#### Why This Matters
+This change streamlines internal support and data management tasks by granting necessary permissions to the SRE team, ensuring they can effectively manage test environments and respond to data cleanup requests without needing to escalate to other teams.
+</Accordion>
+
+---
+### 🐛 Bug Fixes
+
+- **Improved Reliability of Organization Data Deletion (BUS-4797)**
+  - *Resolution*: Fixed an issue that could cause the deletion of an organization's data to fail. The system now correctly handles cases where an organization has outdated permission roles, ensuring the cleanup process completes successfully.
+
+---
+
+</Update>
+
 <Update label="7 January 2026" description="2 Updates">
 
 ### 🗓️ Recurring Annual Time Periods for Fare Rules
