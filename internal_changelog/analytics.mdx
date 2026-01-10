@@ -2,6 +2,63 @@
 title: Analytics
 rss: true
 ---
+<Update label="9 January 2026" description="3 Updates">
+
+### 📊 Query Builder V2 is Now the Standard
+
+**What's New**  
+The legacy Query Builder (V1) has been fully retired, and the modern Query Builder (V2) is now the standard interface for all report building activities. Creating new reports or editing existing ones will now direct you to the V2 experience.
+
+**Pre-requisites**
+- Requires `AnalyticsV2` feature flag.
+- Requires Admin access.
+
+<Accordion title="See More">
+
+#### Where You'll See It
+- *Analytics > Reports* (clicking "New Report" or editing an existing report now always opens Query Builder V2)
+- *AI > Scout* (clicking "Open in Report Builder" from a Cube panel now opens Query Builder V2 with the state pre-populated)
+
+#### What You Can Do
+This change unifies the analytics experience on a single, more powerful interface. All users will now leverage the features of Query Builder V2, such as its improved UI for adding measures, dimensions, and filters.
+
+#### Why This Matters
+Retiring the old Query Builder streamlines the user experience and consolidates development efforts on the more capable V2 platform. This ensures a consistent and modern interface for all users creating and managing reports.
+</Accordion>
+
+---
+### 📈 New Pooling Metrics in Ridership Data
+
+**What's New**  
+The `Ridership Report` data source in Analytics now includes two new measures for analyzing ride pooling: `Max Concurrent Passengers` and `Max Concurrent Requests`.
+
+**Pre-requisites**
+- Requires `AnalyticsV2` feature flag.
+- Requires Admin access.
+
+<Accordion title="See More">
+
+#### Where You'll See It
+- *Analytics > Query Builder* (available as measures when using the `Ridership Report` data source).
+
+#### What You Can Do
+- Add `Max Concurrent Passengers` to a report to see the peak number of unique riders that were in the vehicle at the same time during a trip.
+- Use `Max Concurrent Requests` to find the peak number of distinct trip requests being served simultaneously on the same vehicle.
+
+#### Why This Matters
+These new metrics provide a more accurate way to measure and report on the efficiency of pooled services. You can now quantify the level of sharing on each trip, helping to analyze service performance and utilization.
+</Accordion>
+
+---
+### 🐛 Bug Fixes
+
+- **Analytics Timezone Correction for Case Data (CORE-4844)**
+  - _Resolution_: Fixed an issue in the `Case` data cube where timestamp dimensions (e.g., `created_at`, `updated_at`) did not correctly respect the organization's timezone. Queries will now show results aligned with the set timezone.
+
+---
+
+</Update>
+
 <Update label="8 January 2026" description="2 Updates">
 
 ### 🗺️ Improved Map Chart Configuration in Query Builder

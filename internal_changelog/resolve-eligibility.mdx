@@ -1,0 +1,57 @@
+---
+title: Internal Changelog - Resolve & ✅ Eligibility
+---
+
+<Update label="9 January 2026" description="3 Updates">
+
+### ⏱️ Filter Cases by Deadline Status and Timeout
+
+**What's New**  
+The case list in both Spare Resolve and Spare Eligibility now includes new filters for deadlines. You can filter cases based on the status of their deadlines or by a specific range for the deadline's timeout date.
+
+**Pre-requisites**
+- Requires Admin access.
+
+<Accordion title="See More">
+
+#### Where You'll See It
+- *Resolve > Cases* (new "Deadline" filter option in the filter dropdown)
+- *Eligibility > Cases* (new "Deadline" filter option in the filter dropdown)
+
+#### What You Can Do
+- Open the filter panel and select the "Deadline" filter.
+- Filter by **Deadline Status** using the dropdown (e.g., show only cases with "Breached" deadlines).
+- Filter by **Deadline Timeout** using the date range picker (e.g., find all cases with deadlines that timed out last week).
+
+#### Why This Matters
+This provides a powerful way to manage time-sensitive cases. You can now quickly isolate cases that have breached their service-level agreements (SLAs) or are approaching their timeout, allowing for proactive intervention and better workload prioritization.
+</Accordion>
+
+---
+### 🤖 AI Scan Now Correctly Handles "Other" Text Fields
+
+**What's New**  
+When using AI Scan on a form with a choice field (single or multiple choice) that includes an "Other" option, the system now correctly recognizes and extracts the handwritten text associated with it.
+
+**Pre-requisites**
+- Requires `EngageAIScan` feature flag.
+- Requires Admin access.
+
+<Accordion title="See More">
+
+#### Where You'll See It
+- This is a change in behavior when using the AI Scan feature on a case form within Spare Resolve or Spare Eligibility.
+
+#### Why This Matters
+This fix ensures that custom, handwritten information from scanned forms is accurately captured, reducing manual data entry and correction. It makes AI Scan more reliable for forms that allow for user-provided "Other" responses.
+</Accordion>
+
+---
+### 🐛 Bug Fixes
+
+- **Improved Accessibility for Form Signature Fields (ENG-1235)**
+  - _Resolution_: Fixed an accessibility issue where signature and drawing fields in forms were not keyboard-focusable or announced by screen readers. These fields now have a proper tab index, visible focus outline, and descriptive labels.
+
+---
+
+</Update>

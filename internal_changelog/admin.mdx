@@ -2,6 +2,79 @@
 title: Admin
 rss: true
 ---
+<Update label="9 January 2026" description="3 Updates">
+
+### ⚙️ New Workflow Triggers for Deadlines
+
+**What's New**  
+You can now build automations based on the lifecycle of deadlines using three new workflow triggers: `Deadline Started`, `Deadline Completed`, and `Deadline Breached`.
+
+**Pre-requisites**
+- Requires `MultipleWorkflows` feature flag.
+- Requires Admin access.
+
+<Accordion title="See More">
+
+#### Where You'll See It
+- *Admin > Settings > Workflows > Add Workflow* (in the "Trigger" dropdown).
+
+#### What You Can Do
+- Create a workflow that triggers when a **Deadline Starts** to send an initial notification.
+- Automate case status updates or send a confirmation message when a **Deadline is Completed**.
+- Build an escalation process that triggers when a **Deadline is Breached**, such as assigning the case to a supervisor or sending an urgent alert.
+
+#### Why This Matters
+These new triggers unlock powerful automation possibilities for managing SLAs and time-sensitive processes. You can now ensure consistent actions are taken at key moments in a deadline's lifecycle, improving response times and reducing manual oversight.
+</Accordion>
+
+---
+### 📧 Improved Email Compatibility for Platform Notifications
+
+**What's New**  
+System-generated emails for welcoming new users and resetting passwords are now sent in a multipart format. This means they contain both a rich HTML version and a plain-text alternative.
+
+**Pre-requisites**
+- No feature flags required.
+
+<Accordion title="See More">
+
+#### Where You'll See It
+- This change affects the welcome emails sent to new admin users and the password reset emails they receive.
+
+#### What You Can Do
+This is a behind-the-scenes improvement. Users with email clients that block or don't support HTML content will now see a clean, readable plain-text version of these important emails, ensuring they can always access the information.
+
+#### Why This Matters
+This improves the reliability and accessibility of critical system communications. It ensures that all users, regardless of their email client's settings, can receive and act upon welcome and password reset instructions.
+</Accordion>
+
+---
+### 🔧 Advanced Configuration UI for Creating Simulations
+
+**What's New**  
+The simulation creation page has been redesigned to provide granular control over fleet and service configurations. The new UI introduces presets, detailed distribution options, and tools to apply settings across multiple configurations efficiently.
+
+**Pre-requisites**
+- Requires Super admin permissions.
+
+<Accordion title="See More">
+
+#### Where You'll See It
+- *Admin > Developer > Simulations > New Simulation* (new UI for "Manual" simulation type)
+
+#### What You Can Do
+- **Fleet Configuration:** Use presets for fleet size (Small, Medium, Large), define duty distribution (Uniform, Random, Custom), and set depot locations.
+- **Service Configuration:** Configure passenger capacity presets and set distribution percentages for trip types (e.g., One-way, Round-trip) and accessibility needs (e.g., wheelchair).
+- **Efficiency Tools:** Use the "Copy to all" feature to apply a fleet or service configuration to all items in your simulation setup at once.
+
+#### Why This Matters
+These advanced controls make it easier and faster to set up complex, realistic simulations for load testing or demos. The improved UI streamlines the configuration process, reducing manual effort and allowing for more sophisticated scenario modeling.
+</Accordion>
+
+---
+
+</Update>
+
 <Update label="8 January 2026" description="3 Updates">
 
 ### 🔍 Expandable Superbox Search Results

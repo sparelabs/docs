@@ -2,6 +2,35 @@
 title: Enterprise Asset Management
 rss: true
 ---
+<Update label="9 January 2026" description="1 Updates">
+
+### 📊 New Analytics Measures for Asset Management
+
+**What's New**  
+New data points and measures have been added to Analytics to enhance reporting for Enterprise Asset Management. You can now build reports using service reminder counts by status, min/max meter readings, and the full name of the user assigned to a work order.
+
+**Pre-requisites**
+- Requires `AnalyticsV2` feature flag.
+- Requires Admin access.
+
+<Accordion title="See More">
+
+#### Where You'll See It
+- *Analytics > Query Builder* (when building reports using EAM data sources).
+
+#### What You Can Do
+- **Service Reminders:** Use new measures `Overdue Count`, `Due Soon Count`, and `Upcoming Count` to track the status of vehicle maintenance.
+- **Meter Entries:** Use `Max Value` and `Min Value` measures on the Meter Entry cube to find the highest and lowest recorded mileage for assets.
+- **Work Orders:** Join to the new `Work Order Assignee` cube to add the assignee's `Full Name` to work order reports.
+
+#### Why This Matters
+These new analytics capabilities provide deeper insights into asset maintenance and performance. You can now create more detailed reports to monitor overdue services, track asset utilization through mileage, and identify who completed specific work orders.
+</Accordion>
+
+---
+
+</Update>
+
 <Update label="8 January 2026" description="1 Updates">
 
 ### 🏢 Use a Single EAM Terminal Connection Across Multiple Organizations
