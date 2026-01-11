@@ -2,6 +2,41 @@
 title: Analytics
 rss: true
 ---
+<Update label="10 January 2026" description="1 Updates">
+
+### 📊 Create Custom Metrics in Query Builder
+
+<Warning>This feature is currently categorized as 'Do Not Enable - In Development' and is not yet ready for customer use. Please await communications from the Product team on a feature rollout plan.</Warning>
+
+**What's New**  
+You can now define and save your own custom measures and dimensions directly from the Query Builder side panel. These new metrics can be built on-the-fly using arithmetic operations on existing data or by applying filters to existing metrics.
+
+**Pre-requisites**
+- Requires Admin access with the `UpdateCubeCustomCalculations` permission.
+- Requires the `AnalyticsV2` and `AnalyticsV2CustomCalculations` feature flags.
+
+<Accordion title="See More">
+
+#### Where You'll See It
+- *Analytics > Query Builder* (new "+ Custom Metric" button in the side panel).
+- *Analytics > Query Builder* (new "Create Custom Metric" modal with options to create a "Measure" or "Dimension").
+- *Analytics > Query Builder > Side Panel* (newly created custom metrics appear highlighted in blue under their parent data cube).
+
+#### What You Can Do
+- Click the "+ Custom Metric" button to open a creation modal.
+- Define a new measure by selecting a base metric, an aggregation type (e.g., Sum, Average), and optional filters.
+- Define a new dimension by performing arithmetic operations (add, subtract, multiply, divide) on existing numeric dimensions.
+- Provide a unique name and an API key (in `snake_case` format) for the new metric.
+- See the new metric appear instantly in the side panel, ready to be added to your query.
+
+#### Why This Matters
+Previously, creating new metrics required backend development work. This feature empowers analytics users to create their own tailored calculations, enabling more flexible and specific data exploration without needing to wait for engineering resources.
+</Accordion>
+
+---
+
+</Update>
+
 <Update label="9 January 2026" description="3 Updates">
 
 ### 📊 Query Builder V2 is Now the Standard
