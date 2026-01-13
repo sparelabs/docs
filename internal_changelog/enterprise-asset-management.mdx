@@ -2,6 +2,57 @@
 title: Enterprise Asset Management
 rss: true
 ---
+<Update label="12 January 2026" description="2 Updates">
+
+### 📄 Asset Importer Now Supports Custom Fields
+
+**What's New**  
+The asset importer now dynamically includes custom fields based on the selected Asset Type. When you choose an Asset Type on the first step of the import, the column mapping step will automatically display options for both standard fields and any custom fields configured for that type.
+
+**Pre-requisites**
+- Requires Admin access to the Enterprise Asset Management product. No feature flags required.
+
+<Accordion title="See More">
+
+#### Where You'll See It
+- *Enterprise Asset Management > Assets > Import Assets* (during the 'Upload' and 'Column Mapping' steps)
+
+#### What You Can Do
+- Select an 'Asset Type' when starting a new asset import.
+- In the mapping step, map columns from your file to the custom fields specific to that asset type (e.g., "Wheelchair Lift Model" for a "Bus" asset type).
+- Bulk-populate custom field data for new assets, saving significant manual entry time.
+
+#### Why This Matters
+This change makes the asset importer much more powerful and flexible. It ensures that all relevant data, including specialized custom information, can be imported in a single process, improving data integrity and operational efficiency.
+</Accordion>
+
+---
+### 🔩 New Importer for Parts
+
+**What's New**  
+A new "Parts" importer is now available in the Enterprise Asset Management module. This allows you to bulk-create or update your parts inventory from a CSV file, including details like part number, stock levels, cost, category, and manufacturer.
+
+**Pre-requisites**
+- Requires Admin access to the Enterprise Asset Management product. No feature flags required.
+
+<Accordion title="See More">
+
+#### Where You'll See It
+- *Enterprise Asset Management > Imports > New Import* (select 'Parts' from the 'What do you want to import?' dropdown)
+
+#### What You Can Do
+- Upload a file to bulk-import parts.
+- Map columns for part name, part number, cost, initial stock, and more.
+- If a part's category or manufacturer doesn't exist in the system, the importer will automatically create it for you during the process.
+
+#### Why This Matters
+Manually managing a large parts inventory is time-consuming and error-prone. The new parts importer streamlines this process, enabling you to quickly and accurately populate your inventory, especially when onboarding new vehicles or suppliers.
+</Accordion>
+
+---
+
+</Update>
+
 <Update label="9 January 2026" description="1 Updates">
 
 ### 📊 New Analytics Measures for Asset Management

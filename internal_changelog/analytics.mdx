@@ -2,6 +2,88 @@
 title: Analytics
 rss: true
 ---
+<Update label="12 January 2026" description="4 Updates">
+
+### 🤖 AI Cube Agent Filter Improvements
+
+**What's New**  
+The AI agent in Analytics is now smarter at handling filters. It can automatically find the correct ID for a named entity (like a service or fleet) and correctly process filters on custom fields that allow multiple selections.
+
+**Pre-requisites**
+- Requires Admin access and the `AnalyticsV2` feature flag.
+
+<Accordion title="See More">
+
+#### Where You'll See It
+- *Analytics > SQL Editor* (when interacting with the Cube AI agent via chat)
+
+#### What You Can Do
+- Ask the agent to filter by a service name (e.g., "show trips on the 'Campus Connector' service") instead of needing to know the service ID.
+- Filter on multi-select custom fields (e.g., "show riders with the 'Student Pass' tag") and get accurate results.
+
+#### Why This Matters
+This makes interacting with the AI agent more natural and powerful. You can use human-readable names instead of system IDs, and complex filters on custom fields now work as expected, reducing errors and saving time.
+</Accordion>
+
+---
+### ⌨️ Modernized SQL Editor for Analytics
+
+**What's New**  
+The Analytics SQL Editor has been completely rebuilt with a modern, high-performance engine (CodeMirror). This change significantly improves loading speed and responsiveness, especially for complex queries, while providing a refreshed user interface.
+
+**Pre-requisites**
+- Requires Admin access and the `AnalyticsV2` feature flag.
+
+<Accordion title="See More">
+
+#### Where You'll See It
+- *Analytics > SQL Editor*
+
+#### What You Can Do
+- Enjoy a faster, smoother query writing experience.
+- Leverage improved, context-aware autocompletion for Cube tables, columns, and variables.
+- Use the same `Cmd/Ctrl + Enter` shortcut to run queries.
+
+#### Why This Matters
+The previous editor was powerful but resource-intensive, leading to slower page loads. This new editor provides a much leaner and faster experience, allowing data analysts to write and run queries more efficiently without sacrificing key features like syntax highlighting and autocompletion.
+</Accordion>
+
+---
+### 📈 Expanded EAM Data for Reporting
+
+**What's New**  
+Data from five additional Enterprise Asset Management (EAM) tables is now available for use in Analytics. You can now build reports and dashboards using data related to parts, maintenance programs, and locations.
+
+**Pre-requisites**
+- Requires Admin access and the `AnalyticsV2` feature flag. Your organization must also be using the EAM product.
+
+<Accordion title="See More">
+
+#### Where You'll See It
+- *Analytics > Query Builder* and *Analytics > SQL Editor* (new cubes will be available for querying).
+
+#### What You Can Do
+- Query the following new data sets:
+    - **Energy Types:** Report on fuel and energy definitions.
+    - **Location Units:** Analyze sub-locations like bins and shelves.
+    - **Part Vendors:** Track vendor pricing and lead times for parts.
+    - **Service Occurrences:** Monitor preventive maintenance events.
+    - **Service Program Assets:** Report on which assets are assigned to which maintenance programs.
+
+#### Why This Matters
+This expansion provides a much deeper, more integrated view of your EAM operations within Analytics. You can now create comprehensive reports that connect asset management activities with financial and operational data, enabling better decision-making for your maintenance programs.
+</Accordion>
+
+---
+### 🐛 Bug Fixes
+
+- **Analytics SQL Editor Timezone Accuracy (CORE-4844)**
+  - _Resolution_: Fixed an issue in the SQL Editor where timestamp fields were not always converted to the organization's local timezone, potentially causing inaccurate results in queries. All time-based fields now correctly reflect the organization's timezone.
+
+---
+
+</Update>
+
 <Update label="10 January 2026" description="1 Updates">
 
 ### 📊 Create Custom Metrics in Query Builder

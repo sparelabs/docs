@@ -2,6 +2,56 @@
 title: Operations
 rss: true
 ---
+<Update label="12 January 2026" description="2 Updates">
+
+### 👤 Rider Profile Navigation Improvement
+
+**What's New**  
+The 'View Full Rider' button, found in various places like the Live Map's rider peek view, now opens the rider's profile in the same browser tab instead of a new one.
+
+**Pre-requisites**
+- Requires Admin access. No feature flags required.
+
+<Accordion title="See More">
+
+#### Where You'll See It
+- *Rides > Live Map* (in the rider peek-view pane that appears when clicking a request)
+- *Rides > Create Request* (in the 'Select Rider' drawer)
+
+#### What You Can Do
+- Quickly navigate to a full rider profile without cluttering your browser with extra tabs.
+- Use the browser's back button to return to your previous view (Live Map or request creation).
+
+#### Why This Matters
+This streamlines the workflow for dispatchers and booking agents who need to quickly check a rider's full profile and then return to their primary task. It provides a more integrated and less disruptive user experience.
+</Accordion>
+
+---
+### ⏱️ New 'Late Pull-in' Watchlist Alert
+
+**What's New**  
+The Live Map Watchlist can now alert dispatchers when a driver is projected to be late for their 'pull-in' (the end of their duty). The system calculates the travel time from the driver's current location to their scheduled end location to predict if they will arrive after their duty end time.
+
+**Pre-requisites**
+- Requires Admin access and the `LiveMapAlerts` feature flag.
+
+<Accordion title="See More">
+
+#### Where You'll See It
+- *Rides > Live Map* (in the 'Watchlist' sidebar)
+
+#### What You Can Do
+- Proactively identify drivers who may run late and incur overtime.
+- The alert will appear in the Watchlist, showing how late the driver is expected to be, allowing dispatchers to take action if needed.
+
+#### Why This Matters
+This provides dispatchers with greater visibility into end-of-day operations. By flagging potential late pull-ins, agencies can better manage driver hours, control overtime costs, and ensure timely vehicle return.
+</Accordion>
+
+---
+
+</Update>
+
 <Update label="7 January 2026" description="2 Updates">
 
 ### 📊 New Pooling & Duty Metrics for Grouped Trips

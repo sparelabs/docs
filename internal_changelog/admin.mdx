@@ -2,6 +2,19 @@
 title: Admin
 rss: true
 ---
+<Update label="12 January 2026" description="1 Updates">
+
+### 🐛 Bug Fixes
+
+- **Form Data Stability (ENG-1227)**
+  - _Resolution_: Implemented checks to prevent forms from crashing when they contain unexpectedly structured data. The form will now display the raw data instead of showing an error page, ensuring accessibility.
+- **Custom Field Loading in Organizations with Many Forms (ENG-1220)**
+  - _Resolution_: Resolved an error ("Request Header Fields Too Large") that prevented custom fields from loading in organizations with a large number of forms. The system now fetches this data in smaller batches.
+- **Service Configuration UI Fixes (BUG-1130)**
+  - _Resolution_: Made several improvements to the new service configuration page, including fixing an issue where fleets couldn't be re-added and ensuring lists of services, stops, and zones refresh correctly after changes are made.
+
+</Update>
+
 <Update label="9 January 2026" description="3 Updates">
 
 ### ⚙️ New Workflow Triggers for Deadlines
