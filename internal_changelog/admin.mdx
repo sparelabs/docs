@@ -2,6 +2,107 @@
 title: Admin
 rss: true
 ---
+<Update label="13 January 2026" description="5 Updates">
+
+### 🛡️ Safer and More Resilient Organization Deletion
+
+**What's New**  
+The organization deletion process for Super Admins has been made more robust. Deletion can now be safely re-triggered on an already archived (soft-deleted) organization to resume the process. Additionally, a new safeguard prevents the deletion of an organization if it has requests associated with a shared fleet from another organization.
+
+**Pre-requisites**
+- Requires Super admin permissions
+
+<Accordion title="See More">
+
+#### Where You'll See It
+- This is a backend process typically triggered via API by Super Admins.
+
+#### What You Can Do
+- Trigger the deletion of an organization that was previously archived but not fully deleted, and the process will resume where it left off.
+- If you attempt to delete an organization with shared fleet dependencies, the system will now block the action and return an error message: `This organization cannot be deleted because it has requests that are part of a fleet shared with another organization.`
+
+#### Why This Matters
+Previously, a failed deletion could leave an organization in an unrecoverable state, and there were no checks for cross-organization dependencies, risking data integrity. This enhancement makes the process more reliable and prevents accidental data loss in complex multi-organization (Open Fleets) environments.
+</Accordion>
+
+---
+### ↔️ Quickly Switch Between Products for the Same Rider
+
+**What's New**  
+The rider profile page now includes "View in..." actions, allowing you to quickly open the same rider's profile in other Spare products like Operations, Resolve, or Eligibility.
+
+**Pre-requisites**
+- Requires Admin access. The availability of each "View in..." link depends on your organization's product subscriptions and your individual user permissions for those products.
+
+<Accordion title="See More">
+
+#### Where You'll See It
+- *Riders > [Select a Rider] > Actions dropdown menu*.
+
+#### What You Can Do
+- From a rider's profile in one product (e.g., Operations), click the "Actions" dropdown and select "View in Resolve" to immediately open that rider's profile in the Resolve product in a new tab.
+- The options shown are automatically filtered to exclude the current product and any products you don't have access to.
+
+#### Why This Matters
+This eliminates the need to manually switch products and search for the rider again, saving time and streamlining workflows for users who work across multiple Spare products.
+</Accordion>
+
+---
+### 🖱️ Open Rider Profiles in a New Tab from Search Results
+
+**What's New**  
+You can now right-click or command/control-click a rider in search results to open their profile in a new tab, without losing your current context.
+
+**Pre-requisites**
+- Requires Admin access
+
+<Accordion title="See More">
+
+#### Where You'll See It
+- This functionality is available in the global search bar (Superbox) at the top of the page.
+- It is also active in user search fields, such as the "Rider" field when creating a new Case in Resolve.
+
+#### What You Can Do
+- When you search for a rider, you can now right-click the result and select "Open in new tab" from your browser's context menu. A standard left-click still selects the rider within the current view without navigating away.
+
+#### Why This Matters
+This provides a standard, efficient way to multitask. For example, a case manager can open a rider's full profile in a new tab for reference without losing their place while creating or editing a case.
+</Accordion>
+
+---
+### 📅 Quickly Navigate Months and Years in Date Pickers
+
+**What's New**  
+All date and date range pickers throughout the platform now feature dropdown menus for selecting the month and year, making it much faster to navigate to a specific date.
+
+**Pre-requisites**
+- No feature flags or permissions required.
+
+<Accordion title="See More">
+
+#### Where You'll See It
+- This update applies to any calendar-based date picker, such as the date filter in *Analytics > Query Builder* or the date selectors in *Rides > History*.
+
+#### What You Can Do
+- Previously, you had to click the left/right arrows repeatedly to navigate through months and years. Now, you can click the month or year to open a dropdown menu and jump directly to the desired time period.
+
+#### Why This Matters
+This makes it much faster and easier to select dates that are far in the past or future, improving efficiency when creating reports, filtering data, or scheduling future trips.
+</Accordion>
+
+---
+### 🐛 Bug Fixes
+
+- **Service Zone Label Display**
+  * _Resolution_: Corrected an issue in the *Services > Zones* tab where custom fields using single-choice options were displaying their raw internal values (e.g., `option_123`) instead of their user-friendly labels.
+
+- **Superbox Rider Search Results (CORE-4473)**
+  * _Resolution_: The global search bar (Superbox) will now consistently show the default number of rider results and a "Show More" button when applicable. A temporary workaround that forced a higher limit has been removed.
+
+---
+
+</Update>
+
 <Update label="12 January 2026" description="1 Updates">
 
 ### 🐛 Bug Fixes

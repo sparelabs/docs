@@ -2,6 +2,42 @@
 title: Analytics
 rss: true
 ---
+<Update label="13 January 2026" description="2 Updates">
+
+### 👩‍🔧 Inspector Full Name Dimension for EAM Reporting
+
+**What's New**  
+A new dimension, "Inspector Full Name," is now available in the "Inspections" data cube. This allows you to see the full name of the admin or driver who performed an inspection directly in your reports.
+
+**Pre-requisites**
+- Requires `AnalyticsV2` feature flag
+
+<Accordion title="See More">
+
+#### Where You'll See It
+- *Analytics > Query Builder*. When using the `Inspections` cube, you can now add "Inspector Full Name" as a dimension from the data explorer.
+
+#### What You Can Do
+- Build reports that group, filter, or display inspections by the inspector's full name, rather than just their ID.
+- This works for both admin users and driver users who perform inspections, providing a unified field for reporting.
+
+#### Why This Matters
+Previously, identifying inspectors in reports required joining data outside of Spare or relying on user IDs, which are not user-friendly. This new dimension simplifies reporting and makes it easy to analyze inspection data by the person who performed it.
+</Accordion>
+
+---
+### 🐛 Bug Fixes
+
+- **Custom Calculation Validation (CORE-4657)**
+  * _Resolution_: Temporarily disabled server-side validation when creating or editing custom calculations in Query Builder. This resolves an issue where validation was incorrectly failing due to special characters in descriptions or metadata, which prevented users from saving valid calculations.
+
+- **Query Builder V2 Template Reports**
+  * _Resolution_: Fixed an issue where the Query Builder, when accessed from the Template Library, was not correctly identifying that it was in "template mode." This prevented users from creating or editing library reports.
+
+---
+
+</Update>
+
 <Update label="12 January 2026" description="4 Updates">
 
 ### 🤖 AI Cube Agent Filter Improvements
