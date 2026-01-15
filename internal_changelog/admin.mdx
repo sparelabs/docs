@@ -2,6 +2,34 @@
 title: Admin
 rss: true
 ---
+<Update label="14 January 2026" description="1 Updates">
+
+### ⚙️ Enhanced Demo Simulation Setup
+
+**What's New**  
+When creating a "Demo" type simulation, you now have more powerful options to generate realistic data. You can select "Dedicated Riders" and "Dedicated Drivers" to guarantee their activity, and the simulation will automatically create and assign various payment methods to riders.
+
+**Pre-requisites**
+- Requires Admin access
+
+<Accordion title="See More">
+
+#### Where You'll See It
+- *System > Simulations > Create/Edit Simulation > Setup Tab* (new fields appear when the "Simulation Type" is set to `Demo`)
+
+#### What You Can Do
+- **Select Dedicated People**: Use the new "Dedicated Riders" and "Dedicated Drivers" multi-select fields to search for and add specific people. These individuals will be guaranteed to have requests or duties created for them in the simulation.
+- **Generate Realistic Payment Data**: The simulation now automatically creates a variety of payment methods for riders, including simulated credit cards (Stripe), in addition to cash and wallet. This results in simulated trips being booked with different payment types.
+- **Example**: A sales engineer setting up a customer demo can select the `Demo` simulation type, add a few specific rider accounts to the "Dedicated Riders" list, and run the simulation. Those riders will be created with a mix of payment methods, allowing the SE to demonstrate fare collection and payment history without any manual setup.
+
+#### Why This Matters
+These improvements significantly reduce the manual effort required to set up compelling and realistic demos. By ensuring specific riders have activity and that a variety of payment methods are used, simulations can now generate richer, more diverse data that better showcases the platform's capabilities.
+</Accordion>
+
+---
+
+</Update>
+
 <Update label="13 January 2026" description="5 Updates">
 
 ### 🛡️ Safer and More Resilient Organization Deletion

@@ -2,6 +2,85 @@
 title: Enterprise Asset Management
 rss: true
 ---
+<Update label="14 January 2026" description="3 Updates">
+
+### 📊 New Analytics Measures for Work Orders
+
+**What's New**  
+The Work Order data cube in Analytics has been enhanced with new measures to track status counts and time efficiency. This includes counts for open, pending, completed, and cancelled work orders, as well as average times to start and complete work.
+
+**Pre-requisites**
+- Requires `AnalyticsV2` feature flag
+- Requires Admin access
+
+<Accordion title="See More">
+
+#### Where You'll See It
+- *Analytics > Query Builder > Side Panel* (new measures available when the "Work Order" cube is selected)
+
+#### What You Can Do
+- **Track Status Counts**: Use the new count measures (`open_count`, `pending_count`, `completed_count`, `cancelled_count`) to get a snapshot of your work order pipeline.
+- **Monitor Efficiency**: Use the new time-tracking measures to analyze performance:
+    - `avg_time_to_start_hours`: Average time from when a work order is issued to when work begins.
+    - `avg_time_to_complete_hours`: Average time from when a work order is issued to when it is completed.
+    - `total_time_to_complete_hours`: Cumulative time spent on all completed work orders.
+- **Example**: A maintenance manager can create a report with `avg_time_to_start_hours` to measure team responsiveness and identify bottlenecks in getting work started.
+
+#### Why This Matters
+These new measures provide powerful new ways to analyze maintenance operations. You can now easily quantify your team's workload, track efficiency over time, and make data-driven decisions to improve your maintenance processes.
+</Accordion>
+
+---
+### 📥 Import Parts with Custom Fields
+
+**What's New**  
+When importing parts from a CSV file, you can now map columns from your file to any custom fields you have configured for parts in Spare.
+
+**Pre-requisites**
+- Requires Admin access
+
+<Accordion title="See More">
+
+#### Where You'll See It
+- *Enterprise Asset Management > Imports > New Import* (when `Parts` is selected as the import type)
+
+#### What You Can Do
+- During the "Map Columns" step of the parts import process, you will now see your configured Parts custom fields listed as available destinations.
+- You can map a column from your CSV file directly to a custom field like "Supplier ID" or "Warranty Expiration Date".
+- **Before**: Only standard part fields (like name, SKU, quantity) could be imported via CSV.
+- **Now**: Both standard fields and custom fields can be populated in a single import.
+
+#### Why This Matters
+This enhancement streamlines the process of getting detailed part information into the system. You no longer need to perform an import and then manually edit each part to add custom data, saving time and reducing the chance of manual error.
+</Accordion>
+
+---
+### 🗑️ Delete Work Order Categories
+
+**What's New**  
+You can now delete work order categories that are no longer needed. To protect data integrity, a category can only be deleted if it is not currently associated with any work orders.
+
+**Pre-requisites**
+- Requires Admin access with permissions to manage work order categories.
+
+<Accordion title="See More">
+
+#### Where You'll See It
+- *Enterprise Asset Management > Work Orders > Categories* (a "Delete" action is now available for each category)
+
+#### What You Can Do
+- Delete a work order category that you no longer use.
+- If you attempt to delete a category that is still assigned to one or more work orders, the system will prevent the deletion and show a message indicating that the category is in use.
+- **Example**: An admin creates a "Temporary Project" category. Once the project is complete and all related work orders are re-categorized, the admin can safely delete the "Temporary Project" category to keep the list clean.
+
+#### Why This Matters
+This feature allows you to maintain a clean and relevant list of work order categories. By preventing the deletion of in-use categories, it also ensures historical data remains accurate and consistent.
+</Accordion>
+
+---
+
+</Update>
+
 <Update label="13 January 2026" description="1 Updates">
 
 ### 📤 Export Assets from the Assets List

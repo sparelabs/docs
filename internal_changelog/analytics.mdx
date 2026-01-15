@@ -2,6 +2,71 @@
 title: Analytics
 rss: true
 ---
+<Update label="14 January 2026" description="3 Updates">
+
+### 🎨 Query Builder V2 Interface and Data Handling Improvements
+
+**What's New**  
+The Analytics Query Builder has been updated with a refreshed user interface and smarter data handling for pivoted tables. The filter panel and surrounding components now feature a modern blue color scheme and standardized controls, while pivoted tables now correctly display the full dataset to prevent incomplete or misleading reports.
+
+**Pre-requisites**
+- Requires `AnalyticsV2` feature flag
+- Requires Admin access
+
+<Accordion title="See More">
+
+#### Where You'll See It
+- *Analytics > Query Builder* (refreshed UI in the filter panel, side panel, and chart configuration areas)
+- *Analytics > Query Builder > Chart Panel* (when using the 'Table' chart type)
+
+#### What You Can Do
+- Experience a cleaner, more modern interface with a consistent blue theme and standardized Nutshell components.
+- Create more reliable pivot tables. When you drag a dimension (like "Day of Week") to the Y-axis of a table chart, the system now fetches the complete dataset to build the table.
+- **Before**: Pivoted tables were paginated by the server, which could result in incomplete tables with missing data or empty cells.
+- **Now**: Pivoted tables are built from the full result set, ensuring all data is accurately represented. Pagination for these tables is handled directly in your browser.
+
+#### Why This Matters
+The UI refresh provides a more modern and consistent experience when building reports. The change to how pivoted tables handle data ensures that reports are accurate and complete, preventing situations where server-side pagination would show an incomplete or misleading view of the data.
+</Accordion>
+
+---
+### 📊 New Analytics Cubes for Request Updates and Cancellations
+
+**What's New**  
+Two new data cubes are now available for reporting: "Request Updated Event" and "Request Cancelled Event". These allow for detailed analysis of when, how, and why ride requests are changed or cancelled.
+
+**Pre-requisites**
+- Requires `AnalyticsV2` feature flag
+- Requires Admin access
+
+<Accordion title="See More">
+
+#### Where You'll See It
+- *Analytics > Query Builder > Side Panel* (new "Request Updated Event" and "Request Cancelled Event" options in the data source list)
+
+#### What You Can Do
+- **Analyze Request Updates**: Use the "Request Updated Event" cube to see a history of changes to requests. You can report on which fields were changed (e.g., `scheduledAt`, `serviceId`), the `from` and `to` values, and who made the change (`updatedBy`).
+- **Analyze Request Cancellations**: Use the "Request Cancelled Event" cube to investigate cancellations. You can build reports based on who cancelled (`cancelledBy`), the `cancellationReason`, the assigned `cancellationFault`, and any associated notes.
+- **Example**: To understand the impact of traffic on scheduling, you can build a report from the "Request Updated Event" cube to count how many times the `scheduledAt` time was changed for requests on a specific service.
+
+#### Why This Matters
+These new cubes provide deep visibility into the lifecycle of a request after it's been created. This allows you to identify operational trends, diagnose issues with cancellations, and understand how often and why request details are being modified.
+</Accordion>
+
+---
+### 🐛 Bug Fixes
+
+- **Incorrect Day of Week Labeling in Analytics Charts (CORE-4856)**
+  - _Resolution_: Fixed an issue in analytics charts where Sunday was incorrectly labeled with the number "7" when data was grouped by day of the week. Charts now correctly display the name "Sunday".
+- **XLSX Export Failure for Wallet Transactions (CORE-4643)**
+  - _Resolution_: Fixed a bug that caused the XLSX export to fail on the *Riders > Wallets > Transactions* page. The export now downloads a valid `.xlsx` file as expected.
+- **Analytics Report Naming with Archived Reports (CORE-4828)**
+  - _Resolution_: Fixed an issue that prevented the creation of a new analytics report if an *archived* report with the same name already existed. You can now reuse the names of previously archived reports.
+
+---
+
+</Update>
+
 <Update label="13 January 2026" description="2 Updates">
 
 ### 👩‍🔧 Inspector Full Name Dimension for EAM Reporting

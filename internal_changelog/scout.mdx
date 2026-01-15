@@ -2,6 +2,37 @@
 title: Scout
 rss: true
 ---
+<Update label="14 January 2026" description="1 Updates">
+
+### ♿ Scout AI Chat Accessibility for Screen Readers
+
+<Warning>This feature is currently categorized as 'Do Not Enable - In Development' and is not yet ready for customer use. Please await communications from the Product team on a feature rollout plan.</Warning>
+
+**What's New**  
+The Scout AI chat feature is now more accessible for users with visual impairments who use screen readers. As Scout generates a response, the screen reader will announce the content as it streams in, providing a real-time experience.
+
+**Pre-requisites**
+- Requires `AiChat` and `ScoutMastra` feature flags
+- Requires Admin access
+
+<Accordion title="See More">
+
+#### Where You'll See It
+- *Scout* (the entire chat interface)
+
+#### What You Can Do
+- This is an accessibility improvement with no visual changes. It improves the experience for users of screen reader software (like VoiceOver, NVDA, or JAWS).
+- **Before**: Screen readers could not effectively read out the streaming AI responses or navigate the chat interface.
+- **Now**: Proper ARIA labels, roles, and live regions have been added. When a user asks Scout a question, their screen reader will announce the response as it is being generated, word by word.
+
+#### Why This Matters
+This enhancement ensures that all users, including those with visual impairments, can effectively use Scout to get information and analyze data, promoting a more inclusive and accessible platform.
+</Accordion>
+
+---
+
+</Update>
+
 <Update label="9 January 2026" description="1 Updates">
 
 ### 🔍 Complete Redesign of the Scout AI Chat Interface
