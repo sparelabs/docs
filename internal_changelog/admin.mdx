@@ -2,6 +2,41 @@
 title: Admin
 rss: true
 ---
+<Update label="15 January 2026" description="2 Updates">
+
+### 👥 Enhanced Rider Representative Management
+
+**What's New**  
+The "Authorized Representatives" and "Riders Represented" sections on the rider details page have been improved for a more intuitive workflow. Filters for each section are now independent, and creating new relationships is clearer with context-aware titles and disabled pre-filled fields.
+
+**Pre-requisites**
+- Requires `RiderRepresentatives` feature flag
+- Requires Admin access
+
+<Accordion title="See More">
+
+#### Where You'll See It
+- *Users > Riders > [Select a Rider] > Overview* (in the "Authorized Representatives" and "Riders Represented" sections). This also applies to the same sections in *Engage > Riders*.
+
+#### What You Can Do
+- **Independent Filters**: Filtering one section (e.g., by "Status" in "Authorized Representatives") no longer affects the other section. The available filter fields are also now correctly scoped to each section.
+- **Contextual Titles**: Clicking "Add Representee" now takes you to a page or peek view titled "Add New Representee", making the action's purpose clear.
+- **Read-Only Fields**: When adding a representative or representee from a specific rider's page, that rider's name is pre-filled and shown in a disabled, greyed-out input field to prevent accidental changes.
+
+#### Why This Matters
+The previous behavior was confusing, with shared filters causing unexpected results and unclear creation forms. These changes streamline the process of managing representative relationships, reducing errors and improving usability for admins.
+</Accordion>
+
+---
+### 🐛 Bug Fixes
+
+- **Duplicate Entities in Copy Day Simulations (DR-2697)**
+  - _Resolution_: Fixed a bug in Copy Day simulations where editing and saving a simulation could cause duties and requests to be duplicated. The system now clears any pending and future scheduled entities before re-creating them, ensuring data integrity.
+
+---
+
+</Update>
+
 <Update label="14 January 2026" description="1 Updates">
 
 ### ⚙️ Enhanced Demo Simulation Setup

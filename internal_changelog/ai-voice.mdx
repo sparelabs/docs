@@ -2,6 +2,33 @@
 title: AI Voice
 rss: true
 ---
+<Update label="15 January 2026" description="1 Updates">
+
+### 📞 Default Message for AI Voice Call Transfers
+
+**What's New**  
+When AI Voice transfers a rider's call to a human agent via SIP, it will now play a default message ("Please hold while I transfer your call") if no other specific transfer message is configured. This ensures the rider is not left in silence during the transfer.
+
+**Pre-requisites**
+- Requires `LaunchAIVoice` or `EngageAIVoice` feature flag
+
+<Accordion title="See More">
+
+#### Where You'll See It
+- This is an automatic behavior within the AI Voice system during call transfers.
+
+#### What You Can Do
+- Previously, if a call transfer action in an AI Voice workflow did not have an explicit message, the transfer would happen silently.
+- Now, the system automatically provides a default, localized message to inform the rider what is happening. The message is available in all supported languages (EN, DE, ES, FR, JA, NO, SV).
+
+#### Why This Matters
+Silent transfers could be confusing or make riders think the call was dropped. This change provides a better, more professional experience by keeping the rider informed during the transfer process.
+</Accordion>
+
+---
+
+</Update>
+
 <Update label="9 January 2026" description="1 Updates">
 
 ### 🐛 Bug Fixes

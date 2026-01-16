@@ -2,6 +2,43 @@
 title: Resolve
 rss: true
 ---
+<Update label="15 January 2026" description="2 Updates">
+
+### ⚙️ Configure Fallback Case Types for Triage Assignment
+
+<Warning>This feature is currently categorized as 'Do Not Enable - Customer Specific Configuration' and is not yet ready for customer use. Reach out to the Product team with questions.</Warning>
+
+**What's New**  
+When configuring round-robin triage assignments in Engage, you can now specify a "Fallback Case Type". If a rider has no case history for the primary case type, the system will look at the fallback type to determine the last agent assigned, ensuring better agent rotation.
+
+**Pre-requisites**
+- Requires `KcmEngageRoundRobinRemovingRepeatedRiders` feature flag
+- Requires Admin access
+
+<Accordion title="See More">
+
+#### Where You'll See It
+- *Engage > Triage* (when editing a Case Type's triage rules with the "Round Robin, avoiding the user who was most recently assigned a case for this rider" assignment method)
+
+#### What You Can Do
+- A new "Fallback Case Type" dropdown now appears for this specific assignment method.
+- Select a secondary case type (e.g., a "Historical Log" type used for imported cases).
+- When a new case is created, the assignment logic will first check the primary type for the rider's history, and if none exists, it will then check the fallback type to avoid re-assigning to the same agent.
+
+#### Why This Matters
+When historical case data is imported, it may not align with the primary case types used for new assignments. This feature allows the triage logic to consider that historical data, preventing a rider from being assigned to the same agent back-to-back, even if their most recent case was of a different type.
+</Accordion>
+
+---
+### 🐛 Bug Fixes
+
+- **Read-Only Access in Case Forms (ENG-840)**
+  - _Resolution_: Corrected an issue where users without `WRITE_ANY_CASE_FORM` permissions could still edit fields within a case form. The form fields, submit button, and AI Scan actions are now properly disabled and hidden for read-only users, matching their permissions.
+
+---
+
+</Update>
+
 <Update label="13 January 2026" description="1 Updates">
 
 ### 🐛 Bug Fixes

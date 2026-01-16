@@ -2,6 +2,39 @@
 title: Analytics
 rss: true
 ---
+<Update label="15 January 2026" description="2 Updates">
+
+### 📄 Ridership Report Exports Now Include Separate First and Last Name Fields
+
+**What's New**  
+The Ridership Report export now includes two new, separate fields: `riderFirstName` and `riderLastName`. This allows for more flexible sorting and data manipulation in external tools like spreadsheets.
+
+**Pre-requisites**
+- Requires `AnalyticsV2` feature flag
+- Requires Admin access
+
+<Accordion title="See More">
+
+#### Where You'll See It
+- *Analytics > Reports > Ridership Report* (when exporting the report data)
+
+#### What You Can Do
+- When you download the Ridership Report, the resulting file will contain `riderFirstName` and `riderLastName` columns in addition to the existing full `riderName` column.
+
+#### Why This Matters
+The combined "Name" field made it difficult to sort reports by last name. This change provides the granular data needed for common administrative tasks, such as alphabetizing lists of riders by their last name in a spreadsheet.
+</Accordion>
+
+---
+### 🐛 Bug Fixes
+
+- **Inconsistent Date Rendering in Pivoted Tables (CORE-4674)**
+  - _Resolution_: Fixed an issue in Query Builder tables where dates were not formatted correctly in column headers when a date field was used for pivoting. Now, pivoted date headers will render in a readable date format (e.g., "Jan 1, 2026") instead of a raw timestamp string.
+
+---
+
+</Update>
+
 <Update label="14 January 2026" description="3 Updates">
 
 ### 🎨 Query Builder V2 Interface and Data Handling Improvements

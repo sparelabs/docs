@@ -2,6 +2,41 @@
 title: Enterprise Asset Management
 rss: true
 ---
+<Update label="15 January 2026" description="2 Updates">
+
+### 📤 Export Parts List to CSV
+
+**What's New**  
+Users can now export a complete list of their inventory parts, including all standard and custom fields, directly from the Parts page. The export can be downloaded as a CSV or JSON file.
+
+**Pre-requisites**
+- No feature flags required
+- Requires Admin access with permissions for Enterprise Asset Management
+
+<Accordion title="See More">
+
+#### Where You'll See It
+- *Enterprise Asset Management > Parts* (new "Export" button in the header)
+
+#### What You Can Do
+- Click the "Export" button in the Parts list header.
+- In the modal that appears, choose the file format (CSV or JSON) and start the download.
+- The export will include all parts that match any filters currently applied to the list.
+
+#### Why This Matters
+Previously, there was no easy way to get a full data extract of all parts for external analysis, auditing, or reporting. This feature provides a simple, one-click method to download all part information.
+</Accordion>
+
+---
+### 🐛 Bug Fixes
+
+- **Parts Importer and Editor Validation (EAM-823)**
+  - _Resolution_: Fixed an issue where creating or importing parts would fail if the `Manufacturer Part Number` or `UPC` fields were left empty. These fields are now correctly treated as optional, preventing unnecessary validation errors.
+
+---
+
+</Update>
+
 <Update label="14 January 2026" description="3 Updates">
 
 ### 📊 New Analytics Measures for Work Orders
