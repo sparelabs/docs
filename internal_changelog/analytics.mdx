@@ -2,6 +2,46 @@
 title: Analytics
 rss: true
 ---
+<Update label="16 January 2026" description="2 Updates">
+
+### 📈 New Data Cubes for Enterprise Asset Management Reporting
+
+**What's New**  
+Five new data cubes are now available in the Query Builder, providing deep analytical insight into Enterprise Asset Management (EAM) data.
+
+**Pre-requisites**
+- Requires `AnalyticsV2` feature flag.
+- Requires Admin access with permissions for both Analytics and Enterprise Asset Management.
+
+<Accordion title="See More">
+
+#### Where You'll See It
+- *Analytics > Query Builder*: The new cubes are visible in the data source selector on the left-hand side panel.
+
+#### What You Can Do
+- You can now build custom reports and dashboards using the following new cubes:
+    - **Energy Type:** Analyze data related to different energy types.
+    - **Location Unit:** Report on units within your locations.
+    - **Part Vendor:** Gain insights into vendors supplying your parts.
+    - **Service Occurrence:** Track and analyze scheduled service events.
+    - **Service Program Asset:** Report on assets associated with service programs.
+
+#### Why This Matters
+Previously, reporting on detailed EAM entities was limited. These new cubes unlock the ability to perform in-depth analysis on maintenance, parts, vendors, and energy usage, helping to optimize asset management operations.
+</Accordion>
+
+---
+### 🐛 Bug Fixes
+
+- **Query Builder Loading State (CORE-4864)**
+  - _Resolution_: Fixed an issue in *Analytics > Query Builder* where data fields in the side panel would briefly flash an error or "missing" state while loading. The panel now waits for all metadata to be processed before displaying the fields, preventing the temporary incorrect state.
+- **Custom Calculation Logic (CORE-4658)**
+  - _Resolution_: Fixed multiple issues in *Analytics > Query Builder* for custom calculations. The system now correctly permits calculations that reference measures from different data cubes. Additionally, a calculation that is in use by other reports can no longer be archived or moved, preventing broken dependencies. The "Create/Edit Calculation" modal state is also now properly reset between uses.
+
+---
+
+</Update>
+
 <Update label="15 January 2026" description="2 Updates">
 
 ### 📄 Ridership Report Exports Now Include Separate First and Last Name Fields
