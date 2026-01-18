@@ -2,6 +2,34 @@
 title: Enterprise Asset Management
 rss: true
 ---
+<Update label="17 January 2026" description="1 Updates">
+
+### 📊 New Dimensions for Work Order Reporting
+
+**What's New**  
+The `Work Orders` cube in Analytics has been enhanced with new dimensions for more detailed reporting on maintenance activities, including the ability to group by category and see who issued the work order.
+
+**Pre-requisites**
+- Requires `AnalyticsV2` feature flag
+- Requires Admin access
+
+<Accordion title="See More">
+
+#### Where You'll See It
+- *Analytics > Query Builder* (when using the `Work Orders` data source)
+
+#### What You Can Do
+- Group and filter work orders using the new **Category Name** dimension. Work orders without a category will now be clearly grouped under the label "Uncategorized".
+- Report on who created work orders by using the **Issuer Full Name** dimension, which is now available through the `Work Order Issuer` join.
+
+#### Why This Matters
+This change enables more granular analysis of maintenance tasks. You can now easily create reports to track work orders by category or by the staff member who created them, providing deeper insights into your maintenance operations.
+</Accordion>
+
+---
+
+</Update>
+
 <Update label="16 January 2026" description="1 Updates">
 
 ### 📊 Filtered Exports for Assets and Parts

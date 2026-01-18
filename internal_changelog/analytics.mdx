@@ -2,6 +2,36 @@
 title: Analytics
 rss: true
 ---
+<Update label="17 January 2026" description="1 Updates">
+
+### 📅 New Departure Time Dimensions for Analytics
+
+**What's New**  
+The `Slots` data source in Analytics now includes three new dimensions related to departure time, enabling more detailed analysis of when trips actually begin.
+
+**Pre-requisites**
+- Requires `AnalyticsV2` feature flag
+- Requires Admin access
+
+<Accordion title="See More">
+
+#### Where You'll See It
+- *Analytics > Query Builder* (when using the `Slots` data source)
+
+#### What You Can Do
+You can now build reports using the following new dimensions to analyze departure performance:
+- **Departed Time**: The exact timestamp when the vehicle departed for a stop.
+- **Departed Day of Week**: The day of the week of the departure (e.g., "Monday").
+- **Departed Hour of Day**: The hour of the day of the departure (0-23).
+
+#### Why This Matters
+Previously, detailed time-based analysis was primarily available for arrival times. These new dimensions provide parity for departure times, allowing you to create reports that analyze departure patterns and on-time performance by time of day or day of week.
+</Accordion>
+
+---
+
+</Update>
+
 <Update label="16 January 2026" description="2 Updates">
 
 ### 📈 New Data Cubes for Enterprise Asset Management Reporting

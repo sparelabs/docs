@@ -2,6 +2,43 @@
 title: Admin
 rss: true
 ---
+<Update label="17 January 2026" description="2 Updates">
+
+### 🗺️ Experimental Live Traffic View on Live Map
+
+<Warning>This feature is currently categorized as 'Do Not Enable - In Development' and is not yet ready for customer use. Please await communications from the Product team on a feature rollout plan.</Warning>
+
+**What's New**  
+An experimental feature is now available that overlays real-time traffic data from Google Maps directly onto the Spare Live Map, providing dispatchers with at-a-glance traffic awareness.
+
+**Pre-requisites**
+- Requires `liveMapGoogleTraffic` feature flag
+- Requires Admin access
+
+<Accordion title="See More">
+
+#### Where You'll See It
+- *Rides > Live Map* (a new 'Traffic' layer option will appear in the map controls)
+
+#### What You Can Do
+- When enabled, you can toggle a traffic layer on the Live Map to see current road congestion.
+- Use the visual traffic data to better understand potential delays and inform operational decisions.
+
+#### Why This Matters
+By integrating live traffic data directly into the Live Map, dispatchers no longer need to switch to external tools to check road conditions. This helps them make faster, more informed decisions about routing and vehicle dispatch, ultimately improving operational efficiency.
+</Accordion>
+
+---
+### 🐛 Bug Fixes
+
+- **Improved User Group Validation on Bulk Import (CORE-4866)**
+  - _Resolution_: The system now provides clear error messages when attempting to add users to non-existent or archived user groups during a bulk operation. This replaces previous cryptic database errors, making it easier to identify and fix issues in user data imports.
+
+- **Restored Visibility of Notifications in Modals and Peek Views (ENG-1258)**
+  - _Resolution_: Fixed a bug where confirmation messages (e.g., "Link copied") were not visible when triggered from a modal window or a peek view panel. These notifications now display correctly, providing immediate feedback for actions.
+
+</Update>
+
 <Update label="16 January 2026" description="1 Updates">
 
 ### 🐛 Bug Fixes
