@@ -2,6 +2,35 @@
 title: AI Voice
 rss: true
 ---
+<Update label="19 January 2026" description="1 Updates">
+
+### 🤖 Conditional FAQ for AI Voice and Chat
+
+**What's New**  
+AI Voice and AI Chat will now only offer to answer Frequently Asked Questions (FAQs) if the AI agent is configured with both the "FAQ" capability and has FAQ content available. This prevents the AI from offering help with FAQs when none exist.
+
+**Pre-requisites**
+- Requires Admin access to configure AI agents
+- No feature flags required
+
+<Accordion title="See More">
+
+#### Where You'll See It
+- *AI > Agents > [Agent Name] > Edit* (Configuration of agent capabilities)
+- During an AI Voice call or AI Chat session (The AI's introductory greeting and capabilities will now dynamically include or exclude mentions of FAQs).
+
+#### What You Can Do
+- Control whether your AI agent offers FAQ assistance by enabling the `FAQ` capability and adding content in the agent's settings.
+- If the `FAQ` capability is disabled or no content is provided, the AI will no longer mention that it can answer questions, creating a more focused user experience.
+
+#### Why This Matters
+Previously, AI agents might offer to answer FAQs even if none were configured, leading to a confusing dead-end for riders. This change ensures the AI only advertises capabilities it can actually perform, making interactions more reliable and logical.
+</Accordion>
+
+---
+
+</Update>
+
 <Update label="17 January 2026" description="1 Updates">
 
 ### ⏱️ Localized Time Announcements in AI Voice

@@ -2,6 +2,64 @@
 title: Admin
 rss: true
 ---
+<Update label="19 January 2026" description="3 Updates">
+
+### 📊 Cross-Organization Analytics Migration
+
+**What's New**  
+Super Admins can now copy Analytics dashboards, reports, and custom calculations from one organization to another. The tool automatically handles dependencies, such as ensuring custom calculations are copied before the reports that use them.
+
+**Pre-requisites**
+- Requires Super admin permissions
+
+<Accordion title="See More">
+
+#### Where You'll See It
+- *Super Admin > Organizations > [Select Organization] > Data Migration* (new UI to initiate analytics migration).
+
+#### What You Can Do
+- Select a source and destination organization for migration.
+- Choose to migrate Analytics Dashboards, Reports, and/or Custom Calculations.
+- The system automatically detects and copies dependencies (e.g., a report's custom calculations) and prevents creating duplicates if they already exist in the destination.
+- It also validates and can auto-create required custom fields in the destination organization to ensure reports function correctly.
+
+#### Why This Matters
+Setting up complex analytics can be time-consuming. This tool allows Super Admins to replicate proven analytics configurations across multiple organizations, saving significant time and ensuring consistency when onboarding new partners or standardizing reporting.
+</Accordion>
+
+---
+### 👥 Unarchive Group Memberships
+
+**What's New**  
+Admins can now unarchive a rider's archived group membership. This restores the membership, making it active again, provided it doesn't conflict with another existing active membership for the same group.
+
+**Pre-requisites**
+- Requires Admin access
+- No feature flags required
+
+<Accordion title="See More">
+
+#### Where You'll See It
+- *System > Data > Riders > [Select Rider] > Group Memberships tab* (a new **Unarchive** button appears in the actions menu for archived memberships).
+- *System > Data > Group Memberships > [Select Archived Membership]* (a new **Unarchive** button appears at the top of the page).
+
+#### What You Can Do
+- Click the "Unarchive" button on an archived group membership.
+- Confirm the action in the popup dialog.
+- The membership will be restored to an active state. If this would create an overlap with an existing active membership for the same group, the action will be blocked and an error message will be displayed.
+
+#### Why This Matters
+Previously, if a group membership was archived by mistake, there was no easy way to restore it. This feature provides a simple, one-click solution for admins to correct errors and reactivate memberships, improving administrative efficiency.
+</Accordion>
+
+---
+### 🐛 Bug Fixes
+
+- **Fixed Overlap Detection for Expired Group Memberships (ENG-1267)**
+  - _Resolution_: Fixed an issue where admins could not edit the expiration date of an active group membership if the rider also had a previously *expired* membership for the same group. The system now correctly ignores expired memberships when checking for scheduling overlaps.
+
+</Update>
+
 <Update label="17 January 2026" description="2 Updates">
 
 ### 🗺️ Experimental Live Traffic View on Live Map
