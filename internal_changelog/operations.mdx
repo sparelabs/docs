@@ -2,6 +2,40 @@
 title: Operations
 rss: true
 ---
+<Update label="20 January 2026" description="2 Updates">
+
+### ⏱️ Buffer Time for Return Trip Booking
+
+**What's New**  
+A 10-minute buffer is now automatically applied when booking a return trip to prevent creating trips that overlap with the original trip's drop-off time.
+
+**Pre-requisites**
+- No feature flags required
+- Requires Admin access
+
+<Accordion title="See More">
+
+#### Where You'll See It
+- *Operations > Requests > (select a request) > Create Return Trip button*
+
+#### What You Can Do
+- When booking a return trip from the request details page, the earliest selectable pickup time will now be 10 minutes after the original trip's drop-off.
+- If you attempt to select a time within this buffer, an error notification will appear, guiding you to choose a later time.
+
+#### Why This Matters
+Previously, return trips could be booked immediately after the original drop-off, which could lead to scheduling conflicts and impossible itineraries for riders. This buffer ensures a realistic and feasible time gap is maintained between trips.
+</Accordion>
+
+---
+### 🐛 Bug Fixes
+
+- **Intermittent Rendering Failure in Eligibility Pop-up (DR-2769)**
+  - *Resolution*: Fixed an issue where the eligibility check pop-up, accessed from *Operations > Rides*, would sometimes fail to render correctly. The component now properly handles and displays all field types.
+
+---
+
+</Update>
+
 <Update label="19 January 2026" description="1 Updates">
 
 ### 🐛 Bug Fixes

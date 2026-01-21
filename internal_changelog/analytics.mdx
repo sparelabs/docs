@@ -2,6 +2,90 @@
 title: Analytics
 rss: true
 ---
+<Update label="20 January 2026" description="4 Updates">
+
+### 📊 Display Custom Field Labels in Reports
+
+**What's New**  
+Analytics reports now display the human-readable labels for Single and Multiple Choice custom fields instead of their internal system keys, making reports easier to understand.
+
+**Pre-requisites**
+- Requires `AnalyticsV2` feature flag
+- Requires Admin access
+
+<Accordion title="See More">
+
+#### Where You'll See It
+- *Analytics > Query Builder*
+- *Analytics > Report View*
+- *Analytics > Dashboard View*
+
+#### What You Can Do
+- When you create a report using a single-choice or multiple-choice custom field as a dimension, the resulting table or chart will now show the option's user-friendly label (e.g., "Standard Vehicle") instead of its internal key (e.g., "standard_vehicle").
+
+#### Why This Matters
+Previously, reports showed internal keys for custom field options, which were often cryptic and required users to know what each key represented. This change makes reports more intuitive and readable for all users, eliminating the need to cross-reference system keys.
+</Accordion>
+
+---
+### 🔧 Enhancements to the Custom Metric Builder
+
+**What's New**  
+The Custom Metric builder has received several user experience improvements, including smarter filter value selection, a relocated "Add" button, and clearer dependency warnings to prevent accidental breaking changes.
+
+**Pre-requisites**
+- Requires `AnalyticsV2` feature flag
+- Requires Admin access
+
+<Accordion title="See More">
+
+#### Where You'll See It
+- *Analytics > Query Builder > (sidebar) Available Metrics section*
+
+#### What You Can Do
+- **Select Filter Values:** When adding a filter to a custom metric, you can now select values from a dropdown of available options instead of typing them manually.
+- **Create Metrics Easily:** The `+ Custom Metric` button has been moved to the header of the `Available Metrics` section for better visibility.
+- **Get Feedback on Save:** A "Saving..." message now appears to confirm the system is processing your changes.
+- **Prevent Broken Reports:** The system now warns you if you try to archive a custom metric that is being used by other reports or metrics, even across different data cubes.
+
+#### Why This Matters
+These changes make the Custom Metric builder more intuitive, responsive, and safer to use. Providing filter suggestions reduces errors, and improved dependency checking prevents users from accidentally breaking other reports.
+</Accordion>
+
+---
+### ✨ New Onboarding Experience for Analytics
+
+**What's New**  
+For organizations new to Analytics, a new welcome screen provides a "Quick Start" guide to automatically import a set of starter dashboards with a single click.
+
+**Pre-requisites**
+- Requires `AnalyticsV2` feature flag
+- Requires Admin access
+
+<Accordion title="See More">
+
+#### Where You'll See It
+- *Analytics > Home*
+
+#### What You Can Do
+- If no dashboards or reports exist in your organization, the *Analytics > Home* page will now display a new onboarding view.
+- Click the `Get Started with our Setup Guide` button to automatically import a library of starter kit dashboards (e.g., "Booking Insights," "Ridership Trends," "Operations Overview").
+- After the import is complete, you will be automatically navigated to the "Service Dashboard" to begin exploring your data.
+
+#### Why This Matters
+Previously, setting up Analytics required manually creating or importing reports one by one. This new onboarding flow makes it easy to get started with a useful set of pre-built dashboards, providing immediate value and demonstrating the platform's capabilities.
+</Accordion>
+
+---
+### 🐛 Bug Fixes
+
+- **Inaccurate Data in Pivoted Analytics Tables (CORE-4825)**
+  - *Resolution*: Fixed an issue where pivoted tables in Analytics could show incomplete data or empty cells due to server-side pagination. The system now fetches the complete dataset for pivoted tables before displaying them, ensuring data accuracy in the Query Builder, Report View, and Dashboard widgets.
+
+---
+
+</Update>
+
 <Update label="17 January 2026" description="1 Updates">
 
 ### 📅 New Departure Time Dimensions for Analytics
