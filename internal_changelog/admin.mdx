@@ -2,6 +2,70 @@
 title: Admin
 rss: true
 ---
+<Update label="21 January 2026" description="3 Updates">
+
+### 👤 Add Middle Name Field for Riders
+
+**What's New**  
+A native "Middle Name" field has been added to rider profiles. This field is now included in rider searches, data exports, and various displays throughout the platform, ensuring full name consistency.
+
+**Pre-requisites**
+- Requires Admin access.
+- No feature flags required.
+
+<Accordion title="See More">
+
+#### Where You'll See It
+- The middle name will now appear (if populated) in rider profiles, rider stubs (e.g., on the Live Map), and search results.
+- The field is also included in the Rider Import/Export tool and other data exports.
+- **Note**: The UI for directly editing the middle name in a rider's profile will be available in a future release. Currently, it can be populated via API or data import.
+
+#### What You Can Do
+- If a rider has a middle name populated in the system, it will now be displayed as part of their full name (e.g., "Jane Marie Doe").
+- Search for riders using their middle name.
+- Include the middle name when importing or exporting rider data.
+
+#### Why This Matters
+Some transit operations require a rider's full legal name, including a middle name, for identification, eligibility, or reporting. This change adds a dedicated field for this data, improving data integrity and helping meet compliance needs.
+</Accordion>
+
+---
+### 🔍 Enhanced Search Highlighting in Case Forms
+
+**What's New**  
+When searching for a rider or reporter in Eligibility or Resolve case forms, the search results now visually highlight the matching text in the user's name, phone number, or custom fields, making it easier to spot the correct person.
+
+**Pre-requisites**
+- Requires Admin access with permissions for Spare Engage (Eligibility or Resolve).
+- No feature flags required.
+
+<Accordion title="See More">
+
+#### Where You'll See It
+- The "Rider" or "Reporter" search field within the case creation forms at:
+  - *Eligibility > Cases > Create Case*
+  - *Resolve > Cases > Create Case*
+
+#### What You Can Do
+- **Before**: Search results showed the user's name but didn't indicate what part of your query matched.
+- **Now**: If you search for "123", the "123" in a phone number like `(555) 555-1123` will be bolded. If you search for a custom field value like a medical ID, the result will show the matching ID (e.g., "MRN: 12345") with the query text highlighted.
+
+#### Why This Matters
+In lists of users with similar names or details, it can be hard to quickly identify why a specific result appeared. Highlighting the matched text provides immediate visual confirmation, speeding up the process of selecting the correct rider or reporter and reducing errors.
+</Accordion>
+
+---
+### 🐛 Bug Fixes
+
+- **Email Editor Freezing When Replacing Text (CORE-4676)**
+  - _Resolution_: Fixed an issue where the email editor (used in Workflows and Bulk Notifications) would freeze when highlighting and replacing text. The editor now correctly handles text updates without getting stuck.
+- **Organization List Exposed Non-Member Organizations (CORE-4862)**
+  - _Resolution_: Corrected a security issue where authenticated users could view a list of all organizations on the platform, including those they were not a member of. The organization list is now correctly filtered to show only the organizations the user belongs to (unless they are a Super Admin).
+
+---
+
+</Update>
+
 <Update label="20 January 2026" description="2 Updates">
 
 ### 🔍 Global Organization Search Across All Regions

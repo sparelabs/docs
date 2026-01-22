@@ -2,6 +2,59 @@
 title: Analytics
 rss: true
 ---
+<Update label="21 January 2026" description="2 Updates">
+
+### 🎨 Visual and Usability Overhaul for Query Builder
+
+**What's New**  
+The Query Builder has received a significant visual and functional update to make building reports more intuitive. It now features new icons with semantic coloring, improved search functionality, and a cleaner layout.
+
+**Pre-requisites**
+- Requires `AnalyticsV2` feature flag.
+- Requires Admin access.
+
+<Accordion title="See More">
+
+#### Where You'll See It
+- *Analytics > Query Builder*
+
+#### What You Can Do
+- **Identify Data Types Faster**: Measures (gold Σ icon), dimensions (gray icon), and time fields (gray clock icon) now have distinct, color-coded icons in the side panel and filter pills.
+- **Find Fields More Easily**: When you use the search bar in the side panel, it now shows a loading indicator and automatically expands all data cubes to show matching results as you type.
+- **Experience a Cleaner Interface**: The layout of the side panel, member lists, and filter section has been refined with better spacing and typography for improved readability and a more modern feel.
+
+#### Why This Matters
+The previous design could be difficult to navigate, especially for complex queries. These visual and functional enhancements provide a more organized and user-friendly experience, helping users find the data they need and build reports more efficiently.
+</Accordion>
+
+---
+### 📊 Clarified Analytics Dimension for Arrive By Trips
+
+**What's New**  
+The "Arrive By Pickup Constraint Type" dimension in Analytics has been updated for better clarity. The description and values now accurately distinguish between 'detour' and 'window' based constraints for Arrive By trips.
+
+**Pre-requisites**
+- Requires `AnalyticsV2` feature flag.
+- Requires Admin access.
+
+<Accordion title="See More">
+
+#### Where You'll See It
+- *Analytics > Query Builder* (when using the "Requests" data cube and selecting the "Arrive By Pickup Constraint Type" dimension)
+
+#### What You Can Do
+- Analyze Arrive By trips using more precise terminology.
+- **Before**: The dimension's values were `leaveAt` and `arriveBy`, which was ambiguous.
+- **Now**: The values are `detour` and `window`, which more accurately describe the underlying scheduling logic. The dimension's description has also been updated to explain this difference.
+
+#### Why This Matters
+The previous terminology was confusing and did not clearly explain the type of constraint applied to a trip. This update provides precise and technically accurate labels, helping analysts better understand and report on the performance of different Arrive By scheduling methods.
+</Accordion>
+
+---
+
+</Update>
+
 <Update label="20 January 2026" description="4 Updates">
 
 ### 📊 Display Custom Field Labels in Reports

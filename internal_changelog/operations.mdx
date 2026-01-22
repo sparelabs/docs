@@ -2,6 +2,72 @@
 title: Operations
 rss: true
 ---
+<Update label="21 January 2026" description="3 Updates">
+
+### ⚠️ Real-Time Booking Intelligence
+
+<Warning>This feature is currently categorized as 'Do Not Enable - In Development' and is not yet ready for customer use. Please await communications from the Product team on a feature rollout plan.</Warning>
+
+**What's New**  
+When booking a trip, a new "Booking Intelligence" section appears in the UI to flag potential issues in real-time. It can detect problems like duplicate trips, missed cancellations, or accessibility mismatches before the trip is confirmed.
+
+**Pre-requisites**
+- Requires `RequestMisbookingsLiveDetection` feature flag.
+- Requires Admin access.
+
+<Accordion title="See More">
+
+#### Where You'll See It
+- *Requests > Create Request* (new "Booking Intelligence" section below the trip details)
+
+#### What You Can Do
+- View real-time warnings for potential booking errors such as:
+  - **Duplicate Booking**: An identical trip already exists for the rider.
+  - **Possible Missed Cancellation**: A similar trip was booked but may not have been canceled.
+  - **Accessibility Mismatch**: The rider's needs don't match the vehicle's features.
+- Address issues directly from warning banners using action buttons like "View Duplicate" or "Fix this".
+- Use the "Fix all" button to address multiple identified issues.
+
+#### Why This Matters
+Previously, booking errors were often discovered after the fact, requiring manual correction. This change allows dispatchers to identify and resolve potential issues during the booking process, preventing errors, reducing administrative work, and improving operational efficiency.
+</Accordion>
+
+---
+### 📅 Store and Apply Pickup/Dropoff Windows for Recurring Trips
+
+<Warning>This feature is currently categorized as 'Do Not Enable - In Development' and is not yet ready for customer use. Please await communications from the Product team on a feature rollout plan.</Warning>
+
+**What's New**  
+When you create or edit a recurring trip, the system now calculates and permanently stores the precise pickup and dropoff windows associated with it. This ensures that all individual trips generated from the recurrence use these pre-calculated windows, improving timing consistency, especially for Arrive By trips.
+
+**Pre-requisites**
+- Requires `arriveByV2ForRecurringTrips` feature flag.
+- Requires Admin access.
+
+<Accordion title="See More">
+
+#### Where You'll See It
+- This is a backend change with effects visible in *Requests > Request Recurrences*. While the new data fields are not directly displayed in the UI, their impact is seen when individual trips are created from a recurrence.
+
+#### What You Can Do
+- Create or update a recurring trip, and the system automatically calculates and saves the associated pickup/dropoff windows.
+- If you modify the recurrence (e.g., change the time or location), the windows are automatically recalculated and saved.
+- When an individual request is generated from this recurrence, it will now use the stored windows rather than calculating new ones.
+
+#### Why This Matters
+Previously, the time windows for each instance of a recurring trip were calculated upon creation, which could lead to inconsistencies if service settings changed over time. Storing the windows with the recurrence itself ensures all generated trips adhere to the exact timing constraints defined when the recurrence was first configured.
+</Accordion>
+
+---
+### 🐛 Bug Fixes
+
+- **Missing Driver and Duty Information on Live Map (DR-1815)**
+  - _Resolution_: Resolved a bug where the pane header on the Live Map could appear blank for some duties. The driver's name and duty identifier are now consistently displayed.
+
+---
+
+</Update>
+
 <Update label="20 January 2026" description="2 Updates">
 
 ### ⏱️ Buffer Time for Return Trip Booking
