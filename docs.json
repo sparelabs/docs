@@ -29,6 +29,17 @@
           "internal_changelog/eligibility",
           "internal_changelog/engine"
         ]
+      },
+      {
+        "tab": "Detailed Release Note",
+        "groups": [
+          {
+            "group": "Scout",
+            "pages": [
+              "detailed-release-notes/scout-mentions"
+            ]
+          }
+        ]
       }
     ],
     "global": {
