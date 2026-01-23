@@ -2,6 +2,88 @@
 title: Analytics
 rss: true
 ---
+<Update label="22 January 2026" description="4 Updates">
+
+### 📊 New Pooling Metrics for Advanced Ridership Analysis
+
+**What's New**  
+New dimensions have been added to analytics to provide deeper insights into ride pooling. You can now analyze `Is Pooled`, `Peak Concurrent Passengers`, and `Peak Concurrent Requests` for any given trip, enabling more granular reporting on shared ride efficiency.
+
+**Pre-requisites**
+- Requires `AnalyticsV2` feature flag
+
+<Accordion title="See More">
+
+#### Where You'll See It
+- *Analytics > Query Builder* (in the dimension picker for the "Ridership Report" and "Request Precomputed Metrics" data cubes)
+
+#### What You Can Do
+- Filter or group reports by the new `Is Pooled` dimension to isolate and analyze shared rides.
+- Use `Peak Concurrent Passengers` to see the maximum number of unique riders that were in a vehicle at any point during a single trip.
+- Analyze `Peak Concurrent Requests` to understand the maximum number of concurrent trips that were active in the same vehicle.
+
+#### Why This Matters
+Previously, it was difficult to accurately quantify the extent and efficiency of ride pooling. These new metrics provide clear, reportable data to measure the utilization of shared rides, helping to analyze operational performance and demonstrate the value of pooled services.
+</Accordion>
+
+---
+### 🔧 Expanded Access to Create Custom Calculations
+
+**What's New**  
+Users with the standard 'Access to Analytics' role can now create, edit, and manage their own Custom Calculations in Analytics. Previously, this capability was restricted to users with higher-level administrative permissions.
+
+**Pre-requisites**
+- Requires `AnalyticsV2` feature flag
+- Requires Admin access with the 'Access to Analytics' role
+
+<Accordion title="See More">
+
+#### Where You'll See It
+- *Analytics > Custom Calculations* (the 'Create New Calculation' button is now enabled for all users with access to Analytics)
+
+#### What You Can Do
+- Any user with access to the Analytics module can now navigate to the Custom Calculations page to build their own metrics.
+- Create new calculations from scratch by combining existing metrics and applying filters.
+- Edit, archive, and unarchive custom calculations that you have created.
+
+#### Why This Matters
+This change democratizes data analysis by empowering more team members to create the specific metrics they need without waiting for an administrator. It enables operational staff and analysts to build tailored reports and answer unique questions more quickly.
+</Accordion>
+
+---
+### 📌 Redesigned 'Pin Dashboard' Experience
+
+**What's New**  
+The interface for pinning a default dashboard on the Analytics homepage has been updated from a side drawer to a centered modal window. This new modal includes an auto-suggest search bar to help you find dashboards more easily.
+
+**Pre-requisites**
+- Requires `AnalyticsV2` feature flag
+- Requires Admin access
+
+<Accordion title="See More">
+
+#### Where You'll See It
+- *Analytics > Home* (click the 'Pin' icon or 'Change' button next to the "Pinned Dashboard" title)
+
+#### What You Can Do
+- When pinning a dashboard, a modal window now appears instead of a side drawer.
+- Use the new search box within the modal to quickly find the dashboard you want to pin.
+- Select a dashboard from the search results and click 'Save' to set it as your default homepage view.
+
+#### Why This Matters
+The previous drawer could feel disconnected from the main page. The new modal provides a more focused, consistent user experience that aligns with other actions on the platform, and the integrated search makes finding the right dashboard faster for organizations with many saved dashboards.
+</Accordion>
+
+---
+### 🐛 Bug Fixes
+
+- **Query Builder V2 Localization (CORE-4742)**
+  * _Resolution_: Added missing translations for various user interface elements throughout the Analytics Query Builder (V2), including headers, filter controls, chart panels, and toolbars. These components will now display correctly in non-English languages.
+
+---
+
+</Update>
+
 <Update label="21 January 2026" description="2 Updates">
 
 ### 🎨 Visual and Usability Overhaul for Query Builder

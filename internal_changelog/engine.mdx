@@ -2,6 +2,36 @@
 title: Engine
 rss: true
 ---
+<Update label="22 January 2026" description="1 Updates">
+
+### 🗺️ More Accurate ETAs for Trips with Long Wait Times
+
+<Warning>This feature is currently categorized as 'Do Not Enable - In Development' and is not yet ready for customer use. Please await communications from the Product team on a feature rollout plan.</Warning>
+
+**What's New**  
+The routing engine has been enhanced to more accurately calculate travel times for trip legs that occur after a long period of scheduled waiting. The system now correctly uses the traffic conditions expected at the actual departure time, not the arrival time at the preceding stop.
+
+**Pre-requisites**
+- Requires `LiveTraffic` feature flag
+
+<Accordion title="See More">
+
+#### Where You'll See It
+- This is a backend Engine improvement. The results are visible in ETAs across the platform, such as on the *Launch > Live Map*.
+
+#### What You Can Do
+- **Example Scenario:** A driver drops off a passenger at 2:00 PM (Point A) and is scheduled to wait there until 3:00 PM before departing for the next pickup (Point B).
+- **Before:** The travel time from A to B might have been calculated based on traffic conditions at 2:00 PM.
+- **Now:** The travel time is correctly calculated based on the expected traffic at the 3:00 PM departure time, resulting in a more accurate ETA for Point B and all subsequent stops.
+
+#### Why This Matters
+Inaccurate ETAs caused by long wait times could lead to inefficient dispatching and incorrect arrival predictions for riders. This update ensures that travel time calculations are more realistic, improving the reliability of schedules and ETAs for both drivers and riders.
+</Accordion>
+
+---
+
+</Update>
+
 <Update label="5 January 2026" description="1 Updates">
 
 ### 🐛 Bug Fixes

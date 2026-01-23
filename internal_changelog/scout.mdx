@@ -2,6 +2,36 @@
 title: Scout
 rss: true
 ---
+<Update label="22 January 2026" description="1 Updates">
+
+### 🗣️ Scout Now Clarifies Data Deviations Upfront
+
+<Warning>This feature is currently categorized as 'Do Not Enable - In Development' and is not yet ready for customer use. Please await communications from the Product team on a feature rollout plan.</Warning>
+
+**What's New**  
+When you ask Scout for data and the system cannot provide an exact match, Scout will now explicitly state any limitations or deviations at the beginning of its response, before showing any charts or data.
+
+**Pre-requisites**
+- Requires `ScoutMastra` feature flag
+
+<Accordion title="See More">
+
+#### Where You'll See It
+- *Analytics > Scout* (chat interface)
+
+#### What You Can Do
+- **Example Scenario:** You ask for "a list of promos used per rider," but the underlying data is structured as one row per rider-promo combination (not aggregated per rider).
+- **Before:** Scout might have said, "Here is the list of promos used per rider..." followed by a potentially misleading chart.
+- **Now:** Scout will clarify upfront, "Note: The data below shows each instance of a promo being used by a rider, rather than an aggregated list per rider. Here is the chart..."
+
+#### Why This Matters
+Previously, Scout could present data that didn't perfectly match a request, with important caveats buried at the end. This change ensures you are immediately aware of any data proxies or structural differences, leading to more accurate interpretations and preventing misunderstandings.
+</Accordion>
+
+---
+
+</Update>
+
 <Update label="21 January 2026" description="1 Updates">
 
 ### 🤝 Improved "Provider" Terminology Recognition for Scout

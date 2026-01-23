@@ -2,6 +2,34 @@
 title: AI Voice
 rss: true
 ---
+<Update label="22 January 2026" description="1 Updates">
+
+### 🤖 AI Voice Communication and Flow Enhancements
+
+**What's New**  
+AI Voice has been updated with more precise and helpful communication across several key workflows, including authentication, trip booking, and cancellations. These changes improve conversational clarity and ensure the AI follows platform rules more reliably.
+
+**Pre-requisites**
+- Requires `LaunchAIVoice` feature flag
+
+<Accordion title="See More">
+
+#### Where You'll See It
+- This is a behavioral change affecting AI Voice interactions with riders.
+
+#### What You Can Do
+- **Improved Authentication:** On a failed authentication attempt, AI Voice now more reliably offers to transfer the rider to a human agent and provides call center hours if available.
+- **Smarter Return Trips:** When a rider books a trip and asks for a return, AI Voice is now better at communicating any booking restrictions (e.g., if the return trip is outside the service's booking window).
+- **Correct Trip Modification Handling:** AI Voice will no longer incorrectly suggest that a rider cancel and rebook a trip if they ask to modify it on a service where modifications are not allowed.
+
+#### Why This Matters
+These prompt refinements create a more intelligent and trustworthy experience for riders. By handling edge cases and failures more gracefully, AI Voice can resolve more calls independently and provide clearer guidance, reducing rider confusion and frustration.
+</Accordion>
+
+---
+
+</Update>
+
 <Update label="20 January 2026" description="1 Updates">
 
 ### 🤖 Support for GPT-5.1 Model in AI Voice and Chat

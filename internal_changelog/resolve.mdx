@@ -2,6 +2,35 @@
 title: Resolve
 rss: true
 ---
+<Update label="22 January 2026" description="1 Updates">
+
+### 📝 Conditional Sections in Case Forms
+
+**What's New**  
+Case forms within Spare Resolve now support conditional logic, allowing you to create dynamic forms where sections or fields appear or disappear based on a user's previous answers.
+
+**Pre-requisites**
+- Requires `EngageBetaForms` feature flag
+- Requires Admin access to configure forms
+
+<Accordion title="See More">
+
+#### Where You'll See It
+- This feature is active when an agent is creating or editing a case that uses a form configured with conditional logic.
+
+#### What You Can Do
+- **Example Scenario:** You can design a form where selecting "Yes" for a "Requires Follow-up?" question reveals a new section with fields for "Follow-up Date" and "Assigned To". If "No" is selected, that section remains hidden.
+- When filling out a case, form sections will dynamically show or hide based on your inputs.
+- Validation rules (like required fields) will only apply to sections that are currently visible, preventing agents from being blocked by hidden required fields.
+
+#### Why This Matters
+Static forms can be long and cluttered with fields that aren't always relevant. Conditional forms create a cleaner, more intuitive data entry experience by only showing agents what they need to see, reducing errors and saving time.
+</Accordion>
+
+---
+
+</Update>
+
 <Update label="15 January 2026" description="2 Updates">
 
 ### ⚙️ Configure Fallback Case Types for Triage Assignment
