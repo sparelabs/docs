@@ -2,6 +2,35 @@
 title: AI Voice
 rss: true
 ---
+<Update label="23 January 2026" description="1 Updates">
+
+### 🧪 A/B Testing for AI Voice Models
+
+<Warning>This feature is currently categorized as 'Do Not Enable - In Development' and is not yet ready for customer use. Please await communications from the Product team on a feature rollout plan.</Warning>
+
+**What's New**
+We are introducing the ability to A/B test different large language models (LLMs) for AI Voice. When enabled, inbound calls will be randomly distributed between our current model (GPT-4.1) and a new test model (GPT-5.1) to compare performance and accuracy.
+
+**Pre-requisites**
+- Requires `AiVoiceLlmAbTest` feature flag
+
+<Accordion title="See More">
+
+#### Where You'll See It
+- This is a backend change and has no visible user interface. It affects the behavior of inbound AI Voice calls.
+
+#### What You Can Do
+- With the feature flag enabled, your organization's AI Voice system will automatically participate in the A/B test. There are no actions for you to take.
+- When the flag is disabled, all calls will default to the standard GPT-4.1 model.
+
+#### Why This Matters
+This A/B testing framework allows us to safely evaluate and validate new AI models in a real-world environment. It helps us gather data to ensure that future upgrades to our AI platform provide a better, more reliable experience for your riders.
+</Accordion>
+
+---
+
+</Update>
+
 <Update label="22 January 2026" description="1 Updates">
 
 ### 🤖 AI Voice Communication and Flow Enhancements

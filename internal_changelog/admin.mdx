@@ -2,6 +2,57 @@
 title: Admin
 rss: true
 ---
+<Update label="23 January 2026" description="2 Updates">
+
+### 🌍 Enhanced QuickJoin for Multi-Region Super Admins
+
+**What's New**
+The "QuickJoin" login flow for Super Admins has been improved to correctly handle permissions for users who have different Super Admin roles across multiple geographic regions.
+
+**Pre-requisites**
+- Requires Super admin permissions
+
+<Accordion title="See More">
+
+#### Where You'll See It
+- This affects the login page when using a "QuickJoin" URL (e.g., `.../selectOrganization?returnUrl=/...`).
+
+#### What You Can Do
+- If you are a Super Admin with different roles in different regions (e.g., Default SA in one region, PSM SA in another), you can now use QuickJoin links for organizations in any of those regions.
+- The system now checks your permissions on a per-region basis, ensuring the "Join organization" button appears correctly based on your role in the organization's specific region.
+
+#### Why This Matters
+Previously, multi-region Super Admins could be blocked from using QuickJoin if their role in their primary region didn't grant the necessary permissions. This fix ensures that permissions are evaluated correctly based on the target organization's region, providing a seamless login experience for Super Admins who operate globally.
+</Accordion>
+
+---
+### 📱 Expanded Mobile App Configuration
+
+**What's New**
+You can now configure a wide range of settings for your whitelabel mobile apps directly within the Spare Admin interface. This moves many configurations that were previously hardcoded into manageable fields.
+
+**Pre-requisites**
+- Requires Super admin permissions
+
+<Accordion title="See More">
+
+#### Where You'll See It
+- *Admin > Mobile Apps* (when creating or editing a mobile app configuration)
+
+#### What You Can Do
+- Configure new fields for your mobile apps, including:
+  - **Branding**: App Store name, theme colors, and URL scheme.
+  - **Authentication**: Single Sign-On (SSO) provider settings.
+  - **Technical Identifiers**: Firebase IDs, deep link domains, and EAS Project ID.
+
+#### Why This Matters
+This change gives you direct control over key mobile app configurations, reducing the need for back-and-forth with the Spare mobile team. It streamlines the setup and maintenance of your whitelabel apps, making the process faster and more self-service.
+</Accordion>
+
+---
+
+</Update>
+
 <Update label="22 January 2026" description="1 Updates">
 
 ### 👤 Rider Middle Name Support

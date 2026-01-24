@@ -2,6 +2,66 @@
 title: Analytics
 rss: true
 ---
+<Update label="23 January 2026" description="3 Updates">
+
+### ⌨️ Improved Filtering for Custom Metrics
+
+**What's New**
+The Query Builder for custom analytics now provides a better experience for filtering. Input fields for numeric dimensions now only accept numbers, and any filter value you type is automatically saved when you click away from the input box.
+
+**Pre-requisites**
+- Requires `AnalyticsV2` feature flag
+- Requires Admin access
+
+<Accordion title="See More">
+
+#### Where You'll See It
+- *Analytics > Query Builder > Create Custom Calculation* (when adding a filter condition)
+
+#### What You Can Do
+- When adding a filter to a custom calculation, you'll see a dedicated number input field for dimensions that are numeric (e.g., `trip.wait_time_minutes`).
+- Previously, if you typed a filter value and didn't press Enter, the value could be lost. Now, the value is automatically converted into a filter tag when you click elsewhere on the page.
+
+#### Why This Matters
+This change prevents errors by ensuring only valid numbers can be entered for numeric filters. It also streamlines the workflow by reliably capturing filter values, preventing accidental data loss and saving you a few extra clicks.
+</Accordion>
+
+---
+### 🖼️ Modernized Analytics User Interface
+
+**What's New**
+We've updated several workflows in the Analytics section to use modern, centered modal dialogs instead of the previous side-panel "drawers." This creates a more consistent and focused user experience.
+
+**Pre-requisites**
+- Requires `AnalyticsV2` feature flag
+- Requires Admin access
+
+<Accordion title="See More">
+
+#### Where You'll See It
+This change affects the user interface for the following actions:
+- *Analytics > Dashboards > Create Dashboard button*
+- *Analytics > Reports > ... menu > Add to Dashboard*
+- *Analytics > Reports > ... menu > Download*
+
+#### What You Can Do
+- When you create a new dashboard, add a report to a dashboard, or download a report, a dialog box will now appear in the center of your screen.
+- The Organization filter has also been temporarily removed from the dashboard filter bar to simplify the interface while we work on future improvements.
+
+#### Why This Matters
+This UI refresh provides a more standard and less disruptive workflow for common tasks in Analytics. The centered modals help focus your attention on the task at hand without obscuring the rest of the page.
+</Accordion>
+
+---
+### 🐛 Bug Fixes
+
+- **Stacked Bar Chart Rendering (CORE-4842)**
+  * _Resolution_: Fixed an issue where stacked bar charts would render incorrectly if the data contained missing or null values. The chart now correctly treats these values as zero, preventing bars from incorrectly filling to the top of the chart.
+
+---
+
+</Update>
+
 <Update label="22 January 2026" description="4 Updates">
 
 ### 📊 New Pooling Metrics for Advanced Ridership Analysis
