@@ -2,6 +2,41 @@
 title: Admin
 rss: true
 ---
+<Update label="26 January 2026" description="2 Updates">
+
+### 👤 Middle Name Field for Rider Profiles
+
+**What's New**  
+A new, optional "Middle Name" field has been added to rider profiles. This field appears between the First and Last Name fields when creating or editing a rider's profile via Admin or Rider Hub.
+
+**Pre-requisites**
+- No feature flags required
+
+<Accordion title="See More">
+
+#### Where You'll See It
+- When creating or editing a rider profile in Admin or the Rider Hub.
+- The rider's full name display (e.g., in greetings or headers) will now include the middle name if present.
+- *Settings > Riders > Rider Profile > Included Rider Profile Fields* (help text updated to include "Middle Name").
+
+#### What You Can Do
+- Capture a rider's middle name to store more complete identity information. The field is optional and has a 32-character limit.
+- Note that if your organization uses the `disableUpdatingDefaultProfileFields` feature flag, the name fields (including middle name) will be read-only for existing profiles.
+
+#### Why This Matters
+This allows for more accurate and complete capture of rider identity, which is critical for some transit agency operations, reporting requirements, and for correctly identifying riders during interactions.
+</Accordion>
+
+---
+### 🐛 Bug Fixes
+
+- **Corrected Role Loading for Cross-Region Navigation (No Ticket ID)**
+  * _Resolution_: For Super Admins, this fixes a bug where the roles dropdown in the "Request Access" modal would be empty when navigating to an organization in a different region using the global search bar. Roles now load correctly regardless of region.
+
+---
+
+</Update>
+
 <Update label="25 January 2026" description="1 Updates">
 
 ### 🐛 Bug Fixes

@@ -2,6 +2,64 @@
 title: Analytics
 rss: true
 ---
+<Update label="26 January 2026" description="3 Updates">
+
+### 🔧 Improved Custom `COUNT` Measures in Query Builder
+
+**What's New**  
+Creating custom measures with the `COUNT` aggregation is now more reliable and intuitive. We've fixed an issue that caused errors when combining `COUNT` measures with other calculations, and we've promoted `COUNT` to be the default option when creating a new custom measure.
+
+**Pre-requisites**
+- Requires `AnalyticsV2` feature flag
+- Requires Admin access
+
+<Accordion title="See More">
+
+#### Where You'll See It
+- *Analytics > Query Builder > Measures > (click '+') > Create Custom Measure* (modal)
+
+#### What You Can Do
+- **Before:** Creating a custom `COUNT` measure could lead to "Illegal types" errors when used in combination with other derived measures. `SUM` was the default aggregation.
+- **Now:** Custom `COUNT` measures are correctly handled as numeric values and can be used in any calculation without error. The "Create Custom Measure" modal now defaults to the `COUNT` aggregation, streamlining the most common workflow. Additionally, success notifications now display the user-friendly title of the measure instead of its internal key.
+
+#### Why This Matters
+This fix unblocks users who were unable to perform certain calculations using custom `COUNT` measures. Making `COUNT` the default simplifies and speeds up the process of creating the most common type of custom measure.
+</Accordion>
+
+---
+### 📊 Consolidated Pooling Metrics into Ridership Report
+
+**What's New**  
+The legacy `Pooling` data cube has been retired, and all its metrics are now available directly within the `Ridership Report` cube. A one-time data migration automatically updates all existing reports and templates to ensure a seamless transition.
+
+**Pre-requisites**
+- Requires `AnalyticsV2` feature flag
+- Requires Admin access
+
+<Accordion title="See More">
+
+#### Where You'll See It
+- *Analytics > Query Builder > Data Source* (dropdown)
+
+#### What You Can Do
+- **Before:** To analyze pooling metrics alongside general ridership data, you had to query two separate data cubes: `Pooling` and `Ridership Report`.
+- **Now:** The `Pooling` cube has been removed. All its key dimensions and measures, such as `Is Pooled` and `Number of Concurrent Requests`, can be found within the `Ridership Report` cube.
+- **Automatic Migration:** You do not need to take any action. A background migration has updated all your existing analytics reports and templates that used the `Pooling` cube to use the `Ridership Report` cube instead, preserving all your filters, pivots, and sorting.
+
+#### Why This Matters
+This change simplifies the data model by consolidating related metrics into a single, comprehensive data source. Users no longer need to build complex reports across two different cubes to analyze ridership and pooling together.
+</Accordion>
+
+---
+### 🐛 Bug Fixes
+
+- **Fixed Unclickable Dropdowns in Analytics Modals (CORE-4908)**
+  * _Resolution_: For users of `AnalyticsV2`, this resolves an issue where autosuggest dropdowns within modals were not clickable. For example, you can now successfully click on a dashboard name from the dropdown when using the "Add to Dashboard" or "Pin" actions.
+
+---
+
+</Update>
+
 <Update label="23 January 2026" description="3 Updates">
 
 ### ⌨️ Improved Filtering for Custom Metrics

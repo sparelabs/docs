@@ -2,6 +2,44 @@
 title: Operations
 rss: true
 ---
+<Update label="26 January 2026" description="2 Updates">
+
+### 🔍 Request Activity and Timeline View
+
+**What's New**  
+A new comprehensive activity feed and timeline view is now available for individual requests, providing a complete historical record. This view combines request events, duty events, status changes, comments, messages, and constraint overrides into a single, chronological list.
+
+**Pre-requisites**
+- Requires `RequestActivityFeed` feature flag
+- Requires Admin access to view requests
+
+<Accordion title="See More">
+
+#### Where You'll See It
+- *Rides > Requests > (select a request) > Activity Tab*
+
+#### What You Can Do
+- View a unified, paginated feed of all events related to a request's lifecycle.
+- Filter events to see only those that occurred while the request was on a specific duty.
+- Use the timeline view to see a high-level graphical representation of key milestones, such as creation, pickup, and drop-off windows.
+- Investigate a request's history with confidence, as all associated activities, including messages and overrides, are now in one place.
+
+#### Why This Matters
+Previously, investigating a request's history required checking multiple different logs and pages. This feature gives dispatchers and operations managers a "time travel" capability to easily see a request's full lifecycle, understand why delays occurred, and audit all interactions in one place.
+</Accordion>
+
+---
+### 🐛 Bug Fixes
+
+- **Corrected Multimodal Fare Calculations for Specific Rider Types (DR-2461)**
+  * _Resolution_: Fixed an issue where fare calculations for multimodal trips did not correctly apply discounts for certain rider types (e.g., Senior, Youth, Student), ensuring accurate pricing.
+- **Corrected Custom Fare Rule Application for Specific Zones (DR-2668)**
+  * _Resolution_: Addressed a bug where a custom fare rule was not being applied correctly due to a misconfigured zone ID. The rule now correctly identifies the intended zone and applies the proper fare.
+
+---
+
+</Update>
+
 <Update label="21 January 2026" description="3 Updates">
 
 ### ⚠️ Real-Time Booking Intelligence

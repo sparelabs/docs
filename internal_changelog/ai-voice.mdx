@@ -2,6 +2,57 @@
 title: AI Voice
 rss: true
 ---
+<Update label="26 January 2026" description="2 Updates">
+
+### 🗣️ AI Voice Can Now Create Resolve Cases
+
+**What's New**  
+AI Voice agents can now be configured to handle rider issues by creating cases directly in Spare Resolve. The agent can disambiguate between multiple case types (e.g., "Lost and Found," "Complaint") and guide the rider through filling out the associated form fields.
+
+**Pre-requisites**
+- Requires `LaunchAIVoice` feature flag and Spare Resolve product package
+- Requires the `LIST_ANY_CUSTOM_FIELD` permission for the AI Voice service role
+
+<Accordion title="See More">
+
+#### Where You'll See It
+- This is a new capability for riders interacting with AI Voice. Configuration for which case types are available to the AI agent will be managed within Admin settings.
+
+#### What You Can Do
+- When a rider calls with an issue like a lost item or a complaint, the AI agent can identify the intent to file a case.
+- If multiple Resolve case types are configured, the agent will ask the rider to clarify which one they need (e.g., "Are you calling about a lost item or a complaint?").
+- The agent then dynamically asks for the information required by the specific form associated with that case type and submits it, creating a new, fully-formed case in Spare Resolve.
+
+#### Why This Matters
+This feature automates the process of logging rider feedback and issues, freeing up customer service agent time. It ensures that cases are created with complete and structured information directly from the rider, leading to faster investigation and resolution.
+</Accordion>
+
+---
+### 📈 Expanded AI Voice Action Tracking
+
+**What's New**  
+We've expanded our analytics for AI Voice to track more outcomes from rider conversations. This includes tracking when a rider leaves a trip review, books/cancels/lists recurring trips, or checks their eligibility.
+
+**Pre-requisites**
+- Requires `LaunchAIVoice` feature flag
+
+<Accordion title="See More">
+
+#### Where You'll See It
+- The new data is available in the API response for `GET /ai-voice-conversations` and will be surfaced in *Admin > AI > Conversations* and Analytics.
+
+#### What You Can Do
+- Analyze the usage of several key AI Voice functions that were not previously tracked.
+- The system now automatically captures counts for the following actions per call: `leaveTripReviewActionCount`, `bookRecurringTripActionCount`, `cancelRecurringTripActionCount`, `listRecurringTripsActionCount`, and `eligibilityCheckActionCount`.
+
+#### Why This Matters
+This provides a more complete picture of how riders are interacting with AI Voice, enabling better analysis of the feature's usage and effectiveness. This data helps identify which functions are most valuable to riders and where improvements can be made.
+</Accordion>
+
+---
+
+</Update>
+
 <Update label="23 January 2026" description="1 Updates">
 
 ### 🧪 A/B Testing for AI Voice Models
