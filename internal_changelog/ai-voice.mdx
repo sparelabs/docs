@@ -2,6 +2,32 @@
 title: AI Voice
 rss: true
 ---
+<Update label="27 January 2026" description="1 Updates">
+
+### 🤖 Improved Booking Confirmation in AI Voice
+
+**What's New**  
+AI Voice has been updated to more reliably ask for confirmation from the rider before finalizing a trip booking. This enhancement reduces the likelihood of unintentional bookings.
+
+**Pre-requisites**
+- Requires `LaunchAIVoice` feature flag
+
+<Accordion title="See More">
+
+#### Where You'll See It
+- This is a behavioral change within the AI Voice phone call flow when a rider is booking a trip.
+
+#### What You Can Do
+- Riders interacting with AI Voice will now more consistently be asked to confirm trip details (like pickup, drop-off, and time) before the system proceeds to book the trip. This applies to both booking new trips and rebooking previous ones.
+
+#### Why This Matters
+Previously, AI Voice could sometimes book a trip without explicit final confirmation, potentially leading to errors or unwanted trips. This update strengthens the confirmation step, ensuring riders have a clear opportunity to review and confirm their trip details, which improves accuracy and user trust.
+</Accordion>
+
+---
+
+</Update>
+
 <Update label="26 January 2026" description="2 Updates">
 
 ### 🗣️ AI Voice Can Now Create Resolve Cases

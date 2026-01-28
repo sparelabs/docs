@@ -2,6 +2,59 @@
 title: Admin
 rss: true
 ---
+<Update label="27 January 2026" description="3 Updates">
+
+### 🔧 New `optionalField` Helper for Workflows
+
+**What's New**  
+A new `optionalField` Handlebars helper is now available when building JSON payloads for workflow webhooks. This helper allows you to create JSON that omits fields if their corresponding data is null or undefined, preventing malformed payloads.
+
+**Pre-requisites**
+- Requires Admin access
+
+<Accordion title="See More">
+
+#### Where You'll See It
+- *Settings > Workflows > Add Action > Send Webhook*. The helper can be used within the `JSON Payload` editor.
+
+#### What You Can Do
+- Use the `{{{optionalField "keyName" (stringify value)}}}` helper in your JSON templates. If the `value` is present, the helper will output a standard JSON key-value pair (e.g., `,"keyName":"the-value"`). If the `value` is null or undefined, it outputs an empty string, ensuring the field is completely omitted from the final JSON.
+
+#### Why This Matters
+Building dynamic JSON payloads for webhooks can be challenging when dealing with optional data, often leading to invalid JSON if a value is missing. This helper simplifies the process by ensuring that optional fields are only included when they have a value, making your webhook integrations more robust.
+</Accordion>
+
+---
+### ⚙️ Automatic Redirect After Joining a New Organization
+
+**What's New**  
+When you request access to an organization and are approved, you will now be automatically redirected to the page you were originally trying to access.
+
+**Pre-requisites**
+- Requires Admin access
+
+<Accordion title="See More">
+
+#### Where You'll See It
+- This occurs on the "Request to Join Organization" confirmation screen after an admin has approved your access request.
+
+#### What You Can Do
+- If you follow a link to a page in an organization you don't have access to, you'll be prompted to request access. After your request is approved, the system will now automatically navigate you to that original link. Previously, you would have to find your way back manually.
+
+#### Why This Matters
+The previous workflow for gaining access to a new organization was disjointed, requiring manual navigation after access was granted. This change creates a more seamless experience by automatically taking you to your intended destination once your access is confirmed.
+</Accordion>
+
+---
+### 🐛 Bug Fixes
+
+- **Command Palette (Superbox) Scrolling (CORE-4922)**
+  - _Resolution_: Fixed a bug where scrolling through a long list of results in the command palette (accessed with Ctrl/Cmd+K) was not working correctly.
+
+---
+
+</Update>
+
 <Update label="26 January 2026" description="2 Updates">
 
 ### 👤 Middle Name Field for Rider Profiles

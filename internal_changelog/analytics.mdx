@@ -2,6 +2,40 @@
 title: Analytics
 rss: true
 ---
+<Update label="27 January 2026" description="2 Updates">
+
+### 📊 Enhanced 'Fill Missing Dates' for Multi-Dimensional Charts
+
+**What's New**  
+The "Fill Missing Dates" toggle in Analytics now correctly backfills data for charts that use more than one dimension on the X-axis (e.g., "Date" and "Trip Status"). This ensures continuous timelines in your charts and tables, even when data is sparse.
+
+**Pre-requisites**
+- Requires `AnalyticsV2` feature flag
+- Requires Admin access
+
+<Accordion title="See More">
+
+#### Where You'll See It
+- *Analytics > Query Builder*. This applies when the `Fill missing dates` toggle is enabled for queries visualized as Table, Line, Bar, or Area charts.
+
+#### What You Can Do
+- Create a query with a time dimension and at least one other dimension on the X-axis. When you enable the `Fill missing dates` toggle, the chart or table will now display a complete series. For example, if you are charting "Trips by Status per Month" and there were no "Cancelled" trips in February, the system will now insert a "February" entry for the "Cancelled" status with a value of 0, instead of leaving a gap.
+
+#### Why This Matters
+Previously, using "Fill Missing Dates" with multiple dimensions on the X-axis didn't work, leading to gaps in charts and making trend analysis difficult. This enhancement correctly generates a complete, dense dataset, providing a more accurate and easier-to-read visualization of your data over time.
+</Accordion>
+
+---
+### 🐛 Bug Fixes
+
+- **Query Builder Chart Rendering and State Sync (CORE-4925)**
+  - _Resolution_: Fixed an issue where charts would sometimes fail to render when switching from a Table view to a Line, Bar, or Area chart. The view now updates instantly without requiring a refresh.
+  - _Resolution_: Resolved a bug where the date filter banner at the top of the Query Builder would not update correctly after the underlying data source (cube) of the query was changed.
+
+---
+
+</Update>
+
 <Update label="26 January 2026" description="3 Updates">
 
 ### 🔧 Improved Custom `COUNT` Measures in Query Builder
