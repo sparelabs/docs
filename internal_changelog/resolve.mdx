@@ -2,6 +2,57 @@
 title: Resolve
 rss: true
 ---
+<Update label="28 January 2026" description="2 Updates">
+
+### 🪄 AI-Powered Form Builder from Documents
+
+**What's New**  
+A new "Import from Document" feature in the Form Builder lets you upload a file (e.g., PDF, PNG, JPG) and have AI automatically create form fields based on the document's content.
+
+**Pre-requisites**
+- Requires Admin access and the `EngageAIScan` feature flag
+
+<Accordion title="See More">
+
+#### Where You'll See It
+- *Resolve > Forms* or *Eligibility > Forms*. When editing a form, click the new **Import from Document** button in the form builder header.
+
+#### What You Can Do
+- Upload a document containing a form.
+- The AI will analyze the document and present a list of detected fields, automatically identifying field types (Text, Toggle, Single Choice, etc.) and their options.
+- Review, edit, or delete the suggested fields in the "Detected Fields" modal.
+- Click "Import Fields" to add the selected fields to your form.
+
+#### Why This Matters
+Manually recreating complex paper or PDF forms in Spare can be time-consuming. This AI-powered tool drastically accelerates the process, allowing you to digitize existing forms in minutes instead of hours.
+</Accordion>
+
+---
+### 🔔 Notify Case Assignee on Deadline Escalations
+
+**What's New**  
+When setting up a deadline outcome in a business rule, you can now choose to notify the current case assignee dynamically. If a case is reassigned, the deadline notification will automatically go to the new assignee instead of a static list of users.
+
+**Pre-requisites**
+- Requires Admin access
+- *Note: This is a backend enhancement. The user interface to configure this option in Business Rules will be available in a future release.*
+
+<Accordion title="See More">
+
+#### Where You'll See It
+- The UI to select "Notify Case Assignee" will be available in *System > Rules > Business Rules* when configuring a "Deadline Reached" rule outcome.
+
+#### What You Can Do
+- Configure deadline escalations to be more dynamic, ensuring the right person is always notified.
+
+#### Why This Matters
+Previously, notifications could only be sent to a fixed list of users. This change ensures that the person directly responsible for a case is always notified of escalations, improving accountability and response times even when case ownership changes.
+</Accordion>
+
+---
+
+</Update>
+
 <Update label="27 January 2026" description="1 Updates">
 
 ### 🐛 Bug Fixes

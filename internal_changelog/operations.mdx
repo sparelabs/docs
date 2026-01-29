@@ -2,6 +2,42 @@
 title: Operations
 rss: true
 ---
+<Update label="28 January 2026" description="2 Updates">
+
+### 👤 Rider Middle Names in Lists
+
+**What's New**  
+To help differentiate between riders with similar names, the "Name" column on the Riders and Requests list pages now includes the rider's middle name, if available. The name will be displayed in `First Middle Last` format.
+
+**Pre-requisites**
+- Requires Admin access
+
+<Accordion title="See More">
+
+#### Where You'll See It
+- *System > Riders* (in the `Name` column of the rider list)
+- *Rides > Requests* (in the `Rider` column of the request list)
+
+#### What You Can Do
+- View the full name, including the middle name, for riders in list views, providing clearer identification at a glance.
+
+#### Why This Matters
+This provides more complete rider identification, reducing ambiguity for dispatchers and booking agents when managing riders with similar first and last names.
+</Accordion>
+
+---
+### 🐛 Bug Fixes
+
+- **Duty History Time Travel Stability**
+  * _Resolution_: Implemented more robust checks to handle corrupted duty history data. Previously, certain data issues could cause the Duty Time Travel view to load indefinitely. Now, the system will display a clear error message instead of freezing. A distributed lock was also re-instated to prevent future data corruption during history snapshotting.
+
+- **Duty Time Travel Timeline Accuracy (DR-2811)**
+  * _Resolution_: Fixed an issue where the timeline in Duty Time Travel did not correctly represent the time a request was associated with a duty. The system now correctly recognizes events like rematches and duty cancellations as endpoints for a duty period, ensuring the timeline is accurate.
+
+---
+
+</Update>
+
 <Update label="27 January 2026" description="2 Updates">
 
 ### 📅 Enhanced 'Arrive By' Window Calculation for Recurring Trips

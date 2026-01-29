@@ -2,6 +2,53 @@
 title: Analytics
 rss: true
 ---
+<Update label="28 January 2026" description="2 Updates">
+
+### 📊 Expanded Access to Custom Calculations for Administrators
+
+**What's New**  
+All users with the Administrator role can now create, edit, and delete custom calculations in the Analytics Query Builder. Previously, this capability required the separate "AccessToAnalytics" role to be assigned.
+
+**Pre-requisites**
+- Requires Admin access and the `AnalyticsV2` feature flag
+
+<Accordion title="See More">
+
+#### Where You'll See It
+- *Analytics > Query Builder* (the options to create and manage custom calculations are now available to all Administrators)
+
+#### What You Can Do
+- Administrators can now access the custom calculation editor without needing any additional role assignments.
+
+#### Why This Matters
+This change simplifies permission management by granting a core analytics capability to all administrators by default, removing the need for admins to assign an extra role for this function.
+</Accordion>
+
+---
+### ⚡️ Faster Saving for Custom Calculations
+
+**What's New**  
+The system for validating and saving custom calculations in Query Builder has been significantly optimized. The process, which could previously take up to 30 seconds, is now much faster, with benchmarks showing improvements of up to 7x.
+
+**Pre-requisites**
+- Requires Admin access and the `AnalyticsV2` feature flag
+
+<Accordion title="See More">
+
+#### Where You'll See It
+- *Analytics > Query Builder* (when creating or editing a custom calculation)
+
+#### What You Can Do
+- You will notice a significant performance improvement when you click the "Save" button after creating or editing a custom calculation.
+
+#### Why This Matters
+The slow save time for custom calculations was a major workflow interruption. This optimization dramatically speeds up the process, allowing you to build and iterate on custom reports more efficiently.
+</Accordion>
+
+---
+
+</Update>
+
 <Update label="27 January 2026" description="2 Updates">
 
 ### 📊 Enhanced 'Fill Missing Dates' for Multi-Dimensional Charts

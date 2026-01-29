@@ -2,6 +2,61 @@
 title: AI Voice
 rss: true
 ---
+<Update label="28 January 2026" description="3 Updates">
+
+### 🤖 Configure Case Creation for AI Voice Agents
+
+**What's New**  
+For AI Voice agents with the "Resolve" capability, a new "Resolve Configuration" section allows you to specify exactly which case types the agent can create. For each case type, you can add a custom guidance prompt to help the AI understand when to create that specific type of case.
+
+**Pre-requisites**
+- Requires Admin access and the `EngageAIVoice` feature flag
+
+<Accordion title="See More">
+
+#### Where You'll See It
+- *System > Experience > Agents*. When creating or editing an agent, if you select the `Resolve` capability, the new "Resolve Configuration" section will appear.
+
+#### What You Can Do
+- Click "Add Case Type" to open a modal where you can select an eligible case type from a dropdown.
+- Enter a "Guidance Prompt" to instruct the AI on when and how to use this case type (e.g., "Use this for complaints about a driver's behavior").
+- Add multiple case types for a single agent to handle, each with its own guidance.
+
+#### Why This Matters
+This gives you granular control over the AI Voice agent's ability to create cases. You can now direct the AI to use specific, pre-defined case types for different rider issues, ensuring that incoming cases are correctly categorized and routed from the start.
+</Accordion>
+
+---
+### 💬 Easier Editing for AI Voice Introduction Messages
+
+**What's New**  
+The "Introduction Message" field on the AI Voice Agent configuration page has been changed from a single-line input to a multi-line, resizable text area, making it easier to edit longer messages.
+
+**Pre-requisites**
+- Requires Admin access and the `EngageAIVoice` feature flag
+
+<Accordion title="See More">
+
+#### Where You'll See It
+- *System > Experience > Agents*. When creating or editing an agent, the `Introduction Message` field is now a larger, resizable text box.
+
+#### What You Can Do
+- Comfortably view, write, and edit multi-sentence greetings without needing to scroll horizontally within a small input field.
+
+#### Why This Matters
+Previously, editing long introduction messages was difficult in a small, single-line field. This UI improvement makes it much easier to manage and refine the agent's greeting.
+</Accordion>
+
+---
+### 🐛 Bug Fixes
+
+- **AI Voice Pronunciation of Sentences (AIP-755)**
+  * _Resolution_: Corrected an issue where AI Voice would mispronounce sentences by omitting spaces after punctuation (e.g., saying "Hello dot how are you" instead of "Hello. How are you?"). The system now correctly processes whitespace between words and punctuation for more natural-sounding speech.
+
+---
+
+</Update>
+
 <Update label="27 January 2026" description="1 Updates">
 
 ### 🤖 Improved Booking Confirmation in AI Voice
