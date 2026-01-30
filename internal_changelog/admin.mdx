@@ -2,6 +2,57 @@
 title: Admin
 rss: true
 ---
+<Update label="29 January 2026" description="2 Updates">
+
+### 🔑 More Secure API Key Generation
+
+**What's New**  
+The process for creating API keys is now more secure. The full key value is displayed only once at the time of creation and must be copied immediately.
+
+**Pre-requisites**
+- Requires Admin access with `Create API Key` permission
+- No feature flags required
+
+<Accordion title="See More">
+
+#### Where You'll See It
+- *Settings > Organization > API Keys*
+
+#### What You Can Do
+- When you click **Create API Key**, you will be guided through a two-step modal. After you create the key, its full value is displayed with a **Copy** button.
+- After you close this modal, the key can never be viewed again for security reasons. The list view will only show a masked version of the key (e.g., `sk_...1234`).
+
+#### Why This Matters
+This change enforces security best practices by preventing secret keys from being stored or displayed in plain text after their initial creation. This reduces the risk of accidental exposure of sensitive credentials.
+</Accordion>
+
+---
+### 💰 Enhanced Configuration for Distance-Based Fares
+
+**What's New**  
+Fare rules for distance-based pricing now support more complex scenarios with new modifiers that allow for different base fares and maximum fares based on rider tags.
+
+**Pre-requisites**
+- Requires `FareRules` feature flag
+- Requires Admin access with permissions to manage fare rules
+
+<Accordion title="See More">
+
+#### Where You'll See It
+- This is an enhancement to the fare calculation engine, configured in *Settings > Fares > Fare Rules*.
+
+#### What You Can Do
+- Two new configuration options, `baseFareModifiers` and `maximumFareModifiers`, are now available when creating custom, distance-based fare rules.
+- For example, you can now use `baseFareModifiers` to set a lower base fare for a 'Senior' rider tag before any per-mile charges are applied, all within a single fare rule.
+
+#### Why This Matters
+Previously, setting different base fares for different rider types within one distance-based rule was not possible and required complicated workarounds. These new modifiers provide the flexibility to build more granular and equitable fare structures directly in the system.
+</Accordion>
+
+---
+
+</Update>
+
 <Update label="28 January 2026" description="1 Updates">
 
 ### 🐛 Bug Fixes

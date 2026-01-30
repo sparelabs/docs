@@ -2,6 +2,33 @@
 title: Operations
 rss: true
 ---
+<Update label="29 January 2026" description="1 Updates">
+
+### 👤 See Who Overrode a Request Constraint
+
+**What's New**  
+The activity feed for a trip request now shows which user manually applied a constraint override, providing a clear audit trail for manual interventions.
+
+**Pre-requisites**
+- Requires `RequestActivityFeed` and `ConstraintOverrides` feature flags
+- Requires Admin access
+
+<Accordion title="See More">
+
+#### Where You'll See It
+- *Rides > Requests > (select a request) > Activity tab*
+
+#### What You Can Do
+- When a dispatcher locks a trip to a specific duty or makes another manual override, the activity log entry for that action will now include the name of the user who performed the override.
+
+#### Why This Matters
+Previously, it was difficult to track who made manual override decisions that affected a trip's assignment. This change adds accountability and makes it easier for operations managers to understand why a specific trip was forced onto a duty against standard system rules.
+</Accordion>
+
+---
+
+</Update>
+
 <Update label="28 January 2026" description="2 Updates">
 
 ### 👤 Rider Middle Names in Lists
