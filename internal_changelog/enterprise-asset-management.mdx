@@ -2,6 +2,40 @@
 title: Enterprise Asset Management
 rss: true
 ---
+<Update label="30 January 2026" description="2 Updates">
+
+### 🔋 Automated Issue Creation for Low Vehicle Battery
+
+**What's New**  
+The system can now automatically create an EAM Issue when a vehicle's telematics integration reports that its battery voltage has dropped below 12V. This helps proactively flag potential maintenance needs before they lead to vehicle downtime.
+
+**Pre-requisites**
+- Requires access to the Enterprise Asset Management (EAM) module.
+
+<Accordion title="See More">
+
+#### Where You'll See It
+- New issues created by this process will appear on the main issues list at *Enterprise Asset Management > Issues*.
+- The issue source will be identified as "Telematics".
+
+#### What You Can Do
+- Be automatically alerted to low-battery events without needing to manually monitor telematics data.
+- Triage and assign the automatically created issue as part of your standard maintenance workflow.
+
+#### Why This Matters
+This automation helps maintenance teams get ahead of battery-related vehicle failures, which are a common cause of operational disruptions. By creating an issue automatically, it ensures the problem is tracked and addressed promptly.
+</Accordion>
+
+---
+### 🐛 Bug Fixes
+
+- **EAM Issue Notification Fixes (EAM-845)**
+  * _Resolution_: Fixed a bug that caused duplicate notifications to be sent when a new EAM issue was created. In addition, notifications for new issues now include a direct link to the issue page for quicker access.
+
+---
+
+</Update>
+
 <Update label="29 January 2026" description="1 Updates">
 
 ### 🔧 Directly Edit Asset Status from the Issues Table

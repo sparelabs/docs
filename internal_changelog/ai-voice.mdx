@@ -2,6 +2,39 @@
 title: AI Voice
 rss: true
 ---
+<Update label="30 January 2026" description="2 Updates">
+
+### 🗣️ More Robust Address Confirmation
+
+**What's New**  
+AI Voice now uses an improved prompt and logic to confirm addresses with callers. To ensure accuracy, it will now explicitly read back the full address for confirmation before proceeding with a booking.
+
+**Pre-requisites**
+- Requires `LaunchAIVoice` feature flag.
+
+<Accordion title="See More">
+
+#### Where You'll See It
+- This is an improvement to the conversation flow during a call with AI Voice when a rider is booking a trip to a new address.
+
+#### What You Can Do
+- When a rider provides an address, AI Voice will confirm it by stating the full address (e.g., "123 Main Street, Anytown, Anystate") instead of a simplified version.
+- This gives the rider a clear opportunity to catch any errors in how the address was understood before the trip is booked.
+
+#### Why This Matters
+Inaccurate address capture is a key source of booking errors and rider frustration. This change makes the confirmation step more explicit and thorough, reducing the likelihood of trips being booked to the wrong location.
+</Accordion>
+
+---
+### 🐛 Bug Fixes
+
+- **AI Voice Conversation Export Labels (AIP-767)**
+  * _Resolution_: Updated the column headers in the AI Voice Conversation data export for better clarity. The field for the caller's phone number is now labeled `From` (previously `callerNumber`) and the call summary is now labeled `Summary` (previously `callSummary`).
+
+---
+
+</Update>
+
 <Update label="29 January 2026" description="1 Updates">
 
 ### 📞 More Call Details for AI Voice Conversations

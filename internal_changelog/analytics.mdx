@@ -2,6 +2,99 @@
 title: Analytics
 rss: true
 ---
+<Update label="30 January 2026" description="4 Updates">
+
+### 🔗 Join Duty Report and Vehicle Data
+
+**What's New**  
+You can now create reports that combine data from both the "Duty Report" and "Vehicle" cubes in the Query Builder. This allows for more comprehensive analysis linking duty performance to specific vehicle attributes.
+
+**Pre-requisites**
+- Requires `AnalyticsV2` feature flag.
+- Requires Admin access.
+
+<Accordion title="See More">
+
+#### Where You'll See It
+- *Analytics > Query Builder*
+
+#### What You Can Do
+- In the Query Builder, you can now select dimensions and metrics from the "Vehicle" cube when your primary cube is "Duty Report" (and vice-versa).
+- For example, you can build a report to analyze "Total On-Duty Hours" grouped by "Vehicle Make" or "Vehicle Model".
+
+#### Why This Matters
+Previously, analyzing duty and vehicle data together required exporting data from separate reports and merging them manually. This update enables direct, in-platform analysis, saving time and providing deeper insights into how vehicle characteristics impact operational duties.
+</Accordion>
+
+---
+### 📊 Expanded AI Voice Analytics
+
+**What's New**  
+The "AI Voice Conversation" data cube now includes eight new actions that can be tracked and analyzed. This provides deeper insight into how callers are interacting with AI Voice beyond booking, canceling, or checking ETAs.
+
+**Pre-requisites**
+- Requires `AnalyticsV2` and `LaunchAIVoice` feature flags.
+- Requires Admin access.
+
+<Accordion title="See More">
+
+#### Where You'll See It
+- *Analytics > Query Builder* (under the "AI Voice Conversation" data cube).
+
+#### What You Can Do
+- Analyze new caller outcomes including:
+  - `Leave Trip Review`
+  - `Book Recurring Trip`
+  - `Cancel Recurring Trip`
+  - `List Recurring Trips`
+  - `Eligibility Check`
+  - `Add Payment Method`
+  - `Create Resolve Case`
+- Each new action is available as a count, a boolean dimension (to see if it happened), and is included in aggregate metrics.
+
+#### Why This Matters
+This enhancement provides a more complete picture of AI Voice's capabilities and usage. You can now quantify a wider range of self-service actions, helping to better understand caller behavior and the value AI Voice delivers.
+</Accordion>
+
+---
+### 📤 Export Analytics Queries to CSV and XLSX
+
+**What's New**  
+A new data export engine allows you to export the results of your analytics queries into a compressed ZIP file containing either a CSV or XLSX file. The export process runs in the background, allowing you to continue working while your file is prepared.
+
+**Pre-requisites**
+- Requires `AnalyticsV2` feature flag.
+- Requires Admin access.
+
+<Accordion title="See More">
+
+#### Where You'll See It
+- This is a new backend capability that will power a forthcoming "Export" button within the *Analytics > Query Builder* interface.
+
+#### What You Can Do
+- Initiate an export of a query's results.
+- Choose between CSV and XLSX formats.
+- The system will process the export asynchronously and provide a link to download the zipped file upon completion.
+- Exports are limited to 500,000 rows to ensure system performance.
+
+#### Why This Matters
+This feature provides a robust and scalable way to get large datasets out of Spare Analytics for offline analysis, use in external tools, or for archival purposes, without tying up the user interface.
+</Accordion>
+
+---
+### 🐛 Bug Fixes
+
+- **Query Builder UI Improvements (CORE-4933)**
+  * _Resolution_: Fixed an issue in the *Analytics > Query Builder* where selecting a metric within the "Custom Calculation" modal could sometimes fail. The date picker was also improved to correctly identify and flag manually typed dates that are outside of a filter's allowed range.
+- **Data Accuracy for Vehicle Slots (CORE-4834)**
+  * _Resolution_: Corrected a data processing issue where vehicle slots that were deleted and then re-created with the same ID were not being handled correctly, ensuring more accurate reporting on slot-based metrics.
+- **In-Vehicle Trip Distance Correction**
+  * _Resolution_: A new background process now automatically detects and recalculates trips with erroneously large "in-vehicle trip distance" values. This improves the accuracy of any reports and analytics that rely on this metric.
+
+---
+
+</Update>
+
 <Update label="29 January 2026" description="1 Updates">
 
 ### 📊 New AI Voice Metrics for Analytics

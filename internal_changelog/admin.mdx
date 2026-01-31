@@ -2,6 +2,41 @@
 title: Admin
 rss: true
 ---
+<Update label="30 January 2026" description="2 Updates">
+
+### 🚀 Whitelabel Automation Pipeline
+
+**What's New**  
+A new internal "Work Order" pipeline has been introduced to begin automating the setup and provisioning of new white-label customer projects. This is a foundational feature aimed at accelerating new partner onboarding in the future.
+
+**Pre-requisites**
+- Requires Super admin permissions.
+
+<Accordion title="See More">
+
+#### Where You'll See It
+- This is a new backend service and data model that does not yet have a user interface. It lays the groundwork for future Super Admin tools.
+
+#### What You Can Do
+- This initial release establishes the core components, including:
+  - A `WorkOrder` data model to track setup tasks.
+  - A pipeline framework to run jobs and steps, such as creating Firebase and GCP projects.
+  - A client library for future UI and service integrations.
+
+#### Why This Matters
+This pipeline is the first step toward automating many of the technical tasks involved in launching a new service. By standardizing and automating these workflows, we can reduce setup time and ensure consistency across all new deployments.
+</Accordion>
+
+---
+### 🐛 Bug Fixes
+
+- **Address Validation in Templates (ENG-13112)**
+  * _Resolution_: Improved the way address custom fields are handled within templates (e.g., in Letters). Conditional logic, such as `{{#if rider.mailingAddress}}`, will now correctly evaluate as false if an address is incomplete (e.g., missing a street line or postal code), allowing fallback text to be displayed as intended.
+
+---
+
+</Update>
+
 <Update label="29 January 2026" description="2 Updates">
 
 ### 🔑 More Secure API Key Generation
