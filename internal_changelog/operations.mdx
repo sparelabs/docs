@@ -2,6 +2,19 @@
 title: Operations
 rss: true
 ---
+<Update label="2 February 2026" description="1 Updates">
+
+### 🐛 Bug Fixes
+
+- **Recurring Trip Time Window Calculation (DR-2704)**
+  - _Resolution_: Fixed an issue where pre-calculated pickup and drop-off time windows for recurring trips were not being used correctly during operations like rematching or vehicle breakdowns. The system now consistently applies these stored windows, and the fallback calculation logic correctly respects the `ArriveByV2` settings.
+- **Improved Vehicle Location Data Retrieval Stability**
+  - _Resolution_: Resolved an issue that could cause errors when fetching historical vehicle location data for a duty. The data retrieval process has been refactored to be more robust and prevent query failures.
+
+---
+
+</Update>
+
 <Update label="29 January 2026" description="1 Updates">
 
 ### 👤 See Who Overrode a Request Constraint
