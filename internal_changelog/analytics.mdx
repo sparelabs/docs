@@ -2,6 +2,87 @@
 title: Analytics
 rss: true
 ---
+<Update label="3 February 2026" description="4 Updates">
+
+### 📊 Improved "Add to Dashboard" Experience
+
+**What's New**  
+When adding a report to a dashboard, the selection modal now shows how many times that report already exists on each tab and provides a smoother workflow for selecting dashboards and tabs.
+
+**Pre-requisites**
+- Requires `AnalyticsV2` feature flag.
+
+<Accordion title="See More">
+
+#### Where You'll See It
+- *Analytics > Reports*: Click the three-dot menu on a report and select "Add to Dashboard" to open the improved modal.
+
+#### What You Can Do
+- When a report is already on a dashboard, the modal now shows a count next to the tab name (e.g., "Daily Summary Tab ×2").
+- The "Select a tab" dropdown is now disabled until a dashboard is chosen, preventing selection errors.
+
+#### Why This Matters
+This enhancement prevents users from accidentally adding the same report to a dashboard tab multiple times. The improved UI flow makes organizing complex dashboards faster and less error-prone.
+</Accordion>
+
+---
+### 📄 Human-Readable Filenames for Analytics Exports
+
+**What's New**  
+Exported files from Analytics now have clear, user-friendly filenames, making it much easier to identify and organize your downloaded reports.
+
+**Pre-requisites**
+- Requires `AnalyticsV2` feature flag.
+
+<Accordion title="See More">
+
+#### Where You'll See It
+- *Analytics > Query Builder* or *Analytics > Reports*: When using the "Export" feature, the downloaded file will have a new naming convention.
+
+#### What You Can Do
+- Export a report or a query from the Query Builder.
+- The downloaded filename will now be based on the report's name or "Query_Results" for ad-hoc queries, followed by a unique identifier (e.g., `Daily_Ridership_Report_abc123.csv`).
+- This replaces the previous generic filenames.
+
+#### Why This Matters
+Finding a specific exported file among many downloads was previously difficult. With descriptive filenames, you can now immediately identify the contents of an export without opening it, saving time and reducing confusion.
+</Accordion>
+
+---
+### 🌍 Timezone-Aware Analytics Queries
+
+**What's New**  
+Analytics queries using date filters and time-based dimensions now automatically respect your organization's configured timezone, ensuring data accurately reflects your local operational day.
+
+**Pre-requisites**
+- Requires `AnalyticsV2` feature flag.
+
+<Accordion title="See More">
+
+#### Where You'll See It
+- *Analytics > Query Builder* and *Analytics > Reports*: This change applies to all queries that use date dimensions or filters.
+
+#### What You Can Do
+- When you filter a report by a relative date range like "Today" or "Last 7 Days," the query will now use your organization's timezone to define the start and end of that period.
+- For example, a query for "today" will correctly capture all data from midnight to 11:59 PM in your local timezone, rather than defaulting to another timezone like UTC.
+
+#### Why This Matters
+Previously, reports filtered by relative dates could produce confusing results if the system's timezone differed from your organization's. This change ensures all analytics data is consistently aligned with your local time, leading to more accurate and intuitive reports.
+</Accordion>
+
+---
+### 🐛 Bug Fixes
+
+- **Query Builder Dimensions Now Correctly Displayed (CORE-4824)**
+  - _Resolution_: Fixed an issue in the Query Builder where some dimensions (like `assignee_full_name`) were incorrectly hidden from the selection list. All accessible dimensions now appear as expected.
+
+- **Custom Calculation Metric Selection Improved (CORE-4933)**
+  - _Resolution_: Resolved a bug in the Query Builder's custom calculation modal that could cause the metric selection dropdown to behave unreliably. Selecting metrics from the dropdown is now more stable.
+
+---
+
+</Update>
+
 <Update label="2 February 2026" description="1 Updates">
 
 ### 🐛 Bug Fixes

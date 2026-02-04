@@ -2,6 +2,55 @@
 title: Admin
 rss: true
 ---
+<Update label="3 February 2026" description="2 Updates">
+
+### 🔌 New Setting for MTI Open Fleet Integration
+
+**What's New**  
+A new setting is available for MTI (Mobile Technologies, Inc.) Open Fleet integrations that allows you to control whether fare and mileage data is sent to the external provider.
+
+**Pre-requisites**
+- Requires `OpenFleet` feature flag and Admin access.
+
+<Accordion title="See More">
+
+#### Where You'll See It
+- *Settings > Integrations > Open Fleet*: When creating or editing an MTI provider configuration.
+
+#### What You Can Do
+- When configuring an MTI integration, you will see a new toggle switch labeled "Propagate Fares and Miles."
+- Enable this toggle to send fare and mileage data to MTI. Disable it to withhold this information.
+
+#### Why This Matters
+This gives administrators more granular control over the data shared with third-party fleet providers. You can now choose to withhold financial and distance information if it's not required for the integration, enhancing data privacy and simplifying workflows.
+</Accordion>
+
+---
+### 🔑 Enhanced API Key Security
+
+**What's New**  
+For improved security, the full value of an API key is now displayed only once, immediately upon its creation. You must copy and store the key in a safe place at that time, as it will not be visible again within the Spare platform.
+
+**Pre-requisites**
+- Requires Admin access.
+
+<Accordion title="See More">
+
+#### Where You'll See It
+- *Settings > Developers > API Keys*: In the "Create API Key" modal.
+
+#### What You Can Do
+- When you create a new API key, its value will be displayed in the confirmation modal.
+- Copy this key and store it securely. Once you close this modal, you will not be able to retrieve the full key value again.
+
+#### Why This Matters
+This change aligns with industry best practices for handling sensitive credentials. By showing the key only once, it significantly reduces the risk of unauthorized access, as secret keys are no longer stored in a retrievable format in the UI.
+</Accordion>
+
+---
+
+</Update>
+
 <Update label="2 February 2026" description="1 Updates">
 
 ### ⚙️ Modern Service View Now Default
