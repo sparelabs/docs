@@ -2,6 +2,58 @@
 title: Resolve
 rss: true
 ---
+<Update label="4 February 2026" description="2 Updates">
+
+### 📝 Streamlined Rider Creation in Resolve
+
+**What's New**  
+To simplify the workflow for agents, the rider creation form within the Resolve interface now hides custom fields and defaults contact information to "contact only" rather than being used as login credentials.
+
+**Pre-requisites**
+- Requires access to the Spare Resolve product
+
+<Accordion title="See More">
+
+#### Where You'll See It
+- The "Add Rider" form accessed from within the *Resolve* product area.
+
+#### What You Can Do
+- When agents create a new rider in Resolve, they will see a simplified form without the custom fields section, allowing them to focus on core rider information.
+- The checkboxes to "Use as login credential" for phone and email will be unchecked by default.
+- Note: This change does not affect the rider creation process in other parts of the platform (like Engage). Custom fields will still appear when editing an existing rider in Resolve.
+
+#### Why This Matters
+This change streamlines the rider creation process for Resolve agents, reducing complexity and allowing them to create rider profiles more quickly and efficiently during case management.
+</Accordion>
+
+---
+### 🎙️ AI Voice Call Transcripts in Case Activity Feed
+
+**What's New**  
+For cases created through an AI Voice interaction, a new card now appears in the case activity feed. This card provides a call summary, an audio player for the recording, and a link to view the full, turn-by-turn conversation transcript.
+
+**Pre-requisites**
+- Requires `LaunchAIVoice` or `EngageAIVoice` feature flag
+- Requires `AiVoiceConversationView` permission
+
+<Accordion title="See More">
+
+#### Where You'll See It
+- *Resolve > Cases > [Select a case that was created by AI Voice]* (in the activity feed on the right).
+
+#### What You Can Do
+- View the new "AI Voice Call" card in the activity feed for a summary of the interaction.
+- Play the call audio directly from the card.
+- Click the card's title ("AI Voice Call") to open a detailed peek view containing the full conversation transcript between the rider and the AI agent.
+
+#### Why This Matters
+This gives agents full context for cases originating from AI Voice. Instead of just seeing that a case was created, they can now listen to the call and read the entire transcript to fully understand the rider's issue without leaving the case view.
+</Accordion>
+
+---
+
+</Update>
+
 <Update label="3 February 2026" description="1 Updates">
 
 ### 🐛 Bug Fixes

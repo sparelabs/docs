@@ -2,6 +2,55 @@
 title: AI Voice
 rss: true
 ---
+<Update label="4 February 2026" description="2 Updates">
+
+### 📅 Improved Date Recognition for AI Voice
+
+**What's New**  
+AI Voice is now better at understanding relative and ambiguous dates spoken by riders. By providing the AI with two weeks of calendar context during a call, it can more accurately process phrases like "yesterday" or "next Tuesday."
+
+**Pre-requisites**
+- Requires `LaunchAIVoice` feature flag
+
+<Accordion title="See More">
+
+#### Where You'll See It
+- This is a backend improvement to the AI Voice system. You'll notice its effects in the accuracy of trip bookings made via AI Voice, especially when riders use relative dates.
+
+#### What You Can Do
+- When a rider calls on a Wednesday and asks to book a trip for "yesterday at 2 PM," the system will now correctly recognize this as Tuesday at 2 PM.
+- Previously, ambiguous date formats (e.g., a rider saying "three two" for a date) could be misinterpreted (e.g., as March 2nd instead of February 3rd). The new context helps the AI correctly identify the intended date.
+
+#### Why This Matters
+This change reduces booking errors caused by misinterpreted dates, leading to a more reliable and accurate experience for riders using AI Voice. It ensures that the date a rider speaks is the date that gets booked.
+</Accordion>
+
+---
+### 💬 AI Chat Message Recording for Future Reporting
+
+**What's New**  
+The system now records all messages and outcomes from AI Chat conversations. This foundational work enables future analytics and reporting, providing insights into chat usage, common rider requests, and overall effectiveness.
+
+**Pre-requisites**
+- Requires `AiChat` feature flag
+
+<Accordion title="See More">
+
+#### Where You'll See It
+- This is a backend enhancement. While there are no immediate UI changes, it enables the future development of dashboards and reports related to AI Chat in the *Analytics* section.
+
+#### What You Can Do
+- This change automatically captures data in the background, including user messages, agent responses, and specific outcomes (like `bookTrip`, `checkEta`, or `cancelTrip`).
+- In the future, you will be able to run reports to understand how many riders use AI chat, what they are asking for, and how successful the AI is at resolving their requests.
+
+#### Why This Matters
+By capturing this data, we are building the foundation for powerful analytics tools. These future reports will help you understand rider engagement with AI Chat and identify opportunities to improve the service.
+</Accordion>
+
+---
+
+</Update>
+
 <Update label="2 February 2026" description="1 Updates">
 
 ### 🐛 Bug Fixes

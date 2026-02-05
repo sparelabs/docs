@@ -2,6 +2,97 @@
 title: Analytics
 rss: true
 ---
+<Update label="4 February 2026" description="4 Updates">
+
+### 🚀 Faster, More Reliable Analytics Exports
+
+**What's New**  
+CSV and XLSX exports from Analytics V2 now use a new asynchronous backend engine, making the process faster and more reliable for large datasets. Exported files will also feature human-friendly column headers instead of raw database names.
+
+**Pre-requisites**
+- Requires `AnalyticsV2` feature flag
+- Requires Admin access
+
+<Accordion title="See More">
+
+#### Where You'll See It
+- *Analytics > Query Builder* (the "Download" button)
+- *Analytics > Reports* (the download action for any saved report)
+
+#### What You Can Do
+- When you click to download a CSV or XLSX file, the system now creates an export task on the server. The UI will show an indeterminate progress bar while it polls for completion, after which the file will download automatically.
+- Review downloaded files with clean, readable headers (e.g., "Request Created At") instead of technical names (e.g., `Request.createdAt`).
+- Note: The PDF export process remains unchanged.
+
+#### Why This Matters
+Previously, exporting very large reports could be slow or time out. This new engine offloads the heavy work to the server, resulting in a much more stable and performant export experience, while the improved headers make the data easier to understand.
+</Accordion>
+
+---
+### 📊 Compare Report Data with Previous Periods
+
+**What's New**  
+You can now configure reports in Query Builder to compare data against a previous, equivalent period. This feature is available for Number, Line, and Bar charts, allowing you to easily visualize trends and changes over time.
+
+**Pre-requisites**
+- Requires `AnalyticsV2` feature flag
+- Requires Admin access
+
+<Accordion title="See More">
+
+#### Where You'll See It
+- *Analytics > Query Builder V2 > Chart* (a new "Comparison" section in the chart configuration panel).
+
+#### What You Can Do
+- Enable the "Compare with previous period" toggle for a report.
+- View a line chart showing two lines: a solid line for the current period and a dotted line for the previous period (e.g., this week vs. last week).
+- Hover over the chart to see tooltips that label the data as "Current" and "Previous" for easy identification.
+- See a summary of the percentage change in a Number chart.
+
+#### Why This Matters
+This feature eliminates the need to run two separate reports and compare them manually. It provides an integrated, at-a-glance view of performance trends, making it easier to spot growth, decline, or seasonal patterns in your data.
+</Accordion>
+
+---
+### 🎨 Modernized Color Picker in Query Builder
+
+**What's New**  
+The chart color selector in the Query Builder has been updated to a modern component. Multi-series charts (like Pie or Bar charts) will now automatically use a rotated palette of colors for better visual distinction between data series.
+
+**Pre-requisites**
+- Requires `AnalyticsV2` feature flag
+- Requires Admin access
+
+<Accordion title="See More">
+
+#### Where You'll See It
+- *Analytics > Query Builder V2 > Chart* (in the chart configuration panel).
+
+#### What You Can Do
+- Use the new, visually updated `ColorSwatchPicker` to select a base color for your chart.
+- When viewing a chart with multiple categories (e.g., a pie chart of trips by status), the system will now automatically apply a palette of related colors (e.g., different shades of blue) to each segment, making the chart easier to read.
+- Previously, a single color was often used for all series. Now, each series is distinct.
+
+#### Why This Matters
+This UI improvement makes charts with multiple data series more legible and professional. By automatically applying distinct but related colors, it's easier to differentiate between categories at a glance.
+</Accordion>
+
+---
+### 🐛 Bug Fixes
+
+- **Timezone Consistency in Analytics Exports (CORE-4883)**
+  - _Resolution_: Fixed an issue where data exports from Analytics could lack a timezone, leading to inconsistent or incorrect date and time values. The organization's timezone is now always included in the export query to ensure data accuracy.
+
+- **Accurate Booking Interface Percentage Metrics (CORE-4939)**
+  - _Resolution_: Corrected the calculation for booking interface percentage metrics in Analytics. Previously, the numerators included non-completed requests, which skewed the results. The metrics now correctly filter for and only consider `completed` requests, ensuring accurate percentages.
+
+- **Corrected "Total Travel Distance with Riders" Metric (CORE-4950)**
+  - _Resolution_: Fixed a bug in the deprecated `total_travel_distance_with_riders_miles_sum` metric that was caused by a double conversion from meters to miles, inflating its value. The calculation now uses the correct source value, ensuring accuracy.
+
+---
+
+</Update>
+
 <Update label="3 February 2026" description="4 Updates">
 
 ### 📊 Improved "Add to Dashboard" Experience

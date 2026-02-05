@@ -2,6 +2,40 @@
 title: Enterprise Asset Management
 rss: true
 ---
+<Update label="4 February 2026" description="2 Updates">
+
+### 🔧 Automatically Create Meter Entries from Inspections
+
+**What's New**  
+Inspection forms can now be configured to automatically create a vehicle meter entry using telematics data upon submission. This streamlines pre/post-trip inspections by removing the need for drivers to manually enter odometer readings.
+
+**Pre-requisites**
+- Requires `VehicleInspections` feature flag
+- Requires Admin access to configure forms
+
+<Accordion title="See More">
+
+#### Where You'll See It
+- *EAM > Forms > Edit Inspection Form* (a new "Creates Meter Entry" checkbox).
+
+#### What You Can Do
+- When creating or editing an inspection form, check the new "Creates Meter Entry" box.
+- When a driver submits this form via the Driver App, the system will automatically fetch the vehicle's latest odometer reading from its telematics device and create a new, corresponding entry in *EAM > Meter History*.
+
+#### Why This Matters
+This automation saves drivers time and reduces the potential for manual data entry errors. It ensures that vehicle meter readings are captured consistently and accurately as part of routine inspection workflows.
+</Accordion>
+
+---
+### 🐛 Bug Fixes
+
+- **Service Task Checkbox Shape Correction (EAM-852)**
+  - _Resolution_: In *EAM > Work Orders*, the checkbox for completing a service task in the "Line Items" tab was incorrectly appearing as an oval. This has been fixed, and the checkbox is now a perfect circle.
+
+---
+
+</Update>
+
 <Update label="3 February 2026" description="1 Updates">
 
 ### 🗂️ Group Work Orders by Asset

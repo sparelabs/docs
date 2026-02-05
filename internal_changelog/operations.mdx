@@ -2,6 +2,49 @@
 title: Operations
 rss: true
 ---
+<Update label="4 February 2026" description="2 Updates">
+
+### 💰 New Fare Rule Condition for Multimodal Trips
+
+**What's New**  
+A new condition is available in the fare rules engine that allows for fare adjustments based on the types of transport legs included in a multimodal journey.
+
+**Pre-requisites**
+- Requires `FareRules` feature flag
+- Requires Admin access
+
+<Accordion title="See More">
+
+#### Where You'll See It
+- *System Settings > Fares > Fare Rules > Create/Edit Rule* (in the "Conditions" section).
+
+#### What You Can Do
+- Create fare rules that specifically target multimodal trips containing certain leg types (e.g., `on_demand`, `public_transit`, `walking`).
+- For example, you can now implement a rule that makes a trip free if it includes a public transit leg by using the new `multimodal.containsAnyLegType` condition.
+
+#### Why This Matters
+This enhancement provides more granular control over multimodal pricing. It enables you to create sophisticated fare structures that encourage the use of specific transit modes within a single journey.
+</Accordion>
+
+---
+### 🐛 Bug Fixes
+
+- **Corrects Rematching for Recurring Trips (DR-2704)**
+  - _Resolution_: Fixed an issue where rematching a trip from a recurring series with a different intent (e.g., changing a "Leave At" trip to "Arrive By") would cause an error. The system now correctly recalculates time windows for the rematched trip instead of incorrectly trying to use the recurrence's original, stored windows.
+
+- **Accurate Travel Time Display in Request View**
+  - _Resolution_: Corrected an issue in the *Launch > Requests > [Select a Request]* details panel where the "Allowed time in vehicle" field was incorrectly displaying the driving time. For trips with a defined fixed-route travel time, that value is now correctly shown.
+
+- **Duty Pause/Resume Button Visibility**
+  - _Resolution_: The "Pause" and "Resume" actions for duties, visible in the *Live Map* duty details pane, are now correctly hidden for duties that are already in a `Completed` or `Cancelled` state.
+
+- **Prevents Errors for Trips with Mismatched Windows**
+  - _Resolution_: Removed strict backend validation that could cause errors when viewing or processing trips where the pickup and drop-off windows did not align with the trip's intent type. The system is now more flexible in handling these edge cases.
+
+---
+
+</Update>
+
 <Update label="2 February 2026" description="1 Updates">
 
 ### 🐛 Bug Fixes
