@@ -2,6 +2,72 @@
 title: Analytics
 rss: true
 ---
+<Update label="5 February 2026" description="3 Updates">
+
+### 📊 New Booking Completion Measures by Channel
+
+**What's New**  
+The `Requests` data source in Analytics now includes new measures to track booking completion rates for each booking channel (e.g., Admin Panel, Rider Web, AI Voice), allowing for more granular analysis of which channels are most successful.
+
+**Pre-requisites**
+- Requires `AnalyticsV2` feature flag to access analytics features.
+
+<Accordion title="See More">
+
+#### Where You'll See It
+- *Analytics > Query Builder* (when using the `Requests` data source, new measures will be available in the "Measures" selector).
+
+#### What You Can Do
+- Add new measures like `Admin Panel Completed Bookings`, `Rider Web Completed Bookings`, `AI Voice Booking Completion Percentage`, etc., to your reports.
+- Directly compare the number of completed trips and the percentage of successful bookings originating from different sources.
+- Build dashboards that visualize which booking channels have the highest and lowest completion rates.
+
+#### Why This Matters
+Previously, it was difficult to compare the booking success rates across different channels like the rider app versus the call center. This change provides direct, side-by-side metrics to understand channel performance, helping you focus resources on the most effective booking methods.
+</Accordion>
+
+---
+### 📈 Enhanced Cancellation Reason Analytics
+
+**What's New**  
+The `Cancellation Reasons` data source in Analytics has been updated to provide more detailed reporting options, including new measures to count system-generated versus custom-configured reasons.
+
+**Pre-requisites**
+- Requires `AnalyticsV2` feature flag to access analytics features.
+
+<Accordion title="See More">
+
+#### Where You'll See It
+- *Analytics > Query Builder* (when using the `Cancellation Reasons` data source).
+
+#### What You Can Do
+- Use new measures such as `Total Custom Cancellation Reasons` and `Total System Cancellation Reasons` to analyze cancellation trends.
+- Create reports that differentiate between cancellations caused by system logic (e.g., "No Vehicles Available") and those created by administrators for your specific operations.
+- All dimensions and measures in the data source now have clear, user-friendly titles.
+
+#### Why This Matters
+Understanding why trips are cancelled is key to improving service, but it was hard to separate system-driven cancellations from those configured by your team. This update lets you analyze system-defined reasons separately from your own custom reasons, providing clearer insights into operational versus administrative cancellation patterns.
+</Accordion>
+
+---
+### 🐛 Bug Fixes
+
+- **Corrected Analytics Dashboard PDF Export Layout (CORE-4983)**
+  - _Resolution_: Fixed an issue where chart widgets in analytics dashboards would be incorrectly sized or break across pages when using the "Print to PDF" function. The layout is now stable, ensuring charts and numeric values are displayed correctly in the printed output.
+
+- **Accurate Date Filtering for Total Revenue Report (CORE-4944)**
+  - _Resolution_: The "Total Revenue" analytics template now correctly filters revenue based on the trip's pickup time (`request.requested_pickup_time`) instead of when the charge was created. This ensures revenue is attributed to the correct day of service.
+
+- **Aligned NTD Report Vehicle Hours with Break Policies (CORE-4973)**
+  - _Resolution_: The "Actual Vehicle Hours" calculation in the NTD Report has been corrected to only subtract non-revenue breaks. This ensures that time from paid breaks (those marked with `includeInRevenueMetrics: true`) is correctly included in vehicle hour totals, aligning the report with standard policies.
+
+- **Corrected Scheduled Hours for Cancelled Duties in Reports (CORE-4943)**
+  - _Resolution_: Fixed an issue in analytics where scheduled vehicle hours for a cancelled duty were calculated based on its original scheduled end time. The calculation now correctly uses the cancellation timestamp (`cancelledTs`) as the end time, ensuring accurate reporting for duties that end early.
+
+---
+
+</Update>
+
 <Update label="4 February 2026" description="4 Updates">
 
 ### 🚀 Faster, More Reliable Analytics Exports
