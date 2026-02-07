@@ -2,6 +2,116 @@
 title: Analytics
 rss: true
 ---
+<Update label="6 February 2026" description="5 Updates">
+
+### 📈 Multi-Value Filters for Custom Calculations
+
+**What's New**  
+You can now filter by multiple values at once when creating custom calculations in the Query Builder. The `=` operator now supports `IN` conditions (e.g., `Status = 'Completed', 'On Time'`) and the `!=` operator supports `NOT IN` conditions, simplifying the creation of complex filters.
+
+**Pre-requisites**
+- Requires `AnalyticsV2` feature flag
+- Requires Admin access
+
+<Accordion title="See More">
+
+#### Where You'll See It
+- *Analytics > Query Builder* (when adding or editing a filter for a custom calculation)
+
+#### What You Can Do
+- Enter a comma-separated list of values into the filter's value field when using the `=` or `!=` operator.
+- For example, to create a metric that counts trips for a specific set of rider tags, you can now use a single filter: `Rider Tag = 'VIP', 'Staff', 'Student'`.
+- This replaces the previous need to create multiple `OR` conditions for each individual value.
+
+#### Why This Matters
+This change makes it significantly faster and easier to build custom calculations that rely on filtering multiple dimension values. It reduces complexity and the potential for errors compared to building many individual filter conditions.
+</Accordion>
+
+---
+### 📋 New Specialized Multimodal Report
+
+<Warning>This feature is currently categorized as 'Do Not Enable - In Development' and is not yet ready for customer use. Please await communications from the Product team on a feature rollout plan.</Warning>
+
+**What's New**  
+A new specialized report is available for organizations that operate multimodal services. This report provides tailored analytics for understanding performance across different transportation modes.
+
+**Pre-requisites**
+- Requires `MetabaseReports` feature flag
+- Requires Admin access
+
+<Accordion title="See More">
+
+#### Where You'll See It
+- *Analytics > Specialized Reports*
+
+#### What You Can Do
+- For enabled organizations, a new "Multimodal Reporting" dashboard will appear in the list of available specialized reports.
+- Access pre-built visualizations and metrics focused on multimodal journey performance.
+
+#### Why This Matters
+This provides organizations with complex, multi-modal operations access to a dedicated report that is not available through the standard Query Builder, enabling deeper insights into their specific service types.
+</Accordion>
+
+---
+### 💬 AI Chat Message Analytics Cube
+
+**What's New**  
+A new "AI Chat Message" data cube is now available in the Query Builder. This cube allows you to build detailed reports on AI Chat interactions, including message volume, actions taken, and authentication status.
+
+**Pre-requisites**
+- Requires `AnalyticsV2` feature flag
+- Requires Admin access
+
+<Accordion title="See More">
+
+#### Where You'll See It
+- *Analytics > Query Builder* (in the data cube selector dropdown)
+
+#### What You Can Do
+- Build reports using dimensions like "Action Type" (e.g., booking, ETA, cancellation), "Authentication Status", and "Error Type".
+- Measure performance with metrics such as "Message Count" and "Booking Action Count".
+- For example, you can create a report to see how many riders successfully book a trip via AI Chat versus just checking an ETA.
+
+#### Why This Matters
+This new cube provides direct visibility into the performance and usage of AI Chat, helping you understand how riders are interacting with the tool and identify areas for improvement.
+</Accordion>
+
+---
+### 💳 Enhanced Payment Method Analytics Cube
+
+**What's New**  
+The "Payment Method" analytics cube has been significantly updated with new fields and clear descriptions for all measures and dimensions, making it easier to analyze and report on rider payment data.
+
+**Pre-requisites**
+- Requires `AnalyticsV2` feature flag
+- Requires Admin access
+
+<Accordion title="See More">
+
+#### Where You'll See It
+- *Analytics > Query Builder* (when selecting the "Payment Method" cube)
+
+#### What You Can Do
+- Analyze payment methods using new dimensions like "Card Brand", "Card Expiry Month/Year", and "Status".
+- Utilize new measures including "Total Payment Methods", "Archived Payment Method Count", and "Average Balance".
+- Hover over any field in the cube to see a clear, descriptive tooltip explaining what it represents.
+
+#### Why This Matters
+Previously, the payment method cube had limited fields and no in-app documentation. It is now a fully-featured and self-documenting tool for understanding payment method usage, status, and balances across your rider base.
+</Accordion>
+
+---
+### 🐛 Bug Fixes
+
+- **Duty Report Accuracy (CORE-4665)**
+  - _Resolution_: The Duty Report cube now correctly filters out requests with a 'cancelled' status from its `request_count` measure. This ensures that productivity metrics like "Requests per Vehicle Hour" are accurate and not inflated by cancelled trips.
+- **AI Voice Conversation Cube Calculation (AIP-634)**
+  - _Resolution_: Fixed an issue where the "Average Actions Per Conversation" measure in the "AI Voice Conversation" cube was calculated incorrectly. The formula has been corrected for accurate reporting.
+
+---
+
+</Update>
+
 <Update label="5 February 2026" description="3 Updates">
 
 ### 📊 New Booking Completion Measures by Channel

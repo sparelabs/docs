@@ -2,6 +2,65 @@
 title: Admin
 rss: true
 ---
+<Update label="6 February 2026" description="3 Updates">
+
+### 🎥 Media Uploads for Custom Fields
+
+**What's New**  
+You can now configure "File Upload" custom fields to accept video and audio files. When enabled for a field, the maximum file size for uploads increases from 20MB to 100MB to accommodate larger media files.
+
+**Pre-requisites**
+- Requires `AllowMediaUploadsOnFileFields` feature flag
+- Requires Admin access
+
+<Accordion title="See More">
+
+#### Where You'll See It
+- *Settings > Custom Fields* (when creating or editing a custom field with the type "File Upload" or "Multiple File Uploads")
+
+#### What You Can Do
+- When editing a file-based custom field, you will see a new "Allow media uploads" toggle.
+- When this is enabled, users filling out a form with this field can upload common video and audio formats (e.g., `.mp4`, `.mov`, `.mp3`, `.wav`).
+- For example, to collect video evidence for an incident report, you can now create a form with a media-enabled file upload field.
+
+#### Why This Matters
+This enhancement provides greater flexibility for data collection, allowing organizations to gather richer information like video clips or audio recordings directly through custom forms.
+</Accordion>
+
+---
+### 👤 'Product' Justification for Access Requests
+
+**What's New**  
+For internal Spare employees, the modal for requesting access to an organization now includes a "Product" preset button. Clicking this button automatically populates the justification text field.
+
+**Pre-requisites**
+- Requires Super admin permissions
+
+<Accordion title="See More">
+
+#### Where You'll See It
+- In the "Request Access" modal that appears when attempting to view an organization without having the required permissions.
+
+#### What You Can Do
+- Click the new "Product" button, which appears alongside the existing "Debug", "Support", "Investigate", and "QA" buttons.
+- The justification text area will be automatically filled with "I need access for a Product task".
+
+#### Why This Matters
+This streamlines the internal workflow for Spare's Product team members who need to request access to customer organizations for product-related tasks.
+</Accordion>
+
+---
+### 🐛 Bug Fixes
+
+- **Dropdowns Hidden in Drawers (ENG-1389)**
+  - _Resolution_: Fixed a display issue where dropdown menus (e.g., from search bars) would sometimes appear behind side panels or drawers like the `PeekView`. These menus will now correctly render on top of all other interface elements.
+- **AI Workflow Step Loading Failure (CORE-4986)**
+  - _Resolution_: Resolved an issue that prevented the "AI Workflow" step from loading within the workflow editor in settings. The page now loads correctly, allowing for the configuration of AI-powered workflow steps.
+
+---
+
+</Update>
+
 <Update label="5 February 2026" description="1 Updates">
 
 ### 🐛 Bug Fixes
