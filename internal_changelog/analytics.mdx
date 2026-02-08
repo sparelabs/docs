@@ -2,6 +2,18 @@
 title: Analytics
 rss: true
 ---
+<Update label="7 February 2026" description="1 Updates">
+
+### 🐛 Bug Fixes
+
+-   **Improved Reliability for Analytics Exports (CORE-4976)**
+    *   _Resolution_: Enhanced the analytics export process to be more resilient. The system now better detects and handles failures during data streaming, preventing the generation of incomplete or corrupt files and providing clearer error messages when an export cannot be completed successfully.
+
+-   **Corrected Scheduled Hours for Cancelled Duties in Reports (CORE-4943)**
+    *   _Resolution_: Fixed a data calculation issue in duty-related analytics reports. The 'Scheduled Vehicle Hours' metric for cancelled duties is now correctly calculated using the duty's actual cancellation time instead of its originally scheduled end time, ensuring more accurate reporting.
+
+</Update>
+
 <Update label="6 February 2026" description="5 Updates">
 
 ### 📈 Multi-Value Filters for Custom Calculations
