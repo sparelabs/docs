@@ -2,6 +2,87 @@
 title: Analytics
 rss: true
 ---
+<Update label="9 February 2026" description="4 Updates">
+
+### 📊 Modernized Analytics Charts with ECharts
+
+**What's New**  
+We've upgraded our charting library from Recharts to ECharts for all Bar, Pie, Line, and Area charts across the Analytics platform. This brings smoother animations, improved tooltips, and a more modern look and feel to your dashboards and reports.
+
+**Pre-requisites**
+- Requires `AnalyticsV2` feature flag.
+
+<Accordion title="See More">
+
+#### Where You'll See It
+- *Analytics > Dashboards*
+- *Analytics > Report View*
+- *Analytics > Query Builder*
+
+#### What You Can Do
+- Experience faster and more interactive charts when viewing any dashboard or report.
+- Hover over data points to see redesigned, clearer tooltips.
+- Notice the smoother rendering and updated visual style on all time-series and categorical charts.
+
+#### Why This Matters
+This migration provides a more robust and performant foundation for future charting enhancements. It also delivers an immediate visual and interactive improvement to all existing charts, making data exploration a better experience.
+</Accordion>
+
+---
+### 🔍 Use Multiple Values in Custom Calculation Filters
+
+**What's New**  
+When creating a custom calculation in the Query Builder, you can now add multiple values to a single filter using the "is equal to" (`=`) or "is not equal to" (`!=`) operators. This allows you to build more complex calculations that match a list of items with "OR" logic.
+
+**Pre-requisites**
+- Requires `AnalyticsV2` feature flag.
+
+<Accordion title="See More">
+
+#### Where You'll See It
+- *Analytics > Query Builder > Custom Calculations (modal) > Filters* section.
+
+#### What You Can Do
+- For an "is equal to" filter, select multiple values from a dropdown or enter them manually.
+- For example, you can now create a custom metric for "Trips in Zone A, B, or C" by adding "Zone A", "Zone B", and "Zone C" to a single filter on the `Zone Name` dimension.
+- The expression preview will automatically update to show `ONE OF (...)` to reflect the multi-value condition.
+
+#### Why This Matters
+Previously, you had to create separate filters for each value (e.g., `Zone Name = A` OR `Zone Name = B`), which was cumbersome. This change simplifies the creation of multi-value logic, making it faster and more intuitive to build sophisticated custom metrics.
+</Accordion>
+
+---
+### 🧹 Cleaner Query Builder with Product-Aware Cubes
+
+**What's New**  
+The Analytics Query Builder now automatically hides data cubes related to Spare products that are not enabled for your organization. This declutters the data source list, making it easier and faster to find relevant data for your reports.
+
+**Pre-requisites**
+- Requires `AnalyticsV2` feature flag.
+
+<Accordion title="See More">
+
+#### Where You'll See It
+- *Analytics > Query Builder > Data* tab (in the left-hand panel listing available data sources).
+
+#### What You Can Do
+- If your organization does not use Spare EAM, you will no longer see EAM-related cubes (like `Assets`, `Work Orders`, `Parts`).
+- Similarly, cubes for Spare Resolve and Spare Communications will only appear if you have those products enabled.
+
+#### Why This Matters
+Before, all data cubes were visible to all organizations, regardless of which products they used, creating a cluttered and potentially confusing experience. Now, the Query Builder is tailored to your organization's specific product suite, simplifying report creation and reducing the chance of errors.
+</Accordion>
+
+---
+### 🐛 Bug Fixes
+
+- **"All Time" Rider Metrics Calculation (CORE-4948)**
+  - _Resolution_: Fixed an issue where "All Time" rider metrics (e.g., "Recurring Riders (All Time)") in Analytics V2 did not respect the dashboard's date filter. These metrics now correctly calculate totals based on data up to the end date of the selected date range, ensuring consistency with Analytics V1 behavior.
+
+---
+
+</Update>
+
 <Update label="7 February 2026" description="1 Updates">
 
 ### 🐛 Bug Fixes

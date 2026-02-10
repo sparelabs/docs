@@ -2,6 +2,61 @@
 title: Enterprise Asset Management
 rss: true
 ---
+<Update label="9 February 2026" description="2 Updates">
+
+### 📋 New UI for Managing Work Orders
+
+**What's New**  
+A new section has been added to the Admin interface for viewing and managing EAM Work Orders. This provides a dedicated, internal-facing space for tracking the entire lifecycle of a work order and its associated automated jobs.
+
+**Pre-requisites**
+- Requires Admin access.
+- No feature flags required.
+
+<Accordion title="See More">
+
+#### Where You'll See It
+- A new **Work Orders** item in the main navigation menu, accessible via the `/admin/:orgId/work-orders` URL path.
+
+#### What You Can Do
+- View a list of all Work Orders with their status, type, and timestamps.
+- Create new Work Orders for internal processes.
+- Click into a specific Work Order to see its details and a pipeline view of its associated Job Runs.
+- Expand individual steps within a job run to view detailed logs for debugging purposes.
+
+#### Why This Matters
+This feature provides an administrative tool to directly interact with and debug the Work Order and Job Pipeline systems, which are central to many automated data processing workflows within Spare.
+</Accordion>
+
+---
+### ⚙️ More Flexible EAM Data Importing
+
+**What's New**  
+The backend for the EAM data importer has been rewritten to be more flexible and user-friendly. It now provides better feedback and automatically handles a wider variety of data formats, reducing manual data preparation effort.
+
+**Pre-requisites**
+- Requires Admin access.
+- No feature flags required.
+
+<Accordion title="See More">
+
+#### Where You'll See It
+- The EAM data import workflow, found under *EAM > Assets* or *EAM > Parts* by clicking the **Import** button.
+
+#### What You Can Do
+- When importing CSV files for Assets, Parts, or Energy Entries, the system is now better at:
+  - **Recognizing dates:** More flexible date format handling reduces import errors.
+  - **Linking data:** Automatically looks up related items (like an Asset Group or Vendor) by name, so you no longer need to find and use internal IDs in your import files.
+  - **Providing feedback:** The dry-run validation process is more robust, laying the groundwork for future enhancements like downloadable error reports.
+
+#### Why This Matters
+This overhaul makes the EAM data import process more intuitive and less error-prone. By automatically handling data lookups and being more lenient with date formats, it significantly reduces the manual effort required to prepare and import EAM data.
+</Accordion>
+
+---
+
+</Update>
+
 <Update label="6 February 2026" description="2 Updates">
 
 ### 🔋 Configurable Low Battery Alerts

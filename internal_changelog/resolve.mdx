@@ -2,6 +2,35 @@
 title: Resolve
 rss: true
 ---
+<Update label="9 February 2026" description="1 Updates">
+
+### 🌐 Create Spare Resolve Cases from Your Public Website
+
+**What's New**  
+You can now configure Spare to accept new cases created from external sources, such as a "Contact Us" form embedded on your public website. A new organization setting allows you to specify which website domains are allowed to submit cases directly into Spare Resolve.
+
+**Pre-requisites**
+- Requires Admin access to configure.
+- No feature flags required.
+
+<Accordion title="See More">
+
+#### Where You'll See It
+- A new field for **Allowed External Domains** will be available in your organization's settings page to control which websites can create cases.
+
+#### What You Can Do
+- Add your public-facing website domains (e.g., `your-agency-website.com`) to an allowlist in your organization settings.
+- Work with your web development team to integrate your website forms with the new public API endpoint (`POST /v1/public/engage/cases`).
+- When a form is submitted, the system will intelligently try to match the submission to an existing rider by email or phone, or create a new rider if no match is found.
+
+#### Why This Matters
+This enables a seamless workflow for your customers to submit support requests or feedback directly from your own website. All submissions are captured as cases in Spare Resolve, centralizing your customer communication and eliminating manual data entry.
+</Accordion>
+
+---
+
+</Update>
+
 <Update label="6 February 2026" description="1 Updates">
 
 ### 🐛 Bug Fixes
