@@ -2,6 +2,65 @@
 title: Analytics
 rss: true
 ---
+<Update label="10 February 2026" description="3 Updates">
+
+### ⏱️ Live Row Count Progress for Report Exports
+
+**What's New**  
+When exporting a large report from Spare Analytics, the download modal now displays a live, updating count of the rows that have been processed.
+
+**Pre-requisites**
+- Requires `AnalyticsV2` feature flag
+
+<Accordion title="See More">
+
+#### Where You'll See It
+- In the "Preparing your download" modal that appears after clicking the download button for a report in *Analytics > Reports*.
+
+#### What You Can Do
+- Previously, the modal showed a generic "Preparing your download..." message with no indication of progress. Now, it will display text like "Preparing your download... (10,000 rows processed)" that updates periodically as the file is generated.
+
+#### Why This Matters
+For very large reports, it was difficult to know if an export was making progress or had stalled. This provides real-time feedback, giving you confidence that your data is being prepared and an idea of the export's progress.
+</Accordion>
+
+---
+### 🏷️ Unified Product Naming for Spare Analytics
+
+**What's New**  
+To improve clarity and consistency, the product previously known as "Spare Analytics V2" is now simply "Spare Analytics". The legacy analytics product has been renamed to "Spare Analyze".
+
+**Pre-requisites**
+- Requires `AnalyticsV2` feature flag
+
+<Accordion title="See More">
+
+#### Where You'll See It
+- This change is visible in the main product switcher dropdown at the top of the Spare platform, as well as in all related menus and page titles.
+
+#### What You Can Do
+- This is a visual and naming update; no functionality has changed. The products you use remain the same, just with clearer names.
+
+#### Why This Matters
+This change simplifies product naming and provides a more intuitive user experience when navigating between different parts of the Spare platform.
+</Accordion>
+
+---
+### 🐛 Bug Fixes
+
+- **Report Stability and Performance (CORE-4998)**
+  * _Resolution_: Fixed an issue where Analytics reports with multiple dimensions could cause the browser to slow down or crash. The system now more efficiently handles how it fills in missing date information, preventing the massive increase in rows that previously caused performance problems.
+
+- **Report Template Metric Correction (CORE-4999)**
+  * _Resolution_: Corrected several report templates in the Template Library that were using a "Boarding Percentage" metric instead of the intended and correctly named "Booking Percentage" metric. Existing reports built from these templates will now show the correct data.
+
+- **NTD Report Calculation Accuracy (CORE-4973)**
+  * _Resolution_: Adjusted the formula for the "Actual Vehicle Hours" metric in the NTD Report to more accurately account for break times. The calculation now correctly subtracts non-revenue break time, ensuring the reported hours align with NTD standards.
+
+---
+
+</Update>
+
 <Update label="9 February 2026" description="4 Updates">
 
 ### 📊 Modernized Analytics Charts with ECharts

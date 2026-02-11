@@ -2,6 +2,74 @@
 title: Operations
 rss: true
 ---
+<Update label="10 February 2026" description="3 Updates">
+
+### 🔁 Simplified Cancellation for Return Trips
+
+**What's New**  
+When you cancel a trip that is part of a linked outbound/return pair, the cancellation drawer will now automatically offer the option to cancel the corresponding return/outbound trip at the same time.
+
+**Pre-requisites**
+- No feature flags required (previously required `promptToCancelReturnTrip` feature flag)
+
+<Accordion title="See More">
+
+#### Where You'll See It
+- In the cancellation drawer, which appears after clicking the **"Cancel Request"** button for a request on pages like *Rides > Live Requests* or the Request details view.
+
+#### What You Can Do
+- A new checkbox, "Also cancel the matching return trip," will appear when a linked trip is detected. You can choose to cancel only the selected trip or both trips simultaneously with a single action.
+
+#### Why This Matters
+This saves dispatchers time and prevents forgotten cancellations for the other half of a journey. It helps reduce the chance of unnecessary vehicle assignments and no-shows for the linked trip.
+</Accordion>
+
+---
+### 📊 On-Time Performance Timeline Now Available for All Requests
+
+**What's New**  
+The On-Time Performance (OTP) timeline chart, which visualizes a trip's schedule against its actual performance, is now available by default for all completed requests.
+
+**Pre-requisites**
+- No feature flags required (previously required `requestOTPTimeline` feature flag)
+
+<Accordion title="See More">
+
+#### Where You'll See It
+- *Rides > Requests > [Select a completed request] > Activity* tab, within the "Request History" section.
+
+#### What You Can Do
+- Review a visual timeline that compares the scheduled pickup and drop-off windows with the actual times the events occurred, providing a clear, at-a-glance view of the trip's punctuality.
+
+#### Why This Matters
+This chart was previously limited to certain users. Making it universally available provides all dispatchers and operations staff with a powerful tool to quickly investigate and understand the on-time performance of any past trip.
+</Accordion>
+
+---
+### 💬 Modern Activity Feed for Duties
+
+**What's New**  
+The "Activity" tab on the duty details page has been upgraded to a modern, filterable activity feed that includes support for adding and viewing comments.
+
+**Pre-requisites**
+- No feature flags required (previously required `dutyActivityFeed` feature flag)
+
+<Accordion title="See More">
+
+#### Where You'll See It
+- *Rides > Duties > [Select a duty] > Activity* tab.
+
+#### What You Can Do
+- Previously, this tab showed a static list of events. The new feed is interactive, allowing you to add comments directly to the duty's timeline and filter the events shown for easier review.
+
+#### Why This Matters
+This enhancement turns the duty activity log into a collaborative tool. It allows for better communication and record-keeping among dispatchers and managers by enabling them to leave contextual notes and comments directly on a duty's timeline.
+</Accordion>
+
+---
+
+</Update>
+
 <Update label="4 February 2026" description="2 Updates">
 
 ### 💰 New Fare Rule Condition for Multimodal Trips
