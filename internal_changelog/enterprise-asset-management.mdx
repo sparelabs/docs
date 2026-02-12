@@ -2,6 +2,80 @@
 title: Enterprise Asset Management
 rss: true
 ---
+<Update label="11 February 2026" description="4 Updates">
+
+### 📄 Redesigned Asset Details Page
+
+**What's New**  
+The Asset Details page has a new design featuring a persistent sidebar menu. This replaces the previous top-tab navigation, making it easier to switch between the many sections of an asset's record.
+
+**Pre-requisites**
+- Requires access to the Enterprise Asset Management product.
+
+<Accordion title="See More">
+
+#### Where You'll See It
+- *Enterprise Asset Management > Assets > [Select any asset]*
+
+#### What You Can Do
+- Use the new left-hand sidebar to navigate between an asset's Details, Faults, Work Orders, Meter History, and other related information tabs.
+
+#### Why This Matters
+As more information and capabilities were added to assets, the previous tab-based layout became crowded. The new sidebar navigation provides a scalable and organized way to access all asset details without horizontal scrolling.
+</Accordion>
+
+---
+### ➕ Add Issues to Work Orders Directly from Issue Details
+
+**What's New**  
+You can now add an issue to a work order directly from the issue's detail page. A new "Add to Work Order" button has been added to the page header.
+
+**Pre-requisites**
+- Requires Admin access and the `EAM_WRITE_ANY_WORK_ORDER` permission.
+
+<Accordion title="See More">
+
+#### Where You'll See It
+- *Enterprise Asset Management > Issues > [Select an issue]* (The new button is located in the top-right action menu.)
+
+#### What You Can Do
+- Click the "Add to Work Order" button to open a drawer where you can either create a new work order for the issue or add the issue to an existing one.
+
+#### Why This Matters
+Previously, you had to navigate away from an issue to the Work Orders section to create a link. This change streamlines the workflow, allowing you to convert reported issues into actionable work orders more efficiently.
+</Accordion>
+
+---
+### 📦 Import Part Inventory via CSV
+
+**What's New**  
+A new "Part Inventory" option is available in the EAM import tool. This allows you to upload a CSV file to perform a bulk update of your part inventory counts.
+
+**Pre-requisites**
+- Requires Admin access and the `EAM_CREATE_ANY_IMPORT` permission.
+
+<Accordion title="See More">
+
+#### Where You'll See It
+- *Enterprise Asset Management > Imports > New Import* (Select "Part Inventory" from the "What are you importing?" dropdown.)
+
+#### What You Can Do
+- Prepare a CSV with columns for part identifier, location, and new quantity. Upload the file, specify an adjustment reason (e.g., "Initial stock count"), and the system will generate a single draft inventory adjustment reflecting all the changes.
+
+#### Why This Matters
+Manually adjusting inventory for many parts is time-consuming. This feature enables you to quickly update your entire inventory from an external system or after a physical stock take, saving significant time and reducing manual data entry errors.
+</Accordion>
+
+---
+### 🐛 Bug Fixes
+
+- **Inconsistent Work Order Field Labels (EAM-825)**
+  - _Resolution_: Renamed field labels on the Work Order page for better clarity and consistency. For example, "Notes" on a line item is now explicitly labeled "Line Item Notes" to distinguish it from the main work order notes.
+
+---
+
+</Update>
+
 <Update label="9 February 2026" description="2 Updates">
 
 ### 📋 New UI for Managing Work Orders

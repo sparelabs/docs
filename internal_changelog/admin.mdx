@@ -2,6 +2,74 @@
 title: Admin
 rss: true
 ---
+<Update label="11 February 2026" description="3 Updates">
+
+### 🎨 GUI for 'Spare Action' Step in Workflows
+
+**What's New**  
+When configuring a "Spare Action" step in a workflow, you can now build the request body using a simple key-value interface instead of writing raw JSON. A toggle allows you to switch between this new GUI mode and the traditional "Manual" JSON editor.
+
+**Pre-requisites**
+- Requires Admin access and the `WRITE_ANY_WORKFLOW` permission. No feature flags required.
+
+<Accordion title="See More">
+
+#### Where You'll See It
+- *Settings > System > Workflows > [Edit a workflow] > "Spare Action" step configuration*
+
+#### What You Can Do
+- Use the GUI to add fields for the request body. You can use dot-notation in keys (e.g., `metadata.custom_id`) to create nested objects. Handlebars expressions can be used in values, and the system will automatically handle data types (e.g., a pure Handlebars expression resolving to an object will be treated as an object, not a string).
+
+#### Why This Matters
+Building API request bodies in raw JSON is complex and error-prone, especially with nested data and Handlebars expressions. The new GUI simplifies this process, making it faster and more reliable to create powerful, automated workflow actions.
+</Accordion>
+
+---
+### 🚀 Whitelabel Automation Pipeline Enhancements
+
+**What's New**  
+New automation jobs have been added to the whitelabel pipeline to manage app deployments. This includes new integrations for publishing to the Apple App Store, configuring Google Cloud and Firebase projects, and uploading app assets.
+
+**Pre-requisites**
+- Requires Super admin permissions.
+
+<Accordion title="See More">
+
+#### Where You'll See It
+- *Super Admin > Work Orders* (New fields and actions are available when managing work orders for whitelabel apps.)
+
+#### What You Can Do
+- Manage assets for custom branding, associate work orders with specific organizations, and trigger automated workflows for app store publishing and cloud project setup.
+
+#### Why This Matters
+This is part of a larger initiative to automate the entire whitelabel app creation and deployment process, reducing manual effort and speeding up delivery for new branded apps.
+</Accordion>
+
+---
+### 🌐 Language Selector on Login Pages
+
+**What's New**  
+The language selector dropdown, previously only available after logging in, now appears in the footer of all authentication pages.
+
+**Pre-requisites**
+- No feature flags required.
+
+<Accordion title="See More">
+
+#### Where You'll See It
+- The footer of any Spare login page (e.g., the admin login screen).
+
+#### What You Can Do
+- Select a language from the dropdown in the footer to translate the login page content before entering your credentials.
+
+#### Why This Matters
+This improves accessibility for users who prefer to navigate the platform in a language other than English, allowing them to translate the experience right from the first page they see.
+</Accordion>
+
+---
+
+</Update>
+
 <Update label="10 February 2026" description="1 Updates">
 
 ### 🔑 Self-Serve Configuration for External Case Creation Domains

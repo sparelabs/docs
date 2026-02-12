@@ -2,6 +2,39 @@
 title: Resolve
 rss: true
 ---
+<Update label="11 February 2026" description="2 Updates">
+
+### 🔐 Granular Edit Permissions for Case Forms & Types
+
+**What's New**  
+The system now checks for specific, row-level permissions before showing edit controls for Case Forms and Case Type Tags. Previously, edit access was based on a broader, global permission.
+
+**Pre-requisites**
+- Requires Admin access. Edit capability is determined by row-level permissions (e.g., `WRITE_ANY_CASE_FORM`) configured in user roles.
+
+<Accordion title="See More">
+
+#### Where You'll See It
+- *Resolve > Form Setup > [Select a Form]* (Edit/Save buttons)
+- *Resolve > Settings > Case Type Tags* (Edit/Delete actions)
+
+#### What You Can Do
+- Admins can now grant users permission to edit *specific* case forms or tags, without giving them access to all of them. Users will only see edit controls for the items they are explicitly allowed to modify.
+
+#### Why This Matters
+This provides more granular and secure control over who can modify case management configurations. It prevents users from accidentally editing forms or tags they shouldn't have access to, aligning the UI with the backend's row-level security model.
+</Accordion>
+
+---
+### 🐛 Bug Fixes
+
+- **Case Management Permission Issues (ENG-1240)**
+  - _Resolution_: Addressed several permission-related issues in case management. The system now correctly enforces the `WRITE_ANY_CASE_STATUS` permission before allowing a status change, ensures users with 'View Forms' permissions can see forms, and reduces excessive permission error notifications.
+
+---
+
+</Update>
+
 <Update label="10 February 2026" description="1 Updates">
 
 ### 🐛 Bug Fixes

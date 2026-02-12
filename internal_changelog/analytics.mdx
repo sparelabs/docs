@@ -2,6 +2,42 @@
 title: Analytics
 rss: true
 ---
+<Update label="11 February 2026" description="2 Updates">
+
+### 🗺️ Configurable Service & Fleet Filters for Reports
+
+**What's New**  
+You can now explicitly map which service and fleet dimensions are controlled by the main filters in your analytics reports. This gives you precise control, especially when a report contains data from multiple services or fleets.
+
+**Pre-requisites**
+- Requires the `AnalyticsV2` feature flag and Admin access.
+
+<Accordion title="See More">
+
+#### Where You'll See It
+- *Analytics > Query Builder V2* (New "Service filter dimension" and "Fleet filter dimension" banners appear with dropdown pickers.)
+
+#### What You Can Do
+- Select a specific dimension (e.g., `Request.service_name` or `Duty.service_name`) for the Service filter to target.
+- Disable a top-level filter for a report if it is not relevant.
+- Ensure filters target the exact data you intend, with a clear banner indicating the current selection.
+
+#### Why This Matters
+Previously, filters automatically applied to the first available dimension, which could lead to confusion or incorrect filtering in complex reports. Now, you have explicit control to ensure filters target the exact data you intend.
+</Accordion>
+
+---
+### 🐛 Bug Fixes
+
+- **Custom SQL Report Export Failures (CORE-5050)**
+  - _Resolution_: Fixed an issue where some custom SQL reports would fail to generate or export due to an "Illegal types" error from the database. The underlying query logic has been corrected to handle data aggregation properly.
+- **Query Builder V2 Not Saving Demo Data Prompt (CORE-5041)**
+  - _Resolution_: Corrected an issue where the `demoDataPrompt` property was being incorrectly removed when saving a report's configuration through the Query Builder V2 JSON editor.
+
+---
+
+</Update>
+
 <Update label="10 February 2026" description="3 Updates">
 
 ### ⏱️ Live Row Count Progress for Report Exports
