@@ -2,6 +2,144 @@
 title: Enterprise Asset Management
 rss: true
 ---
+<Update label="12 February 2026" description="6 Updates">
+
+### 🛠️ Centralized Asset Maintenance View
+
+<Warning>This feature is currently categorized as 'Do Not Enable - In Development' and is not yet ready for customer use. Please await communications from the Product team on a feature rollout plan.</Warning>
+
+**What's New**  
+A new Maintenance page provides a centralized, board-style view for managing an asset's open work orders, unlinked issues, and upcoming service schedules. You can now drag and drop issues and schedules directly onto work orders to link them.
+
+**Pre-requisites**
+- Requires `EamMaintenance` feature flag
+- Requires Admin access
+
+<Accordion title="See More">
+
+#### Where You'll See It
+- *Admin > EAM > Maintenance* (new sidebar item)
+
+#### What You Can Do
+- View a list of all assets with open maintenance items.
+- Click an asset to see a detailed board view with columns for "Open Work Orders," "Unlinked Issues," and "Upcoming Service Schedules."
+- Drag issues or schedules from their columns and drop them onto a work order card to link them.
+- Perform quick edits directly from the cards, such as changing a work order's assignee or an issue's severity.
+- Create new work orders directly from an issue or schedule.
+
+#### Why This Matters
+This change consolidates maintenance tasks into a single, interactive view, streamlining the process of organizing and addressing asset issues and scheduled services.
+</Accordion>
+
+---
+### 🔗 Link Issues to Existing Work Orders
+
+**What's New**  
+When adding an issue to a work order, you can now choose to link it to one of the asset's existing open work orders or create a new one, preventing duplicate work orders.
+
+**Pre-requisites**
+- No feature flags required
+- Requires Admin access
+
+<Accordion title="See More">
+
+#### Where You'll See It
+- *Admin > EAM > Issues* (in the action menu for an issue row)
+- *Admin > EAM > Issues > [Issue Details]* (via the "Add to Work Order" button)
+
+#### What You Can Do
+- When you select "Add to Work Order," a new modal appears listing any open work orders for that asset.
+- Select an existing work order from the list to link the current issue to it.
+- If no open work orders exist (or if you prefer), you can proceed to create a new work order, which will be pre-filled with the issue's details.
+
+#### Why This Matters
+This enhancement prevents the creation of redundant work orders for the same asset and makes it easier to consolidate related maintenance tasks into a single job.
+</Accordion>
+
+---
+### 📝 View Issue Descriptions Directly on Work Orders
+
+**What's New**  
+The list of associated issues on a work order's detail page now includes a "Description" column, providing more context without needing to click into each issue. This description is also included when printing a work order.
+
+**Pre-requisites**
+- No feature flags required
+- Requires Admin access
+
+<Accordion title="See More">
+
+#### Where You'll See It
+- *Admin > EAM > Work Orders > [Select a Work Order]* (in the "Issues" table)
+- Printed PDF of a work order
+
+#### What You Can Do
+- View the full description for each issue linked to a work order directly in the "Issues" table. Long descriptions are truncated with a tooltip.
+- Print a work order to PDF and see the issue descriptions included for technicians.
+- The "Issue Number" and "Source" columns have been removed from this view to prioritize more useful information.
+
+#### Why This Matters
+Surfacing the issue description directly on the work order gives technicians and managers immediate access to important details about a problem, improving diagnostic and repair efficiency.
+</Accordion>
+
+---
+### 🏷️ Simplified Asset Labels in EAM Tables
+
+**What's New**  
+The "Asset" column across EAM tables now displays only the asset's unique identifier by default. Asset Make and Model are now available as separate, optional columns that can be enabled via the column configuration menu.
+
+**Pre-requisites**
+- No feature flags required
+- Requires Admin access
+
+<Accordion title="See More">
+
+#### Where You'll See It
+- Tables in *Admin > EAM > Service Reminders*, *Inspections*, *Issues*, and *Work Orders*.
+
+#### What You Can Do
+- **Before:** The "Asset" column showed a combined string like "V-101 - Ford Transit."
+- **Now:** The "Asset" column shows just "V-101" for a cleaner look.
+- Use the table's column visibility settings (the gear icon) to add "Asset Make" and "Asset Model" as separate columns if you need that information visible.
+
+#### Why This Matters
+This provides a cleaner, more consistent display and gives users the flexibility to show or hide detailed asset information as needed, improving table readability.
+</Accordion>
+
+---
+### 📄 More Descriptive Importer Error Messages
+
+**What's New**  
+The EAM data importer now provides more specific error messages during validation, including the exact value from your import file that caused the failure.
+
+**Pre-requisites**
+- No feature flags required
+- Requires Admin access
+
+<Accordion title="See More">
+
+#### Where You'll See It
+- *Admin > EAM > Assets* (or other EAM lists) > 'Import' button > Validation Step.
+
+#### What You Can Do
+- When an import file fails validation, the error message in the results table will now display the specific value that is causing the issue.
+- **Example:** Instead of a generic "Invalid date" message, you might see an error indicating that the value "25/13/2025" is incorrect.
+
+#### Why This Matters
+Clearer, more specific error messages reduce the time and effort required to troubleshoot and correct data import files, making the import process faster and more efficient.
+</Accordion>
+
+---
+### 🐛 Bug Fixes
+
+- **Energy Entry Form Validation (EAM-915, EAM-924)**
+  * _Resolution_: Fixed two issues in the Energy Entry form. A missing validation error now correctly appears if the "Cost per Unit" field is left blank. Additionally, the "Total Cost" field, which is calculated automatically, is now correctly disabled to prevent manual edits.
+- **Inspection Form Number Inputs (EAM-908)**
+  * _Resolution_: Fixed an issue on inspection forms where number-based checks (e.g., "Brake Pad Thickness") could not be marked as failed. Previously, entering a value outside the passing range would automatically correct it to the minimum/maximum allowed value. Now, out-of-range values are accepted, and the inspection item is correctly marked as "Failed."
+
+---
+
+</Update>
+
 <Update label="11 February 2026" description="4 Updates">
 
 ### 📄 Redesigned Asset Details Page

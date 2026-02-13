@@ -2,6 +2,40 @@
 title: Operations
 rss: true
 ---
+<Update label="12 February 2026" description="2 Updates">
+
+### ⏱️ Display Multiple Estimates During Trip Negotiation
+
+**What's New**  
+The trip negotiation experience for booking agents has been enhanced to display a wider range of booking options, including those that are potentially or likely to be late, each with a clear status badge.
+
+**Pre-requisites**
+- Requires `MultipleEstimates` feature flag
+- Requires Admin access
+
+<Accordion title="See More">
+
+#### Where You'll See It
+- *Admin > Create Request* (when booking a trip)
+
+#### What You Can Do
+- When booking a trip, the options will now show all available time windows, not just the on-time ones.
+- Successful, on-time estimates are shown with a green "On Time" badge.
+- Windows with no available drivers are shown with a red "Likely Late" badge.
+- Windows with some uncertainty are shown with a yellow "Possibly Late" badge.
+
+#### Why This Matters
+This provides dispatchers and booking agents with a more complete picture of vehicle availability, allowing them to better negotiate trip times with riders and set realistic expectations.
+</Accordion>
+
+---
+### 🐛 Bug Fixes
+
+- **Duty Schedule Performance (DR-2831)**
+  * _Resolution_: Fixed a bug in the *Launch > Duty Schedule+* page where, under certain filtering conditions, the system would attempt to load all duties in the entire organization, causing significant performance degradation. The page now correctly handles cases with no matching duties.
+
+</Update>
+
 <Update label="11 February 2026" description="1 Updates">
 
 ### 🐛 Bug Fixes

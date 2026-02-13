@@ -2,6 +2,84 @@
 title: Analytics
 rss: true
 ---
+<Update label="12 February 2026" description="3 Updates">
+
+### 🗓️ Filter Dashboards by Day of the Week
+
+**What's New**  
+You can now add a "Day of Week" filter to Analytics dashboards. This allows you to quickly scope all reports on a dashboard to specific days, such as viewing performance for weekdays versus weekends.
+
+**Pre-requisites**
+- Requires `AnalyticsV2` feature flag
+- Requires Admin access
+
+<Accordion title="See More">
+
+#### Where You'll See It
+- *Admin > Analytics > [Dashboard Name]* (in the filter bar at the top)
+
+#### What You Can Do
+- In a dashboard's filter bar, add a "Day of Week" filter alongside existing filters like Date, Fleet, and Service.
+- Set a default value for the filter (e.g., Monday, Tuesday, Wednesday, Thursday, Friday).
+- The selected days apply to all reports on the dashboard that support this dimension.
+- When you click into a specific report from the dashboard, the Day of Week filter state is maintained.
+
+#### Why This Matters
+This provides a powerful new way to segment and analyze data, making it easy to compare operational patterns and performance across different days of the week.
+</Accordion>
+
+---
+### ⏱️ Report on Total Duty Interruption Length
+
+**What's New**  
+The Duty Report data cube now includes new dimensions and measures for analyzing the total duration of interruptions. You can now build reports to measure and aggregate interruption time in both seconds and hours.
+
+**Pre-requisites**
+- Requires `AnalyticsV2` and `DutyInterruptions` feature flags
+- Requires Admin access
+
+<Accordion title="See More">
+
+#### Where You'll See It
+- *Admin > Analytics > Query Builder* (when using the "Duty Report" or "Duty Precomputed Metrics" data cubes)
+
+#### What You Can Do
+- In the Query Builder, you can now select and add the following to your reports:
+  - **Dimensions:** "Total Interruption Length (Seconds)" and "Total Interruption Length (Hours)".
+  - **Measures:** "Sum of Total Interruption Length (Seconds)" and "Sum of Total Interruption Length (Hours)".
+
+#### Why This Matters
+This enables organizations to quantify the impact of duty interruptions on service time, driver productivity, and operational costs.
+</Accordion>
+
+---
+### ⚠️ Safer Default and Performance Warnings for "Fill Missing Dates"
+
+**What's New**  
+The "Fill missing dates" option in the Analytics Query Builder now defaults to **off** to prevent accidental performance issues. Additionally, a new warning icon will appear if you enable this option for queries where it could cause significant slowdowns.
+
+**Pre-requisites**
+- Requires `AnalyticsV2` feature flag
+- Requires Admin access
+
+<Accordion title="See More">
+
+#### Where You'll See It
+- *Admin > Analytics > Query Builder* (in the "Pivot" section of the Chart Panel)
+
+#### What You Can Do
+- **Before:** "Fill missing dates" was enabled by default for all new reports.
+- **Now:** This option is disabled by default. You must actively check the box to enable it.
+- A new warning icon and tooltip will appear next to the checkbox if you enable it on a query that is not a simple time-series chart (e.g., a table chart or a chart with a high-cardinality ID field on the X-axis).
+
+#### Why This Matters
+Unintentionally using "Fill missing dates" on large, complex datasets was a common cause of slow reports and timeouts. This change provides a safer default and guides users away from performance-impacting configurations.
+</Accordion>
+
+---
+
+</Update>
+
 <Update label="11 February 2026" description="2 Updates">
 
 ### 🗺️ Configurable Service & Fleet Filters for Reports

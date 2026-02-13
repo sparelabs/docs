@@ -2,6 +2,58 @@
 title: Admin
 rss: true
 ---
+<Update label="12 February 2026" description="2 Updates">
+
+### 🔧 New `flatten` Helper for Flexible Workflow Matching
+
+**What's New**  
+A new `flatten` Handlebars helper is now available in Workflows. This helper normalizes a string by converting it to lowercase and removing all non-alphanumeric characters, allowing for more flexible and robust comparisons.
+
+**Pre-requisites**
+- Requires `MultipleWorkflows` feature flag
+- Requires Admin access
+
+<Accordion title="See More">
+
+#### Where You'll See It
+- *Admin > Workflows > [Workflow Name] > [Filter or Variable step]*
+
+#### What You Can Do
+- When configuring a "Filter" or "Variable" step in a workflow, you can use `{{flatten some.value}}` in the value fields. The helper will appear in autocomplete suggestions.
+- **Example:** A filter step can now successfully compare `{{flatten trigger.payload.rider.lastName}}` to `{{flatten 'obrien'}}` even if the rider's last name is "O'Brien," as both will be normalized to `obrien`.
+
+#### Why This Matters
+This makes it easier to build workflows that can handle variations in user input, such as differences in capitalization or punctuation, leading to more reliable automated checks.
+</Accordion>
+
+---
+### 🏷️ Human-Readable Names in Simulation Configuration
+
+**What's New**  
+The simulation configuration UI now displays human-readable Fleet and Service names in accordion titles and inputs, instead of their underlying IDs, making the tool more intuitive.
+
+**Pre-requisites**
+- No feature flags required
+- Requires Admin access
+
+<Accordion title="See More">
+
+#### Where You'll See It
+- *Admin > [Simulation Configuration Page]*
+
+#### What You Can Do
+- **Before:** Accordion titles for configuring a fleet or service in a simulation would show an ID like `fleet-abc-123`.
+- **Now:** The titles will show the actual name, such as "Downtown Core Fleet."
+- The system gracefully falls back to showing the ID if the name cannot be found (e.g., during initial loading).
+
+#### Why This Matters
+Using descriptive names instead of opaque IDs makes the simulation configuration process more intuitive and less prone to error, as users can easily identify the fleets and services they are modifying.
+</Accordion>
+
+---
+
+</Update>
+
 <Update label="11 February 2026" description="3 Updates">
 
 ### 🎨 GUI for 'Spare Action' Step in Workflows
