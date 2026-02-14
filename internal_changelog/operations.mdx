@@ -2,6 +2,66 @@
 title: Operations
 rss: true
 ---
+<Update label="13 February 2026" description="3 Updates">
+
+### ⏱️ Arrive-By V2 Window Calculations for Recurring Trips
+
+<Warning>This feature is currently categorized as 'Do Not Enable - In Development' and is not yet ready for customer use. Please await communications from the Product team on a feature rollout plan.</Warning>
+
+**What's New**  
+The Arrive-By V2 logic, which uses precise pickup and dropoff windows, is now available for recurring trips. This replaces the legacy system that relied on a single "maximum time in vehicle" setting, enabling more flexible and accurate scheduling for recurring arrive-by bookings.
+
+**Pre-requisites**
+- Requires `ArriveByV2ForRecurringTrips` and `ArriveByV2` feature flags.
+- Requires Admin access to configure services.
+
+<Accordion title="See More">
+
+#### Where You'll See It
+- *Services > (select service) > Edit > Windows & Engine tab* (The "Arrive-By Trips" visualization now behaves differently for recurring trips when this feature is enabled, removing the buffer bar).
+- When creating recurring "Arrive-By" trips, the system will now generate requests with both pickup and dropoff windows instead of using the older `maxTimeInVehicleSeconds` constraint.
+
+#### What You Can Do
+- Enable more precise, window-based scheduling for recurring trips that have a required arrival time.
+- Configure services to use this modern scheduling logic for all trip types, ensuring consistency between on-demand and recurring bookings.
+
+#### Why This Matters
+Previously, recurring "Arrive-By" trips used a less precise scheduling method that could limit flexibility. This update aligns recurring trips with the more advanced Arrive-By V2 windowing system, providing better service quality and more reliable on-time performance for your most consistent riders.
+</Accordion>
+
+---
+### 🗺️ Time Travel Timeline Now Includes External Duties
+
+**What's New**  
+The Request Time Travel timeline now correctly displays activity for trips assigned to external duties, such as those handled by a third-party provider. The timeline will now show synthesized duty periods and data points derived from the trip's slots, providing a more complete picture of the trip's history.
+
+**Pre-requisites**
+- No feature flags required.
+- Requires Admin access to view the Time Travel tab.
+
+<Accordion title="See More">
+
+#### Where You'll See It
+- *Requests > (select a request assigned to an external duty) > Time Travel tab* (The "Lateness Over Time" chart and activity timeline will now be populated).
+
+#### What You Can Do
+- Analyze the full history of a trip, even when it's fulfilled by an external fleet, without gaps in the timeline.
+- Diagnose issues related to pickup/dropoff times for externally-managed trips using the same tools as for internal trips.
+
+#### Why This Matters
+Previously, the Time Travel timeline would appear empty for trips on external duties, making it impossible to analyze their historical performance. This change fills in those gaps, giving dispatchers and operations managers full visibility into every trip, regardless of which fleet fulfilled it.
+</Accordion>
+
+---
+### 🐛 Bug Fixes
+
+- **Incorrect Walking Duration in Journey Timeline (RAD-969)**
+  * _Resolution_: Fixed an issue where walking legs within a journey, particularly those created from the rider app, displayed an incorrect duration in the Admin journey timeline. The system now correctly handles the duration (provided in seconds) without applying an erroneous conversion.
+
+---
+
+</Update>
+
 <Update label="12 February 2026" description="2 Updates">
 
 ### ⏱️ Display Multiple Estimates During Trip Negotiation

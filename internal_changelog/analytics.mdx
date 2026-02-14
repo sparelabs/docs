@@ -2,6 +2,46 @@
 title: Analytics
 rss: true
 ---
+<Update label="13 February 2026" description="2 Updates">
+
+### ⚙️ Automated Migration of V1 Custom Reports to Analytics V2
+
+**What's New**  
+For organizations being migrated, custom reports previously created in the legacy "Analyze" module will now automatically appear in the modern "Analytics" V2 interface. This migration preserves the report's queries, dimensions, measures, and layouts, making them immediately available in the new system.
+
+**Pre-requisites**
+- Requires `AnalyticsV2` feature flag.
+- Requires Super admin permissions to execute the migration script.
+
+<Accordion title="See More">
+
+#### Where You'll See It
+- *Analytics > Reports* (Your old custom reports from "Analyze" will now be listed here).
+
+#### What You Can Do
+- Access, view, and edit all of your historical custom reports within the Analytics V2 product.
+- Leverage the advanced features of Analytics V2, such as improved filtering and dashboarding, with your existing reports without needing to rebuild them from scratch.
+
+#### Why This Matters
+This automated process saves significant time and effort by eliminating the need for manual recreation of reports. It ensures a seamless transition from the legacy system to Analytics V2, allowing you to maintain historical continuity while gaining the benefits of the new platform.
+</Accordion>
+
+---
+### 🐛 Bug Fixes
+
+- **Gaps in Charts Incorrectly Displayed as Zero (No Ticket ID)**
+  * _Resolution_: Fixed a visual regression in line and area charts where periods with no data were incorrectly plotted as a zero value. Missing data points will now correctly appear as a gap in the chart, preventing misinterpretation of trends. Bar charts will continue to use zero for missing values to maintain correct stacking behavior.
+
+- **Boolean Filters Caused Query Errors (CORE-4932)**
+  * _Resolution_: Fixed an issue in the Query Builder where using a filter on a boolean dimension (e.g., "Is Same Day Cancellation") would cause a database error. The filter now correctly sends `1` or `0` instead of a string, allowing these queries to run successfully.
+
+- **Stale Data in Analytics Due to Missing Timestamp Updates (CORE-5030)**
+  * _Resolution_: Fixed a backend issue where certain actions—like updating request lateness, travel duration, or fare pass status—did not refresh the `updatedAt` timestamp. This ensures that the data pipeline now recognizes these updates, preventing stale or outdated information from appearing in analytics reports.
+
+---
+
+</Update>
+
 <Update label="12 February 2026" description="3 Updates">
 
 ### 🗓️ Filter Dashboards by Day of the Week

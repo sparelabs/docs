@@ -2,6 +2,107 @@
 title: Admin
 rss: true
 ---
+<Update label="13 February 2026" description="4 Updates">
+
+### ✍️ New GUI for Workflow "Spare Action" Steps
+
+**What's New**  
+Configuring a "Spare Action" step in a workflow is now much easier with a new graphical user interface (GUI). Instead of writing raw JSON, you can now use a user-friendly table to add, edit, and manage the fields for an API request body.
+
+**Pre-requisites**
+- Requires `MultipleWorkflows` feature flag.
+- Requires Admin access to configure Workflows.
+
+<Accordion title="See More">
+
+#### Where You'll See It
+- *Settings > Workflows > (select a workflow) > (add or edit a "Spare Action" step)*
+
+#### What You Can Do
+- **Switch Between Modes:** A new "Fields" / "JSON" toggle lets you switch between the new GUI and the traditional raw JSON editor at any time.
+- **Use Autocomplete for Keys:** When adding a field in the GUI, the "Key" input provides autocomplete suggestions based on the available fields for the selected API endpoint.
+- **Access Nested Fields:** You can use dot-notation (e.g., `metadata.homeAddress`) in the key input to set values for nested objects.
+- **Use Handlebars for Values:** The "Value" input is a Handlebars-aware editor, providing autocomplete for variables like `{{ rider.firstName }}`.
+
+#### Why This Matters
+Building API request bodies in raw JSON was complex and error-prone. This new GUI simplifies the process immensely, with features like autocomplete and dot-notation support making it faster and more intuitive to build powerful, automated workflow steps.
+</Accordion>
+
+---
+### 🗺️ Modernized Address Input Fields Across Admin Platform
+
+**What's New**  
+Address input fields throughout the Spare Admin platform have been upgraded to a new, modern component. This new `AddressFieldset` provides an improved user experience with better layout and autocomplete functionality.
+
+**Pre-requisites**
+- Requires `AddressV2` feature flag.
+
+<Accordion title="See More">
+
+#### Where You'll See It
+- This change affects all address inputs across the platform when the feature flag is on, including:
+  - *People > Riders > (select rider) > Profile tab*
+  - *Requests > Create Request* (Pickup and Dropoff addresses)
+  - *Engage > Case Forms* (Address custom fields)
+  - And many other pages.
+
+#### What You Can Do
+- Experience a cleaner, more organized layout for address fields, with the country field now consistently placed as the last row.
+- Utilize the improved Google Places autocomplete for faster and more accurate address entry.
+- The system correctly handles and converts older address data formats to work seamlessly with the new component.
+
+#### Why This Matters
+This update standardizes and modernizes a fundamental component of the user interface. It provides a more consistent, accessible, and efficient way to work with addresses, reducing data entry errors and improving the overall user experience for administrators and dispatchers.
+</Accordion>
+
+---
+###  multimodal. Configure Advanced OTP Settings for Multimodal Graphs
+
+**What's New**  
+You can now provide custom OpenTripPlanner (OTP) configuration JSON when creating or editing a multimodal graph. This allows for fine-tuning of advanced transit routing parameters, such as fare calculations or transfer penalties, directly from the Spare Admin interface.
+
+**Pre-requisites**
+- Requires `Multimodal` feature flag.
+- Requires Admin access to configure Multimodal settings.
+
+<Accordion title="See More">
+
+#### Where You'll See It
+- *Settings > Multimodal > Graphs tab > (Create or Edit Graph pane)* (A new "OTP Configuration" text area is now available).
+
+#### What You Can Do
+- Enter a JSON object with specific OTP settings to override the defaults for that graph. For example, you can customize fare rules used by the planner.
+- This configuration is applied during the graph build process and used by the trip planner for any journey requests involving that graph.
+
+#### Why This Matters
+This feature gives advanced users direct control over the underlying transit routing engine. It unlocks the ability to implement complex, custom behaviors for multimodal trip planning without requiring backend code changes.
+</Accordion>
+
+---
+### 📧 Organization Name Added to Disaster Recovery Backup Emails
+
+**What's New**  
+The subject line for disaster recovery backup emails now includes the name of the organization the backup belongs to. The new subject format is "Spare Backup • {Organization Name}".
+
+**Pre-requisites**
+- No feature flags required.
+
+<Accordion title="See More">
+
+#### Where You'll See It
+- In the subject line of the disaster recovery backup emails sent from the Spare platform.
+
+#### What You Can Do
+- Quickly identify which organization a backup email is for, directly from your inbox.
+
+#### Why This Matters
+Previously, all backup emails had the generic subject "Spare Backup," making it difficult for administrators who manage multiple organizations to distinguish between them. This small change makes it much easier to organize and verify backups, especially for larger partners.
+</Accordion>
+
+---
+
+</Update>
+
 <Update label="12 February 2026" description="2 Updates">
 
 ### 🔧 New `flatten` Helper for Flexible Workflow Matching

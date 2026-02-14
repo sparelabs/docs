@@ -2,6 +2,94 @@
 title: Enterprise Asset Management
 rss: true
 ---
+<Update label="13 February 2026" description="4 Updates">
+
+### 📋 Simplified Purchase Order Workflow
+
+<Warning>This feature is currently categorized as 'Do Not Enable - In Development' and is not yet ready for customer use. Please await communications from the Product team on a feature rollout plan.</Warning>
+
+**What's New**  
+The Purchase Order (PO) management experience has been enhanced with a new, simplified workflow. This includes new columns in the line items table for better tracking, a more intuitive "Add Item" button location, and a smarter modal for adding items that pre-populates existing parts.
+
+**Pre-requisites**
+- Requires `EamMinimalPurchaseOrder` feature flag.
+- Requires Admin access to EAM.
+
+<Accordion title="See More">
+
+#### Where You'll See It
+- *EAM > Inventory > Purchase Orders > (view a PO)*
+
+#### What You Can Do
+- **Track Item Status:** See the "Remaining" quantity (ordered minus received) and the "Ordered At" timestamp for each line item directly in the table.
+- **Add Items Easily:** The "Add Item" button has been moved into the "Line Items" section header for better contextual placement.
+- **Update Quantities Faster:** When clicking "Add Item," the modal now shows existing line items as read-only rows. You can quickly increase the quantity of an existing part or add new parts, rather than starting from a blank slate.
+
+#### Why This Matters
+These changes streamline the procurement process by providing more at-a-glance information and reducing the number of clicks needed to manage a purchase order. Pre-populating the "Add Item" modal makes it much faster to order additional quantities of parts already on the PO.
+</Accordion>
+
+---
+### 📥 Import Work Orders from a File
+
+**What's New**  
+You can now bulk-import work orders into the Enterprise Asset Management (EAM) module using the data import tool. This allows for the quick creation of multiple work orders from a CSV file, including details like status, priority, asset, assignee, and more.
+
+**Pre-requisites**
+- No feature flags required.
+- Requires Admin access to EAM.
+
+<Accordion title="See More">
+
+#### Where You'll See It
+- *EAM > Imports > New Import* (A new "Work Order" option is available in the "Import Type" dropdown).
+
+#### What You Can Do
+- Prepare a CSV file with your work order data using the provided template.
+- Upload the file through the EAM import tool to create many work orders at once.
+- Map columns from your file to work order fields like `status`, `priority`, `assetId`, `assigneeId`, `completedAt`, and `notes`.
+
+#### Why This Matters
+This feature is a major time-saver for teams that manage maintenance tasks in external systems or spreadsheets. Instead of creating each work order manually in the UI, you can now import them all in a single, efficient operation.
+</Accordion>
+
+---
+### ⚡️ Link Energy Entries to Meter Entries
+
+**What's New**  
+When a meter entry is created as part of an energy entry (e.g., recording mileage during a refuel), the system now correctly identifies and displays the link to the source. This provides a clear audit trail between energy consumption and vehicle meter readings.
+
+**Pre-requisites**
+- No feature flags required.
+- Requires Admin access to EAM.
+
+<Accordion title="See More">
+
+#### Where You'll See It
+- *EAM > Meter Entries > (view a meter entry created from an energy entry)* (The "Source" field will now show "Energy Entry" and provide a link).
+- *EAM > Energy Entries > (view an energy entry with a meter reading)* (A new "Meter Entry" field will appear with a link to the corresponding entry).
+
+#### What You Can Do
+- Easily navigate between a vehicle's energy log and its meter history.
+- Confirm that meter readings associated with fueling or charging events have been correctly recorded.
+
+#### Why This Matters
+This improvement creates a stronger connection between two key EAM data points. It simplifies auditing and ensures that when you look at a meter entry, you can immediately understand the context if it originated from a fueling or charging event.
+</Accordion>
+
+---
+### 🐛 Bug Fixes
+
+- **Meter Entry Input Did Not Respect Maximum Value (EAM-929)**
+  * _Resolution_: Fixed an issue where the meter entry distance input form would allow a value higher than the maximum to be saved, even though the display showed the correct maximum. The form now correctly clamps the input value before saving.
+
+- **Unable to Save Edited Energy Entry (EAM-916)**
+  * _Resolution_: Fixed a bug that prevented an energy entry from being saved if it was edited without a meter value. The system now correctly handles this scenario. Additionally, the Energy Entry details page was improved to display a link to its associated meter entry if one exists.
+
+---
+
+</Update>
+
 <Update label="12 February 2026" description="6 Updates">
 
 ### 🛠️ Centralized Asset Maintenance View

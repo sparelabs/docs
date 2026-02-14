@@ -2,6 +2,35 @@
 title: Resolve
 rss: true
 ---
+<Update label="13 February 2026" description="1 Updates">
+
+### ⚙️ New Configuration Options for Case Types
+
+**What's New**  
+Administrators now have more control over how forms are used with Case Types. New settings allow you to make forms mandatory for case creation and specify a secondary form for public-facing submission channels.
+
+**Pre-requisites**
+- Requires `EngageCaseCreationV2` feature flag.
+- Requires Admin access to configure Case Types.
+
+<Accordion title="See More">
+
+#### Where You'll See It
+- *Engage > Case Types > (Create or Edit a Case Type)* (New settings are available for form requirements).
+
+#### What You Can Do
+- **Enforce Form Completion:** Enable the new `Require Form` setting on a Case Type to ensure that a form submission is always included when a case of that type is created.
+- **Define a Public Form:** Use the `Secondary Form Key` setting to designate a specific form to be used for public submissions (e.g., through a public portal), which can be different from the internal default form.
+- **Link Data on Creation:** When creating cases via the API, you can now include `tagIds` and `objectLinks` directly in the creation request.
+
+#### Why This Matters
+These new settings provide greater control and data integrity for case management. Requiring forms ensures you capture necessary information upfront, while the ability to specify a public-facing form allows you to tailor the submission experience for different channels.
+</Accordion>
+
+---
+
+</Update>
+
 <Update label="11 February 2026" description="2 Updates">
 
 ### 🔐 Granular Edit Permissions for Case Forms & Types
